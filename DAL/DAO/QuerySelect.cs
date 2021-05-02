@@ -26,7 +26,7 @@ namespace DAL.DAO
         }
 
         //Bindeo la lista de resultados con el data reader.
-        private List<object> bindWithList(SqlDataReader reader)
+        public List<object> bindWithList(SqlDataReader reader)
         {
             List<Object> result = new List<Object>();
 
@@ -97,6 +97,8 @@ namespace DAL.DAO
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = this.bdConnection;
             cmd.CommandText = sql;
+
+            Debug.WriteLine("RUN:" + sql);
 
             //Armo un list de respuesta.
             return cmd.ExecuteReader();

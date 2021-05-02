@@ -27,7 +27,7 @@ namespace DAL.DAO
         }
 
         //Obtengo los atributos concatenados por comas
-        public string fieldFromSchema(Dictionary<string, Object> schema)
+        private string fieldFromSchema(Dictionary<string, Object> schema)
         {
             string fields = "";
             foreach (var kvp in schema)
