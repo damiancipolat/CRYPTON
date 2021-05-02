@@ -39,11 +39,18 @@ namespace UI
             QueryBuilder builder = new QueryBuilder();
             //List<object> result = builder.selectAll("permiso");
 
-            List<object> result = builder.selectById("usuario","idusuario",1);
+            List<object> result = builder.selectById("usuario","idusuario",1);      
             EntityBinder.bindOne(result,damian);
 
             Debug.WriteLine("RESULTADO"+ damian.idusuario.ToString() + "  " + damian.nombre + " " + damian.apellido);
+
+            List<object> row = ((IEnumerable)result[0]).Cast<object>().ToList();
+            Debug.WriteLine("........"+row.Count.ToString());
             
+            Dictionary<string, object> mapa = builder.getAsDictionary(row);
+
+            Debug.WriteLine("*************"+mapa["idusuario"]);
+
 
         }
     }

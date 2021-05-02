@@ -24,6 +24,21 @@ namespace DAL
             return new SqlConnection(connectionString);
         }
 
+        //Transform a list key / pair to a dictionary.
+        public Dictionary<string, object> getAsDictionary(List<Object> rows)
+        {            
+            //Valida si la lista tiene un 1 registro, sino tiro error.
+            if (!(rows != null && rows.Count>0))
+                throw new Exception("Unable to bind with data source");
+
+            Dictionary<string, object> result = new Dictionary<string, object>();
+            
+            foreach (KeyValuePair<string, object> data in rows)
+                result.Add(data.Key, data.Value);
+                
+            return result;
+        }
+
         //Bindeo la lista de resultados con el data reader.
         private List<object> bindWithList(SqlDataReader reader)
         {
