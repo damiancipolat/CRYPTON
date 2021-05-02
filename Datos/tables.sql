@@ -12,15 +12,14 @@ DROP TABLE IF EXISTS bitacora; --BE
 DROP TABLE IF EXISTS solic_operacion; --BE
 DROP TABLE IF EXISTS tipo_solic_op; --BE
 DROP TABLE IF EXISTS solic_estados; --BE
-DROP TABLE IF EXISTS transferencias;
-DROP TABLE IF EXISTS orden_venta;
-DROP TABLE IF EXISTS orden_compra
-DROP TABLE IF EXISTS orden_estado;
-DROP TABLE IF EXISTS tipo_operaciones;
-DROP TABLE IF EXISTS comisiones;
-DROP TABLE IF EXISTS permiso;
-DROP TABLE IF EXISTS rol_permiso;
-DROP TABLE IF EXISTS usuario_permiso;
+DROP TABLE IF EXISTS transferencias; --BE
+DROP TABLE IF EXISTS orden_venta; --BE
+DROP TABLE IF EXISTS orden_compra --BE
+DROP TABLE IF EXISTS orden_estado; --BE
+DROP TABLE IF EXISTS comisiones; --BE
+DROP TABLE IF EXISTS permiso; --BE
+DROP TABLE IF EXISTS rol_permiso; --BE
+DROP TABLE IF EXISTS usuario_permiso; --BE
 
 --Tabla de usuarios.
 create table usuario(
@@ -215,8 +214,7 @@ create table orden_venta(
 	vendedor bigint,
 	cantidad int,
 	moneda varchar(10),
-	precio float,
-	tipo_orden int
+	precio float
 );
 
 --Tabla de tipo de ordenes.
