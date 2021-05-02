@@ -12,7 +12,7 @@ using System.Dynamic;
 using System.Reflection;
 using System.Collections;
 using BE;
-using DAL;
+using DAL.DAO;
 
 namespace UI
 {
@@ -36,7 +36,7 @@ namespace UI
             Debug.WriteLine(bitcoin.cod+"----"+bitcoin.descripcion);
             */
             Usuario damian = new Usuario();
-            QueryBuilder builder = new QueryBuilder();
+            QuerySelect builder = new QuerySelect();
             //List<object> result = builder.selectAll("permiso");
 
             List<object> result = builder.selectById("usuario","idusuario",1);      
@@ -49,7 +49,10 @@ namespace UI
             
             Dictionary<string, object> mapa = builder.getAsDictionary(row);
 
-            Debug.WriteLine("*************"+mapa["idusuario"]);
+            UsuarioTipo tmpEnum = (UsuarioTipo)mapa["tipo_usuario"];
+            
+            Debug.WriteLine("ENUM:" + tmpEnum);
+            Debug.WriteLine("*************"+mapa["tipo_usuario"]);
 
 
         }

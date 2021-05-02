@@ -3,46 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Collections;
 using System.Diagnostics;
-using System.Dynamic;
-using System.Reflection;
 
-namespace DAL
+namespace DAL.DAO
 {
-    public class QueryBuilder
+    public class QuerySelect:QueryBuilder
     {
-        //Genero la conexion con la bd.
-        private SqlConnection getConnection()
-        {
-            //Traigo el connection string de la configuracion.
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
-
-            //Armo una nueva conexion.
-            return new SqlConnection(connectionString);
-        }
-
         //Transform a list key / pair to a dictionary.
         public Dictionary<string, object> getAsDictionary(List<Object> rows)
-        {            
+        {
             //Valida si la lista tiene un 1 registro, sino tiro error.
-            if (!(rows != null && rows.Count>0))
+            if (!(rows != null && rows.Count > 0))
                 throw new Exception("Unable to bind with data source");
 
             Dictionary<string, object> result = new Dictionary<string, object>();
-            
+
             foreach (KeyValuePair<string, object> data in rows)
                 result.Add(data.Key, data.Value);
-                
+
             return result;
         }
 
         //Bindeo la lista de resultados con el data reader.
         private List<object> bindWithList(SqlDataReader reader)
         {
-            List<Object> result = new List<Object>();            
+            List<Object> result = new List<Object>();
 
             //Recorro el resulset.
             while (reader.Read())
@@ -50,11 +36,11 @@ namespace DAL
 
                 //Armo una lista para cargar las columnas.
                 List<Object> row = new List<Object>();
-                
+
                 //Itero las filas para ir columna por columna.
                 for (int i = 0; i <= reader.FieldCount - 1; i++)
                     row.Add(new KeyValuePair<string, object>(reader.GetName(i), reader.GetValue(i)));
-                
+
                 result.Add(row);
 
             }
@@ -76,7 +62,7 @@ namespace DAL
             //Genero el query dinamico.
             string sql = "select * from " + table + ";";
             cmd.CommandText = sql;
-            
+
             //Armo un list de respuesta.
             SqlDataReader reader = cmd.ExecuteReader();
             List<Object> result = bindWithList(reader);
@@ -88,7 +74,7 @@ namespace DAL
         }
 
         //Genera una consulta sql, filtrando por ID.
-        public List<Object> selectById(string table,string key,int id)
+        public List<Object> selectById(string table, string key, int id)
         {
             //Creo la conexion.
             SqlConnection conn = this.getConnection();
@@ -99,10 +85,10 @@ namespace DAL
             cmd.Connection = conn;
 
             //Genero el query dinamico.
-            string sql = "select * from " + table + " where "+key+"="+id+";";
+            string sql = "select * from " + table + " where " + key + "=" + id + ";";
             cmd.CommandText = sql;
 
-            Debug.WriteLine("Generated SQL:"+sql);
+            Debug.WriteLine("Generated SQL:" + sql);
 
             //Armo un list de respuesta.
             var reader = cmd.ExecuteReader();
