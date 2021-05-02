@@ -27,11 +27,12 @@ namespace DAL
         //Bindeo la lista de resultados con el data reader.
         private List<object> bindWithList(SqlDataReader reader)
         {
-            List<Object> result = new List<Object>();
+            List<Object> result = new List<Object>();            
 
             //Recorro el resulset.
             while (reader.Read())
-            {                
+            {
+
                 //Armo una lista para cargar las columnas.
                 List<Object> row = new List<Object>();
                 
@@ -62,7 +63,7 @@ namespace DAL
             cmd.CommandText = sql;
             
             //Armo un list de respuesta.
-            var reader = cmd.ExecuteReader();
+            SqlDataReader reader = cmd.ExecuteReader();
             List<Object> result = bindWithList(reader);
 
             reader.Close();
@@ -85,7 +86,9 @@ namespace DAL
             //Genero el query dinamico.
             string sql = "select * from " + table + " where "+key+"="+id+";";
             cmd.CommandText = sql;
-            Debug.WriteLine(sql);
+
+            Debug.WriteLine("Generated SQL:"+sql);
+
             //Armo un list de respuesta.
             var reader = cmd.ExecuteReader();
             List<Object> result = bindWithList(reader);

@@ -14,7 +14,7 @@ namespace BE
 
     public class Usuario
     {
-        public int idUsuario;
+        public Int64 idusuario;
         public string nombre;
         public string apellido;
         public string alias;

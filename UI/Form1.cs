@@ -35,11 +35,15 @@ namespace UI
             EntityBinder.applyBindingList(monedaBinding, bitcoin);
             Debug.WriteLine(bitcoin.cod+"----"+bitcoin.descripcion);
             */
-
+            Usuario damian = new Usuario();
             QueryBuilder builder = new QueryBuilder();
             //List<object> result = builder.selectAll("permiso");
-            List<object> result = builder.selectById("permiso","idpermiso",3);
-            Debug.WriteLine("---"+result.Count().ToString());
+
+            List<object> result = builder.selectById("usuario","idusuario",1);
+            EntityBinder.bindOne(result,damian);
+
+            Debug.WriteLine("RESULTADO"+ damian.idusuario.ToString() + "  " + damian.nombre + " " + damian.apellido);
+            
 
         }
     }
