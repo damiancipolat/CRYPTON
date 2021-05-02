@@ -16,7 +16,7 @@ namespace BE
     public class OrdenVenta
     {
         public int idVenta;
-        public Usuario vendedor;
+        public UsuarioBE vendedor;
         public int cantidad;
         public Moneda moneda;
         public float precio;

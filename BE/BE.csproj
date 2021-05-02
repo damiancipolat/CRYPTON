@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Agenda.cs" />
     <Compile Include="Billetera.cs" />
-    <Compile Include="EntityBinder.cs" />
+    <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="Bitacora.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Comision.cs" />
@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolicOperacion.cs" />
     <Compile Include="Transferencia.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioBE.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

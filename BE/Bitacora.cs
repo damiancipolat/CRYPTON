@@ -9,7 +9,7 @@ namespace BE
     public class Bitacora
     {
         public int id;
-        public Usuario usuario;
+        public UsuarioBE usuario;
         public int type;
         public DateTime fecLog;
         public String payload;

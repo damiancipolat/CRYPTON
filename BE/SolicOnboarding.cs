@@ -17,12 +17,12 @@ namespace BE
     {
         public int idSolic;
         public DateTime fecSolic;
-        public Usuario Usuario;
+        public UsuarioBE Usuario;
         public string imgFrente;
         public string imgDorso;
         public string imgSelfie;
         public OnboardingEstados solicEstado;
         public DateTime fecProceso;
-        public Usuario operador;
+        public UsuarioBE operador;
     }
 }

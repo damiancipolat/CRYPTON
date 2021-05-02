@@ -10,7 +10,7 @@ namespace BE
     {
         public int idTransferencia;
         public DateTime fecProc;
-        public Usuario usuario;
+        public UsuarioBE usuario;
         public Billetera origen;
         public Billetera destino;
         public float valor;

@@ -45,6 +45,13 @@
     <Compile Include="DAO\QueryBuilder.cs" />
     <Compile Include="DAO\QuerySelect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{a83e0722-6070-431d-94e1-ffbad3fb67c0}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

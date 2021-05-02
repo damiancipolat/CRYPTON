@@ -9,7 +9,7 @@ namespace BE
     public class Cliente
     {
         public int idCliente;
-        public Usuario usuario;
+        public UsuarioBE usuario;
         public string nombre;
         public string apellido;
         public DateTime fecNac;

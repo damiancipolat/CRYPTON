@@ -22,14 +22,14 @@ namespace BE
     public class SolicOperacion
     {
         public int idOperacion;
-        public Usuario usuario;
+        public UsuarioBE usuario;
         public Billetera billetera;
         public float valor;
         public DateTime fecRegistro;
         public string cbu;
         public TipoOperacion tipoSolicitud;
         public SolicEstado estadoSolic;        
-        public Usuario operador;
+        public UsuarioBE operador;
         public DateTime fecProceso;
     }
 }

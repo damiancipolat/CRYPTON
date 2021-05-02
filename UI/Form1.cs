@@ -13,6 +13,7 @@ using System.Reflection;
 using System.Collections;
 using BE;
 using DAL.DAO;
+using DAL;
 
 namespace UI
 {
@@ -34,8 +35,8 @@ namespace UI
 
             EntityBinder.applyBindingList(monedaBinding, bitcoin);
             Debug.WriteLine(bitcoin.cod+"----"+bitcoin.descripcion);
-            */
-            Usuario damian = new Usuario();
+            
+            UsuarioBE damian = new UsuarioBE();
             QuerySelect builder = new QuerySelect();
             //List<object> result = builder.selectAll("permiso");
 
@@ -53,8 +54,10 @@ namespace UI
             
             Debug.WriteLine("ENUM:" + tmpEnum);
             Debug.WriteLine("*************"+mapa["tipo_usuario"]);
+            */
 
-
+            UsuarioBE userData = new UsuarioDAL().findById(1);
+            Debug.WriteLine(userData.idusuario+"--"+userData.nombre);
         }
     }
 }
