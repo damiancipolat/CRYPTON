@@ -76,28 +76,31 @@ namespace DAL.DAO
         //Genera una consulta sql, filtrando por ID.
         public List<Object> selectById(string table, string key, int id)
         {
-            //Creo la conexion.
-            SqlConnection conn = this.getConnection();
-            conn.Open();
-
-            //Creo el comando
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-
-            //Genero el query dinamico.
+            //Genero el query en base a parametros.
             string sql = "select * from " + table + " where " + key + "=" + id + ";";
-            cmd.CommandText = sql;
-
             Debug.WriteLine("Generated SQL:" + sql);
 
-            //Armo un list de respuesta.
-            var reader = cmd.ExecuteReader();
-            List<Object> result = bindWithList(reader);
+            //Eejcuto el query.
+            SqlDataReader dataReader = this.query(sql);            
 
-            reader.Close();
-            conn.Close();
+            //Parseo el data reader a una lista de columnas/valores.
+            List<Object> result = bindWithList(dataReader);
+            this.bdConnection.Close();
 
             return result;
         }
+        
+        //Ejecutar un query directo.
+        public SqlDataReader query(string sql)
+        {
+            //Creo el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = this.bdConnection;
+            cmd.CommandText = sql;
+
+            //Armo un list de respuesta.
+            return cmd.ExecuteReader();
+        }
+
     }
 }

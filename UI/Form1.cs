@@ -26,6 +26,41 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
+            var dict = new Dictionary<string, Object>{
+                {"nombre","Sebastian"},
+                { "apellido","Cipolat"},
+                { "alias","mrSebasC"},
+                { "email","s@gmail.com"},
+                { "tipo_usuario",2},
+                { "pwd","123456"}
+            };
+
+            QueryInsert builder = new QueryInsert();
+            builder.insertSchema(dict,"usuario");
+
+            /*foreach (var kvp in dict) {
+                Debug.WriteLine(kvp.Key + "*---"+kvp.Value);
+                //expando.Add(kvp.Key, kvp.Value)
+            }*/
+
+
+
+            /*
+                        var players = new[] {
+                new  {name = "Joe",score = 25, color = "red", attribs = new int[]{ 0,1,2,3,4}},
+                new  {name = "Jenny",score = 1, color = "black", attribs = new int[]{4,3,2,1,0}}
+            };
+
+                        var player = new
+                        {
+                            name = "damian",
+                            apellido = "cipolat",
+                            edad = 12
+                        };
+
+                        Debug.WriteLine(player.name+"  "+player.apellido+"  "+player.edad.ToString());
+                        */
             /*
              Moneda bitcoin = new Moneda();
             var monedaBinding = new ArrayList(){
@@ -56,8 +91,9 @@ namespace UI
             Debug.WriteLine("*************"+mapa["tipo_usuario"]);
             */
 
-            UsuarioBE userData = new UsuarioDAL().findById(1);
-            Debug.WriteLine(userData.idusuario+"--"+userData.nombre);
+            /* UsuarioBE userData = new UsuarioDAL().findById(1);
+             Debug.WriteLine(userData.idusuario+"--"+userData.nombre);*/
+
         }
     }
 }

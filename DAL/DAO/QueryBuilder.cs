@@ -14,6 +14,15 @@ namespace DAL
 {
     public class QueryBuilder
     {
+        protected SqlConnection bdConnection;
+
+        //Armo una conexion al crear la clase.
+        public QueryBuilder()
+        {
+            this.bdConnection = this.getConnection();
+            this.bdConnection.Open();
+        }
+
         //Genero la conexion con la bd.
         protected SqlConnection getConnection()
         {
@@ -23,7 +32,6 @@ namespace DAL
             //Armo una nueva conexion.
             return new SqlConnection(connectionString);
         }
-
 
     }
 }
