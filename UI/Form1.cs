@@ -30,6 +30,7 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            /*
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
                 {"email","pepe@pepe.com"},
@@ -38,6 +39,17 @@ namespace UI
 
             QueryUpdate upd = new QueryUpdate();
             upd.updateSchemaById(schema, "usuario", "idusuario", 2);
+            */
+
+            QueryUpdate upd = new QueryUpdate();
+            upd.updateSchemaWhereAnd(
+                new Dictionary<string, Object>{
+                    {"email","prueba@mock.com"},
+                    { "tipo_usuario",3}
+                }, new Dictionary<string, Object>{
+                    {"email","pepe@pepe.com"},
+                    {"pwd","1234"}
+            }, "usuario");
 
             /*
             UsuarioDAL dam = new UsuarioDAL();
