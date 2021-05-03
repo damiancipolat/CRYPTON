@@ -62,8 +62,24 @@ namespace DAL.DAO
             }
 
             return fields.Remove(fields.Length - 4);
-
         }
 
+        //Genero los valores separados por coma
+        public string setsFromSchema(Dictionary<string, Object> schema)
+        {
+            string fields = "";
+
+            foreach (var kvp in schema)
+            {
+                if (this.comparer.IsNumber(kvp.Value))
+                    fields = fields + " " + kvp.Key + "=" + kvp.Value + " ,";
+
+                if (this.comparer.isString(kvp.Value))
+                    fields = fields + " " + kvp.Key + "='" + kvp.Value + "'" + " ,";
+            }
+
+            return fields.Remove(fields.Length - 1);
+
+        }
     }
 }

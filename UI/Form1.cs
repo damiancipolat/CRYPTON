@@ -30,6 +30,26 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"email","pepe@pepe.com"},
+                { "tipo_usuario",2}
+            };
+
+            QueryUpdate upd = new QueryUpdate();
+            upd.updateSchemaById(schema, "usuario", "idusuario", 2);
+
+            /*
+            UsuarioDAL dam = new UsuarioDAL();
+            string hashes = dam.getEntityHash();
+            Debug.WriteLine("---->"+hashes);
+            */
+            /*
+            UsuarioDAL dam = new UsuarioDAL();
+            UsuarioBE damBE = dam.findById(2);
+            Debug.WriteLine(damBE.hash);
+            */
+            /*
             //Crear bitacora.
             UsuarioDAL dam = new UsuarioDAL();
             UsuarioBE damBE = dam.findById(1);
@@ -42,8 +62,8 @@ namespace UI
 
             BitacoraDAL bitacoraDAL = new BitacoraDAL();
             bitacoraDAL.insert(bitacoraBE);
-            
-            
+            */
+
             /*
             //Hacer restore
             UsuarioDAL dam = new UsuarioDAL();
@@ -95,6 +115,17 @@ namespace UI
             UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "1234");
             Debug.WriteLine(">"+result.idusuario.ToString()+"sss"+result.nombre);
             */
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            UsuarioDAL dam = new UsuarioDAL();
+            dam.getEntityHash();
         }
     }
 }

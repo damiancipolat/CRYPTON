@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using BE;
 using DAL.DAO;
 
@@ -68,11 +69,24 @@ namespace DAL
                 { "alias",user.alias},
                 { "email",user.email},
                 { "tipo_usuario",(int)user.tipoUsuario},
-                { "pwd",user.pwd}
+                { "pwd",user.pwd},
+                { "user",user.hash}
             };
 
             QueryInsert builder = new QueryInsert();
             return builder.insertSchema(schema, "usuario");
+        }
+
+        //Obtener el hash completo de la entidad.
+        public string getEntityHash()
+        {
+            List<object> result = new QuerySelect().selectAll("usuario");
+            string summarizedHash = "";
+
+            foreach (List<object> register in result)
+                summarizedHash = summarizedHash + new SqlParser().rowToDictionary(register)["hash"];
+
+            return summarizedHash;
         }
     }
 }

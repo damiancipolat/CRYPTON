@@ -17,7 +17,6 @@ namespace DAL.DAO
             //Recorro el resulset.
             while (reader.Read())
             {
-
                 //Armo una lista para cargar las columnas.
                 List<Object> row = new List<Object>();
 
@@ -26,7 +25,6 @@ namespace DAL.DAO
                     row.Add(new KeyValuePair<string, object>(reader.GetName(i), reader.GetValue(i)));
 
                 result.Add(row);
-
             }
 
             return result;

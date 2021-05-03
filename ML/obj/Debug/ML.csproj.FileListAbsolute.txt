@@ -3,3 +3,4 @@ C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta d
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\ML\obj\Debug\ML.csproj.CoreCompileInputs.cache
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\ML\obj\Debug\ML.dll
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\ML\obj\Debug\ML.pdb
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\ML\obj\Debug\ML.csprojAssemblyReference.cache

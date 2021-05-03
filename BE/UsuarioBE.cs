@@ -21,5 +21,6 @@ namespace BE
         public string email;
         public UsuarioTipo tipoUsuario;
         public string pwd;
+        public string hash;
     }
 }

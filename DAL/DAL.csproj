@@ -47,6 +47,7 @@
     <Compile Include="DAO\QueryDelete.cs" />
     <Compile Include="DAO\QueryInsert.cs" />
     <Compile Include="DAO\QuerySelect.cs" />
+    <Compile Include="DAO\QueryUpdate.cs" />
     <Compile Include="DAO\SqlParser.cs" />
     <Compile Include="DAO\SqlText.cs" />
     <Compile Include="DAO\TypeComparer.cs" />

@@ -30,10 +30,11 @@ create table usuario(
 	alias varchar(50),
 	email varchar(100),
 	tipo_usuario int,
-	pwd varchar(100) NOT NULL
+	pwd varchar(100) NOT NULL,
+	[hash] text
 );
 
-insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd) values('Damian','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234');
+insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) values('KIKI','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234','211111111');
 select * from usuario;
 
 --Tipo de usuario cliente, empleado.
