@@ -30,6 +30,20 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //Crear bitacora.
+            UsuarioDAL dam = new UsuarioDAL();
+            UsuarioBE damBE = dam.findById(1);
+
+            BitacoraBE bitacoraBE = new BitacoraBE();
+            bitacoraBE.usuario = damBE;
+            bitacoraBE.type = 1;
+            bitacoraBE.fecLog = DateTime.Now;
+            bitacoraBE.payload = "Paso algo opa";
+
+            BitacoraDAL bitacoraDAL = new BitacoraDAL();
+            bitacoraDAL.insert(bitacoraBE);
+            
+            
             /*
             //Hacer restore
             UsuarioDAL dam = new UsuarioDAL();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Bitacora
+    public class BitacoraBE
     {
         public int id;
         public UsuarioBE usuario;

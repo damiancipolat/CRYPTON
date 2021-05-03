@@ -45,7 +45,7 @@
     <Compile Include="Admin\BackupBE.cs" />
     <Compile Include="Billetera.cs" />
     <Compile Include="Mapper\EntityBinder.cs" />
-    <Compile Include="Bitacora.cs" />
+    <Compile Include="BitacoraBE.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Comision.cs" />
     <Compile Include="Moneda.cs" />
