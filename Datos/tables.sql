@@ -20,6 +20,7 @@ DROP TABLE IF EXISTS comisiones; --BE
 DROP TABLE IF EXISTS permiso; --BE
 DROP TABLE IF EXISTS rol_permiso; --BE
 DROP TABLE IF EXISTS usuario_permiso; --BE
+DROP TABLE IF EXISTS admin_backup; --BE
 
 --Tabla de usuarios.
 create table usuario(
@@ -74,6 +75,16 @@ create table usuario_permiso
 	idusuario bigint,
 	idpermiso int
 );
+
+--Tabla de registro de backups.
+create table admin_backup
+(
+	idbackup int identity(1,1) primary key,
+	idusuario bigint,
+	[path] varchar(100),
+	fecRec datetime
+);
+
 
 --Validaciones de identidad, se ingresa documentacion y estado.
 create table solic_onboarding(
@@ -277,35 +288,27 @@ as(
 			t.valor,
 			t.origen, 'TRANSF' as tipo_operacion
 	from transferencias as t
-);*/
-
-
-with recursivo as (
-                        select sp2.idrol, sp2.idpermiso  from rol_permiso SP2
-                        where sp2.idrol is NULL --acá se va variando la familia que busco
-                        UNION ALL 
-                        select sp.idrol, sp.idpermiso from rol_permiso sp 
-                        inner join recursivo r on r.idpermiso= sp.idrol
-                        )
-                        select r.idrol,r.idpermiso,p.idpermiso,p.nombre, p.es_rol
-                        from recursivo r 
-                        inner join permiso p on r.idpermiso = p.idpermiso
-
-
-
+);
 
 with recursivo as(
-               select sp2.idrol, sp2.idpermiso from rol_permiso SP2
-               where sp2.idrol is NULL
-               UNION ALL
-               select sp.idrol, sp.idpermiso from rol_permiso sp
-               inner join recursivo r on r.idpermiso = sp.idrol
-            ) 
-            select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente
-            from recursivo r
-            inner join permiso p on r.idpermiso = p.idpermiso
+	select sp2.idrol, sp2.idpermiso from rol_permiso SP2
+	where sp2.idrol is NULL
+	UNION ALL
+	select sp.idrol, sp.idpermiso from rol_permiso sp
+	inner join recursivo r on r.idpermiso = sp.idrol
+)
+select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente,up.idusuario
+from recursivo r
+inner join permiso p on r.idpermiso = p.idpermiso
+inner join usuario_permiso up on up.idpermiso=p.idpermiso
+where up.idusuario=2;
 
 
-			
-			select * from permiso
-			select * from rol_permiso
+select * from usuario_permiso
+select * from usuario
+
+insert into usuario_permiso(idusuario,idpermiso) values(2,2)
+*/
+
+
+--BACKUP DATABASE Crypton TO DISK = 'c:\SQLCrypton.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB';
