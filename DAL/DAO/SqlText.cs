@@ -28,6 +28,9 @@ namespace DAL.DAO
 
                 if (this.comparer.isString(kvp.Value))
                     fields = fields + "'" + kvp.Value + "'" + ",";
+
+                if (this.comparer.isDate(kvp.Value))
+                    fields = fields + "'" + kvp.Value + "'" + ",";
             }
 
             return fields.Remove(fields.Length - 1);

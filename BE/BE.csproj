@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agenda.cs" />
+    <Compile Include="Admin\BackupBE.cs" />
     <Compile Include="Billetera.cs" />
     <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="Bitacora.cs" />

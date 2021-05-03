@@ -30,23 +30,36 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Backup bck = new Backup();
+            UsuarioDAL dam = new UsuarioDAL();
+            UsuarioBE damBE = dam.findById(1);
+
+            BackupBE bckBE = new BackupBE();
+            bckBE.usuario = damBE;
+            bckBE.fecRec = DateTime.Now;
+            String timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+            bckBE.path = "c:/crypton_backup_bd_" + timeStamp + ".bak";
+
+            BackupDAL bckDAL = new BackupDAL();
+            bckDAL.makeBackup(bckBE);
+
+            /*
+            BackupDAL bck = new BackupDAL();
             String timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
             bck.makeBackup("c:/backup_bd_"+timeStamp+".bak");
-            Debug.WriteLine(timeStamp);
+            Debug.WriteLine(timeStamp);            
 
-            //PermisoUserDAL permiso = new PermisoUserDAL();
-            //bool exist = permiso.hasPermission(2,2);
-            //Debug.WriteLine("tiene:"+exist.ToString());
+            PermisoUserDAL permiso = new PermisoUserDAL();
+            bool exist = permiso.hasPermission(2,2);
+            Debug.WriteLine("tiene:"+exist.ToString());
 
-            /*IList<Componente> result = permiso.FindAll("");
-            Debug.WriteLine(">>>" + result[0].Hijos.Count.ToString());*/
+            IList<Componente> result = permiso.FindAll("");
+            Debug.WriteLine(">>>" + result[0].Hijos.Count.ToString());
 
-            //Debug.WriteLine(">>>"+result[0].Count.ToString());
-            //UsuarioDAL pepe = new UsuarioDAL();
-            //UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "1234");
-            //Debug.WriteLine(">"+result.idusuario.ToString()+"sss"+result.nombre);
-
+            Debug.WriteLine(">>>"+result[0].Count.ToString());
+            UsuarioDAL pepe = new UsuarioDAL();
+            UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "1234");
+            Debug.WriteLine(">"+result.idusuario.ToString()+"sss"+result.nombre);
+            */
         }
     }
 }

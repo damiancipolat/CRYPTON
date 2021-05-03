@@ -54,7 +54,7 @@
     <Compile Include="Permiso\PermisoSQL.cs" />
     <Compile Include="Permiso\PermisoUserDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Admin\Backup.cs" />
+    <Compile Include="Admin\BackupDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>

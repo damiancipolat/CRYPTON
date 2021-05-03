@@ -33,6 +33,8 @@ create table usuario(
 	pwd varchar(100) NOT NULL
 );
 
+insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd) values('Damian','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234');
+
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
 	tipo_usuario int identity(1,1) primary key,
@@ -84,7 +86,6 @@ create table admin_backup
 	[path] varchar(100),
 	fecRec datetime
 );
-
 
 --Validaciones de identidad, se ingresa documentacion y estado.
 create table solic_onboarding(
