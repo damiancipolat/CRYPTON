@@ -49,12 +49,12 @@ namespace DAL
         //Buscar usuario y contraseña.
         public UsuarioBE login(string email, string pwd)
         {
-            //Armo el query.
+            //Armo el query con un where con schema.
             QuerySelect builder = new QuerySelect();
-
-            //Ejecuto y parseo a una list para poder hacer binding.
-            SqlDataReader data = builder.query("select * from usuario where email='" + email+"' and pwd='" + pwd + "';");
-            List<Object> result = builder.bindWithList(data);
+            List<Object> result = builder.selectAnd(new Dictionary<string, Object>{
+                {"email",email},
+                { "pwd",pwd}
+            }, "usuario");
 
             //Bindeo con el esquema.
             return this.bindWithData(result, builder);

@@ -89,7 +89,58 @@ namespace DAL.DAO
 
             return result;
         }
-        
+
+        //Dice si es un numero.
+        private bool IsNumber(object value)
+        {
+            return value is sbyte
+                    || value is byte
+                    || value is short
+                    || value is ushort
+                    || value is int
+                    || value is uint
+                    || value is long
+                    || value is ulong
+                    || value is float
+                    || value is double
+                    || value is decimal;
+        }
+
+        //Genera el bloque sql where en base un esquema,
+        public string whereFromSchema(Dictionary<string, Object> schema)
+        {
+            string fields = "";
+
+            foreach (var kvp in schema)
+            {
+
+                //Check type
+                Boolean isInt = IsNumber(kvp.Value);
+                Boolean isStr = kvp.Value is String;
+                Boolean isDate = kvp.Value is DateTime;
+
+                //Append value, handle types.
+                if (isInt)
+                    fields = fields +" "+kvp.Key+"="+kvp.Value +" and";
+
+                if (isStr)
+                    fields = fields +" "+ kvp.Key+"='" + kvp.Value + "'" + " and";
+            }
+
+            return fields.Remove(fields.Length - 4);
+
+        }
+
+        //Genera una consulta sql pudiendo definir el whee dinamicamente
+        public List<Object> selectAnd(Dictionary<string, Object> schema, string table)
+        {
+            string where = whereFromSchema(schema);
+            string sql = "select * from " + table + " where " + where + ";";
+
+            SqlDataReader reader = this.query(sql);
+            return bindWithList(reader);
+        }
+
         //Ejecutar un query directo.
         public SqlDataReader query(string sql)
         {

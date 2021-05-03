@@ -27,6 +27,7 @@ namespace UI
         private void Button1_Click(object sender, EventArgs e)
         {
             UsuarioDAL pepe = new UsuarioDAL();
+
             UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "1234");
             Debug.WriteLine(">"+result.idusuario.ToString()+"sss"+result.nombre);
         }
