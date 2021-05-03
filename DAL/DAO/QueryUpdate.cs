@@ -33,8 +33,27 @@ namespace DAL.DAO
         {
             //Genero los campos dinamicos en base al diccionario.
             string fields = this.utilText.setsFromSchema(schema);
-            string whereSql = this.utilText.whereFromSchema(where);
+            string whereSql = this.utilText.whereAndFromSchema(where);
             string sql = "update " + tabla + " set " + fields + " where " +whereSql+";";
+
+            Debug.WriteLine("Generated sql:" + sql);
+
+            //Ejecuto la consulta.
+            int result = this.query(sql);
+
+            //Cierro conexion.
+            this.bdConnection.Close();
+
+            return result;
+        }
+
+        //Este metodo genera un sql que actualiza campos y filtra en ambos casos por schemas usando ors.
+        public int updateSchemaWhereOr(Dictionary<string, Object> schema, Dictionary<string, Object> where, string tabla)
+        {
+            //Genero los campos dinamicos en base al diccionario.
+            string fields = this.utilText.setsFromSchema(schema);
+            string whereSql = this.utilText.whereOrFromSchema(where);
+            string sql = "update " + tabla + " set " + fields + " where " + whereSql + ";";
 
             Debug.WriteLine("Generated sql:" + sql);
 

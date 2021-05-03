@@ -40,7 +40,7 @@ namespace UI
             QueryUpdate upd = new QueryUpdate();
             upd.updateSchemaById(schema, "usuario", "idusuario", 2);
             */
-
+            /*
             QueryUpdate upd = new QueryUpdate();
             upd.updateSchemaWhereAnd(
                 new Dictionary<string, Object>{
@@ -49,7 +49,7 @@ namespace UI
                 }, new Dictionary<string, Object>{
                     {"email","pepe@pepe.com"},
                     {"pwd","1234"}
-            }, "usuario");
+            }, "usuario");*/
 
             /*
             UsuarioDAL dam = new UsuarioDAL();

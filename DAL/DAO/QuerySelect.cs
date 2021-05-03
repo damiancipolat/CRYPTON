@@ -45,7 +45,7 @@ namespace DAL.DAO
         //Genera una consulta sql pudiendo definir el whee dinamicamente
         public List<Object> selectAnd(Dictionary<string, Object> schema, string table)
         {
-            string where = this.utilText.whereFromSchema(schema);
+            string where = this.utilText.whereAndFromSchema(schema);
             string sql = "select * from " + table + " where " + where + ";";
 
             //Ejcuto el query.

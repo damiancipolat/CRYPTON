@@ -48,7 +48,7 @@ namespace DAL.DAO
         }
 
         //Genera el bloque sql where en base un esquema,
-        public string whereFromSchema(Dictionary<string, Object> schema)
+        public string whereAndFromSchema(Dictionary<string, Object> schema)
         {
             string fields = "";
 
@@ -63,6 +63,24 @@ namespace DAL.DAO
 
             return fields.Remove(fields.Length - 4);
         }
+
+        //Genera el bloque sql where en base un esquema,
+        public string whereOrFromSchema(Dictionary<string, Object> schema)
+        {
+            string fields = "";
+
+            foreach (var kvp in schema)
+            {
+                if (this.comparer.IsNumber(kvp.Value))
+                    fields = fields + " " + kvp.Key + "=" + kvp.Value + " or";
+
+                if (this.comparer.isString(kvp.Value))
+                    fields = fields + " " + kvp.Key + "='" + kvp.Value + "'" + " or";
+            }
+
+            return fields.Remove(fields.Length - 4);
+        }
+
 
         //Genero los valores separados por coma
         public string setsFromSchema(Dictionary<string, Object> schema)
