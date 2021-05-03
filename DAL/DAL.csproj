@@ -49,7 +49,10 @@
     <Compile Include="DAO\SqlParser.cs" />
     <Compile Include="DAO\SqlText.cs" />
     <Compile Include="DAO\TypeComparer.cs" />
-    <Compile Include="PermisoDAL.cs" />
+    <Compile Include="Permiso\PermisoAllDAL.cs" />
+    <Compile Include="Permiso\PermisoDAL.cs" />
+    <Compile Include="Permiso\PermisoSQL.cs" />
+    <Compile Include="Permiso\PermisoUserDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>

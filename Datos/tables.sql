@@ -31,7 +31,7 @@ create table usuario(
 	tipo_usuario int,
 	pwd varchar(100) NOT NULL
 );
-select * from usuario where  email='damian.cipolat@gmail.com' and pwd='1234';
+
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
 	tipo_usuario int identity(1,1) primary key,
@@ -183,8 +183,8 @@ create table solic_estados(
 	descrip varchar(100)
 );
 
-insert into solic_estado(descrip) values('Aprobada');
-insert into solic_estado(descrip) values('Rechazada');
+insert into solic_estados(descrip) values('Aprobada');
+insert into solic_estados(descrip) values('Rechazada');
 
 --Tabla de transferencias.
 create table transferencias(
@@ -301,7 +301,7 @@ with recursivo as(
                select sp.idrol, sp.idpermiso from rol_permiso sp
                inner join recursivo r on r.idpermiso = sp.idrol
             ) 
-            select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_rol
+            select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente
             from recursivo r
             inner join permiso p on r.idpermiso = p.idpermiso
 

@@ -15,6 +15,7 @@ using BE;
 using BE.Permisos;
 using DAL.DAO;
 using DAL;
+using DAL.Permiso;
 
 namespace UI
 {
@@ -27,8 +28,8 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            PermisoDAL permiso = new PermisoDAL();
-            bool exist = permiso.hasPermission(4);
+            PermisoUserDAL permiso = new PermisoUserDAL();
+            bool exist = permiso.hasPermission(2,2);
             Debug.WriteLine("tiene:"+exist.ToString());
 
             /*IList<Componente> result = permiso.FindAll("");
