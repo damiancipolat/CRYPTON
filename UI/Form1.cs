@@ -12,6 +12,7 @@ using System.Dynamic;
 using System.Reflection;
 using System.Collections;
 using BE;
+using BE.Permisos;
 using DAL.DAO;
 using DAL;
 
@@ -26,10 +27,19 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            UsuarioDAL pepe = new UsuarioDAL();
+            PermisoDAL permiso = new PermisoDAL();
+            bool exist = permiso.hasPermission(4);
+            Debug.WriteLine("tiene:"+exist.ToString());
 
-            UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "15234");
-            Debug.WriteLine(">"+result.idusuario.ToString()+"sss"+result.nombre);
+            /*IList<Componente> result = permiso.FindAll("");
+            Debug.WriteLine(">>>" + result[0].Hijos.Count.ToString());*/
+
+            //Debug.WriteLine(">>>"+result[0].Count.ToString());
+
+            //UsuarioDAL pepe = new UsuarioDAL();
+            //UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "1234");
+            //Debug.WriteLine(">"+result.idusuario.ToString()+"sss"+result.nombre);
+
         }
     }
 }

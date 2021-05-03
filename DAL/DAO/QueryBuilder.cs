@@ -43,5 +43,11 @@ namespace DAL
         {
             return this.utilParser;
         }
+
+        //Cierro la conexion.
+        public void closeConnection()
+        {
+            this.bdConnection.Close();
+        }
     }
 }

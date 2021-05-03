@@ -31,7 +31,7 @@ create table usuario(
 	tipo_usuario int,
 	pwd varchar(100) NOT NULL
 );
-
+select * from usuario where  email='damian.cipolat@gmail.com' and pwd='1234';
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
 	tipo_usuario int identity(1,1) primary key,
@@ -45,15 +45,15 @@ create table permiso
 (
 	idpermiso int identity(1,1) primary key,
 	nombre varchar(150),
-	es_rol bit
+	es_patente bit
 );
 
-insert into permiso(nombre,es_rol) values('Usuario',0);
-insert into permiso(nombre,es_rol) values('Cliente',1);
-insert into permiso(nombre,es_rol) values('Empleado',0);
-insert into permiso(nombre,es_rol) values('Operaciones',1);
-insert into permiso(nombre,es_rol) values('Marketing',1);
-insert into permiso(nombre,es_rol) values('IT',1);
+insert into permiso(nombre,es_patente) values('Usuario',0);
+insert into permiso(nombre,es_patente) values('Cliente',1);
+insert into permiso(nombre,es_patente) values('Empleado',0);
+insert into permiso(nombre,es_patente) values('Operaciones',1);
+insert into permiso(nombre,es_patente) values('Marketing',1);
+insert into permiso(nombre,es_patente) values('IT',1);
 
 create table rol_permiso
 (
@@ -279,7 +279,7 @@ as(
 	from transferencias as t
 );*/
 
-/*
+
 with recursivo as (
                         select sp2.idrol, sp2.idpermiso  from rol_permiso SP2
                         where sp2.idrol is NULL --acá se va variando la familia que busco
@@ -290,5 +290,22 @@ with recursivo as (
                         select r.idrol,r.idpermiso,p.idpermiso,p.nombre, p.es_rol
                         from recursivo r 
                         inner join permiso p on r.idpermiso = p.idpermiso
-*/
 
+
+
+
+with recursivo as(
+               select sp2.idrol, sp2.idpermiso from rol_permiso SP2
+               where sp2.idrol is NULL
+               UNION ALL
+               select sp.idrol, sp.idpermiso from rol_permiso sp
+               inner join recursivo r on r.idpermiso = sp.idrol
+            ) 
+            select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_rol
+            from recursivo r
+            inner join permiso p on r.idpermiso = p.idpermiso
+
+
+			
+			select * from permiso
+			select * from rol_permiso

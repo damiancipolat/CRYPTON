@@ -49,7 +49,9 @@
     <Compile Include="Comision.cs" />
     <Compile Include="Moneda.cs" />
     <Compile Include="OrdenVenta.cs" />
-    <Compile Include="Permisos.cs" />
+    <Compile Include="Permisos\Componente.cs" />
+    <Compile Include="Permisos\Familia.cs" />
+    <Compile Include="Permisos\Patente.cs" />
     <Compile Include="SolicOnboarding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolicOperacion.cs" />
