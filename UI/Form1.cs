@@ -28,7 +28,7 @@ namespace UI
         {
             UsuarioDAL pepe = new UsuarioDAL();
 
-            UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "1234");
+            UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "15234");
             Debug.WriteLine(">"+result.idusuario.ToString()+"sss"+result.nombre);
         }
     }

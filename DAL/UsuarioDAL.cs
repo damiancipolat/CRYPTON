@@ -13,14 +13,14 @@ namespace DAL
     public class UsuarioDAL
     {
         //Bindea el schema de usuario con el data reader.
-        private UsuarioBE bindWithData(List<Object> result, QuerySelect builder)
+        private UsuarioBE bindSchema(List<Object> result)
         {
             if (!(result.Count > 0))
                 return null;
 
             //Cargo el resultado en un mapa para traer los campos que no se pueden bindear directo.
-            List<object> row = ((IEnumerable)result[0]).Cast<object>().ToList();
-            Dictionary<string, object> mapa = builder.getAsDictionary(row);
+            SqlParser parser = new SqlParser();
+            Dictionary<string, object> mapa = parser.rowToDictionary(((IEnumerable)result[0]).Cast<object>().ToList());
 
             //Armo el usuario resultado.
             UsuarioBE userTarget = new UsuarioBE();
@@ -38,11 +38,10 @@ namespace DAL
         public UsuarioBE findById(int id)
         {
             //Busco en la bd por id.
-            QuerySelect builder = new QuerySelect();
-            List<object> result = builder.selectById("usuario", "idusuario", id);
+            List<object> result = new QuerySelect().selectById("usuario", "idusuario", id);
 
             //Bindeo con el esquema.
-            return this.bindWithData(result, builder);
+            return this.bindSchema(result);
 
         }
 
@@ -50,14 +49,13 @@ namespace DAL
         public UsuarioBE login(string email, string pwd)
         {
             //Armo el query con un where con schema.
-            QuerySelect builder = new QuerySelect();
-            List<Object> result = builder.selectAnd(new Dictionary<string, Object>{
+            List<Object> result = new QuerySelect().selectAnd(new Dictionary<string, Object>{
                 {"email",email},
                 { "pwd",pwd}
             }, "usuario");
 
             //Bindeo con el esquema.
-            return this.bindWithData(result, builder);
+            return this.bindSchema(result);
         }
 
         //Agrega un nuevo usuario.

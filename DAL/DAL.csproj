@@ -45,6 +45,9 @@
     <Compile Include="DAO\QueryBuilder.cs" />
     <Compile Include="DAO\QueryInsert.cs" />
     <Compile Include="DAO\QuerySelect.cs" />
+    <Compile Include="DAO\SqlParser.cs" />
+    <Compile Include="DAO\SqlText.cs" />
+    <Compile Include="DAO\TypeComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>

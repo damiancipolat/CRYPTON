@@ -9,16 +9,21 @@ using System.Collections;
 using System.Diagnostics;
 using System.Dynamic;
 using System.Reflection;
+using DAL.DAO;
 
 namespace DAL
 {
     public class QueryBuilder
     {
         protected SqlConnection bdConnection;
+        protected SqlText utilText;
+        protected SqlParser utilParser;
 
         //Armo una conexion al crear la clase.
         public QueryBuilder()
         {
+            this.utilText = new SqlText();
+            this.utilParser = new SqlParser();
             this.bdConnection = this.getConnection();
             this.bdConnection.Open();
         }
@@ -33,5 +38,10 @@ namespace DAL
             return new SqlConnection(connectionString);
         }
 
+        //Traigo las utilities.
+        public SqlParser getParsers()
+        {
+            return this.utilParser;
+        }
     }
 }
