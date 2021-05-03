@@ -263,7 +263,7 @@ CREATE TABLE bitacora
 	fec_log date NULL,
 	payload TEXT not NULL	
 );
-
+select * from bitacora;
 /*
 /*	VISTAS */
 DROP VIEW IF EXISTS v_operaciones;

@@ -32,7 +32,7 @@ namespace DAL
         protected SqlConnection getConnection()
         {
             //Traigo el connection string de la configuracion.
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
 
             //Armo una nueva conexion.
             return new SqlConnection(connectionString);
