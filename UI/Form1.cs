@@ -30,17 +30,38 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            /*
+            //Hacer restore
             UsuarioDAL dam = new UsuarioDAL();
             UsuarioBE damBE = dam.findById(1);
 
             BackupBE bckBE = new BackupBE();
             bckBE.usuario = damBE;
             bckBE.fecRec = DateTime.Now;
+            bckBE.type = "RESTORE";
+            bckBE.path = "c:/crypton_backup_bd_20210503054138.bak";
+
+            BackupDAL bckDAL = new BackupDAL();
+            int code = bckDAL.restoreBackup(bckBE);
+            Debug.WriteLine("--------->"+code);
+            */
+
+            /*
+            //Hacer backup
+            UsuarioDAL dam = new UsuarioDAL();
+            UsuarioBE damBE = dam.findById(1);
+
+            BackupBE bckBE = new BackupBE();
+            bckBE.usuario = damBE;
+            bckBE.fecRec = DateTime.Now;
+            bckBE.type = "BACKUP";
+
             String timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
             bckBE.path = "c:/crypton_backup_bd_" + timeStamp + ".bak";
 
             BackupDAL bckDAL = new BackupDAL();
             bckDAL.makeBackup(bckBE);
+            */
 
             /*
             BackupDAL bck = new BackupDAL();

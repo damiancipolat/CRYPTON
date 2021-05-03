@@ -20,7 +20,8 @@ namespace DAL.Admin
             var schema = new Dictionary<string, Object>{
                 {"idusuario",backup.usuario.idusuario},
                 { "path",backup.path},
-                { "fecRec",backup.fecRec}
+                { "fecRec",backup.fecRec},
+                { "type",backup.type}
             };
 
             QueryInsert builder = new QueryInsert();
@@ -42,6 +43,23 @@ namespace DAL.Admin
             //Retorno la ejecucion del comando.
             return cmd.query(sql);
             
+        }
+
+        //Proceso el restore.
+        public int restoreBackup(BackupBE backup)
+        {
+            //Ejecuto el backup.
+            string sql = "use master;RESTORE DATABASE Crypton FROM DISK = 'C:\\crypton_backup_bd_20210503054138.bak' WITH FILE = 1, NOUNLOAD, STATS = 5; ";
+            QueryInsert cmd = new QueryInsert();
+
+            Debug.WriteLine("QUERY:" + sql);
+
+            //Registro el backup.
+            this.insert(backup);
+
+            //Retorno la ejecucion del comando.
+            return cmd.query(sql);
+
         }
     }
 }

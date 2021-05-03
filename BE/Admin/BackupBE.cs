@@ -12,5 +12,6 @@ namespace BE
         public UsuarioBE usuario;
         public string path;
         public DateTime fecRec;
+        public string type;
     }
 }

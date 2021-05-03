@@ -34,6 +34,7 @@ create table usuario(
 );
 
 insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd) values('Damian','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234');
+select * from usuario;
 
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
@@ -84,8 +85,11 @@ create table admin_backup
 	idbackup int identity(1,1) primary key,
 	idusuario bigint,
 	[path] varchar(100),
-	fecRec datetime
+	fecRec datetime,
+	[type] varchar(100)
 );
+
+select * from admin_backup;
 
 --Validaciones de identidad, se ingresa documentacion y estado.
 create table solic_onboarding(
@@ -313,3 +317,7 @@ insert into usuario_permiso(idusuario,idpermiso) values(2,2)
 
 
 --BACKUP DATABASE Crypton TO DISK = 'c:\SQLCrypton.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB';
+
+use master;
+RESTORE DATABASE Crypton FROM DISK = 'C:\crypton_backup_bd_20210503054138.bak' WITH  FILE = 1,  NOUNLOAD,  STATS = 5;
+use Crypton;
