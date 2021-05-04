@@ -31,12 +31,16 @@ namespace UI
         private void Button1_Click(object sender, EventArgs e)
         {
             /*
+            DvhBE dvhBE = new DvhDAL().findByKey("usuario");
+            Debug.WriteLine("---->"+dvhBE.tabla);
+            */
+            /*
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
                 {"email","pepe@pepe.com"},
                 { "tipo_usuario",2}
             };
-
+            che
             QueryUpdate upd = new QueryUpdate();
             upd.updateSchemaById(schema, "usuario", "idusuario", 2);
             */

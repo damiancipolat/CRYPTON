@@ -21,6 +21,8 @@ DROP TABLE IF EXISTS permiso; --BE
 DROP TABLE IF EXISTS rol_permiso; --BE
 DROP TABLE IF EXISTS usuario_permiso; --BE
 DROP TABLE IF EXISTS admin_backup; --BE
+DROP TABLE IF EXISTS dvh; --BE
+
 
 --Tabla de usuarios.
 create table usuario(
@@ -34,7 +36,7 @@ create table usuario(
 	[hash] text
 );
 
-insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) values('KIKI','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234','211111111');
+insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) values('KIKI2','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234','trytrytrytryertfdgsdfgfd4354354353453443543');
 select * from usuario;
 
 --Tipo de usuario cliente, empleado.
@@ -44,6 +46,16 @@ create table tipo_usuario(
 );
 insert into tipo_usuario values('Cliente');
 insert into tipo_usuario values('Empleado');
+
+---Tabla con digito verificadores verticales.
+create table dvh(
+	tabla varchar(100) primary key,
+	[hash] text,
+	fecUpdate datetime
+);
+
+insert into dvh(tabla,[hash],fecUpdate) values('usuario','asdsadsadsadsadsad',GETDATE());
+select * from dvh;
 
 --Tabla de permisos
 create table permiso

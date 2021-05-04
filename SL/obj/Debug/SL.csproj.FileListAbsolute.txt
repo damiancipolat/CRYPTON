@@ -1,6 +1,5 @@
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\bin\Debug\SL.dll
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\bin\Debug\SL.pdb
-C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.csprojAssemblyReference.cache
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.csproj.CoreCompileInputs.cache
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.dll
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.pdb
