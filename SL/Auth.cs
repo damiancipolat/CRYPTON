@@ -13,11 +13,24 @@ namespace SL
 {
     public class Auth
     {
+        //Singleton logic.
+        private static Auth _instance;
+
+        public static Auth GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Auth();
+            }
+
+            return _instance;
+        }
+
         private void startSession(UsuarioBE user)
         {
             //Inicio la sesion.
             Session newSession = Session.GetInstance();
-            newSession.sessionStart(user);
+            newSession.start(user);
 
             //Cargo idioma por defecto.
             Dictionary<string, string> words = new IdiomaDAL().loadWords("ES");

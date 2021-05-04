@@ -177,7 +177,7 @@ namespace UI
         {
             try
             {
-                UsuarioBE user = new Auth().login(txt_email.Text, txt_pwd.Text);
+                UsuarioBE user = Auth.GetInstance().login(txt_email.Text, txt_pwd.Text);
                 MessageBox.Show("Acceso permitido", "LOGIN");
             }
             catch (Exception error) {                

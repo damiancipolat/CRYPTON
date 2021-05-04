@@ -33,7 +33,7 @@ namespace SL
         private Dictionary<string, string> language;
 
         //Start the session bind values.
-        public void sessionStart(UsuarioBE userParam)
+        public void start(UsuarioBE userParam)
         {
             //Deny active an active session.
             if (active)
@@ -48,7 +48,7 @@ namespace SL
         }
 
         //Finish the session.
-        public void sessionEnd()
+        public void close()
         {
             //Active session flags.
             active = false;
@@ -65,11 +65,3 @@ namespace SL
         }
     }
 }
-
-
-/*
-         Dictionary<string, object> result = new Dictionary<string, object>();
-
-foreach (KeyValuePair<string, object> data in rows)
-    result.Add(data.Key, data.Value);
- */
