@@ -11,6 +11,19 @@ namespace SL
 {
     public class Cripto
     {
+        //Singleton logic.
+        private static Cripto _instance;
+
+        public static Cripto GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Cripto();
+            }
+
+            return _instance;
+        }
+
         //Genera un hash MD5 en base a un texto.
         public string GetHash(string texto)
         {

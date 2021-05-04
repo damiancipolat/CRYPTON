@@ -11,6 +11,19 @@ namespace SL
 {
     public class Integrity
     {
+        //Singleton logic.
+        private static Integrity _instance;
+
+        public static Integrity GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Integrity();
+            }
+
+            return _instance;
+        }
+
         //Verifica integridad solo de usuarios.
         private bool validateDvhUsers()
         {

@@ -26,6 +26,7 @@ namespace SL
             return _instance;
         }
 
+        //Business methods.
         private void startSession(UsuarioBE user)
         {
             //Inicio la sesion.
@@ -40,10 +41,10 @@ namespace SL
         public UsuarioBE login(string email, string pwd)
         {
             //Antes de hacer el login, hago una prueba de integridad.
-            //new Integrity().validateComplete();
+            Integrity.GetInstance().validateComplete();
 
            //Encripto el password para que coincida con la bd.
-            string criptedPwd = new Cripto().GetHash(pwd);
+            string criptedPwd = Cripto.GetInstance().GetHash(pwd);
             
            //Busco el usuario para el login.
            UsuarioBE user= new UsuarioDAL().login(email, criptedPwd);
