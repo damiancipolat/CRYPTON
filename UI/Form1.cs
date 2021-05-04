@@ -30,6 +30,12 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            UsuarioDAL user = new UsuarioDAL();
+            UsuarioBE damBE = user.login("damian.cipolat@gmail.com", "1234"); ;
+            Debug.WriteLine("ddddd" + damBE.apellido + "-" + damBE.tipoUsuario);
+
+            //user.findAll();
+
             /*
             DvhBE dvhBE = new DvhDAL().findByKey("usuario");
             Debug.WriteLine("---->"+dvhBE.tabla);

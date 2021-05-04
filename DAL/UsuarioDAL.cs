@@ -13,26 +13,25 @@ namespace DAL
 {
     public class UsuarioDAL
     {
-        //Bindea el schema de usuario con el data reader.
-        private UsuarioBE bindSchema(List<Object> result)
+
+        //Bindea la lista de campos de un registro de una consulta, con un objeto BE.
+        private UsuarioBE bindSchema(List<Object> fieldData)
         {
-            if (!(result.Count > 0))
+            if (fieldData.Count== 0)
                 return null;
 
-            //Cargo el resultado en un mapa para traer los campos que no se pueden bindear directo.
-            SqlParser parser = new SqlParser();
-            Dictionary<string, object> mapa = parser.rowToDictionary(((IEnumerable)result[0]).Cast<object>().ToList());
-
-            //Armo el usuario resultado.
+            //Armo un usuario que sera el cual se actualizara los campos.
             UsuarioBE userTarget = new UsuarioBE();
 
-            //Bindeo campos
-            EntityBinder.bindOne(result, userTarget);
+            //Bindeo campos con la lista de resultados.
+            new EntityBinder().match(fieldData, userTarget);
 
-            //Bindeo el tipo de usuario a enum.
+            //Actualizo el tipo de usuario que es un enum.            
+            Dictionary<string, object> mapa = new SqlParser().rowToDictionary(fieldData);
             userTarget.tipoUsuario = (UsuarioTipo)mapa["tipo_usuario"];
 
             return userTarget;
+
         }
 
         //Este metodo obtiene en base al ID el usuario.
@@ -42,8 +41,23 @@ namespace DAL
             List<object> result = new QuerySelect().selectById("usuario", "idusuario", id);
 
             //Bindeo con el esquema.
-            return this.bindSchema(result);
+            return this.bindSchema((List<object>)result[0]);
 
+        }
+
+        //Este metodo retorna una lista de usuarios.
+        public List<UsuarioBE> findAll()
+        {
+            //Busco en la bd por id.
+            List<object> result = new QuerySelect().selectAll("usuario");
+
+            //Lista resultado.
+            List<UsuarioBE> lista = new List<UsuarioBE>();
+            
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
         }
 
         //Buscar usuario y contraseña.
@@ -56,7 +70,7 @@ namespace DAL
             }, "usuario");
 
             //Bindeo con el esquema.
-            return this.bindSchema(result);
+            return this.bindSchema((List<object>)result[0]);
         }
 
         //Agrega un nuevo usuario.

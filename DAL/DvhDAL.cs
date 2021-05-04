@@ -20,7 +20,7 @@ namespace DAL
             DvhBE userTarget = new DvhBE();
 
             //Bindeo campos
-            EntityBinder.bindOne(result, userTarget);
+            new EntityBinder().match(result, userTarget);
 
             return userTarget;
         }
