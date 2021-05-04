@@ -13,9 +13,6 @@ namespace DAL
         //Bindea el schema de usuario con el data reader.
         private DvhBE bindSchema(List<Object> result)
         {
-            if (!(result.Count > 0))
-                return null;
-
             //Armo el usuario resultado.
             DvhBE userTarget = new DvhBE();
 
@@ -33,7 +30,7 @@ namespace DAL
                     {"tabla",tabla}
             }, "dvh");
 
-            return this.bindSchema(result);
+            return this.bindSchema((List<Object>)result[0]);
         }
 
         //Agrega un nuevo registro en el dvh.

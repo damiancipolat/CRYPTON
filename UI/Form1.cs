@@ -32,7 +32,7 @@ namespace UI
         private void Button1_Click(object sender, EventArgs e)
         {
             Integrity check = new Integrity();
-            check.validateUsers();
+            check.validateComplete();
 
             /*
             UsuarioDAL user = new UsuarioDAL();

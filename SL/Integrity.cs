@@ -11,7 +11,8 @@ namespace SL
 {
     public class Integrity
     {
-        public bool validateUsers()
+        //Verifica integridad solo de usuarios.
+        private bool validateDvhUsers()
         {
             List<UsuarioBE> userList = new UsuarioDAL().findAll();
 
@@ -31,5 +32,37 @@ namespace SL
 
             return true;
         }
+
+        //Verifica integridad con tabla de dvv.
+        private bool validateDvvUsers()
+        {
+            UsuarioDAL user = new UsuarioDAL();
+            DvhDAL dv = new DvhDAL();
+
+            //Computo todos los hash de la tabla usuarios.
+            string fullHash = user.getEntityHash();
+
+            //Traigo la tabla del dvv para usuarios.
+            DvhBE dvBE = dv.find("usuario");
+            
+            //If not found register.
+            if (dvBE == null)
+                throw new Exception("Usuario verification table not found");
+
+            //Comparo hashes.
+            if (fullHash != dvBE.hash)
+                throw new Exception("Usuario vertical validation FAIL");
+
+            return true;
+        }
+
+        //Verifica la identidad de todas las tablas.
+        public bool validateComplete()
+        {
+            this.validateDvvUsers();
+            this.validateDvhUsers();
+            return true;
+        }
+
     }
 }
