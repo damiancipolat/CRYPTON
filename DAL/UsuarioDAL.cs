@@ -30,6 +30,9 @@ namespace DAL
             Dictionary<string, object> mapa = new SqlParser().rowToDictionary(fieldData);
             userTarget.tipoUsuario = (UsuarioTipo)mapa["tipo_usuario"];
 
+            //Blanqueo el campo de password.
+            userTarget.pwd = "";
+
             return userTarget;
 
         }
@@ -68,6 +71,9 @@ namespace DAL
                 {"email",email},
                 { "pwd",pwd}
             }, "usuario");
+
+            if (result.Count == 0)
+                return null;
 
             //Bindeo con el esquema.
             return this.bindSchema((List<object>)result[0]);

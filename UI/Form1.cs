@@ -31,8 +31,9 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Integrity check = new Integrity();
-            check.validateComplete();
+            new Auth().login("damian.cipolat@gmail.com","1234");
+            //Integrity check = new Integrity();
+            //check.validateComplete();
 
             /*
             UsuarioDAL user = new UsuarioDAL();

@@ -47,7 +47,7 @@ namespace SL
         }
 
         //Encripto un string usand el algporitmo AES, retorno bytes.
-        public byte[] Encrypt(string plainText)
+        public string Encrypt(string plainText)
         {
             byte[] Key = this.KeyToBytes();
             byte[] encrypted;
@@ -81,7 +81,7 @@ namespace SL
             Array.Copy(IV, 0, combinedIvCt, 0, IV.Length);
             Array.Copy(encrypted, 0, combinedIvCt, IV.Length, encrypted.Length);
 
-            return combinedIvCt;
+            return Convert.ToBase64String(combinedIvCt);
 
         }
 

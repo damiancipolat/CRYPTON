@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth.cs" />
     <Compile Include="HashUsuario.cs" />
     <Compile Include="Cripto.cs" />
     <Compile Include="Hasher.cs" />
