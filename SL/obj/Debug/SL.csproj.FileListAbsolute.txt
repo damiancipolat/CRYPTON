@@ -4,3 +4,8 @@ C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta d
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.dll
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.pdb
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.csprojAssemblyReference.cache
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\bin\Debug\BE.dll
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\bin\Debug\DAL.dll
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\bin\Debug\BE.pdb
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\bin\Debug\DAL.pdb
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.csproj.CopyComplete

@@ -40,3 +40,5 @@ C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta d
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\System.Text.Json.xml
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\System.ValueTuple.xml
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\SL.dll
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\SL.pdb

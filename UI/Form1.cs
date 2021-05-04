@@ -18,6 +18,7 @@ using DAL.DAO;
 using DAL;
 using DAL.Permiso;
 using DAL.Admin;
+using SL;
 
 namespace UI
 {
@@ -30,10 +31,16 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            UsuarioDAL user = new UsuarioDAL();
-            UsuarioBE damBE = user.login("damian.cipolat@gmail.com", "1234"); ;
-            Debug.WriteLine("ddddd" + damBE.apellido + "-" + damBE.tipoUsuario);
+            Integrity check = new Integrity();
+            check.validateUsers();
 
+            /*
+            UsuarioDAL user = new UsuarioDAL();
+            UsuarioBE damBE = user.findById(1);
+            string hash = new HashUsuario().hash(damBE);
+            Debug.WriteLine("HASH"+hash);
+            */
+            
             //user.findAll();
 
             /*
