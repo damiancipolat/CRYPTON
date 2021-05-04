@@ -44,7 +44,6 @@ namespace BE
 
                     //Bind values.
                     target.GetType().GetField(attributeName).SetValue(target, value);
-
                 }
             }
 

@@ -22,7 +22,8 @@ DROP TABLE IF EXISTS rol_permiso; --BE
 DROP TABLE IF EXISTS usuario_permiso; --BE
 DROP TABLE IF EXISTS admin_backup; --BE
 DROP TABLE IF EXISTS dvh; --BE
-
+DROP TABLE IF EXISTS idiomas; --BE
+DROP TABLE IF EXISTS idioma_palabras; --BE
 
 --Tabla de usuarios.
 create table usuario(
@@ -37,7 +38,10 @@ create table usuario(
 );
 
 insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) values('KIKI2','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234','trytrytrytryertfdgsdfgfd4354354353453443543');
+
 select * from usuario;
+update usuario set [hash]='545454545454',pwd='81dc9bdb52d04dc20036dbd8313ed055' where idusuario=1
+select * from usuario where  email='damian.cipolat@gmail.com' and pwd='mFOgWeYdsDwKqRk+ugo6AcMtWltjOoucrClzXYLKlpQ=';
 
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
@@ -276,7 +280,35 @@ CREATE TABLE bitacora
 	fec_log date NULL,
 	payload TEXT not NULL	
 );
+
 select * from bitacora;
+
+--Tabla de idiomas.
+create table idiomas
+(
+	code varchar(50) primary key,
+	descripcion varchar(100)
+);
+
+insert into idiomas(code,descripcion) values('ES','Español');
+insert into idiomas(code,descripcion) values('ENG','English');
+
+--Tabla de palabras por idioma.
+create table idioma_palabras
+(
+	idpalabra int identity(1,1) primary key,
+	code varchar(50),
+	clave varchar(50),
+	valor varchar(50)
+);
+
+insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');
+insert into idioma_palabras(code,clave,valor) values('ES','HELLO','Hola');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN','Iniciar sesion');
+
+select * from idioma_palabras;
+
+
 /*
 /*	VISTAS */
 DROP VIEW IF EXISTS v_operaciones;
