@@ -33,14 +33,16 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            PermisoUserDAL permUser = new PermisoUserDAL();
+            new frm_login().Show();
+
+            /*PermisoUserDAL permUser = new PermisoUserDAL();
             List<Componente> perms = permUser.FindAll("", 1);
             IList<Componente> childs = perms[0].Hijos;
             
             foreach (Componente pe in childs)
             {
                 Debug.WriteLine("---->"+pe.Id.ToString()+","+pe.Nombre);
-            }
+            }*/
 
             //PermisoUserDAL permiso = new PermisoUserDAL();
             //permiso.FindAll();
@@ -190,17 +192,43 @@ namespace UI
             dam.getEntityHash();
         }
 
-        private void Button2_Click_1(object sender, EventArgs e)
+        private void StatusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            try
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
+            //Show login pannels.
+            if (!Session.GetInstance().isActive())
             {
-                UsuarioBE user = Auth.GetInstance().login(txt_email.Text, txt_pwd.Text);
-                MessageBox.Show("Acceso permitido", "LOGIN");
+                this.btn_login.Visible = true;
+                this.txt_welcome.Visible = false;
             }
-            catch (Exception error) {                
-                MessageBox.Show("Acceso NO permitido", "LOGIN");
+            else
+            {
+                this.btn_login.Visible = false;
+                this.txt_welcome.Visible = true;
             }
 
         }
+
+        /*  private void Button2_Click_1(object sender, EventArgs e)
+          {
+              try
+              {
+                  UsuarioBE user = Auth.GetInstance().login(txt_email.Text, txt_pwd.Text);
+                  MessageBox.Show("Acceso permitido", "LOGIN");
+              }
+              catch (Exception error) {                
+                  MessageBox.Show("Acceso NO permitido", "LOGIN");
+              }
+
+          }*/
     }
 }

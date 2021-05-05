@@ -73,5 +73,11 @@ namespace SL
         {
             this.permissions = permissions;
         }
+
+        //Indica si la sesion esta activa o no.
+        public bool isActive()
+        {
+            return this.active == true;
+        }
     }
 }

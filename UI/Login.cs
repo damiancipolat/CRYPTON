@@ -7,14 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SL;
+using BE;
 
 namespace UI
 {
-    public partial class Login : Form
+    public partial class frm_login : Form
     {
-        public Login()
+        public frm_login()
         {
             InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //Deny acces with booth white flags.
+            if ((this.txt_email.Text == "") && (this.txt_pwd.Text == ""))
+            {
+                MessageBox.Show("Debe completar, el usuario y contraseña");
+                return;
+            }
+
+            //Validate login.
+            Auth auth = new Auth();
+            UsuarioBE user = auth.login(this.txt_email.Text, this.txt_pwd.Text);
+
+            if (user == null)
+            {
+                MessageBox.Show("Acceso incorrecto, verifique sus datos,");
+                return;
+            }
+
+            //Muestro mensaje de bienvenida.
+            MessageBox.Show("Bienvenido: "+user.nombre+"!!");
+            this.Close();
         }
     }
 }

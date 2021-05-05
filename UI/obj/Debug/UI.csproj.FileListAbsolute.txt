@@ -37,10 +37,11 @@ C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta d
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\System.ValueTuple.xml
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csprojAssemblyReference.cache
-C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.Form1.resources
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.Properties.Resources.resources
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.GenerateResource.cache
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.CopyComplete
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.exe
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.pdb
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.Main.resources
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.frm_login.resources

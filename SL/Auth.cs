@@ -48,7 +48,7 @@ namespace SL
         public UsuarioBE login(string email, string pwd)
         {
             //Antes de hacer el login, hago una prueba de integridad.
-            Integrity.GetInstance().validateComplete();
+            //Integrity.GetInstance().validateComplete();
 
            //Encripto el password para que coincida con la bd.
             string criptedPwd = Cripto.GetInstance().GetHash(pwd);
