@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,25 @@ namespace UI
         public Main()
         {
             InitializeComponent();
+        }
+
+        //Se ejecuta al inicio del formulario, setea idioma base.
+        private void bootstrap()
+        {
+            //Load default language.
+            string defaultLang = ConfigurationManager.AppSettings["Language"];
+
+            if (!(defaultLang != ""))
+                throw new Exception("Unable to load default language");
+
+            //Load words.
+            Dictionary<string,string> lang = new IdiomaDAL().loadWords(defaultLang);
+            
+            if (lang.Values.Count==0)
+                throw new Exception("Unable to load words from default language");
+
+            //Load in session the list of words.
+            Session.GetInstance().setLanguage(defaultLang, lang);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -183,7 +203,7 @@ namespace UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.bootstrap();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -192,23 +212,12 @@ namespace UI
             dam.getEntityHash();
         }
 
-        private void StatusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Main_Shown(object sender, EventArgs e)
-        {
-
-        }
-
         private void Main_Paint(object sender, PaintEventArgs e)
         {
+            this.main_txt_hello.Parent = this.pictureBox1;
+            this.main_txt_hello.BackColor = Color.Transparent;            
+            this.main_txt_hello.Top= this.Size.Height -110;
+
             //Show login pannels.
             if (!Session.GetInstance().isActive())
             {
@@ -222,6 +231,13 @@ namespace UI
                 this.txt_welcome.Text = "Bievenido "+Session.GetInstance().getUser().nombre;
             }
 
+        }
+
+        private void Main_Resize(object sender, EventArgs e)
+        {
+            this.main_txt_hello.Parent = this.pictureBox1;
+            this.main_txt_hello.BackColor = Color.Transparent;
+            this.main_txt_hello.Top = this.Size.Height - 110;
         }
 
         /*  private void Button2_Click_1(object sender, EventArgs e)

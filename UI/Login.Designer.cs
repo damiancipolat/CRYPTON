@@ -131,7 +131,7 @@
             // frm_login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(870, 461);
+            this.ClientSize = new System.Drawing.Size(860, 461);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_pwd);
@@ -141,6 +141,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_login";
