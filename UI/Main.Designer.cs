@@ -72,6 +72,7 @@
             // txt_welcome
             // 
             this.txt_welcome.AutoSize = true;
+            this.txt_welcome.BackColor = System.Drawing.Color.Transparent;
             this.txt_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_welcome.Location = new System.Drawing.Point(360, 148);
             this.txt_welcome.Name = "txt_welcome";
@@ -93,6 +94,7 @@
             this.Text = "Crypton - home";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Main_Shown);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

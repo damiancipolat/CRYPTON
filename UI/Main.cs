@@ -204,6 +204,11 @@ namespace UI
 
         private void Main_Shown(object sender, EventArgs e)
         {
+
+        }
+
+        private void Main_Paint(object sender, PaintEventArgs e)
+        {
             //Show login pannels.
             if (!Session.GetInstance().isActive())
             {
@@ -214,6 +219,7 @@ namespace UI
             {
                 this.btn_login.Visible = false;
                 this.txt_welcome.Visible = true;
+                this.txt_welcome.Text = "Bievenido "+Session.GetInstance().getUser().nombre;
             }
 
         }

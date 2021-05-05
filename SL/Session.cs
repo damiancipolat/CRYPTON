@@ -36,6 +36,12 @@ namespace SL
         private string languageName;
         private Dictionary<string, string> language;
 
+        //Get the user.
+        public UsuarioBE getUser()
+        {
+            return this.user;
+        }
+
         //Start the session bind values.
         public void start(UsuarioBE userParam)
         {
