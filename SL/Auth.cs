@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using DAL;
 using DAL.Idiomas;
+using DAL.Permiso;
 using BE;
+using BE.Permisos;
 using SL;
+using SEC;
 
 namespace SL
 {
@@ -36,6 +39,10 @@ namespace SL
             //Cargo idioma por defecto.
             Dictionary<string, string> words = new IdiomaDAL().loadWords("ES");
             newSession.setLanguage("ES", words);
+
+            //Cargo los permisos del usuario.
+            PermisoUserDAL permUser = new PermisoUserDAL();
+            newSession.setPermission(permUser.FindAll("", 1));
         }
 
         public UsuarioBE login(string email, string pwd)

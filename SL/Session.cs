@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using BE.Permisos;
 
 namespace SL
 {
@@ -27,6 +28,9 @@ namespace SL
         private UsuarioBE user;
         private DateTime startDate;
         private DateTime endDate;
+
+        //Permission list.
+        private List<Componente> permissions;
 
         //Language
         private string languageName;
@@ -62,6 +66,12 @@ namespace SL
         {
             languageName = langName;
             language = langList;
+        }
+
+        //Set permission list.
+        public void setPermission(List<Componente> permissions)
+        {
+            this.permissions = permissions;
         }
     }
 }

@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 
-namespace SL
+namespace SEC
 {
-    public class HashUsuario: Hasher
+    public class HashUsuario
     {
-        public override string hash(Object target)
+        protected Cripto coders = new Cripto();
+
+        public string hash(UsuarioBE target)
         {
-            UsuarioBE user = (UsuarioBE)target;
+            UsuarioBE user = target;
 
             string chunk = user.idusuario.ToString() +
                 user.nombre +

@@ -41,7 +41,6 @@ insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) values(
 
 select * from usuario;
 update usuario set [hash]='545454545454',pwd='81dc9bdb52d04dc20036dbd8313ed055' where idusuario=1
-select * from usuario where  email='damian.cipolat@gmail.com' and pwd='mFOgWeYdsDwKqRk+ugo6AcMtWltjOoucrClzXYLKlpQ=';
 
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
@@ -95,6 +94,9 @@ create table usuario_permiso
 	idusuario bigint,
 	idpermiso int
 );
+
+insert into usuario_permiso values(1,3);
+select * from usuario_permiso
 
 --Tabla de registro de backups.
 create table admin_backup
@@ -351,7 +353,7 @@ select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente,up.idusuario
 from recursivo r
 inner join permiso p on r.idpermiso = p.idpermiso
 inner join usuario_permiso up on up.idpermiso=p.idpermiso
-where up.idusuario=2;
+where up.idusuario=1;
 
 
 select * from usuario_permiso

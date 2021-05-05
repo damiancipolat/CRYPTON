@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Configuration;
 using System.IO;
 
-namespace SL
+namespace SEC
 {
     public class Cripto
     {

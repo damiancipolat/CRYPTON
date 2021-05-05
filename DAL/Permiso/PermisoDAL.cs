@@ -74,9 +74,9 @@ namespace DAL
             return component;
 
         }
-     
+
         //Ejecuta la busqueda tanto por cliente o libre.
-        protected IList<Componente> Find(string sql)
+        protected List<Componente> Find(string sql)
         {
             //Instancio el sql builder.
             QuerySelect builder = new QuerySelect();
