@@ -25,16 +25,44 @@ using SEC;
 
 namespace UI
 {
-    public partial class Main : Form
+    public partial class frm_main : Form
     {
-        public Main()
+        public frm_main()
         {
             InitializeComponent();
         }
 
-        //Se ejecuta al inicio del formulario, setea idioma base.
-        private void bootstrap()
+        //Metodos de rener.
+        public void render()
         {
+            //Posiciona el splash screen en el centro.
+            this.main_splash.Left = (this.Width / 2) - (this.main_splash.Width / 2);
+            this.main_splash.Top = (this.Height / 2) - (this.main_splash.Height / 2);
+
+            //Vuelve transparente un label.
+            this.main_txt_hello.Parent = this.pictureBox1;
+            this.main_txt_hello.BackColor = Color.Transparent;
+            this.main_txt_hello.Top = this.Size.Height - 110;
+            Debug.WriteLine(">>>" + Session.GetInstance().isActive().ToString());
+
+            //Cuando la sesion esta activa.
+            if (Session.GetInstance().isActive())
+            {
+                
+                this.main_splash.Hide();
+            }
+            else
+            {
+                this.main_splash.Show();
+            }
+            
+        }
+
+        //Se ejecuta al inicio del formulario, setea idioma base.
+        public void bootstrap()
+        {
+            this.render();
+
             //Load default language.
             string defaultLang = ConfigurationManager.AppSettings["Language"];
 
@@ -51,9 +79,22 @@ namespace UI
             Session.GetInstance().setLanguage(defaultLang, lang);
         }
 
+        private bool isWindowOpen(string name)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm!=null&&frm.Name == name)
+                    return true;
+            }
+
+            return false;
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            new frm_login().Show();
+            //Abro el login si no esta abierto.
+             if (!isWindowOpen("frm_login"))
+                new frm_login(this).Show();
 
             /*PermisoUserDAL permUser = new PermisoUserDAL();
             List<Componente> perms = permUser.FindAll("", 1);
@@ -214,9 +255,7 @@ namespace UI
 
         private void Main_Paint(object sender, PaintEventArgs e)
         {
-            this.main_txt_hello.Parent = this.pictureBox1;
-            this.main_txt_hello.BackColor = Color.Transparent;            
-            this.main_txt_hello.Top= this.Size.Height -110;
+            this.render();
 
             //Show login pannels.
             if (!Session.GetInstance().isActive())
@@ -235,22 +274,67 @@ namespace UI
 
         private void Main_Resize(object sender, EventArgs e)
         {
-            this.main_txt_hello.Parent = this.pictureBox1;
-            this.main_txt_hello.BackColor = Color.Transparent;
-            this.main_txt_hello.Top = this.Size.Height - 110;
+            this.render();
         }
 
-        /*  private void Button2_Click_1(object sender, EventArgs e)
-          {
-              try
-              {
-                  UsuarioBE user = Auth.GetInstance().login(txt_email.Text, txt_pwd.Text);
-                  MessageBox.Show("Acceso permitido", "LOGIN");
-              }
-              catch (Exception error) {                
-                  MessageBox.Show("Acceso NO permitido", "LOGIN");
-              }
+        private void Txt_welcome_Click(object sender, EventArgs e)
+        {
 
-          }*/
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Main_splash_Resize(object sender, EventArgs e)
+        {
+            this.render();
+        }
+
+        private void Btn_login_Leave(object sender, EventArgs e)
+        {
+            this.render();
+        }
+
+        private void Btn_login_Enter(object sender, EventArgs e)
+        {
+            this.render();
+        }
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
+            this.render();
+        }
+
+        private void Frm_main_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void ToolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void StatusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void CambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Language().Show();
+        }
     }
 }

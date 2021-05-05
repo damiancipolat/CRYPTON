@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_email_title = new System.Windows.Forms.Label();
@@ -44,22 +43,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(148, 34);
+            this.label1.Location = new System.Drawing.Point(148, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 39);
+            this.label1.Size = new System.Drawing.Size(207, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Iniciar sesión";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(151, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(671, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Bienvenido a crypton! en esta pantalla debes completar tus datos para empezar a o" +
-    "perar";
             // 
             // pictureBox1
             // 
@@ -74,16 +62,16 @@
             // txt_email
             // 
             this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.Location = new System.Drawing.Point(155, 186);
+            this.txt_email.Location = new System.Drawing.Point(154, 121);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(574, 34);
+            this.txt_email.Size = new System.Drawing.Size(334, 34);
             this.txt_email.TabIndex = 3;
             // 
             // txt_email_title
             // 
             this.txt_email_title.AutoSize = true;
             this.txt_email_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email_title.Location = new System.Drawing.Point(151, 148);
+            this.txt_email_title.Location = new System.Drawing.Point(151, 83);
             this.txt_email_title.Name = "txt_email_title";
             this.txt_email_title.Size = new System.Drawing.Size(149, 24);
             this.txt_email_title.TabIndex = 5;
@@ -93,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(151, 245);
+            this.label3.Location = new System.Drawing.Point(151, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(189, 24);
             this.label3.TabIndex = 6;
@@ -102,17 +90,17 @@
             // txt_pwd
             // 
             this.txt_pwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pwd.Location = new System.Drawing.Point(158, 283);
+            this.txt_pwd.Location = new System.Drawing.Point(157, 218);
             this.txt_pwd.Name = "txt_pwd";
             this.txt_pwd.PasswordChar = '*';
-            this.txt_pwd.Size = new System.Drawing.Size(574, 34);
+            this.txt_pwd.Size = new System.Drawing.Size(331, 34);
             this.txt_pwd.TabIndex = 7;
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(155, 362);
+            this.btn_login.Location = new System.Drawing.Point(157, 273);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(278, 49);
+            this.btn_login.Size = new System.Drawing.Size(143, 49);
             this.btn_login.TabIndex = 8;
             this.btn_login.Text = "Ingresar";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -121,9 +109,9 @@
             // btn_register
             // 
             this.btn_register.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_register.Location = new System.Drawing.Point(472, 362);
+            this.btn_register.Location = new System.Drawing.Point(323, 273);
             this.btn_register.Name = "btn_register";
-            this.btn_register.Size = new System.Drawing.Size(260, 49);
+            this.btn_register.Size = new System.Drawing.Size(165, 49);
             this.btn_register.TabIndex = 9;
             this.btn_register.Text = "Registrarme";
             this.btn_register.UseVisualStyleBackColor = false;
@@ -131,7 +119,7 @@
             // frm_login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(860, 461);
+            this.ClientSize = new System.Drawing.Size(558, 364);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_pwd);
@@ -139,7 +127,6 @@
             this.Controls.Add(this.txt_email_title);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -147,6 +134,7 @@
             this.Name = "frm_login";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Frm_login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,7 +144,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label txt_email_title;

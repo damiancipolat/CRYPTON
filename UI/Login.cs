@@ -14,8 +14,11 @@ namespace UI
 {
     public partial class frm_login : Form
     {
-        public frm_login()
+        private frm_main parent;
+
+        public frm_login(frm_main parent)
         {
+            this.parent = parent;
             InitializeComponent();
         }
 
@@ -37,10 +40,17 @@ namespace UI
                 MessageBox.Show("Acceso incorrecto, verifique sus datos,");
                 return;
             }
-
+            
             //Muestro mensaje de bienvenida.
-            MessageBox.Show("Bienvenido: "+user.nombre+"!!");
+            MessageBox.Show("Bienvenido: "+user.nombre+"!!");        
+            this.parent.render();
             this.Close();
+
+        }
+
+        private void Frm_login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
