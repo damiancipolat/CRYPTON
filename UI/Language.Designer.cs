@@ -102,6 +102,7 @@
             this.MinimizeBox = false;
             this.Name = "Language";
             this.Text = "Language";
+            this.Load += new System.EventHandler(this.Language_Load);
             this.Shown += new System.EventHandler(this.Language_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

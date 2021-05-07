@@ -82,5 +82,10 @@ namespace UI
             }
             
         }
+
+        private void Language_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

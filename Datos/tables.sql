@@ -312,7 +312,16 @@ insert into idioma_palabras(code,clave,valor) values('ES','LOGIN','Iniciar sesio
 insert into idioma_palabras(code,clave,valor) values('ES','LANG_CHOOSE_TITLE','Seleccionar idioma');
 insert into idioma_palabras(code,clave,valor) values('ES','BUTTON_OK','Aceptar');
 insert into idioma_palabras(code,clave,valor) values('ES','BUTTON_CANCEL','Cancelar');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_TITLE_1','Iniciar sesión');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_TITLE_EMAIL','Escriba su email');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_TITLE_PASSWORD','Escriba su password');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_BTN_INGRESAR','Ingresar');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_BTN_REGISTER','Registrarme');
 
+login_btn_ingresar	Ingresar
+login_btn_register  Registrarme
+
+truncate table idioma_palabras;
 select * from idioma_palabras;
 
 

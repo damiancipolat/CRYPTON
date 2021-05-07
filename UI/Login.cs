@@ -9,17 +9,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SL;
 using BE;
+using UI.utils;
 
 namespace UI
 {
     public partial class frm_login : Form
     {
+        //Reference to main windos.
         private frm_main parent;
+
+        //Lista de relacion campos vs bindeos.
+        private Dictionary<string, string> labelBindings = new Dictionary<string, string>{
+                {"login_title_1","LOGIN_TITLE_1"},
+                { "login_title_email","LOGIN_TITLE_EMAIL"},
+                { "login_title_password","LOGIN_TITLE_PASSWORD"},
+                { "login_btn_register","LOGIN_BTN_REGISTER"},
+                { "login_btn_ingresar","LOGIN_BTN_INGRESAR"}
+            };
 
         public frm_login(frm_main parent)
         {
             this.parent = parent;
             InitializeComponent();
+
+            //Realizo actualizacion.
+            new labelBinder().bindKeys(this, this.labelBindings);
         }
 
         private void Button1_Click(object sender, EventArgs e)
