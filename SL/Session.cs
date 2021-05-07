@@ -74,6 +74,12 @@ namespace SL
             language = langList;
         }
 
+        //Get languange words.
+        public Dictionary<string, string> getLanguangeWords()
+        {
+            return language;
+        }
+
         //Set permission list.
         public void setPermission(List<Componente> permissions)
         {

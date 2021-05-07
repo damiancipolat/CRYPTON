@@ -95,7 +95,9 @@ create table usuario_permiso
 	idpermiso int
 );
 
-insert into usuario_permiso values(1,3);
+insert into usuario_permiso values(1,4);
+insert into usuario_permiso values(1,5);
+insert into usuario_permiso values(1,6);
 select * from usuario_permiso
 
 --Tabla de registro de backups.
@@ -307,6 +309,9 @@ create table idioma_palabras
 insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');
 insert into idioma_palabras(code,clave,valor) values('ES','HELLO','Hola');
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN','Iniciar sesion');
+insert into idioma_palabras(code,clave,valor) values('ES','LANG_CHOOSE_TITLE','Seleccionar idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','BUTTON_OK','Aceptar');
+insert into idioma_palabras(code,clave,valor) values('ES','BUTTON_CANCEL','Cancelar');
 
 select * from idioma_palabras;
 
@@ -343,18 +348,17 @@ as(
 );
 
 with recursivo as(
-	select sp2.idrol, sp2.idpermiso from rol_permiso SP2
-	where sp2.idrol is NULL
-	UNION ALL
-	select sp.idrol, sp.idpermiso from rol_permiso sp
-	inner join recursivo r on r.idpermiso = sp.idrol
-)
-select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente,up.idusuario
-from recursivo r
-inner join permiso p on r.idpermiso = p.idpermiso
-inner join usuario_permiso up on up.idpermiso=p.idpermiso
-where up.idusuario=1;
-
+               select sp2.idrol, sp2.idpermiso from rol_permiso SP2
+               where sp2.idrol is NULL
+               UNION ALL
+               select sp.idrol, sp.idpermiso from rol_permiso sp
+               inner join recursivo r on r.idpermiso = sp.idrol
+            ) 
+            select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente
+            from recursivo r
+            inner join permiso p on r.idpermiso = p.idpermiso
+            inner join usuario_permiso up on up.idpermiso = p.idpermiso
+            where up.idusuario = 1;
 
 select * from usuario_permiso
 select * from usuario

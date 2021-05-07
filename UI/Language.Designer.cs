@@ -42,9 +42,9 @@
             this.language_txt_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.language_txt_title.Location = new System.Drawing.Point(85, 28);
             this.language_txt_title.Name = "language_txt_title";
-            this.language_txt_title.Size = new System.Drawing.Size(239, 29);
+            this.language_txt_title.Size = new System.Drawing.Size(200, 29);
             this.language_txt_title.TabIndex = 0;
-            this.language_txt_title.Text = "Seleccione el idioma";
+            this.language_txt_title.Text = "language_txt_title";
             this.language_txt_title.Click += new System.EventHandler(this.Language_txt_title_Click);
             // 
             // language_combo
@@ -73,7 +73,7 @@
             this.language_accept.Name = "language_accept";
             this.language_accept.Size = new System.Drawing.Size(150, 37);
             this.language_accept.TabIndex = 3;
-            this.language_accept.Text = "Aceptar";
+            this.language_accept.Text = "language_accept";
             this.language_accept.UseVisualStyleBackColor = true;
             this.language_accept.Click += new System.EventHandler(this.Language_accept_Click);
             // 
@@ -83,7 +83,7 @@
             this.language_cancel.Name = "language_cancel";
             this.language_cancel.Size = new System.Drawing.Size(150, 37);
             this.language_cancel.TabIndex = 4;
-            this.language_cancel.Text = "Cancelar";
+            this.language_cancel.Text = "language_cancel";
             this.language_cancel.UseVisualStyleBackColor = true;
             this.language_cancel.Click += new System.EventHandler(this.Language_cancel_Click);
             // 

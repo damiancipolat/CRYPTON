@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using BE;
 using DAL.DAO;
 
@@ -58,6 +59,7 @@ namespace DAL.Idiomas
             //Load the dictionary.
             foreach (List<object> row in words)
             {
+                //Convierto a diccionario y extraigo los campos de la tabla de palabras "clave" y "valor".
                 Dictionary<string, object> word = new SqlParser().rowToDictionary(row);
                 result.Add(word["clave"].ToString(), word["valor"].ToString());
             }

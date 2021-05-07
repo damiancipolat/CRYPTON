@@ -11,6 +11,7 @@ using System.Diagnostics;
 using DAL.Idiomas;
 using BE;
 using SL;
+using UI.utils;
 
 namespace UI
 {
@@ -18,9 +19,19 @@ namespace UI
     {
         private List<IdiomaBE> languages;
 
+        //Lista de relacion campos vs bindeos.
+        private Dictionary<string, string> labelBindings = new Dictionary<string, string>{
+                {"language_txt_title","LANG_CHOOSE_TITLE"},
+                { "language_accept","BUTTON_OK"},
+                { "language_cancel","BUTTON_CANCEL"}
+            };
+
         public Language()
         {
             InitializeComponent();
+
+            //Realizo actualizacion.
+            new labelBinder().bindKeys(this,this.labelBindings);
         }
 
         private void Language_txt_title_Click(object sender, EventArgs e)
@@ -38,8 +49,8 @@ namespace UI
             //Clean combo items.
             this.language_combo.Items.Clear();
 
-            //Get all languages.
-            List<IdiomaBE> langs = new IdiomaDAL().findAll();
+            //Get all languages.            
+            List<IdiomaBE> langs = Idioma.GetInstance().getAll();
             this.languages = langs;
 
             if (langs.Count == 0)
@@ -59,7 +70,8 @@ namespace UI
             {
                 //Traigo la lista de idiomas.
                 IdiomaBE lang = this.languages[this.language_combo.SelectedIndex];
-                Session.GetInstance().setLanguage(lang.code, new IdiomaDAL().loadWords(lang.code));
+                Session.GetInstance().setLanguage(lang.code, Idioma.GetInstance().getWords(lang.code));
+                
                 MessageBox.Show("Idioma cambiado con exito!");
                 this.Close();
             }
