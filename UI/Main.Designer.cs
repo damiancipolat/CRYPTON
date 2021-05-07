@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_login = new System.Windows.Forms.Button();
+            this.main_btn_login = new System.Windows.Forms.Button();
             this.txt_welcome = new System.Windows.Forms.Label();
             this.main_txt_hello = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,59 +37,59 @@
             this.main_panel_wallets = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.main_splash = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.main_splash_title = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
-            this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.main_panel_der.SuspendLayout();
             this.main_panel_wallets.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.main_splash.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.main_splash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_login
+            // main_btn_login
             // 
-            this.btn_login.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btn_login.Location = new System.Drawing.Point(122, 211);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(148, 40);
-            this.btn_login.TabIndex = 0;
-            this.btn_login.Text = "Iniciar sesión";
-            this.btn_login.UseVisualStyleBackColor = false;
-            this.btn_login.Click += new System.EventHandler(this.Button1_Click);
+            this.main_btn_login.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.main_btn_login.Location = new System.Drawing.Point(122, 211);
+            this.main_btn_login.Name = "main_btn_login";
+            this.main_btn_login.Size = new System.Drawing.Size(148, 40);
+            this.main_btn_login.TabIndex = 0;
+            this.main_btn_login.Text = "main_btn_login";
+            this.main_btn_login.UseVisualStyleBackColor = false;
+            this.main_btn_login.Click += new System.EventHandler(this.Button1_Click);
             // 
             // txt_welcome
             // 
@@ -184,6 +184,17 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Tús billeteras";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::UI.Properties.Resources.wallet;
+            this.pictureBox2.Location = new System.Drawing.Point(18, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.UseWaitCursor = true;
+            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -196,6 +207,17 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(232, 104);
             this.panel13.TabIndex = 11;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::UI.Properties.Resources.argentina;
+            this.pictureBox9.Location = new System.Drawing.Point(18, 19);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 27;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.UseWaitCursor = true;
             // 
             // label14
             // 
@@ -231,6 +253,17 @@
             this.panel11.Size = new System.Drawing.Size(232, 101);
             this.panel11.TabIndex = 10;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::UI.Properties.Resources.BTC;
+            this.pictureBox8.Location = new System.Drawing.Point(18, 19);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 27;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.UseWaitCursor = true;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -264,6 +297,17 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(232, 100);
             this.panel9.TabIndex = 9;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::UI.Properties.Resources.LTC;
+            this.pictureBox7.Location = new System.Drawing.Point(18, 19);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 27;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.UseWaitCursor = true;
             // 
             // label10
             // 
@@ -299,6 +343,17 @@
             this.panel7.Size = new System.Drawing.Size(232, 98);
             this.panel7.TabIndex = 8;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::UI.Properties.Resources.DOGE;
+            this.pictureBox5.Location = new System.Drawing.Point(18, 19);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 27;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.UseWaitCursor = true;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -324,25 +379,35 @@
             // 
             this.main_splash.BackColor = System.Drawing.Color.White;
             this.main_splash.Controls.Add(this.pictureBox3);
-            this.main_splash.Controls.Add(this.label2);
-            this.main_splash.Controls.Add(this.btn_login);
+            this.main_splash.Controls.Add(this.main_splash_title);
+            this.main_splash.Controls.Add(this.main_btn_login);
             this.main_splash.Location = new System.Drawing.Point(477, 299);
             this.main_splash.Name = "main_splash";
             this.main_splash.Size = new System.Drawing.Size(403, 272);
             this.main_splash.TabIndex = 10;
             this.main_splash.Resize += new System.EventHandler(this.Main_splash_Resize);
             // 
-            // label2
+            // pictureBox3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(33, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(312, 25);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Hace click para ingresar al sistema";
-            this.label2.Click += new System.EventHandler(this.Label2_Click_1);
+            this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
+            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // main_splash_title
+            // 
+            this.main_splash_title.AutoSize = true;
+            this.main_splash_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.main_splash_title.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.main_splash_title.Location = new System.Drawing.Point(33, 161);
+            this.main_splash_title.Name = "main_splash_title";
+            this.main_splash_title.Size = new System.Drawing.Size(162, 25);
+            this.main_splash_title.TabIndex = 12;
+            this.main_splash_title.Text = "main_splash_title";
+            this.main_splash_title.Click += new System.EventHandler(this.Label2_Click_1);
             // 
             // statusStrip1
             // 
@@ -356,70 +421,23 @@
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StatusStrip1_ItemClicked);
             // 
-            // pictureBox3
+            // toolStripSplitButton2
             // 
-            this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
-            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
+            this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_change_language});
+            this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
+            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
+            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
+            this.toolStripSplitButton2.Text = "toolStripSplitButton2";
             // 
-            // pictureBox2
+            // main_change_language
             // 
-            this.pictureBox2.Image = global::UI.Properties.Resources.wallet;
-            this.pictureBox2.Location = new System.Drawing.Point(18, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.UseWaitCursor = true;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::UI.Properties.Resources.argentina;
-            this.pictureBox9.Location = new System.Drawing.Point(18, 19);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 27;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.UseWaitCursor = true;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::UI.Properties.Resources.BTC;
-            this.pictureBox8.Location = new System.Drawing.Point(18, 19);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 27;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.UseWaitCursor = true;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::UI.Properties.Resources.LTC;
-            this.pictureBox7.Location = new System.Drawing.Point(18, 19);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 27;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.UseWaitCursor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::UI.Properties.Resources.DOGE;
-            this.pictureBox5.Location = new System.Drawing.Point(18, 19);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 27;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.UseWaitCursor = true;
+            this.main_change_language.Name = "main_change_language";
+            this.main_change_language.Size = new System.Drawing.Size(247, 26);
+            this.main_change_language.Text = "main_change_language";
+            this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -431,24 +449,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(1428, 711);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // toolStripSplitButton2
-            // 
-            this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cambiarIdiomaToolStripMenuItem});
-            this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
-            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
-            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
-            this.toolStripSplitButton2.Text = "toolStripSplitButton2";
-            // 
-            // cambiarIdiomaToolStripMenuItem
-            // 
-            this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
-            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar idioma";
-            this.cambiarIdiomaToolStripMenuItem.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
             // 
             // frm_main
             // 
@@ -474,24 +474,24 @@
             this.main_panel_wallets.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.main_splash.ResumeLayout(false);
             this.main_splash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -500,7 +500,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_login;
+        private System.Windows.Forms.Button main_btn_login;
         private System.Windows.Forms.Label txt_welcome;
         private System.Windows.Forms.Label main_txt_hello;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -528,11 +528,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel main_splash;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label main_splash_title;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
-        private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem main_change_language;
     }
 }
 

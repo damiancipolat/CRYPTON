@@ -22,14 +22,25 @@ using DAL.Permiso;
 using DAL.Admin;
 using SL;
 using SEC;
+using UI.utils;
 
 namespace UI
 {
     public partial class frm_main : Form
     {
+        //Lista de relacion campos vs bindeos.
+        private Dictionary<string, string> labelBindings = new Dictionary<string, string>{
+                {"main_splash_title","MAIN_SPLASH_TITLE"},
+                { "main_btn_login","MAIN_BTN_LOGIN"},
+                { "main_change_language","MAIN_CHANGE_LANGUAGE"}                
+            };
+
         public frm_main()
         {
             InitializeComponent();
+
+            //Realizo actualizacion.
+            this.bootstrap();
         }
 
         //Metodos de rener.
@@ -61,22 +72,18 @@ namespace UI
         //Se ejecuta al inicio del formulario, setea idioma base.
         public void bootstrap()
         {
-            this.render();
-
             //Load default language.
-            string defaultLang = ConfigurationManager.AppSettings["Language"];
+            string defaultLang = Idioma.GetInstance().getDefault();
 
+            //Check if the default language is defined.
             if (!(defaultLang != ""))
                 throw new Exception("Unable to load default language");
 
-            //Load words.
-            Dictionary<string,string> lang = new IdiomaDAL().loadWords(defaultLang);
-            
-            if (lang.Values.Count==0)
-                throw new Exception("Unable to load words from default language");
-
             //Load in session the list of words.
-            Session.GetInstance().setLanguage(defaultLang, lang);
+            Session.GetInstance().setLanguage(defaultLang, Idioma.GetInstance().getWords(defaultLang));
+
+            //Bind text components.
+            new labelBinder().bindKeys(this, this.labelBindings);
         }
 
         private bool isWindowOpen(string name)
@@ -260,12 +267,12 @@ namespace UI
             //Show login pannels.
             if (!Session.GetInstance().isActive())
             {
-                this.btn_login.Visible = true;
+                this.main_btn_login.Visible = true;
                 this.txt_welcome.Visible = false;
             }
             else
             {
-                this.btn_login.Visible = false;
+                this.main_btn_login.Visible = false;
                 this.txt_welcome.Visible = true;
                 this.txt_welcome.Text = "Bievenido "+Session.GetInstance().getUser().nombre;
             }
