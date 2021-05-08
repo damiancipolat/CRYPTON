@@ -101,6 +101,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Language";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Language";
             this.Load += new System.EventHandler(this.Language_Load);
             this.Shown += new System.EventHandler(this.Language_Shown);

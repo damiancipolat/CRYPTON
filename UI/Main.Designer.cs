@@ -55,12 +55,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.main_splash = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.main_splash_title = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.main_panel_der.SuspendLayout();
             this.main_panel_wallets.SuspendLayout();
@@ -82,8 +84,8 @@
             // 
             // main_btn_login
             // 
-            this.main_btn_login.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.main_btn_login.Location = new System.Drawing.Point(122, 211);
+            this.main_btn_login.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.main_btn_login.Location = new System.Drawing.Point(45, 210);
             this.main_btn_login.Name = "main_btn_login";
             this.main_btn_login.Size = new System.Drawing.Size(148, 40);
             this.main_btn_login.TabIndex = 0;
@@ -378,6 +380,7 @@
             // main_splash
             // 
             this.main_splash.BackColor = System.Drawing.Color.White;
+            this.main_splash.Controls.Add(this.button1);
             this.main_splash.Controls.Add(this.pictureBox3);
             this.main_splash.Controls.Add(this.main_splash_title);
             this.main_splash.Controls.Add(this.main_btn_login);
@@ -387,6 +390,17 @@
             this.main_splash.TabIndex = 10;
             this.main_splash.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_splash_Paint);
             this.main_splash.Resize += new System.EventHandler(this.Main_splash_Resize);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.button1.Location = new System.Drawing.Point(209, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 40);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Registrar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // pictureBox3
             // 
@@ -451,11 +465,22 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(63, 157);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 711);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.main_splash);
             this.Controls.Add(this.panel3);
@@ -464,6 +489,7 @@
             this.Controls.Add(this.txt_welcome);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frm_main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crypton - home";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Main_Shown);
@@ -534,6 +560,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
         private System.Windows.Forms.ToolStripMenuItem main_change_language;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

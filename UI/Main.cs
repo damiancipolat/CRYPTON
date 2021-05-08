@@ -82,6 +82,9 @@ namespace UI
             
             //Cargo el lenguaje por defecto en la sesion.
             new labelBinder().bindKeys(this.Controls, this.labelBindings);
+
+            //Bindeo campos que no se pueden automaticamente.
+            this.main_change_language.Text = Idioma.GetInstance().translateWord("MAIN_CHANGE_LANGUAGE");
         }
 
         private bool isWindowOpen(string name)
@@ -344,6 +347,19 @@ namespace UI
         private void Main_splash_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            //Abro el signup si no esta abierto.
+            if (!isWindowOpen("frm_signup"))
+                new frm_signup(this).Show();
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            Debug.WriteLine("1) 1234" + new Cripto().GetHash("1234")) ;
+            Debug.WriteLine("2) 1234" + new Cripto().GetHash("1234"));
         }
     }
 }

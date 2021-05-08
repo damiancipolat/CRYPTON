@@ -38,7 +38,6 @@ create table usuario(
 );
 
 insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) values('KIKI2','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234','trytrytrytryertfdgsdfgfd4354354353453443543');
-
 select * from usuario;
 update usuario set [hash]='545454545454',pwd='81dc9bdb52d04dc20036dbd8313ed055' where idusuario=1
 
@@ -316,11 +315,21 @@ insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_TITLE_1','Inici
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_TITLE_EMAIL','Escriba su email');
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_TITLE_PASSWORD','Escriba su password');
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_BTN_INGRESAR','Ingresar');
-insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_BTN_REGISTER','Registrarme');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_SPLASH_TITLE','Ingresar');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_BTN_LOGIN','Registrarme');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_CHANGE_LANGUAGE','Registrarme');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_BTN_CANCEL','Cancelar');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_SPLASH_TITLE','Haga click para ingresar al sistema.');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_BTN_LOGIN','Ingresar');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_CHANGE_LANGUAGE','Cambiar idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','SINGUP_TITLE','Registrar nuevo usuario');
+insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_NAME','Escriba su nombre:');
+insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_SURNAME','Escriba su apellido:');
+insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_ALIAS','Escriba su alias:');
+insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_EMAIL','Escriba su email:');
+insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_PWD','Escriba su password:');
+insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_OK','Aceptar');
+insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_CANCEL','Cancelar');
 
+
+truncate table idioma_palabras;
 select * from idiomas;
 select * from idioma_palabras;
 
@@ -378,4 +387,4 @@ insert into usuario_permiso(idusuario,idpermiso) values(2,2)
 
 --BACKUP DATABASE Crypton TO DISK = 'c:\SQLCrypton.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB';
 --use master;RESTORE DATABASE Crypton FROM DISK = 'C:\crypton_backup_bd_20210503054138.bak' WITH  FILE = 1,  NOUNLOAD,  STATS = 5;
-select * from admin_backup
+--select * from admin_backup

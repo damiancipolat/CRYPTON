@@ -31,7 +31,7 @@ namespace UI
             InitializeComponent();
 
             //Realizo actualizacion.
-            //new labelBinder().bindKeys(this,this.labelBindings);
+            new labelBinder().bindKeys(this.Controls,this.labelBindings);
         }
 
         private void Language_txt_title_Click(object sender, EventArgs e)

@@ -35,7 +35,7 @@
             this.login_title_password = new System.Windows.Forms.Label();
             this.txt_pwd = new System.Windows.Forms.TextBox();
             this.login_btn_ingresar = new System.Windows.Forms.Button();
-            this.login_btn_register = new System.Windows.Forms.Button();
+            this.login_btn_cancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +52,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::UI.Properties.Resources.login1;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 96);
+            this.pictureBox1.Size = new System.Drawing.Size(98, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -106,21 +106,22 @@
             this.login_btn_ingresar.UseVisualStyleBackColor = true;
             this.login_btn_ingresar.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // login_btn_register
+            // login_btn_cancel
             // 
-            this.login_btn_register.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.login_btn_register.Location = new System.Drawing.Point(323, 273);
-            this.login_btn_register.Name = "login_btn_register";
-            this.login_btn_register.Size = new System.Drawing.Size(165, 49);
-            this.login_btn_register.TabIndex = 9;
-            this.login_btn_register.Text = "login_btn_register";
-            this.login_btn_register.UseVisualStyleBackColor = false;
+            this.login_btn_cancel.BackColor = System.Drawing.Color.Crimson;
+            this.login_btn_cancel.Location = new System.Drawing.Point(323, 273);
+            this.login_btn_cancel.Name = "login_btn_cancel";
+            this.login_btn_cancel.Size = new System.Drawing.Size(165, 49);
+            this.login_btn_cancel.TabIndex = 9;
+            this.login_btn_cancel.Text = "login_btn_cancel";
+            this.login_btn_cancel.UseVisualStyleBackColor = false;
+            this.login_btn_cancel.Click += new System.EventHandler(this.Login_btn_cancel_Click);
             // 
             // frm_login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(558, 364);
-            this.Controls.Add(this.login_btn_register);
+            this.Controls.Add(this.login_btn_cancel);
             this.Controls.Add(this.login_btn_ingresar);
             this.Controls.Add(this.txt_pwd);
             this.Controls.Add(this.login_title_password);
@@ -133,6 +134,7 @@
             this.MinimizeBox = false;
             this.Name = "frm_login";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Frm_login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -150,6 +152,6 @@
         private System.Windows.Forms.Label login_title_password;
         private System.Windows.Forms.TextBox txt_pwd;
         private System.Windows.Forms.Button login_btn_ingresar;
-        private System.Windows.Forms.Button login_btn_register;
+        private System.Windows.Forms.Button login_btn_cancel;
     }
 }

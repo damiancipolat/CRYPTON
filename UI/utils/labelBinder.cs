@@ -40,7 +40,7 @@ namespace UI.utils
             foreach (Control controlReference in controlList)
             {
                 string controlName = controlReference.Name;
-
+                
                 //Si coincide actualizo.
                 if (labelKeys.ContainsKey(controlName) && words.ContainsKey(labelKeys[controlName]))                    
                     controlReference.Text = words[labelKeys[controlName]];

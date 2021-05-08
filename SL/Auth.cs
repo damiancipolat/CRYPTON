@@ -52,7 +52,7 @@ namespace SL
 
            //Encripto el password para que coincida con la bd.
             string criptedPwd = Cripto.GetInstance().GetHash(pwd);
-            
+
            //Busco el usuario para el login.
            UsuarioBE user= new UsuarioDAL().login(email, criptedPwd);
 

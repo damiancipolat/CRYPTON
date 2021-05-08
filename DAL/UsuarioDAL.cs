@@ -66,6 +66,8 @@ namespace DAL
         //Buscar usuario y contraseña.
         public UsuarioBE login(string email, string pwd)
         {
+            Debug.WriteLine(">>>"+email+"--"+pwd);
+            
             //Armo el query con un where con schema.
             List<Object> result = new QuerySelect().selectAnd(new Dictionary<string, Object>{
                 {"email",email},
@@ -90,7 +92,7 @@ namespace DAL
                 { "email",user.email},
                 { "tipo_usuario",(int)user.tipoUsuario},
                 { "pwd",user.pwd},
-                { "user",user.hash}
+                { "hash",user.hash}
             };
 
             QueryInsert builder = new QueryInsert();

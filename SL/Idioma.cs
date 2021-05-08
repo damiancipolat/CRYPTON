@@ -49,5 +49,13 @@ namespace SL
         {            
             return new IdiomaDAL().loadWords(this.getDefault());
         }
+
+        //Traduzco directamente el mensaje.
+        public string translateWord(string key)
+        {
+            Dictionary<string,string> result = new IdiomaDAL().loadWords(this.getDefault());
+            return result.ContainsKey(key) ? result[key] : "";
+        }
+
     }
 }

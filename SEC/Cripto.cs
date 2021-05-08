@@ -42,8 +42,6 @@ namespace SEC
         //Compara un texto con un hash y valida si son iguales.
         public bool VerifyMd5Hash(string input, string hash)
         {
-            MD5 md5Hash = MD5.Create();
-
             string hashOfInput = GetHash(input);
             StringComparer comparer = StringComparer.OrdinalIgnoreCase;
 
