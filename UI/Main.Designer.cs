@@ -385,6 +385,7 @@
             this.main_splash.Name = "main_splash";
             this.main_splash.Size = new System.Drawing.Size(403, 272);
             this.main_splash.TabIndex = 10;
+            this.main_splash.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_splash_Paint);
             this.main_splash.Resize += new System.EventHandler(this.Main_splash_Resize);
             // 
             // pictureBox3

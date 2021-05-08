@@ -321,11 +321,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_SPLASH_TITLE','I
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_BTN_LOGIN','Registrarme');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_CHANGE_LANGUAGE','Registrarme');
 
-main_splash_title	Hace click para ingresar al sistema
-main_btn_login		Iniciar sesión
-main_change_language Cambiar idioma
-
-truncate table idioma_palabras;
+select * from idiomas;
 select * from idioma_palabras;
 
 

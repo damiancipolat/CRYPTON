@@ -33,7 +33,7 @@ namespace UI
             InitializeComponent();
 
             //Realizo actualizacion.
-            new labelBinder().bindKeys(this, this.labelBindings);
+            //new labelBinder().bindKeys(this, this.labelBindings);
         }
 
         private void Button1_Click(object sender, EventArgs e)

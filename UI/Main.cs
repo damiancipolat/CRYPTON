@@ -54,12 +54,10 @@ namespace UI
             this.main_txt_hello.Parent = this.pictureBox1;
             this.main_txt_hello.BackColor = Color.Transparent;
             this.main_txt_hello.Top = this.Size.Height - 110;
-            Debug.WriteLine(">>>" + Session.GetInstance().isActive().ToString());
 
             //Cuando la sesion esta activa.
             if (Session.GetInstance().isActive())
-            {
-                
+            {                
                 this.main_splash.Hide();
             }
             else
@@ -72,18 +70,18 @@ namespace UI
         //Se ejecuta al inicio del formulario, setea idioma base.
         public void bootstrap()
         {
-            //Load default language.
+            //Traigo el lenguaje por defecto de la configuracion.
             string defaultLang = Idioma.GetInstance().getDefault();
 
-            //Check if the default language is defined.
+            //Si no esta definido genero error.
             if (!(defaultLang != ""))
                 throw new Exception("Unable to load default language");
 
             //Load in session the list of words.
             Session.GetInstance().setLanguage(defaultLang, Idioma.GetInstance().getWords(defaultLang));
-
-            //Bind text components.
-            new labelBinder().bindKeys(this, this.labelBindings);
+            
+            //Cargo el lenguaje por defecto en la sesion.
+            new labelBinder().bindKeys(this.Controls, this.labelBindings);
         }
 
         private bool isWindowOpen(string name)
@@ -251,7 +249,6 @@ namespace UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.bootstrap();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -342,6 +339,11 @@ namespace UI
         private void CambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Language().Show();
+        }
+
+        private void Main_splash_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
