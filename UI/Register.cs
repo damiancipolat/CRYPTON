@@ -13,6 +13,8 @@ using BE;
 using SEC;
 using UI.utils;
 using BL;
+using VL;
+using VL.Exceptions;
 
 namespace UI
 {
@@ -59,23 +61,51 @@ namespace UI
 
         private void Signup_ok_Click(object sender, EventArgs e)
         {
-            //Bindeo campos 
-            UsuarioBE newUser = new UsuarioBE();
-            newUser.nombre = this.signup_txt_name.Text;
-            newUser.apellido = this.signup_txt_surname.Text;
-            newUser.alias = this.signup_txt_alias.Text;
-            newUser.email = this.signup_txt_email.Text;
-            newUser.pwd = this.signup_txt_pwd.Text;
-            newUser.tipoUsuario = UsuarioTipo.CLIENTE;
+            try
+            {
+                //Valido el input.
+                UserValidator.GetInstance().validateRegister(
+                    this.signup_txt_name.Text,
+                    this.signup_txt_surname.Text,
+                    this.signup_txt_alias.Text,
+                    this.signup_txt_email.Text,
+                    this.signup_txt_pwd.Text
+                );
 
-            //Grabo el usuario.
-            new UsuarioBL().save(newUser);
-            MessageBox.Show("Usuario creado con exito!");
-            
-            //Hago autologin.            
-            UsuarioBE user = new Auth().login(newUser.email, this.signup_txt_pwd.Text);
-            this.parent.render();
-            this.Close();
+                //Bindeo campos 
+                UsuarioBE newUser = new UsuarioBE();
+                newUser.nombre = this.signup_txt_name.Text;
+                newUser.apellido = this.signup_txt_surname.Text;
+                newUser.alias = this.signup_txt_alias.Text;
+                newUser.email = this.signup_txt_email.Text;
+                newUser.pwd = this.signup_txt_pwd.Text;
+                newUser.tipoUsuario = UsuarioTipo.CLIENTE;
+
+                //Grabo el usuario.
+                new UsuarioBL().save(newUser);
+                
+                //Mensaje de exito.
+                MessageBox.Show(
+                    Idioma.GetInstance().translateKey("REGISTER_INPUT_SUCCESS"),
+                    Idioma.GetInstance().translateKey("REGISTER_INPUT_ERROR_TITLE"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                
+                //Hago autologin.            
+                UsuarioBE user = new Auth().login(newUser.email, this.signup_txt_pwd.Text);
+                this.parent.render();
+                this.Close();
+            }
+            catch (InputException ex)
+            {
+                MessageBox.Show(
+                    Idioma.GetInstance().translateKey(ex.Message),
+                    Idioma.GetInstance().translateKey("REGISTER_INPUT_ERROR_TITLE"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation
+                );
+            }
         }
 
         private void Frm_signup_Load(object sender, EventArgs e)

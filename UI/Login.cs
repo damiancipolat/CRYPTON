@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SL;
+using VL.Exceptions;
+using VL;
 using BE;
 using UI.utils;
 
@@ -36,23 +38,26 @@ namespace UI
             new labelBinder().bindKeys(this.Controls, this.labelBindings);
         }
 
+        //Proceso login con manejo de excepciones.
         private void Button1_Click(object sender, EventArgs e)
         {
-            //Deny acces with booth white flags.
-            if ((this.txt_email.Text == "") && (this.txt_pwd.Text == ""))
-            {
-                MessageBox.Show("Debe completar, el usuario y contraseña");
-                return;
-            }
+            try{
+                //Valido el input.
+                UserValidator.GetInstance().validateLogin(this.txt_email.Text, this.txt_pwd.Text);
 
-            //Validate login.
-            Auth auth = new Auth();
-            UsuarioBE user = auth.login(this.txt_email.Text, this.txt_pwd.Text);
-            
-            //Muestro mensaje de bienvenida.
-            MessageBox.Show("Bienvenido: "+user.nombre+"!!");        
-            this.parent.render();
-            this.Close();
+                //Hago el login.
+                new Auth().login(this.txt_email.Text, this.txt_pwd.Text);                
+            }
+            catch (InputException ex){
+
+                MessageBox.Show(
+                    Idioma.GetInstance().translateKey(ex.Message),
+                    Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Exclamation
+                );
+
+            }
         }
 
         private void Frm_login_Load(object sender, EventArgs e)

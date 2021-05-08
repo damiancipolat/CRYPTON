@@ -8,6 +8,7 @@ using DAL;
 using DAL.DAO;
 using DAL.Idiomas;
 using System.Configuration;
+using SL;
 
 namespace SL
 {
@@ -57,5 +58,11 @@ namespace SL
             return result.ContainsKey(key) ? result[key] : "";
         }
 
+        //Traduzco directamente pero usando el diccionario desde la session.
+        public string translateKey(string key)
+        {
+            Dictionary<string, string> dictionaryKeys = Session.GetInstance().getLanguangeWords();
+            return dictionaryKeys[key];
+        }
     }
 }

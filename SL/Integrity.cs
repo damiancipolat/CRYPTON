@@ -38,7 +38,7 @@ namespace SL
             foreach (UsuarioBE user in userList)
             {
                 string newHash = new HashUsuario().hash(user);
-                Debug.WriteLine("comparing....computed:" + newHash + " from table:" + user.hash);
+
                 //Compare table hash with computed hash.
                 if (newHash != user.hash)
                     throw new Exception("Integrity fail idusuaro:"+user.idusuario);

@@ -159,6 +159,10 @@
       <Project>{7559a94e-892a-453e-b5c3-c7ab09e6c9fb}</Project>
       <Name>SL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VL\VL.csproj">
+      <Project>{a333f93d-9848-4ba6-8b2b-0c99a3173b95}</Project>
+      <Name>VL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.jpg" />
