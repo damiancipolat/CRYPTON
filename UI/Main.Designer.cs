@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.main_btn_login = new System.Windows.Forms.Button();
-            this.txt_welcome = new System.Windows.Forms.Label();
             this.main_txt_hello = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -62,7 +61,12 @@
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_login = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_signup = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_signout = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.main_panel_der.SuspendLayout();
             this.main_panel_wallets.SuspendLayout();
@@ -80,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // main_btn_login
@@ -92,19 +97,6 @@
             this.main_btn_login.Text = "main_btn_login";
             this.main_btn_login.UseVisualStyleBackColor = false;
             this.main_btn_login.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // txt_welcome
-            // 
-            this.txt_welcome.AutoSize = true;
-            this.txt_welcome.BackColor = System.Drawing.Color.Transparent;
-            this.txt_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_welcome.Location = new System.Drawing.Point(383, 201);
-            this.txt_welcome.Name = "txt_welcome";
-            this.txt_welcome.Size = new System.Drawing.Size(160, 29);
-            this.txt_welcome.TabIndex = 3;
-            this.txt_welcome.Text = "BIENVENIDO";
-            this.txt_welcome.Visible = false;
-            this.txt_welcome.Click += new System.EventHandler(this.Txt_welcome_Click);
             // 
             // main_txt_hello
             // 
@@ -465,29 +457,69 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
+            // menuStrip1
             // 
-            this.button2.Location = new System.Drawing.Point(63, 157);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inicioToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1196, 28);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // inicioToolStripMenuItem
+            // 
+            this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_menu_login,
+            this.main_menu_signup,
+            this.main_menu_signout,
+            this.main_menu_exit});
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            // 
+            // main_menu_login
+            // 
+            this.main_menu_login.Name = "main_menu_login";
+            this.main_menu_login.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_login.Text = "main_menu_login";
+            this.main_menu_login.Click += new System.EventHandler(this.Main_menu_login_Click);
+            // 
+            // main_menu_signup
+            // 
+            this.main_menu_signup.Name = "main_menu_signup";
+            this.main_menu_signup.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_signup.Text = "main_menu_signup";
+            this.main_menu_signup.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
+            // 
+            // main_menu_signout
+            // 
+            this.main_menu_signout.Name = "main_menu_signout";
+            this.main_menu_signout.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_signout.Text = "main_menu_signout";
+            this.main_menu_signout.Click += new System.EventHandler(this.Main_menu_signout_Click);
+            // 
+            // main_menu_exit
+            // 
+            this.main_menu_exit.Name = "main_menu_exit";
+            this.main_menu_exit.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_exit.Text = "main_menu_exit";
+            this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 711);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.main_txt_hello);
-            this.Controls.Add(this.txt_welcome);
             this.Controls.Add(this.pictureBox1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crypton - home";
@@ -520,6 +552,8 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,7 +562,6 @@
         #endregion
 
         private System.Windows.Forms.Button main_btn_login;
-        private System.Windows.Forms.Label txt_welcome;
         private System.Windows.Forms.Label main_txt_hello;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
@@ -561,7 +594,12 @@
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
         private System.Windows.Forms.ToolStripMenuItem main_change_language;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_login;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_signup;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_signout;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_exit;
     }
 }
 

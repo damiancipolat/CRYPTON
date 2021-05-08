@@ -48,7 +48,9 @@ namespace UI
                 UserValidator.GetInstance().validateLogin(this.txt_email.Text, this.txt_pwd.Text);
 
                 //Hago el login.
-                new Auth().login(this.txt_email.Text, this.txt_pwd.Text);                
+                new Auth().login(this.txt_email.Text, this.txt_pwd.Text);
+                this.parent.render();
+                this.Close();
             }
             catch (InputException ex){
                 MessageBox.Show(

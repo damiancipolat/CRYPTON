@@ -32,8 +32,8 @@ namespace UI
         private Dictionary<string, string> labelBindings = new Dictionary<string, string>{
                 {"main_splash_title","MAIN_SPLASH_TITLE"},
                 { "main_btn_login","MAIN_BTN_LOGIN"},
-                { "main_change_language","MAIN_CHANGE_LANGUAGE"}                
-            };
+                { "main_change_language","MAIN_CHANGE_LANGUAGE"}
+        };
 
         public frm_main()
         {
@@ -59,10 +59,16 @@ namespace UI
             if (Session.GetInstance().isActive())
             {                
                 this.main_splash.Hide();
+                this.main_menu_login.Visible = false;
+                this.main_menu_signup.Visible = false; 
+                this.main_menu_signout.Visible = true;
             }
             else
             {
                 this.main_splash.Show();
+                this.main_menu_login.Visible = true;
+                this.main_menu_signup.Visible = true;
+                this.main_menu_signout.Visible = false;
             }
             
         }
@@ -85,6 +91,10 @@ namespace UI
 
             //Bindeo campos que no se pueden automaticamente.
             this.main_change_language.Text = Idioma.GetInstance().translateWord("MAIN_CHANGE_LANGUAGE");
+            this.main_menu_login.Text = Idioma.GetInstance().translateKey("MAIN_MENU_LOGIN");
+            this.main_menu_signup.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SIGNUP");
+            this.main_menu_signout.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SIGNOUT");
+            this.main_menu_exit.Text = Idioma.GetInstance().translateKey("MAIN_MENU_EXIT");
         }
 
         private bool isWindowOpen(string name)
@@ -268,13 +278,10 @@ namespace UI
             if (!Session.GetInstance().isActive())
             {
                 this.main_btn_login.Visible = true;
-                this.txt_welcome.Visible = false;
             }
             else
             {
-                this.main_btn_login.Visible = false;
-                this.txt_welcome.Visible = true;
-                this.txt_welcome.Text = "Bievenido "+Session.GetInstance().getUser().nombre;
+                this.main_btn_login.Visible = false;             
             }
 
         }
@@ -360,6 +367,36 @@ namespace UI
         {
             Debug.WriteLine("1) 1234" + new Cripto().GetHash("1234")) ;
             Debug.WriteLine("2) 1234" + new Cripto().GetHash("1234"));
+        }
+
+        private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void CerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Abro el signup si no esta abierto.
+            if (!isWindowOpen("frm_signup"))
+                new frm_signup(this).Show();
+        }
+
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Main_menu_signout_Click(object sender, EventArgs e)
+        {
+            Session.GetInstance().close();
+            this.render();
+        }
+
+        private void Main_menu_login_Click(object sender, EventArgs e)
+        {
+            //Abro el login si no esta abierto.
+            if (!isWindowOpen("frm_login"))
+                new frm_login(this).Show();
         }
     }
 }

@@ -339,6 +339,13 @@ insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_ERROR_
 insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_SUCCESS','Usuario creado con exito!');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_NOT_FOUND','No hay usuarios para validar integridad!');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRUPT','No hay usuarios para validar integridad!');
+insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_ENTITY_FAIL','Integridad de tabla de usuarios comprometida');
+insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_ERROR','ERROR - integridad comprometida');
+
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
 
 
 truncate table usuario;
