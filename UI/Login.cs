@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SL;
+using SL.Exceptions;
 using VL.Exceptions;
 using VL;
 using BE;
@@ -58,6 +59,17 @@ namespace UI
                 );
 
             }
+            catch (ServiceException ex)
+            {
+                MessageBox.Show(
+                    Idioma.GetInstance().translateKey(ex.Message),
+                    Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+            }
+            
         }
 
         private void Frm_login_Load(object sender, EventArgs e)

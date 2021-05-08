@@ -11,6 +11,7 @@ using BE;
 using BE.Permisos;
 using SL;
 using SEC;
+using SL.Exceptions;
 
 namespace SL
 {
@@ -56,9 +57,9 @@ namespace SL
            //Busco el usuario para el login.
            UsuarioBE user= new UsuarioDAL().login(email, criptedPwd);
 
-           //Si el login falla retornara null.  
-           if (user == null)
-                throw new Exception("Invalid login");
+            //Si el login falla retornara null.  
+            if (user == null)
+                throw new ServiceException("LOGIN_SERVICE_ERROR");
 
             //Start the session, and load language.
             this.startSession(user);

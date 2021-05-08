@@ -62,7 +62,7 @@ namespace SL
         public string translateKey(string key)
         {
             Dictionary<string, string> dictionaryKeys = Session.GetInstance().getLanguangeWords();
-            return dictionaryKeys[key];
+            return dictionaryKeys.ContainsKey(key) ? dictionaryKeys[key] : key;
         }
     }
 }
