@@ -13,6 +13,7 @@ using VL.Exceptions;
 using VL;
 using BE;
 using UI.utils;
+using SEC.Exceptions;
 
 namespace UI
 {
@@ -50,14 +51,11 @@ namespace UI
                 new Auth().login(this.txt_email.Text, this.txt_pwd.Text);                
             }
             catch (InputException ex){
-
                 MessageBox.Show(
                     Idioma.GetInstance().translateKey(ex.Message),
-                    Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"), 
+                    Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK, 
-                    MessageBoxIcon.Exclamation
-                );
-
+                    MessageBoxIcon.Exclamation);
             }
             catch (ServiceException ex)
             {
@@ -65,11 +63,16 @@ namespace UI
                     Idioma.GetInstance().translateKey(ex.Message),
                     Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-
+                    MessageBoxIcon.Error);
             }
-            
+            catch (IntegrityException ex)
+            {
+                MessageBox.Show(
+                    Idioma.GetInstance().translateKey(ex.Message),
+                    Idioma.GetInstance().translateKey("INTEGRITY_ERROR"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);                
+            }
         }
 
         private void Frm_login_Load(object sender, EventArgs e)

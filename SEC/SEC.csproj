@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cripto.cs" />
+    <Compile Include="Exceptions\IntegrityException.cs" />
     <Compile Include="HashUsuario.cs" />
     <Compile Include="Integrity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

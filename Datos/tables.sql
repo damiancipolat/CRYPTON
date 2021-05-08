@@ -337,6 +337,8 @@ insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_ERROR'
 insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_EMAIL_ERROR','Formato de email erroneo!');
 insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_ERROR_TITLE','Aviso');
 insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_SUCCESS','Usuario creado con exito!');
+insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_NOT_FOUND','No hay usuarios para validar integridad!');
+insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRUPT','No hay usuarios para validar integridad!');
 
 
 truncate table usuario;

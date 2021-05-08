@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using DAL;
 using BE;
+using SEC;
+using SEC.Exceptions;
 
 namespace SEC
 {
@@ -30,8 +32,8 @@ namespace SEC
             List<UsuarioBE> userList = new UsuarioDAL().findAll();
 
             //Validate no result.
-            if ((userList.Count == 0))
-                throw new Exception("List of user with no data");
+            if (userList.Count == 0)
+                throw new IntegrityException("INTEGRITY_USERS_NOT_FOUND");
 
             //Compare current hash vs column hash.
             foreach (UsuarioBE user in userList)
@@ -40,7 +42,7 @@ namespace SEC
 
                 //Compare table hash with computed hash.
                 if (newHash != user.hash)
-                    throw new Exception("Integrity fail idusuaro:"+user.idusuario);
+                    throw new IntegrityException("INTEGRITY_USERS_CORRUPT");
             }
 
             return true;
@@ -60,11 +62,11 @@ namespace SEC
             
             //If not found register.
             if (dvBE == null)
-                throw new Exception("Usuario verification table not found");
+                throw new IntegrityException("INTEGRITY_USERS_ENTITY_FAIL");
 
             //Comparo hashes.
             if (fullHash != dvBE.hash)
-                throw new Exception("Usuario vertical validation FAIL");
+                throw new IntegrityException("INTEGRITY_USERS_ENTITY_FAIL");
 
             return true;
         }
