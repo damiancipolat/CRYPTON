@@ -8,7 +8,7 @@ using DAL.DAO;
 
 namespace DAL
 {
-    public class DvhDAL
+    public class DvvDAL
     {
         //Bindea el schema de usuario con el data reader.
         private DvhBE bindSchema(List<Object> result)
@@ -28,7 +28,7 @@ namespace DAL
             List<Object> result = new QuerySelect().selectAnd(
                 new Dictionary<string, Object>{
                     {"tabla",tabla}
-            }, "dvh");
+            }, "dvv");
 
             return this.bindSchema((List<Object>)result[0]);
         }
@@ -44,7 +44,7 @@ namespace DAL
             };
 
             QueryInsert builder = new QueryInsert();
-            return builder.insertSchema(schema, "dvh");
+            return builder.insertSchema(schema, "dvv");
         }
 
         //Actualizo el digito.
@@ -58,7 +58,7 @@ namespace DAL
                     { "fecUpdate",digito.fecUpdate}
                 }, new Dictionary<string, Object>{
                     {"tabla",digito.tabla}
-            }, "dvh");
+            }, "dvv");
 
         }
 
@@ -73,7 +73,7 @@ namespace DAL
                     { "fecUpdate",DateTime.Now}
                 }, new Dictionary<string, Object>{
                     {"tabla",tabla}
-            }, "dvh");
+            }, "dvv");
 
         }
     }

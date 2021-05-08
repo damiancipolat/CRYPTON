@@ -24,7 +24,12 @@ namespace BL
             user.hash = new HashUsuario().hash(user);            
 
             //Registro el usuario.
-            return new UsuarioDAL().insert(user);
+            int resultInsert = new UsuarioDAL().insert(user);
+
+            //Actualizo el DVV de usuarios.
+            new DvvDAL().updateHash("usuario", new UsuarioDAL().getEntityHash());
+
+            return resultInsert;
         }
     }
 }

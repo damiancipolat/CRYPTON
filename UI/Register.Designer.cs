@@ -61,7 +61,7 @@
             this.signup_cancel.Location = new System.Drawing.Point(315, 508);
             this.signup_cancel.Name = "signup_cancel";
             this.signup_cancel.Size = new System.Drawing.Size(165, 49);
-            this.signup_cancel.TabIndex = 16;
+            this.signup_cancel.TabIndex = 7;
             this.signup_cancel.Text = "signup_cancel";
             this.signup_cancel.UseVisualStyleBackColor = false;
             this.signup_cancel.Click += new System.EventHandler(this.Login_btn_cancel_Click);
@@ -71,7 +71,7 @@
             this.signup_ok.Location = new System.Drawing.Point(148, 507);
             this.signup_ok.Name = "signup_ok";
             this.signup_ok.Size = new System.Drawing.Size(143, 49);
-            this.signup_ok.TabIndex = 15;
+            this.signup_ok.TabIndex = 6;
             this.signup_ok.Text = "signup_ok";
             this.signup_ok.UseVisualStyleBackColor = true;
             this.signup_ok.Click += new System.EventHandler(this.Signup_ok_Click);
@@ -82,7 +82,7 @@
             this.signup_txt_surname.Location = new System.Drawing.Point(426, 118);
             this.signup_txt_surname.Name = "signup_txt_surname";
             this.signup_txt_surname.Size = new System.Drawing.Size(246, 34);
-            this.signup_txt_surname.TabIndex = 14;
+            this.signup_txt_surname.TabIndex = 2;
             // 
             // signup_surname
             // 
@@ -111,7 +111,7 @@
             this.signup_txt_name.Location = new System.Drawing.Point(150, 118);
             this.signup_txt_name.Name = "signup_txt_name";
             this.signup_txt_name.Size = new System.Drawing.Size(246, 34);
-            this.signup_txt_name.TabIndex = 11;
+            this.signup_txt_name.TabIndex = 1;
             // 
             // signup_title
             // 
@@ -130,7 +130,7 @@
             this.signup_txt_alias.Location = new System.Drawing.Point(148, 220);
             this.signup_txt_alias.Name = "signup_txt_alias";
             this.signup_txt_alias.Size = new System.Drawing.Size(246, 34);
-            this.signup_txt_alias.TabIndex = 18;
+            this.signup_txt_alias.TabIndex = 3;
             // 
             // signup_alias
             // 
@@ -149,7 +149,7 @@
             this.signup_txt_email.Location = new System.Drawing.Point(148, 323);
             this.signup_txt_email.Name = "signup_txt_email";
             this.signup_txt_email.Size = new System.Drawing.Size(524, 34);
-            this.signup_txt_email.TabIndex = 20;
+            this.signup_txt_email.TabIndex = 4;
             this.signup_txt_email.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // signup_email
@@ -171,7 +171,7 @@
             this.signup_txt_pwd.Name = "signup_txt_pwd";
             this.signup_txt_pwd.PasswordChar = '*';
             this.signup_txt_pwd.Size = new System.Drawing.Size(246, 34);
-            this.signup_txt_pwd.TabIndex = 22;
+            this.signup_txt_pwd.TabIndex = 5;
             // 
             // signup_pwd
             // 

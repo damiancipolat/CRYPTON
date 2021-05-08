@@ -50,7 +50,7 @@ namespace SEC
         private bool validateDvvUsers()
         {
             UsuarioDAL user = new UsuarioDAL();
-            DvhDAL dv = new DvhDAL();
+            DvvDAL dv = new DvvDAL();
 
             //Computo todos los hash de la tabla usuarios.
             string fullHash = user.getEntityHash();

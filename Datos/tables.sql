@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS permiso; --BE
 DROP TABLE IF EXISTS rol_permiso; --BE
 DROP TABLE IF EXISTS usuario_permiso; --BE
 DROP TABLE IF EXISTS admin_backup; --BE
-DROP TABLE IF EXISTS dvh; --BE
+DROP TABLE IF EXISTS dvv; --BE
 DROP TABLE IF EXISTS idiomas; --BE
 DROP TABLE IF EXISTS idioma_palabras; --BE
 
@@ -50,14 +50,14 @@ insert into tipo_usuario values('Cliente');
 insert into tipo_usuario values('Empleado');
 
 ---Tabla con digito verificadores verticales.
-create table dvh(
+create table dvv(
 	tabla varchar(100) primary key,
 	[hash] text,
 	fecUpdate datetime
 );
 
-insert into dvh(tabla,[hash],fecUpdate) values('usuario','asdsadsadsadsadsad',GETDATE());
-select * from dvh;
+insert into dvv(tabla,[hash],fecUpdate) values('usuario','',GETDATE());
+select * from dvv;
 
 --Tabla de permisos
 create table permiso
@@ -97,6 +97,9 @@ create table usuario_permiso
 insert into usuario_permiso values(1,4);
 insert into usuario_permiso values(1,5);
 insert into usuario_permiso values(1,6);
+
+select * from permiso;
+select * from rol_permiso;
 select * from usuario_permiso
 
 --Tabla de registro de backups.
@@ -332,6 +335,9 @@ insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_CANCEL','Cance
 truncate table idioma_palabras;
 select * from idiomas;
 select * from idioma_palabras;
+select * from usuario;
+select * from dvv;
+select * from usuario_permiso;
 
 
 /*
@@ -388,3 +394,13 @@ insert into usuario_permiso(idusuario,idpermiso) values(2,2)
 --BACKUP DATABASE Crypton TO DISK = 'c:\SQLCrypton.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB';
 --use master;RESTORE DATABASE Crypton FROM DISK = 'C:\crypton_backup_bd_20210503054138.bak' WITH  FILE = 1,  NOUNLOAD,  STATS = 5;
 --select * from admin_backup
+
+select * from usuario
+insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,user) 
+values('damian','cipolat','alf','alf@gmail.com',1,'9e94b15ed312fa42232fd87a55db0d39','402ac28ffb19680ff94a7420200d20c9');
+
+select * from usuario
+select * from dvh;
+
+truncate table usuario;
+truncate table dvh
