@@ -90,6 +90,12 @@ namespace SL
             this.permissions = permissions;
         }
 
+        //Get list of permission.
+        public List<Componente> getPermissions()
+        {
+            return this.permissions;
+        }
+
         //Indica si la sesion esta activa o no.
         public bool isActive()
         {

@@ -94,7 +94,7 @@ namespace DAL
             };
 
             QueryInsert builder = new QueryInsert();
-            return builder.insertSchema(schema, "usuario");
+            return builder.insertSchema(schema, "usuario",true);
         }
 
         //Obtener el hash completo de la entidad.

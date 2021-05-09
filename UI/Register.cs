@@ -91,9 +91,9 @@ namespace UI
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
-                
-                //Hago autologin.            
-                UsuarioBE user = new Auth().login(newUser.email, this.signup_txt_pwd.Text);
+
+                //Hago autologin.
+                UsuarioBE user = new Auth().login(this.signup_txt_email.Text, this.signup_txt_pwd.Text);
                 this.parent.render();
                 this.Close();
             }

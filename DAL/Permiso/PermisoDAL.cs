@@ -91,5 +91,13 @@ namespace DAL
 
             return lista;
         }
+
+        //Revisa si el codigo de permiso existe en la list recursivamente.
+        public bool hasPermission(IList<Componente> lista,int id)
+        {
+            Componente c = this.GetComponent(id, lista);
+
+            return c != null;
+        }
     }
 }

@@ -21,14 +21,5 @@ namespace DAL.Permiso
 
             return this.Find(sql);
         }
-
-        //Revisa si el codigo de permiso existe en la list recursivamente.
-        public bool hasPermission(int id)
-        {
-            IList<Componente> lista = this.FindAll(string.Empty);
-            Componente c = this.GetComponent(id, lista);
-
-            return c != null;
-        }
     }
 }

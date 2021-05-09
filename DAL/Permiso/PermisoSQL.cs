@@ -30,7 +30,7 @@ namespace DAL.Permiso
         }
 
         //Trae la lista completa de permisos filtrando por idusuario.
-        public string getAllByUser(string familia,int userid)
+        public string getAllByUser(string familia,long userid)
         {
             //Seteo el where.
             string where = (!String.IsNullOrEmpty(familia)) ? "="+familia : "is NULL";

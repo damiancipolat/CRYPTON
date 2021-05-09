@@ -69,6 +69,11 @@ insert into permiso(nombre,es_patente) values('Empleado',0);
 insert into permiso(nombre,es_patente) values('Operaciones',1);
 insert into permiso(nombre,es_patente) values('Marketing',1);
 insert into permiso(nombre,es_patente) values('IT',1);
+insert into permiso(nombre,es_patente) values('Extraer',1);
+insert into permiso(nombre,es_patente) values('Ingresar',1);
+insert into permiso(nombre,es_patente) values('Comprar',1);
+insert into permiso(nombre,es_patente) values('Vender',1);
+insert into permiso(nombre,es_patente) values('Buscar',1);
 
 create table rol_permiso
 (
@@ -82,6 +87,12 @@ insert into rol_permiso(idrol,idpermiso) values(1,3);
 insert into rol_permiso(idrol,idpermiso) values(3,4);
 insert into rol_permiso(idrol,idpermiso) values(3,5);
 insert into rol_permiso(idrol,idpermiso) values(3,6);
+insert into rol_permiso(idrol,idpermiso) values(2,7);
+insert into rol_permiso(idrol,idpermiso) values(2,8);
+insert into rol_permiso(idrol,idpermiso) values(2,9);
+insert into rol_permiso(idrol,idpermiso) values(2,10);
+insert into rol_permiso(idrol,idpermiso) values(2,11);
+
 
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
@@ -93,11 +104,7 @@ create table usuario_permiso
 insert into usuario_permiso values(1,4);
 insert into usuario_permiso values(1,5);
 insert into usuario_permiso values(1,6);
-
-select * from permiso;
-select * from rol_permiso;
 select * from usuario_permiso
-
 --Tabla de registro de backups.
 create table admin_backup
 (
@@ -107,8 +114,6 @@ create table admin_backup
 	fecRec datetime,
 	[type] varchar(100)
 );
-
-select * from admin_backup;
 
 --Validaciones de identidad, se ingresa documentacion y estado.
 create table solic_onboarding(
@@ -160,7 +165,7 @@ insert into moneda values('LTC','Litecoin');
 insert into moneda values('DOG','Dodge');
 
 --Tabla de contactos.
-create table clienta_agenda(
+create table cliente_agenda(
 	idcontacto bigint identity(1,1) primary key,
 	idcliente bigint,
 	moneda varchar(10) NOT NULL,
@@ -283,8 +288,6 @@ CREATE TABLE bitacora
 	payload TEXT not NULL	
 );
 
-select * from bitacora;
-
 --Tabla de idiomas.
 create table idiomas
 (
@@ -342,19 +345,45 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Re
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
 
+insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,hash) values('dsds','dsds','sdsd','Sfi3Pf8S0/VsWkax+mk9SQ==',1,'81dc9bdb52d04dc20036dbd8313ed055','f1b8c211f86136b7d2c37c7d8210163e');SELECT SCOPE_IDENTITY();
+SELECT @@IDENTITY
+select * from usuario where  email='0qpfD6wZVhgCzJSrMZIxLH1Q/Yf4Igl0fyIQccYcIMenYwW8byJ3SHbiIBJnDFb3' and pwd='81dc9bdb52d04dc20036dbd8313ed055';
 
+/*
 truncate table usuario;
 truncate table dvv;
 
 select * from idiomas;
 select * from idioma_palabras;
 select * from usuario;
-select * from dvv;
 select * from usuario_permiso;
+select * from dvv;
+select * from tipo_us
 
 
-/*
-/*	VISTAS */
+select * from usuario
+
+insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) 
+values('damian','cipolat','alf','alf@gmail.com',1,'9e94b15ed312fa42232fd87a55db0d39','402ac28ffb19680ff94a7420200d20c9');
+SELECT SCOPE_IDENTITY()
+
+
+select * from usuario
+select * from dvv;
+
+truncate table usuario;
+truncate table dvh
+
+insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'08/05/2021 21:40:21','Default language loaded from config:ES');
+select * from bitacora;
+
+
+select * from usuario where  email='M9w1zJy9kCuPJQvs+jygmprvoa6uekU7jTXUjOx0WPk=' and pwd='81dc9bdb52d04dc20036dbd8313ed055';
+
+*/
+
+
+/*	VISTAS 
 DROP VIEW IF EXISTS v_operaciones;
 
 --Vista de operaciones.
@@ -407,19 +436,3 @@ insert into usuario_permiso(idusuario,idpermiso) values(2,2)
 --BACKUP DATABASE Crypton TO DISK = 'c:\SQLCrypton.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB';
 --use master;RESTORE DATABASE Crypton FROM DISK = 'C:\crypton_backup_bd_20210503054138.bak' WITH  FILE = 1,  NOUNLOAD,  STATS = 5;
 --select * from admin_backup
-
-select * from usuario
-insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,user) 
-values('damian','cipolat','alf','alf@gmail.com',1,'9e94b15ed312fa42232fd87a55db0d39','402ac28ffb19680ff94a7420200d20c9');
-
-select * from usuario
-select * from dvv;
-
-truncate table usuario;
-truncate table dvh
-
-insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'08/05/2021 21:40:21','Default language loaded from config:ES');
-select * from bitacora;
-
-
-select * from usuario where  email='M9w1zJy9kCuPJQvs+jygmprvoa6uekU7jTXUjOx0WPk=' and pwd='81dc9bdb52d04dc20036dbd8313ed055';

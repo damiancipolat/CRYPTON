@@ -10,6 +10,7 @@ using DAL.Permiso;
 using BE;
 using BE.Permisos;
 using SL;
+
 using SEC;
 using SL.Exceptions;
 
@@ -30,7 +31,13 @@ namespace SL
             return _instance;
         }
 
-        //Business methods.
+        //Traigo la lista de permisos para el usuario que se logea.
+        private List<Componente> getPermission(UsuarioBE user)
+        {
+            return new PermisoUserDAL().FindAllClient(user);
+        }
+
+        //Activo la sesion, cargo idioma y permisos.
         private void startSession(UsuarioBE user)
         {
             //Inicio la sesion.
@@ -42,25 +49,20 @@ namespace SL
             newSession.setLanguage("ES", words);
 
             //Cargo los permisos del usuario.
-            PermisoUserDAL permUser = new PermisoUserDAL();
-            newSession.setPermission(permUser.FindAll("", 1));
+            newSession.setPermission(this.getPermission(user));
         }
 
-        public UsuarioBE login(string email, string pwd)
+        //Validacion de credenciales.
+        private UsuarioBE checkCredentials(string email, string pwd)
         {
-            Bitacora.GetInstance().log("Request login of user:" + email);
-
-            //Antes de hacer el login, hago una prueba de integridad.
-            Integrity.GetInstance().validateComplete();
-
-           //Encripto el password para que coincida con la bd.
+            //Encripto el password para que coincida con la bd.
             string criptedPwd = Cripto.GetInstance().GetHash(pwd);
 
             //Encripto el email dado que es un dato protegido.
             email = Cripto.GetInstance().Encrypt(email);
-            
+
             //Busco el usuario para el login.
-            UsuarioBE user= new UsuarioDAL().login(email, criptedPwd);
+            UsuarioBE user = new UsuarioDAL().login(email, criptedPwd);
 
             //Detecto error de login.
             if (user == null)
@@ -68,6 +70,20 @@ namespace SL
 
             //Desencripto el email.
             user.email = Cripto.GetInstance().Decrypt(email);
+
+            return user;
+        }
+
+        //Valida usuario y contraseña para ingresar.
+        public UsuarioBE login(string email, string pwd)
+        {
+            Bitacora.GetInstance().log("Request login of user:" + email);
+
+            //Antes de hacer el login, hago una prueba de integridad.
+            Integrity.GetInstance().validateComplete();
+
+            //Valido las credenciales y obtengo el usuario logeado.
+            UsuarioBE user = this.checkCredentials(email,pwd);
 
             //Inicio la sesion.
             this.startSession(user);

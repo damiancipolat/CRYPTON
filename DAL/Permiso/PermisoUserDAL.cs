@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using BE.Permisos;
+using BE;
 using DAL.DAO;
 using DAL.Permiso;
 
@@ -13,7 +14,7 @@ namespace DAL.Permiso
     public class PermisoUserDAL : DAL.PermisoDAL
     {
         //Obtiene recursivamente la lista de componentes filtrando por usuario.
-        public List<Componente> FindAll(string familia, int userid)
+        public List<Componente> FindAll(string familia, long userid)
         {
             //Obtengo el sql para buscar todos recursivamente.
             string sql = this.sqlGen.getAllByUser(familia, userid);
@@ -22,13 +23,14 @@ namespace DAL.Permiso
             return this.Find(sql);
         }
 
-        //Reviso si el usuario tiene seteado el permiso.
-        public bool hasPermission(int id, int userid)
+        //Traigo la lista de permisos para un usuario, setea el rol.
+        public List<Componente> FindAllClient(UsuarioBE user)
         {
-            IList<Componente> lista = this.FindAll(string.Empty, userid);
-            Componente c = this.GetComponent(id, lista);
+            string family = (user.tipoUsuario == UsuarioTipo.CLIENTE) ? "2" : "3";
 
-            return c != null;
+            //Traigo la lista de permisos del rol cliente.
+            return this.FindAll(family,user.idusuario);
         }
+
     }
 }

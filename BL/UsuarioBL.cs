@@ -20,25 +20,6 @@ namespace BL
             //..
         }
 
-        //Guardo la relacion usuario permiso.
-        private int attachPermission(int idusuario)
-        {
-            //Traigo la lista de permisos del rol cliente.
-            IList<Componente> permissionList = new DAL.Permiso.PermisoTodoDAL().FindAll("3");
-
-            //Registro cada permiso que le corresponde al cliente.
-            foreach (Componente perm in permissionList)
-            {
-                UsuarioPermiso userBE = new UsuarioPermiso();
-                userBE.idpermiso = perm.Id;
-                userBE.idusuario = idusuario;
-
-                new UsuarioPermisoDAL().insert(userBE);
-            }
-
-            return 0;
-        }
-
         //Registra un nuevo usuario.
         public int save(UsuarioBE user)
         {
@@ -47,15 +28,21 @@ namespace BL
 
             //Encripto simetricamente el email.
             user.email = Cripto.GetInstance().Encrypt(user.email);
-            user.hash = new HashUsuario().hash(user);            
-
+            user.hash = new HashUsuario().hash(user);
+            
             //Registro el usuario.
-            int resultInsert = new UsuarioDAL().insert(user);
+            int insertedId = new UsuarioDAL().insert(user);
+
+            //Set id.
+            user.idusuario = insertedId;
+
+            //Adjunto permisos al cliente.
+            new PermisoBL().bindToUser(user);
 
             //Actualizo el DVV de usuarios.
             new DvvDAL().updateHash("usuario", new UsuarioDAL().getEntityHash());
 
-            return resultInsert;
+            return insertedId;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace DAL.Permiso
             };
 
             QueryInsert builder = new QueryInsert();
-            return builder.insertSchema(schema, "usuario_permiso");
+            return builder.insertSchema(schema, "usuario_permiso",false);
         }
     }
 }

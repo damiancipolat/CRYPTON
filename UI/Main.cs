@@ -335,8 +335,13 @@ namespace UI
         }
 
         private void Button2_Click(object sender, EventArgs e)
-        {            
+        {
+            List<Componente> tmpList = Session.GetInstance().getPermissions();
 
+            foreach (Componente comp in tmpList)
+            {
+                Debug.WriteLine("@--+"+comp.Id.ToString()+"--"+comp.Nombre);
+            }
         }
     }
 }

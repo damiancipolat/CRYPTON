@@ -20,12 +20,12 @@ namespace DAL.DAO
 
             //Agrego el retorno del ultimo identity agregado, por defecto es disabled.
             if (getIdentity)
-                sql = sql + "SELECT SCOPE_IDENTITY();";
+                sql = sql + "SELECT @@IDENTITY;";
 
             Debug.WriteLine("Generated sql:" + sql);
 
             //Ejecuto la consulta.
-            int result = this.query(sql);
+            int result = this.query(sql, getIdentity);
 
             //Cierro conexion.
             this.bdConnection.Close();
@@ -34,10 +34,16 @@ namespace DAL.DAO
         }
 
         //Ejecuta el query directamente que recibe como parametro.
-        public int query(string sql)
+        public int query(string sql,bool scalar=false)
         {
             SqlCommand command = new SqlCommand(sql, this.bdConnection);
-            return command.ExecuteNonQuery();
+
+            if (scalar == true)
+            {
+                return int.Parse(command.ExecuteScalar().ToString());
+            }                
+            else
+                return command.ExecuteNonQuery();
         }
 
     }
