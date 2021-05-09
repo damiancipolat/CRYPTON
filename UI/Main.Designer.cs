@@ -128,7 +128,6 @@
             this.panel3.Size = new System.Drawing.Size(232, 711);
             this.panel3.TabIndex = 9;
             this.panel3.Visible = false;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
             // 
             // main_panel_der
             // 
@@ -380,7 +379,6 @@
             this.main_splash.Name = "main_splash";
             this.main_splash.Size = new System.Drawing.Size(403, 272);
             this.main_splash.TabIndex = 10;
-            this.main_splash.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_splash_Paint);
             this.main_splash.Resize += new System.EventHandler(this.Main_splash_Resize);
             // 
             // button1
@@ -414,7 +412,6 @@
             this.main_splash_title.Size = new System.Drawing.Size(162, 25);
             this.main_splash_title.TabIndex = 12;
             this.main_splash_title.Text = "main_splash_title";
-            this.main_splash_title.Click += new System.EventHandler(this.Label2_Click_1);
             // 
             // statusStrip1
             // 
@@ -426,7 +423,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(1196, 26);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StatusStrip1_ItemClicked);
             // 
             // toolStripSplitButton2
             // 
@@ -523,10 +519,8 @@
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crypton - home";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Main_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Frm_main_MouseMove);
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.panel3.ResumeLayout(false);
             this.main_panel_der.ResumeLayout(false);

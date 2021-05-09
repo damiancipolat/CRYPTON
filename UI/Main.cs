@@ -57,7 +57,8 @@ namespace UI
 
             //Cuando la sesion esta activa.
             if (Session.GetInstance().isActive())
-            {                
+            {
+                this.main_btn_login.Visible = true;
                 this.main_splash.Hide();
                 this.main_menu_login.Visible = false;
                 this.main_menu_signup.Visible = false; 
@@ -69,6 +70,7 @@ namespace UI
                 this.main_menu_login.Visible = true;
                 this.main_menu_signup.Visible = true;
                 this.main_menu_signout.Visible = false;
+                this.main_btn_login.Visible = false;
             }
             
         }
@@ -97,6 +99,21 @@ namespace UI
             this.main_menu_exit.Text = Idioma.GetInstance().translateKey("MAIN_MENU_EXIT");
         }
 
+        //Metodo de ventanas.
+        private void openLogin()
+        {
+            //Abro el login si no esta abierto.
+            if (!isWindowOpen("frm_login"))
+                new frm_login(this).Show();
+        }
+
+        private void openRegister()
+        {
+            //Abro el signup si no esta abierto.
+            if (!isWindowOpen("frm_signup"))
+                new frm_signup(this).Show();
+        }
+
         private bool isWindowOpen(string name)
         {
             foreach (Form frm in Application.OpenForms)
@@ -110,9 +127,7 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //Abro el login si no esta abierto.
-             if (!isWindowOpen("frm_login"))
-                new frm_login(this).Show();
+            this.openLogin();
 
             /*PermisoUserDAL permUser = new PermisoUserDAL();
             List<Componente> perms = permUser.FindAll("", 1);
@@ -260,10 +275,6 @@ namespace UI
             */
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             UsuarioDAL dam = new UsuarioDAL();
@@ -273,42 +284,11 @@ namespace UI
         private void Main_Paint(object sender, PaintEventArgs e)
         {
             this.render();
-
-            //Show login pannels.
-            if (!Session.GetInstance().isActive())
-            {
-                this.main_btn_login.Visible = true;
-            }
-            else
-            {
-                this.main_btn_login.Visible = false;             
-            }
-
         }
 
         private void Main_Resize(object sender, EventArgs e)
         {
             this.render();
-        }
-
-        private void Txt_welcome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Main_splash_Resize(object sender, EventArgs e)
@@ -331,54 +311,19 @@ namespace UI
             this.render();
         }
 
-        private void Frm_main_MouseMove(object sender, MouseEventArgs e)
-        {
-            
-        }
-
-        private void ToolStripSplitButton1_ButtonClick(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void StatusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void CambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Language().Show();
         }
 
-        private void Main_splash_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            //Abro el signup si no esta abierto.
-            if (!isWindowOpen("frm_signup"))
-                new frm_signup(this).Show();
-        }
-
-        private void Button2_Click_1(object sender, EventArgs e)
-        {
-            Debug.WriteLine("1) 1234" + new Cripto().GetHash("1234")) ;
-            Debug.WriteLine("2) 1234" + new Cripto().GetHash("1234"));
-        }
-
-        private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            this.openRegister();
         }
 
         private void CerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Abro el signup si no esta abierto.
-            if (!isWindowOpen("frm_signup"))
-                new frm_signup(this).Show();
+            this.openRegister();
         }
 
         private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -394,9 +339,7 @@ namespace UI
 
         private void Main_menu_login_Click(object sender, EventArgs e)
         {
-            //Abro el login si no esta abierto.
-            if (!isWindowOpen("frm_login"))
-                new frm_login(this).Show();
+            this.openLogin();
         }
     }
 }
