@@ -68,6 +68,12 @@
             this.main_menu_signout = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
+            this.main_menu_operate = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_buy = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_sell = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_search = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_deposit = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.main_panel_der.SuspendLayout();
             this.main_panel_wallets.SuspendLayout();
@@ -458,7 +464,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem});
+            this.inicioToolStripMenuItem,
+            this.main_menu_operate});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1196, 28);
@@ -513,6 +520,48 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // main_menu_operate
+            // 
+            this.main_menu_operate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_menu_buy,
+            this.main_menu_sell,
+            this.main_menu_search,
+            this.main_menu_deposit,
+            this.main_menu_extract});
+            this.main_menu_operate.Name = "main_menu_operate";
+            this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
+            this.main_menu_operate.Text = "Operar";
+            // 
+            // main_menu_buy
+            // 
+            this.main_menu_buy.Name = "main_menu_buy";
+            this.main_menu_buy.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_buy.Text = "main_menu_buy";
+            // 
+            // main_menu_sell
+            // 
+            this.main_menu_sell.Name = "main_menu_sell";
+            this.main_menu_sell.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_sell.Text = "main_menu_sell";
+            // 
+            // main_menu_search
+            // 
+            this.main_menu_search.Name = "main_menu_search";
+            this.main_menu_search.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_search.Text = "main_menu_search";
+            // 
+            // main_menu_deposit
+            // 
+            this.main_menu_deposit.Name = "main_menu_deposit";
+            this.main_menu_deposit.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_deposit.Text = "main_menu_deposit";
+            // 
+            // main_menu_extract
+            // 
+            this.main_menu_extract.Name = "main_menu_extract";
+            this.main_menu_extract.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_extract.Text = "main_menu_extract";
             // 
             // frm_main
             // 
@@ -607,6 +656,12 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_signout;
         private System.Windows.Forms.ToolStripMenuItem main_menu_exit;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_operate;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_buy;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_sell;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_search;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_deposit;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_extract;
     }
 }
 

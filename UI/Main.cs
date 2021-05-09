@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.Dynamic;
 using System.Reflection;
 using System.Collections;
+using BL;
 using BE;
 using BE.Permisos;
 using DAL.DAO;
@@ -55,22 +56,8 @@ namespace UI
             this.main_txt_hello.BackColor = Color.Transparent;
             this.main_txt_hello.Top = this.Size.Height - 110;
 
-            //Cuando la sesion esta activa.
-            if (Session.GetInstance().isActive())
-            {                
-                this.main_splash.Hide();
-                this.main_menu_login.Visible = false;
-                this.main_menu_signup.Visible = false; 
-                this.main_menu_signout.Visible = true;
-            }
-            else
-            {
-                this.main_splash.Show();
-                this.main_menu_login.Visible = true;
-                this.main_menu_signup.Visible = true;
-                this.main_menu_signout.Visible = false;
-            }
-            
+            //Oculto/muestro menus en base a la sesion y permisos.
+            this.bindMenu();            
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -112,6 +99,75 @@ namespace UI
                 new frm_signup(this).Show();
         }
 
+        //Manejo el menu de cliente.
+        private void handleClientMenu()
+        {
+            List<Componente> permissions = Session.GetInstance().getPermissions();
+            PermisoBL permBL = new PermisoBL();
+
+            //Set items if the code exist in the list.
+            this.main_menu_operate.Visible = true;
+            this.main_menu_search.Visible = permBL.hasPermission(permissions, 11);
+            this.main_menu_sell.Visible = permBL.hasPermission(permissions, 10);
+            this.main_menu_buy.Visible = permBL.hasPermission(permissions, 9);
+            this.main_menu_deposit.Visible = permBL.hasPermission(permissions, 8);
+            this.main_menu_extract.Visible = permBL.hasPermission(permissions, 7);
+        }
+
+        //Manejo el menu de empleado.
+        private void handleEmployeeMenu()
+        {
+
+        }
+
+        //Oculto menu en base a los permisos.
+        private void bindMenu()
+        {
+            //Recupero datos de la sesion.
+            bool isActive = Session.GetInstance().isActive();
+
+            //If the user is defined.
+            if (Session.GetInstance().getUser() != null)
+            {
+                UsuarioTipo userType = Session.GetInstance().getUser().tipoUsuario;
+
+                //Manejo menu de clientes.
+                if (userType == UsuarioTipo.CLIENTE && isActive)
+                    this.handleClientMenu();
+
+                //Manejo menu de empleados.
+                if (userType == UsuarioTipo.EMPLEADO && isActive)
+                    this.handleEmployeeMenu();
+            }          
+
+            //Si esta desactivada la sesion.
+            if (isActive)
+            {
+                this.main_splash.Hide();
+                this.main_menu_login.Visible = false;
+                this.main_menu_signup.Visible = false;
+                this.main_menu_signout.Visible = true;
+            }
+            else
+            {
+                //Start menu
+                this.main_splash.Show();
+                this.main_menu_login.Visible = true;
+                this.main_menu_signup.Visible = true;
+                this.main_menu_signout.Visible = false;
+
+                //Client menu
+                this.main_menu_operate.Visible = false;
+                this.main_menu_search.Visible = false;
+                this.main_menu_sell.Visible = false;
+                this.main_menu_buy.Visible = false;
+                this.main_menu_deposit.Visible = false;
+                this.main_menu_extract.Visible = false;
+            }
+        }
+
+        //-----------------------
+
         private bool isWindowOpen(string name)
         {
             foreach (Form frm in Application.OpenForms)
@@ -126,151 +182,6 @@ namespace UI
         private void Button1_Click(object sender, EventArgs e)
         {
             this.openLogin();
-
-            /*PermisoUserDAL permUser = new PermisoUserDAL();
-            List<Componente> perms = permUser.FindAll("", 1);
-            IList<Componente> childs = perms[0].Hijos;
-            
-            foreach (Componente pe in childs)
-            {
-                Debug.WriteLine("---->"+pe.Id.ToString()+","+pe.Nombre);
-            }*/
-
-            //PermisoUserDAL permiso = new PermisoUserDAL();
-            //permiso.FindAll();
-            //bool exist = permiso.hasPermission(2, 2);
-            //Debug.WriteLine("tiene:" + exist.ToString());
-
-            //IList<Componente> result = permiso.FindAll("");
-            //Debug.WriteLine(">>>" + result[0].Hijos.Count.ToString());
-
-
-
-
-            //Dictionary<string, string> words = new IdiomaDAL().loadWords("ES");
-            //foreach(string a in words.Keys.ToList())            
-            //Debug.WriteLine(">>>>"+a);
-
-            /*
-            List<IdiomaBE> idiomas = new IdiomaDAL().findAll();
-            foreach (IdiomaBE i in idiomas)
-                Debug.WriteLine(i.code+"  "+i.descripcion);
-            */
-
-            //new Auth().login("damian.cipolat@gmail.com","1234");
-            //Integrity check = new Integrity();
-            //check.validateComplete();
-
-            /*
-            UsuarioDAL user = new UsuarioDAL();
-            UsuarioBE damBE = user.findById(1);
-            string hash = new HashUsuario().hash(damBE);
-            Debug.WriteLine("HASH"+hash);
-            */
-
-            //user.findAll();
-
-            /*
-            DvhBE dvhBE = new DvhDAL().findByKey("usuario");
-            Debug.WriteLine("---->"+dvhBE.tabla);
-            */
-            /*
-            //Creo un esquema dinamico para ser guardado.
-            var schema = new Dictionary<string, Object>{
-                {"email","pepe@pepe.com"},
-                { "tipo_usuario",2}
-            };
-            che
-            QueryUpdate upd = new QueryUpdate();
-            upd.updateSchemaById(schema, "usuario", "idusuario", 2);
-            */
-            /*
-            QueryUpdate upd = new QueryUpdate();
-            upd.updateSchemaWhereAnd(
-                new Dictionary<string, Object>{
-                    {"email","prueba@mock.com"},
-                    { "tipo_usuario",3}
-                }, new Dictionary<string, Object>{
-                    {"email","pepe@pepe.com"},
-                    {"pwd","1234"}
-            }, "usuario");*/
-
-            /*
-            UsuarioDAL dam = new UsuarioDAL();
-            string hashes = dam.getEntityHash();
-            Debug.WriteLine("---->"+hashes);
-            */
-            /*
-            UsuarioDAL dam = new UsuarioDAL();
-            UsuarioBE damBE = dam.findById(2);
-            Debug.WriteLine(damBE.hash);
-            */
-            /*
-            //Crear bitacora.
-            UsuarioDAL dam = new UsuarioDAL();
-            UsuarioBE damBE = dam.findById(1);
-
-            BitacoraBE bitacoraBE = new BitacoraBE();
-            bitacoraBE.usuario = damBE;
-            bitacoraBE.type = 1;
-            bitacoraBE.fecLog = DateTime.Now;
-            bitacoraBE.payload = "Paso algo opa";
-
-            BitacoraDAL bitacoraDAL = new BitacoraDAL();
-            bitacoraDAL.insert(bitacoraBE);
-            */
-
-            /*
-            //Hacer restore
-            UsuarioDAL dam = new UsuarioDAL();
-            UsuarioBE damBE = dam.findById(1);
-
-            BackupBE bckBE = new BackupBE();
-            bckBE.usuario = damBE;
-            bckBE.fecRec = DateTime.Now;
-            bckBE.type = "RESTORE";
-            bckBE.path = "c:/crypton_backup_bd_20210503054138.bak";
-
-            BackupDAL bckDAL = new BackupDAL();
-            int code = bckDAL.restoreBackup(bckBE);
-            Debug.WriteLine("--------->"+code);
-            */
-
-            /*
-            //Hacer backup
-            UsuarioDAL dam = new UsuarioDAL();
-            UsuarioBE damBE = dam.findById(1);
-
-            BackupBE bckBE = new BackupBE();
-            bckBE.usuario = damBE;
-            bckBE.fecRec = DateTime.Now;
-            bckBE.type = "BACKUP";
-
-            String timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-            bckBE.path = "c:/crypton_backup_bd_" + timeStamp + ".bak";
-
-            BackupDAL bckDAL = new BackupDAL();
-            bckDAL.makeBackup(bckBE);
-            */
-
-            /*
-            BackupDAL bck = new BackupDAL();
-            String timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-            bck.makeBackup("c:/backup_bd_"+timeStamp+".bak");
-            Debug.WriteLine(timeStamp);            
-
-            PermisoUserDAL permiso = new PermisoUserDAL();
-            bool exist = permiso.hasPermission(2,2);
-            Debug.WriteLine("tiene:"+exist.ToString());
-
-            IList<Componente> result = permiso.FindAll("");
-            Debug.WriteLine(">>>" + result[0].Hijos.Count.ToString());
-
-            Debug.WriteLine(">>>"+result[0].Count.ToString());
-            UsuarioDAL pepe = new UsuarioDAL();
-            UsuarioBE result = pepe.login("damian.cipolat@gmail.com", "1234");
-            Debug.WriteLine(">"+result.idusuario.ToString()+"sss"+result.nombre);
-            */
         }
 
         private void Main_Paint(object sender, PaintEventArgs e)
