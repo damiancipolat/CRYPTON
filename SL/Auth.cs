@@ -48,21 +48,21 @@ namespace SL
 
         public UsuarioBE login(string email, string pwd)
         {
+            Bitacora.GetInstance().log("Request login of user:" + email);
+
             //Antes de hacer el login, hago una prueba de integridad.
             Integrity.GetInstance().validateComplete();
 
            //Encripto el password para que coincida con la bd.
             string criptedPwd = Cripto.GetInstance().GetHash(pwd);
 
-           //Busco el usuario para el login.
-           UsuarioBE user= new UsuarioDAL().login(email, criptedPwd);
+            //Busco el usuario para el login.
+            UsuarioBE user= new UsuarioDAL().login(email, criptedPwd);
 
-            //Si el login falla retornara null.  
-            if (user == null)
-                throw new ServiceException("LOGIN_SERVICE_ERROR");
-
-            //Start the session, and load language.
+            //Inicio la sesion.
             this.startSession(user);
+
+            Bitacora.GetInstance().log("Login of user:"+email+" success!");
 
             return user;
         }

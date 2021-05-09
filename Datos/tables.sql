@@ -342,10 +342,10 @@ insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRU
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_ENTITY_FAIL','Integridad de tabla de usuarios comprometida');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_ERROR','ERROR - integridad comprometida');
 
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
+	insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
+	insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
+	insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
+	insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
 
 
 truncate table usuario;
@@ -422,3 +422,5 @@ select * from dvv;
 
 truncate table usuario;
 truncate table dvh
+
+insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'08/05/2021 21:40:21','Default language loaded from config:ES');

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="Bitacora.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="Integrity.cs" />

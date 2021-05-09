@@ -28,6 +28,7 @@ namespace SL
         //Verifica integridad solo de usuarios.
         private bool validateDvhUsers()
         {
+            Bitacora.GetInstance().log("Validate user table integrity dvh");
             List<UsuarioBE> userList = new UsuarioDAL().findAll();
 
             //Validate no result.
@@ -50,6 +51,7 @@ namespace SL
         //Verifica integridad con tabla de dvv.
         private bool validateDvvUsers()
         {
+            Bitacora.GetInstance().log("Validate user table integrity dvv");
             UsuarioDAL user = new UsuarioDAL();
             DvvDAL dv = new DvvDAL();
 

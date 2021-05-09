@@ -57,8 +57,7 @@ namespace UI
 
             //Cuando la sesion esta activa.
             if (Session.GetInstance().isActive())
-            {
-                this.main_btn_login.Visible = true;
+            {                
                 this.main_splash.Hide();
                 this.main_menu_login.Visible = false;
                 this.main_menu_signup.Visible = false; 
@@ -70,7 +69,6 @@ namespace UI
                 this.main_menu_login.Visible = true;
                 this.main_menu_signup.Visible = true;
                 this.main_menu_signout.Visible = false;
-                this.main_btn_login.Visible = false;
             }
             
         }

@@ -29,8 +29,12 @@ namespace SL
 
         //Obtengo el lenguaje por defecto de la config.
         public string getDefault()
-        {            
-            return ConfigurationManager.AppSettings["Language"];
+        {
+            //Traigo de la config. el idioma por defecto.
+            string defaultLang = ConfigurationManager.AppSettings["Language"];
+            Bitacora.GetInstance().log("Default language loaded from config:"+defaultLang);
+
+            return defaultLang;
         }
 
         //Obtengo la lista de lenguajes.

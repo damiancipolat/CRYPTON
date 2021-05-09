@@ -13,9 +13,11 @@ namespace DAL
         //Agrega un nuevo registro en la bitacora.
         public int insert(BitacoraBE bitacora)
         {
+            long iduser = (bitacora.usuario != null) ? bitacora.usuario.idusuario : 0;
+
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"idusuario",bitacora.usuario.idusuario},
+                {"idusuario",iduser},
                 { "type",bitacora.type},
                 { "fec_log",bitacora.fecLog},
                 { "payload",bitacora.payload}

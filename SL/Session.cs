@@ -45,6 +45,8 @@ namespace SL
         //Start the session bind values.
         public void start(UsuarioBE userParam)
         {
+            Bitacora.GetInstance().log("An user has started session - email:" + userParam.email);
+
             //Deny active an active session.
             if (active)
                 throw new Exception("The session is already active");
@@ -60,6 +62,8 @@ namespace SL
         //Finish the session.
         public void close()
         {
+            Bitacora.GetInstance().log("An user has closed the session");
+
             //Active session flags.
             active = false;
 
