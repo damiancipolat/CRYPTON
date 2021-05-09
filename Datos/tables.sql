@@ -100,7 +100,7 @@ create table usuario_permiso
 	idusuario bigint,
 	idpermiso int
 );
-
+select * from usuario;
 insert into usuario_permiso values(1,4);
 insert into usuario_permiso values(1,5);
 insert into usuario_permiso values(1,6);
@@ -344,6 +344,14 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Ini
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BUY','Comprar');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SELL','Vender');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SEARCH','Buscar');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_DEPOSIT','Ingresar saldo');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT','Retirar saldo');
+
+
+
 
 insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,hash) values('dsds','dsds','sdsd','Sfi3Pf8S0/VsWkax+mk9SQ==',1,'81dc9bdb52d04dc20036dbd8313ed055','f1b8c211f86136b7d2c37c7d8210163e');SELECT SCOPE_IDENTITY();
 SELECT @@IDENTITY

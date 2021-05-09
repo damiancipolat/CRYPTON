@@ -76,12 +76,20 @@ namespace UI
             //Cargo el lenguaje por defecto en la sesion.
             new labelBinder().bindKeys(this.Controls, this.labelBindings);
 
-            //Bindeo campos que no se pueden automaticamente.
+            //Bindeo menu inicio.
             this.main_change_language.Text = Idioma.GetInstance().translateWord("MAIN_CHANGE_LANGUAGE");
             this.main_menu_login.Text = Idioma.GetInstance().translateKey("MAIN_MENU_LOGIN");
             this.main_menu_signup.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SIGNUP");
             this.main_menu_signout.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SIGNOUT");
             this.main_menu_exit.Text = Idioma.GetInstance().translateKey("MAIN_MENU_EXIT");
+
+            //Bindeo menu cliente.
+            this.main_menu_operate.Text = Idioma.GetInstance().translateKey("MAIN_MENU_OPERATE");
+            this.main_menu_buy.Text = Idioma.GetInstance().translateKey("MAIN_MENU_BUY");
+            this.main_menu_sell.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SELL");
+            this.main_menu_search.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SEARCH");
+            this.main_menu_deposit.Text = Idioma.GetInstance().translateKey("MAIN_MENU_DEPOSIT");
+            this.main_menu_extract.Text = Idioma.GetInstance().translateKey("MAIN_MENU_EXTRACT");
         }
 
         //Metodo de ventanas.
