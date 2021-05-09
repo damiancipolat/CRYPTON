@@ -55,6 +55,7 @@
     <Compile Include="Permisos\Componente.cs" />
     <Compile Include="Permisos\Familia.cs" />
     <Compile Include="Permisos\Patente.cs" />
+    <Compile Include="Permisos\UsuarioPermiso.cs" />
     <Compile Include="SolicOnboarding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolicOperacion.cs" />

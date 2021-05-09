@@ -10,7 +10,7 @@ using DAL.Permiso;
 
 namespace DAL.Permiso
 {
-    public class PermisoAllDAL:PermisoDAL
+    public class PermisoTodoDAL: DAL.PermisoDAL
     {
         //Obtiene recursivamente la lista de componentes.
         public IList<Componente> FindAll(string familia)

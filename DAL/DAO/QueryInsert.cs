@@ -11,12 +11,16 @@ namespace DAL.DAO
     public class QueryInsert : QueryBuilder
     {
         //Este metodo recibe un objeto plano y lo tranforma en un insert para una tabla.
-        public int insertSchema(Dictionary<string, Object> schema, string tabla)
+        public int insertSchema(Dictionary<string, Object> schema, string tabla, bool getIdentity=false)
         {
             //Genero el sql dinamico.
             string fields = this.utilText.fieldFromSchema(schema);
             string values = this.utilText.valuesFromSchema(schema);
             string sql = "insert into " + tabla + "(" + fields + ") values(" + values + ");";
+
+            //Agrego el retorno del ultimo identity agregado, por defecto es disabled.
+            if (getIdentity)
+                sql = sql + "SELECT SCOPE_IDENTITY();";
 
             Debug.WriteLine("Generated sql:" + sql);
 

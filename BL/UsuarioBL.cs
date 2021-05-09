@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using BE;
+using BE.Permisos;
 using DAL;
+using DAL.Permiso;
+using SL;
 using SEC;
 
 namespace BL
@@ -17,6 +20,26 @@ namespace BL
             //..
         }
 
+        //Guardo la relacion usuario permiso.
+        private int attachPermission(int idusuario)
+        {
+            //Traigo la lista de permisos del rol cliente.
+            IList<Componente> permissionList = new DAL.Permiso.PermisoTodoDAL().FindAll("3");
+
+            //Registro cada permiso que le corresponde al cliente.
+            foreach (Componente perm in permissionList)
+            {
+                UsuarioPermiso userBE = new UsuarioPermiso();
+                userBE.idpermiso = perm.Id;
+                userBE.idusuario = idusuario;
+
+                new UsuarioPermisoDAL().insert(userBE);
+            }
+
+            return 0;
+        }
+
+        //Registra un nuevo usuario.
         public int save(UsuarioBE user)
         {
             //Codifico el password como hash.

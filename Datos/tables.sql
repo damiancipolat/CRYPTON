@@ -37,15 +37,12 @@ create table usuario(
 	[hash] text
 );
 
-insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) values('KIKI2','Cipolat','damxipo','damian.cipolat@gmail.com',1,'1234','trytrytrytryertfdgsdfgfd4354354353453443543');
-select * from usuario;
-update usuario set [hash]='545454545454',pwd='81dc9bdb52d04dc20036dbd8313ed055' where idusuario=1
-
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
 	tipo_usuario int identity(1,1) primary key,
 	descrip varchar(50)
 );
+
 insert into tipo_usuario values('Cliente');
 insert into tipo_usuario values('Empleado');
 
@@ -57,7 +54,6 @@ create table dvv(
 );
 
 insert into dvv(tabla,[hash],fecUpdate) values('usuario','',GETDATE());
-select * from dvv;
 
 --Tabla de permisos
 create table permiso
@@ -341,11 +337,10 @@ insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_NOT_F
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRUPT','No hay usuarios para validar integridad!');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_ENTITY_FAIL','Integridad de tabla de usuarios comprometida');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_ERROR','ERROR - integridad comprometida');
-
-	insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
-	insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
-	insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
-	insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
 
 
 truncate table usuario;
@@ -424,3 +419,7 @@ truncate table usuario;
 truncate table dvh
 
 insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'08/05/2021 21:40:21','Default language loaded from config:ES');
+select * from bitacora;
+
+
+select * from usuario where  email='M9w1zJy9kCuPJQvs+jygmprvoa6uekU7jTXUjOx0WPk=' and pwd='81dc9bdb52d04dc20036dbd8313ed055';

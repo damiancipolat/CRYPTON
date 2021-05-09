@@ -335,10 +335,8 @@ namespace UI
         }
 
         private void Button2_Click(object sender, EventArgs e)
-        {
-            Debug.WriteLine("1--->>"+Cripto.GetInstance().Encrypt("damian.cipolat@gmail.com"));
-            Debug.WriteLine("1--->>" + Cripto.GetInstance().Encrypt("damian.cipolat@gmail.com"));
-            Debug.WriteLine("2--->>" + Cripto.GetInstance().Decrypt("LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM="));
+        {            
+
         }
     }
 }

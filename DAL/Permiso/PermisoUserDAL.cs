@@ -10,7 +10,7 @@ using DAL.Permiso;
 
 namespace DAL.Permiso
 {
-    public class PermisoUserDAL : PermisoDAL
+    public class PermisoUserDAL : DAL.PermisoDAL
     {
         //Obtiene recursivamente la lista de componentes filtrando por usuario.
         public List<Componente> FindAll(string familia, int userid)

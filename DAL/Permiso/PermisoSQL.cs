@@ -12,7 +12,7 @@ namespace DAL.Permiso
         public string getAll(string familia)
         {
             //Seteo el where.
-            string where = (!String.IsNullOrEmpty(familia)) ? familia : "is NULL";
+            string where = (!String.IsNullOrEmpty(familia)) ? "="+familia : "is NULL";
 
             //Genero el sql.
             string sql = $@"with recursivo as(
@@ -33,7 +33,7 @@ namespace DAL.Permiso
         public string getAllByUser(string familia,int userid)
         {
             //Seteo el where.
-            string where = (!String.IsNullOrEmpty(familia)) ? familia : "is NULL";
+            string where = (!String.IsNullOrEmpty(familia)) ? "="+familia : "is NULL";
 
             //Genero el sql.
             string sql = $@"with recursivo as(
