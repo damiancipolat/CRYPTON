@@ -273,12 +273,6 @@ namespace UI
             */
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            UsuarioDAL dam = new UsuarioDAL();
-            dam.getEntityHash();
-        }
-
         private void Main_Paint(object sender, PaintEventArgs e)
         {
             this.render();
@@ -338,6 +332,13 @@ namespace UI
         private void Main_menu_login_Click(object sender, EventArgs e)
         {
             this.openLogin();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine("1--->>"+Cripto.GetInstance().Encrypt("damian.cipolat@gmail.com"));
+            Debug.WriteLine("1--->>" + Cripto.GetInstance().Encrypt("damian.cipolat@gmail.com"));
+            Debug.WriteLine("2--->>" + Cripto.GetInstance().Decrypt("LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM="));
         }
     }
 }
