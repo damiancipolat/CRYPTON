@@ -22,5 +22,6 @@ namespace BE
         public MonedaBE moneda;
         public DateTime fecCreacion;
         public DateTime fecFin;
+        public OrdenEstado ordenEstado;
     }
 }

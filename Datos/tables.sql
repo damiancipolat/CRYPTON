@@ -247,7 +247,8 @@ create table comisiones(
 	referencia bigint,
 	moneda varchar(10),
 	valor bigint,
-	fecCobro datetime
+	fecCobro datetime,
+	idorden_estado bigint
 );
 
 --Tabla de ordenes de venta.
