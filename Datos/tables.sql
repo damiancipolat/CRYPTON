@@ -63,6 +63,7 @@ create table permiso
 	es_patente bit
 );
 
+--Esquema de roles
 insert into permiso(nombre,es_patente) values('Usuario',0);
 insert into permiso(nombre,es_patente) values('Cliente',1);
 insert into permiso(nombre,es_patente) values('Empleado',0);
@@ -105,6 +106,7 @@ insert into usuario_permiso values(1,4);
 insert into usuario_permiso values(1,5);
 insert into usuario_permiso values(1,6);
 select * from usuario_permiso
+
 --Tabla de registro de backups.
 create table admin_backup
 (
@@ -344,14 +346,18 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Ini
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
+
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_OPERATE','Operar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BUY','Comprar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SELL','Vender');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SEARCH','Buscar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_DEPOSIT','Ingresar saldo');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT','Retirar saldo');
 
-
-
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT','IT');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BACKUP','Backup');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PERMISSION','Permisos');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usuarios');
 
 insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,hash) values('dsds','dsds','sdsd','Sfi3Pf8S0/VsWkax+mk9SQ==',1,'81dc9bdb52d04dc20036dbd8313ed055','f1b8c211f86136b7d2c37c7d8210163e');SELECT SCOPE_IDENTITY();
 SELECT @@IDENTITY

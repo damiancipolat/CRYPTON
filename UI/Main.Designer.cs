@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.main_btn_login = new System.Windows.Forms.Button();
-            this.main_txt_hello = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.main_panel_der = new System.Windows.Forms.Panel();
@@ -67,7 +66,6 @@
             this.main_menu_signup = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_signout = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
             this.main_menu_operate = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_buy = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_sell = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,19 +102,6 @@
             this.main_btn_login.Text = "main_btn_login";
             this.main_btn_login.UseVisualStyleBackColor = false;
             this.main_btn_login.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // main_txt_hello
-            // 
-            this.main_txt_hello.AutoSize = true;
-            this.main_txt_hello.BackColor = System.Drawing.Color.Transparent;
-            this.main_txt_hello.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.main_txt_hello.ForeColor = System.Drawing.Color.White;
-            this.main_txt_hello.Location = new System.Drawing.Point(397, 68);
-            this.main_txt_hello.Name = "main_txt_hello";
-            this.main_txt_hello.Size = new System.Drawing.Size(283, 51);
-            this.main_txt_hello.TabIndex = 6;
-            this.main_txt_hello.Text = "Hola Damián!";
-            this.main_txt_hello.Visible = false;
             // 
             // panel2
             // 
@@ -480,7 +465,7 @@
             this.main_menu_signout,
             this.main_menu_exit});
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // main_menu_login
@@ -511,16 +496,6 @@
             this.main_menu_exit.Text = "main_menu_exit";
             this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(233, 119);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
             // main_menu_operate
             // 
             this.main_menu_operate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -530,7 +505,7 @@
             this.main_menu_deposit,
             this.main_menu_extract});
             this.main_menu_operate.Name = "main_menu_operate";
-            this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
+            this.main_menu_operate.Size = new System.Drawing.Size(69, 26);
             this.main_menu_operate.Text = "Operar";
             // 
             // main_menu_buy
@@ -568,13 +543,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 711);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.main_txt_hello);
             this.Controls.Add(this.pictureBox1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_main";
@@ -617,7 +590,6 @@
         #endregion
 
         private System.Windows.Forms.Button main_btn_login;
-        private System.Windows.Forms.Label main_txt_hello;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -655,7 +627,6 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_signup;
         private System.Windows.Forms.ToolStripMenuItem main_menu_signout;
         private System.Windows.Forms.ToolStripMenuItem main_menu_exit;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem main_menu_operate;
         private System.Windows.Forms.ToolStripMenuItem main_menu_buy;
         private System.Windows.Forms.ToolStripMenuItem main_menu_sell;

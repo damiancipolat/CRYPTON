@@ -109,6 +109,7 @@
             // login_btn_cancel
             // 
             this.login_btn_cancel.BackColor = System.Drawing.Color.Crimson;
+            this.login_btn_cancel.ForeColor = System.Drawing.Color.White;
             this.login_btn_cancel.Location = new System.Drawing.Point(323, 273);
             this.login_btn_cancel.Name = "login_btn_cancel";
             this.login_btn_cancel.Size = new System.Drawing.Size(165, 49);

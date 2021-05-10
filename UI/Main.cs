@@ -51,11 +51,6 @@ namespace UI
             this.main_splash.Left = (this.Width / 2) - (this.main_splash.Width / 2);
             this.main_splash.Top = (this.Height / 2) - (this.main_splash.Height / 2);
 
-            //Vuelve transparente un label.
-            this.main_txt_hello.Parent = this.pictureBox1;
-            this.main_txt_hello.BackColor = Color.Transparent;
-            this.main_txt_hello.Top = this.Size.Height - 110;
-
             //Oculto/muestro menus en base a la sesion y permisos.
             this.bindMenu();            
         }

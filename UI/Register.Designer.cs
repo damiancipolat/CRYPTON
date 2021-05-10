@@ -58,6 +58,7 @@
             // signup_cancel
             // 
             this.signup_cancel.BackColor = System.Drawing.Color.Crimson;
+            this.signup_cancel.ForeColor = System.Drawing.Color.White;
             this.signup_cancel.Location = new System.Drawing.Point(315, 508);
             this.signup_cancel.Name = "signup_cancel";
             this.signup_cancel.Size = new System.Drawing.Size(165, 49);
