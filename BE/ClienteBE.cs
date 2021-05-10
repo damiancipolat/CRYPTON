@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Cliente
+    public class ClienteBE
     {
-        public int idCliente;
+        public Int64 idcliente;
         public UsuarioBE usuario;
         public string nombre;
         public string apellido;
-        public DateTime fecNac;
-        public string numTramite;
+        public string numero;
+        public DateTime fec_nac;
+        public string num_tramite;
         public string domicilio;
         public string email;
         public string telefono;
-        public SolicOnboarding onboardingOrigen;
+        public SolicOnboardingBE onboarding;
     }
 }

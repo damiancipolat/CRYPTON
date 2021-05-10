@@ -1,29 +1,29 @@
 --Borro las tablas para volver a crearlas.
-DROP TABLE IF EXISTS usuario;		--BE
-DROP TABLE IF EXISTS tipo_usuario;	--BE
-DROP TABLE IF EXISTS solic_onboarding;	--BE
-DROP TABLE IF EXISTS onboarding_estados; --BE
-DROP TABLE IF EXISTS cliente;	--BE
-DROP TABLE IF EXISTS moneda; --BE
-DROP TABLE IF EXISTS cliente_agenda; --BE
-DROP TABLE IF EXISTS api_keys;
-DROP TABLE IF EXISTS billetera; --BE
-DROP TABLE IF EXISTS bitacora; --BE
-DROP TABLE IF EXISTS solic_operacion; --BE
-DROP TABLE IF EXISTS tipo_solic_op; --BE
-DROP TABLE IF EXISTS solic_estados; --BE
-DROP TABLE IF EXISTS transferencias; --BE
-DROP TABLE IF EXISTS orden_venta; --BE
-DROP TABLE IF EXISTS orden_compra --BE
-DROP TABLE IF EXISTS orden_estado; --BE
-DROP TABLE IF EXISTS comisiones; --BE
-DROP TABLE IF EXISTS permiso; --BE
-DROP TABLE IF EXISTS rol_permiso; --BE
-DROP TABLE IF EXISTS usuario_permiso; --BE
-DROP TABLE IF EXISTS admin_backup; --BE
-DROP TABLE IF EXISTS dvv; --BE
-DROP TABLE IF EXISTS idiomas; --BE
-DROP TABLE IF EXISTS idioma_palabras; --BE
+DROP TABLE IF EXISTS usuario;				--BE
+DROP TABLE IF EXISTS tipo_usuario;			--BE
+DROP TABLE IF EXISTS solic_onboarding;		--BE
+DROP TABLE IF EXISTS onboarding_estados;	--BE
+DROP TABLE IF EXISTS cliente;				--
+DROP TABLE IF EXISTS moneda;				--
+DROP TABLE IF EXISTS cliente_agenda;		--
+DROP TABLE IF EXISTS api_keys;				--
+DROP TABLE IF EXISTS billetera;				--
+DROP TABLE IF EXISTS bitacora;				--
+DROP TABLE IF EXISTS solic_operacion;		--
+DROP TABLE IF EXISTS tipo_solic_op;			--
+DROP TABLE IF EXISTS solic_estados;			--
+DROP TABLE IF EXISTS transferencias;		--
+DROP TABLE IF EXISTS orden_venta;			--
+DROP TABLE IF EXISTS orden_compra			--
+DROP TABLE IF EXISTS orden_estado;			--
+DROP TABLE IF EXISTS comisiones;			--
+DROP TABLE IF EXISTS permiso;				--
+DROP TABLE IF EXISTS rol_permiso;			--
+DROP TABLE IF EXISTS usuario_permiso;		--
+DROP TABLE IF EXISTS admin_backup;			--
+DROP TABLE IF EXISTS dvv;					--
+DROP TABLE IF EXISTS idiomas;				--
+DROP TABLE IF EXISTS idioma_palabras;		--
 
 --Tabla de usuarios.
 create table usuario(
@@ -127,7 +127,7 @@ create table solic_onboarding(
 	img_selfie varchar(100),
 	solic_estado int,
 	fecProceso datetime,
-	opreador bigint
+	operador bigint
 );
 
 --Estados de validacion de identidad.
@@ -232,7 +232,7 @@ insert into solic_estados(descrip) values('Rechazada');
 create table transferencias(
 	idtransf bigint identity(1,1) primary key,
 	fecProc datetime,
-	idusuario bigint,
+	idcliente bigint,
 	origen bigint,
 	destino bigint,
 	valor float,
@@ -255,6 +255,7 @@ create table orden_venta(
 	idorden  bigint identity(1,1) primary key,
 	vendedor bigint,
 	cantidad int,
+	idclient bigint,
 	moneda varchar(10),
 	precio float
 );
@@ -346,14 +347,12 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Ini
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
-
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_OPERATE','Operar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BUY','Comprar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SELL','Vender');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SEARCH','Buscar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_DEPOSIT','Ingresar saldo');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT','Retirar saldo');
-
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT','IT');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BACKUP','Backup');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PERMISSION','Permisos');
