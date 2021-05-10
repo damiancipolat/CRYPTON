@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS tipo_solic_op;			--BE
 DROP TABLE IF EXISTS solic_estados;			--BE
 DROP TABLE IF EXISTS transferencias;		--BE
 DROP TABLE IF EXISTS orden_venta;			--BE
-DROP TABLE IF EXISTS orden_compra			--
+DROP TABLE IF EXISTS orden_compra			--BE
 DROP TABLE IF EXISTS orden_estado;			--BE
 DROP TABLE IF EXISTS comisiones;			--
 DROP TABLE IF EXISTS permiso;				--BE

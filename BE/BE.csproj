@@ -46,18 +46,21 @@
     <Compile Include="BilleteraBE.cs" />
     <Compile Include="ClienteAgenda.cs" />
     <Compile Include="ClienteBE.cs" />
+    <Compile Include="ComisionBE.cs" />
     <Compile Include="DvhBE.cs" />
     <Compile Include="IdiomaBE.cs" />
     <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="BitacoraBE.cs" />
-    <Compile Include="Moneda.cs" />
+    <Compile Include="MonedaBE.cs" />
+    <Compile Include="OrdenCompra.cs" />
+    <Compile Include="OrdenVentaBE.cs" />
     <Compile Include="Permisos\Componente.cs" />
     <Compile Include="Permisos\Familia.cs" />
     <Compile Include="Permisos\Patente.cs" />
     <Compile Include="Permisos\UsuarioPermiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolicOnboardingBE.cs" />
-    <Compile Include="SolicOperacion.cs" />
+    <Compile Include="SolicOperacionBE.cs" />
     <Compile Include="TransferenciasBE.cs" />
     <Compile Include="UsuarioBE.cs" />
   </ItemGroup>
