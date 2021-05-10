@@ -13,17 +13,17 @@ DROP TABLE IF EXISTS solic_operacion;		--BE
 DROP TABLE IF EXISTS tipo_solic_op;			--BE
 DROP TABLE IF EXISTS solic_estados;			--BE
 DROP TABLE IF EXISTS transferencias;		--BE
-DROP TABLE IF EXISTS orden_venta;			--
+DROP TABLE IF EXISTS orden_venta;			--BE
 DROP TABLE IF EXISTS orden_compra			--
-DROP TABLE IF EXISTS orden_estado;			--
+DROP TABLE IF EXISTS orden_estado;			--BE
 DROP TABLE IF EXISTS comisiones;			--
-DROP TABLE IF EXISTS permiso;				--
-DROP TABLE IF EXISTS rol_permiso;			--
-DROP TABLE IF EXISTS usuario_permiso;		--
-DROP TABLE IF EXISTS admin_backup;			--
-DROP TABLE IF EXISTS dvv;					--
-DROP TABLE IF EXISTS idiomas;				--
-DROP TABLE IF EXISTS idioma_palabras;		--
+DROP TABLE IF EXISTS permiso;				--BE
+DROP TABLE IF EXISTS rol_permiso;			--BE
+DROP TABLE IF EXISTS usuario_permiso;		--BE
+DROP TABLE IF EXISTS admin_backup;			--BE
+DROP TABLE IF EXISTS dvv;					--BE
+DROP TABLE IF EXISTS idiomas;				--BE
+DROP TABLE IF EXISTS idioma_palabras;		--BE
 
 --Tabla de usuarios.
 create table usuario(
@@ -255,9 +255,10 @@ create table orden_venta(
 	idorden  bigint identity(1,1) primary key,
 	vendedor bigint,
 	cantidad int,
-	idclient bigint,
 	moneda varchar(10),
-	precio float
+	precio float,
+	fecCreacion datetime,
+	fecFin datetime
 );
 
 --Tabla de tipo de ordenes.
