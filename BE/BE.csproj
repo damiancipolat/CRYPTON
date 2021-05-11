@@ -49,6 +49,7 @@
     <Compile Include="ComisionBE.cs" />
     <Compile Include="DeveloperBE.cs" />
     <Compile Include="DvhBE.cs" />
+    <Compile Include="EmpleadoBE.cs" />
     <Compile Include="IdiomaBE.cs" />
     <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="BitacoraBE.cs" />

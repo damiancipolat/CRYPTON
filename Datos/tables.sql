@@ -153,8 +153,11 @@ create table cliente(
 	valido varchar(1)
 );
 
-select * from usuario;
-select * from cliente;
+create table empleado(
+	idempleado bigint identity(1,1) primary key,
+	idusuario bigint,
+	legajo varchar(100)
+);
 
 --Tabla de monedas.
 create table moneda(
