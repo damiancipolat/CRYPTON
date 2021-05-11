@@ -257,5 +257,10 @@ namespace UI
                 Debug.WriteLine("@--+"+comp.Id.ToString()+"--"+comp.Nombre);
             }
         }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            DeveloperBE dev = new DeveloperBE();
+        }
     }
 }

@@ -144,16 +144,17 @@ insert into onboarding_estados values('Ilegible');
 create table cliente(
 	idcliente bigint identity(1,1) primary key,
 	idusuario bigint,
-	nombre varchar(100),
-	apellido varchar(100),
+	tipoDoc varchar(10),
 	numero varchar(100),
 	fec_nac varchar(20),
 	num_tramite varchar(50),
 	domicilio varchar(100),
-	email varchar(100),
 	telefono varchar(100),
-	idonboarding bigint,
+	valido varchar(1)
 );
+
+select * from usuario;
+select * from cliente;
 
 --Tabla de monedas.
 create table moneda(

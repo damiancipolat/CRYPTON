@@ -72,6 +72,7 @@
             this.main_menu_search = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_deposit = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.main_panel_der.SuspendLayout();
             this.main_panel_wallets.SuspendLayout();
@@ -465,7 +466,7 @@
             this.main_menu_signout,
             this.main_menu_exit});
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // main_menu_login
@@ -505,7 +506,7 @@
             this.main_menu_deposit,
             this.main_menu_extract});
             this.main_menu_operate.Name = "main_menu_operate";
-            this.main_menu_operate.Size = new System.Drawing.Size(69, 26);
+            this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
             this.main_menu_operate.Text = "Operar";
             // 
             // main_menu_buy
@@ -538,11 +539,22 @@
             this.main_menu_extract.Size = new System.Drawing.Size(224, 26);
             this.main_menu_extract.Text = "main_menu_extract";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(180, 183);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 65);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 711);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -633,6 +645,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_search;
         private System.Windows.Forms.ToolStripMenuItem main_menu_deposit;
         private System.Windows.Forms.ToolStripMenuItem main_menu_extract;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -73,16 +73,16 @@ namespace UI
                 );
 
                 //Bindeo campos 
-                UsuarioBE newUser = new UsuarioBE();
-                newUser.nombre = this.signup_txt_name.Text;
-                newUser.apellido = this.signup_txt_surname.Text;
-                newUser.alias = this.signup_txt_alias.Text;
-                newUser.email = this.signup_txt_email.Text;
-                newUser.pwd = this.signup_txt_pwd.Text;
-                newUser.tipoUsuario = UsuarioTipo.CLIENTE;
+                ClienteBE newClient = new ClienteBE();
+                newClient.nombre = this.signup_txt_name.Text;
+                newClient.apellido = this.signup_txt_surname.Text;
+                newClient.alias = this.signup_txt_alias.Text;
+                newClient.email = this.signup_txt_email.Text;
+                newClient.pwd = this.signup_txt_pwd.Text;
+                newClient.tipoUsuario = UsuarioTipo.CLIENTE;
 
-                //Grabo el usuario.
-                new UsuarioBL().save(newUser);
+                //Grabo el cliente.
+                new ClienteBL().save(newClient);
                 
                 //Mensaje de exito.
                 MessageBox.Show(

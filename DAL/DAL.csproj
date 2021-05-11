@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitacoraDAL.cs" />
+    <Compile Include="ClienteDAL.cs" />
     <Compile Include="DAO\QueryBuilder.cs" />
     <Compile Include="DAO\QueryDelete.cs" />
     <Compile Include="DAO\QueryInsert.cs" />

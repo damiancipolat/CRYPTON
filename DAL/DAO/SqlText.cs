@@ -31,6 +31,9 @@ namespace DAL.DAO
 
                 if (this.comparer.isDate(kvp.Value))
                     fields = fields + "'" + kvp.Value + "'" + ",";
+
+                if (kvp.Value==null)
+                    fields = fields + "NULL,";
             }
 
             return fields.Remove(fields.Length - 1);
@@ -80,7 +83,6 @@ namespace DAL.DAO
 
             return fields.Remove(fields.Length - 4);
         }
-
 
         //Genero los valores separados por coma
         public string setsFromSchema(Dictionary<string, Object> schema)
