@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractDAL.cs" />
+    <Compile Include="ICrud.cs" />
     <Compile Include="BitacoraDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="DAO\QueryBuilder.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="DAO\SqlText.cs" />
     <Compile Include="DAO\TypeComparer.cs" />
     <Compile Include="DvvDAL.cs" />
+    <Compile Include="EmpleadoDAL.cs" />
     <Compile Include="Idiomas\IdiomaDAL.cs" />
     <Compile Include="Permiso\PermisoTodoDAL.cs" />
     <Compile Include="Permiso\PermisoDAL.cs" />

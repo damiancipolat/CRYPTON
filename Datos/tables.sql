@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS transferencias;		--BE
 DROP TABLE IF EXISTS orden_venta;			--BE
 DROP TABLE IF EXISTS orden_compra			--BE
 DROP TABLE IF EXISTS orden_estado;			--BE
-DROP TABLE IF EXISTS comisiones;			--
+DROP TABLE IF EXISTS comisiones;			--BE
 DROP TABLE IF EXISTS permiso;				--BE
 DROP TABLE IF EXISTS rol_permiso;			--BE
 DROP TABLE IF EXISTS usuario_permiso;		--BE

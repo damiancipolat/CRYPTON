@@ -31,7 +31,7 @@ namespace BL
             user.hash = new HashUsuario().hash(user);
             
             //Registro el usuario.
-            int insertedId = new UsuarioDAL().insert(user);
+            int insertedId = new UsuarioDAL().save(user);
 
             //Set id.
             user.idusuario = insertedId;

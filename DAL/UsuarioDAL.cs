@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using BE;
 using DAL.DAO;
+using DAL;
 
 namespace DAL
 {
-    public class UsuarioDAL
+    public class UsuarioDAL:AbstractDAL<UsuarioBE>
     {
 
         //Bindea la lista de campos de un registro de una consulta, con un objeto BE.
@@ -38,7 +39,7 @@ namespace DAL
         }
 
         //Este metodo obtiene en base al ID el usuario.
-        public UsuarioBE findById(int id)
+        public UsuarioBE findById2(int id)
         {
             //Busco en la bd por id.
             List<object> result = new QuerySelect().selectById("usuario", "idusuario", id);
@@ -79,8 +80,33 @@ namespace DAL
             return this.bindSchema((List<object>)result[0]);
         }
 
+        //Borra el usuario.
+        public int delete(int id)
+        {
+            QueryDelete builder = new QueryDelete();
+            return builder.deleteById("idusuario", id, "usuario");
+        }
+
+        //Actualizar el usuario.
+        public int update(UsuarioBE user)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"nombre",user.nombre},
+                { "apellido",user.apellido},
+                { "alias",user.alias},
+                { "email",user.email},
+                { "tipo_usuario",(int)user.tipoUsuario},
+                { "pwd",user.pwd},
+                { "hash",user.hash}
+            };
+
+            QueryUpdate builder = new QueryUpdate();
+            return builder.updateSchemaById(schema,"usuario","idusuario",user.idusuario);
+        }
+
         //Agrega un nuevo usuario.
-        public int insert(UsuarioBE user)
+        public int save(UsuarioBE user)
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{

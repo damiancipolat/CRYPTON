@@ -49,7 +49,6 @@ namespace DAL.Idiomas
                 {"code", langCode}
             }, "idioma_palabras");
 
-
             //Validateresult.
             Dictionary<string, string> result = new Dictionary<string, string>();
 

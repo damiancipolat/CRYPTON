@@ -11,7 +11,7 @@ namespace DAL.DAO
     public class QueryUpdate : QueryBuilder
     {
         //Este metodo genera un sql por campos, para una tabla x filtrando por la pk.
-        public int updateSchemaById(Dictionary<string, Object> schema, string tabla,string key, int id)
+        public int updateSchemaById(Dictionary<string, Object> schema, string tabla,string key, Int64 id)
         {
             //Genero el sql dinamico.
             string fields = this.utilText.setsFromSchema(schema);
