@@ -10,6 +10,29 @@ namespace DAL
 {
     public abstract class AbstractDAL<T>:ICrud<T>
     {
+        //Acesso a manejador de datos.
+        public SqlParser getParser()
+        {
+            return new SqlParser();
+        }
+        public QuerySelect getSelect()
+        {
+            return new QuerySelect();
+        }
+        public QueryInsert getInsert()
+        {
+            return new QueryInsert();
+        }
+        public QueryUpdate getUpdate()
+        {
+            return new QueryUpdate();
+        }
+        public QueryDelete getDelete()
+        {
+            return new QueryDelete();
+        }
+
+        //Metodos de entidadedes.
         public AbstractDAL() {}
 
         public T findById(int id) { return (new List<T>())[0]; }
@@ -21,6 +44,10 @@ namespace DAL
         public int save(T entity) { return 0; }
 
         public int update(T entity) { return 0; }
-    
+
+        public QueryBuilder buildSelect()
+        {
+            return new QuerySelect();
+        }
     }
 }

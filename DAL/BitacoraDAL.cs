@@ -8,7 +8,7 @@ using DAL.DAO;
 
 namespace DAL
 {
-    public class BitacoraDAL
+    public class BitacoraDAL : AbstractDAL<UsuarioBE>
     {
         //Agrega un nuevo registro en la bitacora.
         public int insert(BitacoraBE bitacora)
@@ -22,9 +22,8 @@ namespace DAL
                 { "fec_log",bitacora.fecLog},
                 { "payload",bitacora.payload}
             };
-
-            QueryInsert builder = new QueryInsert();
-            return builder.insertSchema(schema, "bitacora");
+            
+            return this.getInsert().insertSchema(schema, "bitacora");
         }
     }
 }

@@ -14,7 +14,6 @@ namespace DAL
 {
     public class UsuarioDAL:AbstractDAL<UsuarioBE>
     {
-
         //Bindea la lista de campos de un registro de una consulta, con un objeto BE.
         private UsuarioBE bindSchema(List<Object> fieldData)
         {
@@ -28,7 +27,7 @@ namespace DAL
             new EntityBinder().match(fieldData, userTarget);
 
             //Actualizo el tipo de usuario que es un enum.            
-            Dictionary<string, object> mapa = new SqlParser().rowToDictionary(fieldData);
+            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
             userTarget.tipoUsuario = (UsuarioTipo)mapa["tipo_usuario"];
 
             //Blanqueo el campo de password.
@@ -39,10 +38,10 @@ namespace DAL
         }
 
         //Este metodo obtiene en base al ID el usuario.
-        public UsuarioBE findById2(int id)
+        public UsuarioBE findById(int id)
         {
             //Busco en la bd por id.
-            List<object> result = new QuerySelect().selectById("usuario", "idusuario", id);
+            List<object> result = this.getSelect().selectById("usuario", "idusuario", id);
 
             //Bindeo con el esquema.
             return this.bindSchema((List<object>)result[0]);
@@ -53,7 +52,7 @@ namespace DAL
         public List<UsuarioBE> findAll()
         {
             //Busco en la bd por id.
-            List<object> result = new QuerySelect().selectAll("usuario");
+            List<object> result = this.getSelect().selectAll("usuario");
 
             //Lista resultado.
             List<UsuarioBE> lista = new List<UsuarioBE>();
@@ -68,7 +67,7 @@ namespace DAL
         public UsuarioBE login(string email, string pwd)
         {            
             //Armo el query con un where con schema.
-            List<Object> result = new QuerySelect().selectAnd(new Dictionary<string, Object>{
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
                 {"email",email},
                 { "pwd",pwd}
             }, "usuario");
@@ -82,9 +81,8 @@ namespace DAL
 
         //Borra el usuario.
         public int delete(int id)
-        {
-            QueryDelete builder = new QueryDelete();
-            return builder.deleteById("idusuario", id, "usuario");
+        {            
+            return this.getDelete().deleteById("idusuario", id, "usuario");
         }
 
         //Actualizar el usuario.
@@ -101,8 +99,7 @@ namespace DAL
                 { "hash",user.hash}
             };
 
-            QueryUpdate builder = new QueryUpdate();
-            return builder.updateSchemaById(schema,"usuario","idusuario",user.idusuario);
+            return this.getUpdate().updateSchemaById(schema,"usuario","idusuario",user.idusuario);
         }
 
         //Agrega un nuevo usuario.
@@ -119,14 +116,13 @@ namespace DAL
                 { "hash",user.hash}
             };
 
-            QueryInsert builder = new QueryInsert();
-            return builder.insertSchema(schema, "usuario",true);
+            return this.getInsert().insertSchema(schema, "usuario",true);
         }
 
         //Obtener el hash completo de la entidad.
         public string getEntityHash()
         {
-            List<object> result = new QuerySelect().selectAll("usuario");
+            List<object> result = this.getSelect().selectAll("usuario");
             string summarizedHash = "";
 
             foreach (List<object> register in result)

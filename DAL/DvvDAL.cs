@@ -8,7 +8,7 @@ using DAL.DAO;
 
 namespace DAL
 {
-    public class DvvDAL
+    public class DvvDAL : AbstractDAL<UsuarioBE>
     {
         //Bindea el schema de usuario con el data reader.
         private DvhBE bindSchema(List<Object> result)
@@ -25,7 +25,7 @@ namespace DAL
         //Buscar por tabla.
         public DvhBE find(string tabla)
         {
-            List<Object> result = new QuerySelect().selectAnd(
+            List<Object> result = this.getSelect().selectAnd(
                 new Dictionary<string, Object>{
                     {"tabla",tabla}
             }, "dvv");
@@ -43,16 +43,13 @@ namespace DAL
                 { "fecUpdate",digito.fecUpdate}
             };
 
-            QueryInsert builder = new QueryInsert();
-            return builder.insertSchema(schema, "dvv");
+            return this.getInsert().insertSchema(schema, "dvv");
         }
 
         //Actualizo el digito.
         public int update(DvhBE digito)
         {
-            QueryUpdate upd = new QueryUpdate();
-
-            return upd.updateSchemaWhereAnd(
+            return this.getUpdate().updateSchemaWhereAnd(
                 new Dictionary<string, Object>{
                     {"hash",digito.hash},
                     { "fecUpdate",digito.fecUpdate}
@@ -65,9 +62,7 @@ namespace DAL
         //Actualizo el hash y fecha.
         public int updateHash(string tabla, string hash)
         {
-            QueryUpdate upd = new QueryUpdate();
-
-            return upd.updateSchemaWhereAnd(
+            return this.getUpdate().updateSchemaWhereAnd(
                 new Dictionary<string, Object>{
                     {"hash",hash},
                     { "fecUpdate",DateTime.Now}
