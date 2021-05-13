@@ -60,6 +60,8 @@
     <Compile Include="EmpleadoDAL.cs" />
     <Compile Include="Idiomas\IdiomaDAL.cs" />
     <Compile Include="Mapper\EntityBinder.cs" />
+    <Compile Include="OrdenCompraDAL.cs" />
+    <Compile Include="OrdenVentaDAL.cs" />
     <Compile Include="Permiso\PermisoTodoDAL.cs" />
     <Compile Include="Permiso\PermisoDAL.cs" />
     <Compile Include="Permiso\PermisoSQL.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Admin\BackupDAL.cs" />
     <Compile Include="SolicOnboardingDAL.cs" />
     <Compile Include="SolicOperacionDAL.cs" />
+    <Compile Include="TransferenciaDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
