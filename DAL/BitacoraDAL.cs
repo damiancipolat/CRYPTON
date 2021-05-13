@@ -19,7 +19,7 @@ namespace DAL
             var schema = new Dictionary<string, Object>{
                 {"idusuario",iduser},
                 { "type",bitacora.type},
-                { "fec_log",bitacora.fecLog},
+                { "fec_log",bitacora.fecLog.ToString("yyyy-MM-dd HH:mm:ss.fff")},
                 { "payload",bitacora.payload}
             };
             

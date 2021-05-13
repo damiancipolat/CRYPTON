@@ -29,7 +29,7 @@ namespace SL
             BitacoraBE logBE = new BitacoraBE();
             logBE.payload = payload;
             logBE.usuario = Session.GetInstance().getUser();
-            logBE.fecLog = DateTime.Now;
+            logBE.fecLog =DateTime.Now;
             logBE.type = 1;
 
             //Registro en la bd.

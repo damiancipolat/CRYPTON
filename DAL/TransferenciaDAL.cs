@@ -80,7 +80,7 @@ namespace DAL
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"fecProc",transf.fecProc},
+                {"fecProc",transf.fecProc.ToString("yyyy-MM-dd HH:mm:ss.fff")},
                 {"cliente",transf.cliente.idcliente},
                 { "origen",transf.origen.idwallet},
                 { "destino",transf.destino.idwallet},
