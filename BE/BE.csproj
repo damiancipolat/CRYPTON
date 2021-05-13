@@ -51,7 +51,6 @@
     <Compile Include="DvhBE.cs" />
     <Compile Include="EmpleadoBE.cs" />
     <Compile Include="IdiomaBE.cs" />
-    <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="BitacoraBE.cs" />
     <Compile Include="MonedaBE.cs" />
     <Compile Include="OrdenCompra.cs" />

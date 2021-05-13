@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractDAL.cs" />
+    <Compile Include="BilleteraDAL.cs" />
+    <Compile Include="ClienteAgenda.cs" />
     <Compile Include="ICrud.cs" />
     <Compile Include="BitacoraDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
@@ -57,12 +59,14 @@
     <Compile Include="DvvDAL.cs" />
     <Compile Include="EmpleadoDAL.cs" />
     <Compile Include="Idiomas\IdiomaDAL.cs" />
+    <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="Permiso\PermisoTodoDAL.cs" />
     <Compile Include="Permiso\PermisoDAL.cs" />
     <Compile Include="Permiso\PermisoSQL.cs" />
     <Compile Include="Permiso\PermisoUserDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin\BackupDAL.cs" />
+    <Compile Include="SolicOnboardingDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>

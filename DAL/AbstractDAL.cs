@@ -5,11 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using DAL.DAO;
+using DAL.Mapper;
 
 namespace DAL
 {
     public abstract class AbstractDAL<T>:ICrud<T>
     {
+        //Binder.
+        public EntityBinder binder = new EntityBinder();
+
         //Acesso a manejador de datos.
         public SqlParser getParser()
         {

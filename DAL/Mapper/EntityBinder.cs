@@ -7,7 +7,7 @@ using System.Collections;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-namespace BE
+namespace DAL.Mapper
 {
     public class EntityBinder
     {

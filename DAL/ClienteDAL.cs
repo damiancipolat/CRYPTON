@@ -21,7 +21,7 @@ namespace DAL
             ClienteBE userTarget = new ClienteBE();
 
             //Bindeo campos con la lista de resultados.
-            new EntityBinder().match(fieldData, userTarget);
+            this.binder.match(fieldData, userTarget);
 
             return userTarget;
 

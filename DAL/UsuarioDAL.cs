@@ -24,7 +24,7 @@ namespace DAL
             UsuarioBE userTarget = new UsuarioBE();
 
             //Bindeo campos con la lista de resultados.
-            new EntityBinder().match(fieldData, userTarget);
+            this.binder.match(fieldData, userTarget);
 
             //Actualizo el tipo de usuario que es un enum.            
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);

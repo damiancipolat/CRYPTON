@@ -10,7 +10,7 @@ using DAL.DAO;
 
 namespace DAL.Idiomas
 {
-    public class IdiomaDAL
+    public class IdiomaDAL : AbstractDAL<IdiomaDAL>
     {
         //Bindeo datos con esquema.
         private IdiomaBE bindSchema(List<Object> fieldData)
@@ -22,7 +22,7 @@ namespace DAL.Idiomas
             IdiomaBE userTarget = new IdiomaBE();
 
             //Bindeo campos con la lista de resultados.
-            new EntityBinder().match(fieldData, userTarget);
+            this.binder.match(fieldData, userTarget);
 
             return userTarget;
         }
