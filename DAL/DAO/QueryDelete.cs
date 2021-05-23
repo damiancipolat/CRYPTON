@@ -11,10 +11,26 @@ namespace DAL.DAO
     public class QueryDelete : QueryBuilder
     {
         //Borro en base al id y clave.
-        public int deleteById(string key, int id, string tabla)
+        public int deleteById(string key, long id, string tabla)
         {
             //Genero el sql dinamico.
             string sql = "delete from "+tabla+" where "+key+"id="+id+";";
+            Debug.WriteLine("Generated sql:" + sql);
+
+            //Ejecuto la consulta.
+            int result = this.query(sql);
+
+            //Cierro conexion.
+            this.bdConnection.Close();
+
+            return result;
+        }
+
+        //Baja logica por tabla, clave, id
+        public int logicalDeleteById(string key, long id, string tabla)
+        {
+            //Genero el sql dinamico.
+            string sql = "updete " + tabla + " set deleted=GETDATE() where " + key + "id=" + id + ";";
             Debug.WriteLine("Generated sql:" + sql);
 
             //Ejecuto la consulta.

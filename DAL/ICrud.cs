@@ -12,7 +12,7 @@ namespace DAL
 
         List<T> findAll();
 
-        int delete(int id);
+        int delete(long id);
 
         int save(T entity);
 

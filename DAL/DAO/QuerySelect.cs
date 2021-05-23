@@ -26,7 +26,7 @@ namespace DAL.DAO
         }
 
         //Genera una consulta sql, filtrando por ID.
-        public List<Object> selectById(string table, string key, int id)
+        public List<Object> selectById(string table, string key, long id)
         {
             //Genero el query en base a parametros.
             string sql = "select * from " + table + " where " + key + "=" + id + ";";

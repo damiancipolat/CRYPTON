@@ -43,7 +43,7 @@ namespace DAL
 
         public List<T> findAll() { return new List<T>(); }
 
-        public int delete(int id) { return 0; }
+        public int delete(long id) { return 0; }
 
         public int save(T entity) { return 0; }
 

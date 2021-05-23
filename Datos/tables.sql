@@ -34,7 +34,8 @@ create table usuario(
 	email varchar(100),
 	tipo_usuario int,
 	pwd varchar(100) NOT NULL,
-	[hash] text
+	[hash] text,
+	deleted datetime
 );
 
 --Tipo de usuario cliente, empleado.
@@ -50,7 +51,8 @@ insert into tipo_usuario values('Empleado');
 create table dvv(
 	tabla varchar(100) primary key,
 	[hash] text,
-	fecUpdate datetime
+	fecUpdate datetime,
+	deleted datetime
 );
 
 insert into dvv(tabla,[hash],fecUpdate) values('usuario','',GETDATE());
@@ -60,7 +62,8 @@ create table permiso
 (
 	idpermiso int identity(1,1) primary key,
 	nombre varchar(150),
-	es_patente bit
+	es_patente bit,
+	deleted datetime
 );
 
 --Esquema de roles
@@ -101,11 +104,10 @@ create table usuario_permiso
 	idusuario bigint,
 	idpermiso int
 );
-select * from usuario;
+
 insert into usuario_permiso values(1,4);
 insert into usuario_permiso values(1,5);
 insert into usuario_permiso values(1,6);
-select * from usuario_permiso
 
 --Tabla de registro de backups.
 create table admin_backup
@@ -114,7 +116,8 @@ create table admin_backup
 	idusuario bigint,
 	[path] varchar(100),
 	fecRec datetime,
-	[type] varchar(100)
+	[type] varchar(100),
+	deleted datetime
 );
 
 --Validaciones de identidad, se ingresa documentacion y estado.
@@ -127,7 +130,8 @@ create table solic_onboarding(
 	img_selfie varchar(100),
 	solic_estado int,
 	fecProceso datetime,
-	operador bigint
+	operador bigint,
+	deleted datetime
 );
 
 --Estados de validacion de identidad.
@@ -150,19 +154,22 @@ create table cliente(
 	num_tramite varchar(50),
 	domicilio varchar(100),
 	telefono varchar(100),
-	valido varchar(1)
+	valido varchar(1),
+	deleted datetime
 );
 
 create table empleado(
 	idempleado bigint identity(1,1) primary key,
 	idusuario bigint,
-	legajo varchar(100)
+	legajo varchar(100),
+	deleted datetime
 );
 
 --Tabla de monedas.
 create table moneda(
 	cod varchar(10) primary key,
-	descrip varchar(100)
+	descrip varchar(100),
+	deleted datetime
 );
 
 insert into moneda values('ARS','Pesos argentinos');
@@ -175,7 +182,8 @@ create table cliente_agenda(
 	idcontacto bigint identity(1,1) primary key,
 	idcliente bigint,
 	moneda varchar(10) NOT NULL,
-	valor varchar(100)
+	valor varchar(100),
+	deleted datetime
 );
 
 --Api keys.
@@ -196,7 +204,8 @@ create table billetera(
 	moneda varchar(10),
 	direccion varchar(30),
 	fecCreacion datetime,
-	saldo float
+	saldo float,
+	deleted datetime
 );
 
 --Tabla de solicitudes de retiro de dinero.
@@ -211,7 +220,8 @@ create table solic_operacion
 	operador bigint,
 	estado_solic int,
 	fecRegistro datetime,
-	fecProceso datetime
+	fecProceso datetime,
+	deleted datetime
 );
 
 --Tabla de tipo de operaciones
@@ -241,7 +251,8 @@ create table transferencias(
 	destino bigint,
 	valor float,
 	moneda varchar(10),
-	idorden bigint
+	idorden bigint,
+	deleted datetime
 );
 
 --Tabla de comisiones.
@@ -252,7 +263,8 @@ create table comisiones(
 	moneda varchar(10),
 	valor bigint,
 	fecCobro datetime,
-	idorden_estado bigint
+	idorden_estado bigint,
+	deleted datetime
 );
 
 --Tabla de ordenes de venta.
@@ -263,7 +275,8 @@ create table orden_venta(
 	moneda varchar(10),
 	precio float,
 	fecCreacion datetime,
-	fecFin datetime
+	fecFin datetime,
+	deleted datetime
 );
 
 --Tabla de tipo de ordenes.
@@ -284,11 +297,13 @@ create table orden_compra(
 	comprador bigint,
 	moneda varchar(10),
 	cantidad int,
-	precio float
+	precio float,
+	deleted datetime
 );
-insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'13/05/2021 3:35:55','Default language loaded from config:ES');
+
+--insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'13/05/2021 3:35:55','Default language loaded from config:ES');
+
 --Bitacora. 
-select * from bitacora
 CREATE TABLE bitacora
 (
 	id bigint not NULL identity(1,1) PRIMARY KEY,
@@ -302,7 +317,8 @@ CREATE TABLE bitacora
 create table idiomas
 (
 	code varchar(50) primary key,
-	descripcion varchar(100)
+	descripcion varchar(100),
+	deleted datetime
 );
 
 insert into idiomas(code,descripcion) values('ES','Español');
@@ -314,7 +330,8 @@ create table idioma_palabras
 	idpalabra int identity(1,1) primary key,
 	code varchar(50),
 	clave varchar(50),
-	valor varchar(50)
+	valor varchar(50),
+	deleted datetime
 );
 
 insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');
@@ -368,6 +385,9 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usua
 insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,hash) values('dsds','dsds','sdsd','Sfi3Pf8S0/VsWkax+mk9SQ==',1,'81dc9bdb52d04dc20036dbd8313ed055','f1b8c211f86136b7d2c37c7d8210163e');SELECT SCOPE_IDENTITY();
 SELECT @@IDENTITY
 select * from usuario where  email='0qpfD6wZVhgCzJSrMZIxLH1Q/Yf4Igl0fyIQccYcIMenYwW8byJ3SHbiIBJnDFb3' and pwd='81dc9bdb52d04dc20036dbd8313ed055';
+
+select * from orden_venta
+
 
 /*
 truncate table usuario;

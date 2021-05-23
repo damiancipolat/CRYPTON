@@ -27,7 +27,7 @@ namespace DAL
         }
 
         //Este metodo obtiene en base al ID el usuario.
-        public OrdenVentaBE findById(int id)
+        public OrdenVentaBE findById(long id)
         {
             //Busco en la bd por id.
             List<object> result = this.getSelect().selectById("orden_venta", "idorden", id);
@@ -69,9 +69,9 @@ namespace DAL
         }
 
         //Borra el usuario.
-        public int delete(int id)
+        public int delete(long id)
         {
-            return this.getDelete().deleteById("idorden", id, "orden_venta");
+            return this.getDelete().logicalDeleteById("idorden", id, "orden_venta");
         }
 
         //Actualizar el usuario.
