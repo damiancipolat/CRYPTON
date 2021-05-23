@@ -260,7 +260,28 @@ namespace UI
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            DeveloperBE dev = new DeveloperBE();
+            UsuarioBE user = new UsuarioBE();
+            user.nombre = "billy";
+            user.apellido = "simpson";
+            user.nombre = "homer";
+            user.alias = "dam";
+            user.tipoUsuario = UsuarioTipo.CLIENTE;
+            user.pwd = "1234";
+
+            OrdenVentaBE venta = new OrdenVentaBE();
+
+            venta.cantidad = 2;
+            venta.precio = 100;
+            venta.moneda = new MonedaBE("BTC", "BITCOIN");
+            venta.fecCreacion = DateTime.Now;
+            venta.fecFin = DateTime.Now;
+            venta.ordenEstado = OrdenEstado.DISPONIBLE;
+            venta.vendedor = new ClienteBE(user, "DNI", "33295515", "001",DateTime.Now, "tmp", "damian.cipolat@gmail.com", "111");
+
+
+            int newId = new OrdenVentaDAL().save(venta);
+            Debug.WriteLine(">>>>>"+newId.ToString());
+
         }
     }
 }

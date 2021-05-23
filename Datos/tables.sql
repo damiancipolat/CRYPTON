@@ -286,14 +286,15 @@ create table orden_compra(
 	cantidad int,
 	precio float
 );
-
---Bitacora.
+insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'13/05/2021 3:35:55','Default language loaded from config:ES');
+--Bitacora. 
+select * from bitacora
 CREATE TABLE bitacora
 (
 	id bigint not NULL identity(1,1) PRIMARY KEY,
 	idusuario bigint NULL,
 	[type] bigint NULL,
-	fec_log date NULL,
+	fec_log datetime NULL,
 	payload TEXT not NULL	
 );
 

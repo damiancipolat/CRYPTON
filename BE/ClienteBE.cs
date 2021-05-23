@@ -18,5 +18,18 @@ namespace BE
         public string email;
         public string telefono;
         public string valido;
+
+        public ClienteBE() { }
+        public ClienteBE(UsuarioBE user, string tdoc, string num,string numTramite, DateTime fecNac, string domic, string email, string tel)
+        {
+            this.usuario = user;
+            this.tipoDoc = tdoc;
+            this.numero = num;            
+            this.num_tramite = numTramite;
+            this.fec_nac = fecNac;
+            this.domicilio = domic;
+            this.email = email;
+            this.telefono = tel;
+        }
     }
 }

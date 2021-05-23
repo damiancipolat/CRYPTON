@@ -10,5 +10,11 @@ namespace BE
     {
         public string cod;
         public string descrip;
+
+        public MonedaBE(string cod,string descrip)
+        {
+            this.cod = cod;
+            this.descrip = descrip;
+        }
     }
 }

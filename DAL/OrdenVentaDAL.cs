@@ -61,8 +61,8 @@ namespace DAL
                 { "cantidad",venta.cantidad},
                 { "moneda",venta.moneda.cod},
                 { "precio",venta.precio},
-                { "fecCreacion",venta.fecCreacion},
-                { "fecFin",venta.fecFin}
+                { "fecCreacion",(venta.fecCreacion!=null)?venta.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss"):null},
+                { "fecFin",(venta.fecFin!=null)?venta.fecFin.ToString("yyyy-MM-dd HH:mm:ss"):null}
             };
 
             return this.getInsert().insertSchema(schema, "orden_venta", true);
