@@ -282,7 +282,7 @@ namespace UI
 
             int newId = new OrdenVentaDAL().save(venta);
             Debug.WriteLine(">>>>>"+newId.ToString());*/
-            new BlockIoApi().test();
+            //new BlockIo().test();
 
         }
 

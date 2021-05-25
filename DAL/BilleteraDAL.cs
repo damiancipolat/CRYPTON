@@ -21,6 +21,9 @@ namespace DAL
             //Bindeo campos con la lista de resultados.
             this.binder.match(fieldData, wallet);
 
+            //Traigo la cuenta.
+            wallet.cuenta = new CuentaDAL().findById(wallet.cuenta.idcuenta);
+
             return wallet;
 
         }

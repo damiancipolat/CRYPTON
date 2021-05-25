@@ -47,7 +47,7 @@
     <Compile Include="ClienteAgenda.cs" />
     <Compile Include="ClienteBE.cs" />
     <Compile Include="ComisionBE.cs" />
-    <Compile Include="DeveloperBE.cs" />
+    <Compile Include="CuentaBE.cs" />
     <Compile Include="DvhBE.cs" />
     <Compile Include="EmpleadoBE.cs" />
     <Compile Include="IdiomaBE.cs" />

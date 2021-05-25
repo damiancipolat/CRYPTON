@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS empleado;				--BE
 DROP TABLE IF EXISTS cliente_agenda;		--BE
 DROP TABLE IF EXISTS api_keys;				--BE
 DROP TABLE IF EXISTS cuentas;				--BE
+DROP TABLE IF EXISTS cuenta_estado;			--BE
 DROP TABLE IF EXISTS billetera;				--BE
 DROP TABLE IF EXISTS bitacora;				--BE
 DROP TABLE IF EXISTS solic_operacion;		--BE
@@ -205,19 +206,24 @@ create table cuentas
 	idcuenta bigint identity(1,1) primary key,
 	cliente bigint,
 	fecAlta datetime,
-	activa bit
+	estado int
 );
 
-create table cuenta_billetera
+create table cuenta_estado
 (
-	idcuenta bigint,
-	idwallet bigint
+	id bigint identity(1,1) primary key,
+	descrip varchar(100)
 );
+
+insert into cuenta_estado(descrip) values('Activa');
+insert into cuenta_estado(descrip) values('Inactiva');
+insert into cuenta_estado(descrip) values('Bloqueada');
 
 --Billetera
 create table billetera(
 	idwallet bigint identity(1,1) primary key,
 	idcliente bigint,
+	idcuenta bigint,
 	moneda varchar(10),
 	direccion varchar(30),
 	fecCreacion datetime,

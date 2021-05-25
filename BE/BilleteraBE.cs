@@ -14,5 +14,6 @@ namespace BE
         public string direccion;
         public DateTime fecCreacion;
         public float saldo;
+        public CuentaBE cuenta;
     }
 }
