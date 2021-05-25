@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS solic_onboarding;		--BE
 DROP TABLE IF EXISTS onboarding_estados;	--BE
 DROP TABLE IF EXISTS cliente;				--BE
 DROP TABLE IF EXISTS moneda;				--BE
+DROP TABLE IF EXISTS empleado;				--BE
 DROP TABLE IF EXISTS cliente_agenda;		--BE
 DROP TABLE IF EXISTS api_keys;				--BE
 DROP TABLE IF EXISTS billetera;				--BE
@@ -172,10 +173,10 @@ create table moneda(
 	deleted datetime
 );
 
-insert into moneda values('ARS','Pesos argentinos');
-insert into moneda values('BTC','Bitcoin');
-insert into moneda values('LTC','Litecoin');
-insert into moneda values('DOG','Dodge');
+insert into moneda(cod,descrip) values('ARS','Pesos argentinos');
+insert into moneda(cod,descrip) values('BTC','Bitcoin');
+insert into moneda(cod,descrip) values('LTC','Litecoin');
+insert into moneda(cod,descrip) values('DOG','Dodge');
 
 --Tabla de contactos.
 create table cliente_agenda(
@@ -381,12 +382,6 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT','IT');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BACKUP','Backup');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PERMISSION','Permisos');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usuarios');
-
-insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,hash) values('dsds','dsds','sdsd','Sfi3Pf8S0/VsWkax+mk9SQ==',1,'81dc9bdb52d04dc20036dbd8313ed055','f1b8c211f86136b7d2c37c7d8210163e');SELECT SCOPE_IDENTITY();
-SELECT @@IDENTITY
-select * from usuario where  email='0qpfD6wZVhgCzJSrMZIxLH1Q/Yf4Igl0fyIQccYcIMenYwW8byJ3SHbiIBJnDFb3' and pwd='81dc9bdb52d04dc20036dbd8313ed055';
-
-select * from orden_venta
 
 
 /*

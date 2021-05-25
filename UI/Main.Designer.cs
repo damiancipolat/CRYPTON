@@ -468,32 +468,33 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.InicioToolStripMenuItem_Click);
             // 
             // main_menu_login
             // 
             this.main_menu_login.Name = "main_menu_login";
-            this.main_menu_login.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_login.Size = new System.Drawing.Size(224, 26);
             this.main_menu_login.Text = "main_menu_login";
             this.main_menu_login.Click += new System.EventHandler(this.Main_menu_login_Click);
             // 
             // main_menu_signup
             // 
             this.main_menu_signup.Name = "main_menu_signup";
-            this.main_menu_signup.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_signup.Size = new System.Drawing.Size(224, 26);
             this.main_menu_signup.Text = "main_menu_signup";
             this.main_menu_signup.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
             // 
             // main_menu_signout
             // 
             this.main_menu_signout.Name = "main_menu_signout";
-            this.main_menu_signout.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_signout.Size = new System.Drawing.Size(224, 26);
             this.main_menu_signout.Text = "main_menu_signout";
             this.main_menu_signout.Click += new System.EventHandler(this.Main_menu_signout_Click);
             // 
             // main_menu_exit
             // 
             this.main_menu_exit.Name = "main_menu_exit";
-            this.main_menu_exit.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_exit.Size = new System.Drawing.Size(224, 26);
             this.main_menu_exit.Text = "main_menu_exit";
             this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 

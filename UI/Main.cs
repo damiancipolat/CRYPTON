@@ -283,5 +283,10 @@ namespace UI
             Debug.WriteLine(">>>>>"+newId.ToString());
 
         }
+
+        private void InicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -68,7 +68,7 @@ namespace SL
             active = false;
 
             //Set dates.
-            startDate = DateTime.Now;
+            endDate = DateTime.Now;
         }
 
         //Set the language.
