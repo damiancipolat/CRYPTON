@@ -54,6 +54,26 @@ namespace DAL
             return lista;
         }
 
+        //Este metodo retorna las billeteras de una cuenta.
+        public List<BilleteraBE> findByCuenta(long cuentaId)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var filter = new Dictionary<string, Object>{
+                {"idcuenta",cuentaId}
+            };
+
+            //Busco en la bd por id.
+            List<object> result = this.getSelect().selectAnd(filter, "billetera");
+
+            //Lista resultado.
+            List<BilleteraBE> lista = new List<BilleteraBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
+
         //Agrega un nuevo usuario.
         public int insert(BilleteraBE wallet)
         {
@@ -64,7 +84,7 @@ namespace DAL
                 {"direccion", wallet.direccion},
                 {"fecCreacion", wallet.fecCreacion},
                 {"saldo", wallet.saldo}
-        };
+            };
 
             return this.getInsert().insertSchema(schema, "billetera", true);
         }
