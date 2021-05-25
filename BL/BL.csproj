@@ -42,10 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteBL.cs" />
+    <Compile Include="CuentaBL.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="FraudeBL.cs" />
+    <Compile Include="MarketBL.cs" />
+    <Compile Include="OperacionesBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />
     <Compile Include="PermisoBL.cs" />
     <Compile Include="UsuarioBL.cs" />
+    <Compile Include="ReportingBL.cs" />
+    <Compile Include="BilleteraBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
