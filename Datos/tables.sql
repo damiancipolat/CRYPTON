@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS moneda;				--BE
 DROP TABLE IF EXISTS empleado;				--BE
 DROP TABLE IF EXISTS cliente_agenda;		--BE
 DROP TABLE IF EXISTS api_keys;				--BE
+DROP TABLE IF EXISTS cuentas;				--BE
 DROP TABLE IF EXISTS billetera;				--BE
 DROP TABLE IF EXISTS bitacora;				--BE
 DROP TABLE IF EXISTS solic_operacion;		--BE
@@ -197,6 +198,21 @@ create table api_keys(
 
 insert into api_keys(ambiente,btc,ltc,dog) values('TEST','70d1-1c21-b76c-fb00','34e3-4277-7289-6fd6','7c02-9d46-b312-25ef');
 insert into api_keys(ambiente,btc,ltc,dog) values('PROD','6195-52ea-f8fb-dfc1','d685-3e52-8b59-abe6','3894-9455-f527-4054');
+
+--Cuentas
+create table cuentas
+(
+	idcuenta bigint identity(1,1) primary key,
+	cliente bigint,
+	fecAlta datetime,
+	activa bit
+);
+
+create table cuenta_billetera
+(
+	idcuenta bigint,
+	idwallet bigint
+);
 
 --Billetera
 create table billetera(
