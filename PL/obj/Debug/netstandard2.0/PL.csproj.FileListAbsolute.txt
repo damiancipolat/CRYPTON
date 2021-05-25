@@ -1,0 +1,9 @@
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\bin\Debug\netstandard2.0\PL.deps.json
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\bin\Debug\netstandard2.0\PL.dll
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\bin\Debug\netstandard2.0\PL.pdb
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\obj\Debug\netstandard2.0\PL.csprojAssemblyReference.cache
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\obj\Debug\netstandard2.0\PL.csproj.CoreCompileInputs.cache
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\obj\Debug\netstandard2.0\PL.AssemblyInfoInputs.cache
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\obj\Debug\netstandard2.0\PL.AssemblyInfo.cs
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\obj\Debug\netstandard2.0\PL.dll
+C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\obj\Debug\netstandard2.0\PL.pdb

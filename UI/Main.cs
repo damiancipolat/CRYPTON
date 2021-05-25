@@ -24,6 +24,7 @@ using DAL.Admin;
 using SL;
 using SEC;
 using UI.utils;
+using PL;
 
 namespace UI
 {
@@ -259,7 +260,7 @@ namespace UI
         }
 
         private void Button2_Click_1(object sender, EventArgs e)
-        {
+        {/*
             UsuarioBE user = new UsuarioBE();
             user.nombre = "billy";
             user.apellido = "simpson";
@@ -280,7 +281,8 @@ namespace UI
 
 
             int newId = new OrdenVentaDAL().save(venta);
-            Debug.WriteLine(">>>>>"+newId.ToString());
+            Debug.WriteLine(">>>>>"+newId.ToString());*/
+            new BlockIoApi().test();
 
         }
 

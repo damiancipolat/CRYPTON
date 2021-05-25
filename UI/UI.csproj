@@ -151,6 +151,10 @@
       <Project>{d639a0f9-9476-4c97-9c18-3b1017683cfb}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PL\PL.csproj">
+      <Project>{d8af56a7-6ed0-403a-8733-ecb5511a3289}</Project>
+      <Name>PL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SEC\SEC.csproj">
       <Project>{3d89b4a3-57e0-4a39-8fd4-67945f0559ac}</Project>
       <Name>SEC</Name>
