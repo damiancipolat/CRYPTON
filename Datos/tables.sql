@@ -282,7 +282,7 @@ create table transferencias(
 --Tabla de comisiones.
 create table comisiones(
 	idcobro  bigint identity(1,1) primary key,
-	operacion varchar(5),
+	operacion bigint,
 	referencia bigint,
 	moneda varchar(10),
 	valor bigint,

@@ -7,30 +7,30 @@ using BE;
 
 namespace DAL
 {
-    public class ComisionesDAL : AbstractDAL<ComisionBE>
+    public class ComisionValorDAL : AbstractDAL<ComisionValorBE>
     {
 
         //Bindea la lista de campos de un registro de una consulta, con un objeto BE.
-        private ComisionBE bindSchema(List<Object> fieldData)
+        private ComisionValorBE bindSchema(List<Object> fieldData)
         {
             if (fieldData.Count == 0)
                 return null;
 
             //Armo un usuario que sera el cual se actualizara los campos.
-            ComisionBE comisionTarget = new ComisionBE();
+            ComisionValorBE comisionTarget = new ComisionValorBE();
 
             //Bindeo campos con la lista de resultados.
-            this.binder.match(fieldData, comisionTarget);;
+            this.binder.match(fieldData, comisionTarget);
 
             return comisionTarget;
 
         }
 
-        //Este metodo obtiene en base al ID el usuario.
-        public ComisionBE findById(int id)
+        //Este metodo obtiene en base al codigo de operacion.
+        public ComisionValorBE findById(long id)
         {
             //Busco en la bd por id.
-            List<object> result = this.getSelect().selectById("comisiones", "idcobro", id);
+            List<object> result = this.getSelect().selectById("comisiones_valor", "idope", id);
 
             //Bindeo con el esquema.
             return this.bindSchema((List<object>)result[0]);
@@ -38,13 +38,13 @@ namespace DAL
         }
 
         //Este metodo retorna una lista de usuarios.
-        public List<ComisionBE> findAll()
+        public List<ComisionValorBE> findAll()
         {
             //Busco en la bd por id.
-            List<object> result = this.getSelect().selectAll("comisiones");
+            List<object> result = this.getSelect().selectAll("comisiones_valor");
 
             //Lista resultado.
-            List<ComisionBE> lista = new List<ComisionBE>();
+            List<ComisionValorBE> lista = new List<ComisionValorBE>();
 
             foreach (List<object> row in result)
                 lista.Add(this.bindSchema(row));
@@ -53,39 +53,33 @@ namespace DAL
         }
 
         //Borra el usuario.
-        public int delete(int id)
+        public int delete(long id)
         {
-            return this.getDelete().deleteById("idcobro", id, "comisiones");
+            return this.getDelete().deleteById("idope", id, "comisiones_valor");
         }
 
         //Actualizar el usuario.
-        public int update(ComisionBE comision)
+        public int update(ComisionValorBE comision)
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"operacion",comision.operacion},
-                { "referencia",comision.referencia},
-                { "moneda",comision.moneda.cod},
-                { "valor",comision.valor},
-                { "fecCobro",comision.fecCobro}
+                {"descrip",comision.descrip},
+                { "valor",comision.valor}
             };
 
-            return this.getUpdate().updateSchemaById(schema, "comisiones", "idcobro", comision.idcobro);
+            return this.getUpdate().updateSchemaById(schema, "comisiones_valor", "idope", comision.idope);
         }
 
         //Agrega un nuevo usuario.
-        public int save(ComisionBE comision)
+        public int save(ComisionValorBE comision)
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"operacion",comision.operacion},
-                { "referencia",comision.referencia},
-                { "moneda",comision.moneda.cod},
-                { "valor",comision.valor},
-                { "fecCobro",comision.fecCobro}
+                 {"descrip",comision.descrip},
+                { "valor",comision.valor}
             };
 
-            return this.getInsert().insertSchema(schema, "comisiones", true);
+            return this.getInsert().insertSchema(schema, "comisiones_valor", true);
         }
     }
 }

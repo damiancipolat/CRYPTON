@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    public enum Operaciones
+    {
+        COMPRA=1,
+        VENTA=2,
+        EXTRACT=3
+    }
+
     public class ComisionValorBE
     {
         public long idope;

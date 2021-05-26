@@ -22,7 +22,8 @@ namespace DAL
             this.binder.match(fieldData, wallet);
 
             //Traigo la cuenta.
-            wallet.cuenta = new CuentaDAL().findById(wallet.cuenta.idcuenta);
+            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);            
+            wallet.cuenta = new CuentaDAL().findById((long)mapa["idcuenta"]);
 
             return wallet;
 

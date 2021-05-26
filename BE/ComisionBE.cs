@@ -9,7 +9,7 @@ namespace BE
     public class ComisionBE
     {
         public Int64 idcobro;
-        public string operacion;
+        public ComisionValorBE operacion;
         public Int64 referencia;
         public MonedaBE moneda;
         public float valor;
