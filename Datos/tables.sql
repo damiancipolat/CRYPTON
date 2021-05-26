@@ -20,6 +20,7 @@ DROP TABLE IF EXISTS orden_venta;			--BE
 DROP TABLE IF EXISTS orden_compra			--BE
 DROP TABLE IF EXISTS orden_estado;			--BE
 DROP TABLE IF EXISTS comisiones;			--BE
+DROP TABLE IF EXISTS comisiones_valor;		--BE
 DROP TABLE IF EXISTS permiso;				--BE
 DROP TABLE IF EXISTS rol_permiso;			--BE
 DROP TABLE IF EXISTS usuario_permiso;		--BE
@@ -285,10 +286,21 @@ create table comisiones(
 	referencia bigint,
 	moneda varchar(10),
 	valor bigint,
-	fecCobro datetime,
-	idorden_estado bigint,
+	fecCobro datetime,	
 	deleted datetime
 );
+
+--Tabla de comisiones - valor
+create table comisiones_valor
+(
+	idope bigint identity(1,1) primary key,
+	descrip varchar(100),
+	valor float
+);
+
+insert into comisiones_valor(descrip,valor) values('Compra',0.5);
+insert into comisiones_valor(descrip,valor) values('Venta',0.5);
+insert into comisiones_valor(descrip,valor) values('Extraccion',2.5);
 
 --Tabla de ordenes de venta.
 create table orden_venta(

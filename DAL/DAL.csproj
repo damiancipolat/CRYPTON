@@ -45,6 +45,7 @@
     <Compile Include="AbstractDAL.cs" />
     <Compile Include="BilleteraDAL.cs" />
     <Compile Include="ClienteAgenda.cs" />
+    <Compile Include="ComisionValorDAL.cs" />
     <Compile Include="ComisionesDAL.cs" />
     <Compile Include="CuentaDAL.cs" />
     <Compile Include="ICrud.cs" />
