@@ -61,7 +61,6 @@ namespace DAL
             {
                 foreach (var c in lista)
                 {
-
                     var l = this.GetComponent(id, c.Hijos);
                     if (l != null && l.Id == id) return l;
                     else
@@ -96,7 +95,7 @@ namespace DAL
         public bool hasPermission(IList<Componente> lista,int id)
         {
             Componente c = this.GetComponent(id, lista);
-
+            
             return c != null;
         }
     }

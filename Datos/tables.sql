@@ -1,33 +1,33 @@
 --Borro las tablas para volver a crearlas.
-DROP TABLE IF EXISTS usuario;				--BE
-DROP TABLE IF EXISTS tipo_usuario;			--BE
-DROP TABLE IF EXISTS solic_onboarding;		--BE
-DROP TABLE IF EXISTS onboarding_estados;	--BE
-DROP TABLE IF EXISTS cliente;				--BE
-DROP TABLE IF EXISTS moneda;				--BE
-DROP TABLE IF EXISTS empleado;				--BE
-DROP TABLE IF EXISTS cliente_agenda;		--BE
-DROP TABLE IF EXISTS api_keys;				--BE
-DROP TABLE IF EXISTS cuentas;				--BE
-DROP TABLE IF EXISTS cuenta_estado;			--BE
-DROP TABLE IF EXISTS billetera;				--BE
-DROP TABLE IF EXISTS bitacora;				--BE
-DROP TABLE IF EXISTS solic_operacion;		--BE
-DROP TABLE IF EXISTS tipo_solic_op;			--BE
-DROP TABLE IF EXISTS solic_estados;			--BE
-DROP TABLE IF EXISTS transferencias;		--BE
-DROP TABLE IF EXISTS orden_venta;			--BE
-DROP TABLE IF EXISTS orden_compra			--BE
-DROP TABLE IF EXISTS orden_estado;			--BE
-DROP TABLE IF EXISTS comisiones;			--BE
-DROP TABLE IF EXISTS comisiones_valor;		--BE
-DROP TABLE IF EXISTS permiso;				--BE
-DROP TABLE IF EXISTS rol_permiso;			--BE
-DROP TABLE IF EXISTS usuario_permiso;		--BE
-DROP TABLE IF EXISTS admin_backup;			--BE
-DROP TABLE IF EXISTS dvv;					--BE
-DROP TABLE IF EXISTS idiomas;				--BE
-DROP TABLE IF EXISTS idioma_palabras;		--BE
+DROP TABLE IF EXISTS usuario;
+DROP TABLE IF EXISTS tipo_usuario;
+DROP TABLE IF EXISTS solic_onboarding;
+DROP TABLE IF EXISTS onboarding_estados;
+DROP TABLE IF EXISTS cliente;
+DROP TABLE IF EXISTS moneda;
+DROP TABLE IF EXISTS empleado;
+DROP TABLE IF EXISTS cliente_agenda;
+DROP TABLE IF EXISTS api_keys;
+DROP TABLE IF EXISTS cuentas;
+DROP TABLE IF EXISTS cuenta_estado;
+DROP TABLE IF EXISTS billetera;
+DROP TABLE IF EXISTS bitacora;
+DROP TABLE IF EXISTS solic_operacion;
+DROP TABLE IF EXISTS tipo_solic_op;
+DROP TABLE IF EXISTS solic_estados;
+DROP TABLE IF EXISTS transferencias;
+DROP TABLE IF EXISTS orden_venta;
+DROP TABLE IF EXISTS orden_compra;
+DROP TABLE IF EXISTS orden_estado;
+DROP TABLE IF EXISTS comisiones;
+DROP TABLE IF EXISTS comisiones_valor;
+DROP TABLE IF EXISTS permiso;
+DROP TABLE IF EXISTS rol_permiso;
+DROP TABLE IF EXISTS usuario_permiso;
+DROP TABLE IF EXISTS admin_backup;
+DROP TABLE IF EXISTS dvv;
+DROP TABLE IF EXISTS idiomas;
+DROP TABLE IF EXISTS idioma_palabras;
 
 --Tabla de usuarios.
 create table usuario(
@@ -101,17 +101,12 @@ insert into rol_permiso(idrol,idpermiso) values(2,9);
 insert into rol_permiso(idrol,idpermiso) values(2,10);
 insert into rol_permiso(idrol,idpermiso) values(2,11);
 
-
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
 (
 	idusuario bigint,
 	idpermiso int
 );
-
-insert into usuario_permiso values(1,4);
-insert into usuario_permiso values(1,5);
-insert into usuario_permiso values(1,6);
 
 --Tabla de registro de backups.
 create table admin_backup
@@ -417,92 +412,3 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT','IT');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BACKUP','Backup');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PERMISSION','Permisos');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usuarios');
-
-
-/*
-truncate table usuario;
-truncate table dvv;
-
-select * from idiomas;
-select * from idioma_palabras;
-select * from usuario;
-select * from usuario_permiso;
-select * from dvv;
-select * from tipo_us
-
-
-select * from usuario
-
-insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,[hash]) 
-values('damian','cipolat','alf','alf@gmail.com',1,'9e94b15ed312fa42232fd87a55db0d39','402ac28ffb19680ff94a7420200d20c9');
-SELECT SCOPE_IDENTITY()
-
-
-select * from usuario
-select * from dvv;
-
-truncate table usuario;
-truncate table dvh
-
-insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'08/05/2021 21:40:21','Default language loaded from config:ES');
-select * from bitacora;
-
-
-select * from usuario where  email='M9w1zJy9kCuPJQvs+jygmprvoa6uekU7jTXUjOx0WPk=' and pwd='81dc9bdb52d04dc20036dbd8313ed055';
-
-*/
-
-
-/*	VISTAS 
-DROP VIEW IF EXISTS v_operaciones;
-
---Vista de operaciones.
-create view v_operaciones
-as(
-	select  concat('ING',si.fecProceso) as idoperacion,
-			si.fecProceso,
-			si.idusuario,
-			si.valor,
-			si.origen,
-			'ING' as tipo_operacion 
-	from solic_ingreso as si
-	union all
-	select  concat('RET',sr.fecProceso) as idoperacion,
-			sr.fecProceso,
-			sr.idusuario,
-			sr.valor,
-			sr.idwallet,
-			'RET' as tipo_operacion
-	from solic_retiro as sr
-	union all
-	select concat('CONCAT',t.idtransf) as idoperacion,
-			t.fecProc as fecProceso,
-			t.idusuario,
-			t.valor,
-			t.origen, 'TRANSF' as tipo_operacion
-	from transferencias as t
-);
-
-with recursivo as(
-               select sp2.idrol, sp2.idpermiso from rol_permiso SP2
-               where sp2.idrol is NULL
-               UNION ALL
-               select sp.idrol, sp.idpermiso from rol_permiso sp
-               inner join recursivo r on r.idpermiso = sp.idrol
-            ) 
-            select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente
-            from recursivo r
-            inner join permiso p on r.idpermiso = p.idpermiso
-            inner join usuario_permiso up on up.idpermiso = p.idpermiso
-            where up.idusuario = 1;
-
-select * from usuario_permiso
-select * from usuario
-
-insert into usuario_permiso(idusuario,idpermiso) values(2,2)
-*/
-
-
---BACKUP DATABASE Crypton TO DISK = 'c:\SQLCrypton.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB';
---use master;RESTORE DATABASE Crypton FROM DISK = 'C:\crypton_backup_bd_20210503054138.bak' WITH  FILE = 1,  NOUNLOAD,  STATS = 5;
---select * from admin_backup

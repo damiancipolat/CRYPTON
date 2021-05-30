@@ -28,6 +28,7 @@ namespace BL
             newUser.apellido = cliente.apellido;
             newUser.email = cliente.email;
             newUser.pwd = cliente.pwd;
+            newUser.tipoUsuario = UsuarioTipo.CLIENTE;
 
             return new UsuarioBL().save(newUser);
         }

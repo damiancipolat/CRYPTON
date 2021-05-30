@@ -107,6 +107,12 @@ namespace UI
         private void handleClientMenu()
         {
             List<Componente> permissions = Session.GetInstance().getPermissions();
+
+            foreach (Componente cp in permissions)
+            {
+                Debug.WriteLine("@@-->"+cp.Id.ToString()+","+cp.Nombre);
+            }
+
             PermisoBL permBL = new PermisoBL();
 
             //Set items if the code exist in the list.
@@ -251,42 +257,20 @@ namespace UI
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            List<Componente> tmpList = Session.GetInstance().getPermissions();
 
-            foreach (Componente comp in tmpList)
-            {
-                Debug.WriteLine("@--+"+comp.Id.ToString()+"--"+comp.Nombre);
-            }
         }
 
         private void Button2_Click_1(object sender, EventArgs e)
-        {/*
-            UsuarioBE user = new UsuarioBE();
-            user.nombre = "billy";
-            user.apellido = "simpson";
-            user.nombre = "homer";
-            user.alias = "dam";
-            user.tipoUsuario = UsuarioTipo.CLIENTE;
-            user.pwd = "1234";
-
-            OrdenVentaBE venta = new OrdenVentaBE();
-
-            venta.cantidad = 2;
-            venta.precio = 100;
-            venta.moneda = new MonedaBE("BTC", "BITCOIN");
-            venta.fecCreacion = DateTime.Now;
-            venta.fecFin = DateTime.Now;
-            venta.ordenEstado = OrdenEstado.DISPONIBLE;
-            venta.vendedor = new ClienteBE(user, "DNI", "33295515", "001",DateTime.Now, "tmp", "damian.cipolat@gmail.com", "111");
-
-
-            int newId = new OrdenVentaDAL().save(venta);
-            Debug.WriteLine(">>>>>"+newId.ToString());*/
-            //new BlockIo().test();
+        {
 
         }
 
         private void InicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
