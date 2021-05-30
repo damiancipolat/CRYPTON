@@ -12,7 +12,6 @@ namespace BE
         VENTA=2,
         EXTRACT=3
     }
-
     public class ComisionValorBE
     {
         public long idope;

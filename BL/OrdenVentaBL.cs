@@ -32,5 +32,7 @@ namespace BL
         {
             return new OrdenVentaDAL().findById(id);
         }
+
+        public float cotizar(OrdenVentaBE orden,BilleteraBE destino) { return 0; }
     }
 }

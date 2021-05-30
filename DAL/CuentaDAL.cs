@@ -90,5 +90,8 @@ namespace DAL
 
             return this.getUpdate().updateSchemaById(schema, "cuentas", "idcuenta", cuenta.idcuenta);
         }
+
+        //todo
+        public List<BilleteraBE> getClientWallets(ClienteBE cliente) { return new List<BilleteraBE>(); }
     }
 }

@@ -32,6 +32,11 @@ namespace BL
             return new UsuarioBL().save(newUser);
         }
 
+        public ClienteBE findByUser(UsuarioBE user)
+        {
+            return new ClienteDAL().findByUser(user);
+        }
+
         public int save(ClienteBE cliente)
         {
             //Registro el usuario obtengo el id.

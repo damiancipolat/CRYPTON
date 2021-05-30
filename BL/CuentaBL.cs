@@ -23,6 +23,7 @@ namespace BL
         public void darBaja(CuentaBE cuenta) { }
         public void bloquear(CuentaBE cuenta) { }
         public List<BilleteraBE> traerBilleteras(CuentaBE cuenta) { return new List<BilleteraBE>(); }
-
+        //todo
+        public List<BilleteraBE> traerBilleteras(ClienteBE cliente) { return new List<BilleteraBE>(); }
     }
 }

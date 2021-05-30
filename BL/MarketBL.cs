@@ -24,6 +24,9 @@ namespace BL
 
         //todo
         public List<OrdenVentaBE> recomendar(ClienteBE cliente) { return new List<OrdenVentaBE>(); }
+
+        //todo
+        public float cotizarOperacion(Operaciones operacion, BilleteraBE billetera) { return 0; }
     }
 }
 
