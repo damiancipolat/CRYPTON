@@ -36,11 +36,30 @@ namespace DAL
 
         }
 
-        //Este metodo retorna una lista de clientes.
+        //Este metodo retorna una lista de compras.
         public List<OrdenCompraBE> findAll()
         {
             //Busco en la bd por id.
             List<object> result = this.getSelect().selectAll("orden_compra");
+
+            //Lista resultado.
+            List<OrdenCompraBE> lista = new List<OrdenCompraBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
+
+        //Este metodo retorna una lista de compras de un cliente.
+        public List<OrdenCompraBE> findByClient(ClienteBE cliente)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                { "comprador",cliente.idcliente}
+            };
+
+            List<object> result = this.getSelect().selectAnd(schema, "orden_compra");
 
             //Lista resultado.
             List<OrdenCompraBE> lista = new List<OrdenCompraBE>();
@@ -88,5 +107,6 @@ namespace DAL
 
             return this.getUpdate().updateSchemaById(schema, "orden_compra", "idorden", compra.idcompra);
         }
+
     }
 }

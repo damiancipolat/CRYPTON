@@ -11,9 +11,28 @@ namespace DAL.DAO
     public class QuerySelect:QueryBuilder
     {
         //Genera una consulta sql que trae todos los resultados.
-        public List<Object> selectAll(string table)
+        public List<Object> selectAll(string table,int rows=0)
         {
-            string sql = "select * from " + table + ";";
+            //Arma el query en base a rows, trae los 1ros registros o toda la tabla.
+            string sql = (rows <=0)
+                ? "select * from " + table + ";"
+                : "select top "+rows.ToString()+" * from " + table + ";";
+
+            //Ejcuto el query.
+            SqlDataReader reader = this.query(sql);
+
+            //Parseo el data reader a una lista de columnas/valores.
+            List<Object> result = this.utilParser.dataReaderToList(reader);
+            this.bdConnection.Close();
+
+            return result;
+        }
+
+        //Genera una consulta sql que trae todos los resultados.
+        public List<Object> selectAllLast(string table,string pkField, int rows = 0)
+        {
+            //Arma el query en base a rows, trae los 1ros registros o toda la tabla.
+            string sql = "select top " + rows.ToString() + " * from " + table + " order by "+pkField+" desc;";
 
             //Ejcuto el query.
             SqlDataReader reader = this.query(sql);
@@ -42,17 +61,39 @@ namespace DAL.DAO
             return result;
         }
 
-        //Genera una consulta sql pudiendo definir el whee dinamicamente
-        public List<Object> selectAnd(Dictionary<string, Object> schema, string table)
+        //Genera una consulta sql pudiendo definir el where dinamicamente
+        public List<Object> selectAnd(Dictionary<string, Object> schema, string table, int rows=0)
         {
             string where = this.utilText.whereAndFromSchema(schema);
-            string sql = "select * from " + table + " where " + where + ";";
+
+            //Armo el query en base a la cantidad de los primeros registros.
+            string sql = (rows<=0)
+                ?"select * from " + table + " where " + where + ";"
+                : "select top "+rows.ToString()+" * from " + table + " where " + where + ";";
 
             //Ejcuto el query.
             SqlDataReader reader = this.query(sql);
 
             //Parseo el data reader a una lista de columnas/valores.
             List<Object> result =  this.utilParser.dataReaderToList(reader);
+            this.bdConnection.Close();
+
+            return result;
+        }
+
+        //Genera una consulta sql pudiendo definir el where dinamicamente
+        public List<Object> selectAndLast(Dictionary<string, Object> schema, string table,string pkField, int rows = 0)
+        {
+            string where = this.utilText.whereAndFromSchema(schema);
+
+            //Armo el query en base a la cantidad de los primeros registros.
+            string sql = "select top " + rows.ToString() + " * from " + table + " where " + where + " order by "+pkField+" desc;";
+
+            //Ejcuto el query.
+            SqlDataReader reader = this.query(sql);
+
+            //Parseo el data reader a una lista de columnas/valores.
+            List<Object> result = this.utilParser.dataReaderToList(reader);
             this.bdConnection.Close();
 
             return result;

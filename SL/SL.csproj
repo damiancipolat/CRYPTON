@@ -45,6 +45,7 @@
     <Compile Include="Auth.cs" />
     <Compile Include="Bitacora.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />
+    <Compile Include="Comisiones.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />

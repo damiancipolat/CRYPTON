@@ -311,6 +311,7 @@ create table orden_venta(
 	precio float,
 	fecCreacion datetime,
 	fecFin datetime,
+	ordenEstado int,
 	deleted datetime
 );
 

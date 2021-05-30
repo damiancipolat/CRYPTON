@@ -52,6 +52,25 @@ namespace DAL
             return lista;
         }
 
+        //Este metodo retorna una lista de clientes.
+        public List<OrdenVentaBE> getLatestActives()
+        {
+            //Creo un esquema dinamico para serejecutado.
+            var schema = new Dictionary<string, Object>{
+                { "ordenEstado",OrdenEstado.DISPONIBLE}
+            };
+
+            List<object> result = this.getSelect().selectAndLast(schema, "orden_venta","idorden",10);
+
+            //Lista resultado.
+            List<OrdenVentaBE> lista = new List<OrdenVentaBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
+
         //Agrega un nuevo usuario.
         public int save(OrdenVentaBE venta)
         {

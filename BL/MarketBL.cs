@@ -21,6 +21,9 @@ namespace BL
         public object traerCotizacion() { return new object(); }
         public object buscar() { return new object(); }
         public object intercambiar() { return new object(); }
+
+        //todo
+        public List<OrdenVentaBE> recomendar(ClienteBE cliente) { return new List<OrdenVentaBE>(); }
     }
 }
 
