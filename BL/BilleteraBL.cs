@@ -23,5 +23,6 @@ namespace BL
         public void transferir(BilleteraBE origen, BilleteraBE destino, float ammount) { }
         public float traerSaldo(BilleteraBE wallet) { return 0; }
         public void traerOperaciones(BilleteraBE wallet) { }
+        public float cotizarTransfer(float ammount) { return 0; }
     }
 }

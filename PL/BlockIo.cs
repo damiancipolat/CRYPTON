@@ -13,9 +13,9 @@ namespace PL
         private string apiKey;
         private string host;
 
-        public BlockIo(string key)
-        {
-            this.apiKey = key;
+        //todo
+        public BlockIo(string keyCode)
+        {            
             this.host = "https://block.io/api/v2/";
         }
 
@@ -54,9 +54,9 @@ namespace PL
             return new object();
         }
 
-        public object estimateTransaction(string to, float ammount)
+        public float estimateTransaction(string to, float ammount)
         {
-            return new object();
+            return 0;
         }
 
         public object decodeTransaction(string data)

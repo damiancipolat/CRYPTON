@@ -52,8 +52,8 @@ namespace DAL
             return lista;
         }
 
-        //Este metodo retorna una lista de clientes.
-        public List<OrdenVentaBE> getLatestActives()
+        //Este metodo retorna una lista de actividades.
+        public List<OrdenVentaBE> getLastActivities()
         {
             //Creo un esquema dinamico para serejecutado.
             var schema = new Dictionary<string, Object>{
@@ -67,6 +67,16 @@ namespace DAL
 
             foreach (List<object> row in result)
                 lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
+
+        //todo
+        //Este metodo retorna una lista de actividades para cada moneda.
+        public List<OrdenVentaBE> getLastActivitiesByMoney(MonedaBE moneda)
+        {
+            //Lista resultado.
+            List<OrdenVentaBE> lista = new List<OrdenVentaBE>();
 
             return lista;
         }
