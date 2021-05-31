@@ -21,5 +21,20 @@ namespace UI
         {
 
         }
+
+        public void update_resumen()
+        {
+
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Publish_ok_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

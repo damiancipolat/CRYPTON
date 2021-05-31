@@ -45,6 +45,7 @@
     <Compile Include="CuentaBL.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="FraudeBL.cs" />
+    <Compile Include="ConversorBL.cs" />
     <Compile Include="MarketBL.cs" />
     <Compile Include="OperacionesBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />

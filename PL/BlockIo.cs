@@ -63,5 +63,7 @@ namespace PL
         {
             return new object();
         }
+
+        public float convertirMoneda(string monedaA, string monedaB) { return 0; }
     }
 }

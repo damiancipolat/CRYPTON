@@ -48,6 +48,7 @@
     <Compile Include="ClienteBE.cs" />
     <Compile Include="ComisionValorBE.cs" />
     <Compile Include="ComisionBE.cs" />
+    <Compile Include="ConversionesBE.cs" />
     <Compile Include="CuentaBE.cs" />
     <Compile Include="DvhBE.cs" />
     <Compile Include="EmpleadoBE.cs" />

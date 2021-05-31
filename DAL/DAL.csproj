@@ -47,6 +47,7 @@
     <Compile Include="ClienteAgenda.cs" />
     <Compile Include="ComisionDAL.cs" />
     <Compile Include="ComisionValorDAL.cs" />
+    <Compile Include="ConversionesDAL.cs" />
     <Compile Include="CuentaDAL.cs" />
     <Compile Include="ICrud.cs" />
     <Compile Include="BitacoraDAL.cs" />
