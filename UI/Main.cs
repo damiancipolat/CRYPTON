@@ -274,5 +274,10 @@ namespace UI
         {
 
         }
+
+        private void Button2_Click_2(object sender, EventArgs e)
+        {
+            new frm_publish_sell().Show();
+        }
     }
 }

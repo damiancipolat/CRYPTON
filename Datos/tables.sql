@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS comisiones_valor;
 DROP TABLE IF EXISTS permiso;
 DROP TABLE IF EXISTS rol_permiso;
 DROP TABLE IF EXISTS usuario_permiso;
+DROP TABLE IF EXISTS conversiones;
 DROP TABLE IF EXISTS admin_backup;
 DROP TABLE IF EXISTS dvv;
 DROP TABLE IF EXISTS idiomas;
@@ -175,6 +176,19 @@ insert into moneda(cod,descrip) values('ARS','Pesos argentinos');
 insert into moneda(cod,descrip) values('BTC','Bitcoin');
 insert into moneda(cod,descrip) values('LTC','Litecoin');
 insert into moneda(cod,descrip) values('DOG','Dodge');
+
+--Tabla de conversiones de cripto a ARS.
+create table conversiones(
+	idconversion bigint identity(1,1) primary key,
+	codCripto varchar(10),
+	cantCripto float,
+	valorArs float,
+	deleted datetime
+);
+
+insert into conversiones(codCripto,cantCripto,valorArs) values('BTC',1,1500);
+insert into conversiones(codCripto,cantCripto,valorArs) values('LTC',1,500);
+insert into conversiones(codCripto,cantCripto,valorArs) values('DOG',1,100);
 
 --Tabla de contactos.
 create table cliente_agenda(
