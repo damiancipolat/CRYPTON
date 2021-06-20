@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Configuration;
 using DAL;
 using DAL.Idiomas;
 using DAL.Permiso;
 using BE;
 using BE.Permisos;
 using SL;
-
 using SEC;
 using SL.Exceptions;
 
@@ -43,10 +43,6 @@ namespace SL
             //Inicio la sesion.
             Session newSession = Session.GetInstance();
             newSession.start(user);
-
-            //Cargo idioma por defecto.
-            Dictionary<string, string> words = new IdiomaDAL().loadWords("ES");
-            newSession.setLanguage("ES", words);
 
             //Cargo los permisos del usuario.
             newSession.setPermission(this.getPermission(user));

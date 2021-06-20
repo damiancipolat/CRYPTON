@@ -23,18 +23,16 @@ namespace SL
             return _instance;
         }
 
-        //Session variables.
+        //Session user variables.
         private bool active = false;
         private UsuarioBE user;
+
+        //Session dates.
         private DateTime startDate;
         private DateTime endDate;
 
         //Permission list.
         private List<Componente> permissions;
-
-        //Language
-        private string languageName;
-        private Dictionary<string, string> language;
 
         //Get the user.
         public UsuarioBE getUser()
@@ -69,19 +67,6 @@ namespace SL
 
             //Set dates.
             endDate = DateTime.Now;
-        }
-
-        //Set the language.
-        public void setLanguage(string langName, Dictionary<string, string> langList)
-        {
-            languageName = langName;
-            language = langList;
-        }
-
-        //Get languange words.
-        public Dictionary<string, string> getLanguangeWords()
-        {
-            return language;
         }
 
         //Set permission list.

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ using SL.Exceptions;
 using VL.Exceptions;
 using VL;
 using BE;
-using UI.utils;
 using SEC.Exceptions;
 
 namespace UI
@@ -37,7 +37,7 @@ namespace UI
             InitializeComponent();
 
             //Realizo actualizacion.
-            new labelBinder().bindKeys(this.Controls, this.labelBindings);
+           // new labelBinder().bindKeys(this.Controls, this.labelBindings);
         }
 
         //Proceso login con manejo de excepciones.
@@ -53,27 +53,28 @@ namespace UI
                 this.Close();
             }
             catch (InputException ex){
-                MessageBox.Show(
+               /* MessageBox.Show(
                     Idioma.GetInstance().translateKey(ex.Message),
                     Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK, 
-                    MessageBoxIcon.Exclamation);
+                    MessageBoxIcon.Exclamation);*/
             }
             catch (ServiceException ex)
             {
-                MessageBox.Show(
+               /* MessageBox.Show(
                     Idioma.GetInstance().translateKey(ex.Message),
                     Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    MessageBoxIcon.Error);*/
             }
             catch (IntegrityException ex)
             {
+               /* Debug.WriteLine("+++++"+ex.Message);
                 MessageBox.Show(
                     Idioma.GetInstance().translateKey(ex.Message),
                     Idioma.GetInstance().translateKey("INTEGRITY_ERROR"),
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);                
+                    MessageBoxIcon.Error);*/                
             }
         }
 

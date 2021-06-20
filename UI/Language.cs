@@ -11,27 +11,28 @@ using System.Diagnostics;
 using DAL.Idiomas;
 using BE;
 using SL;
-using UI.utils;
+using UI.Notifications;
 
 namespace UI
 {
     public partial class Language : Form
     {
         private List<IdiomaBE> languages;
+        private Notificator uiEvents;
 
-        //Lista de relacion campos vs bindeos.
-        private Dictionary<string, string> labelBindings = new Dictionary<string, string>{
-                {"language_txt_title","LANG_CHOOSE_TITLE"},
-                { "language_accept","BUTTON_OK"},
-                { "language_cancel","BUTTON_CANCEL"}
-            };
+        //Actualizo los textos en base al idioma elegido.
+        private void translateTexts()
+        {
+            //Labels.
+            this.language_txt_title.Text = Idioma.GetInstance().translate("LANG_CHOOSE_TITLE");
+            this.language_accept.Text = Idioma.GetInstance().translate("BUTTON_OK");
+            this.language_cancel.Text = Idioma.GetInstance().translate("BUTTON_CANCEL");
+        }
 
-        public Language()
+        public Language(Notificator events)
         {
             InitializeComponent();
-
-            //Realizo actualizacion.
-            new labelBinder().bindKeys(this.Controls,this.labelBindings);
+            this.uiEvents = events;
         }
 
         private void Language_txt_title_Click(object sender, EventArgs e)
@@ -46,6 +47,10 @@ namespace UI
 
         private void Language_Shown(object sender, EventArgs e)
         {
+            //Get the default language.
+            string defaultLang = Idioma.GetInstance().getDefault().code;
+            int defaultIx = 0;
+
             //Clean combo items.
             this.language_combo.Items.Clear();
 
@@ -57,11 +62,20 @@ namespace UI
                 throw new Exception("No language founds");
 
             //Fill text in combo.
-            foreach (IdiomaBE idioma in langs)
+            for (int i = 0; i <= langs.Count - 1; i++)
+            {
+                IdiomaBE idioma = langs[i];
+
+                //Set the default language in the combo.
+                if (idioma.code == defaultLang)
+                    defaultIx = i;
+
+                //Fill items.
                 this.language_combo.Items.Add(idioma.descripcion);
+            }            
 
             //Define default item.
-            this.language_combo.SelectedIndex = 0;
+            this.language_combo.SelectedIndex = defaultIx;
         }
 
         private void Language_accept_Click(object sender, EventArgs e)
@@ -70,14 +84,19 @@ namespace UI
             {
                 //Traigo la lista de idiomas.
                 IdiomaBE lang = this.languages[this.language_combo.SelectedIndex];
-                Session.GetInstance().setLanguage(lang.code, Idioma.GetInstance().getWords(lang.code));
-                
-                MessageBox.Show("Idioma cambiado con exito!");
+
+                //Seteo el idioma por defecto.
+                Idioma.GetInstance().setDefault(lang);
+
+                //Notifico cambio de eventos.
+                MessageBox.Show(Idioma.GetInstance().translate("LANGUAGE_CHANGE_OK"));
+                this.uiEvents.Notify();
+
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Error al cambiar el lenguaje");
+                MessageBox.Show(Idioma.GetInstance().translate("LANGUAGE_CHANGE_OK"));
                 this.Close();
             }
             
@@ -85,7 +104,7 @@ namespace UI
 
         private void Language_Load(object sender, EventArgs e)
         {
-
+            this.translateTexts();
         }
     }
 }

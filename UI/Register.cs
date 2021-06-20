@@ -11,37 +11,36 @@ using System.Diagnostics;
 using SL;
 using BE;
 using SEC;
-using UI.utils;
 using BL;
 using VL;
 using VL.Exceptions;
+using UI.Notifications;
 
 namespace UI
 {
     public partial class frm_signup : Form
     {
-        //Reference to main windos.
+        //Reference to main windows.
         private frm_main parent;
 
-        //Lista de relacion campos vs bindeos.
-        private Dictionary<string, string> labelBindings = new Dictionary<string, string>{
-                {"signup_title","SINGUP_TITLE"},
-                { "signup_name","SIGNUP_NAME"},
-                { "signup_surname","SIGNUP_SURNAME"},
-                { "signup_alias","SIGNUP_ALIAS"},
-                { "signup_email","SIGNUP_EMAIL"},
-                { "signup_pwd","SIGNUP_PWD"},
-                { "signup_ok","SIGNUP_OK"},
-                { "signup_cancel","SIGNUP_CANCEL"}
-            };
+        //Actualizo los textos en base al idioma elegido.
+        private void translateTexts()
+        {
+            //Labels.
+            this.signup_title.Text = Idioma.GetInstance().translate("SINGUP_TITLE");
+            this.signup_name.Text = Idioma.GetInstance().translate("SIGNUP_NAME");
+            this.signup_surname.Text = Idioma.GetInstance().translate("SIGNUP_SURNAME");
+            this.signup_alias.Text = Idioma.GetInstance().translate("SIGNUP_ALIAS");
+            this.signup_email.Text = Idioma.GetInstance().translate("SIGNUP_EMAIL");
+            this.signup_pwd.Text = Idioma.GetInstance().translate("SIGNUP_PWD");
+            this.signup_ok.Text = Idioma.GetInstance().translate("SIGNUP_OK");
+            this.signup_cancel.Text = Idioma.GetInstance().translate("SIGNUP_CANCEL");
+        }
 
         public frm_signup(frm_main parent)
         {
             InitializeComponent();
             this.parent = parent;
-
-            //Realizo actualizacion.
-            new labelBinder().bindKeys(this.Controls, this.labelBindings);
         }
 
         private void Label2_Click(object sender, EventArgs e)
@@ -85,12 +84,12 @@ namespace UI
                 new ClienteBL().save(newClient);
                 
                 //Mensaje de exito.
-                MessageBox.Show(
+                /*MessageBox.Show(
                     Idioma.GetInstance().translateKey("REGISTER_INPUT_SUCCESS"),
                     Idioma.GetInstance().translateKey("REGISTER_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
-                );
+                );*/
 
                 //Hago autologin.
                 UsuarioBE user = new Auth().login(this.signup_txt_email.Text, this.signup_txt_pwd.Text);
@@ -99,18 +98,18 @@ namespace UI
             }
             catch (InputException ex)
             {
-                MessageBox.Show(
+                /*MessageBox.Show(
                     Idioma.GetInstance().translateKey(ex.Message),
                     Idioma.GetInstance().translateKey("REGISTER_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation
-                );
+                );*/
             }
         }
 
         private void Frm_signup_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("AAAAA");
         }
     }
 }

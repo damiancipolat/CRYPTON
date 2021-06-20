@@ -53,7 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.main_splash = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.main_btn_register = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.main_splash_title = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -364,26 +364,26 @@
             // main_splash
             // 
             this.main_splash.BackColor = System.Drawing.Color.White;
-            this.main_splash.Controls.Add(this.button1);
+            this.main_splash.Controls.Add(this.main_btn_register);
             this.main_splash.Controls.Add(this.pictureBox3);
             this.main_splash.Controls.Add(this.main_splash_title);
             this.main_splash.Controls.Add(this.main_btn_login);
-            this.main_splash.Location = new System.Drawing.Point(477, 299);
+            this.main_splash.Location = new System.Drawing.Point(476, 290);
             this.main_splash.Name = "main_splash";
             this.main_splash.Size = new System.Drawing.Size(403, 272);
             this.main_splash.TabIndex = 10;
             this.main_splash.Resize += new System.EventHandler(this.Main_splash_Resize);
             // 
-            // button1
+            // main_btn_register
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button1.Location = new System.Drawing.Point(209, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 40);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            this.main_btn_register.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.main_btn_register.Location = new System.Drawing.Point(209, 210);
+            this.main_btn_register.Name = "main_btn_register";
+            this.main_btn_register.Size = new System.Drawing.Size(148, 40);
+            this.main_btn_register.TabIndex = 14;
+            this.main_btn_register.Text = "Registrar";
+            this.main_btn_register.UseVisualStyleBackColor = false;
+            this.main_btn_register.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // pictureBox3
             // 
@@ -445,6 +445,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(1428, 711);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // menuStrip1
             // 
@@ -457,6 +458,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1196, 28);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // inicioToolStripMenuItem
             // 
@@ -473,28 +475,28 @@
             // main_menu_login
             // 
             this.main_menu_login.Name = "main_menu_login";
-            this.main_menu_login.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_login.Size = new System.Drawing.Size(224, 26);
             this.main_menu_login.Text = "main_menu_login";
             this.main_menu_login.Click += new System.EventHandler(this.Main_menu_login_Click);
             // 
             // main_menu_signup
             // 
             this.main_menu_signup.Name = "main_menu_signup";
-            this.main_menu_signup.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_signup.Size = new System.Drawing.Size(224, 26);
             this.main_menu_signup.Text = "main_menu_signup";
             this.main_menu_signup.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
             // 
             // main_menu_signout
             // 
             this.main_menu_signout.Name = "main_menu_signout";
-            this.main_menu_signout.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_signout.Size = new System.Drawing.Size(224, 26);
             this.main_menu_signout.Text = "main_menu_signout";
             this.main_menu_signout.Click += new System.EventHandler(this.Main_menu_signout_Click);
             // 
             // main_menu_exit
             // 
             this.main_menu_exit.Name = "main_menu_exit";
-            this.main_menu_exit.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_exit.Size = new System.Drawing.Size(224, 26);
             this.main_menu_exit.Text = "main_menu_exit";
             this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -509,6 +511,7 @@
             this.main_menu_operate.Name = "main_menu_operate";
             this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
             this.main_menu_operate.Text = "Operar";
+            this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
             // 
             // main_menu_buy
             // 
@@ -622,7 +625,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
         private System.Windows.Forms.ToolStripMenuItem main_change_language;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button main_btn_register;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem main_menu_login;

@@ -23,30 +23,31 @@ using DAL.Permiso;
 using DAL.Admin;
 using SL;
 using SEC;
-using UI.utils;
 using PL;
+using UI.Notifications;
 
 namespace UI
 {
-    public partial class frm_main : Form
+    public partial class frm_main : Form, INotification
     {
-        //Lista de relacion campos vs bindeos.
-        private Dictionary<string, string> labelBindings = new Dictionary<string, string>{
-                {"main_splash_title","MAIN_SPLASH_TITLE"},
-                { "main_btn_login","MAIN_BTN_LOGIN"},
-                { "main_change_language","MAIN_CHANGE_LANGUAGE"}
-        };
+        //Bus de notificaciones.
+        public Notificator uiEvents = new Notificator();
 
         public frm_main()
         {
             InitializeComponent();
 
             //Realizo actualizacion.
-            this.bootstrap();
+            this.render();
+
+            //Bindeo el form principal para recibir notificaciones desde otras ventans.
+            this.uiEvents.Attach(this);
         }
 
-        //Metodos de rener.
-        public void render()
+        //------------------------------------------------------------------------------
+
+        //Metodos de render.
+        private void adjustControls()
         {
             //Posiciona el splash screen en el centro.
             this.main_splash.Left = (this.Width / 2) - (this.main_splash.Width / 2);
@@ -56,37 +57,60 @@ namespace UI
             this.bindMenu();            
         }
 
-        //Se ejecuta al inicio del formulario, setea idioma base.
-        public void bootstrap()
+        //Se carga el idioma por defecto.
+        private void loadDefaultLanguage()
         {
-            //Traigo el lenguaje por defecto de la configuracion.
-            string defaultLang = Idioma.GetInstance().getDefault();
+            //Cargo el idioma.
+            string langCode = ConfigurationManager.AppSettings["Language"];
 
-            //Si no esta definido genero error.
-            if (!(defaultLang != ""))
-                throw new Exception("Unable to load default language");
+            //Cargo el idioma por defecto.
+            Idioma.GetInstance().setDefault(Idioma.GetInstance().getIdioma(langCode));
+        }
 
-            //Load in session the list of words.
-            Session.GetInstance().setLanguage(defaultLang, Idioma.GetInstance().getWords(defaultLang));
+        //Actualizo los textos en base al idioma elegido.
+        private void translateTexts()
+        {
+            //Labels.
+            this.main_splash_title.Text = Idioma.GetInstance().translate("MAIN_SPLASH_TITLE");
+            this.main_btn_login.Text = Idioma.GetInstance().translate("MAIN_BTN_LOGIN");
+            this.main_btn_register.Text = Idioma.GetInstance().translate("MAIN_MENU_SIGNUP");
+            this.main_change_language.Text = Idioma.GetInstance().translate("MAIN_CHANGE_LANGUAGE");
             
-            //Cargo el lenguaje por defecto en la sesion.
-            new labelBinder().bindKeys(this.Controls, this.labelBindings);
-
             //Bindeo menu inicio.
-            this.main_change_language.Text = Idioma.GetInstance().translateWord("MAIN_CHANGE_LANGUAGE");
-            this.main_menu_login.Text = Idioma.GetInstance().translateKey("MAIN_MENU_LOGIN");
-            this.main_menu_signup.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SIGNUP");
-            this.main_menu_signout.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SIGNOUT");
-            this.main_menu_exit.Text = Idioma.GetInstance().translateKey("MAIN_MENU_EXIT");
+            this.main_change_language.Text = Idioma.GetInstance().translate("MAIN_CHANGE_LANGUAGE");
+            this.main_menu_login.Text = Idioma.GetInstance().translate("MAIN_MENU_LOGIN");
+            this.main_menu_signup.Text = Idioma.GetInstance().translate("MAIN_MENU_SIGNUP");
+            this.main_menu_signout.Text = Idioma.GetInstance().translate("MAIN_MENU_SIGNOUT");
+            this.main_menu_exit.Text = Idioma.GetInstance().translate("MAIN_MENU_EXIT");
 
             //Bindeo menu cliente.
-            this.main_menu_operate.Text = Idioma.GetInstance().translateKey("MAIN_MENU_OPERATE");
-            this.main_menu_buy.Text = Idioma.GetInstance().translateKey("MAIN_MENU_BUY");
-            this.main_menu_sell.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SELL");
-            this.main_menu_search.Text = Idioma.GetInstance().translateKey("MAIN_MENU_SEARCH");
-            this.main_menu_deposit.Text = Idioma.GetInstance().translateKey("MAIN_MENU_DEPOSIT");
-            this.main_menu_extract.Text = Idioma.GetInstance().translateKey("MAIN_MENU_EXTRACT");
+            this.main_menu_operate.Text = Idioma.GetInstance().translate("MAIN_MENU_OPERATE");
+            this.main_menu_buy.Text = Idioma.GetInstance().translate("MAIN_MENU_BUY");
+            this.main_menu_sell.Text = Idioma.GetInstance().translate("MAIN_MENU_SELL");
+            this.main_menu_search.Text = Idioma.GetInstance().translate("MAIN_MENU_SEARCH");
+            this.main_menu_deposit.Text = Idioma.GetInstance().translate("MAIN_MENU_DEPOSIT");
+            this.main_menu_extract.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT");
         }
+
+        //Se ejecuta al inicio del formulario, setea idioma base.
+        public void render()
+        {
+            //Cargo el idioma por decto.
+            this.loadDefaultLanguage();
+
+            //Traduzco los textos en base al idioma.
+            this.translateTexts();
+
+            //Ajusto los controles.
+            this.adjustControls();
+        }
+
+        public void Update()
+        {
+            this.render();
+        }
+
+        //------------------------------------------------------------------------------
 
         //Metodo de ventanas.
         private void openLogin()
@@ -226,7 +250,7 @@ namespace UI
 
         private void CambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Language().Show();
+            new Language(this.uiEvents).Show();
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -278,6 +302,21 @@ namespace UI
         private void Button2_Click_2(object sender, EventArgs e)
         {
             new frm_publish_sell().Show();
+        }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Main_menu_operate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

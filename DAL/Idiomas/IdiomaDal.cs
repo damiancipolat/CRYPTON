@@ -32,14 +32,27 @@ namespace DAL.Idiomas
         {
             //Busco en la bd por id.
             List<object> result = new QuerySelect().selectAll("idiomas");
-
+ 
             //Lista resultado.
-            List<IdiomaBE> lista = new List<IdiomaBE>();
+            List <IdiomaBE> lista = new List<IdiomaBE>();
 
             foreach (List<object> row in result)
                 lista.Add(this.bindSchema(row));
 
             return lista;
+        }
+
+        //Este metodo obtiene en base al ID el usuario.
+        public IdiomaBE findByCode(string langCode)
+        {
+            //Busco en la bd por id.
+            List<Object> result = new QuerySelect().selectAnd(new Dictionary<string, Object>{
+                {"code", langCode}
+            }, "idiomas");
+
+            //Bindeo con el esquema.
+            return this.bindSchema((List<object>)result[0]);
+
         }
 
         //Obtengo las palabras de un idioma.

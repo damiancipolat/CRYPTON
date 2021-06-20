@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Configuration;
 using BE;
 using DAL;
 using DAL.DAO;
 using DAL.Idiomas;
-using System.Configuration;
 using SL;
 
 namespace SL
 {
     public class Idioma
-    {
-        //Singleton logic.
+    {        
+        //Variable de intancia.
         private static Idioma _instance;
 
+        //Almacena la seleccion temporal del idioma.
+        private IdiomaBE defaultIdioma;
+        private Dictionary<string, string> words;
+
+        //Retorna la instancia unica.
         public static Idioma GetInstance()
         {
             if (_instance == null)
@@ -27,46 +33,65 @@ namespace SL
             return _instance;
         }
 
-        //Obtengo el lenguaje por defecto de la config.
-        public string getDefault()
-        {
-            //Traigo de la config. el idioma por defecto.
-            string defaultLang = ConfigurationManager.AppSettings["Language"];
-            Bitacora.GetInstance().log("Default language loaded from config:"+defaultLang);
-
-            return defaultLang;
-        }
-
         //Obtengo la lista de lenguajes.
         public List<IdiomaBE> getAll()
         {
             return new IdiomaDAL().findAll();
         }
 
-        //Obtengo la lista de palabras de un lenguaje.
+        //Busco el idioma en base al codigo.
+        public IdiomaBE getIdioma(string code)
+        {
+            return new IdiomaDAL().findByCode(code);
+        }
+
+        //Obtengo la lista de palabras de un lenguaje en base a su codigo
         public Dictionary<string, string> getWords(string code)
         {
             return new IdiomaDAL().loadWords(code);
         }
 
-        //Obtengo las palabras del lenguaje por defecto.
-        public Dictionary<string, string> getWordsDefault(string code)
-        {            
-            return new IdiomaDAL().loadWords(this.getDefault());
+        //Obtengo la lista de palabras de un lenguaje en base a un idioma.
+        public Dictionary<string, string> getWords1(IdiomaBE idioma)
+        {
+            Debug.WriteLine("@@" + idioma.code);
+            return new IdiomaDAL().loadWords(idioma.code);
         }
 
-        //Traduzco directamente el mensaje.
-        public string translateWord(string key)
+        //Obtengo la lista cargados por defecto.
+        public Dictionary<string, string> getDefaultWords()
         {
-            Dictionary<string,string> result = new IdiomaDAL().loadWords(this.getDefault());
-            return result.ContainsKey(key) ? result[key] : "";
+            return this.words;
         }
 
-        //Traduzco directamente pero usando el diccionario desde la session.
-        public string translateKey(string key)
+        //Seteo el idioma por defecto.
+        public void setDefault(IdiomaBE idioma)
         {
-            Dictionary<string, string> dictionaryKeys = Session.GetInstance().getLanguangeWords();
-            return dictionaryKeys.ContainsKey(key) ? dictionaryKeys[key] : key;
+            this.defaultIdioma = idioma;
+
+            //Seteo las palabras al cambiar el idioma.
+            this.words = this.getWords1(this.defaultIdioma);
+        }
+
+        //Obtengo el lenguaje por defecto de la config.
+        public IdiomaBE getDefault()
+        {
+            return this.defaultIdioma;
+        }
+
+        //Traduzco la clave usando el idioma por defecto.
+        public string translate(string key)
+        {
+            Debug.WriteLine("-->"+this.words.Count.ToString());
+            return this.words.ContainsKey(key) ? this.words[key] : key;
+        }
+
+        //Traduzco la clave en base a un idioma.
+        public string translate(IdiomaBE idioma,string key)
+        {
+           // Dictionary<string, string> tmpWords = this.getWords(idioma);
+            //return tmpWords.ContainsKey(key) ? tmpWords[key] : key;
+            return "";
         }
     }
 }

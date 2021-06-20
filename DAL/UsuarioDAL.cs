@@ -29,7 +29,7 @@ namespace DAL
             //Actualizo el tipo de usuario que es un enum.            
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
             userTarget.tipoUsuario = (UsuarioTipo)mapa["tipo_usuario"];
-
+            
             //Blanqueo el campo de password.
             userTarget.pwd = "";
 
