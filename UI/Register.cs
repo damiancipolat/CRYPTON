@@ -35,6 +35,14 @@ namespace UI
             this.signup_pwd.Text = Idioma.GetInstance().translate("SIGNUP_PWD");
             this.signup_ok.Text = Idioma.GetInstance().translate("SIGNUP_OK");
             this.signup_cancel.Text = Idioma.GetInstance().translate("SIGNUP_CANCEL");
+            this.document_number.Text = Idioma.GetInstance().translate("DOCUMENT_NUMBER");
+            this.birth_date.Text = Idioma.GetInstance().translate("BIRTH_DATE");
+            this.order_number.Text = Idioma.GetInstance().translate("ORDER_NUMER");
+            this.address.Text = Idioma.GetInstance().translate("ADDRESS");
+            this.phone_number.Text = Idioma.GetInstance().translate("PHONE_NUMBER");
+            this.signup_description.Text= Idioma.GetInstance().translate("SINGUP_DESCRIPTION");
+            this.your_documents.Text = Idioma.GetInstance().translate("YOUR_USER_LABEL");
+            this.your_user_label.Text = Idioma.GetInstance().translate("YOUR_DOCUMENTS");
         }
 
         public frm_signup(frm_main parent)
@@ -109,7 +117,7 @@ namespace UI
 
         private void Frm_signup_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("AAAAA");
+            this.translateTexts();
         }
     }
 }

@@ -379,6 +379,7 @@ create table idioma_palabras
 	deleted datetime
 );
 
+--ESPAÑOL
 insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');
 insert into idioma_palabras(code,clave,valor) values('ES','HELLO','Hola');
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN','Iniciar sesion');
@@ -394,6 +395,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_SPLASH_TITLE','H
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_BTN_LOGIN','Ingresar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_CHANGE_LANGUAGE','Cambiar idioma');
 insert into idioma_palabras(code,clave,valor) values('ES','SINGUP_TITLE','Registrar nuevo usuario');
+insert into idioma_palabras(code,clave,valor) values('ES','SINGUP_DESCRIPTION','Completa estos datos para poder crear tu cuenta:');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_NAME','Escriba su nombre:');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_SURNAME','Escriba su apellido:');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_ALIAS','Escriba su alias:');
@@ -401,13 +403,18 @@ insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_EMAIL','Escrib
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_PWD','Escriba su password:');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_OK','Aceptar');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_CANCEL','Cancelar');
-insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_INPUT_ERROR','Email y contraseña requeridos!');
-insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_INPUT_ERROR_TITLE','Aviso');
-insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_SERVICE_ERROR','Usuario o contraseña incorrectos!');
+insert into idioma_palabras(code,clave,valor) values('ES','DOCUMENT_NUMBER','DNI:');
+insert into idioma_palabras(code,clave,valor) values('ES','BIRTH_DATE','Fecha de nacimiento:');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_NUMER','Número de tramite:');
+insert into idioma_palabras(code,clave,valor) values('ES','ADDRESS','Dirección:');
+insert into idioma_palabras(code,clave,valor) values('ES','PHONE_NUMBER','Número de telefono:');
 insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_ERROR','Valide los datos requeridos para registrar!');
 insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_EMAIL_ERROR','Formato de email erroneo!');
 insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_ERROR_TITLE','Aviso');
 insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_SUCCESS','Usuario creado con exito!');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_INPUT_ERROR','Email y contraseña requeridos!');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_INPUT_ERROR_TITLE','Aviso');
+insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_SERVICE_ERROR','Usuario o contraseña incorrectos!');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_NOT_FOUND','No hay usuarios para validar integridad!');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRUPT','Integridad corrompida bd usuarios');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_ENTITY_FAIL','Integridad de tabla de usuarios comprometida');
@@ -428,7 +435,9 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PERMISSION'
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usuarios');
 insert into idioma_palabras(code,clave,valor) values('ES','LANGUAGE_CHANGE_OK','Idioma cargado con exito');
 insert into idioma_palabras(code,clave,valor) values('ES','LANGUAGE_CHANGE_ERROR','Error al cambiar el lenguaje');
-
+insert into idioma_palabras(code,clave,valor) values('ES','YOUR_USER_LABEL','Tú usuario:');
+insert into idioma_palabras(code,clave,valor) values('ES','YOUR_DOCUMENTS','Tú documentación:');
+--ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
 insert into idioma_palabras(code,clave,valor) values('ENG','HELLO','Hello');
 insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN','Login');
@@ -444,6 +453,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_SPLASH_TITLE','
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_BTN_LOGIN','Login');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_CHANGE_LANGUAGE','Choose language');
 insert into idioma_palabras(code,clave,valor) values('ENG','SINGUP_TITLE','Register new user');
+insert into idioma_palabras(code,clave,valor) values('ENG','SINGUP_DESCRIPTION','Complete this information to create your account:');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_NAME','Write your name:');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_SURNAME','Write your surname:');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_ALIAS','Write your alias:');
@@ -451,13 +461,18 @@ insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_EMAIL','Write
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_PWD','Write your password:');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_OK','OK');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_CANCEL','Cancel');
-insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_INPUT_ERROR','Email and password required!');
-insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_INPUT_ERROR_TITLE','Warning');
-insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_SERVICE_ERROR','The email or password was not correct!');
+insert into idioma_palabras(code,clave,valor) values('ENG','DOCUMENT_NUMBER','Document number:');
+insert into idioma_palabras(code,clave,valor) values('ENG','BIRTH_DATE','Birth date:');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_NUMER','Order numer:');
+insert into idioma_palabras(code,clave,valor) values('ENG','ADDRESS','Address:');
+insert into idioma_palabras(code,clave,valor) values('ENG','PHONE_NUMBER','Phone number:');
 insert into idioma_palabras(code,clave,valor) values('ENG','REGISTER_INPUT_ERROR','Validate the data required to register!');
 insert into idioma_palabras(code,clave,valor) values('ENG','REGISTER_INPUT_EMAIL_ERROR','Email wrong format!');
 insert into idioma_palabras(code,clave,valor) values('ENG','REGISTER_INPUT_ERROR_TITLE','Advice');
 insert into idioma_palabras(code,clave,valor) values('ENG','REGISTER_INPUT_SUCCESS','User created successfully!');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_INPUT_ERROR','Email and password required!');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_INPUT_ERROR_TITLE','Warning');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_SERVICE_ERROR','The email or password was not correct!');
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_NOT_FOUND','There are no users to validate integrity!');
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_CORRUPT','Integrity corrupted bd users');
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_ENTITY_FAIL','User table integrity compromised');
@@ -478,5 +493,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_PERMISSION
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_USER','Users');
 insert into idioma_palabras(code,clave,valor) values('ENG','LANGUAGE_CHANGE_OK','The language has been successfully changed');
 insert into idioma_palabras(code,clave,valor) values('ENG','LANGUAGE_CHANGE_ERROR','There was a problem trying to change the language');
+insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_USER_LABEL','Your user info:');
+insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_DOCUMENTS','Your document info:');
 
 select * from idioma_palabras where  code='ENG';

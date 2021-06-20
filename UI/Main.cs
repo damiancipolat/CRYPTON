@@ -31,7 +31,8 @@ namespace UI
     public partial class frm_main : Form, INotification
     {
         //Bus de notificaciones.
-        public Notificator uiEvents = new Notificator();
+        private Notificator uiEvents = new Notificator();
+        private string defaultLang=null;
 
         public frm_main()
         {
@@ -60,11 +61,13 @@ namespace UI
         //Se carga el idioma por defecto.
         private void loadDefaultLanguage()
         {
-            //Cargo el idioma.
-            string langCode = ConfigurationManager.AppSettings["Language"];
-
+            //Cargo el idioma por defecto de la configuracion si no esta seteado.
+            this.defaultLang = (this.defaultLang == null)
+                ? ConfigurationManager.AppSettings["Language"]
+                : Idioma.GetInstance().getDefault().code;
+            
             //Cargo el idioma por defecto.
-            Idioma.GetInstance().setDefault(Idioma.GetInstance().getIdioma(langCode));
+            Idioma.GetInstance().setDefault(Idioma.GetInstance().getIdioma(this.defaultLang));
         }
 
         //Actualizo los textos en base al idioma elegido.
