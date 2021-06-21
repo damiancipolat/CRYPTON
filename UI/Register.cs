@@ -12,6 +12,7 @@ using SL;
 using BE;
 using SEC;
 using BL;
+using BL.Exceptions;
 using VL;
 using VL.Exceptions;
 using UI.Notifications;
@@ -41,8 +42,8 @@ namespace UI
             this.address.Text = Idioma.GetInstance().translate("ADDRESS");
             this.phone_number.Text = Idioma.GetInstance().translate("PHONE_NUMBER");
             this.signup_description.Text= Idioma.GetInstance().translate("SINGUP_DESCRIPTION");
-            this.your_documents.Text = Idioma.GetInstance().translate("YOUR_USER_LABEL");
-            this.your_user_label.Text = Idioma.GetInstance().translate("YOUR_DOCUMENTS");
+            this.your_documents.Text = Idioma.GetInstance().translate("YOUR_DOCUMENTS");
+            this.your_user_label.Text = Idioma.GetInstance().translate("YOUR_USER_LABEL");
         }
 
         public frm_signup(frm_main parent)
@@ -76,7 +77,12 @@ namespace UI
                     this.signup_txt_surname.Text,
                     this.signup_txt_alias.Text,
                     this.signup_txt_email.Text,
-                    this.signup_txt_pwd.Text
+                    this.signup_txt_pwd.Text,
+                    this.document_number_txt.Text,
+                    this.birth_date_txt.Text,
+                    this.order_number_txt.Text,
+                    this.address_txt.Text,
+                    this.phone_number_txt.Text
                 );
 
                 //Bindeo campos 
@@ -87,31 +93,49 @@ namespace UI
                 newClient.email = this.signup_txt_email.Text;
                 newClient.pwd = this.signup_txt_pwd.Text;
                 newClient.tipoUsuario = UsuarioTipo.CLIENTE;
+                newClient.tipoDoc = "DNI";
+                newClient.numero = this.document_number_txt.Text;
+               // newClient.fec_nac =this.birth_date_txt.Text;
+                newClient.num_tramite = this.order_number_txt.Text;
+                newClient.domicilio = this.address_txt.Text;
+                newClient.telefono = this.phone_number_txt.Text;
+
 
                 //Grabo el cliente.
                 new ClienteBL().save(newClient);
                 
                 //Mensaje de exito.
-                /*MessageBox.Show(
-                    Idioma.GetInstance().translateKey("REGISTER_INPUT_SUCCESS"),
-                    Idioma.GetInstance().translateKey("REGISTER_INPUT_ERROR_TITLE"),
+                MessageBox.Show(
+                    Idioma.GetInstance().translate("REGISTER_INPUT_SUCCESS"),
+                    Idioma.GetInstance().translate("REGISTER_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
-                );*/
+                );
 
                 //Hago autologin.
                 UsuarioBE user = new Auth().login(this.signup_txt_email.Text, this.signup_txt_pwd.Text);
                 this.parent.render();
                 this.Close();
             }
-            catch (InputException ex)
+            catch (BusinessException ex)
             {
-                /*MessageBox.Show(
-                    Idioma.GetInstance().translateKey(ex.Message),
-                    Idioma.GetInstance().translateKey("REGISTER_INPUT_ERROR_TITLE"),
+                Debug.WriteLine("----->" + ex.Message);
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("REGISTER_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation
-                );*/
+                );
+            }
+            catch (InputException ex)
+            {
+                Debug.WriteLine("----->" + ex.Message);
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("REGISTER_INPUT_ERROR_TITLE"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation
+                );
             }
         }
 

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using BE;
 using BE.Permisos;
 using DAL;
 using DAL.Permiso;
 using SL;
 using SEC;
+using BL.Exceptions;
 
 namespace BL
 {
@@ -40,12 +42,29 @@ namespace BL
 
         public int save(ClienteBE cliente)
         {
+            //Encripto el email para hacer busquedas.
+            string cryptedEmail = Cripto.GetInstance().Encrypt(cliente.email);
+
+            //Valido si existe el email
+            if (new ClienteDAL().findByEmail(cryptedEmail).Count > 0)
+                throw new BusinessException("SIGNUP_EMAIL_REPEATED");
+
+            //Valido si existe el dni.
+            if (new ClienteDAL().findByDNI(cliente.numero).Count > 0)
+                throw new BusinessException("SIGNUP_DNI_REPEATED");
+
             //Registro el usuario obtengo el id.
             int insertedId = this.createUser(cliente);
 
             //Seteo relacion cliente
             UsuarioBE tmpUser = new UsuarioBE();
             tmpUser.idusuario = insertedId;
+            tmpUser.nombre = cliente.nombre;
+            tmpUser.apellido = cliente.apellido;
+            tmpUser.alias = cliente.alias;
+            tmpUser.email = cliente.email;
+            tmpUser.tipoUsuario = UsuarioTipo.CLIENTE;
+            tmpUser.pwd = cliente.pwd;
 
             //Seteo campo de cliente autoseteados.
             cliente.valido = "N";

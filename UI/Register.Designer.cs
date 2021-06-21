@@ -35,14 +35,14 @@
             this.signup_title = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.birth_date_txt = new System.Windows.Forms.MaskedTextBox();
             this.document_number = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.document_number_txt = new System.Windows.Forms.TextBox();
             this.phone_number = new System.Windows.Forms.Label();
             this.order_number = new System.Windows.Forms.Label();
             this.address = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.address_txt = new System.Windows.Forms.TextBox();
+            this.order_number_txt = new System.Windows.Forms.TextBox();
             this.birth_date = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.signup_name = new System.Windows.Forms.Label();
@@ -56,9 +56,9 @@
             this.signup_txt_alias = new System.Windows.Forms.TextBox();
             this.signup_alias = new System.Windows.Forms.Label();
             this.signup_description = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.your_documents = new System.Windows.Forms.Label();
             this.your_user_label = new System.Windows.Forms.Label();
+            this.phone_number_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -82,7 +82,7 @@
             this.signup_cancel.Location = new System.Drawing.Point(649, 606);
             this.signup_cancel.Name = "signup_cancel";
             this.signup_cancel.Size = new System.Drawing.Size(165, 49);
-            this.signup_cancel.TabIndex = 7;
+            this.signup_cancel.TabIndex = 12;
             this.signup_cancel.Text = "signup_cancel";
             this.signup_cancel.UseVisualStyleBackColor = false;
             this.signup_cancel.Click += new System.EventHandler(this.Login_btn_cancel_Click);
@@ -92,7 +92,7 @@
             this.signup_ok.Location = new System.Drawing.Point(487, 606);
             this.signup_ok.Name = "signup_ok";
             this.signup_ok.Size = new System.Drawing.Size(143, 49);
-            this.signup_ok.TabIndex = 6;
+            this.signup_ok.TabIndex = 11;
             this.signup_ok.Text = "signup_ok";
             this.signup_ok.UseVisualStyleBackColor = true;
             this.signup_ok.Click += new System.EventHandler(this.Signup_ok_Click);
@@ -116,20 +116,30 @@
             // 
             this.panel2.AutoSize = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.phone_number_txt);
+            this.panel2.Controls.Add(this.birth_date_txt);
             this.panel2.Controls.Add(this.document_number);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.document_number_txt);
             this.panel2.Controls.Add(this.phone_number);
             this.panel2.Controls.Add(this.order_number);
             this.panel2.Controls.Add(this.address);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.address_txt);
+            this.panel2.Controls.Add(this.order_number_txt);
             this.panel2.Controls.Add(this.birth_date);
             this.panel2.Location = new System.Drawing.Point(499, 121);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 458);
             this.panel2.TabIndex = 24;
+            // 
+            // birth_date_txt
+            // 
+            this.birth_date_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birth_date_txt.Location = new System.Drawing.Point(28, 134);
+            this.birth_date_txt.Mask = "00/00/0000";
+            this.birth_date_txt.Name = "birth_date_txt";
+            this.birth_date_txt.Size = new System.Drawing.Size(248, 28);
+            this.birth_date_txt.TabIndex = 7;
+            this.birth_date_txt.ValidatingType = typeof(System.DateTime);
             // 
             // document_number
             // 
@@ -141,22 +151,13 @@
             this.document_number.TabIndex = 12;
             this.document_number.Text = "document_number";
             // 
-            // textBox1
+            // document_number_txt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(32, 393);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(243, 34);
-            this.textBox1.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(28, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 34);
-            this.textBox2.TabIndex = 1;
+            this.document_number_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.document_number_txt.Location = new System.Drawing.Point(28, 51);
+            this.document_number_txt.Name = "document_number_txt";
+            this.document_number_txt.Size = new System.Drawing.Size(246, 34);
+            this.document_number_txt.TabIndex = 6;
             // 
             // phone_number
             // 
@@ -191,21 +192,21 @@
             this.address.Text = "address";
             this.address.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // address_txt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(31, 299);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(246, 34);
-            this.textBox3.TabIndex = 4;
+            this.address_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address_txt.Location = new System.Drawing.Point(31, 299);
+            this.address_txt.Name = "address_txt";
+            this.address_txt.Size = new System.Drawing.Size(246, 34);
+            this.address_txt.TabIndex = 9;
             // 
-            // textBox4
+            // order_number_txt
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(29, 221);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(245, 34);
-            this.textBox4.TabIndex = 2;
+            this.order_number_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order_number_txt.Location = new System.Drawing.Point(29, 221);
+            this.order_number_txt.Name = "order_number_txt";
+            this.order_number_txt.Size = new System.Drawing.Size(245, 34);
+            this.order_number_txt.TabIndex = 8;
             // 
             // birth_date
             // 
@@ -279,7 +280,7 @@
             // 
             this.signup_surname.AutoSize = true;
             this.signup_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_surname.Location = new System.Drawing.Point(27, 186);
+            this.signup_surname.Location = new System.Drawing.Point(27, 101);
             this.signup_surname.Name = "signup_surname";
             this.signup_surname.Size = new System.Drawing.Size(151, 24);
             this.signup_surname.TabIndex = 13;
@@ -308,7 +309,7 @@
             // signup_txt_surname
             // 
             this.signup_txt_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_txt_surname.Location = new System.Drawing.Point(29, 221);
+            this.signup_txt_surname.Location = new System.Drawing.Point(28, 135);
             this.signup_txt_surname.Name = "signup_txt_surname";
             this.signup_txt_surname.Size = new System.Drawing.Size(245, 34);
             this.signup_txt_surname.TabIndex = 2;
@@ -316,7 +317,7 @@
             // signup_txt_alias
             // 
             this.signup_txt_alias.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_txt_alias.Location = new System.Drawing.Point(28, 135);
+            this.signup_txt_alias.Location = new System.Drawing.Point(29, 218);
             this.signup_txt_alias.Name = "signup_txt_alias";
             this.signup_txt_alias.Size = new System.Drawing.Size(246, 34);
             this.signup_txt_alias.TabIndex = 3;
@@ -325,7 +326,7 @@
             // 
             this.signup_alias.AutoSize = true;
             this.signup_alias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_alias.Location = new System.Drawing.Point(24, 103);
+            this.signup_alias.Location = new System.Drawing.Point(26, 183);
             this.signup_alias.Name = "signup_alias";
             this.signup_alias.Size = new System.Drawing.Size(114, 24);
             this.signup_alias.TabIndex = 17;
@@ -342,21 +343,13 @@
             this.signup_description.TabIndex = 26;
             this.signup_description.Text = "signup_description";
             // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(28, 135);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(246, 34);
-            this.textBox5.TabIndex = 3;
-            // 
             // your_documents
             // 
             this.your_documents.AutoSize = true;
             this.your_documents.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.your_documents.Location = new System.Drawing.Point(523, 107);
             this.your_documents.Name = "your_documents";
-            this.your_documents.Size = new System.Drawing.Size(231, 30);
+            this.your_documents.Size = new System.Drawing.Size(185, 24);
             this.your_documents.TabIndex = 27;
             this.your_documents.Text = "Tú documentacion";
             this.your_documents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -367,10 +360,18 @@
             this.your_user_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.your_user_label.Location = new System.Drawing.Point(176, 107);
             this.your_user_label.Name = "your_user_label";
-            this.your_user_label.Size = new System.Drawing.Size(138, 30);
+            this.your_user_label.Size = new System.Drawing.Size(110, 24);
             this.your_user_label.TabIndex = 28;
             this.your_user_label.Text = "Tú usuario";
             this.your_user_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // phone_number_txt
+            // 
+            this.phone_number_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone_number_txt.Location = new System.Drawing.Point(30, 393);
+            this.phone_number_txt.Name = "phone_number_txt";
+            this.phone_number_txt.Size = new System.Drawing.Size(246, 34);
+            this.phone_number_txt.TabIndex = 29;
             // 
             // frm_signup
             // 
@@ -424,17 +425,17 @@
         private System.Windows.Forms.Label signup_alias;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label document_number;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox document_number_txt;
         private System.Windows.Forms.Label phone_number;
         private System.Windows.Forms.Label order_number;
         private System.Windows.Forms.Label address;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox address_txt;
+        private System.Windows.Forms.TextBox order_number_txt;
         private System.Windows.Forms.Label birth_date;
         private System.Windows.Forms.Label signup_description;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label your_documents;
         private System.Windows.Forms.Label your_user_label;
+        private System.Windows.Forms.MaskedTextBox birth_date_txt;
+        private System.Windows.Forms.TextBox phone_number_txt;
     }
 }

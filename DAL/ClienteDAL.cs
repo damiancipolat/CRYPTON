@@ -49,7 +49,42 @@ namespace DAL
         public ClienteBE findByUser(UsuarioBE user)
         {
             return new ClienteBE();
-        } 
+        }
+
+
+        //Este metodo busca por email
+        public List<UsuarioBE> findByEmail(string email)
+        {
+            //Busco en la bd por email.
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
+                {"email",email}
+            }, "usuario");
+
+            //Lista resultado.
+            List<UsuarioBE> lista = new List<UsuarioBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
+
+        //Busca por dni.
+        public List<ClienteBE> findByDNI(string dni)
+        {
+            //Busco en la bd por dni.
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
+                {"numero",dni}
+            }, "cliente");
+
+            //Lista resultado.
+            List<ClienteBE> lista = new List<ClienteBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
 
         //Este metodo retorna una lista de clientes.
         public List<ClienteBE> findAll()
