@@ -88,6 +88,7 @@ namespace DAL
             var schema = new Dictionary<string, Object>{
                 {"idcliente",wallet.cliente.idcliente},
                 {"moneda", wallet.moneda.cod},
+                {"cuenta", wallet.cuenta.idcuenta},
                 {"direccion", wallet.direccion},
                 {"fecCreacion", wallet.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss.fff")},
                 {"saldo", wallet.saldo}

@@ -65,7 +65,7 @@ namespace BL
             //Creo la billetera.
             BilleteraBE wallet = new BilleteraBE();
             wallet.cliente = cliente;
-            wallet.direccion = created.data.address;
+            wallet.direccion = created.data.address;            
             wallet.fecCreacion = DateTime.Now;
             wallet.moneda = moneda;
             wallet.cuenta = cuenta;

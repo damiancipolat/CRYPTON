@@ -31,7 +31,7 @@ namespace BL
             //Grabo la cuenta.
             int newId = new CuentaDAL().insert(cuenta);
             cuenta.idcuenta = newId;
-
+            
             //Proceso la creación de las billeteras
             this.crearBilleteras(cuenta,cliente);
 
