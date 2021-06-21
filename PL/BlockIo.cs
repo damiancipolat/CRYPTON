@@ -1,10 +1,11 @@
 ﻿using System;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Net.Sockets;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Globalization;
 using System.Diagnostics;
-using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+using PL.Responses;
 
 namespace PL
 {    
@@ -17,11 +18,27 @@ namespace PL
         public BlockIo(string keyCode)
         {            
             this.host = "https://block.io/api/v2/";
+            this.apiKey = keyCode;
         }
 
-        public object createWallet()
+        public NewWallet createWallet()
         {
-            return new object();
+            //Armo la url.
+            string url = this.host + "get_new_address/?api_key="+this.apiKey;
+            
+            //Hago el request.
+            var result = new Request().GET(url);
+
+            //Si es erroneo lanzo excepcion.
+            if (!result.IsSuccessStatusCode)
+                throw new Exception("Request not success,"+ result.StatusCode);
+
+            //Extraigo en forma de json.
+            string jsonResult = result.Content.ReadAsStringAsync().Result;
+
+            //Descerializo y convierto al tipo de retorno.
+            return JsonSerializer.Deserialize<NewWallet>(jsonResult);
+
         }
 
         public object getBalance()

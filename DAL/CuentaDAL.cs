@@ -62,11 +62,10 @@ namespace DAL
         public int insert(CuentaBE cuenta)
         {
             //Creo un esquema dinamico para ser guardado.
-            var schema = new Dictionary<string, Object>{
-                {"idcuenta",cuenta.idcuenta},
+            var schema = new Dictionary<string, Object>{                
                 {"cliente",cuenta.cliente.idcliente },
                 {"fecAlta",(cuenta.fecAlta!=null)?cuenta.fecAlta.ToString("yyyy-MM-dd HH:mm:ss"):null },
-                {"estado",(CuentaEstado)cuenta.estado },
+                {"estado",(int)cuenta.estado },
             };
             
             return this.getInsert().insertSchema(schema, "cuentas", true);

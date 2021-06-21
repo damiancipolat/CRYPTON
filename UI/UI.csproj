@@ -115,6 +115,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wallets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wallets.Designer.cs">
+      <DependentUpon>Wallets.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frm_publish_sell.resx">
       <DependentUpon>frm_publish_sell.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +149,9 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Wallets.resx">
+      <DependentUpon>Wallets.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -170,9 +179,9 @@
       <Project>{d639a0f9-9476-4c97-9c18-3b1017683cfb}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PL\PL.csproj">
-      <Project>{d8af56a7-6ed0-403a-8733-ecb5511a3289}</Project>
-      <Name>PL</Name>
+    <ProjectReference Include="..\IO\IO.csproj">
+      <Project>{a3e6991b-c498-4b7f-8e3b-15b54dea1e70}</Project>
+      <Name>IO</Name>
     </ProjectReference>
     <ProjectReference Include="..\SEC\SEC.csproj">
       <Project>{3d89b4a3-57e0-4a39-8fd4-67945f0559ac}</Project>

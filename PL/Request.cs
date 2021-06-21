@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Net.Sockets;
 using System.Diagnostics;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace PL
 {    
@@ -14,16 +16,22 @@ namespace PL
 
         public Request()
         {
-            //url: https://zetcode.com/csharp/httpclient/
             this.client = new HttpClient();
             this.client.DefaultRequestHeaders.Accept.Clear();
             this.client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-
         public HttpResponseMessage GET(string url)
         {
-            return this.client.GetAsync(url).Result;
+            //Prepare the request.
+            this.client.BaseAddress = new Uri(url);
+
+            //Make the request.
+            var responseTask = client.GetAsync("");
+            responseTask.Wait();
+
+            //Return the response.
+            return responseTask.Result;
         }
 
         public HttpResponseMessage POST(string url,HttpContent body)

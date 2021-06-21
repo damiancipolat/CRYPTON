@@ -24,10 +24,7 @@ namespace UI.Notifications
         public void Notify()
         {
             foreach (INotification client in _subscribers)
-            {
-                Debug.WriteLine("--------0000000000000000000");
                 client.Update();
-            }
         }
     }
 }

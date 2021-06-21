@@ -207,8 +207,9 @@ create table api_keys(
 	dog varchar(50)
 );
 
-insert into api_keys(ambiente,btc,ltc,dog) values('TEST','70d1-1c21-b76c-fb00','34e3-4277-7289-6fd6','7c02-9d46-b312-25ef');
-insert into api_keys(ambiente,btc,ltc,dog) values('PROD','6195-52ea-f8fb-dfc1','d685-3e52-8b59-abe6','3894-9455-f527-4054');
+insert into api_keys(ambiente,btc,ltc,dog) values('TEST_1','70d1-1c21-b76c-fb00','34e3-4277-7289-6fd6','7c02-9d46-b312-25ef');
+insert into api_keys(ambiente,btc,ltc,dog) values('TEST_2','8e15-55be-cccd-b33c','7ebe-8f45-4490-37d4','cece-b117-15ca-e13d');
+insert into api_keys(ambiente,btc,ltc,dog) values('PROD','6195-52ea-f8fb-dfc1','b311-ecc3-0e70-3c50','611f-3c58-e739-3378');
 
 --Cuentas
 create table cuentas
@@ -439,6 +440,14 @@ insert into idioma_palabras(code,clave,valor) values('ES','YOUR_USER_LABEL','Tú 
 insert into idioma_palabras(code,clave,valor) values('ES','YOUR_DOCUMENTS','Tú documentación:');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_EMAIL_REPEATED','Este email ya se encuentra en uso!');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_DNI_REPEATED','El número de documento ya se encuentra en uso!');
+insert into idioma_palabras(code,clave,valor) values('ES','BAD_DNI','Formato de DNI incorrecto.');
+insert into idioma_palabras(code,clave,valor) values('ES','BAD_PHONE','Formato de telefono incorrecto.');
+insert into idioma_palabras(code,clave,valor) values('ES','BAD_TRAMITE','Formato número de tramite incorrecto.');
+insert into idioma_palabras(code,clave,valor) values('ES','YOUR_WALLETS_LABEL','Tús billeteras...');
+insert into idioma_palabras(code,clave,valor) values('ES','ARS_LABEL','Pesos (ARS)');
+insert into idioma_palabras(code,clave,valor) values('ES','DOG_LABEL','Doge (DOG)');
+insert into idioma_palabras(code,clave,valor) values('ES','LTC_LABEL','Litecoin (LTC)');
+insert into idioma_palabras(code,clave,valor) values('ES','BTC_LABEL','Bitecoin (BTC)');
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
 insert into idioma_palabras(code,clave,valor) values('ENG','HELLO','Hello');
@@ -499,8 +508,19 @@ insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_USER_LABEL','Yo
 insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_DOCUMENTS','Your document info:');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_EMAIL_REPEATED','This email is already in use!');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_DNI_REPEATED','This document number is already in use!');
+insert into idioma_palabras(code,clave,valor) values('ENG','BAD_DNI','Document bad format!');
+insert into idioma_palabras(code,clave,valor) values('ENG','BAD_PHONE','Phone number bad format!');
+insert into idioma_palabras(code,clave,valor) values('ENG','BAD_TRAMITE','Order number bad format!');
+insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_WALLETS_LABEL','Your wallets...');
+insert into idioma_palabras(code,clave,valor) values('ENG','ARS_LABEL','Pesos (ARS)');
+insert into idioma_palabras(code,clave,valor) values('ENG','DOG_LABEL','Doge (DOG)');
+insert into idioma_palabras(code,clave,valor) values('ENG','LTC_LABEL','Litecoin (LTC)');
+insert into idioma_palabras(code,clave,valor) values('ENG','BTC_LABEL','Bitecoin (BTC)');
 
 select * from idioma_palabras where  code='ENG';
 
 select * from usuario;
 select * from cliente;
+select * from cuentas;
+select * from moneda;
+select * from api_keys;

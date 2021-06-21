@@ -1,30 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Diagnostics;
-using System.Dynamic;
-using System.Reflection;
-using System.Collections;
+using System.Text.Json;
 using BL;
 using BE;
 using BE.Permisos;
-using DAL.DAO;
-using DAL;
-using DAL.Idiomas;
-using DAL.Permiso;
-using DAL.Admin;
 using SL;
-using SEC;
-using PL;
 using UI.Notifications;
+using IO;
+using IO.Responses;
 
 namespace UI
 {
@@ -223,32 +210,32 @@ namespace UI
 
         private void Main_Paint(object sender, PaintEventArgs e)
         {
-            this.render();
+            this.adjustControls();
         }
 
         private void Main_Resize(object sender, EventArgs e)
         {
-            this.render();
+            this.adjustControls();
         }
 
         private void Main_splash_Resize(object sender, EventArgs e)
         {
-            this.render();
+            this.adjustControls();
         }
 
         private void Btn_login_Leave(object sender, EventArgs e)
         {
-            this.render();
+
         }
 
         private void Btn_login_Enter(object sender, EventArgs e)
         {
-            this.render();
+
         }
 
         private void Main_Shown(object sender, EventArgs e)
         {
-            this.render();
+
         }
 
         private void CambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -320,6 +307,41 @@ namespace UI
         private void PictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_Click_2(object sender, EventArgs e)
+        {
+            new frm_wallets().Show();
+        }
+
+        private void Button2_Click_3(object sender, EventArgs e)
+        {
+            BlockIo api = new BlockIo("a2a1-1136-53cb-d2ca");
+            NewWallet created = api.createWallet();
+            Debug.WriteLine(">>>>" + created.data.address);
+
+
+            /*
+            //MonedaBE money = new MonedaDAL().findByCode("BTC");
+            //Debug.WriteLine("/////"+money.cod+"_"+money.descrip);
+            //ApiKeysBE api = new ApiKeysDAL().findByCode("PROD");
+            //Debug.WriteLine("++++"+api.ambiente+"_"+api.btc);
+
+
+
+            try
+            {
+                // String jsonResult = "{\"status\":\"success\",\"data\":{\"network\":\"LTCTEST\",\"user_id\":2,\"address\":\"QQFDfrnLCLDcjFpZCaN2EtthFkxT9hEHuT\",\"label\":\"hike86\"}}";
+                // NewWallet final = JsonSerializer.Deserialize<NewWallet>(jsonResult);
+                
+                string jsonResult = api.createWallet();
+              //  NewWallet final = JsonSerializer.Deserialize<NewWallet>(jsonResult);
+              //  Debug.WriteLine("SALIDA:" + final.data.network + " " + final.data.address + " " + final.data.label);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine("++++++++++++++++++++"+ex.Message.ToString());
+            }*/
         }
     }
 }

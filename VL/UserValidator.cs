@@ -81,10 +81,8 @@ namespace VL
 
             foreach (string value in fields)
             {
-                //if (value=="")
-                //throw new InputException("REGISTER_INPUT_ERROR");
-             
-                Debug.WriteLine("@@@" + value);
+                if (value=="")
+                    throw new InputException("REGISTER_INPUT_ERROR");
             }
 
             //Valido el email.

@@ -100,9 +100,12 @@ namespace UI
                 newClient.domicilio = this.address_txt.Text;
                 newClient.telefono = this.phone_number_txt.Text;
 
-
                 //Grabo el cliente.
-                new ClienteBL().save(newClient);
+                int newId = new ClienteBL().save(newClient);
+                newClient.idcliente = newId;
+
+                //Creo la cuenta del cliente.
+                new CuentaBL().crear(newClient);
                 
                 //Mensaje de exito.
                 MessageBox.Show(
@@ -114,6 +117,7 @@ namespace UI
 
                 //Hago autologin.
                 UsuarioBE user = new Auth().login(this.signup_txt_email.Text, this.signup_txt_pwd.Text);
+
                 this.parent.render();
                 this.Close();
             }

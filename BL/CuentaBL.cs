@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,26 @@ namespace BL
             //..
         }
 
-        public void crearBilleteras(CuentaBE cuenta) { }
+        public void crear(ClienteBE cliente)
+        {
+            //Creo la cuenta.
+            CuentaBE cuenta = new CuentaBE();            
+            cuenta.cliente = cliente;
+            cuenta.fecAlta = DateTime.Now;
+            cuenta.estado = CuentaEstado.ACTIVA;
+
+            //Grabo la cuenta.
+            int newId = new CuentaDAL().insert(cuenta);
+            cuenta.idcuenta = newId;
+            Debug.WriteLine(">>>>>>>"+newId.ToString());
+        }
+
+        public void crearBilleteras(CuentaBE cuenta)
+        {
+
+        }
+
+
         public void crearCuenta(CuentaBE cuenta) { }
         public void darBaja(CuentaBE cuenta) { }
         public void bloquear(CuentaBE cuenta) { }
