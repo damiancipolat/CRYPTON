@@ -83,7 +83,7 @@ namespace DAL
                 {"idcliente",wallet.cliente.idcliente},
                 {"moneda", wallet.moneda.cod},
                 {"direccion", wallet.direccion},
-                {"fecCreacion", wallet.fecCreacion},
+                {"fecCreacion", wallet.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss.fff")},
                 {"saldo", wallet.saldo}
             };
 

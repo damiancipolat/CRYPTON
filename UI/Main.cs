@@ -316,32 +316,7 @@ namespace UI
 
         private void Button2_Click_3(object sender, EventArgs e)
         {
-            BlockIo api = new BlockIo("a2a1-1136-53cb-d2ca");
-            NewWallet created = api.createWallet();
-            Debug.WriteLine(">>>>" + created.data.address);
 
-
-            /*
-            //MonedaBE money = new MonedaDAL().findByCode("BTC");
-            //Debug.WriteLine("/////"+money.cod+"_"+money.descrip);
-            //ApiKeysBE api = new ApiKeysDAL().findByCode("PROD");
-            //Debug.WriteLine("++++"+api.ambiente+"_"+api.btc);
-
-
-
-            try
-            {
-                // String jsonResult = "{\"status\":\"success\",\"data\":{\"network\":\"LTCTEST\",\"user_id\":2,\"address\":\"QQFDfrnLCLDcjFpZCaN2EtthFkxT9hEHuT\",\"label\":\"hike86\"}}";
-                // NewWallet final = JsonSerializer.Deserialize<NewWallet>(jsonResult);
-                
-                string jsonResult = api.createWallet();
-              //  NewWallet final = JsonSerializer.Deserialize<NewWallet>(jsonResult);
-              //  Debug.WriteLine("SALIDA:" + final.data.network + " " + final.data.address + " " + final.data.label);
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine("++++++++++++++++++++"+ex.Message.ToString());
-            }*/
         }
     }
 }

@@ -104,7 +104,7 @@ namespace UI
                 int newId = new ClienteBL().save(newClient);
                 newClient.idcliente = newId;
 
-                //Creo la cuenta del cliente.
+                //Creo la cuenta del cliente y sus respectivas billeteras
                 new CuentaBL().crear(newClient);
                 
                 //Mensaje de exito.

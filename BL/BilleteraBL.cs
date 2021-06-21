@@ -10,6 +10,7 @@ using BE;
 using DAL;
 using IO;
 using IO.Responses;
+using SL;
 
 namespace BL
 {
@@ -53,12 +54,13 @@ namespace BL
         {
             //Obtengo las claves de la red que corresponde la moneda.
             string networkKey = this.getKeys(this.getEnvironment(), moneda.cod);
-
+            Debug.WriteLine("&&&&"+ networkKey+"//"+moneda.cod+"_btc"+ this.getEnvironment().btc+"_ltc" + this.getEnvironment().ltc+"_dog" + this.getEnvironment().dog);
             if (networkKey == null)
                 throw new BusinessException("Keys not found");
 
             //Creo la wallet en block.io
             NewWallet created = new BlockIo(networkKey).createWallet();
+            Bitacora.GetInstance().log("Se ha creado :"+moneda.cod+"/"+created.data.address,true);
 
             //Creo la billetera.
             BilleteraBE wallet = new BilleteraBE();
@@ -75,20 +77,10 @@ namespace BL
         //Cuenta en ARS, no usa proveedor.
         public BilleteraBE crearARS(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
         {
-            //Obtengo las claves de la red que corresponde la moneda.
-            string networkKey = this.getKeys(this.getEnvironment(), moneda.cod);
-
-            if (networkKey == null)
-                throw new BusinessException("Keys not found");
-
-            //Creo la wallet en block.io
-            NewWallet created = new BlockIo(networkKey).createWallet();
-            Debug.WriteLine(">>>>" + created.data.address);
-
             //Creo la billetera.
             BilleteraBE wallet = new BilleteraBE();
             wallet.cliente = cliente;
-            wallet.direccion = created.data.address;
+            wallet.direccion = cuenta.idcuenta.ToString()+"-"+ DateTime.Now.ToString("yyyyMMddHHmmssfff")+"-"+cliente.idcliente.ToString();
             wallet.fecCreacion = DateTime.Now;
             wallet.moneda = moneda;
             wallet.cuenta = cuenta;
@@ -108,8 +100,8 @@ namespace BL
 
             //Creo la nueva billetera.
             BilleteraBE newWallet = (money.cod == "ARS")
-                ? this.crearCrypto(cuenta, cliente, money)
-                : this.crearARS(cuenta,cliente, money);
+                ? this.crearARS(cuenta, cliente, money)
+                : this.crearCrypto(cuenta,cliente, money);
 
             //Proceso guardado en la bd.
             return new BilleteraDAL().insert(newWallet);

@@ -23,6 +23,8 @@ namespace IO
 
         public HttpResponseMessage GET(string url)
         {
+            Debug.WriteLine("GET:"+url);
+
             //Prepare the request.
             this.client.BaseAddress = new Uri(url);
 

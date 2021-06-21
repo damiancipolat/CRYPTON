@@ -19,7 +19,8 @@ namespace BL
             //..
         }
 
-        public void crear(ClienteBE cliente)
+        //Proceso la creacion de la cuenta.
+        public int crear(ClienteBE cliente)
         {
             //Creo la cuenta.
             CuentaBE cuenta = new CuentaBE();            
@@ -30,15 +31,35 @@ namespace BL
             //Grabo la cuenta.
             int newId = new CuentaDAL().insert(cuenta);
             cuenta.idcuenta = newId;
-            Debug.WriteLine(">>>>>>>"+newId.ToString());
+
+            //Proceso la creación de las billeteras
+            this.crearBilleteras(cuenta,cliente);
+
+            return newId;
         }
 
-        public void crearBilleteras(CuentaBE cuenta)
+        //Proceso la creación de las 4 billeteras.
+        private void crearBilleteras(CuentaBE cuenta, ClienteBE cliente)
         {
+            BilleteraBL walletBL = new BilleteraBL();
 
+            //ARS
+            int arsId= walletBL.crear(cuenta, cliente, "ARS");
+            Bitacora.GetInstance().log("Se ha creado la cuenta en ars pesos id:" + arsId.ToString(),true);
+
+            //BTC
+            int btcId = walletBL.crear(cuenta, cliente, "BTC");
+            Bitacora.GetInstance().log("Se ha creado la cuenta en bitcoin:" + btcId.ToString(),true);
+
+            //LTC
+            int ltcId= walletBL.crear(cuenta, cliente, "LTC");
+            Bitacora.GetInstance().log("Se ha creado la cuenta en litecoin id:" + ltcId.ToString(),true);
+
+            //DOG
+            int dogId= walletBL.crear(cuenta, cliente, "DOG");
+            Bitacora.GetInstance().log("Se ha creado la cuenta en doge id:" + dogId.ToString(),true);
         }
-
-
+        
         public void crearCuenta(CuentaBE cuenta) { }
         public void darBaja(CuentaBE cuenta) { }
         public void bloquear(CuentaBE cuenta) { }
