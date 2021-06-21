@@ -316,7 +316,13 @@ namespace UI
 
         private void Button2_Click_3(object sender, EventArgs e)
         {
+            //Balance tmp = new BlockIo("11111").test();
+            //Debug.WriteLine("....."+tmp.data.network+"_"+tmp.data.balances[0].available_balance+"---"+tmp.data.balances[0].pending_received_balance);
+            BilleteraBE wallet = new BilleteraBL().getById(3, true);
+            Debug.WriteLine("---+" + wallet.saldo.ToString());
 
+            //MonedaBE tmp = new MonedaBE();
+            //Debug.WriteLine("===>" + typeof(CuentaBE).IsSubclassOf(typeof(EntityBE)));
         }
     }
 }

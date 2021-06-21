@@ -13,7 +13,7 @@ namespace BE
         public MonedaBE moneda;
         public string direccion;
         public DateTime fecCreacion;
-        public float saldo;
+        public Double saldo;
         public CuentaBE cuenta;
     }
 }

@@ -21,9 +21,15 @@ namespace DAL
             //Bindeo campos con la lista de resultados.
             this.binder.match(fieldData, wallet);
 
+            //Transfomrmo a diccionario.
+            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
+
             //Traigo la cuenta.
-            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);            
-            wallet.cuenta = new CuentaDAL().findById((long)mapa["idcuenta"]);
+            if (mapa["idcuenta"] != System.DBNull.Value)
+                wallet.cuenta = new CuentaDAL().findById((long)mapa["idcuenta"]);
+
+            //Traigo la moneda.
+            wallet.moneda = new MonedaDAL().findByCode(mapa["moneda"].ToString());
 
             return wallet;
 

@@ -54,7 +54,7 @@ namespace BL
         {
             //Obtengo las claves de la red que corresponde la moneda.
             string networkKey = this.getKeys(this.getEnvironment(), moneda.cod);
-            Debug.WriteLine("&&&&"+ networkKey+"//"+moneda.cod+"_btc"+ this.getEnvironment().btc+"_ltc" + this.getEnvironment().ltc+"_dog" + this.getEnvironment().dog);
+            
             if (networkKey == null)
                 throw new BusinessException("Keys not found");
 
@@ -105,6 +105,37 @@ namespace BL
 
             //Proceso guardado en la bd.
             return new BilleteraDAL().insert(newWallet);
+        }
+
+        //CONSULTA-----------------------------------------------------------------
+        private string getBalance(string address, MonedaBE moneda)
+        {
+            //Obtengo las claves de la red que corresponde la moneda.
+            string networkKey = this.getKeys(this.getEnvironment(), moneda.cod);
+
+            if (networkKey == null)
+                throw new BusinessException("Keys not found");
+
+            //Consulto el balance en block.io.
+            Balance balance = new BlockIo(networkKey).getBalance(address);
+            Bitacora.GetInstance().log("Se ha consultado el balance:" + moneda.cod + "/" + address+", "+balance.data.available_balance, true);
+
+            return balance.data.available_balance;
+        }
+
+        public BilleteraBE getById(int id, bool updatedBalance=false)
+        {
+            //Recupero de la bd los datos, si no existe retorno null.
+            BilleteraBE wallet = new BilleteraDAL().findById(id);
+
+            if (wallet == null)
+                return null;
+
+            //Si piden saldo actualizado lo traigo del blockio
+            if (updatedBalance && wallet.moneda.cod != "ARS")
+                wallet.saldo = float.Parse(this.getBalance(wallet.direccion, wallet.moneda));
+            
+            return wallet;
         }
 
         //-------------------------------------------------------------------------

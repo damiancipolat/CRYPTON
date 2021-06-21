@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using BE;
 
 namespace DAL.DAO
 {
@@ -34,6 +36,23 @@ namespace DAL.DAO
         public bool isDate(object value)
         {
             return value is DateTime;
+        }
+
+        //Dice si es una clase.
+        public bool isClass(object value)
+        {
+            return value != null ? value.GetType().IsClass : false;
+        }
+
+        //Dice si es una entidad.
+        public bool isEntity(Type value)
+        {
+            return value!=null?value.IsSubclassOf(typeof(EntityBE)):false;
+        }
+
+        public bool isBindeable(object value)
+        {
+            return this.isDate(value) || this.isString(value) || this.IsNumber(value);
         }
     }
 }

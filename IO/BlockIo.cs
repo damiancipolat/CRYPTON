@@ -8,7 +8,7 @@ using IO.Responses;
 using Newtonsoft.Json;
 
 namespace IO
-{    
+{
     public class BlockIo
     {
         private string apiKey;
@@ -16,7 +16,7 @@ namespace IO
 
         //todo
         public BlockIo(string keyCode)
-        {            
+        {
             this.host = "https://block.io/api/v2/";
             this.apiKey = keyCode;
         }
@@ -24,14 +24,14 @@ namespace IO
         public NewWallet createWallet()
         {
             //Armo la url.
-            string url = this.host + "get_new_address/?api_key="+this.apiKey;
-            
+            string url = this.host + "get_new_address/?api_key=" + this.apiKey;
+
             //Hago el request.
             var result = new Request().GET(url);
 
             //Si es erroneo lanzo excepcion.
             if (!result.IsSuccessStatusCode)
-                throw new Exception("Request not success,"+ result.StatusCode);
+                throw new Exception("Request not success," + result.StatusCode);
 
             //Extraigo en forma de json.
             string json = result.Content.ReadAsStringAsync().Result;
@@ -41,9 +41,29 @@ namespace IO
 
         }
 
-        public object getBalance()
+        public Balance getBalance(string address)
         {
-            return new object();
+            //Armo la url.
+            string url = this.host + "get_address_balance/?api_key=" + this.apiKey + "&addresses=" + address;
+
+            //Hago el request.
+            var result = new Request().GET(url);
+
+            //Si es erroneo lanzo excepcion.
+            if (!result.IsSuccessStatusCode)
+                throw new Exception("Request not success," + result.StatusCode);
+
+            //Extraigo en forma de json.
+            string json = result.Content.ReadAsStringAsync().Result;
+
+            //Descerializo y convierto al tipo de retorno.
+            return JsonConvert.DeserializeObject<Balance>(json);
+        }
+
+        public Balance test()
+        {
+            string tmp = "{\"status\":\"success\",\"data\":{\"network\":\"LTCTEST\",\"available_balance\":\"100.0\",\"pending_received_balance\":\"100.0\",\"balances\":[{\"user_id\":3,\"label\":\"thora48\",\"address\":\"Qfku2FMrND7qvh8M9Ftcgfe6PKcJqeEcvD\",\"available_balance\":\"0.00000000\",\"pending_received_balance\":\"0.00000000\"}]}}";
+            return JsonConvert.DeserializeObject<Balance>(tmp);
         }
 
         public object getWalletBalance(string address)

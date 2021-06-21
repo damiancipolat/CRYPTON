@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using DAL.DAO;
+using BE;
 
 namespace DAL.Mapper
 {
@@ -32,18 +34,25 @@ namespace DAL.Mapper
             foreach (KeyValuePair<string, object> data in row)
             {
                 string attributeName = data.Key;
-                object value = data.Value;
+                object value = data.Value;             
 
                 //Bind resulset with target object.
-                Debug.WriteLine("BIND-->", attributeName);
+                Debug.WriteLine(
+                    "BIND-->"+attributeName+
+                    " type:" + (target.GetType().GetField(attributeName)!=null? target.GetType().GetField(attributeName).ToString():"null")
+                );
 
-                if (target.GetType().GetField(attributeName) != null)
+                if (target.GetType().GetField(attributeName)!=null)
                 {
                     //Check is null to make convertion.
                     value = (value != System.DBNull.Value) ? value : null;
 
+                    //Check if the value is not a entity.                    
+                    bool isEntity = new TypeComparer().isEntity(target.GetType().GetField(attributeName).FieldType);
+
                     //Bind values.
-                    target.GetType().GetField(attributeName).SetValue(target, value);
+                    if (!isEntity)
+                        target.GetType().GetField(attributeName).SetValue(target, value);
                 }
             }
 

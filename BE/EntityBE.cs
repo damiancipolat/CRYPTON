@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class MonedaBE: EntityBE
+    public abstract class EntityBE
     {
-        public string cod;
-        public string descrip;
     }
 }
