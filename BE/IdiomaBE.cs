@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class IdiomaBE
+    public class IdiomaBE : EntityBE
     {
         public string code;
         public string descripcion;

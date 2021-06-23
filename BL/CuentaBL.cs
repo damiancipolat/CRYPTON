@@ -19,6 +19,8 @@ namespace BL
             //..
         }
 
+        //-------------------------------------
+
         //Proceso la creacion de la cuenta.
         public int crear(ClienteBE cliente)
         {
@@ -59,12 +61,44 @@ namespace BL
             int dogId= walletBL.crear(cuenta, cliente, "DOG");
             Bitacora.GetInstance().log("Se ha creado la cuenta en doge id:" + dogId.ToString(),true);
         }
-        
-        public void crearCuenta(CuentaBE cuenta) { }
+
+        //Traigo la billetera en base al id-
+        public CuentaBE traer(long id)
+        {
+            return new CuentaDAL().findById(id);
+        }
+
+        //Consulto las billeteras asociadas a una cuenta retorno en forma de diccionario.
+        public Dictionary<string, BilleteraBE> traerBilleteras(CuentaBE cuenta)
+        {
+            //Recupero las billeteras de esta cuenta.
+            List<BilleteraBE> wallets = new BilleteraDAL().findByCuenta(cuenta.idcuenta);
+
+            //Valido si hay cuentas.
+            if (wallets.Count == 0)
+                throw new Exception("Wallets not found for this account");
+
+            //Armo el diccionario de retorno.
+            Dictionary<string, BilleteraBE> walletAccount = new Dictionary<string, BilleteraBE>();
+
+            //Cargo el diccionario.
+            walletAccount.Add("ARS", wallets.SingleOrDefault(i => i.moneda.cod == "ARS"));
+            walletAccount.Add("BTC", wallets.SingleOrDefault(i => i.moneda.cod == "BTC"));
+            walletAccount.Add("LTC", wallets.SingleOrDefault(i => i.moneda.cod == "LTC"));
+            walletAccount.Add("DOG", wallets.SingleOrDefault(i => i.moneda.cod == "DOG"));
+
+            return walletAccount;
+        }
+
+        //Consulto las billeteras asociadas a una cuenta retorno en forma de lista.
+        public List<BilleteraBE> traerBilleterasList(CuentaBE cuenta)
+        {
+            return new BilleteraDAL().findByCuenta(cuenta.idcuenta);
+        }
+
+        //-------------------------------------
+
         public void darBaja(CuentaBE cuenta) { }
         public void bloquear(CuentaBE cuenta) { }
-        public List<BilleteraBE> traerBilleteras(CuentaBE cuenta) { return new List<BilleteraBE>(); }
-        //todo
-        public List<BilleteraBE> traerBilleteras(ClienteBE cliente) { return new List<BilleteraBE>(); }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ApiKeysBE
+    public class ApiKeysBE : EntityBE
     {
         public string ambiente;
         public string btc;

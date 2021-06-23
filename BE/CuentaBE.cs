@@ -13,7 +13,7 @@ namespace BE
         BLOQUEADA = 3
     }
 
-    public class CuentaBE
+    public class CuentaBE : EntityBE
     {
         public Int64 idcuenta;
         public ClienteBE cliente;

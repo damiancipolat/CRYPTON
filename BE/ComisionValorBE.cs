@@ -12,7 +12,7 @@ namespace BE
         VENTA=2,
         EXTRACT=3
     }
-    public class ComisionValorBE
+    public class ComisionValorBE : EntityBE
     {
         public long idope;
         public string descrip;

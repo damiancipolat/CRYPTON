@@ -13,7 +13,7 @@ namespace BE
         EXPIRADA=3
     }
 
-    public class OrdenVentaBE
+    public class OrdenVentaBE : EntityBE
     {
         public Int64 idorden;
         public ClienteBE vendedor;

@@ -18,7 +18,7 @@ namespace BE
         RETIRO_SALDO=2
     }
 
-    public class SolicOperacionBE
+    public class SolicOperacionBE : EntityBE
     {
         public Int64 idoperacion;
         public UsuarioBE usuario;

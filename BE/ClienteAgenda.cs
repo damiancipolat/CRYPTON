@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ClienteAgendaBE
+    public class ClienteAgendaBE : EntityBE
     {
         public Int64 idcontacto;
         public ClienteBE cliente;

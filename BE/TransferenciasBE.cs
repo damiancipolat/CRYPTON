@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class TransferenciasBE
+    public class TransferenciasBE : EntityBE
     {
         public Int64 idtransf;
         public DateTime fecProc;

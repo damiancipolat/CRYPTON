@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class BilleteraBE
+    public class BilleteraBE : EntityBE
     {
         public Int64 idwallet;
         public ClienteBE cliente;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ComisionBE
+    public class ComisionBE : EntityBE
     {
         public Int64 idcobro;
         public ComisionValorBE operacion;

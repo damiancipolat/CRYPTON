@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ConversionesBE
+    public class ConversionesBE : EntityBE
     {
         public Int64 idconversion;
         public MonedaBE moneda;

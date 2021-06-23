@@ -38,7 +38,7 @@ namespace DAL.Mapper
 
                 //Bind resulset with target object.
                 Debug.WriteLine(
-                    "BIND-->"+attributeName+
+                    "BIND -->"+attributeName+
                     " type:" + (target.GetType().GetField(attributeName)!=null? target.GetType().GetField(attributeName).ToString():"null")
                 );
 

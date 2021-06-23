@@ -13,7 +13,7 @@ namespace BE
         ILEGIBLE = 3
     }
 
-    public class SolicOnboardingBE
+    public class SolicOnboardingBE : EntityBE
     {
         public Int64 idsolic;
         public DateTime fecSolic;

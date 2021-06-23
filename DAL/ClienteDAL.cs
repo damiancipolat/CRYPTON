@@ -35,10 +35,10 @@ namespace DAL
 
         //todo
         //Este metodo obtiene en base al ID el usuario.
-        public ClienteBE findById(UsuarioBE user)
+        public ClienteBE findById(long id)
         {
             //Busco en la bd por id.
-            List<object> result = this.getSelect().selectById("cliente", "idcliente", user.idusuario);
+            List<object> result = this.getSelect().selectById("cliente", "idcliente", id);
 
             //Bindeo con el esquema.
             return this.bindSchema((List<object>)result[0]);
@@ -133,7 +133,7 @@ namespace DAL
             var schema = new Dictionary<string, Object>{
                 {"tipoDoc",client.tipoDoc},
                 {"numero",client.numero},
-                {"fec_nac",client.fec_nac},
+                {"fec_nac",client.fec_nac.ToString("yyyy-MM-dd HH:mm:ss.fff")},
                 {"num_tramite",client.num_tramite},
                 {"domicilio",client.domicilio},
                 {"telefono",client.telefono},

@@ -150,7 +150,7 @@ create table cliente(
 	idusuario bigint,
 	tipoDoc varchar(10),
 	numero varchar(100),
-	fec_nac varchar(20),
+	fec_nac datetime,
 	num_tramite varchar(50),
 	domicilio varchar(100),
 	telefono varchar(100),
@@ -444,10 +444,11 @@ insert into idioma_palabras(code,clave,valor) values('ES','BAD_DNI','Formato de 
 insert into idioma_palabras(code,clave,valor) values('ES','BAD_PHONE','Formato de telefono incorrecto.');
 insert into idioma_palabras(code,clave,valor) values('ES','BAD_TRAMITE','Formato número de tramite incorrecto.');
 insert into idioma_palabras(code,clave,valor) values('ES','YOUR_WALLETS_LABEL','Tús billeteras...');
-insert into idioma_palabras(code,clave,valor) values('ES','ARS_LABEL','Pesos (ARS)');
-insert into idioma_palabras(code,clave,valor) values('ES','DOG_LABEL','Doge (DOG)');
-insert into idioma_palabras(code,clave,valor) values('ES','LTC_LABEL','Litecoin (LTC)');
-insert into idioma_palabras(code,clave,valor) values('ES','BTC_LABEL','Bitecoin (BTC)');
+insert into idioma_palabras(code,clave,valor) values('ES','YOUR_WALLETS_DESCRIPT','Haz click sobre una billetera para ver su info.');
+insert into idioma_palabras(code,clave,valor) values('ES','ARS_LABEL','Pesos');
+insert into idioma_palabras(code,clave,valor) values('ES','DOG_LABEL','Doge');
+insert into idioma_palabras(code,clave,valor) values('ES','LTC_LABEL','Litecoin');
+insert into idioma_palabras(code,clave,valor) values('ES','BTC_LABEL','Bitecoin');
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
 insert into idioma_palabras(code,clave,valor) values('ENG','HELLO','Hello');
@@ -512,10 +513,11 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BAD_DNI','Document b
 insert into idioma_palabras(code,clave,valor) values('ENG','BAD_PHONE','Phone number bad format!');
 insert into idioma_palabras(code,clave,valor) values('ENG','BAD_TRAMITE','Order number bad format!');
 insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_WALLETS_LABEL','Your wallets...');
-insert into idioma_palabras(code,clave,valor) values('ENG','ARS_LABEL','Pesos (ARS)');
-insert into idioma_palabras(code,clave,valor) values('ENG','DOG_LABEL','Doge (DOG)');
-insert into idioma_palabras(code,clave,valor) values('ENG','LTC_LABEL','Litecoin (LTC)');
-insert into idioma_palabras(code,clave,valor) values('ENG','BTC_LABEL','Bitecoin (BTC)');
+insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_WALLETS_DESCRIPT','Click a wallet to see his info.');
+insert into idioma_palabras(code,clave,valor) values('ENG','ARS_LABEL','Pesos');
+insert into idioma_palabras(code,clave,valor) values('ENG','DOG_LABEL','Doge');
+insert into idioma_palabras(code,clave,valor) values('ENG','LTC_LABEL','Litecoin');
+insert into idioma_palabras(code,clave,valor) values('ENG','BTC_LABEL','Bitecoin');
 
 select * from idioma_palabras where  code='ENG';
 
@@ -525,3 +527,8 @@ select * from cuentas;
 select * from billetera;
 select * from moneda;
 select * from api_keys;
+select * from billetera
+select * from cuentas
+
+
+2NDSqEkWPyvTeQpdNBP1nG64iCtZcXZXSNU

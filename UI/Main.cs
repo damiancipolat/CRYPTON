@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Diagnostics;
 using System.Text.Json;
 using BL;
+using DAL;
 using BE;
 using BE.Permisos;
 using SL;
@@ -311,18 +312,48 @@ namespace UI
 
         private void Button1_Click_2(object sender, EventArgs e)
         {
-            new frm_wallets().Show();
+            new frm_wallets(2).Show();
         }
 
         private void Button2_Click_3(object sender, EventArgs e)
         {
             //Balance tmp = new BlockIo("11111").test();
             //Debug.WriteLine("....."+tmp.data.network+"_"+tmp.data.balances[0].available_balance+"---"+tmp.data.balances[0].pending_received_balance);
-            BilleteraBE wallet = new BilleteraBL().getById(3, true);
-            Debug.WriteLine("---+" + wallet.saldo.ToString());
+            //BilleteraBE wallet = new BilleteraBL().getById(3, true);
+            // Debug.WriteLine("---+" + wallet.saldo.ToString());
 
             //MonedaBE tmp = new MonedaBE();
             //Debug.WriteLine("===>" + typeof(CuentaBE).IsSubclassOf(typeof(EntityBE)));
+
+            // ClienteBE cli = new ClienteDAL().findById(3);
+            //Debug.WriteLine("____>"+cli.email);
+
+            // DateTime oDate = Convert.ToDateTime("06/10/1987");
+            //Debug.WriteLine("+++++" + oDate.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+
+            CuentaBE cuenta = new CuentaBL().traer(2);
+            Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta);
+
+            Debug.WriteLine("ARS>>>" + wallets["ARS"].direccion);
+            Debug.WriteLine("BTC>>>" + wallets["BTC"].direccion);
+            Debug.WriteLine("LTC>>>" + wallets["LTC"].direccion);
+            Debug.WriteLine("DOG>>>" + wallets["DOG"].direccion);
+
+            //new CuentaBL().traerBilleterasDict
+            /*
+            Dictionary<string, BilleteraBE> walletAccount = new Dictionary<string, BilleteraBE>();
+
+            List<BilleteraBE> wallets = new BilleteraDAL().findByCuenta(2);
+ 
+            BilleteraBE arsWallet = wallets.Find(i => i.moneda.cod == "ARS").First();
+
+
+            Debug.WriteLine("@"+wallets.Count.ToString());
+            foreach (BilleteraBE w in wallets)
+            {
+                Debug.WriteLine("--->"+w.moneda.cod+"_"+w.direccion+"***"+w.saldo.ToString());
+            }
+            */
         }
     }
 }

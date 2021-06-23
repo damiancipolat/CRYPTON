@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class OrdenCompraBE
+    public class OrdenCompraBE : EntityBE
     {
         public Int64 idcompra;
         public OrdenVentaBE ordenVenta;

@@ -7,7 +7,7 @@ using BE;
 
 namespace BE
 {
-    public class DvhBE
+    public class DvhBE : EntityBE
     {
         public string tabla;
         public string hash;

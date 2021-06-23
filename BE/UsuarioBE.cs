@@ -12,7 +12,7 @@ namespace BE
         EMPLEADO=2
     }
 
-    public class UsuarioBE
+    public class UsuarioBE : EntityBE
     {
         public Int64 idusuario;
         public string nombre;

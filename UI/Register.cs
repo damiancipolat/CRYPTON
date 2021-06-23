@@ -95,7 +95,7 @@ namespace UI
                 newClient.tipoUsuario = UsuarioTipo.CLIENTE;
                 newClient.tipoDoc = "DNI";
                 newClient.numero = this.document_number_txt.Text;
-               // newClient.fec_nac =this.birth_date_txt.Text;
+                newClient.fec_nac = Convert.ToDateTime(this.birth_date_txt.Text);
                 newClient.num_tramite = this.order_number_txt.Text;
                 newClient.domicilio = this.address_txt.Text;
                 newClient.telefono = this.phone_number_txt.Text;
