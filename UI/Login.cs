@@ -40,6 +40,12 @@ namespace UI
            // new labelBinder().bindKeys(this.Controls, this.labelBindings);
         }
 
+        //Traducir textos.
+        private void traducirTextos()
+        {
+
+        }
+
         //Proceso login con manejo de excepciones.
         private void Button1_Click(object sender, EventArgs e)
         {

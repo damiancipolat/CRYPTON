@@ -42,6 +42,10 @@ namespace UI
             this.main_splash.Left = (this.Width / 2) - (this.main_splash.Width / 2);
             this.main_splash.Top = (this.Height / 2) - (this.main_splash.Height / 2);
 
+            //Posiciona el splash de actividades en el centro.
+            this.main_splash_activity_panel.Left = (this.Width / 2) - (this.main_splash_activity_panel.Width / 2);
+            this.main_splash_activity_panel.Top = (this.Height / 2) - (this.main_splash_activity_panel.Height / 2);
+            
             //Oculto/muestro menus en base a la sesion y permisos.
             this.bindMenu();            
         }
@@ -65,6 +69,7 @@ namespace UI
             this.main_splash_title.Text = Idioma.GetInstance().translate("MAIN_SPLASH_TITLE");
             this.main_btn_login.Text = Idioma.GetInstance().translate("MAIN_BTN_LOGIN");
             this.main_btn_register.Text = Idioma.GetInstance().translate("MAIN_MENU_SIGNUP");
+            this.main_splash_activity.Text = Idioma.GetInstance().translate("MAIN_SPLASH_ACTIVITY");
             this.main_change_language.Text = Idioma.GetInstance().translate("MAIN_CHANGE_LANGUAGE");
             
             //Bindeo menu inicio.
@@ -158,7 +163,10 @@ namespace UI
 
                 //Manejo menu de clientes.
                 if (userType == UsuarioTipo.CLIENTE && isActive)
+                {
                     this.handleClientMenu();
+                    this.main_splash_activity_panel.Visible = true;
+                }                    
 
                 //Manejo menu de empleados.
                 if (userType == UsuarioTipo.EMPLEADO && isActive)
@@ -191,7 +199,7 @@ namespace UI
             }
         }
 
-        //-----------------------
+        //-----------------------------------------------------------------------------
 
         private bool isWindowOpen(string name)
         {
@@ -354,6 +362,32 @@ namespace UI
                 Debug.WriteLine("--->"+w.moneda.cod+"_"+w.direccion+"***"+w.saldo.ToString());
             }
             */
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Main_splash_activity_panel_Paint(object sender, PaintEventArgs e)
+        {
+            //ConversionesBE origen = new ConversionesDAL().findByCode("BTC");
+            //ConversionesBE destino = new ConversionesDAL().findByCode("ARS");
+            MonedaBE origen = new MonedaDAL().findByCode("BTC");
+            MonedaBE destino = new MonedaDAL().findByCode("ARS");
+
+            double value = new MonedaBL().convertirMoneda(origen, destino, 1);
+            Debug.WriteLine("---->>>" + value.ToString());
+
+            /*
+            double cantidad = 10;
+            double stepA = (cantidad * origen.valorUSD / origen.cantCripto);
+
+            (stepA*destino.cantCripto/destino.valorUSD)
+            
+            Debug.WriteLine("_______"+conv.moneda.descrip+"////"+conv.cantCripto.ToString());
+            */
+
         }
     }
 }

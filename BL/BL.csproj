@@ -48,6 +48,7 @@
     <Compile Include="FraudeBL.cs" />
     <Compile Include="ConversorBL.cs" />
     <Compile Include="MarketBL.cs" />
+    <Compile Include="MonedaBL.cs" />
     <Compile Include="OperacionesBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />
     <Compile Include="PermisoBL.cs" />

@@ -182,14 +182,15 @@ create table conversiones(
 	idconversion bigint identity(1,1) primary key,
 	codCripto varchar(10),
 	cantCripto float,
-	valorArs float,
+	valorUSD float,
 	deleted datetime
 );
 
-insert into conversiones(codCripto,cantCripto,valorArs) values('BTC',1,1500);
-insert into conversiones(codCripto,cantCripto,valorArs) values('LTC',1,500);
-insert into conversiones(codCripto,cantCripto,valorArs) values('DOG',1,100);
-
+insert into conversiones(codCripto,cantCripto,valorUSD) values('BTC',1,32837.60);
+insert into conversiones(codCripto,cantCripto,valorUSD) values('LTC',1,500);
+insert into conversiones(codCripto,cantCripto,valorUSD) values('DOG',1,100);
+insert into conversiones(codCripto,cantCripto,valorUSD) values('ARS',1,160);
+select * from conversiones
 --Tabla de contactos.
 create table cliente_agenda(
 	idcontacto bigint identity(1,1) primary key,
@@ -210,7 +211,7 @@ create table api_keys(
 insert into api_keys(ambiente,btc,ltc,dog) values('TEST_1','70d1-1c21-b76c-fb00','34e3-4277-7289-6fd6','7c02-9d46-b312-25ef');
 insert into api_keys(ambiente,btc,ltc,dog) values('TEST_2','8e15-55be-cccd-b33c','7ebe-8f45-4490-37d4','cece-b117-15ca-e13d');
 insert into api_keys(ambiente,btc,ltc,dog) values('PROD','6195-52ea-f8fb-dfc1','b311-ecc3-0e70-3c50','611f-3c58-e739-3378');
-select * from moneda
+
 --Cuentas
 create table cuentas
 (
@@ -393,6 +394,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_TITLE_PASSWORD'
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_BTN_INGRESAR','Ingresar');
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_BTN_CANCEL','Cancelar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_SPLASH_TITLE','Haga click para ingresar al sistema.');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_SPLASH_ACTIVITY','Haga click para realizar una operación.');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_BTN_LOGIN','Ingresar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_CHANGE_LANGUAGE','Cambiar idioma');
 insert into idioma_palabras(code,clave,valor) values('ES','SINGUP_TITLE','Registrar nuevo usuario');
@@ -462,6 +464,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_TITLE_PASSWORD
 insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_BTN_INGRESAR','Enter');
 insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_BTN_CANCEL','Cancel');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_SPLASH_TITLE','Click to enter the system');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_SPLASH_ACTIVITY','Click to select an operation.');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_BTN_LOGIN','Login');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_CHANGE_LANGUAGE','Choose language');
 insert into idioma_palabras(code,clave,valor) values('ENG','SINGUP_TITLE','Register new user');
@@ -531,4 +534,4 @@ select * from billetera
 select * from cuentas
 
 
-2NDSqEkWPyvTeQpdNBP1nG64iCtZcXZXSNU
+select * from conversiones where  codCripto='BTC'

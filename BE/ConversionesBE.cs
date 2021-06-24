@@ -10,7 +10,7 @@ namespace BE
     {
         public Int64 idconversion;
         public MonedaBE moneda;
-        public float cantCripto;
-        public float valorArs;
+        public double cantCripto;
+        public double valorUSD;
     }
 }

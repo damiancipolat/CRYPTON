@@ -52,7 +52,7 @@ namespace DAL.Mapper
 
                     //Bind values.
                     if (!isEntity)
-                        target.GetType().GetField(attributeName).SetValue(target, value);
+                         target.GetType().GetField(attributeName).SetValue(target, value);
                 }
             }
 

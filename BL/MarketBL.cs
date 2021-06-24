@@ -22,6 +22,12 @@ namespace BL
         public object buscar() { return new object(); }
         public object intercambiar() { return new object(); }
 
+        //Convierte una moneda de una a otra.
+        public MonedaBE convertir(MonedaBE origen, MonedaBE destino)
+        {
+            return new MonedaBE();
+        }
+
         //todo
         public List<OrdenVentaBE> recomendar(ClienteBE cliente) { return new List<OrdenVentaBE>(); }
 
