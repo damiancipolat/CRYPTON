@@ -13,6 +13,7 @@ using BE.Permisos;
 using DAL;
 using DAL.Permiso;
 using BL;
+using SL;
 
 namespace UI
 {
@@ -105,9 +106,25 @@ namespace UI
 
         //EVENTOS DE UI ----------------------------------------------------
 
+        //Traducir textos.
+        private void translateTexts()
+        {
+            this.permission_title.Text = Idioma.GetInstance().translate("PERMISSION_TITLE");
+            this.permission_label.Text = Idioma.GetInstance().translate("PERMISSION_LABEL");
+            this.permission_abm.Text = Idioma.GetInstance().translate("PERMISSION_ABM");
+            this.btn_del_permission.Text = Idioma.GetInstance().translate("BTN_DEL_PERMISSION");
+            this.btn_close_permission.Text = Idioma.GetInstance().translate("BTN_CLOSE_PERMISSION");
+            this.btn_update_permission.Text = Idioma.GetInstance().translate("BTN_UPDATE_PERMISSION");
+            this.btn_compound_permission.Text = Idioma.GetInstance().translate("BTN_COMPOUND_PERMISSION");
+            this.Text = Idioma.GetInstance().translate("PERMISSION_TITLE");
+        }
+
         //Al cargar la ventana.
         private void Permisos_Load(object sender, EventArgs e)
         {
+            //Translate ui.
+            this.translateTexts();
+
             //Dibujo el tree view.
             this.drawPermissionTree();
             this.drawPermissionList();
