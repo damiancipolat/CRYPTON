@@ -32,5 +32,34 @@ namespace DAL.Permiso
             return this.FindAll(family,user.idusuario);
         }
 
+        //Bindeo un permiso a un usuario.
+        public int bindToUser(string rol, string permiso, long userId)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"codrol",rol},
+                {"codpermiso",permiso},
+                {"idusuario",userId},
+            };
+
+            QueryInsert builder = new QueryInsert();
+            return builder.insertSchema(schema, "rol_permiso", false);
+
+        }
+
+
+        //Remuevo un permiso a un usuario.
+        public int removeToUser(string rol, string permiso, long userId)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"codrol",rol},
+                {"codpermiso",permiso},
+                {"idusuario",userId }
+            };
+
+            QueryDelete builder = new QueryDelete();
+            return builder.deleteSchema(schema, "rol_permiso");
+        }
     }
 }

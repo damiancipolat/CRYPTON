@@ -87,20 +87,25 @@ insert into permiso(codpermiso,nombre,es_patente) values('USR005','Buscar',1);
 create table rol_permiso
 (
 	codrol varchar(20),
-	codpermiso varchar(20)
+	codpermiso varchar(20),
+	idusuario bigint
 );
 
-insert into rol_permiso(codrol,codpermiso) values(NULL,'R001');
-insert into rol_permiso(codrol,codpermiso) values('R001','R002');
-insert into rol_permiso(codrol,codpermiso) values('R001','R003');
-insert into rol_permiso(codrol,codpermiso) values('R003','ADM001');
-insert into rol_permiso(codrol,codpermiso) values('R003','ADM002');
-insert into rol_permiso(codrol,codpermiso) values('R003','ADM003');
-insert into rol_permiso(codrol,codpermiso) values('R002','USR001');
-insert into rol_permiso(codrol,codpermiso) values('R002','USR002');
-insert into rol_permiso(codrol,codpermiso) values('R002','USR003');
-insert into rol_permiso(codrol,codpermiso) values('R002','USR004');
-insert into rol_permiso(codrol,codpermiso) values('R002','USR005');
+insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R002',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM002',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM003',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR001',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR002',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR003',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR004',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR005',4);
+
+select * from rol_permiso
+select * from usuario
+
 
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
@@ -111,6 +116,7 @@ create table usuario_permiso
 insert into usuario_permiso values(4,'R001');
 insert into usuario_permiso values(4,'R002');
 select * from usuario_permiso
+
 --Tabla de registro de backups.
 create table admin_backup
 (
@@ -523,3 +529,5 @@ insert into idioma_palabras(code,clave,valor) values('ENG','ARS_LABEL','Pesos');
 insert into idioma_palabras(code,clave,valor) values('ENG','DOG_LABEL','Doge');
 insert into idioma_palabras(code,clave,valor) values('ENG','LTC_LABEL','Litecoin');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTC_LABEL','Bitecoin');
+
+select * from usuario_permiso

@@ -30,6 +30,7 @@ namespace DAL
                 //Bindeo campos a tipos.
                 string cod = reader.GetString(reader.GetOrdinal("id"));
                 string nombre = reader.GetString(reader.GetOrdinal("nombre"));
+                long userId = Convert.ToInt64(reader.GetValue(reader.GetOrdinal("idusuario")));
                 bool patente = reader.GetBoolean(reader.GetOrdinal("es_patente"));
 
                 //Seteo la rama / hoja.
@@ -38,6 +39,7 @@ namespace DAL
                 //Bindeo campos
                 c.Cod = cod;
                 c.Nombre = nombre;
+                c.UserId = userId;
 
                 //Busco el padre.
                 Componente padre = this.GetComponent(id_padre, lista);
@@ -45,10 +47,7 @@ namespace DAL
                 if (padre == null)
                     lista.Add(c);
                 else
-                {
-                    Debug.WriteLine("****hijos:"+c.Cod);
-                    padre.AgregarHijo(c);
-                }                    
+                    padre.AgregarHijo(c);                 
 
             }
 

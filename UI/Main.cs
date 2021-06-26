@@ -398,43 +398,7 @@ namespace UI
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            //UsuarioBE user = Session.GetInstance().getUser();            
 
-            /*
-             this.recorrer(tree[0]);
-            //foreach (Componente tmp in tree)
-            //  Debug.WriteLine("@@>"+tmp.Cod+"_"+tmp.Nombre+"//"+tmp.Hijos.Count.ToString());
-            //Componente apa = tree[0];
-            //Debug.WriteLine("@@>" + apa.Cod + "_" + apa.Nombre);
-            */
-            /*
-            TreeNode childNode = new TreeNode();
-            childNode.Text = "RAIZ";
-            childNode.Name = "RAIZ";
-
-            TreeNode childNodeB = new TreeNode();
-            childNodeB.Text = "PEP";
-            childNodeB.Name = "PEPE";
-            childNode.Nodes.Add(childNodeB);
-
-            TreeNode child1 = new TreeNode();
-            child1.Text = "AA";
-            child1.Name = "AA";
-
-            TreeNode child2 = new TreeNode();
-            child2.Text = "BB";
-            child2.Name = "BB";
-
-            TreeNode child3 = new TreeNode();
-            child3.Text = "BB";
-            child3.Name = "BB";
-
-            childNodeB.Nodes.Add(child1);
-            childNodeB.Nodes.Add(child2);
-            childNodeB.Nodes.Add(child3);
-            
-            this.permission_tree.Nodes.Add(childNode);
-            */
         }
 
         private void Button1_Click_4(object sender, EventArgs e)

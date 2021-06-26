@@ -22,7 +22,7 @@ namespace DAL.Permiso
                select sp.codrol, sp.codpermiso from rol_permiso sp
                inner join recursivo r on r.codpermiso = sp.codrol
             ) 
-            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente
+            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, 0 as idusuario
             from recursivo r
             inner join permiso p on r.codpermiso = p.codpermiso";
 
@@ -37,20 +37,24 @@ namespace DAL.Permiso
 
             //Genero el sql.
             string sql = $@"with recursivo as(
-               select sp2.codrol, sp2.codpermiso from rol_permiso SP2
+               select sp2.codrol, sp2.codpermiso, sp2.idusuario from rol_permiso SP2
                where sp2.codrol {where}
                UNION ALL
-               select sp.codrol, sp.codpermiso from rol_permiso sp
+               select sp.codrol, sp.codpermiso, sp.idusuario from rol_permiso sp
                inner join recursivo r on r.codpermiso = sp.codrol
             ) 
-            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente
+            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, r.idusuario
             from recursivo r
             inner join permiso p on r.codpermiso = p.codpermiso
-            inner join usuario_permiso up on up.codpermiso = p.codpermiso
-            where up.idusuario = {userid};";
+            where r.idusuario = {userid};";
 
             return sql;
         }
 
+        //Traigo la lista raw de permisos.
+        public string getAllRaw()
+        {
+            return "select codpermiso, nombre, es_patente from permiso;";
+        }
     }
 }

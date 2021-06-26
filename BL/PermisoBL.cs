@@ -22,7 +22,13 @@ namespace BL
             return new DAL.Permiso.PermisoTodoDAL().FindAll(family);
         }
 
-        //Guardo la relacion usuario permiso.
+        //Traigo la lista de componentes.
+        public List<Componente> getRaw()
+        {
+            return new PermisoTodoDAL().GetRaw();
+        }
+
+        //Bindeo a un usuario todos los permisos del tipo cliente.
         public void bindToUser(UsuarioBE user)
         {
             IList<Componente> permissionList = this.getPermissionByRol(user.tipoUsuario);
@@ -39,14 +45,16 @@ namespace BL
 
         }
 
-        //Borro un permiso a un usuario.
-        public int removeToUser(string codPermiso, UsuarioBE user)
+        //Bindeo especificamente un permiso a un usuario.
+        public int bindSpecificToUser(string rol, string permiso, long id)
         {
-            UsuarioPermiso perm = new UsuarioPermiso();
-            perm.codpermiso = codPermiso;
-            perm.idusuario = user.idusuario;
+            return new PermisoUserDAL().bindToUser(rol, permiso, id);
+        }
 
-            return new UsuarioPermisoDAL().remove(perm);
+        //Borro un permiso a un usuario.
+        public int removeToUser(string rol, string permiso, long id)
+        {
+            return new PermisoUserDAL().removeToUser(rol,permiso,id);
         }
 
         //Revisa si el permiso esta dentro de la lista.
