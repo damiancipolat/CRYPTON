@@ -90,6 +90,22 @@ namespace DAL
             return this.getUpdate().updateSchemaById(schema, "cuentas", "idcuenta", cuenta.idcuenta);
         }
 
+        //Traer cuenta activa de un cliente.
+        public CuentaBE getActive(ClienteBE cliente)
+        {
+            //Busco en la bd por id.            
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
+                {"cliente",cliente.idcliente},
+                {"estado",1},
+            }, "cuentas");
+
+            if (result.Count == 0)
+                return null;
+
+            //Bindeo con el esquema.
+            return this.bindSchema((List<object>)result[0]);
+        }
+
         //todo
         public List<BilleteraBE> getClientWallets(ClienteBE cliente) { return new List<BilleteraBE>(); }
     }

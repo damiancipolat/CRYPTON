@@ -26,7 +26,7 @@ namespace DAL.Permiso
         //Traigo la lista de permisos para un usuario, setea el rol.
         public List<Componente> FindAllClient(UsuarioBE user)
         {
-            string family = (user.tipoUsuario == UsuarioTipo.CLIENTE) ? "2" : "3";
+            string family = (user.tipoUsuario == UsuarioTipo.CLIENTE) ? "R002" : "R003";
 
             //Traigo la lista de permisos del rol cliente.
             return this.FindAll(family,user.idusuario);

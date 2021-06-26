@@ -9,6 +9,6 @@ namespace BE.Permisos
     public class UsuarioPermiso
     {
         public long idusuario;
-        public int idpermiso;
+        public string codpermiso;
     }
 }

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Text.Json;
 using BL;
 using DAL;
+using DAL.Permiso;
 using BE;
 using BE.Permisos;
 using SL;
@@ -43,8 +44,8 @@ namespace UI
             this.main_splash.Top = (this.Height / 2) - (this.main_splash.Height / 2);
 
             //Posiciona el splash de actividades en el centro.
-            this.main_splash_activity_panel.Left = (this.Width / 2) - (this.main_splash_activity_panel.Width / 2);
-            this.main_splash_activity_panel.Top = (this.Height / 2) - (this.main_splash_activity_panel.Height / 2);
+           // this.main_splash_activity_panel.Left = (this.Width / 2) - (this.main_splash_activity_panel.Width / 2);
+           // this.main_splash_activity_panel.Top = (this.Height / 2) - (this.main_splash_activity_panel.Height / 2);
             
             //Oculto/muestro menus en base a la sesion y permisos.
             this.bindMenu();            
@@ -69,7 +70,7 @@ namespace UI
             this.main_splash_title.Text = Idioma.GetInstance().translate("MAIN_SPLASH_TITLE");
             this.main_btn_login.Text = Idioma.GetInstance().translate("MAIN_BTN_LOGIN");
             this.main_btn_register.Text = Idioma.GetInstance().translate("MAIN_MENU_SIGNUP");
-            this.main_splash_activity.Text = Idioma.GetInstance().translate("MAIN_SPLASH_ACTIVITY");
+           // this.main_splash_activity.Text = Idioma.GetInstance().translate("MAIN_SPLASH_ACTIVITY");
             this.main_change_language.Text = Idioma.GetInstance().translate("MAIN_CHANGE_LANGUAGE");
             
             //Bindeo menu inicio.
@@ -130,18 +131,18 @@ namespace UI
 
             foreach (Componente cp in permissions)
             {
-                Debug.WriteLine("@@-->"+cp.Id.ToString()+","+cp.Nombre);
+                Debug.WriteLine("@@-->"+cp.Cod+","+cp.Nombre);
             }
 
             PermisoBL permBL = new PermisoBL();
 
             //Set items if the code exist in the list.
             this.main_menu_operate.Visible = true;
-            this.main_menu_search.Visible = permBL.hasPermission(permissions, 11);
-            this.main_menu_sell.Visible = permBL.hasPermission(permissions, 10);
-            this.main_menu_buy.Visible = permBL.hasPermission(permissions, 9);
-            this.main_menu_deposit.Visible = permBL.hasPermission(permissions, 8);
-            this.main_menu_extract.Visible = permBL.hasPermission(permissions, 7);
+            this.main_menu_search.Visible = permBL.hasPermission(permissions, "USR005");
+            this.main_menu_sell.Visible = permBL.hasPermission(permissions, "USR004");
+            this.main_menu_buy.Visible = permBL.hasPermission(permissions, "USR003");
+            this.main_menu_deposit.Visible = permBL.hasPermission(permissions, "USR002");
+            this.main_menu_extract.Visible = permBL.hasPermission(permissions, "USR001");
         }
 
         //Manejo el menu de empleado.
@@ -165,7 +166,7 @@ namespace UI
                 if (userType == UsuarioTipo.CLIENTE && isActive)
                 {
                     this.handleClientMenu();
-                    this.main_splash_activity_panel.Visible = true;
+                    //this.main_splash_activity_panel.Visible = true;
                 }                    
 
                 //Manejo menu de empleados.
@@ -389,5 +390,119 @@ namespace UI
             */
 
         }
+
+        private void Button1_Click_3(object sender, EventArgs e)
+        {
+            new frm_publish_sell().Show();
+        }
+
+        private void recorrer(Componente nodo) {
+            Debug.WriteLine("->" + nodo.Cod + ":" + nodo.Nombre);
+
+            if (nodo!=null&&nodo.Hijos.Count > 0)
+            {
+                foreach (Componente tmp in nodo.Hijos) {
+
+                    if (nodo.Cod!=tmp.Cod&&tmp.Hijos==null)
+                        Debug.WriteLine(">>" + tmp.Cod + ":" + tmp.Nombre+"/");
+
+                    if (tmp.Hijos!=null&& tmp.Hijos.Count > 0)
+                       recorrer(tmp);
+                }
+            }
+        }
+
+        private void fillTree(Componente nodo, TreeNode rama)
+        {
+            rama.Text = nodo.Nombre;
+            rama.Name = nodo.Cod;
+
+            Debug.WriteLine("->" + nodo.Cod + ":" + nodo.Nombre);
+            
+            if (nodo != null && nodo.Hijos.Count > 0)
+            {
+                foreach (Componente tmp in nodo.Hijos)
+                {
+                    //Hoja
+                    if (nodo.Cod != tmp.Cod && tmp.Hijos == null)
+                    {
+                        TreeNode hoja = new TreeNode();
+                        hoja.Text = tmp.Nombre;
+                        hoja.Name = tmp.Cod;
+
+                        Debug.WriteLine(">>" + tmp.Cod + ":" + tmp.Nombre + "/");
+                        rama.Nodes.Add(hoja);
+                    }
+
+                    //Rama
+                    if (tmp.Hijos != null && tmp.Hijos.Count > 0)
+                    {
+                        TreeNode newRama = new TreeNode();
+                        rama.Nodes.Add(newRama);
+                        Debug.WriteLine("Segunda carga");
+                        fillTree(tmp, newRama);
+                    }                        
+                }
+            }
+        }
+
+
+        private void Button2_Click_4(object sender, EventArgs e)
+        {
+            UsuarioBE user = Session.GetInstance().getUser();
+            List<Componente> tree = new PermisoUserDAL().FindAllClient(user);
+
+            this.recorrer(tree[0]);
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            //UsuarioBE user = Session.GetInstance().getUser();
+
+            List<Componente> tree = new PermisoUserDAL().FindAll("",4);
+            //List<Componente> tree = new PermisoTodoDAL().FindAll("");
+
+            TreeNode rootNode = new TreeNode();
+            this.fillTree(tree[0],rootNode);
+            this.permission_tree.Nodes.Add(rootNode);
+
+            /*
+             this.recorrer(tree[0]);
+            //foreach (Componente tmp in tree)
+            //  Debug.WriteLine("@@>"+tmp.Cod+"_"+tmp.Nombre+"//"+tmp.Hijos.Count.ToString());
+            //Componente apa = tree[0];
+            //Debug.WriteLine("@@>" + apa.Cod + "_" + apa.Nombre);
+            */
+            /*
+            TreeNode childNode = new TreeNode();
+            childNode.Text = "RAIZ";
+            childNode.Name = "RAIZ";
+
+            TreeNode childNodeB = new TreeNode();
+            childNodeB.Text = "PEP";
+            childNodeB.Name = "PEPE";
+            childNode.Nodes.Add(childNodeB);
+
+            TreeNode child1 = new TreeNode();
+            child1.Text = "AA";
+            child1.Name = "AA";
+
+            TreeNode child2 = new TreeNode();
+            child2.Text = "BB";
+            child2.Name = "BB";
+
+            TreeNode child3 = new TreeNode();
+            child3.Text = "BB";
+            child3.Name = "BB";
+
+            childNodeB.Nodes.Add(child1);
+            childNodeB.Nodes.Add(child2);
+            childNodeB.Nodes.Add(child3);
+            
+            this.permission_tree.Nodes.Add(childNode);
+            */
+        }
     }
 }
+ 
+ 

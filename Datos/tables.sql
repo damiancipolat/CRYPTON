@@ -64,49 +64,49 @@ insert into dvv(tabla,[hash],fecUpdate) values('usuario','',GETDATE());
 
 --Tabla de permisos
 create table permiso
-(
-	idpermiso int identity(1,1) primary key,
+(	
+	codpermiso varchar(20) primary key,
 	nombre varchar(150),
 	es_patente bit,
 	deleted datetime
 );
 
 --Esquema de roles
-insert into permiso(nombre,es_patente) values('Usuario',0);
-insert into permiso(nombre,es_patente) values('Cliente',1);
-insert into permiso(nombre,es_patente) values('Empleado',0);
-insert into permiso(nombre,es_patente) values('Operaciones',1);
-insert into permiso(nombre,es_patente) values('Marketing',1);
-insert into permiso(nombre,es_patente) values('IT',1);
-insert into permiso(nombre,es_patente) values('Extraer',1);
-insert into permiso(nombre,es_patente) values('Ingresar',1);
-insert into permiso(nombre,es_patente) values('Comprar',1);
-insert into permiso(nombre,es_patente) values('Vender',1);
-insert into permiso(nombre,es_patente) values('Buscar',1);
+insert into permiso(codpermiso,nombre,es_patente) values('R001','Usuario',0);
+insert into permiso(codpermiso,nombre,es_patente) values('R002','Cliente',0);
+insert into permiso(codpermiso,nombre,es_patente) values('R003','Empleado',0);
+insert into permiso(codpermiso,nombre,es_patente) values('ADM001','Operaciones',1);
+insert into permiso(codpermiso,nombre,es_patente) values('ADM002','Marketing',1);
+insert into permiso(codpermiso,nombre,es_patente) values('ADM003','IT',1);
+insert into permiso(codpermiso,nombre,es_patente) values('USR001','Extraer',1);
+insert into permiso(codpermiso,nombre,es_patente) values('USR002','Ingresar',1);
+insert into permiso(codpermiso,nombre,es_patente) values('USR003','Comprar',1);
+insert into permiso(codpermiso,nombre,es_patente) values('USR004','Vender',1);
+insert into permiso(codpermiso,nombre,es_patente) values('USR005','Buscar',1);
 
 create table rol_permiso
 (
-	idrol int,
-	idpermiso int
+	codrol varchar(20),
+	codpermiso varchar(20)
 );
 
-insert into rol_permiso(idrol,idpermiso) values(NULL,1);
-insert into rol_permiso(idrol,idpermiso) values(1,2);
-insert into rol_permiso(idrol,idpermiso) values(1,3);
-insert into rol_permiso(idrol,idpermiso) values(3,4);
-insert into rol_permiso(idrol,idpermiso) values(3,5);
-insert into rol_permiso(idrol,idpermiso) values(3,6);
-insert into rol_permiso(idrol,idpermiso) values(2,7);
-insert into rol_permiso(idrol,idpermiso) values(2,8);
-insert into rol_permiso(idrol,idpermiso) values(2,9);
-insert into rol_permiso(idrol,idpermiso) values(2,10);
-insert into rol_permiso(idrol,idpermiso) values(2,11);
+insert into rol_permiso(codrol,codpermiso) values(NULL,'R001');
+insert into rol_permiso(codrol,codpermiso) values('R001','R002');
+insert into rol_permiso(codrol,codpermiso) values('R001','R003');
+insert into rol_permiso(codrol,codpermiso) values('R003','ADM001');
+insert into rol_permiso(codrol,codpermiso) values('R003','ADM002');
+insert into rol_permiso(codrol,codpermiso) values('R003','ADM003');
+insert into rol_permiso(codrol,codpermiso) values('R002','USR001');
+insert into rol_permiso(codrol,codpermiso) values('R002','USR002');
+insert into rol_permiso(codrol,codpermiso) values('R002','USR003');
+insert into rol_permiso(codrol,codpermiso) values('R002','USR004');
+insert into rol_permiso(codrol,codpermiso) values('R002','USR005');
 
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
 (
 	idusuario bigint,
-	idpermiso int
+	codpermiso varchar(20)
 );
 
 --Tabla de registro de backups.
@@ -521,17 +521,3 @@ insert into idioma_palabras(code,clave,valor) values('ENG','ARS_LABEL','Pesos');
 insert into idioma_palabras(code,clave,valor) values('ENG','DOG_LABEL','Doge');
 insert into idioma_palabras(code,clave,valor) values('ENG','LTC_LABEL','Litecoin');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTC_LABEL','Bitecoin');
-
-select * from idioma_palabras where  code='ENG';
-
-select * from usuario;
-select * from cliente;
-select * from cuentas;
-select * from billetera;
-select * from moneda;
-select * from api_keys;
-select * from billetera
-select * from cuentas
-
-
-select * from conversiones where  codCripto='BTC'

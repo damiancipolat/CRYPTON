@@ -25,7 +25,7 @@ namespace BL
         public int crear(ClienteBE cliente)
         {
             //Creo la cuenta.
-            CuentaBE cuenta = new CuentaBE();            
+            CuentaBE cuenta = new CuentaBE();
             cuenta.cliente = cliente;
             cuenta.fecAlta = DateTime.Now;
             cuenta.estado = CuentaEstado.ACTIVA;
@@ -33,9 +33,9 @@ namespace BL
             //Grabo la cuenta.
             int newId = new CuentaDAL().insert(cuenta);
             cuenta.idcuenta = newId;
-            
+
             //Proceso la creación de las billeteras
-            this.crearBilleteras(cuenta,cliente);
+            this.crearBilleteras(cuenta, cliente);
 
             return newId;
         }
@@ -44,22 +44,29 @@ namespace BL
         private void crearBilleteras(CuentaBE cuenta, ClienteBE cliente)
         {
             BilleteraBL walletBL = new BilleteraBL();
-
+            /*
             //ARS
-            int arsId= walletBL.crear(cuenta, cliente, "ARS");
-            Bitacora.GetInstance().log("Se ha creado la cuenta en ars pesos id:" + arsId.ToString(),true);
+            int arsId = walletBL.crear(cuenta, cliente, "ARS");
+            Bitacora.GetInstance().log("Se ha creado la cuenta en ars pesos id:" + arsId.ToString(), true);
 
             //BTC
             int btcId = walletBL.crear(cuenta, cliente, "BTC");
-            Bitacora.GetInstance().log("Se ha creado la cuenta en bitcoin:" + btcId.ToString(),true);
+            Bitacora.GetInstance().log("Se ha creado la cuenta en bitcoin:" + btcId.ToString(), true);
 
             //LTC
-            int ltcId= walletBL.crear(cuenta, cliente, "LTC");
-            Bitacora.GetInstance().log("Se ha creado la cuenta en litecoin id:" + ltcId.ToString(),true);
+            int ltcId = walletBL.crear(cuenta, cliente, "LTC");
+            Bitacora.GetInstance().log("Se ha creado la cuenta en litecoin id:" + ltcId.ToString(), true);
 
             //DOG
-            int dogId= walletBL.crear(cuenta, cliente, "DOG");
-            Bitacora.GetInstance().log("Se ha creado la cuenta en doge id:" + dogId.ToString(),true);
+            int dogId = walletBL.crear(cuenta, cliente, "DOG");
+            Bitacora.GetInstance().log("Se ha creado la cuenta en doge id:" + dogId.ToString(), true);
+            */
+        }
+
+        //Traigo la cuenta activa de un cliente.
+        public CuentaBE traerActiva(ClienteBE cliente)
+        {
+            return new CuentaDAL().getActive(cliente);
         }
 
         //Traigo la billetera en base al id-

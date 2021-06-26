@@ -12,19 +12,19 @@ namespace DAL.Permiso
         public string getAll(string familia)
         {
             //Seteo el where.
-            string where = (!String.IsNullOrEmpty(familia)) ? "="+familia : "is NULL";
+            string where = (!String.IsNullOrEmpty(familia)) ? "='"+familia+"'" : "is NULL";
 
             //Genero el sql.
             string sql = $@"with recursivo as(
-               select sp2.idrol, sp2.idpermiso from rol_permiso SP2
-               where sp2.idrol {where}
+               select sp2.codrol, sp2.codpermiso from rol_permiso SP2
+               where sp2.codrol {where}
                UNION ALL
-               select sp.idrol, sp.idpermiso from rol_permiso sp
-               inner join recursivo r on r.idpermiso = sp.idrol
+               select sp.codrol, sp.codpermiso from rol_permiso sp
+               inner join recursivo r on r.codpermiso = sp.codrol
             ) 
-            select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente
+            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente
             from recursivo r
-            inner join permiso p on r.idpermiso = p.idpermiso";
+            inner join permiso p on r.codpermiso = p.codpermiso";
 
             return sql;
         }
@@ -33,20 +33,20 @@ namespace DAL.Permiso
         public string getAllByUser(string familia,long userid)
         {
             //Seteo el where.
-            string where = (!String.IsNullOrEmpty(familia)) ? "="+familia : "is NULL";
+            string where = (!String.IsNullOrEmpty(familia)) ? "='" + familia + "'" : "is NULL";
 
             //Genero el sql.
             string sql = $@"with recursivo as(
-               select sp2.idrol, sp2.idpermiso from rol_permiso SP2
-               where sp2.idrol {where}
+               select sp2.codrol, sp2.codpermiso from rol_permiso SP2
+               where sp2.codrol {where}
                UNION ALL
-               select sp.idrol, sp.idpermiso from rol_permiso sp
-               inner join recursivo r on r.idpermiso = sp.idrol
+               select sp.codrol, sp.codpermiso from rol_permiso sp
+               inner join recursivo r on r.codpermiso = sp.codrol
             ) 
-            select r.idrol,r.idpermiso,p.idpermiso as id,p.nombre, p.es_patente
+            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente
             from recursivo r
-            inner join permiso p on r.idpermiso = p.idpermiso
-            inner join usuario_permiso up on up.idpermiso = p.idpermiso
+            inner join permiso p on r.codpermiso = p.codpermiso
+            inner join usuario_permiso up on up.codpermiso = p.codpermiso
             where up.idusuario = {userid};";
 
             return sql;

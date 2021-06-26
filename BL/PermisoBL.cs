@@ -16,7 +16,7 @@ namespace BL
         //Traigo la lista de permisos que corresponden al rol.
         private IList<Componente> getPermissionByRol(UsuarioTipo userType)
         {
-            string family = (userType == UsuarioTipo.CLIENTE) ? "2" : "3";
+            string family = (userType == UsuarioTipo.CLIENTE) ? "R002" : "R003";
 
             //Traigo la lista de permisos del rol cliente.
             return new DAL.Permiso.PermisoTodoDAL().FindAll(family);
@@ -31,7 +31,7 @@ namespace BL
             foreach (Componente perm in permissionList)
             {
                 UsuarioPermiso userBE = new UsuarioPermiso();
-                userBE.idpermiso = perm.Id;
+                userBE.codpermiso = perm.Cod;
                 userBE.idusuario = user.idusuario;
 
                 new UsuarioPermisoDAL().insert(userBE);
@@ -40,7 +40,7 @@ namespace BL
         }
 
         //Revisa si el permiso esta dentro de la lista.
-        public bool hasPermission(IList<Componente> permisos, int id)
+        public bool hasPermission(IList<Componente> permisos, string id)
         {
             return new PermisoDAL().hasPermission(permisos, id);
         }

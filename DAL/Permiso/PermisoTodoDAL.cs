@@ -13,7 +13,7 @@ namespace DAL.Permiso
     public class PermisoTodoDAL: DAL.PermisoDAL
     {
         //Obtiene recursivamente la lista de componentes.
-        public IList<Componente> FindAll(string familia)
+        public List<Componente> FindAll(string familia)
         {
             //Obtengo el sql para buscar todos recursivamente.
             string sql = this.sqlGen.getAll(familia);

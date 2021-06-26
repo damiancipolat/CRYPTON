@@ -16,7 +16,7 @@ namespace DAL.Permiso
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
                 {"idusuario",userPermisoBE.idusuario},
-                { "idpermiso",userPermisoBE.idpermiso}
+                { "codpermiso",userPermisoBE.codpermiso}
             };
 
             QueryInsert builder = new QueryInsert();

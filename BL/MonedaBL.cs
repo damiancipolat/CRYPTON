@@ -34,5 +34,11 @@ namespace BL
         {
             return this.convertToMoney(destino,this.convertToUsd(origen, cantidad));
         }
+
+        //Traigo la lista de monedas.
+        public List<MonedaBE> getAll()
+        {
+            return new MonedaDAL().findAll();
+        }
     }
 }

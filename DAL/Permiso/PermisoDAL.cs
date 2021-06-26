@@ -22,13 +22,13 @@ namespace DAL
 
             while (reader.Read())
             {
-                int id_padre = 0;
+                string id_padre = "";
 
-                if (reader["idrol"] != DBNull.Value)
-                    id_padre = reader.GetInt32(reader.GetOrdinal("idrol"));
+                if (reader["codrol"] != DBNull.Value)
+                    id_padre = reader.GetString(reader.GetOrdinal("codrol"));
 
                 //Bindeo campos a tipos.
-                int id = reader.GetInt32(reader.GetOrdinal("id"));
+                string cod = reader.GetString(reader.GetOrdinal("id"));
                 string nombre = reader.GetString(reader.GetOrdinal("nombre"));
                 bool patente = reader.GetBoolean(reader.GetOrdinal("es_patente"));
 
@@ -36,7 +36,7 @@ namespace DAL
                 Componente c = (!patente) ? (Componente)new Familia() : (Componente)new Patente();
  
                 //Bindeo campos
-                c.Id = id;
+                c.Cod = cod;
                 c.Nombre = nombre;
 
                 //Busco el padre.
@@ -45,7 +45,10 @@ namespace DAL
                 if (padre == null)
                     lista.Add(c);
                 else
+                {
+                    Debug.WriteLine("****hijos:"+c.Cod);
                     padre.AgregarHijo(c);
+                }                    
 
             }
 
@@ -53,16 +56,16 @@ namespace DAL
         }
 
         //Busca el componente recursivamente.
-        protected Componente GetComponent(int id, IList<Componente> lista)
+        protected Componente GetComponent(string id, IList<Componente> lista)
         {
-            Componente component = lista != null ? lista.Where(i => i.Id.Equals(id)).FirstOrDefault() : null;
+            Componente component = lista != null ? lista.Where(i => i.Cod.Equals(id)).FirstOrDefault() : null;
 
             if (component == null && lista != null)
             {
                 foreach (var c in lista)
                 {
                     var l = this.GetComponent(id, c.Hijos);
-                    if (l != null && l.Id == id) return l;
+                    if (l != null && l.Cod == id) return l;
                     else
                     if (l != null)
                         return GetComponent(id, l.Hijos);
@@ -92,7 +95,7 @@ namespace DAL
         }
 
         //Revisa si el codigo de permiso existe en la list recursivamente.
-        public bool hasPermission(IList<Componente> lista,int id)
+        public bool hasPermission(IList<Componente> lista, string id)
         {
             Componente c = this.GetComponent(id, lista);
             

@@ -9,7 +9,7 @@ namespace BE.Permisos
     public abstract class Componente
     {
         public string Nombre { get; set; }
-        public int Id { get; set; }
+        public string Cod { get; set; }
 
         public abstract IList<Componente> Hijos { get; }
         public abstract void AgregarHijo(Componente c);

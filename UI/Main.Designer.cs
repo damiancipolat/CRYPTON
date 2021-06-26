@@ -50,19 +50,14 @@
             this.main_menu_deposit = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.main_splash_activity_panel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.main_splash_activity = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.permission_tree = new System.Windows.Forms.TreeView();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.main_splash_activity_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // main_btn_login
@@ -266,63 +261,41 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // main_splash_activity_panel
+            // button1
             // 
-            this.main_splash_activity_panel.BackColor = System.Drawing.Color.White;
-            this.main_splash_activity_panel.Controls.Add(this.panel1);
-            this.main_splash_activity_panel.Controls.Add(this.pictureBox2);
-            this.main_splash_activity_panel.Controls.Add(this.main_splash_activity);
-            this.main_splash_activity_panel.Location = new System.Drawing.Point(419, 224);
-            this.main_splash_activity_panel.Name = "main_splash_activity_panel";
-            this.main_splash_activity_panel.Size = new System.Drawing.Size(521, 338);
-            this.main_splash_activity_panel.TabIndex = 16;
-            this.main_splash_activity_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_splash_activity_panel_Paint);
+            this.button1.Location = new System.Drawing.Point(12, 44);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 48);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_3);
             // 
-            // pictureBox2
+            // button3
             // 
-            this.pictureBox2.Image = global::UI.Properties.Resources.logo_11;
-            this.pictureBox2.Location = new System.Drawing.Point(187, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(161, 116);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.button3.Location = new System.Drawing.Point(12, 111);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 48);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // main_splash_activity
+            // permission_tree
             // 
-            this.main_splash_activity.AutoSize = true;
-            this.main_splash_activity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.main_splash_activity.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.main_splash_activity.Location = new System.Drawing.Point(26, 162);
-            this.main_splash_activity.Name = "main_splash_activity";
-            this.main_splash_activity.Size = new System.Drawing.Size(130, 25);
-            this.main_splash_activity.TabIndex = 12;
-            this.main_splash_activity.Text = "Hola Damian!";
-            this.main_splash_activity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.splitter1);
-            this.panel1.Location = new System.Drawing.Point(25, 197);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(468, 119);
-            this.panel1.TabIndex = 14;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 119);
-            this.splitter1.TabIndex = 0;
-            this.splitter1.TabStop = false;
+            this.permission_tree.Location = new System.Drawing.Point(243, 62);
+            this.permission_tree.Name = "permission_tree";
+            this.permission_tree.Size = new System.Drawing.Size(933, 367);
+            this.permission_tree.TabIndex = 20;
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
-            this.Controls.Add(this.main_splash_activity_panel);
+            this.Controls.Add(this.permission_tree);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -343,10 +316,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.main_splash_activity_panel.ResumeLayout(false);
-            this.main_splash_activity_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,11 +345,9 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_search;
         private System.Windows.Forms.ToolStripMenuItem main_menu_deposit;
         private System.Windows.Forms.ToolStripMenuItem main_menu_extract;
-        private System.Windows.Forms.Panel main_splash_activity_panel;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label main_splash_activity;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TreeView permission_tree;
     }
 }
 

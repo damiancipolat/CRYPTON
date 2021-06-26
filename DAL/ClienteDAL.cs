@@ -33,7 +33,6 @@ namespace DAL
             return (string)o;
         }
 
-        //todo
         //Este metodo obtiene en base al ID el usuario.
         public ClienteBE findById(long id)
         {
@@ -45,10 +44,13 @@ namespace DAL
 
         }
 
-        //todo
+        //Este metodo obtiene el cliente en base al usuariobe.
         public ClienteBE findByUser(UsuarioBE user)
         {
-            return new ClienteBE();
+            List<object> result = this.getSelect().selectById("cliente", "idcliente", user.idusuario);
+
+            //Bindeo con el esquema.
+            return this.bindSchema((List<object>)result[0]);
         }
 
 
