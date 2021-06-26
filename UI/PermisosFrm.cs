@@ -43,7 +43,15 @@ namespace UI
                 foreach (Componente tmp in nodo.Hijos)
                 {
                     //Hoja
-                    if (nodo.Cod != tmp.Cod && tmp.Hijos == null)
+                    if (tmp.Hijos != null)
+                    {
+                        TreeNode newRama = new TreeNode();
+                        newRama.Tag = nodo.Cod;
+                        rama.Nodes.Add(newRama);
+                        Debug.WriteLine("Segunda carga em " + nodo.Cod);
+                        fillTree(tmp, newRama);
+                    }
+                    else
                     {
                         TreeNode hoja = new TreeNode();
                         hoja.Text = tmp.Nombre;
@@ -52,16 +60,6 @@ namespace UI
 
                         Debug.WriteLine(">>" + tmp.Cod + ":" + tmp.Nombre + "/");
                         rama.Nodes.Add(hoja);
-                    }
-
-                    //Rama
-                    if (tmp.Hijos != null && tmp.Hijos.Count > 0)
-                    {
-                        TreeNode newRama = new TreeNode();
-                        newRama.Tag = nodo.Cod;
-                        rama.Nodes.Add(newRama);
-                        Debug.WriteLine("Segunda carga");
-                        fillTree(tmp, newRama);
                     }
                 }
             }
@@ -91,8 +89,11 @@ namespace UI
 
             foreach (Componente nodo in compList)
             {
-                this.list_perm.Items.Add(nodo.Cod + " - " + nodo.Nombre);
-                this.permisos.Add(nodo.Cod);
+               // if (nodo.esPatente)
+               // {
+                    this.list_perm.Items.Add(nodo.Cod + " - " + nodo.Nombre);
+                    this.permisos.Add(nodo.Cod);
+               // }
             }
         }
 
@@ -102,6 +103,9 @@ namespace UI
           this.fillList();              
         }
 
+        //EVENTOS DE UI ----------------------------------------------------
+
+        //Al cargar la ventana.
         private void Permisos_Load(object sender, EventArgs e)
         {
             //Dibujo el tree view.
@@ -109,6 +113,7 @@ namespace UI
             this.drawPermissionList();
         }
 
+        //Al seleccionar en el treeview.
         private void Permission_tree_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (this.permission_tree.SelectedNode != null)
@@ -118,6 +123,7 @@ namespace UI
             }
         }
 
+        //Click en boton borrar
         private void Button1_Click(object sender, EventArgs e)
         {
             if (this.permission_tree.SelectedNode != null)
@@ -141,11 +147,13 @@ namespace UI
             }
         }
 
+        //Click en cancelar
         private void Button3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Click en boton agregar.
         private void Button2_Click(object sender, EventArgs e)
         {            
             if (this.permission_tree.SelectedNode != null&& this.list_perm.SelectedItem != null)
@@ -175,7 +183,29 @@ namespace UI
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            this.list_perm.Items.Add("aaaaa");
+            InputForm input = new InputForm("Nuevo permiso compuesto", "escriba aqui");            
+            input.ShowDialog();
+
+            string value = input.getValue();
+
+            if (value != "")
+            {
+                new PermisoBL().createCompound(value);
+                MessageBox.Show("Nuevo compuesto!");
+                this.list_perm.Items.Clear();
+                this.drawPermissionList();
+            }
+            else
+            {
+                MessageBox.Show("No puede editar");
+            }
+            
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            this.list_perm.Items.Clear();
+            this.drawPermissionList();
         }
     }
 }

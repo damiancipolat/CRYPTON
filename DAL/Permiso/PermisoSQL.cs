@@ -24,7 +24,8 @@ namespace DAL.Permiso
             ) 
             select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, 0 as idusuario
             from recursivo r
-            inner join permiso p on r.codpermiso = p.codpermiso";
+            inner join permiso p on r.codpermiso = p.codpermiso
+            option (maxrecursion 0);";
 
             return sql;
         }
@@ -46,7 +47,7 @@ namespace DAL.Permiso
             select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, r.idusuario
             from recursivo r
             inner join permiso p on r.codpermiso = p.codpermiso
-            where r.idusuario = {userid};";
+            where r.idusuario = {userid} option (maxrecursion 0);";
 
             return sql;
         }

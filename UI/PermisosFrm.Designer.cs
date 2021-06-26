@@ -35,7 +35,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.list_perm = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // permission_tree
@@ -84,7 +86,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(334, 291);
+            this.button2.Location = new System.Drawing.Point(333, 304);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(47, 45);
             this.button2.TabIndex = 25;
@@ -106,27 +108,50 @@
             // 
             this.list_perm.FormattingEnabled = true;
             this.list_perm.ItemHeight = 16;
-            this.list_perm.Location = new System.Drawing.Point(41, 155);
+            this.list_perm.Location = new System.Drawing.Point(41, 219);
             this.list_perm.Name = "list_perm";
-            this.list_perm.Size = new System.Drawing.Size(277, 340);
+            this.list_perm.Size = new System.Drawing.Size(277, 276);
             this.list_perm.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(40, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 20);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Permisos atomicos:";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(441, 534);
+            this.button4.Location = new System.Drawing.Point(43, 161);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "button4";
+            this.button4.Size = new System.Drawing.Size(147, 45);
+            this.button4.TabIndex = 32;
+            this.button4.Text = "Agregar compuesto";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button5.Location = new System.Drawing.Point(205, 161);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(113, 45);
+            this.button5.TabIndex = 33;
+            this.button5.Text = "Actualizar";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // PermisosFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 581);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.list_perm);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -155,6 +180,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox list_perm;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

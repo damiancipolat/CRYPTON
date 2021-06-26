@@ -41,7 +41,7 @@ namespace DAL.Permiso
                 Componente comp = (Componente)new Patente();
                 comp.Cod = reader.GetString(reader.GetOrdinal("codpermiso"));
                 comp.Nombre = reader.GetString(reader.GetOrdinal("nombre"));
-                //comp.esPatente = Convert.ToBoolean(reader.GetInt32(reader.GetOrdinal("es_patente")));
+                //comp.esPatente = reader.GetInt32(reader.GetOrdinal("es_patente"))==1?true:false;
                 lista.Add(comp);
             }
 

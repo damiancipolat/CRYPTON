@@ -47,6 +47,20 @@ namespace DAL.Permiso
 
         }
 
+        //Creo nuevo permiso compuesto.
+        public int createCompuesto(string codpermiso, string nombre)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"codpermiso",codpermiso},
+                {"nombre",nombre},
+                {"es_patente",0},
+            };
+
+            QueryInsert builder = new QueryInsert();
+            return builder.insertSchema(schema, "permiso", false);
+
+        }
 
         //Remuevo un permiso a un usuario.
         public int removeToUser(string rol, string permiso, long userId)

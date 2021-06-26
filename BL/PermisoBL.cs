@@ -57,6 +57,13 @@ namespace BL
             return new PermisoUserDAL().removeToUser(rol,permiso,id);
         }
 
+        //Creo usuario compuesto.
+        public int createCompound(string nombre)
+        {
+            string mask = "cp-" + DateTime.Now.ToString("yyMMddHHmmss");
+            return new PermisoUserDAL().createCompuesto(mask,nombre);
+        }
+
         //Revisa si el permiso esta dentro de la lista.
         public bool hasPermission(IList<Componente> permisos, string id)
         {
