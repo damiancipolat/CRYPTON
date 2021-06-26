@@ -108,7 +108,9 @@ create table usuario_permiso
 	idusuario bigint,
 	codpermiso varchar(20)
 );
-
+insert into usuario_permiso values(4,'R001');
+insert into usuario_permiso values(4,'R002');
+select * from usuario_permiso
 --Tabla de registro de backups.
 create table admin_backup
 (

@@ -39,6 +39,16 @@ namespace BL
 
         }
 
+        //Borro un permiso a un usuario.
+        public int removeToUser(string codPermiso, UsuarioBE user)
+        {
+            UsuarioPermiso perm = new UsuarioPermiso();
+            perm.codpermiso = codPermiso;
+            perm.idusuario = user.idusuario;
+
+            return new UsuarioPermisoDAL().remove(perm);
+        }
+
         //Revisa si el permiso esta dentro de la lista.
         public bool hasPermission(IList<Componente> permisos, string id)
         {

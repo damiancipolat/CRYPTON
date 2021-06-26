@@ -396,75 +396,9 @@ namespace UI
             new frm_publish_sell().Show();
         }
 
-        private void recorrer(Componente nodo) {
-            Debug.WriteLine("->" + nodo.Cod + ":" + nodo.Nombre);
-
-            if (nodo!=null&&nodo.Hijos.Count > 0)
-            {
-                foreach (Componente tmp in nodo.Hijos) {
-
-                    if (nodo.Cod!=tmp.Cod&&tmp.Hijos==null)
-                        Debug.WriteLine(">>" + tmp.Cod + ":" + tmp.Nombre+"/");
-
-                    if (tmp.Hijos!=null&& tmp.Hijos.Count > 0)
-                       recorrer(tmp);
-                }
-            }
-        }
-
-        private void fillTree(Componente nodo, TreeNode rama)
-        {
-            rama.Text = nodo.Nombre;
-            rama.Name = nodo.Cod;
-
-            Debug.WriteLine("->" + nodo.Cod + ":" + nodo.Nombre);
-            
-            if (nodo != null && nodo.Hijos.Count > 0)
-            {
-                foreach (Componente tmp in nodo.Hijos)
-                {
-                    //Hoja
-                    if (nodo.Cod != tmp.Cod && tmp.Hijos == null)
-                    {
-                        TreeNode hoja = new TreeNode();
-                        hoja.Text = tmp.Nombre;
-                        hoja.Name = tmp.Cod;
-
-                        Debug.WriteLine(">>" + tmp.Cod + ":" + tmp.Nombre + "/");
-                        rama.Nodes.Add(hoja);
-                    }
-
-                    //Rama
-                    if (tmp.Hijos != null && tmp.Hijos.Count > 0)
-                    {
-                        TreeNode newRama = new TreeNode();
-                        rama.Nodes.Add(newRama);
-                        Debug.WriteLine("Segunda carga");
-                        fillTree(tmp, newRama);
-                    }                        
-                }
-            }
-        }
-
-
-        private void Button2_Click_4(object sender, EventArgs e)
-        {
-            UsuarioBE user = Session.GetInstance().getUser();
-            List<Componente> tree = new PermisoUserDAL().FindAllClient(user);
-
-            this.recorrer(tree[0]);
-        }
-
         private void Button3_Click(object sender, EventArgs e)
         {
-            //UsuarioBE user = Session.GetInstance().getUser();
-
-            List<Componente> tree = new PermisoUserDAL().FindAll("",4);
-            //List<Componente> tree = new PermisoTodoDAL().FindAll("");
-
-            TreeNode rootNode = new TreeNode();
-            this.fillTree(tree[0],rootNode);
-            this.permission_tree.Nodes.Add(rootNode);
+            //UsuarioBE user = Session.GetInstance().getUser();            
 
             /*
              this.recorrer(tree[0]);
@@ -501,6 +435,12 @@ namespace UI
             
             this.permission_tree.Nodes.Add(childNode);
             */
+        }
+
+        private void Button1_Click_4(object sender, EventArgs e)
+        {
+            UsuarioBE user = new UsuarioDAL().findById(4);
+            new PermisosFrm(user).Show();
         }
     }
 }

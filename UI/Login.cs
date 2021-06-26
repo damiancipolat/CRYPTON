@@ -41,9 +41,14 @@ namespace UI
         }
 
         //Traducir textos.
-        private void traducirTextos()
+        private void translateTexts()
         {
-
+            this.login_title_1.Text= Idioma.GetInstance().translate("LOGIN_TITLE_1");
+            this.login_title_email.Text= Idioma.GetInstance().translate("LOGIN_TITLE_EMAIL");
+            this.login_title_password.Text = Idioma.GetInstance().translate("LOGIN_TITLE_PASSWORD");
+            this.login_btn_ingresar.Text = Idioma.GetInstance().translate("LOGIN_BTN_INGRESAR");
+            this.login_btn_cancel.Text = Idioma.GetInstance().translate("LOGIN_BTN_CANCEL");
+            this.Text = Idioma.GetInstance().translate("LOGIN");
         }
 
         //Proceso login con manejo de excepciones.
@@ -86,7 +91,7 @@ namespace UI
 
         private void Frm_login_Load(object sender, EventArgs e)
         {
-
+            this.translateTexts();
         }
 
         private void Login_btn_cancel_Click(object sender, EventArgs e)
