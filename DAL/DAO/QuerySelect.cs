@@ -99,6 +99,22 @@ namespace DAL.DAO
             return result;
         }
 
+        //Ejecuto un query select retornando una lista.
+        public List<Object> queryList(string sql)
+        {
+            if (!sql.Contains("select"))
+                throw new Exception("Select statement not found!");
+
+            //Ejcuto el query.
+            SqlDataReader reader = this.query(sql);
+
+            //Parseo el data reader a una lista de columnas/valores.
+            List<Object> result = this.utilParser.dataReaderToList(reader);
+            this.bdConnection.Close();
+
+            return result;
+        }
+
         //Ejecutar un query directo.
         public SqlDataReader query(string sql)
         {

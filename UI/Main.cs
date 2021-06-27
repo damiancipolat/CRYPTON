@@ -398,13 +398,27 @@ namespace UI
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            new RegisterUser().Show();
+
         }
 
         private void Button1_Click_4(object sender, EventArgs e)
         {
-            UsuarioBE user = new UsuarioDAL().findById(17);
-            new PermisosFrm(user).Show();
+
+        }
+
+        private void Button2_Click_4(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AltaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new RegisterUser().Show();
+        }
+
+        private void GestorPermisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UsersControl().Show();
         }
     }
 }

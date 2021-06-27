@@ -43,8 +43,7 @@ namespace UI
             this.usr_descrip.Text = Idioma.GetInstance().translate("SINGUP_DESCRIP");
             this.signup_legacy.Text= Idioma.GetInstance().translate("SIGNUP_LEGACY");
         }
-
-
+        
         private void Signup_ok_Click(object sender, EventArgs e)
         {
             try

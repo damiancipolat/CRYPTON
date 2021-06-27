@@ -472,6 +472,17 @@ insert into idioma_palabras(code,clave,valor) values('ES','BTN_DEL_PERMISSION','
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_CLOSE_PERMISSION','Cerrar');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_UPDATE_PERMISSION','Actualizar');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_COMPOUND_PERMISSION','Agregar compuesto');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_SEARCH','Usuarios');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_SEARCH_DESCRIP','En esta seccion puede hacer cambios en caract. de los usuarios.');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_SEARCH_LABEL','Escriba nombre/apellido/email o parte:');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_SEARCH_BTN','Buscar');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_SEARCH_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_BTN','Editar permisos');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_ID','Id');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_NAME','Nombre');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_SURNAME','Apellido');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_EMAIL','Email');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_TYPE','Tipo de usuario');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -552,8 +563,18 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BTN_DEL_PERMISSION',
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_CLOSE_PERMISSION','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_UPDATE_PERMISSION','Update');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_COMPOUND_PERMISSION','Add compound');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_SEARCH','User control');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_SEARCH_DESCRIP','In this section you can make changes in user attributes and permissions.');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_SEARCH_LABEL','Write user name/surname/email or part of it:');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_SEARCH_BTN','Search');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_SEARCH_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_BTN','Edit permission');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_ID','Id');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_NAME','Name');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_SURNAME','Surname');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_EMAIL','Email');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_TYPE','User type');
 
-insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,hash) values('erew','ewr','ewrewr','JY9UDotlpSUmk6tqxLDXyxvUeNDWQUVTXSSpphbqimc=',1,'e10adc3949ba59abbe56e057f20f883e','950eddbd5d6e3bc045fe53db9c57525e');SELECT @@IDENTITY;
 
 select * from rol_permiso
 select * from permiso

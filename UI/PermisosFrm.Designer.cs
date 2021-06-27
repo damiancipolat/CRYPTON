@@ -39,6 +39,7 @@
             this.btn_compound_permission = new System.Windows.Forms.Button();
             this.btn_update_permission = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.usr_custom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,11 +157,22 @@
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
+            // usr_custom
+            // 
+            this.usr_custom.AutoSize = true;
+            this.usr_custom.Location = new System.Drawing.Point(395, 120);
+            this.usr_custom.Name = "usr_custom";
+            this.usr_custom.Size = new System.Drawing.Size(101, 21);
+            this.usr_custom.TabIndex = 35;
+            this.usr_custom.Text = "usr_custom";
+            this.usr_custom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // PermisosFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 581);
+            this.Controls.Add(this.usr_custom);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_update_permission);
             this.Controls.Add(this.btn_compound_permission);
@@ -198,5 +210,6 @@
         private System.Windows.Forms.Button btn_compound_permission;
         private System.Windows.Forms.Button btn_update_permission;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label usr_custom;
     }
 }

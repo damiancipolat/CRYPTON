@@ -37,6 +37,26 @@ namespace DAL
 
         }
 
+        //Buscar usuarios en base a texto.
+        public List<UsuarioBE> searchByText(string text)
+        {
+            //Ejecuto la consulta.
+            string sql = "select us.* from usuario as us "+
+                "where us.apellido like '%"+text+"%'"+
+                "or us.nombre like '%"+text+"%'"+
+                "or us.email like '%"+text+"%';";
+
+            List<object> result = this.getSelect().queryList(sql);
+
+            //Lista resultado.
+            List<UsuarioBE> lista = new List<UsuarioBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
+
         //Este metodo obtiene en base al ID el usuario.
         public UsuarioBE findById(int id)
         {

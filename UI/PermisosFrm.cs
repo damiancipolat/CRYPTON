@@ -128,6 +128,9 @@ namespace UI
             //Dibujo el tree view.
             this.drawPermissionTree();
             this.drawPermissionList();
+
+            //Load name.
+            this.usr_custom.Text = this.user.nombre + "," + this.user.apellido;
         }
 
         //Al seleccionar en el treeview.

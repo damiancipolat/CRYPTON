@@ -20,6 +20,18 @@ namespace BL
             //..
         }
 
+        //Busqueda libre en base a texto.
+        public List<UsuarioBE> searchByText(string text)
+        {
+            return new UsuarioDAL().searchByText(text);
+        }
+
+        //Buscar por id.
+        public UsuarioBE findById(int id)
+        {
+            return new UsuarioDAL().findById(id);
+        }
+
         //Registra un nuevo usuario.
         public int save(UsuarioBE user)
         {
