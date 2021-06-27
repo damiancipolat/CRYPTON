@@ -42,9 +42,9 @@
             // 
             // permission_tree
             // 
-            this.permission_tree.Location = new System.Drawing.Point(405, 155);
+            this.permission_tree.Location = new System.Drawing.Point(398, 157);
             this.permission_tree.Name = "permission_tree";
-            this.permission_tree.Size = new System.Drawing.Size(704, 336);
+            this.permission_tree.Size = new System.Drawing.Size(711, 336);
             this.permission_tree.TabIndex = 21;
             this.permission_tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Permission_tree_AfterSelect);
             // 
@@ -86,7 +86,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(333, 304);
+            this.button2.Location = new System.Drawing.Point(334, 304);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(47, 45);
             this.button2.TabIndex = 25;

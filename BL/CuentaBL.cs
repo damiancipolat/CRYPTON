@@ -19,7 +19,7 @@ namespace BL
             //..
         }
 
-        //-------------------------------------
+        //CREACION --------------------------------------------------------------
 
         //Proceso la creacion de la cuenta.
         public int crear(ClienteBE cliente)
@@ -35,7 +35,10 @@ namespace BL
             cuenta.idcuenta = newId;
 
             //Proceso la creación de las billeteras
-            this.crearBilleteras(cuenta, cliente);
+            // this.crearBilleteras(cuenta, cliente);
+
+            //Proceso el alta de los permisos.
+            this.registerClientPermission(cliente);
 
             return newId;
         }
@@ -44,7 +47,7 @@ namespace BL
         private void crearBilleteras(CuentaBE cuenta, ClienteBE cliente)
         {
             BilleteraBL walletBL = new BilleteraBL();
-            /*
+
             //ARS
             int arsId = walletBL.crear(cuenta, cliente, "ARS");
             Bitacora.GetInstance().log("Se ha creado la cuenta en ars pesos id:" + arsId.ToString(), true);
@@ -60,7 +63,7 @@ namespace BL
             //DOG
             int dogId = walletBL.crear(cuenta, cliente, "DOG");
             Bitacora.GetInstance().log("Se ha creado la cuenta en doge id:" + dogId.ToString(), true);
-            */
+
         }
 
         //Traigo la cuenta activa de un cliente.
@@ -68,6 +71,27 @@ namespace BL
         {
             return new CuentaDAL().getActive(cliente);
         }
+
+        //Registra la lista de permisos que le corresponden a un cliente.
+        public void registerClientPermission(ClienteBE cliente)
+        {
+            Debug.WriteLine("Bind client permission of if: "+cliente.idusuario);
+
+            //Cargo el arbol de permisos para un usuario que arranca de cero.
+            PermisoBL perm = new PermisoBL();
+            long clientId = cliente.usuario.idusuario;
+
+            //Registro.
+            perm.bindSpecificToUser(null,"R001", clientId);
+            perm.bindSpecificToUser("R001","R002", clientId);
+            perm.bindSpecificToUser("R002", "USR001", clientId);
+            perm.bindSpecificToUser("R002", "USR002", clientId);
+            perm.bindSpecificToUser("R002", "USR003", clientId);
+            perm.bindSpecificToUser("R002", "USR004", clientId);
+            perm.bindSpecificToUser("R002", "USR005", clientId);
+        }
+
+        //CONSULTA --------------------------------------------------------------
 
         //Traigo la billetera en base al id-
         public CuentaBE traer(long id)

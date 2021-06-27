@@ -40,7 +40,7 @@ namespace BL
             return new ClienteDAL().findByUser(user);
         }
 
-        public int save(ClienteBE cliente)
+        public ClienteBE save(ClienteBE cliente)
         {
             //Encripto el email para hacer busquedas.
             string cryptedEmail = Cripto.GetInstance().Encrypt(cliente.email);
@@ -69,9 +69,12 @@ namespace BL
             //Seteo campo de cliente autoseteados.
             cliente.valido = "N";
             cliente.usuario = tmpUser;
-
+            
             //Registro el cliente por separado.
-            return new ClienteDAL().insert(cliente);
+            int clientId = new ClienteDAL().insert(cliente);
+            cliente.idcliente = clientId;
+
+            return cliente;
         }
     }
 }

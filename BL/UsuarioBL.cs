@@ -32,12 +32,10 @@ namespace BL
             
             //Registro el usuario.
             int insertedId = new UsuarioDAL().save(user);
+            Debug.WriteLine("Grabado user"+insertedId.ToString());
 
             //Set id.
             user.idusuario = insertedId;
-
-            //Adjunto permisos al cliente.
-            new PermisoBL().bindToUser(user);
 
             //Actualizo el DVV de usuarios.
             new DvvDAL().updateHash("usuario", new UsuarioDAL().getEntityHash());

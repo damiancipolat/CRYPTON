@@ -28,23 +28,6 @@ namespace BL
             return new PermisoTodoDAL().GetRaw();
         }
 
-        //Bindeo a un usuario todos los permisos del tipo cliente.
-        public void bindToUser(UsuarioBE user)
-        {
-            IList<Componente> permissionList = this.getPermissionByRol(user.tipoUsuario);
-
-            //Registro cada permiso que le corresponde al cliente.
-            foreach (Componente perm in permissionList)
-            {
-                UsuarioPermiso userBE = new UsuarioPermiso();
-                userBE.codpermiso = perm.Cod;
-                userBE.idusuario = user.idusuario;
-
-                new UsuarioPermisoDAL().insert(userBE);
-            }
-
-        }
-
         //Bindeo especificamente un permiso a un usuario.
         public int bindSpecificToUser(string rol, string permiso, long id)
         {

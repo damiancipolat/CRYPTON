@@ -101,8 +101,7 @@ namespace UI
                 newClient.telefono = this.phone_number_txt.Text;
 
                 //Grabo el cliente.
-                int newId = new ClienteBL().save(newClient);
-                newClient.idcliente = newId;
+                newClient = new ClienteBL().save(newClient);                
 
                 //Creo la cuenta del cliente y sus respectivas billeteras
                 new CuentaBL().crear(newClient);

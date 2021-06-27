@@ -403,7 +403,7 @@ namespace UI
 
         private void Button1_Click_4(object sender, EventArgs e)
         {
-            UsuarioBE user = new UsuarioDAL().findById(4);
+            UsuarioBE user = new UsuarioDAL().findById(17);
             new PermisosFrm(user).Show();
         }
     }

@@ -94,7 +94,6 @@ create table rol_permiso
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R002',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',4);
-
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM002',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM003',4);
@@ -103,13 +102,14 @@ insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR002',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR003',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR004',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR005',4);
+
 truncate table rol_permiso
 truncate table rol_permiso;
 select * from rol_permiso
 select * from permiso
 
 select * from usuario
-
+select * from cliente
 
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
@@ -466,7 +466,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','BTC_LABEL','Bitecoin'
 insert into idioma_palabras(code,clave,valor) values('ES','PERMISSION_TITLE','Permisos');
 insert into idioma_palabras(code,clave,valor) values('ES','PERMISSION_LABEL','En esta seccion se puede agregar o quitar permisos a usuarios.');
 insert into idioma_palabras(code,clave,valor) values('ES','PERMISSION_ABM','Lista de permisos:');
-insert into idioma_palabras(code,clave,valor) values('ES','BTN_DEL_PERMISSION','Delete');
+insert into idioma_palabras(code,clave,valor) values('ES','BTN_DEL_PERMISSION','Borrar');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_CLOSE_PERMISSION','Cerrar');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_UPDATE_PERMISSION','Actualizar');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_COMPOUND_PERMISSION','Agregar compuesto');
@@ -548,3 +548,8 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BTN_DEL_PERMISSION',
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_CLOSE_PERMISSION','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_UPDATE_PERMISSION','Update');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_COMPOUND_PERMISSION','Add compound');
+
+insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,hash) values('erew','ewr','ewrewr','JY9UDotlpSUmk6tqxLDXyxvUeNDWQUVTXSSpphbqimc=',1,'e10adc3949ba59abbe56e057f20f883e','950eddbd5d6e3bc045fe53db9c57525e');SELECT @@IDENTITY;
+
+select * from rol_permiso
+
