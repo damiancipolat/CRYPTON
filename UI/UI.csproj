@@ -122,11 +122,17 @@
     <Compile Include="Recomendations.Designer.cs">
       <DependentUpon>Recomendations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Register.cs">
+    <Compile Include="RegisterClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="RegisterClient.Designer.cs">
+      <DependentUpon>RegisterClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterUser.Designer.cs">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Wallets.cs">
       <SubType>Form</SubType>
@@ -165,8 +171,11 @@
     <EmbeddedResource Include="Recomendations.resx">
       <DependentUpon>Recomendations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
+    <EmbeddedResource Include="RegisterClient.resx">
+      <DependentUpon>RegisterClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterUser.resx">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wallets.resx">
       <DependentUpon>Wallets.cs</DependentUpon>
@@ -253,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permiso.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

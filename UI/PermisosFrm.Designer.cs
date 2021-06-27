@@ -38,6 +38,8 @@
             this.permission_abm = new System.Windows.Forms.Label();
             this.btn_compound_permission = new System.Windows.Forms.Button();
             this.btn_update_permission = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // permission_tree
@@ -52,7 +54,7 @@
             // 
             this.permission_title.AutoSize = true;
             this.permission_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.permission_title.Location = new System.Drawing.Point(34, 18);
+            this.permission_title.Location = new System.Drawing.Point(128, 27);
             this.permission_title.Name = "permission_title";
             this.permission_title.Size = new System.Drawing.Size(154, 38);
             this.permission_title.TabIndex = 22;
@@ -63,7 +65,7 @@
             // 
             this.permission_label.AutoSize = true;
             this.permission_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.permission_label.Location = new System.Drawing.Point(37, 68);
+            this.permission_label.Location = new System.Drawing.Point(132, 69);
             this.permission_label.Name = "permission_label";
             this.permission_label.Size = new System.Drawing.Size(500, 20);
             this.permission_label.TabIndex = 23;
@@ -144,11 +146,22 @@
             this.btn_update_permission.UseVisualStyleBackColor = false;
             this.btn_update_permission.Click += new System.EventHandler(this.Button5_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.permiso;
+            this.pictureBox1.Location = new System.Drawing.Point(41, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(81, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
             // PermisosFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 581);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_update_permission);
             this.Controls.Add(this.btn_compound_permission);
             this.Controls.Add(this.permission_abm);
@@ -166,6 +179,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permisos";
             this.Load += new System.EventHandler(this.Permisos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +197,6 @@
         private System.Windows.Forms.Label permission_abm;
         private System.Windows.Forms.Button btn_compound_permission;
         private System.Windows.Forms.Button btn_update_permission;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

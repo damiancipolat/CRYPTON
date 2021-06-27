@@ -409,7 +409,9 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_SPLASH_TITLE','H
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_SPLASH_ACTIVITY','Haga click para realizar una operación.');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_BTN_LOGIN','Ingresar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_CHANGE_LANGUAGE','Cambiar idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','SINGUP_DESCRIP','Completar para crear usuario empleado.');
 insert into idioma_palabras(code,clave,valor) values('ES','SINGUP_TITLE','Registrar nuevo usuario');
+insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_LEGACY','Legajo de empleado:');
 insert into idioma_palabras(code,clave,valor) values('ES','SINGUP_DESCRIPTION','Completa estos datos para poder crear tu cuenta:');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_NAME','Escriba su nombre:');
 insert into idioma_palabras(code,clave,valor) values('ES','SIGNUP_SURNAME','Escriba su apellido:');
@@ -488,7 +490,9 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_SPLASH_ACTIVITY
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_BTN_LOGIN','Login');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_CHANGE_LANGUAGE','Choose language');
 insert into idioma_palabras(code,clave,valor) values('ENG','SINGUP_TITLE','Register new user');
+insert into idioma_palabras(code,clave,valor) values('ENG','SINGUP_DESCRIP','Complete to register a employee user.');
 insert into idioma_palabras(code,clave,valor) values('ENG','SINGUP_DESCRIPTION','Complete this information to create your account:');
+insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_LEGACY','Employee legacy number:');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_NAME','Write your name:');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_SURNAME','Write your surname:');
 insert into idioma_palabras(code,clave,valor) values('ENG','SIGNUP_ALIAS','Write your alias:');
@@ -552,4 +556,5 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BTN_COMPOUND_PERMISS
 insert into usuario(nombre,apellido,alias,email,tipo_usuario,pwd,hash) values('erew','ewr','ewrewr','JY9UDotlpSUmk6tqxLDXyxvUeNDWQUVTXSSpphbqimc=',1,'e10adc3949ba59abbe56e057f20f883e','950eddbd5d6e3bc045fe53db9c57525e');SELECT @@IDENTITY;
 
 select * from rol_permiso
-
+select * from permiso
+select * from usuario

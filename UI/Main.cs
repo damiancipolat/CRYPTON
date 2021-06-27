@@ -398,7 +398,7 @@ namespace UI
 
         private void Button3_Click(object sender, EventArgs e)
         {
-
+            new RegisterUser().Show();
         }
 
         private void Button1_Click_4(object sender, EventArgs e)

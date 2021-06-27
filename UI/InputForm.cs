@@ -30,6 +30,7 @@ namespace UI
 
         private void InputForm_Load(object sender, EventArgs e)
         {
+            this.Text = this.title;
             this.prompt_input.Text = this.title;
             this.prompt_description.Text = this.description;
         }
@@ -41,8 +42,15 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            this.value = this.frm_input.Text;
-            this.Close();
+            if (this.frm_input.Text != "")
+            {
+                this.value = this.frm_input.Text;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar un valor");
+            }
         }
     }
 }

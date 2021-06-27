@@ -205,16 +205,12 @@ namespace UI
 
             string value = input.getValue();
 
-            if (value != "")
+            if (value != null)
             {
                 new PermisoBL().createCompound(value);
                 MessageBox.Show("Nuevo compuesto!");
                 this.list_perm.Items.Clear();
                 this.drawPermissionList();
-            }
-            else
-            {
-                MessageBox.Show("No puede editar");
             }
             
         }

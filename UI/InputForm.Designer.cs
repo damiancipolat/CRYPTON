@@ -37,7 +37,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button1.BackColor = System.Drawing.Color.LightGreen;
             this.button1.Location = new System.Drawing.Point(318, 167);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 42);
@@ -48,7 +48,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.BackColor = System.Drawing.Color.LightCoral;
             this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Location = new System.Drawing.Point(482, 166);
             this.button2.Name = "button2";

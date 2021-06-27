@@ -250,17 +250,17 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(291, 290);
+            this.button3.Location = new System.Drawing.Point(1258, 171);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 48);
+            this.button3.Size = new System.Drawing.Size(125, 48);
             this.button3.TabIndex = 19;
-            this.button3.Text = "button3";
+            this.button3.Text = "register_user";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(754, 190);
+            this.button1.Location = new System.Drawing.Point(1258, 68);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 74);
             this.button1.TabIndex = 21;
