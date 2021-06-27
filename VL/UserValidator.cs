@@ -52,6 +52,40 @@ namespace VL
             return true;
         }
 
+        //Valido la registracion de un empleado.
+        public bool validateEmployee(
+            string name,
+            string surname,
+            string alias,
+            string email,
+            string pwd,
+            string legacy
+        )
+        {
+            //Valido que los campos no sean vacios.
+            string[] fields = {
+                name,
+                surname,
+                alias,
+                email,
+                pwd,
+                legacy
+            };
+
+            foreach (string value in fields)
+            {
+                if (value == "")
+                    throw new InputException("REGISTER_INPUT_ERROR");
+            }
+
+            //Valido el email.
+            if (!this.isValidEmail(email))
+                throw new InputException("REGISTER_INPUT_EMAIL_ERROR");
+
+            return true;
+        }
+
+        //Valido la registracion de un cliente.
         public bool validateRegister(
             string name, 
             string surname, 

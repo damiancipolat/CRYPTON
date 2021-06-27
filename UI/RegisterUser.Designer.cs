@@ -31,6 +31,8 @@
             this.your_user_label = new System.Windows.Forms.Label();
             this.usr_descrip = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.signup_legacy_txt = new System.Windows.Forms.TextBox();
+            this.signup_legacy = new System.Windows.Forms.Label();
             this.signup_name = new System.Windows.Forms.Label();
             this.signup_txt_pwd = new System.Windows.Forms.TextBox();
             this.signup_txt_name = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.signup_cancel = new System.Windows.Forms.Button();
             this.signup_ok = new System.Windows.Forms.Button();
-            this.signup_legacy_txt = new System.Windows.Forms.TextBox();
-            this.signup_legacy = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +93,26 @@
             this.panel1.Size = new System.Drawing.Size(463, 544);
             this.panel1.TabIndex = 31;
             // 
+            // signup_legacy_txt
+            // 
+            this.signup_legacy_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_legacy_txt.Location = new System.Drawing.Point(28, 386);
+            this.signup_legacy_txt.Name = "signup_legacy_txt";
+            this.signup_legacy_txt.PasswordChar = '*';
+            this.signup_legacy_txt.Size = new System.Drawing.Size(397, 34);
+            this.signup_legacy_txt.TabIndex = 5;
+            // 
+            // signup_legacy
+            // 
+            this.signup_legacy.AutoSize = true;
+            this.signup_legacy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_legacy.Location = new System.Drawing.Point(29, 348);
+            this.signup_legacy.Name = "signup_legacy";
+            this.signup_legacy.Size = new System.Drawing.Size(132, 24);
+            this.signup_legacy.TabIndex = 23;
+            this.signup_legacy.Text = "signup_legacy";
+            this.signup_legacy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // signup_name
             // 
             this.signup_name.AutoSize = true;
@@ -110,7 +130,7 @@
             this.signup_txt_pwd.Name = "signup_txt_pwd";
             this.signup_txt_pwd.PasswordChar = '*';
             this.signup_txt_pwd.Size = new System.Drawing.Size(397, 34);
-            this.signup_txt_pwd.TabIndex = 5;
+            this.signup_txt_pwd.TabIndex = 6;
             // 
             // signup_txt_name
             // 
@@ -219,6 +239,7 @@
             this.signup_cancel.TabIndex = 35;
             this.signup_cancel.Text = "signup_cancel";
             this.signup_cancel.UseVisualStyleBackColor = false;
+            this.signup_cancel.Click += new System.EventHandler(this.Signup_cancel_Click);
             // 
             // signup_ok
             // 
@@ -229,26 +250,6 @@
             this.signup_ok.Text = "signup_ok";
             this.signup_ok.UseVisualStyleBackColor = true;
             this.signup_ok.Click += new System.EventHandler(this.Signup_ok_Click);
-            // 
-            // signup_legacy_txt
-            // 
-            this.signup_legacy_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_legacy_txt.Location = new System.Drawing.Point(28, 386);
-            this.signup_legacy_txt.Name = "signup_legacy_txt";
-            this.signup_legacy_txt.PasswordChar = '*';
-            this.signup_legacy_txt.Size = new System.Drawing.Size(397, 34);
-            this.signup_legacy_txt.TabIndex = 22;
-            // 
-            // signup_legacy
-            // 
-            this.signup_legacy.AutoSize = true;
-            this.signup_legacy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_legacy.Location = new System.Drawing.Point(29, 348);
-            this.signup_legacy.Name = "signup_legacy";
-            this.signup_legacy.Size = new System.Drawing.Size(165, 30);
-            this.signup_legacy.TabIndex = 23;
-            this.signup_legacy.Text = "signup_legacy";
-            this.signup_legacy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // RegisterUser
             // 

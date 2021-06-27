@@ -49,7 +49,32 @@ namespace UI
         {
             try
             {
+                //Valido el input.
+                UserValidator.GetInstance().validateEmployee(
+                    this.signup_txt_name.Text,
+                    this.signup_txt_surname.Text,
+                    this.signup_txt_alias.Text,
+                    this.signup_txt_email.Text,
+                    this.signup_txt_pwd.Text,
+                    this.signup_legacy_txt.Text
+                );
 
+                //Bindeo campos 
+                EmpleadoBE newEmp = new EmpleadoBE();
+                newEmp.nombre = this.signup_txt_name.Text;
+                newEmp.apellido = this.signup_txt_surname.Text;
+                newEmp.alias = this.signup_txt_alias.Text;
+                newEmp.email = this.signup_txt_email.Text;
+                newEmp.pwd = this.signup_txt_pwd.Text;
+                newEmp.tipoUsuario = UsuarioTipo.EMPLEADO;
+                newEmp.legajo = this.signup_legacy_txt.Text;
+
+                //Guardo el usuario.
+                new EmpleadoBL().save(newEmp);
+
+                MessageBox.Show("Usuario creado con exito!");
+                this.Close();
+                
             }
             catch (BusinessException ex)
             {
@@ -75,6 +100,11 @@ namespace UI
         private void RegisterUser_Load(object sender, EventArgs e)
         {
             this.translateTexts();
+        }
+
+        private void Signup_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

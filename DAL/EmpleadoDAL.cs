@@ -63,7 +63,7 @@ namespace DAL
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"idusuario",employee.idusuario},
+                {"idusuario",employee.usuario.idusuario},
                 {"legajo",employee.legajo }
             };
             
@@ -73,7 +73,7 @@ namespace DAL
         //Borra el usuario.
         public int delete(int id)
         {
-            return this.getDelete().deleteById("idcliente", id, "cliente");
+            return this.getDelete().deleteById("idempleado", id, "empleado");
         }
 
         //Actualizar el usuario.
@@ -85,7 +85,7 @@ namespace DAL
                 {"legajo",employee.legajo }
             };
 
-            return this.getUpdate().updateSchemaById(schema, "cliente", "idcliente", employee.idempleado);
+            return this.getUpdate().updateSchemaById(schema, "empleado", "idempleado", employee.idempleado);
         }
     }
 }

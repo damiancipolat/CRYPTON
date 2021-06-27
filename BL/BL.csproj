@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CuentaBL.cs" />
+    <Compile Include="EmpleadoBL.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="FraudeBL.cs" />
     <Compile Include="ConversorBL.cs" />
