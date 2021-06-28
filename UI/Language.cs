@@ -22,8 +22,9 @@ namespace UI
 
         //Actualizo los textos en base al idioma elegido.
         private void translateTexts()
-        {
+        {            
             //Labels.
+            this.Text= Idioma.GetInstance().translate("MAIN_MENU_LANGUAGE");
             this.language_txt_title.Text = Idioma.GetInstance().translate("LANG_CHOOSE_TITLE");
             this.language_accept.Text = Idioma.GetInstance().translate("BUTTON_OK");
             this.language_cancel.Text = Idioma.GetInstance().translate("BUTTON_CANCEL");
