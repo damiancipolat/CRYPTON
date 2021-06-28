@@ -32,31 +32,31 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.main_splash = new System.Windows.Forms.Panel();
             this.main_btn_register = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.main_splash_title = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_login = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_signup = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_signout = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_operate = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_buy = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_sell = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_search = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_deposit = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
-            this.main_menu_operate = new System.Windows.Forms.ToolStripMenuItem();
-            this.iTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestorPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
-            this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.main_menu_it = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_it_add_user = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.main_splash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +103,16 @@
             this.main_btn_register.UseVisualStyleBackColor = false;
             this.main_btn_register.Click += new System.EventHandler(this.Button1_Click_1);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
+            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
             // main_splash_title
             // 
             this.main_splash_title.AutoSize = true;
@@ -125,13 +135,31 @@
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripSplitButton2
+            // 
+            this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_change_language});
+            this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
+            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
+            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
+            this.toolStripSplitButton2.Text = "toolStripSplitButton2";
+            // 
+            // main_change_language
+            // 
+            this.main_change_language.Name = "main_change_language";
+            this.main_change_language.Size = new System.Drawing.Size(247, 26);
+            this.main_change_language.Text = "main_change_language";
+            this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.main_menu_operate,
-            this.iTToolStripMenuItem});
+            this.main_menu_it});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1428, 28);
@@ -179,6 +207,19 @@
             this.main_menu_exit.Text = "main_menu_exit";
             this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
+            // main_menu_operate
+            // 
+            this.main_menu_operate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_menu_buy,
+            this.main_menu_sell,
+            this.main_menu_search,
+            this.main_menu_deposit,
+            this.main_menu_extract});
+            this.main_menu_operate.Name = "main_menu_operate";
+            this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
+            this.main_menu_operate.Text = "Operar";
+            this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
+            // 
             // main_menu_buy
             // 
             this.main_menu_buy.Name = "main_menu_buy";
@@ -209,69 +250,29 @@
             this.main_menu_extract.Size = new System.Drawing.Size(224, 26);
             this.main_menu_extract.Text = "main_menu_extract";
             // 
-            // main_menu_operate
+            // main_menu_it
             // 
-            this.main_menu_operate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.main_menu_buy,
-            this.main_menu_sell,
-            this.main_menu_search,
-            this.main_menu_deposit,
-            this.main_menu_extract});
-            this.main_menu_operate.Name = "main_menu_operate";
-            this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
-            this.main_menu_operate.Text = "Operar";
-            this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
+            this.main_menu_it.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_menu_it_add_user,
+            this.main_menu_it_user_manager});
+            this.main_menu_it.Name = "main_menu_it";
+            this.main_menu_it.Size = new System.Drawing.Size(35, 24);
+            this.main_menu_it.Text = "IT";
+            this.main_menu_it.Visible = false;
             // 
-            // iTToolStripMenuItem
+            // main_menu_it_add_user
             // 
-            this.iTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaDeUsuariosToolStripMenuItem,
-            this.gestorPermisosToolStripMenuItem});
-            this.iTToolStripMenuItem.Name = "iTToolStripMenuItem";
-            this.iTToolStripMenuItem.Size = new System.Drawing.Size(35, 24);
-            this.iTToolStripMenuItem.Text = "IT";
+            this.main_menu_it_add_user.Name = "main_menu_it_add_user";
+            this.main_menu_it_add_user.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_it_add_user.Text = "Alta de usuarios";
+            this.main_menu_it_add_user.Click += new System.EventHandler(this.AltaDeUsuariosToolStripMenuItem_Click);
             // 
-            // altaDeUsuariosToolStripMenuItem
+            // main_menu_it_user_manager
             // 
-            this.altaDeUsuariosToolStripMenuItem.Name = "altaDeUsuariosToolStripMenuItem";
-            this.altaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.altaDeUsuariosToolStripMenuItem.Text = "Alta de usuarios";
-            this.altaDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.AltaDeUsuariosToolStripMenuItem_Click);
-            // 
-            // gestorPermisosToolStripMenuItem
-            // 
-            this.gestorPermisosToolStripMenuItem.Name = "gestorPermisosToolStripMenuItem";
-            this.gestorPermisosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.gestorPermisosToolStripMenuItem.Text = "Gestor permisos";
-            this.gestorPermisosToolStripMenuItem.Click += new System.EventHandler(this.GestorPermisosToolStripMenuItem_Click);
-            // 
-            // toolStripSplitButton2
-            // 
-            this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.main_change_language});
-            this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
-            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
-            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
-            this.toolStripSplitButton2.Text = "toolStripSplitButton2";
-            // 
-            // main_change_language
-            // 
-            this.main_change_language.Name = "main_change_language";
-            this.main_change_language.Size = new System.Drawing.Size(247, 26);
-            this.main_change_language.Text = "main_change_language";
-            this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
-            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
+            this.main_menu_it_user_manager.Name = "main_menu_it_user_manager";
+            this.main_menu_it_user_manager.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_it_user_manager.Text = "Gestor permisos";
+            this.main_menu_it_user_manager.Click += new System.EventHandler(this.GestorPermisosToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -304,11 +305,11 @@
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.main_splash.ResumeLayout(false);
             this.main_splash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -340,9 +341,9 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_search;
         private System.Windows.Forms.ToolStripMenuItem main_menu_deposit;
         private System.Windows.Forms.ToolStripMenuItem main_menu_extract;
-        private System.Windows.Forms.ToolStripMenuItem iTToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaDeUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestorPermisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_it;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_it_add_user;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_it_user_manager;
     }
 }
 

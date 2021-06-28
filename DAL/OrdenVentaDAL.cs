@@ -85,7 +85,7 @@ namespace DAL
         public int save(OrdenVentaBE venta)
         {
             //Creo un esquema dinamico para ser guardado.
-            var schema = new Dictionary<string, Object>{
+            /*var schema = new Dictionary<string, Object>{
                 { "vendedor",venta.vendedor.idcliente},
                 { "cantidad",venta.cantidad},
                 { "moneda",venta.moneda.cod},
@@ -94,7 +94,8 @@ namespace DAL
                 { "fecFin",(venta.fecFin!=null)?venta.fecFin.ToString("yyyy-MM-dd HH:mm:ss"):null}
             };
 
-            return this.getInsert().insertSchema(schema, "orden_venta", true);
+            return this.getInsert().insertSchema(schema, "orden_venta", true);*/
+            return 0;
         }
 
         //Borra el usuario.
@@ -107,16 +108,26 @@ namespace DAL
         public int update(OrdenVentaBE venta)
         {
             //Creo un esquema dinamico para ser guardado.
-            var schema = new Dictionary<string, Object>{
-                { "vendedor",venta.vendedor.idcliente},
-                { "cantidad",venta.cantidad},
-                { "moneda",venta.moneda.cod},
-                { "precio",venta.precio},
-                { "fecCreacion",venta.fecCreacion},
-                { "fecFin",venta.fecFin}
-            };
+            /* var schema = new Dictionary<string, Object>{
+                 { "vendedor",venta.vendedor.idcliente},
+                 { "cantidad",venta.cantidad},
+                 { "moneda",venta.moneda.cod},
+                 { "precio",venta.precio},
+                 { "fecCreacion",venta.fecCreacion},
+                 { "fecFin",venta.fecFin}
+             };
 
-            return this.getUpdate().updateSchemaById(schema, "orden_venta", "idorden", venta.idorden);
+             return this.getUpdate().updateSchemaById(schema, "orden_venta", "idorden", venta.idorden);*/
+            return 0;
+        }
+
+        //todo:
+        public List<OrdenVentaBE> search(MonedaBE ofrece, MonedaBE pide)
+        {
+            //Lista resultado.
+            List<OrdenVentaBE> lista = new List<OrdenVentaBE>();
+
+            return lista;
         }
     }
 }

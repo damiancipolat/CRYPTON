@@ -19,7 +19,8 @@ namespace BE
         public ClienteBE vendedor;
         public int cantidad;
         public float precio;
-        public MonedaBE moneda;
+        public MonedaBE ofrece;
+        public MonedaBE pide;
         public DateTime fecCreacion;
         public DateTime fecFin;
         public OrdenEstado ordenEstado;

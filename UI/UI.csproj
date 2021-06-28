@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscadorOfertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscadorOfertas.Designer.cs">
+      <DependentUpon>BuscadorOfertas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="frm_publish_sell.cs">
       <SubType>Form</SubType>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="Notifications\INotification.cs" />
     <Compile Include="Notifications\Notificator.cs" />
+    <Compile Include="OperacionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperacionView.Designer.cs">
+      <DependentUpon>OperacionView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PermisosFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,9 @@
     <Compile Include="Wallets.Designer.cs">
       <DependentUpon>Wallets.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BuscadorOfertas.resx">
+      <DependentUpon>BuscadorOfertas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_publish_sell.resx">
       <DependentUpon>frm_publish_sell.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperacionView.resx">
+      <DependentUpon>OperacionView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PermisosFrm.resx">
       <DependentUpon>PermisosFrm.cs</DependentUpon>

@@ -77,7 +77,9 @@ insert into permiso(codpermiso,nombre,es_patente) values('R002','Cliente',0);
 insert into permiso(codpermiso,nombre,es_patente) values('R003','Empleado',0);
 insert into permiso(codpermiso,nombre,es_patente) values('ADM001','Operaciones',1);
 insert into permiso(codpermiso,nombre,es_patente) values('ADM002','Marketing',1);
-insert into permiso(codpermiso,nombre,es_patente) values('ADM003','IT',1);
+insert into permiso(codpermiso,nombre,es_patente) values('ADM003','IT',0);
+insert into permiso(codpermiso,nombre,es_patente) values('IT0001','Alta usuarios',1);
+insert into permiso(codpermiso,nombre,es_patente) values('IT0002','Gestion usuarios',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR001','Extraer',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR002','Ingresar',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR003','Comprar',1);
@@ -97,19 +99,20 @@ insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM002',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM003',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','ADM003',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR001',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR002',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR003',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR004',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR005',4);
 
-truncate table rol_permiso
-truncate table rol_permiso;
-select * from rol_permiso
-select * from permiso
+
+select * from rol_permiso where idusuario=2
+
+insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',2);
 
 select * from usuario
-select * from cliente
+select * from empleado
 
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
@@ -117,9 +120,6 @@ create table usuario_permiso
 	idusuario bigint,
 	codpermiso varchar(20)
 );
-insert into usuario_permiso values(4,'R001');
-insert into usuario_permiso values(4,'R002');
-select * from usuario_permiso
 
 --Tabla de registro de backups.
 create table admin_backup
@@ -203,6 +203,7 @@ insert into conversiones(codCripto,cantCripto,valorUSD) values('LTC',1,500);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('DOG',1,100);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('ARS',1,160);
 select * from conversiones
+
 --Tabla de contactos.
 create table cliente_agenda(
 	idcontacto bigint identity(1,1) primary key,
@@ -330,7 +331,8 @@ create table orden_venta(
 	idorden  bigint identity(1,1) primary key,
 	vendedor bigint,
 	cantidad int,
-	moneda varchar(10),
+	ofrece varchar(10),
+	pide varchar(10),
 	precio float,
 	fecCreacion datetime,
 	fecFin datetime,
@@ -359,8 +361,6 @@ create table orden_compra(
 	precio float,
 	deleted datetime
 );
-
---insert into bitacora(idusuario,type,fec_log,payload) values(0,1,'13/05/2021 3:35:55','Default language loaded from config:ES');
 
 --Bitacora. 
 CREATE TABLE bitacora
@@ -574,8 +574,3 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_NAME','Name'
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_SURNAME','Surname');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_EMAIL','Email');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_TYPE','User type');
-
-
-select * from rol_permiso
-select * from permiso
-select * from usuario

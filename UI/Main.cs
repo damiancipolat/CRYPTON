@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Windows.Forms;
-using System.Globalization;
-using System.Diagnostics;
-using System.Text.Json;
+﻿using BE;
+using BE.Permisos;
 using BL;
 using DAL;
-using DAL.Permiso;
-using BE;
-using BE.Permisos;
 using SL;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Diagnostics;
+using System.Windows.Forms;
 using UI.Notifications;
-using IO;
-using IO.Responses;
 
 namespace UI
 {
@@ -128,12 +123,6 @@ namespace UI
         private void handleClientMenu()
         {
             List<Componente> permissions = Session.GetInstance().getPermissions();
-
-            foreach (Componente cp in permissions)
-            {
-                Debug.WriteLine("@@-->"+cp.Cod+","+cp.Nombre);
-            }
-
             PermisoBL permBL = new PermisoBL();
 
             //Set items if the code exist in the list.
@@ -148,7 +137,13 @@ namespace UI
         //Manejo el menu de empleado.
         private void handleEmployeeMenu()
         {
+            List<Componente> permissions = Session.GetInstance().getPermissions();
+            PermisoBL permBL = new PermisoBL();
 
+            //It menu
+            this.main_menu_it.Visible = permBL.hasPermission(permissions, "ADM003");
+            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, "IT0001");
+            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, "IT0002");
         }
 
         //Oculto menu en base a los permisos.
@@ -166,7 +161,6 @@ namespace UI
                 if (userType == UsuarioTipo.CLIENTE && isActive)
                 {
                     this.handleClientMenu();
-                    //this.main_splash_activity_panel.Visible = true;
                 }                    
 
                 //Manejo menu de empleados.
@@ -326,43 +320,6 @@ namespace UI
 
         private void Button2_Click_3(object sender, EventArgs e)
         {
-            //Balance tmp = new BlockIo("11111").test();
-            //Debug.WriteLine("....."+tmp.data.network+"_"+tmp.data.balances[0].available_balance+"---"+tmp.data.balances[0].pending_received_balance);
-            //BilleteraBE wallet = new BilleteraBL().getById(3, true);
-            // Debug.WriteLine("---+" + wallet.saldo.ToString());
-
-            //MonedaBE tmp = new MonedaBE();
-            //Debug.WriteLine("===>" + typeof(CuentaBE).IsSubclassOf(typeof(EntityBE)));
-
-            // ClienteBE cli = new ClienteDAL().findById(3);
-            //Debug.WriteLine("____>"+cli.email);
-
-            // DateTime oDate = Convert.ToDateTime("06/10/1987");
-            //Debug.WriteLine("+++++" + oDate.ToString("yyyy-MM-dd HH:mm:ss.fff"));
-
-            CuentaBE cuenta = new CuentaBL().traer(2);
-            Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta);
-
-            Debug.WriteLine("ARS>>>" + wallets["ARS"].direccion);
-            Debug.WriteLine("BTC>>>" + wallets["BTC"].direccion);
-            Debug.WriteLine("LTC>>>" + wallets["LTC"].direccion);
-            Debug.WriteLine("DOG>>>" + wallets["DOG"].direccion);
-
-            //new CuentaBL().traerBilleterasDict
-            /*
-            Dictionary<string, BilleteraBE> walletAccount = new Dictionary<string, BilleteraBE>();
-
-            List<BilleteraBE> wallets = new BilleteraDAL().findByCuenta(2);
- 
-            BilleteraBE arsWallet = wallets.Find(i => i.moneda.cod == "ARS").First();
-
-
-            Debug.WriteLine("@"+wallets.Count.ToString());
-            foreach (BilleteraBE w in wallets)
-            {
-                Debug.WriteLine("--->"+w.moneda.cod+"_"+w.direccion+"***"+w.saldo.ToString());
-            }
-            */
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -372,23 +329,6 @@ namespace UI
 
         private void Main_splash_activity_panel_Paint(object sender, PaintEventArgs e)
         {
-            //ConversionesBE origen = new ConversionesDAL().findByCode("BTC");
-            //ConversionesBE destino = new ConversionesDAL().findByCode("ARS");
-            MonedaBE origen = new MonedaDAL().findByCode("BTC");
-            MonedaBE destino = new MonedaDAL().findByCode("ARS");
-
-            double value = new MonedaBL().convertirMoneda(origen, destino, 1);
-            Debug.WriteLine("---->>>" + value.ToString());
-
-            /*
-            double cantidad = 10;
-            double stepA = (cantidad * origen.valorUSD / origen.cantCripto);
-
-            (stepA*destino.cantCripto/destino.valorUSD)
-            
-            Debug.WriteLine("_______"+conv.moneda.descrip+"////"+conv.cantCripto.ToString());
-            */
-
         }
 
         private void Button1_Click_3(object sender, EventArgs e)
@@ -419,6 +359,17 @@ namespace UI
         private void GestorPermisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new UsersControl().Show();
+        }
+
+        private void Button1_Click_5(object sender, EventArgs e)
+        {
+   
+        }
+
+        private void Button1_Click_6(object sender, EventArgs e)
+        {
+            UsuarioBE user = new UsuarioBL().findById(2);
+            new PermisosFrm(user).Show();
         }
     }
 }

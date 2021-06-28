@@ -52,5 +52,11 @@ namespace BL
         {
             return new PermisoDAL().hasPermission(permisos, id);
         }
+
+        //Cargo lista de permisos para un usuario.
+        public List<Componente> findAll(UsuarioBE user)
+        {
+            return new PermisoUserDAL().FindAll("", user.idusuario);
+        }
     }
 }

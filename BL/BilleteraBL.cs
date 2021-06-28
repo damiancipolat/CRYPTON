@@ -108,6 +108,8 @@ namespace BL
         }
 
         //CONSULTA-----------------------------------------------------------------
+
+        //Obtengo el balance de la cuenta y moneda..
         private string getBalance(string address, MonedaBE moneda)
         {
             //Obtengo las claves de la red que corresponde la moneda.
@@ -123,7 +125,8 @@ namespace BL
             return balance.data.available_balance;
         }
 
-        public BilleteraBE getById(int id, bool updatedBalance=false)
+        //Obtengo info de la billetera, pudiendo tener el saldo actualizado o no.
+        public BilleteraBE getById(long id, bool updatedBalance=false)
         {
             //Recupero de la bd los datos, si no existe retorno null.
             BilleteraBE wallet = new BilleteraDAL().findById(id);
@@ -136,6 +139,13 @@ namespace BL
                 wallet.saldo = float.Parse(this.getBalance(wallet.direccion, wallet.moneda));
             
             return wallet;
+        }
+
+        //Indica si la cuenta tiene X capacidad para cubrir un fondo.
+        public Boolean canCover(BilleteraBE wallet, float saldoCubrir)
+        {
+            BilleteraBE walletFounded = this.getById(wallet.idwallet, true);
+            return walletFounded.saldo > saldoCubrir;
         }
 
         //-------------------------------------------------------------------------

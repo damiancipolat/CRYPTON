@@ -37,21 +37,23 @@ namespace UI
             rama.Text = nodo.Nombre;
             rama.Name = nodo.Cod;
 
-            Debug.WriteLine("->" + nodo.Cod + ":" + nodo.Nombre);
-
             if (nodo != null && nodo.Hijos.Count > 0)
             {
                 foreach (Componente tmp in nodo.Hijos)
                 {
-                    //Hoja
+                    //Rama
                     if (tmp.Hijos != null)
                     {
                         TreeNode newRama = new TreeNode();
-                        newRama.Tag = nodo.Cod;
-                        rama.Nodes.Add(newRama);
-                        Debug.WriteLine("Segunda carga em " + nodo.Cod);
-                        fillTree(tmp, newRama);
+                        newRama.Tag = tmp.Cod;
+                        newRama.Name = tmp.Nombre;
+                        if (!rama.Nodes.ContainsKey(tmp.Cod))
+                        {
+                            rama.Nodes.Add(newRama);
+                            fillTree(tmp, newRama);
+                        }                        
                     }
+                    //Hoja
                     else
                     {
                         TreeNode hoja = new TreeNode();
@@ -59,8 +61,8 @@ namespace UI
                         hoja.Name = tmp.Cod;
                         hoja.Tag = nodo.Cod;//Uso el tag para guardar la ref al padre.
 
-                        Debug.WriteLine(">>" + tmp.Cod + ":" + tmp.Nombre + "/");
-                        rama.Nodes.Add(hoja);
+                        if (rama.Nodes.ContainsKey(tmp.Cod)==false)
+                            rama.Nodes.Add(hoja);
                     }
                 }
             }
@@ -70,7 +72,7 @@ namespace UI
         private void drawPermissionTree()
         {
             //Cargo los permisos.
-            List<Componente> tree = new PermisoUserDAL().FindAll("", this.user.idusuario);
+            List<Componente> tree = new PermisoBL().findAll(this.user);
 
             if (tree.Count > 0)
             {
@@ -90,11 +92,8 @@ namespace UI
 
             foreach (Componente nodo in compList)
             {
-               // if (nodo.esPatente)
-               // {
-                    this.list_perm.Items.Add(nodo.Cod + " - " + nodo.Nombre);
-                    this.permisos.Add(nodo.Cod);
-               // }
+               this.list_perm.Items.Add(nodo.Cod + " - " + nodo.Nombre);
+               this.permisos.Add(nodo.Cod);
             }
         }
 
