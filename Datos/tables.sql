@@ -436,6 +436,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_NOT_F
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRUPT','Integridad corrompida bd usuarios');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_ENTITY_FAIL','Integridad de tabla de usuarios comprometida');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_ERROR','ERROR - integridad comprometida');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_START','Inicio');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
@@ -483,6 +484,24 @@ insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_NAME','Nombre
 insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_SURNAME','Apellido');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_EMAIL','Email');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_TYPE','Tipo de usuario');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_ADD_USER','Alta de usuario');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_USER_MANAGER','Gestion de usuarios');
+
+/*
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_START','Inicio');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_OPERATE','Operar');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BUY','Comprar');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SELL','Vender');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_DEPOSIT','Ingresar saldos');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT','Extraer saldos');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT','IT');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_ADD_USER','Alta de usuario');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_USER_MANAGER','Gestion de usuarios');
+*/
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -527,6 +546,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_NOT_
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_CORRUPT','Integrity corrupted bd users');
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_ENTITY_FAIL','User table integrity compromised');
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_ERROR','ERROR - integrity compromised');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_START','Start');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_LOGIN','Login');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNUP','Register');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNOUT','Sign out');
@@ -574,3 +594,19 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_NAME','Name'
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_SURNAME','Surname');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_EMAIL','Email');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_TYPE','User type');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_ADD_USER','Add new user');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_USER_MANAGER','User control');
+
+/*
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_START','Start');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_LOGIN','Login');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNUP','Signup');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNOUT','Signout');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXIT','Exit');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_OPERATE','Operate');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_BUY','Buy');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SELL','Sell');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_DEPOSIT','Deposit');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXTRACT','Extraer ammount');
+
+*/

@@ -38,7 +38,7 @@
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_start = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_login = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_signup = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_signout = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,7 +157,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
+            this.main_menu_start,
             this.main_menu_operate,
             this.main_menu_it});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -167,43 +167,43 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
-            // inicioToolStripMenuItem
+            // main_menu_start
             // 
-            this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_menu_start.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.main_menu_login,
             this.main_menu_signup,
             this.main_menu_signout,
             this.main_menu_exit});
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.InicioToolStripMenuItem_Click);
+            this.main_menu_start.Name = "main_menu_start";
+            this.main_menu_start.Size = new System.Drawing.Size(59, 24);
+            this.main_menu_start.Text = "Inicio";
+            this.main_menu_start.Click += new System.EventHandler(this.InicioToolStripMenuItem_Click);
             // 
             // main_menu_login
             // 
             this.main_menu_login.Name = "main_menu_login";
-            this.main_menu_login.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_login.Size = new System.Drawing.Size(224, 26);
             this.main_menu_login.Text = "main_menu_login";
             this.main_menu_login.Click += new System.EventHandler(this.Main_menu_login_Click);
             // 
             // main_menu_signup
             // 
             this.main_menu_signup.Name = "main_menu_signup";
-            this.main_menu_signup.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_signup.Size = new System.Drawing.Size(224, 26);
             this.main_menu_signup.Text = "main_menu_signup";
             this.main_menu_signup.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
             // 
             // main_menu_signout
             // 
             this.main_menu_signout.Name = "main_menu_signout";
-            this.main_menu_signout.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_signout.Size = new System.Drawing.Size(224, 26);
             this.main_menu_signout.Text = "main_menu_signout";
             this.main_menu_signout.Click += new System.EventHandler(this.Main_menu_signout_Click);
             // 
             // main_menu_exit
             // 
             this.main_menu_exit.Name = "main_menu_exit";
-            this.main_menu_exit.Size = new System.Drawing.Size(223, 26);
+            this.main_menu_exit.Size = new System.Drawing.Size(224, 26);
             this.main_menu_exit.Text = "main_menu_exit";
             this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -258,7 +258,6 @@
             this.main_menu_it.Name = "main_menu_it";
             this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
-            this.main_menu_it.Visible = false;
             // 
             // main_menu_it_add_user
             // 
@@ -329,7 +328,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_change_language;
         private System.Windows.Forms.Button main_btn_register;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_start;
         private System.Windows.Forms.ToolStripMenuItem main_menu_login;
         private System.Windows.Forms.ToolStripMenuItem main_menu_signup;
         private System.Windows.Forms.ToolStripMenuItem main_menu_signout;

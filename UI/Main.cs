@@ -67,8 +67,9 @@ namespace UI
             this.main_btn_register.Text = Idioma.GetInstance().translate("MAIN_MENU_SIGNUP");
            // this.main_splash_activity.Text = Idioma.GetInstance().translate("MAIN_SPLASH_ACTIVITY");
             this.main_change_language.Text = Idioma.GetInstance().translate("MAIN_CHANGE_LANGUAGE");
-            
-            //Bindeo menu inicio.
+
+            //Bindeo menu inicio.            
+            this.main_menu_start.Text = Idioma.GetInstance().translate("MAIN_MENU_START");
             this.main_change_language.Text = Idioma.GetInstance().translate("MAIN_CHANGE_LANGUAGE");
             this.main_menu_login.Text = Idioma.GetInstance().translate("MAIN_MENU_LOGIN");
             this.main_menu_signup.Text = Idioma.GetInstance().translate("MAIN_MENU_SIGNUP");
@@ -82,6 +83,11 @@ namespace UI
             this.main_menu_search.Text = Idioma.GetInstance().translate("MAIN_MENU_SEARCH");
             this.main_menu_deposit.Text = Idioma.GetInstance().translate("MAIN_MENU_DEPOSIT");
             this.main_menu_extract.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT");
+
+            //bindeo menuit
+            this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
+            this.main_menu_it_add_user.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_ADD_USER");
+            this.main_menu_it_user_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_MANAGER");
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -191,6 +197,9 @@ namespace UI
                 this.main_menu_buy.Visible = false;
                 this.main_menu_deposit.Visible = false;
                 this.main_menu_extract.Visible = false;
+
+                //IT MENU
+                this.main_menu_it.Visible = false;
             }
         }
 
