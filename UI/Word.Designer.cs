@@ -28,48 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.permission_label = new System.Windows.Forms.Label();
-            this.permission_title = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ui_lang_new_key_descrip = new System.Windows.Forms.Label();
+            this.ui_lang_new_key = new System.Windows.Forms.Label();
+            this.ui_lang_new_key_title = new System.Windows.Forms.Label();
             this.txt_key = new System.Windows.Forms.TextBox();
             this.txt_value = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.ui_lang_new_value_title = new System.Windows.Forms.Label();
             this.btn_update_permission = new System.Windows.Forms.Button();
             this.btn_compound_permission = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // permission_label
+            // ui_lang_new_key_descrip
             // 
-            this.permission_label.AutoSize = true;
-            this.permission_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.permission_label.Location = new System.Drawing.Point(26, 70);
-            this.permission_label.Name = "permission_label";
-            this.permission_label.Size = new System.Drawing.Size(429, 20);
-            this.permission_label.TabIndex = 25;
-            this.permission_label.Text = "Escriba la nueva palabra que formara parte del lenguaje.";
-            this.permission_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ui_lang_new_key_descrip.AutoSize = true;
+            this.ui_lang_new_key_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ui_lang_new_key_descrip.Location = new System.Drawing.Point(26, 70);
+            this.ui_lang_new_key_descrip.Name = "ui_lang_new_key_descrip";
+            this.ui_lang_new_key_descrip.Size = new System.Drawing.Size(249, 25);
+            this.ui_lang_new_key_descrip.TabIndex = 25;
+            this.ui_lang_new_key_descrip.Text = "ui_lang_new_key_descrip";
+            this.ui_lang_new_key_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // permission_title
+            // ui_lang_new_key
             // 
-            this.permission_title.AutoSize = true;
-            this.permission_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.permission_title.Location = new System.Drawing.Point(23, 19);
-            this.permission_title.Name = "permission_title";
-            this.permission_title.Size = new System.Drawing.Size(198, 38);
-            this.permission_title.TabIndex = 24;
-            this.permission_title.Text = "Nueva clave";
-            this.permission_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ui_lang_new_key.AutoSize = true;
+            this.ui_lang_new_key.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ui_lang_new_key.Location = new System.Drawing.Point(23, 19);
+            this.ui_lang_new_key.Name = "ui_lang_new_key";
+            this.ui_lang_new_key.Size = new System.Drawing.Size(336, 48);
+            this.ui_lang_new_key.TabIndex = 24;
+            this.ui_lang_new_key.Text = "ui_lang_new_key";
+            this.ui_lang_new_key.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // ui_lang_new_key_title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Clave";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ui_lang_new_key_title.AutoSize = true;
+            this.ui_lang_new_key_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ui_lang_new_key_title.Location = new System.Drawing.Point(26, 111);
+            this.ui_lang_new_key_title.Name = "ui_lang_new_key_title";
+            this.ui_lang_new_key_title.Size = new System.Drawing.Size(240, 25);
+            this.ui_lang_new_key_title.TabIndex = 26;
+            this.ui_lang_new_key_title.Text = "ui_lang_new_key_title";
+            this.ui_lang_new_key_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txt_key
             // 
@@ -87,16 +87,16 @@
             this.txt_value.Size = new System.Drawing.Size(425, 30);
             this.txt_value.TabIndex = 30;
             // 
-            // label2
+            // ui_lang_new_value_title
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Traducción:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ui_lang_new_value_title.AutoSize = true;
+            this.ui_lang_new_value_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ui_lang_new_value_title.Location = new System.Drawing.Point(26, 195);
+            this.ui_lang_new_value_title.Name = "ui_lang_new_value_title";
+            this.ui_lang_new_value_title.Size = new System.Drawing.Size(260, 25);
+            this.ui_lang_new_value_title.TabIndex = 29;
+            this.ui_lang_new_value_title.Text = "ui_lang_new_value_title";
+            this.ui_lang_new_value_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_update_permission
             // 
@@ -128,17 +128,18 @@
             this.Controls.Add(this.btn_update_permission);
             this.Controls.Add(this.btn_compound_permission);
             this.Controls.Add(this.txt_value);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ui_lang_new_value_title);
             this.Controls.Add(this.txt_key);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.permission_label);
-            this.Controls.Add(this.permission_title);
+            this.Controls.Add(this.ui_lang_new_key_title);
+            this.Controls.Add(this.ui_lang_new_key_descrip);
+            this.Controls.Add(this.ui_lang_new_key);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Word";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Word";
+            this.Load += new System.EventHandler(this.Word_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,12 +147,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label permission_label;
-        private System.Windows.Forms.Label permission_title;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ui_lang_new_key_descrip;
+        private System.Windows.Forms.Label ui_lang_new_key;
+        private System.Windows.Forms.Label ui_lang_new_key_title;
         private System.Windows.Forms.TextBox txt_key;
         private System.Windows.Forms.TextBox txt_value;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ui_lang_new_value_title;
         private System.Windows.Forms.Button btn_update_permission;
         private System.Windows.Forms.Button btn_compound_permission;
     }

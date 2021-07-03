@@ -381,6 +381,8 @@ create table idiomas
 );
 
 select * from idiomas
+select * from idioma_palabras where code='RUS'
+
 insert into idiomas(code,descripcion) values('ES','Español');
 insert into idiomas(code,descripcion) values('ENG','English');
 
@@ -393,6 +395,7 @@ create table idioma_palabras
 	valor varchar(100),
 	deleted datetime
 );
+update idioma_palabras set valor='' where code='RUS' and clave='LANG_CHOOSE_TITLE';
 
 --ESPAÑOL
 insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');
@@ -488,22 +491,29 @@ insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_EMAIL','Email
 insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_TYPE','Tipo de usuario');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_ADD_USER','Alta de usuario');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_USER_MANAGER','Gestion de usuarios');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_TITLE','Editor de idiomas');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_DESCRIP','En esta sección podes editar los idiomas.');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_NEW_LANGUAGE','Nuevo');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_REFRESH_LANGUAGE','Actualizar');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_EDIT_LANGUAGE','Editar');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_ADD_LANGUAGE','Agregar');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_DEL_LANGUAGE','Borrar');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_CLOSE_LANGUAGE','Cerrar');
 
-/*
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_START','Inicio');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_OPERATE','Operar');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BUY','Comprar');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SELL','Vender');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_DEPOSIT','Ingresar saldos');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT','Extraer saldos');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT','IT');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_ADD_USER','Alta de usuario');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_USER_MANAGER','Gestion de usuarios');
-*/
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_NEW','Crear nuevo idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_NEW_NAME','Nombre del idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_NEW_OK','Idioma nuevo creado!');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_NEW_REQUIRED','Debe completar un valor para crear el idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_NEW_ERROR','Hubo un error al crear el idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UPD_OK','Hubo un error al crear el idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UPD_REQUIRED','Debe completar un valor');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_COL_CODE','Clave');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_COL_VALUE','Traducción');
+
+insert into idioma_palabras(code,clave,valor) values('ES','UI_LANG_NEW_KEY','Nueva palabra');
+insert into idioma_palabras(code,clave,valor) values('ES','UI_LANG_NEW_KEY_DESCRIP','Escriba la nueva palabra que formara parte del lenguaje.');
+insert into idioma_palabras(code,clave,valor) values('ES','UI_LANG_NEW_KEY_TITLE','Clave');
+insert into idioma_palabras(code,clave,valor) values('ES','UI_LANG_NEW_VALUE_TITLE','Traducción');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -599,20 +609,18 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_EMAIL','Emai
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_TYPE','User type');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_ADD_USER','Add new user');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_USER_MANAGER','User control');
-
-/*
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_START','Start');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_LOGIN','Login');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNUP','Signup');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNOUT','Signout');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXIT','Exit');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_OPERATE','Operate');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_BUY','Buy');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SELL','Sell');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_DEPOSIT','Deposit');
-insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXTRACT','Extraer ammount');
-
-*/
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_TITLE','Language editor');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_DESCRIP','In this section you customize the system language.');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_NEW_LANGUAGE','New');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_REFRESH_LANGUAGE','Refresh');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_EDIT_LANGUAGE','Edit word');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_ADD_LANGUAGE','Add');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_DEL_LANGUAGE','Delete');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_CLOSE_LANGUAGE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','UI_LANG_NEW_KEY','New word');
+insert into idioma_palabras(code,clave,valor) values('ENG','UI_LANG_NEW_KEY_DESCRIP','Write the key value for the new word');
+insert into idioma_palabras(code,clave,valor) values('ENG','UI_LANG_NEW_KEY_TITLE','Key');
+insert into idioma_palabras(code,clave,valor) values('ENG','UI_LANG_NEW_VALUE_TITLE','Traduction');
 
 
 select *  from permiso

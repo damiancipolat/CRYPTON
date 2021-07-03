@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using BL;
 using BE;
-using UI;
+using SL;
 
 namespace UI
 {
@@ -29,14 +29,28 @@ namespace UI
             this.Close();
         }
 
+        private void translateTexts()
+        {
+            this.usr_lang_ui_title.Text = Idioma.GetInstance().translate("USR_LANG_UI_TITLE");
+            this.usr_lang_ui_descrip.Text = Idioma.GetInstance().translate("USR_LANG_UI_DESCRIP");
+            this.usr_lang_ui_new_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_NEW_LANGUAGE");
+            this.usr_lang_ui_refresh_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_REFRESH_LANGUAGE");
+            this.usr_lang_ui_edit_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_EDIT_LANGUAGE");
+            this.usr_lang_ui_add_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_ADD_LANGUAGE");
+            this.usr_lang_ui_del_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_DEL_LANGUAGE");
+            this.usr_lang_ui_close_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_CLOSE_LANGUAGE");
+            this.Text = Idioma.GetInstance().translate("USR_LANG_UI_TITLE");
+        }
+
+
         private void fillDataGrid(Dictionary<string, string> languages)
         {
             this.idioma_list.ReadOnly = true;
             
             //Load columns.
             this.idioma_list.Columns.Clear();
-            this.idioma_list.Columns.Add("Codigo","Codigo");
-            this.idioma_list.Columns.Add("Valor", "Valor");
+            this.idioma_list.Columns.Add(Idioma.GetInstance().translate("USR_LANG_COL_CODE"), Idioma.GetInstance().translate("USR_LANG_COL_CODE"));
+            this.idioma_list.Columns.Add(Idioma.GetInstance().translate("USR_LANG_COL_VALUE"), Idioma.GetInstance().translate("USR_LANG_COL_VALUE"));
 
             foreach (KeyValuePair<string, string> entry in languages)
                 this.idioma_list.Rows.Add(new string[] {entry.Key,entry.Value});
@@ -54,11 +68,15 @@ namespace UI
 
         private void IdiomaPanel_Load(object sender, EventArgs e)
         {
+            //Load languages.
             IdiomaBL langBiz = new IdiomaBL();            
             this.idiomas = langBiz.getList();
             this.idioma_combo.Text = this.idiomas[0].code;
             this.fillDataCombo(idiomas);
             this.fillDataGrid(langBiz.loadWords(this.idiomas[this.idioma_combo.SelectedIndex].code));
+
+            //Translate texte.
+            this.translateTexts();
         }
 
         private void Usr_perm_btn_Click(object sender, EventArgs e)
@@ -86,10 +104,10 @@ namespace UI
                     //Cargo la lista de palabras.
                     this.fillDataGrid(new IdiomaBL().loadWords(this.selectedIdioma.code));
 
-                    MessageBox.Show("Valor actualizado!");
+                    MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_UPD_OK"));
                 }
                 else
-                    MessageBox.Show("Debe completar un valor actualizar");
+                    MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_UPD_REQUIRED"));
             }
         }
 
@@ -115,7 +133,7 @@ namespace UI
             try
             {
                 //Cargo y muestro.
-                InputForm frm = new InputForm("Crear nuevo idioma", "Nombre del idioma");
+                InputForm frm = new InputForm(Idioma.GetInstance().translate("USR_LANG_NEW"), Idioma.GetInstance().translate("USR_LANG_NEW_NAME"));
                 frm.ShowDialog();
 
                 //Obtengo el valor. 
@@ -126,14 +144,14 @@ namespace UI
                     new IdiomaBL().create(value);                   
                     this.reloadLanguages();
 
-                    MessageBox.Show("Idioma nuevo creado!");
+                    MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_OK"));
                 }
                 else
-                    MessageBox.Show("Debe completar un valor para crear el idioma");          
+                    MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_REQUIRED"));          
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error al crear el idioma");
+                MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_ERROR"));
             }
             
         }
