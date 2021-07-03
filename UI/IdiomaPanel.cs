@@ -90,7 +90,6 @@ namespace UI
                 }
                 else
                     MessageBox.Show("Debe completar un valor actualizar");
-
             }
         }
 
@@ -137,6 +136,49 @@ namespace UI
                 MessageBox.Show("Hubo un error al crear el idioma");
             }
             
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (this.idioma_list.SelectedCells.Count > 0)
+            {
+                //Get code from grid.
+                int selectedrowindex = this.idioma_list.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = this.idioma_list.Rows[selectedrowindex];
+
+                //Extract the cell values.
+                string idValue = Convert.ToString(selectedRow.Cells[0].Value);
+                string strValue = Convert.ToString(selectedRow.Cells[1].Value);
+
+                //Show the ui
+                new Word(idValue, this.selectedIdioma).Show();
+            }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            this.selectedIdioma = this.idiomas[this.idioma_combo.SelectedIndex];
+            this.fillDataGrid(new IdiomaBL().loadWords(this.idiomas[this.idioma_combo.SelectedIndex].code));
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (this.idioma_list.SelectedCells.Count > 0)
+            {
+                //Get code from grid.
+                int selectedrowindex = this.idioma_list.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = this.idioma_list.Rows[selectedrowindex];
+                string idValue = Convert.ToString(selectedRow.Cells[0].Value);
+                string strValue = Convert.ToString(selectedRow.Cells[1].Value);
+
+                //Borro la palabra.
+                new IdiomaBL().deleteWord(this.selectedIdioma.code, idValue);
+                MessageBox.Show("Clave borrada.");
+
+                //Actualizo
+                this.selectedIdioma = this.idiomas[this.idioma_combo.SelectedIndex];
+                this.fillDataGrid(new IdiomaBL().loadWords(this.idiomas[this.idioma_combo.SelectedIndex].code));
+            }
         }
     }
 }

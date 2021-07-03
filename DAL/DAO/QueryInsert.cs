@@ -37,6 +37,7 @@ namespace DAL.DAO
         public int query(string sql,bool scalar=false)
         {
             SqlCommand command = new SqlCommand(sql, this.bdConnection);
+            Debug.WriteLine("Generated sql:" + sql);
 
             if (scalar == true)
             {

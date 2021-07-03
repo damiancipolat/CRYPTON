@@ -164,6 +164,12 @@
     <Compile Include="Wallets.Designer.cs">
       <DependentUpon>Wallets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Word.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Word.Designer.cs">
+      <DependentUpon>Word.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BuscadorOfertas.resx">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wallets.resx">
       <DependentUpon>Wallets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Word.resx">
+      <DependentUpon>Word.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

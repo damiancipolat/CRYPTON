@@ -93,6 +93,13 @@ namespace DAL.Idiomas
             return this.getUpdate().query(sql);
         }
 
+        //Borro la palabra.
+        public int deleteWord(string langCode, string langKey)
+        {
+            string sql = "delete from idioma_palabras where code='"+langCode+"' and clave='"+langKey+"';";
+            return this.getDelete().query(sql);
+        }
+
         //Agrega un nuevo idioma.
         public int insert(IdiomaBE idioma)
         {

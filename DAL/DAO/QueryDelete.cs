@@ -63,6 +63,7 @@ namespace DAL.DAO
         public int query(string sql)
         {
             SqlCommand command = new SqlCommand(sql, this.bdConnection);
+            Debug.WriteLine("Generated sql:" + sql);
             return command.ExecuteNonQuery();
         }
 
