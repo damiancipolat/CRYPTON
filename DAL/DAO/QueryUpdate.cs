@@ -69,6 +69,7 @@ namespace DAL.DAO
         //Ejecuta el query directamente que recibe como parametro.
         public int query(string sql)
         {
+            Debug.WriteLine("Generated sql:" + sql);
             SqlCommand command = new SqlCommand(sql, this.bdConnection);
             return command.ExecuteNonQuery();
         }

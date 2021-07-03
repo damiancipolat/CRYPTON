@@ -47,7 +47,7 @@ namespace BL
         private void crearBilleteras(CuentaBE cuenta, ClienteBE cliente)
         {
             BilleteraBL walletBL = new BilleteraBL();
-
+            /*
             //ARS
             int arsId = walletBL.crear(cuenta, cliente, "ARS");
             Bitacora.GetInstance().log("Se ha creado la cuenta en ars pesos id:" + arsId.ToString(), true);
@@ -63,7 +63,7 @@ namespace BL
             //DOG
             int dogId = walletBL.crear(cuenta, cliente, "DOG");
             Bitacora.GetInstance().log("Se ha creado la cuenta en doge id:" + dogId.ToString(), true);
-
+            */
         }
 
         //Traigo la cuenta activa de un cliente.

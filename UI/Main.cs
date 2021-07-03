@@ -380,6 +380,11 @@ namespace UI
             UsuarioBE user = new UsuarioBL().findById(2);
             new PermisosFrm(user).Show();
         }
+
+        private void Button1_Click_7(object sender, EventArgs e)
+        {
+            new IdiomaPanel().Show();
+        }
     }
 }
  

@@ -53,6 +53,7 @@
             this.main_menu_it_add_user = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -182,28 +183,28 @@
             // main_menu_login
             // 
             this.main_menu_login.Name = "main_menu_login";
-            this.main_menu_login.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_login.Size = new System.Drawing.Size(223, 26);
             this.main_menu_login.Text = "main_menu_login";
             this.main_menu_login.Click += new System.EventHandler(this.Main_menu_login_Click);
             // 
             // main_menu_signup
             // 
             this.main_menu_signup.Name = "main_menu_signup";
-            this.main_menu_signup.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_signup.Size = new System.Drawing.Size(223, 26);
             this.main_menu_signup.Text = "main_menu_signup";
             this.main_menu_signup.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
             // 
             // main_menu_signout
             // 
             this.main_menu_signout.Name = "main_menu_signout";
-            this.main_menu_signout.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_signout.Size = new System.Drawing.Size(223, 26);
             this.main_menu_signout.Text = "main_menu_signout";
             this.main_menu_signout.Click += new System.EventHandler(this.Main_menu_signout_Click);
             // 
             // main_menu_exit
             // 
             this.main_menu_exit.Name = "main_menu_exit";
-            this.main_menu_exit.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_exit.Size = new System.Drawing.Size(223, 26);
             this.main_menu_exit.Text = "main_menu_exit";
             this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -262,14 +263,14 @@
             // main_menu_it_add_user
             // 
             this.main_menu_it_add_user.Name = "main_menu_it_add_user";
-            this.main_menu_it_add_user.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_it_add_user.Size = new System.Drawing.Size(199, 26);
             this.main_menu_it_add_user.Text = "Alta de usuarios";
             this.main_menu_it_add_user.Click += new System.EventHandler(this.AltaDeUsuariosToolStripMenuItem_Click);
             // 
             // main_menu_it_user_manager
             // 
             this.main_menu_it_user_manager.Name = "main_menu_it_user_manager";
-            this.main_menu_it_user_manager.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_it_user_manager.Size = new System.Drawing.Size(199, 26);
             this.main_menu_it_user_manager.Text = "Gestor permisos";
             this.main_menu_it_user_manager.Click += new System.EventHandler(this.GestorPermisosToolStripMenuItem_Click);
             // 
@@ -285,11 +286,22 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(173, 231);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_7);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -343,6 +355,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_it;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_add_user;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_user_manager;
+        private System.Windows.Forms.Button button1;
     }
 }
 

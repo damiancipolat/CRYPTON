@@ -79,5 +79,30 @@ namespace DAL.Idiomas
             return result;
         }
 
+        //Grabo una palabra para un lenguaje.
+        public int recordWord(string key,string word, string code)
+        {
+            string sql = "insert into idioma_palabras(code, clave, valor) values('" + code + "', '" + key + "', '" + word + "');";
+            return this.getInsert().query(sql);
+        }
+
+        //Actualizo el valor del idioma.
+        public int updateWord(string langCode,string langKey,string langValue)
+        {            
+            string sql = "update idioma_palabras set valor='" + langValue + "' where code='" + langCode + "' and clave='" + langKey + "';";
+            return this.getUpdate().query(sql);
+        }
+
+        //Agrega un nuevo idioma.
+        public int insert(IdiomaBE idioma)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"code",idioma.code},
+                {"descripcion",idioma.descripcion }
+            };
+
+            return this.getInsert().insertSchema(schema, "idiomas", false);
+        }
     }
 }

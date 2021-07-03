@@ -48,6 +48,7 @@
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="FraudeBL.cs" />
     <Compile Include="ConversorBL.cs" />
+    <Compile Include="IdiomaBL.cs" />
     <Compile Include="MarketBL.cs" />
     <Compile Include="MonedaBL.cs" />
     <Compile Include="OperacionesBL.cs" />

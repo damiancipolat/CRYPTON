@@ -380,6 +380,7 @@ create table idiomas
 	deleted datetime
 );
 
+select * from idiomas
 insert into idiomas(code,descripcion) values('ES','Español');
 insert into idiomas(code,descripcion) values('ENG','English');
 
@@ -612,3 +613,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_DEPOSIT','
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXTRACT','Extraer ammount');
 
 */
+
+
+select *  from permiso
+select * from rol_permiso
