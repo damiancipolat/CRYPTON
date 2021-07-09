@@ -54,6 +54,8 @@
             this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.main_menu_it_lang_manager = new System.Windows.Forms.ToolStripMenuItem();
+            this.button3 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -255,7 +257,8 @@
             // 
             this.main_menu_it.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.main_menu_it_add_user,
-            this.main_menu_it_user_manager});
+            this.main_menu_it_user_manager,
+            this.main_menu_it_lang_manager});
             this.main_menu_it.Name = "main_menu_it";
             this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
@@ -263,14 +266,14 @@
             // main_menu_it_add_user
             // 
             this.main_menu_it_add_user.Name = "main_menu_it_add_user";
-            this.main_menu_it_add_user.Size = new System.Drawing.Size(199, 26);
+            this.main_menu_it_add_user.Size = new System.Drawing.Size(224, 26);
             this.main_menu_it_add_user.Text = "Alta de usuarios";
             this.main_menu_it_add_user.Click += new System.EventHandler(this.AltaDeUsuariosToolStripMenuItem_Click);
             // 
             // main_menu_it_user_manager
             // 
             this.main_menu_it_user_manager.Name = "main_menu_it_user_manager";
-            this.main_menu_it_user_manager.Size = new System.Drawing.Size(199, 26);
+            this.main_menu_it_user_manager.Size = new System.Drawing.Size(224, 26);
             this.main_menu_it_user_manager.Text = "Gestor permisos";
             this.main_menu_it_user_manager.Click += new System.EventHandler(this.GestorPermisosToolStripMenuItem_Click);
             // 
@@ -296,11 +299,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click_7);
             // 
+            // main_menu_it_lang_manager
+            // 
+            this.main_menu_it_lang_manager.Name = "main_menu_it_lang_manager";
+            this.main_menu_it_lang_manager.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_it_lang_manager.Text = "Gestor idiomas";
+            this.main_menu_it_lang_manager.Click += new System.EventHandler(this.GestorIdiomasToolStripMenuItem_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(88, 347);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(78, 82);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -356,6 +377,8 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_add_user;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_user_manager;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_it_lang_manager;
+        private System.Windows.Forms.Button button3;
     }
 }
 

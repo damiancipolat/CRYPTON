@@ -88,6 +88,8 @@ namespace UI
             this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
             this.main_menu_it_add_user.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_ADD_USER");
             this.main_menu_it_user_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_MANAGER");
+            this.main_menu_it_lang_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_LANG_MANAGER");
+            
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -150,6 +152,7 @@ namespace UI
             this.main_menu_it.Visible = permBL.hasPermission(permissions, "ADM003");
             this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, "IT0001");
             this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, "IT0002");
+            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, "IT0003");
         }
 
         //Oculto menu en base a los permisos.
@@ -384,6 +387,16 @@ namespace UI
         private void Button1_Click_7(object sender, EventArgs e)
         {
             new IdiomaPanel().Show();
+        }
+
+        private void GestorIdiomasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new IdiomaPanel().Show();
+        }
+
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            new RegisterUser().Show();
         }
     }
 }

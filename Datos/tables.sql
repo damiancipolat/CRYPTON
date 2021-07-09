@@ -80,6 +80,7 @@ insert into permiso(codpermiso,nombre,es_patente) values('ADM002','Marketing',1)
 insert into permiso(codpermiso,nombre,es_patente) values('ADM003','IT',0);
 insert into permiso(codpermiso,nombre,es_patente) values('IT0001','Alta usuarios',1);
 insert into permiso(codpermiso,nombre,es_patente) values('IT0002','Gestion usuarios',1);
+insert into permiso(codpermiso,nombre,es_patente) values('IT0003','Gestion idiomas',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR001','Extraer',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR002','Ingresar',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR003','Comprar',1);
@@ -93,18 +94,27 @@ create table rol_permiso
 	idusuario bigint
 );
 
-insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R002',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM002',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM003',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','ADM003',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R002',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM002',1);
+
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM003',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','ADM003',1);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR001',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR002',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR003',4);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR002',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR003',1);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR004',4);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR005',4);
+
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','IT0001',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','IT0002',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','IT0003',1);
+
+select * from usuario
+select * from rol_permiso
+select * from permiso
 
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',2);
 
@@ -481,6 +491,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_EMAIL','Email
 insert into idioma_palabras(code,clave,valor) values('ES','USR_COL_TYPE','Tipo de usuario');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_ADD_USER','Alta de usuario');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_USER_MANAGER','Gestion de usuarios');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_LANG_MANAGER','Gestion de idiomas');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_TITLE','Editor de idiomas');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_DESCRIP','En esta sección podes editar los idiomas.');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UI_NEW_LANGUAGE','Nuevo');
@@ -599,6 +610,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_EMAIL','Emai
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_TYPE','User type');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_ADD_USER','Add new user');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_USER_MANAGER','User control');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_LANG_MANAGER','Manage language');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_TITLE','Language editor');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_DESCRIP','In this section you customize the system language.');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_NEW_LANGUAGE','New');
@@ -616,3 +628,31 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_COL_VALUE',
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UPD_OK','Language updated success!!');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_DELETE_CONFIRM','Delete word of language');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_DELETE_CONFIRM_TITLE','Do you want to delete?');
+
+select * from usuario
+
+select * from usuario where  email='vA5nCSUMvlopfeWIQ9xm9g==' and pwd='e10adc3949ba59abbe56e057f20f883e';
+
+
+with recursivo as(
+               select sp2.codrol, sp2.codpermiso, sp2.idusuario from rol_permiso SP2
+               where sp2.codrol ='R003'
+               UNION ALL
+               select sp.codrol, sp.codpermiso, sp.idusuario from rol_permiso sp
+               inner join recursivo r on r.codpermiso = sp.codrol
+            ) 
+            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, r.idusuario
+            from recursivo r
+            inner join permiso p on r.codpermiso = p.codpermiso
+            where r.idusuario = 2 option (maxrecursion 0);
+RUN:with recursivo as(
+               select sp2.codrol, sp2.codpermiso, sp2.idusuario from rol_permiso SP2
+               where sp2.codrol ='R003'
+               UNION ALL
+               select sp.codrol, sp.codpermiso, sp.idusuario from rol_permiso sp
+               inner join recursivo r on r.codpermiso = sp.codrol
+            ) 
+            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, r.idusuario
+            from recursivo r
+            inner join permiso p on r.codpermiso = p.codpermiso
+            where r.idusuario = 2 option (maxrecursion 0);
