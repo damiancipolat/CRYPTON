@@ -96,18 +96,15 @@ namespace UI
                 //Obtengo el valor. 
                 string value = frm.getValue();
 
-                if (value != "")
+                if (value != null)
                 {
                     //Actualizo la palabra.
                     new IdiomaBL().updateWord(this.selectedIdioma.code, idValue, value);
 
                     //Cargo la lista de palabras.
                     this.fillDataGrid(new IdiomaBL().loadWords(this.selectedIdioma.code));
-
                     MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_UPD_OK"));
                 }
-                else
-                    MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_UPD_REQUIRED"));
             }
         }
 
@@ -139,15 +136,13 @@ namespace UI
                 //Obtengo el valor. 
                 string value = frm.getValue();
 
-                if (value != "")
+                if (value != null)
                 {
                     new IdiomaBL().create(value);                   
                     this.reloadLanguages();
 
                     MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_OK"));
-                }
-                else
-                    MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_REQUIRED"));          
+                }         
             }
             catch (Exception ex)
             {
@@ -181,7 +176,14 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (this.idioma_list.SelectedCells.Count > 0)
+            DialogResult dr = MessageBox.Show(
+                Idioma.GetInstance().translate("USR_LANG_DELETE_CONFIRM_TITLE"),
+                Idioma.GetInstance().translate("USR_LANG_DELETE_CONFIRM"),
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (dr == DialogResult.Yes&& this.idioma_list.SelectedCells.Count > 0)
             {
                 //Get code from grid.
                 int selectedrowindex = this.idioma_list.SelectedCells[0].RowIndex;
@@ -191,7 +193,7 @@ namespace UI
 
                 //Borro la palabra.
                 new IdiomaBL().deleteWord(this.selectedIdioma.code, idValue);
-                MessageBox.Show("Clave borrada.");
+                MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_DELETE_OK"));
 
                 //Actualizo
                 this.selectedIdioma = this.idiomas[this.idioma_combo.SelectedIndex];

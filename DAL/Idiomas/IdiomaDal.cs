@@ -73,6 +73,9 @@ namespace DAL.Idiomas
             {
                 //Convierto a diccionario y extraigo los campos de la tabla de palabras "clave" y "valor".
                 Dictionary<string, object> word = new SqlParser().rowToDictionary(row);
+                Debug.WriteLine("Loading word>"+ word["clave"].ToString()+":"+ word["valor"].ToString());
+
+                //Agrego en la lista.
                 result.Add(word["clave"].ToString(), word["valor"].ToString());
             }
 

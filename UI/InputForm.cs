@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class InputForm : Form
     {
-        private string value;
+        private string value=null;
         private string title;
         private string description;
 
