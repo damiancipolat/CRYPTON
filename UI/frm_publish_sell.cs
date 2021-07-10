@@ -56,6 +56,11 @@ namespace UI
 
         private void Publish_ok_Click(object sender, EventArgs e)
         {
+            /*.
+            this.txt_ammount_enter.Text = this.txt_ammount_enter.Text.Replace(',', '.');
+            this.txt_ammount_receive.Text = this.txt_ammount_receive.Text.Replace(',', '.');
+            */
+
             //Traigo valores y conversiones.
             double input = Convert.ToDouble(this.txt_ammount_enter.Text);
             double value = Convert.ToDouble(this.txt_ammount_receive.Text);
@@ -93,8 +98,10 @@ namespace UI
 
             //Creo la orden.
             new OrdenVentaBL().create(order);
+            MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_SUCCESS"));
 
-            MessageBox.Show("exito");
+            //Cierro.
+            this.Close();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -182,6 +189,13 @@ namespace UI
         private void Txt_ammount_enter_Click(object sender, EventArgs e)
         {
             this.applyConversion();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string val = this.txt_ammount_enter.Text;
+            string money = string.Format("{0:C}",val);
+            Debug.WriteLine("--->"+money);
         }
     }
 }
