@@ -85,17 +85,18 @@ namespace DAL
         public int save(OrdenVentaBE venta)
         {
             //Creo un esquema dinamico para ser guardado.
-            /*var schema = new Dictionary<string, Object>{
+            var schema = new Dictionary<string, Object>{
                 { "vendedor",venta.vendedor.idcliente},
                 { "cantidad",venta.cantidad},
-                { "moneda",venta.moneda.cod},
+                { "ofrece",venta.ofrece.cod},
+                { "pide",venta.pide.cod},
                 { "precio",venta.precio},
                 { "fecCreacion",(venta.fecCreacion!=null)?venta.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss"):null},
-                { "fecFin",(venta.fecFin!=null)?venta.fecFin.ToString("yyyy-MM-dd HH:mm:ss"):null}
+                { "fecFin",(venta.fecFin!=null)?venta.fecFin.ToString("yyyy-MM-dd HH:mm:ss"):null},
+                { "ordenEstado",(int)venta.ordenEstado}
             };
-
-            return this.getInsert().insertSchema(schema, "orden_venta", true);*/
-            return 0;
+            
+            return this.getInsert().insertSchema(schema, "orden_venta", true);
         }
 
         //Borra el usuario.

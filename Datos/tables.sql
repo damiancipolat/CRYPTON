@@ -337,7 +337,7 @@ insert into comisiones_valor(descrip,valor) values('Extraccion',2.5);
 create table orden_venta(
 	idorden  bigint identity(1,1) primary key,
 	vendedor bigint,
-	cantidad int,
+	cantidad float,
 	ofrece varchar(10),
 	pide varchar(10),
 	precio float,
@@ -528,6 +528,16 @@ insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_ADD_ERROR','
 insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_ADD_DENY','No se puede agregar un permiso compuesto a uno atomico');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_COMP_ADD_TITLE','Nuevo permiso compuesto');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_COMP_ADD_DESCRIP','Nuevo permiso compuesto');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_TITLE','Publicar ordén de venta');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_INPUT','Tú ofreces:');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_RECEIVE','Tú recibiras:');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY','Moneda:');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_PUBLISH','Publicar');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_MISMATCH','No puede elegirse la misma moneda!');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_EXCED','El valor ingresado no puede superar la cotizacion de mercado de');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_FREE_PRICE','Libre');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_MARKET_PRICE','Cotización actual');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -651,3 +661,13 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_ADD_ERROR',
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_ADD_DENY','It is not allowed to add within an atomic permission');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_COMP_ADD_TITLE','New compound permission');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_COMP_ADD_DESCRIP','New compound permission');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_TITLE','Publish sell order');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_INPUT','You offer:');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_RECEIVE','You receive:');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY','Money:');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_PUBLISH','Publish');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_MISMATCH','You cant chose the same money booth');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_EXCED','You cant exced market price');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_FREE_PRICE','Free price');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_MARKET_PRICE','Market price');

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows.Forms;
 using BL;
+using SL;
 using BE;
 using SL;
 
@@ -21,6 +22,21 @@ namespace UI
         public frm_publish_sell()
         {
             InitializeComponent();
+        }
+
+        //Traducir textos.
+        private void translateTexts()
+        { 
+            this.Text = Idioma.GetInstance().translate("SELL_TITLE");
+            this.sell_title.Text = Idioma.GetInstance().translate("SELL_TITLE");
+            this.sell_input.Text = Idioma.GetInstance().translate("SELL_INPUT");
+            this.sell_receive.Text = Idioma.GetInstance().translate("SELL_RECEIVE");
+            this.sell_money1.Text = Idioma.GetInstance().translate("SELL_MONEY");
+            this.sell_money2.Text = Idioma.GetInstance().translate("SELL_MONEY");
+            this.sell_close.Text = Idioma.GetInstance().translate("SELL_CLOSE");
+            this.sell_publish.Text = Idioma.GetInstance().translate("SELL_PUBLISH");
+            this.radioButton1.Text = Idioma.GetInstance().translate("SELL_MONEY_FREE_PRICE");
+            this.radioButton2.Text = Idioma.GetInstance().translate("SELL_MONEY_MARKET_PRICE");
         }
 
         private void TabPage1_Click(object sender, EventArgs e)
@@ -40,6 +56,8 @@ namespace UI
 
         private void Publish_ok_Click(object sender, EventArgs e)
         {
+            //Traigo valores y conversiones.
+            double input = Convert.ToDouble(this.txt_ammount_enter.Text);
             double value = Convert.ToDouble(this.txt_ammount_receive.Text);
             double cotiz = this.getConversion();
             string destiny = this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString();
@@ -47,16 +65,36 @@ namespace UI
             //Valido que no sea la misma moneda.
             if (this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex] == this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex])
             {
-                MessageBox.Show("No puede elegirse la misma moneda!");
+                MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_MISMATCH"));                
                 return;
             }
 
             //Valido que si esta seleccionado libre eleccion no supere la cotizacion.
             if (this.radioButton1.Checked && value >= cotiz)
             {
-                MessageBox.Show("El valor ingresado no puede superar la cotizacion de mercado de "+cotiz.ToString()+" "+destiny);
+                MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_EXCED") + cotiz.ToString()+" "+destiny);
                 return;
             }
+
+            //Traigo las monedas.
+            MonedaBE origen = new MonedaBL().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
+            MonedaBE destino = new MonedaBL().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
+
+            //Creo el objeto venta.
+            OrdenVentaBE order = new OrdenVentaBE();
+            order.cantidad = input;
+            order.precio = value;
+            order.ofrece = origen;
+            order.pide = destino;
+            order.fecCreacion = DateTime.Now;
+            order.fecFin = DateTime.Now;
+            order.ordenEstado = OrdenEstado.DISPONIBLE;
+            order.vendedor = new ClienteBL().findByUser(Session.GetInstance().getUser()); ;
+
+            //Creo la orden.
+            new OrdenVentaBL().create(order);
+
+            MessageBox.Show("exito");
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -71,6 +109,9 @@ namespace UI
 
         private void Frm_publish_sell_Load(object sender, EventArgs e)
         {
+            //Traduzco textos.
+            this.translateTexts();
+
             //Cargo las monedas.
             List<MonedaBE> monedas = new MonedaBL().getAll();
 
@@ -84,24 +125,6 @@ namespace UI
             //Seteo defaults.
             this.moneda_a_combo.SelectedIndex = 0;
             this.moneda_b_combo.SelectedIndex = 0;
-
-            /*
-            //Seteo default.
-            this.moneda_a_combo.SelectedIndex = 0;
-            this.moneda_b_combo.SelectedIndex = monedas.Count-1;
-            */
-            //Cargo el saldo.            
-            //   ClienteBE cliente = new ClienteBL().findByUser(Session.GetInstance().getUser());
-            //Debug.WriteLine("+++00000+++" + cliente.email.ToString());
-            //Cargo la cuenta.
-            /*    CuentaBE cuenta = new CuentaBL().traerActiva(cliente);
-                Debug.WriteLine("++++++"+cuenta.idcuenta.ToString());
-                //Cargo las billeteras.
-                this.cargarSaldos(cuenta);
-
-                //Seteo valor.
-                this.txt_saldo_money.Text = "Saldo actual:"+this.billeteras[monedas[0].cod].saldo.ToString()+" ("+ monedas[0].cod + ")";
-    */
         }
 
         private void Signup_cancel_Click(object sender, EventArgs e)

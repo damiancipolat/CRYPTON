@@ -17,8 +17,8 @@ namespace BE
     {
         public Int64 idorden;
         public ClienteBE vendedor;
-        public int cantidad;
-        public float precio;
+        public double cantidad;
+        public double precio;
         public MonedaBE ofrece;
         public MonedaBE pide;
         public DateTime fecCreacion;

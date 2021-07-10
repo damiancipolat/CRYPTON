@@ -29,46 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_publish_sell));
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_saldo_money = new System.Windows.Forms.Label();
+            this.sell_title = new System.Windows.Forms.Label();
             this.txt_ammount_enter = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.sell_money1 = new System.Windows.Forms.Label();
             this.moneda_a_combo = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.signup_cancel = new System.Windows.Forms.Button();
-            this.publish_ok = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.sell_input = new System.Windows.Forms.Label();
+            this.sell_close = new System.Windows.Forms.Button();
+            this.sell_publish = new System.Windows.Forms.Button();
+            this.sell_money2 = new System.Windows.Forms.Label();
             this.txt_ammount_receive = new System.Windows.Forms.TextBox();
             this.moneda_b_combo = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.sell_receive = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // sell_title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(103, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quiero vender...";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
-            // 
-            // txt_saldo_money
-            // 
-            this.txt_saldo_money.AutoSize = true;
-            this.txt_saldo_money.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_saldo_money.ForeColor = System.Drawing.Color.Chocolate;
-            this.txt_saldo_money.Location = new System.Drawing.Point(104, 61);
-            this.txt_saldo_money.Name = "txt_saldo_money";
-            this.txt_saldo_money.Size = new System.Drawing.Size(287, 24);
-            this.txt_saldo_money.TabIndex = 1;
-            this.txt_saldo_money.Text = "Saldo actual: XXXXXXX BTC";
+            this.sell_title.AutoSize = true;
+            this.sell_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sell_title.Location = new System.Drawing.Point(103, 16);
+            this.sell_title.Name = "sell_title";
+            this.sell_title.Size = new System.Drawing.Size(180, 48);
+            this.sell_title.TabIndex = 0;
+            this.sell_title.Text = "sell_title";
+            this.sell_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sell_title.Click += new System.EventHandler(this.Label1_Click);
             // 
             // txt_ammount_enter
             // 
@@ -80,15 +68,16 @@
             this.txt_ammount_enter.Click += new System.EventHandler(this.Txt_ammount_enter_Click);
             this.txt_ammount_enter.Leave += new System.EventHandler(this.Txt_ammount_enter_Leave);
             // 
-            // label8
+            // sell_money1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(330, 121);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 17);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Moneda:";
+            this.sell_money1.AutoSize = true;
+            this.sell_money1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sell_money1.Location = new System.Drawing.Point(330, 121);
+            this.sell_money1.Name = "sell_money1";
+            this.sell_money1.Size = new System.Drawing.Size(111, 21);
+            this.sell_money1.TabIndex = 11;
+            this.sell_money1.Text = "sell_money";
+            this.sell_money1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // moneda_a_combo
             // 
@@ -100,47 +89,48 @@
             this.moneda_a_combo.Size = new System.Drawing.Size(155, 37);
             this.moneda_a_combo.TabIndex = 10;
             // 
-            // label7
+            // sell_input
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 121);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 17);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Ingrese la cantidad:";
+            this.sell_input.AutoSize = true;
+            this.sell_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sell_input.Location = new System.Drawing.Point(33, 121);
+            this.sell_input.Name = "sell_input";
+            this.sell_input.Size = new System.Drawing.Size(98, 21);
+            this.sell_input.TabIndex = 9;
+            this.sell_input.Text = "sell_input";
+            this.sell_input.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // signup_cancel
+            // sell_close
             // 
-            this.signup_cancel.BackColor = System.Drawing.Color.Crimson;
-            this.signup_cancel.ForeColor = System.Drawing.Color.White;
-            this.signup_cancel.Location = new System.Drawing.Point(320, 341);
-            this.signup_cancel.Name = "signup_cancel";
-            this.signup_cancel.Size = new System.Drawing.Size(165, 49);
-            this.signup_cancel.TabIndex = 12;
-            this.signup_cancel.Text = "Cancelar";
-            this.signup_cancel.UseVisualStyleBackColor = false;
-            this.signup_cancel.Click += new System.EventHandler(this.Signup_cancel_Click);
+            this.sell_close.BackColor = System.Drawing.Color.Crimson;
+            this.sell_close.ForeColor = System.Drawing.Color.White;
+            this.sell_close.Location = new System.Drawing.Point(320, 341);
+            this.sell_close.Name = "sell_close";
+            this.sell_close.Size = new System.Drawing.Size(165, 49);
+            this.sell_close.TabIndex = 12;
+            this.sell_close.Text = "sell_close";
+            this.sell_close.UseVisualStyleBackColor = false;
+            this.sell_close.Click += new System.EventHandler(this.Signup_cancel_Click);
             // 
-            // publish_ok
+            // sell_publish
             // 
-            this.publish_ok.Location = new System.Drawing.Point(164, 341);
-            this.publish_ok.Name = "publish_ok";
-            this.publish_ok.Size = new System.Drawing.Size(143, 49);
-            this.publish_ok.TabIndex = 11;
-            this.publish_ok.Text = "Publicar";
-            this.publish_ok.UseVisualStyleBackColor = true;
-            this.publish_ok.Click += new System.EventHandler(this.Publish_ok_Click);
+            this.sell_publish.Location = new System.Drawing.Point(164, 341);
+            this.sell_publish.Name = "sell_publish";
+            this.sell_publish.Size = new System.Drawing.Size(143, 49);
+            this.sell_publish.TabIndex = 11;
+            this.sell_publish.Text = "sell_publish";
+            this.sell_publish.UseVisualStyleBackColor = true;
+            this.sell_publish.Click += new System.EventHandler(this.Publish_ok_Click);
             // 
-            // label3
+            // sell_money2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(330, 243);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 17);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Moneda:";
+            this.sell_money2.AutoSize = true;
+            this.sell_money2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sell_money2.Location = new System.Drawing.Point(330, 243);
+            this.sell_money2.Name = "sell_money2";
+            this.sell_money2.Size = new System.Drawing.Size(111, 21);
+            this.sell_money2.TabIndex = 15;
+            this.sell_money2.Text = "sell_money";
             // 
             // txt_ammount_receive
             // 
@@ -163,15 +153,15 @@
             this.moneda_b_combo.Size = new System.Drawing.Size(155, 37);
             this.moneda_b_combo.TabIndex = 14;
             // 
-            // label4
+            // sell_receive
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(30, 208);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Tú recibiras:";
+            this.sell_receive.AutoSize = true;
+            this.sell_receive.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sell_receive.Location = new System.Drawing.Point(30, 208);
+            this.sell_receive.Name = "sell_receive";
+            this.sell_receive.Size = new System.Drawing.Size(119, 21);
+            this.sell_receive.TabIndex = 13;
+            this.sell_receive.Text = "sell_receive";
             // 
             // radioButton1
             // 
@@ -188,7 +178,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(113, 239);
+            this.radioButton2.Location = new System.Drawing.Point(125, 239);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(136, 21);
             this.radioButton2.TabIndex = 18;
@@ -210,22 +200,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 425);
+            this.ClientSize = new System.Drawing.Size(582, 419);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.sell_money2);
             this.Controls.Add(this.txt_ammount_receive);
             this.Controls.Add(this.moneda_b_combo);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.sell_receive);
+            this.Controls.Add(this.sell_money1);
             this.Controls.Add(this.txt_ammount_enter);
             this.Controls.Add(this.moneda_a_combo);
-            this.Controls.Add(this.signup_cancel);
-            this.Controls.Add(this.publish_ok);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txt_saldo_money);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.sell_close);
+            this.Controls.Add(this.sell_publish);
+            this.Controls.Add(this.sell_input);
+            this.Controls.Add(this.sell_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -241,18 +230,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label txt_saldo_money;
+        private System.Windows.Forms.Label sell_title;
         private System.Windows.Forms.ComboBox moneda_a_combo;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label sell_input;
         private System.Windows.Forms.TextBox txt_ammount_enter;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button signup_cancel;
-        private System.Windows.Forms.Button publish_ok;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label sell_money1;
+        private System.Windows.Forms.Button sell_close;
+        private System.Windows.Forms.Button sell_publish;
+        private System.Windows.Forms.Label sell_money2;
         private System.Windows.Forms.TextBox txt_ammount_receive;
         private System.Windows.Forms.ComboBox moneda_b_combo;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label sell_receive;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
