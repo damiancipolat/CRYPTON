@@ -20,13 +20,13 @@ namespace UI
     public partial class PermisosFrm : Form
     {
         private UsuarioBE user;
-        private List<String> permisos;
+        private List<Componente> permisos;
 
         public PermisosFrm(UsuarioBE user)
         {
             InitializeComponent();
             this.user = user;
-            this.permisos = new List<String>();
+            this.permisos = new List<Componente>();
         }
 
         //ARBOL DE PERMISOS ------------------------------------------------
@@ -37,6 +37,7 @@ namespace UI
             Debug.WriteLine("+ ____>" + nodo.Cod + "," + nodo.Nombre + "," + nodo.Hijos.Count().ToString());
             rama.Text = nodo.Nombre;
             rama.Name = nodo.Cod;
+            rama.Tag = nodo.esPatente ? "P" : "F";
 
             if (nodo.Hijos != null)
             {
@@ -45,7 +46,7 @@ namespace UI
                     if (item.Hijos != null)
                     {
                         TreeNode newRama = new TreeNode();
-                        newRama.Tag = item.Cod;
+                        newRama.Tag = "F";
                         newRama.Name = item.Nombre;
                         rama.Nodes.Add(newRama);
 
@@ -57,8 +58,8 @@ namespace UI
                         TreeNode hoja = new TreeNode();
                         hoja.Text = item.Nombre;
                         hoja.Name = item.Cod;
+                        hoja.Tag ="P";
                         rama.Nodes.Add(hoja);
-
                         Debug.WriteLine("hoja ____>" + item.Cod + "," + item.Nombre + ", hoja *");
                     }
                 }
@@ -94,7 +95,7 @@ namespace UI
                 else
                     this.list_perm.Items.Add("Comp >>" + nodo.Cod + " - " + nodo.Nombre);                
 
-                this.permisos.Add(nodo.Cod);
+                this.permisos.Add(nodo);
             }
         }
 
@@ -133,7 +134,7 @@ namespace UI
             if (this.permission_tree.SelectedNode != null)
             {
                 TreeNode node = this.permission_tree.SelectedNode;
-                Debug.WriteLine("-)-)"+node.Text+"__"+node.Name);
+                Debug.WriteLine("-)-)"+node.Text+"__"+node.Name+" tag:"+node.Tag);
             }
         }
 
@@ -174,19 +175,29 @@ namespace UI
             {
                 DialogResult selection = MessageBox.Show("Desea agregar", "Important Question", MessageBoxButtons.YesNo);
 
-                if (selection == DialogResult.Yes)
-                {
+               if (selection == DialogResult.Yes)
+               {
                     //Extraigo valores.
                     TreeNode node = this.permission_tree.SelectedNode;
                     string codRol = node.Name;
-                    string codPermiso = this.permisos[this.list_perm.SelectedIndex];
+
+                    //Obtengo el permiso elegido.
+                    Componente selected = this.permisos[this.list_perm.SelectedIndex];
+                    Debug.WriteLine("@@@ A"+selected.esPatente.ToString()+" B"+node.Tag);
+                    
+                    //Valido el que no se puede agregar un compuesto, en una hoja.
+                    if (node.Tag == "P")
+                    {
+                        MessageBox.Show("No se puede dentro de una patente");
+                        return;
+                    }
 
                     //Bindeo el permiso.
+                    string codPermiso = selected.Cod;
                     new PermisoBL().bindSpecificToUser(codRol, codPermiso, this.user.idusuario);
 
                     //Redibujo el arbol de permisos.
                     this.drawPermissionTree();
-
                 }
             }
             else
