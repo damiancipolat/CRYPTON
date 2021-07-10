@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.search_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.usr_data = new System.Windows.Forms.DataGridView();
-            this.btn_salir = new System.Windows.Forms.Button();
+            this.search_descrip = new System.Windows.Forms.Label();
+            this.moneda_ofrece = new System.Windows.Forms.ComboBox();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.btn_by = new System.Windows.Forms.Label();
+            this.moneda_pide = new System.Windows.Forms.ComboBox();
+            this.usr_search_data = new System.Windows.Forms.DataGridView();
+            this.btn_close = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_ver = new System.Windows.Forms.Button();
+            this.btn_view = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usr_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usr_search_data)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // search_title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscador";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.search_title.AutoSize = true;
+            this.search_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_title.Location = new System.Drawing.Point(98, 12);
+            this.search_title.Name = "search_title";
+            this.search_title.Size = new System.Drawing.Size(201, 40);
+            this.search_title.TabIndex = 0;
+            this.search_title.Text = "search_title";
+            this.search_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -65,128 +65,126 @@
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // search_descrip
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(577, 20);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Aqui podes buscar opciones de ordenes para comprar de distintos usuarios.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
+            this.search_descrip.AutoSize = true;
+            this.search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_descrip.Location = new System.Drawing.Point(102, 52);
+            this.search_descrip.Name = "search_descrip";
+            this.search_descrip.Size = new System.Drawing.Size(155, 25);
+            this.search_descrip.TabIndex = 37;
+            this.search_descrip.Text = "search_descrip";
+            this.search_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.search_descrip.Click += new System.EventHandler(this.Label2_Click);
             // 
-            // comboBox1
+            // moneda_ofrece
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "BITCOIN",
-            "LITECOIN"});
-            this.comboBox1.Location = new System.Drawing.Point(18, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(194, 28);
-            this.comboBox1.TabIndex = 38;
+            this.moneda_ofrece.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.moneda_ofrece.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneda_ofrece.FormattingEnabled = true;
+            this.moneda_ofrece.Location = new System.Drawing.Point(18, 16);
+            this.moneda_ofrece.Name = "moneda_ofrece";
+            this.moneda_ofrece.Size = new System.Drawing.Size(194, 28);
+            this.moneda_ofrece.TabIndex = 38;
             // 
-            // btn_buscar
+            // btn_search
             // 
-            this.btn_buscar.BackColor = System.Drawing.Color.LightGreen;
-            this.btn_buscar.Location = new System.Drawing.Point(470, 11);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(119, 38);
-            this.btn_buscar.TabIndex = 40;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = false;
-            this.btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
+            this.btn_search.BackColor = System.Drawing.Color.LightGreen;
+            this.btn_search.Location = new System.Drawing.Point(470, 11);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(119, 38);
+            this.btn_search.TabIndex = 40;
+            this.btn_search.Text = "btn_search";
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.Btn_buscar_Click);
             // 
-            // label4
+            // btn_by
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(222, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "por";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_by.AutoSize = true;
+            this.btn_by.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_by.Location = new System.Drawing.Point(221, 20);
+            this.btn_by.Name = "btn_by";
+            this.btn_by.Size = new System.Drawing.Size(64, 20);
+            this.btn_by.TabIndex = 41;
+            this.btn_by.Text = "btn_by";
+            this.btn_by.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox2
+            // moneda_pide
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "BITCOIN",
-            "LITECOIN"});
-            this.comboBox2.Location = new System.Drawing.Point(270, 16);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(181, 28);
-            this.comboBox2.TabIndex = 42;
+            this.moneda_pide.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.moneda_pide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneda_pide.FormattingEnabled = true;
+            this.moneda_pide.Location = new System.Drawing.Point(270, 16);
+            this.moneda_pide.Name = "moneda_pide";
+            this.moneda_pide.Size = new System.Drawing.Size(181, 28);
+            this.moneda_pide.TabIndex = 42;
             // 
-            // usr_data
+            // usr_search_data
             // 
-            this.usr_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usr_data.Location = new System.Drawing.Point(26, 175);
-            this.usr_data.Name = "usr_data";
-            this.usr_data.RowHeadersWidth = 51;
-            this.usr_data.RowTemplate.Height = 24;
-            this.usr_data.Size = new System.Drawing.Size(743, 383);
-            this.usr_data.TabIndex = 43;
-            this.usr_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usr_data_CellContentClick);
+            this.usr_search_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usr_search_data.Location = new System.Drawing.Point(26, 175);
+            this.usr_search_data.Name = "usr_search_data";
+            this.usr_search_data.RowHeadersWidth = 51;
+            this.usr_search_data.RowTemplate.Height = 24;
+            this.usr_search_data.Size = new System.Drawing.Size(743, 383);
+            this.usr_search_data.TabIndex = 43;
+            this.usr_search_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usr_data_CellContentClick);
             // 
-            // btn_salir
+            // btn_close
             // 
-            this.btn_salir.Location = new System.Drawing.Point(626, 577);
-            this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(143, 49);
-            this.btn_salir.TabIndex = 44;
-            this.btn_salir.Text = "Cerrar";
-            this.btn_salir.UseVisualStyleBackColor = true;
-            this.btn_salir.Click += new System.EventHandler(this.Publish_ok_Click);
+            this.btn_close.Location = new System.Drawing.Point(626, 577);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(143, 49);
+            this.btn_close.TabIndex = 44;
+            this.btn_close.Text = "btn_close";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.Publish_ok_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_buscar);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.btn_search);
+            this.panel1.Controls.Add(this.moneda_pide);
+            this.panel1.Controls.Add(this.moneda_ofrece);
+            this.panel1.Controls.Add(this.btn_by);
             this.panel1.Location = new System.Drawing.Point(164, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(605, 64);
             this.panel1.TabIndex = 45;
             // 
-            // btn_ver
+            // btn_view
             // 
-            this.btn_ver.BackColor = System.Drawing.Color.Bisque;
-            this.btn_ver.Location = new System.Drawing.Point(26, 95);
-            this.btn_ver.Name = "btn_ver";
-            this.btn_ver.Size = new System.Drawing.Size(119, 64);
-            this.btn_ver.TabIndex = 46;
-            this.btn_ver.Text = "Ver";
-            this.btn_ver.UseVisualStyleBackColor = false;
-            this.btn_ver.Click += new System.EventHandler(this.Button2_Click);
+            this.btn_view.BackColor = System.Drawing.Color.Bisque;
+            this.btn_view.Location = new System.Drawing.Point(26, 95);
+            this.btn_view.Name = "btn_view";
+            this.btn_view.Size = new System.Drawing.Size(119, 64);
+            this.btn_view.TabIndex = 46;
+            this.btn_view.Text = "btn_view";
+            this.btn_view.UseVisualStyleBackColor = false;
+            this.btn_view.Click += new System.EventHandler(this.Button2_Click);
             // 
             // BuscadorOfertas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 650);
-            this.Controls.Add(this.btn_ver);
+            this.Controls.Add(this.btn_view);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_salir);
-            this.Controls.Add(this.usr_data);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_close);
+            this.Controls.Add(this.usr_search_data);
+            this.Controls.Add(this.search_descrip);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.search_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BuscadorOfertas";
-            this.Text = "Buscador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Buscador form";
+            this.Load += new System.EventHandler(this.BuscadorOfertas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usr_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usr_search_data)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -196,16 +194,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label search_title;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridView usr_data;
-        private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.Label search_descrip;
+        private System.Windows.Forms.ComboBox moneda_ofrece;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Label btn_by;
+        private System.Windows.Forms.ComboBox moneda_pide;
+        private System.Windows.Forms.DataGridView usr_search_data;
+        private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_ver;
+        private System.Windows.Forms.Button btn_view;
     }
 }

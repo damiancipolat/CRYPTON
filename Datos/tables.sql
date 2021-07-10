@@ -332,7 +332,7 @@ create table comision_operacion_valor
 insert into comision_operacion_valor(descrip,valor) values('Compra',0.5);
 insert into comision_operacion_valor(descrip,valor) values('Venta',0.5);
 insert into comision_operacion_valor(descrip,valor) values('Extraccion',2.5);
-select * from comision_operacion_valor where idope=2;
+
 --Tabla de ordenes de venta.
 create table orden_venta(
 	idorden  bigint identity(1,1) primary key,
@@ -346,6 +346,9 @@ create table orden_venta(
 	ordenEstado int,
 	deleted datetime
 );
+select * from orden_venta where  ofrece='BTC' and pide='ARS' and ordenEstado=1;
+select * from usuario
+
 
 --Tabla de tipo de ordenes.
 create table orden_estado(
@@ -540,6 +543,18 @@ insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_FREE_PRICE
 insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_MARKET_PRICE','Cotización actual');
 insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_SUCCESS','Ordén publicada!');
 insert into idioma_palabras(code,clave,valor) values('ES','SELL_TAX','Tarifa de impuestos');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_TITLE','Buscador');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_DESCRIP','En esta sección podes buscar por dif ofertas de ventas.');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_BTN_VIEW','Ver');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_BTN_BY','Por');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_BTN_SEARCH','Buscar');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_BTN_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_ID','N°');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_SELLER','Vendedor');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_QTY','Cantidad');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_REQ','Pide');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_PRICE','Precio');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_OFFER','Ofrece');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -675,5 +690,17 @@ insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_FREE_PRIC
 insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_MARKET_PRICE','Market price');
 insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_SUCCESS','Order published success!!');
 insert into idioma_palabras(code,clave,valor) values('ENG','SELL_TAX','Tax rate');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_TITLE','Search');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_DESCRIP','In this section you can search different sell orders.');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_BTN_VIEW','View');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_BTN_BY','By');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_BTN_SEARCH','Search');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_BTN_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_ID','Id');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_SELLER','Seller');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_QTY','Quantity');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_REQ','Request');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_PRICE','Price');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_OFFER','Offer');
 
 select * from idioma_palabras

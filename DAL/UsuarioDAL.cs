@@ -58,7 +58,7 @@ namespace DAL
         }
 
         //Este metodo obtiene en base al ID el usuario.
-        public UsuarioBE findById(int id)
+        public UsuarioBE findById(long id)
         {
             //Busco en la bd por id.
             List<object> result = this.getSelect().selectById("usuario", "idusuario", id);

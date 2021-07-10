@@ -413,6 +413,11 @@ namespace UI
         {
             new frm_publish_sell().Show();
         }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            new BuscadorOfertas().Show();
+        }
     }
 }
  

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using DAL;
 
 namespace DAL
 {
@@ -22,8 +23,15 @@ namespace DAL
             //Bindeo campos con la lista de resultados.
             this.binder.match(fieldData, ordenVenta);
 
-            return ordenVenta;
+            //Actualizo el tipo de usuario que es un enum.            
+            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
 
+            //Bindeo campos.
+            ordenVenta.ofrece = new MonedaDAL().findByCode((string)mapa["ofrece"]);
+            ordenVenta.pide = new MonedaDAL().findByCode((string)mapa["pide"]);
+            ordenVenta.vendedor = new ClienteDAL().findById((long)mapa["vendedor"]);
+
+            return ordenVenta;
         }
 
         //Este metodo obtiene en base al ID el usuario.
@@ -125,8 +133,18 @@ namespace DAL
         //todo:
         public List<OrdenVentaBE> search(MonedaBE ofrece, MonedaBE pide)
         {
+            //Busco en la bd por dni.
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
+                {"ofrece",ofrece.cod},
+                {"pide",pide.cod},
+                {"ordenEstado",(int)OrdenEstado.DISPONIBLE},
+            }, "orden_venta");
+
             //Lista resultado.
             List<OrdenVentaBE> lista = new List<OrdenVentaBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
 
             return lista;
         }

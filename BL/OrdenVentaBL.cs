@@ -35,7 +35,10 @@ namespace BL
 
         public float cotizar(OrdenVentaBE orden,BilleteraBE destino) { return 0; }
 
-        public List<OrdenVentaBE> buscar(MonedaBE ofrece, MonedaBE pide) { return new List<OrdenVentaBE>(); }
+        public List<OrdenVentaBE> buscar(MonedaBE ofrece, MonedaBE pide)
+        {
+            return new OrdenVentaDAL().search(ofrece,pide);
+        }
 
         public bool validar(OrdenVentaBE orden, ClienteBE cliente)
         {
