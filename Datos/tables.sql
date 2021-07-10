@@ -518,6 +518,16 @@ insert into idioma_palabras(code,clave,valor) values('ES','UI_LANG_NEW_VALUE_TIT
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UPD_OK','Lenguage actualizad correctamente');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_DELETE_CONFIRM','Borrar palabra');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_DELETE_CONFIRM_TITLE','¿Seguro queres borrar esta palabra?');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_DEL_CONFIRM_TITLE','Seguro que desea borrar?');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_DEL_CONFIRM_DESCRIP','Eliga una opción');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_DEL_SUCESS','Permiso borrado!');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_DEL_REQ','Debe seleccionar un permiso');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_ADD_CONFIRM_TITLE','¿Quieres agregar un nuevo permiso?');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_ADD_CONFIRM_DESCRIP','Elija una opción');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_ADD_ERROR','Debes elegir items de ambas listas primero');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_ADD_DENY','No se puede agregar un permiso compuesto a uno atomico');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_COMP_ADD_TITLE','Nuevo permiso compuesto');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_COMP_ADD_DESCRIP','Nuevo permiso compuesto');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -631,31 +641,13 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_COL_VALUE',
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UPD_OK','Language updated success!!');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_DELETE_CONFIRM','Delete word of language');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_DELETE_CONFIRM_TITLE','Do you want to delete?');
-
-select * from usuario
-
-select * from usuario where  email='vA5nCSUMvlopfeWIQ9xm9g==' and pwd='e10adc3949ba59abbe56e057f20f883e';
-
-
-with recursivo as(
-               select sp2.codrol, sp2.codpermiso, sp2.idusuario from rol_permiso SP2
-               where sp2.codrol ='R003'
-               UNION ALL
-               select sp.codrol, sp.codpermiso, sp.idusuario from rol_permiso sp
-               inner join recursivo r on r.codpermiso = sp.codrol
-            ) 
-            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, r.idusuario
-            from recursivo r
-            inner join permiso p on r.codpermiso = p.codpermiso
-            where r.idusuario = 2 option (maxrecursion 0);
-RUN:with recursivo as(
-               select sp2.codrol, sp2.codpermiso, sp2.idusuario from rol_permiso SP2
-               where sp2.codrol ='R003'
-               UNION ALL
-               select sp.codrol, sp.codpermiso, sp.idusuario from rol_permiso sp
-               inner join recursivo r on r.codpermiso = sp.codrol
-            ) 
-            select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, r.idusuario
-            from recursivo r
-            inner join permiso p on r.codpermiso = p.codpermiso
-            where r.idusuario = 2 option (maxrecursion 0);
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_DEL_CONFIRM_TITLE','Do you want to delete?');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_DEL_CONFIRM_DESCRIP','Select an option.');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_DEL_SUCESS','Permission deleted!');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_DEL_REQ','You mus select a permission');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_ADD_CONFIRM_TITLE','Do you want add a new permission?');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_ADD_CONFIRM_DESCRIP','Select an option');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_ADD_ERROR','You must select a permission from the tree and later in the permission list');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_ADD_DENY','It is not allowed to add within an atomic permission');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_COMP_ADD_TITLE','New compound permission');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_PERM_COMP_ADD_DESCRIP','New compound permission');

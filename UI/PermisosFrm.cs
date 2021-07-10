@@ -143,7 +143,10 @@ namespace UI
         {
             if (this.permission_tree.SelectedNode != null)
             {
-                DialogResult selection = MessageBox.Show("Desea borrar", "Important Question", MessageBoxButtons.YesNo);
+                DialogResult selection = MessageBox.Show(
+                    Idioma.GetInstance().translate("USR_PERM_DEL_CONFIRM_TITLE"), 
+                    Idioma.GetInstance().translate("USR_PERM_DEL_CONFIRM_DESCRIP"),
+                    MessageBoxButtons.YesNo);
 
                 if (selection == DialogResult.Yes)
                 {
@@ -153,12 +156,12 @@ namespace UI
 
                     //Draw the tree.
                     this.drawPermissionTree();
-                    MessageBox.Show("Permiso borrado!");
+                    MessageBox.Show(Idioma.GetInstance().translate("USR_PERM_DEL_SUCESS"));
                 }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un permiso primero");
+                MessageBox.Show(Idioma.GetInstance().translate("USR_PERM_DEL_REQ"));
             }
         }
 
@@ -173,7 +176,10 @@ namespace UI
         {            
             if (this.permission_tree.SelectedNode != null&& this.list_perm.SelectedItem != null)
             {
-                DialogResult selection = MessageBox.Show("Desea agregar", "Important Question", MessageBoxButtons.YesNo);
+                DialogResult selection = MessageBox.Show(
+                    Idioma.GetInstance().translate("USR_PERM_ADD_CONFIRM_TITLE"),
+                    Idioma.GetInstance().translate("USR_PERM_ADD_CONFIRM_DESCRIP"), 
+                    MessageBoxButtons.YesNo);
 
                if (selection == DialogResult.Yes)
                {
@@ -183,12 +189,11 @@ namespace UI
 
                     //Obtengo el permiso elegido.
                     Componente selected = this.permisos[this.list_perm.SelectedIndex];
-                    Debug.WriteLine("@@@ A"+selected.esPatente.ToString()+" B"+node.Tag);
                     
                     //Valido el que no se puede agregar un compuesto, en una hoja.
                     if (node.Tag == "P")
                     {
-                        MessageBox.Show("No se puede dentro de una patente");
+                        MessageBox.Show(Idioma.GetInstance().translate("USR_PERM_ADD_DENY"));
                         return;
                     }
 
@@ -202,13 +207,15 @@ namespace UI
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un permiso en el arbol y en la lista de permisos.");
+                MessageBox.Show(Idioma.GetInstance().translate("USR_PERM_ADD_ERROR"));
             }
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            InputForm input = new InputForm("Nuevo permiso compuesto", "escriba aqui");            
+            InputForm input = new InputForm(
+                Idioma.GetInstance().translate("USR_PERM_COMP_ADD_TITLE"),
+                Idioma.GetInstance().translate("USR_PERM_COMP_ADD_DESCRIP"));
             input.ShowDialog();
 
             string value = input.getValue();
