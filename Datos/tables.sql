@@ -205,10 +205,10 @@ create table conversiones(
 	deleted datetime
 );
 
-insert into conversiones(codCripto,cantCripto,valorUSD) values('BTC',1,32837.60);
-insert into conversiones(codCripto,cantCripto,valorUSD) values('LTC',1,500);
-insert into conversiones(codCripto,cantCripto,valorUSD) values('DOG',1,100);
-insert into conversiones(codCripto,cantCripto,valorUSD) values('ARS',1,160);
+insert into conversiones(codCripto,cantCripto,valorUSD) values('BTC',1,33655.80);
+insert into conversiones(codCripto,cantCripto,valorUSD) values('LTC',1,132.82);
+insert into conversiones(codCripto,cantCripto,valorUSD) values('DOG',1,0.216820);
+insert into conversiones(codCripto,cantCripto,valorUSD) values('ARS',1,0.010);
 select * from conversiones
 
 --Tabla de contactos.

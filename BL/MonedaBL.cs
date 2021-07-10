@@ -22,7 +22,7 @@ namespace BL
         }
 
         //Convierto de usd a una moneda X.
-        private double convertToMoney(MonedaBE moneda, double usdAmmount)
+        private double convertFromUSD(MonedaBE moneda, double usdAmmount)
         {
             //Traigo info de conversion.
             ConversionesBE conversion = new ConversionesDAL().findByCode(moneda.cod);            
@@ -30,15 +30,21 @@ namespace BL
         }
 
         //Convierto un valor X a Y.
-        public double convertirMoneda(MonedaBE origen, MonedaBE destino, double cantidad)
+        public double convertMoney(MonedaBE origen, MonedaBE destino, double cantidad)
         {
-            return this.convertToMoney(destino,this.convertToUsd(origen, cantidad));
+            return this.convertFromUSD(destino,this.convertToUsd(origen, cantidad));
         }
 
         //Traigo la lista de monedas.
         public List<MonedaBE> getAll()
         {
             return new MonedaDAL().findAll();
+        }
+
+        //Traigo una moneda por su codigo
+        public MonedaBE getByCode(string code)
+        {
+            return new MonedaDAL().findByCode(code);
         }
     }
 }

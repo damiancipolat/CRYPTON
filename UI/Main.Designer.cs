@@ -52,11 +52,12 @@
             this.main_menu_it = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_add_user = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_it_lang_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.main_menu_it_lang_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -235,6 +236,7 @@
             this.main_menu_sell.Name = "main_menu_sell";
             this.main_menu_sell.Size = new System.Drawing.Size(224, 26);
             this.main_menu_sell.Text = "main_menu_sell";
+            this.main_menu_sell.Click += new System.EventHandler(this.Main_menu_sell_Click);
             // 
             // main_menu_search
             // 
@@ -267,16 +269,23 @@
             // main_menu_it_add_user
             // 
             this.main_menu_it_add_user.Name = "main_menu_it_add_user";
-            this.main_menu_it_add_user.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_it_add_user.Size = new System.Drawing.Size(199, 26);
             this.main_menu_it_add_user.Text = "Alta de usuarios";
             this.main_menu_it_add_user.Click += new System.EventHandler(this.AltaDeUsuariosToolStripMenuItem_Click);
             // 
             // main_menu_it_user_manager
             // 
             this.main_menu_it_user_manager.Name = "main_menu_it_user_manager";
-            this.main_menu_it_user_manager.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_it_user_manager.Size = new System.Drawing.Size(199, 26);
             this.main_menu_it_user_manager.Text = "Gestor permisos";
             this.main_menu_it_user_manager.Click += new System.EventHandler(this.GestorPermisosToolStripMenuItem_Click);
+            // 
+            // main_menu_it_lang_manager
+            // 
+            this.main_menu_it_lang_manager.Name = "main_menu_it_lang_manager";
+            this.main_menu_it_lang_manager.Size = new System.Drawing.Size(199, 26);
+            this.main_menu_it_lang_manager.Text = "Gestor idiomas";
+            this.main_menu_it_lang_manager.Click += new System.EventHandler(this.GestorIdiomasToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -300,13 +309,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click_7);
             // 
-            // main_menu_it_lang_manager
-            // 
-            this.main_menu_it_lang_manager.Name = "main_menu_it_lang_manager";
-            this.main_menu_it_lang_manager.Size = new System.Drawing.Size(224, 26);
-            this.main_menu_it_lang_manager.Text = "Gestor idiomas";
-            this.main_menu_it_lang_manager.Click += new System.EventHandler(this.GestorIdiomasToolStripMenuItem_Click);
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(170, 260);
@@ -327,11 +329,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click_1);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(170, 349);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 28);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "vender";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -392,6 +405,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_lang_manager;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

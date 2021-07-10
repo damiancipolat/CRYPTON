@@ -403,6 +403,16 @@ namespace UI
         {
             new UsersControl().Show();
         }
+
+        private void Main_menu_sell_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            new frm_publish_sell().Show();
+        }
     }
 }
  

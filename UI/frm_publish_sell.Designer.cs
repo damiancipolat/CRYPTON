@@ -77,6 +77,8 @@
             this.txt_ammount_enter.Name = "txt_ammount_enter";
             this.txt_ammount_enter.Size = new System.Drawing.Size(279, 34);
             this.txt_ammount_enter.TabIndex = 12;
+            this.txt_ammount_enter.Click += new System.EventHandler(this.Txt_ammount_enter_Click);
+            this.txt_ammount_enter.Leave += new System.EventHandler(this.Txt_ammount_enter_Leave);
             // 
             // label8
             // 
@@ -118,6 +120,7 @@
             this.signup_cancel.TabIndex = 12;
             this.signup_cancel.Text = "Cancelar";
             this.signup_cancel.UseVisualStyleBackColor = false;
+            this.signup_cancel.Click += new System.EventHandler(this.Signup_cancel_Click);
             // 
             // publish_ok
             // 
@@ -146,6 +149,9 @@
             this.txt_ammount_receive.Name = "txt_ammount_receive";
             this.txt_ammount_receive.Size = new System.Drawing.Size(278, 34);
             this.txt_ammount_receive.TabIndex = 16;
+            this.txt_ammount_receive.Click += new System.EventHandler(this.Txt_ammount_receive_Click);
+            this.txt_ammount_receive.TextChanged += new System.EventHandler(this.Txt_ammount_receive_TextChanged);
+            this.txt_ammount_receive.Enter += new System.EventHandler(this.Txt_ammount_receive_Enter);
             // 
             // moneda_b_combo
             // 
@@ -181,6 +187,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(113, 239);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(136, 21);
