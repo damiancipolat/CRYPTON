@@ -16,6 +16,6 @@ namespace BE
     {
         public long idope;
         public string descrip;
-        public float valor;
+        public double valor;
     }
 }

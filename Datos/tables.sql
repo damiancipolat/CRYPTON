@@ -322,17 +322,17 @@ create table comisiones(
 );
 
 --Tabla de comisiones - valor
-create table comisiones_valor
+create table comision_operacion_valor
 (
 	idope bigint identity(1,1) primary key,
 	descrip varchar(100),
 	valor float
 );
 
-insert into comisiones_valor(descrip,valor) values('Compra',0.5);
-insert into comisiones_valor(descrip,valor) values('Venta',0.5);
-insert into comisiones_valor(descrip,valor) values('Extraccion',2.5);
-
+insert into comision_operacion_valor(descrip,valor) values('Compra',0.5);
+insert into comision_operacion_valor(descrip,valor) values('Venta',0.5);
+insert into comision_operacion_valor(descrip,valor) values('Extraccion',2.5);
+select * from comision_operacion_valor where idope=2;
 --Tabla de ordenes de venta.
 create table orden_venta(
 	idorden  bigint identity(1,1) primary key,
@@ -539,6 +539,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_EXCED','El
 insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_FREE_PRICE','Libre');
 insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_MARKET_PRICE','Cotización actual');
 insert into idioma_palabras(code,clave,valor) values('ES','SELL_MONEY_SUCCESS','Ordén publicada!');
+insert into idioma_palabras(code,clave,valor) values('ES','SELL_TAX','Tarifa de impuestos');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -673,5 +674,6 @@ insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_EXCED','Y
 insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_FREE_PRICE','Free price');
 insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_MARKET_PRICE','Market price');
 insert into idioma_palabras(code,clave,valor) values('ENG','SELL_MONEY_SUCCESS','Order published success!!');
+insert into idioma_palabras(code,clave,valor) values('ENG','SELL_TAX','Tax rate');
 
-select * from orden_venta
+select * from idioma_palabras

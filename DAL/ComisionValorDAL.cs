@@ -30,7 +30,7 @@ namespace DAL
         public ComisionValorBE findById(long id)
         {
             //Busco en la bd por id.
-            List<object> result = this.getSelect().selectById("comisiones_valor", "idope", id);
+            List<object> result = this.getSelect().selectById("comision_operacion_valor", "idope", id);
 
             //Bindeo con el esquema.
             return this.bindSchema((List<object>)result[0]);
@@ -41,7 +41,7 @@ namespace DAL
         public List<ComisionValorBE> findAll()
         {
             //Busco en la bd por id.
-            List<object> result = this.getSelect().selectAll("comisiones_valor");
+            List<object> result = this.getSelect().selectAll("comision_operacion_valor");
 
             //Lista resultado.
             List<ComisionValorBE> lista = new List<ComisionValorBE>();
@@ -55,7 +55,7 @@ namespace DAL
         //Borra el usuario.
         public int delete(long id)
         {
-            return this.getDelete().deleteById("idope", id, "comisiones_valor");
+            return this.getDelete().deleteById("idope", id, "comision_operacion_valor");
         }
 
         //Actualizar el usuario.
@@ -67,7 +67,7 @@ namespace DAL
                 { "valor",comision.valor}
             };
 
-            return this.getUpdate().updateSchemaById(schema, "comisiones_valor", "idope", comision.idope);
+            return this.getUpdate().updateSchemaById(schema, "comision_operacion_valor", "idope", comision.idope);
         }
 
         //Agrega un nuevo usuario.
@@ -79,7 +79,7 @@ namespace DAL
                 { "valor",comision.valor}
             };
 
-            return this.getInsert().insertSchema(schema, "comisiones_valor", true);
+            return this.getInsert().insertSchema(schema, "comision_operacion_valor", true);
         }
     }
 }

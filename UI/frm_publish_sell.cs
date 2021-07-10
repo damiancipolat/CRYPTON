@@ -18,6 +18,7 @@ namespace UI
     public partial class frm_publish_sell : Form
     {
         private Dictionary<string, BilleteraBE> billeteras;
+        private double tax;
 
         public frm_publish_sell()
         {
@@ -37,6 +38,7 @@ namespace UI
             this.sell_publish.Text = Idioma.GetInstance().translate("SELL_PUBLISH");
             this.radioButton1.Text = Idioma.GetInstance().translate("SELL_MONEY_FREE_PRICE");
             this.radioButton2.Text = Idioma.GetInstance().translate("SELL_MONEY_MARKET_PRICE");
+            this.sell_tax.Text = Idioma.GetInstance().translate("SELL_TAX");
         }
 
         private void TabPage1_Click(object sender, EventArgs e)
@@ -109,11 +111,6 @@ namespace UI
 
         }
 
-        private void cargarSaldos(CuentaBE cuenta)
-        {
-            //this.billeteras = new CuentaBL().traerBilleteras(cuenta);
-        }
-
         private void Frm_publish_sell_Load(object sender, EventArgs e)
         {
             //Traduzco textos.
@@ -132,6 +129,10 @@ namespace UI
             //Seteo defaults.
             this.moneda_a_combo.SelectedIndex = 0;
             this.moneda_b_combo.SelectedIndex = 0;
+
+            //Cargo el label.
+            this.tax = new ComisionValorBL().getSellCost();
+            this.sell_tax.Text = Idioma.GetInstance().translate("SELL_TAX")+" "+ tax.ToString()+"%";
         }
 
         private void Signup_cancel_Click(object sender, EventArgs e)
@@ -147,7 +148,13 @@ namespace UI
 
             //Convierto input a valor.
             double inputValue = Convert.ToDouble(this.txt_ammount_enter.Text);
-            return new MonedaBL().convertMoney(origen, destino, inputValue);
+            double result = new MonedaBL().convertMoney(origen, destino, inputValue);
+
+            //Actualizo los costos.
+            double taxValue = (result * this.tax) / 100;
+            this.sell_tax.Text=Idioma.GetInstance().translate("SELL_TAX") + " " + tax.ToString() + "% = "+taxValue.ToString()+destino.cod;
+
+            return result;
         }
 
         private void applyConversion()

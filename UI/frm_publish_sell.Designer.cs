@@ -43,7 +43,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sell_tax = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.sell_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sell_title.Location = new System.Drawing.Point(103, 16);
             this.sell_title.Name = "sell_title";
-            this.sell_title.Size = new System.Drawing.Size(180, 48);
+            this.sell_title.Size = new System.Drawing.Size(144, 38);
             this.sell_title.TabIndex = 0;
             this.sell_title.Text = "sell_title";
             this.sell_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -75,7 +75,7 @@
             this.sell_money1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sell_money1.Location = new System.Drawing.Point(330, 121);
             this.sell_money1.Name = "sell_money1";
-            this.sell_money1.Size = new System.Drawing.Size(111, 21);
+            this.sell_money1.Size = new System.Drawing.Size(89, 17);
             this.sell_money1.TabIndex = 11;
             this.sell_money1.Text = "sell_money";
             this.sell_money1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -96,7 +96,7 @@
             this.sell_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sell_input.Location = new System.Drawing.Point(33, 121);
             this.sell_input.Name = "sell_input";
-            this.sell_input.Size = new System.Drawing.Size(98, 21);
+            this.sell_input.Size = new System.Drawing.Size(78, 17);
             this.sell_input.TabIndex = 9;
             this.sell_input.Text = "sell_input";
             this.sell_input.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -105,7 +105,7 @@
             // 
             this.sell_close.BackColor = System.Drawing.Color.Crimson;
             this.sell_close.ForeColor = System.Drawing.Color.White;
-            this.sell_close.Location = new System.Drawing.Point(320, 341);
+            this.sell_close.Location = new System.Drawing.Point(320, 381);
             this.sell_close.Name = "sell_close";
             this.sell_close.Size = new System.Drawing.Size(165, 49);
             this.sell_close.TabIndex = 12;
@@ -115,7 +115,7 @@
             // 
             // sell_publish
             // 
-            this.sell_publish.Location = new System.Drawing.Point(164, 341);
+            this.sell_publish.Location = new System.Drawing.Point(164, 381);
             this.sell_publish.Name = "sell_publish";
             this.sell_publish.Size = new System.Drawing.Size(143, 49);
             this.sell_publish.TabIndex = 11;
@@ -129,7 +129,7 @@
             this.sell_money2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sell_money2.Location = new System.Drawing.Point(330, 243);
             this.sell_money2.Name = "sell_money2";
-            this.sell_money2.Size = new System.Drawing.Size(111, 21);
+            this.sell_money2.Size = new System.Drawing.Size(89, 17);
             this.sell_money2.TabIndex = 15;
             this.sell_money2.Text = "sell_money";
             // 
@@ -160,7 +160,7 @@
             this.sell_receive.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sell_receive.Location = new System.Drawing.Point(30, 208);
             this.sell_receive.Name = "sell_receive";
-            this.sell_receive.Size = new System.Drawing.Size(119, 21);
+            this.sell_receive.Size = new System.Drawing.Size(95, 17);
             this.sell_receive.TabIndex = 13;
             this.sell_receive.Text = "sell_receive";
             // 
@@ -197,22 +197,23 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // sell_tax
             // 
-            this.button1.Location = new System.Drawing.Point(372, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.sell_tax.AutoSize = true;
+            this.sell_tax.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sell_tax.ForeColor = System.Drawing.Color.DarkOrange;
+            this.sell_tax.Location = new System.Drawing.Point(26, 336);
+            this.sell_tax.Name = "sell_tax";
+            this.sell_tax.Size = new System.Drawing.Size(63, 17);
+            this.sell_tax.TabIndex = 22;
+            this.sell_tax.Text = "sell_tax";
             // 
             // frm_publish_sell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 419);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(582, 469);
+            this.Controls.Add(this.sell_tax);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -256,6 +257,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label sell_tax;
     }
 }
