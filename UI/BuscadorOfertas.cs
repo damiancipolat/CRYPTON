@@ -51,6 +51,16 @@ namespace UI
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            if (this.usr_search_data.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = this.usr_search_data.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = this.usr_search_data.Rows[selectedrowindex];
+                string idValue = Convert.ToString(selectedRow.Cells[0].Value);
+                MessageBox.Show(idValue);
+               // UsuarioBE user = new UsuarioBL().findById(Int32.Parse(idValue));
+               // new PermisosFrm(user).Show();
+
+            }
 
         }
 
