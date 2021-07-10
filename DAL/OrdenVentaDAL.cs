@@ -117,20 +117,21 @@ namespace DAL
         public int update(OrdenVentaBE venta)
         {
             //Creo un esquema dinamico para ser guardado.
-            /* var schema = new Dictionary<string, Object>{
-                 { "vendedor",venta.vendedor.idcliente},
-                 { "cantidad",venta.cantidad},
-                 { "moneda",venta.moneda.cod},
-                 { "precio",venta.precio},
-                 { "fecCreacion",venta.fecCreacion},
-                 { "fecFin",venta.fecFin}
-             };
+            var schema = new Dictionary<string, Object>{
+                { "vendedor",venta.vendedor.idcliente},
+                { "cantidad",venta.cantidad},
+                { "ofrece",venta.ofrece.cod},
+                { "pide",venta.pide.cod},
+                { "precio",venta.precio},
+                { "fecCreacion",(venta.fecCreacion!=null)?venta.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss"):null},
+                { "fecFin",(venta.fecFin!=null)?venta.fecFin.ToString("yyyy-MM-dd HH:mm:ss"):null},
+                { "ordenEstado",(int)venta.ordenEstado}
+            };
 
-             return this.getUpdate().updateSchemaById(schema, "orden_venta", "idorden", venta.idorden);*/
-            return 0;
+            return this.getUpdate().updateSchemaById(schema, "orden_venta", "idorden", venta.idorden);;
         }
 
-        //todo:
+        //Buscar por monedas
         public List<OrdenVentaBE> search(MonedaBE ofrece, MonedaBE pide)
         {
             //Busco en la bd por dni.
@@ -138,6 +139,23 @@ namespace DAL
                 {"ofrece",ofrece.cod},
                 {"pide",pide.cod},
                 {"ordenEstado",(int)OrdenEstado.DISPONIBLE},
+            }, "orden_venta");
+
+            //Lista resultado.
+            List<OrdenVentaBE> lista = new List<OrdenVentaBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
+
+        //Buscar de un vendedor.
+        public List<OrdenVentaBE> bySeller(ClienteBE seller)
+        {
+            //Busco en la bd por dni.
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
+                {"vendedor",seller.idcliente}
             }, "orden_venta");
 
             //Lista resultado.

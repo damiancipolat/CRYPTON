@@ -359,6 +359,7 @@ create table orden_estado(
 insert into orden_estado(descrip) values('Disponible');
 insert into orden_estado(descrip) values('Vendida');
 insert into orden_estado(descrip) values('Expirada');
+insert into orden_estado(descrip) values('Finalizada');
 
 --Tabla de ordenes de compra.
 create table orden_compra(
@@ -555,6 +556,12 @@ insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_QTY','Cant
 insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_REQ','Pide');
 insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_PRICE','Precio');
 insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_OFFER','Ofrece');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_COL_STATUS','Estado');
+insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_ORDERS_TITLE','Mis ordenes de venta');
+insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_ORDERS_PAUSE','Finalizar');
+insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_FINISH_TITLE','¿Seguro desea finalizar esta orden de venta?');
+insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_FINISH_CONFIRM','Escoja una opción.');
+insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_FINISH_SUCCESS','Orden finalizada con exito!');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -702,5 +709,12 @@ insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_QTY','Qua
 insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_REQ','Request');
 insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_PRICE','Price');
 insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_OFFER','Offer');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_COL_STATUS','Status');
+insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_ORDERS_TITLE','My sell orders');
+insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_ORDERS_PAUSE','Finish order');
+insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_FINISH_TITLE','Do you want to finish this sell order?');
+insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_FINISH_CONFIRM','Select an option');
+insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_FINISH_SUCCESS','Order finished success!');
 
 select * from idioma_palabras
+select * from orden_venta

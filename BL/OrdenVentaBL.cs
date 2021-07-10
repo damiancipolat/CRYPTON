@@ -23,6 +23,18 @@ namespace BL
             return new OrdenVentaDAL().update(venta);
         }
 
+        public int finish(long idorden)
+        {
+            OrdenVentaBE order = this.load(idorden);
+
+            if (order == null)
+                throw new Exception("Order not found!");
+
+            //Doy de baja la orden.    
+            order.ordenEstado = OrdenEstado.FINALIZADA;
+            return new OrdenVentaDAL().update(order);
+        }
+
         public int delete(OrdenVentaBE venta)
         {
             return new OrdenVentaDAL().delete(venta.idorden);
@@ -38,6 +50,11 @@ namespace BL
         public List<OrdenVentaBE> buscar(MonedaBE ofrece, MonedaBE pide)
         {
             return new OrdenVentaDAL().search(ofrece,pide);
+        }
+
+        public List<OrdenVentaBE> orderBySeller(ClienteBE cliente)
+        {
+            return new OrdenVentaDAL().bySeller(cliente);
         }
 
         public bool validar(OrdenVentaBE orden, ClienteBE cliente)

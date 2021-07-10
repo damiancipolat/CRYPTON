@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using BE.Permisos;
+using DAL;
 
 namespace SL
 {
@@ -38,6 +39,17 @@ namespace SL
         public UsuarioBE getUser()
         {
             return this.user;
+        }
+
+        //Get the active if is a client.
+        public ClienteBE getActiveClient()
+        {
+            UsuarioBE me = this.getUser();
+
+            if (me.tipoUsuario == UsuarioTipo.CLIENTE)
+                return new ClienteDAL().findByUser(me);
+            else
+                throw new Exception("Is not allow to request a client when is no the current type logged");
         }
 
         //Start the session bind values.

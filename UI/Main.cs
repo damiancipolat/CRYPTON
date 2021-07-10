@@ -418,6 +418,11 @@ namespace UI
         {
             new BuscadorOfertas().Show();
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            new MySellOrders().Show();
+        }
     }
 }
  

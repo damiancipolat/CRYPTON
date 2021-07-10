@@ -10,7 +10,8 @@ namespace BE
     {
         DISPONIBLE=1,
         VENDIDA=2,
-        EXPIRADA=3
+        EXPIRADA=3,
+        FINALIZADA = 4
     }
 
     public class OrdenVentaBE : EntityBE

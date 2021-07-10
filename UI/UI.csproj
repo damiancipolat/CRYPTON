@@ -118,6 +118,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MySellOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MySellOrders.Designer.cs">
+      <DependentUpon>MySellOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notifications\INotification.cs" />
     <Compile Include="Notifications\Notificator.cs" />
     <Compile Include="OperacionView.cs">
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MySellOrders.resx">
+      <DependentUpon>MySellOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperacionView.resx">
       <DependentUpon>OperacionView.cs</DependentUpon>
