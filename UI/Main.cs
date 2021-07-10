@@ -398,6 +398,11 @@ namespace UI
         {
             new RegisterUser().Show();
         }
+
+        private void Button4_Click_1(object sender, EventArgs e)
+        {
+            new UsersControl().Show();
+        }
     }
 }
  

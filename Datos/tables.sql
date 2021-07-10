@@ -73,14 +73,16 @@ create table permiso
 
 --Esquema de roles
 insert into permiso(codpermiso,nombre,es_patente) values('R001','Usuario',0);
-insert into permiso(codpermiso,nombre,es_patente) values('R002','Cliente',0);
 insert into permiso(codpermiso,nombre,es_patente) values('R003','Empleado',0);
 insert into permiso(codpermiso,nombre,es_patente) values('ADM001','Operaciones',1);
+insert into permiso(codpermiso,nombre,es_patente) values('OP001','Ingresos',1);
+insert into permiso(codpermiso,nombre,es_patente) values('OP002','Retiros',1);
 insert into permiso(codpermiso,nombre,es_patente) values('ADM002','Marketing',1);
 insert into permiso(codpermiso,nombre,es_patente) values('ADM003','IT',0);
 insert into permiso(codpermiso,nombre,es_patente) values('IT0001','Alta usuarios',1);
 insert into permiso(codpermiso,nombre,es_patente) values('IT0002','Gestion usuarios',1);
 insert into permiso(codpermiso,nombre,es_patente) values('IT0003','Gestion idiomas',1);
+insert into permiso(codpermiso,nombre,es_patente) values('R002','Cliente',0);
 insert into permiso(codpermiso,nombre,es_patente) values('USR001','Extraer',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR002','Ingresar',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR003','Comprar',1);
@@ -94,23 +96,17 @@ create table rol_permiso
 	idusuario bigint
 );
 
+--Empleado IT
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R002',1);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM002',1);
-
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM003',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','ADM003',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR001',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR002',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR003',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR004',4);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','USR005',4);
-
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','IT0001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','IT0002',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','IT0003',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','IT0001',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','IT0002',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','IT0003',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM001','OP001',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM001','OP002',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM002',1);
 
 select * from usuario
 select * from rol_permiso
