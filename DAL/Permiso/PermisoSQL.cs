@@ -39,15 +39,16 @@ namespace DAL.Permiso
             //Genero el sql.
             string sql = $@"with recursivo as(
                select sp2.codrol, sp2.codpermiso, sp2.idusuario from rol_permiso SP2
-               where sp2.codrol {where}
+               where sp2.codrol {where} and sp2.idusuario= {userid}
                UNION ALL
                select sp.codrol, sp.codpermiso, sp.idusuario from rol_permiso sp
                inner join recursivo r on r.codpermiso = sp.codrol
+               where sp.idusuario= {userid}
             ) 
             select r.codrol,r.codpermiso,p.codpermiso as id,p.nombre, p.es_patente, r.idusuario
             from recursivo r
             inner join permiso p on r.codpermiso = p.codpermiso
-            where r.idusuario = {userid} option (maxrecursion 0);";
+            option (maxrecursion 0);";
 
             return sql;
         }

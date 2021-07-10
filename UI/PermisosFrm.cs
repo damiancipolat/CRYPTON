@@ -34,35 +34,32 @@ namespace UI
         //Carga el arbol en Treenodes.
         private void fillTree(Componente nodo, TreeNode rama)
         {
+            Debug.WriteLine("+ ____>" + nodo.Cod + "," + nodo.Nombre + "," + nodo.Hijos.Count().ToString());
             rama.Text = nodo.Nombre;
             rama.Name = nodo.Cod;
 
-            if (nodo != null && nodo.Hijos.Count > 0)
+            if (nodo.Hijos != null)
             {
-                foreach (Componente tmp in nodo.Hijos)
+                foreach (Componente item in nodo.Hijos)
                 {
-                    //Rama
-                    if (tmp.Hijos != null)
+                    if (item.Hijos != null)
                     {
                         TreeNode newRama = new TreeNode();
-                        newRama.Tag = tmp.Cod;
-                        newRama.Name = tmp.Nombre;
-                        if (!rama.Nodes.ContainsKey(tmp.Cod))
-                        {
-                            rama.Nodes.Add(newRama);
-                            fillTree(tmp, newRama);
-                        }                        
+                        newRama.Tag = item.Cod;
+                        newRama.Name = item.Nombre;
+                        rama.Nodes.Add(newRama);
+
+                        //Call recursive.
+                        this.fillTree(item, newRama);
                     }
-                    //Hoja
                     else
                     {
                         TreeNode hoja = new TreeNode();
-                        hoja.Text = tmp.Nombre;
-                        hoja.Name = tmp.Cod;
-                        hoja.Tag = nodo.Cod;//Uso el tag para guardar la ref al padre.
+                        hoja.Text = item.Nombre;
+                        hoja.Name = item.Cod;
+                        rama.Nodes.Add(hoja);
 
-                        if (rama.Nodes.ContainsKey(tmp.Cod)==false)
-                            rama.Nodes.Add(hoja);
+                        Debug.WriteLine("hoja ____>" + item.Cod + "," + item.Nombre + ", hoja *");
                     }
                 }
             }
@@ -85,22 +82,20 @@ namespace UI
 
         //LISTA DE PERMISOS -----------------------------------------------
 
-        //Cargo la lista de permisos.
-        private void fillList()
+        //Dibujo la lista de permisos.
+        private void drawPermissionList()
         {
             List<Componente> compList = new PermisoBL().getRaw();
 
             foreach (Componente nodo in compList)
             {
-               this.list_perm.Items.Add(nodo.Cod + " - " + nodo.Nombre);
-               this.permisos.Add(nodo.Cod);
-            }
-        }
+                if (nodo.esPatente)
+                    this.list_perm.Items.Add("Atom >>" + nodo.Cod + " - " + nodo.Nombre);
+                else
+                    this.list_perm.Items.Add("Comp >>" + nodo.Cod + " - " + nodo.Nombre);                
 
-        //Dibujo la lista de permisos.
-        private void drawPermissionList()
-        {
-          this.fillList();              
+                this.permisos.Add(nodo.Cod);
+            }
         }
 
         //EVENTOS DE UI ----------------------------------------------------
