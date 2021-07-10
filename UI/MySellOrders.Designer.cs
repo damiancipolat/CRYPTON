@@ -33,13 +33,15 @@
             this.btn_finish = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_refresh = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.usr_orders_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // usr_orders_data
             // 
             this.usr_orders_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usr_orders_data.Location = new System.Drawing.Point(29, 121);
+            this.usr_orders_data.Location = new System.Drawing.Point(29, 132);
             this.usr_orders_data.Name = "usr_orders_data";
             this.usr_orders_data.RowHeadersWidth = 51;
             this.usr_orders_data.RowTemplate.Height = 24;
@@ -50,7 +52,7 @@
             // 
             this.my_sell_orders_title.AutoSize = true;
             this.my_sell_orders_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.my_sell_orders_title.Location = new System.Drawing.Point(23, 14);
+            this.my_sell_orders_title.Location = new System.Drawing.Point(92, 14);
             this.my_sell_orders_title.Name = "my_sell_orders_title";
             this.my_sell_orders_title.Size = new System.Drawing.Size(267, 32);
             this.my_sell_orders_title.TabIndex = 45;
@@ -61,7 +63,7 @@
             // 
             this.btn_finish.BackColor = System.Drawing.Color.Tomato;
             this.btn_finish.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_finish.Location = new System.Drawing.Point(653, 67);
+            this.btn_finish.Location = new System.Drawing.Point(653, 78);
             this.btn_finish.Name = "btn_finish";
             this.btn_finish.Size = new System.Drawing.Size(119, 38);
             this.btn_finish.TabIndex = 46;
@@ -71,7 +73,7 @@
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(629, 533);
+            this.btn_close.Location = new System.Drawing.Point(629, 544);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(143, 49);
             this.btn_close.TabIndex = 47;
@@ -83,7 +85,7 @@
             // 
             this.btn_refresh.BackColor = System.Drawing.Color.Bisque;
             this.btn_refresh.ForeColor = System.Drawing.Color.Black;
-            this.btn_refresh.Location = new System.Drawing.Point(29, 67);
+            this.btn_refresh.Location = new System.Drawing.Point(29, 78);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(119, 38);
             this.btn_refresh.TabIndex = 48;
@@ -91,16 +93,28 @@
             this.btn_refresh.UseVisualStyleBackColor = false;
             this.btn_refresh.Click += new System.EventHandler(this.Btn_refresh_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.list;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
             // MySellOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 604);
+            this.ClientSize = new System.Drawing.Size(800, 615);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_finish);
             this.Controls.Add(this.my_sell_orders_title);
             this.Controls.Add(this.usr_orders_data);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MySellOrders";
@@ -108,6 +122,7 @@
             this.Text = "MySellOrders";
             this.Load += new System.EventHandler(this.MySellOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usr_orders_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +135,6 @@
         private System.Windows.Forms.Button btn_finish;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_refresh;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
