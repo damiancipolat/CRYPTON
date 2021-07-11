@@ -212,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 469);
+            this.ClientSize = new System.Drawing.Size(582, 456);
             this.Controls.Add(this.sell_tax);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioButton2);

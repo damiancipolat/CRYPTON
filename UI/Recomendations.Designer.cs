@@ -28,91 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.recom_title = new System.Windows.Forms.Label();
+            this.recom_descrip = new System.Windows.Forms.Label();
             this.frm_recom_list = new System.Windows.Forms.DataGridView();
-            this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Moneda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sell_close = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_view = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.frm_recom_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // recom_title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Recomendaciones";
+            this.recom_title.AutoSize = true;
+            this.recom_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recom_title.Location = new System.Drawing.Point(103, 15);
+            this.recom_title.Name = "recom_title";
+            this.recom_title.Size = new System.Drawing.Size(143, 29);
+            this.recom_title.TabIndex = 0;
+            this.recom_title.Text = "recom_title";
             // 
-            // label2
+            // recom_descrip
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(565, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Hemos encontrado esta lista de ordenes de venta que creemos que pueden interesart" +
-    "e.";
+            this.recom_descrip.AutoSize = true;
+            this.recom_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recom_descrip.Location = new System.Drawing.Point(105, 53);
+            this.recom_descrip.Name = "recom_descrip";
+            this.recom_descrip.Size = new System.Drawing.Size(120, 20);
+            this.recom_descrip.TabIndex = 1;
+            this.recom_descrip.Text = "recom_descrip";
             // 
             // frm_recom_list
             // 
             this.frm_recom_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.frm_recom_list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Vendedor,
-            this.Moneda,
-            this.Cantidad,
-            this.Valor});
-            this.frm_recom_list.Location = new System.Drawing.Point(15, 91);
+            this.frm_recom_list.Location = new System.Drawing.Point(25, 150);
             this.frm_recom_list.Name = "frm_recom_list";
             this.frm_recom_list.RowHeadersWidth = 51;
             this.frm_recom_list.RowTemplate.Height = 24;
-            this.frm_recom_list.Size = new System.Drawing.Size(763, 333);
+            this.frm_recom_list.Size = new System.Drawing.Size(1025, 401);
             this.frm_recom_list.TabIndex = 2;
             this.frm_recom_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Frm_recom_list_CellContentClick);
             // 
-            // Vendedor
+            // sell_close
             // 
-            this.Vendedor.HeaderText = "Vendedor";
-            this.Vendedor.MinimumWidth = 6;
-            this.Vendedor.Name = "Vendedor";
-            this.Vendedor.Width = 125;
+            this.sell_close.BackColor = System.Drawing.Color.Crimson;
+            this.sell_close.ForeColor = System.Drawing.Color.White;
+            this.sell_close.Location = new System.Drawing.Point(885, 579);
+            this.sell_close.Name = "sell_close";
+            this.sell_close.Size = new System.Drawing.Size(165, 49);
+            this.sell_close.TabIndex = 13;
+            this.sell_close.Text = "sell_close";
+            this.sell_close.UseVisualStyleBackColor = false;
+            this.sell_close.Click += new System.EventHandler(this.Sell_close_Click);
             // 
-            // Moneda
+            // pictureBox1
             // 
-            this.Moneda.HeaderText = "Moneda";
-            this.Moneda.MinimumWidth = 6;
-            this.Moneda.Name = "Moneda";
-            this.Moneda.Width = 125;
+            this.pictureBox1.Image = global::UI.Properties.Resources.neural;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(58, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
-            // Cantidad
+            // btn_view
             // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 125;
+            this.btn_view.BackColor = System.Drawing.Color.LightYellow;
+            this.btn_view.ForeColor = System.Drawing.Color.Black;
+            this.btn_view.Location = new System.Drawing.Point(25, 97);
+            this.btn_view.Name = "btn_view";
+            this.btn_view.Size = new System.Drawing.Size(119, 38);
+            this.btn_view.TabIndex = 49;
+            this.btn_view.Text = "btn_view";
+            this.btn_view.UseVisualStyleBackColor = false;
+            this.btn_view.Click += new System.EventHandler(this.Btn_refresh_Click);
             // 
-            // Valor
+            // button1
             // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.MinimumWidth = 6;
-            this.Valor.Name = "Valor";
-            this.Valor.Width = 125;
+            this.button1.Location = new System.Drawing.Point(319, 88);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frm_recomendations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1076, 648);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_view);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.sell_close);
             this.Controls.Add(this.frm_recom_list);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.recom_descrip);
+            this.Controls.Add(this.recom_title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_recomendations";
-            this.Text = "Recomendations";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Frm_recomendations_Load);
             ((System.ComponentModel.ISupportInitialize)(this.frm_recom_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,12 +141,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label recom_title;
+        private System.Windows.Forms.Label recom_descrip;
         private System.Windows.Forms.DataGridView frm_recom_list;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Moneda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.Button sell_close;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_view;
+        private System.Windows.Forms.Button button1;
     }
 }

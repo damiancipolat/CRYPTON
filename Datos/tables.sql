@@ -346,9 +346,7 @@ create table orden_venta(
 	ordenEstado int,
 	deleted datetime
 );
-select * from orden_venta where  ofrece='BTC' and pide='ARS' and ordenEstado=1;
-select * from usuario
-
+select distinct ofrece,pide from orden_venta
 
 --Tabla de tipo de ordenes.
 create table orden_estado(
@@ -372,6 +370,15 @@ create table orden_compra(
 	precio float,
 	deleted datetime
 );
+
+select * from orden_compra
+select distinct ov.ofrece,ov.pide from orden_compra as oc
+inner join orden_venta as ov on ov.idorden = oc.idorden
+where oc.comprador=;
+
+insert into orden_compra(idorden,fecOperacion,comprador,moneda,cantidad,precio) values(2,GETDATE(),1,'BTC',1,0);
+insert into orden_compra(idorden,fecOperacion,comprador,moneda,cantidad,precio) values(3,GETDATE(),1,'LTC',1,0);
+
 
 --Bitacora. 
 CREATE TABLE bitacora
@@ -562,6 +569,10 @@ insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_ORDERS_PAUSE'
 insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_FINISH_TITLE','¿Seguro desea finalizar esta orden de venta?');
 insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_FINISH_CONFIRM','Escoja una opción.');
 insert into idioma_palabras(code,clave,valor) values('ES','MY_SELL_FINISH_SUCCESS','Orden finalizada con exito!');
+insert into idioma_palabras(code,clave,valor) values('ES','RECOM_TITLE','Recomendaciones');
+insert into idioma_palabras(code,clave,valor) values('ES','RECOM_DESCRIP','En esta sección veras ofertas para tí.');
+insert into idioma_palabras(code,clave,valor) values('ES','RECOM_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','RECOM_VIEW','Ver');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -715,6 +726,10 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_ORDERS_PAUSE
 insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_FINISH_TITLE','Do you want to finish this sell order?');
 insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_FINISH_CONFIRM','Select an option');
 insert into idioma_palabras(code,clave,valor) values('ENG','MY_SELL_FINISH_SUCCESS','Order finished success!');
+insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_TITLE','Recomendations');
+insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_DESCRIP','In this section you can see the purchase recommendations suitable for you.');
+insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_VIEW','View');
 
 select * from idioma_palabras
 select * from orden_venta

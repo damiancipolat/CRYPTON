@@ -54,7 +54,6 @@ namespace SL
         //Obtengo la lista de palabras de un lenguaje en base a un idioma.
         public Dictionary<string, string> getWords1(IdiomaBE idioma)
         {
-            Debug.WriteLine("@@" + idioma.code);
             return new IdiomaDAL().loadWords(idioma.code);
         }
 

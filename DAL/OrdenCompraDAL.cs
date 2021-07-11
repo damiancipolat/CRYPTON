@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using BE;
 
 namespace DAL
@@ -68,6 +71,28 @@ namespace DAL
                 lista.Add(this.bindSchema(row));
 
             return lista;
+        }
+
+        //Traigo la lista de monedas.
+        public List<(string, string)> getFavouriteMoneys(ClienteBE cliente)
+        {
+            //Hago la consulta.
+            string sql = "select distinct ov.ofrece,ov.pide from orden_compra as oc inner join orden_venta as ov on ov.idorden = oc.idorden where oc.comprador="+cliente.idcliente.ToString()+";";
+            SqlDataReader reader = this.getSelect().query(sql);
+
+            List<(string,string)> money = new List<(string,string)>();
+
+            //Loppeo cargando.
+            while (reader.Read())
+            {
+                //Parseo.
+                string ofrece = reader.GetValue(0).ToString();
+                string pide = reader.GetValue(1).ToString();
+
+                money.Add((ofrece,pide));
+            }
+
+            return money;
         }
 
         //Agrega un nuevo usuario.

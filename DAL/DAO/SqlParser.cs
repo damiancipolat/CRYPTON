@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DAL.DAO
 {
@@ -21,8 +22,9 @@ namespace DAL.DAO
                 List<Object> row = new List<Object>();
 
                 //Itero las filas para ir columna por columna.
-                for (int i = 0; i <= reader.FieldCount - 1; i++)
+                for (int i = 0; i <= reader.FieldCount - 1; i++) {
                     row.Add(new KeyValuePair<string, object>(reader.GetName(i), reader.GetValue(i)));
+                }                    
 
                 result.Add(row);
             }

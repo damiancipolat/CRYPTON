@@ -29,7 +29,31 @@ namespace BL
         }
 
         //todo
-        public List<OrdenVentaBE> recomendar(ClienteBE cliente) { return new List<OrdenVentaBE>(); }
+        public List<OrdenVentaBE> recomendar(ClienteBE cliente)
+        {
+            //Traigo la combinatoria de monedas buscada.
+            List<(string, string)> moneyCombinations = new OrdenCompraDAL().getFavouriteMoneys(cliente);
+
+            //Lista de resultados.
+            List<OrdenVentaBE> result = new List<OrdenVentaBE>();
+
+            //Loop
+            foreach ((string, string) combination in moneyCombinations)
+            {
+                //Traigo las monedas.
+                MonedaBE ofreceMoney = new MonedaBL().getByCode(combination.Item1);
+                MonedaBE pideMoney = new MonedaBL().getByCode(combination.Item2);
+
+                //Busco.
+                List<OrdenVentaBE> founded = new OrdenVentaBL().buscar(ofreceMoney, pideMoney);
+
+                if (founded.Count > 0)
+                    result.AddRange(founded);
+            }
+
+            return result;
+
+        }
 
         //todo
         public float cotizarOperacion(Operaciones operacion, BilleteraBE billetera) { return 0; }

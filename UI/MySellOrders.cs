@@ -59,7 +59,7 @@ namespace UI
                             status = "Vendida";
                             break;
                     }
-                    Debug.WriteLine(">>>>>" + (int)order.ordenEstado);
+
                     //Agrego en la fila.
                     this.usr_orders_data.Rows.Add(
                         new string[] {
