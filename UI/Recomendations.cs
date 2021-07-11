@@ -60,6 +60,12 @@ namespace UI
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_REQ"), Idioma.GetInstance().translate("SEARCH_COL_REQ"));
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_PRICE"), Idioma.GetInstance().translate("SEARCH_COL_PRICE"));
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_OFFER"), Idioma.GetInstance().translate("SEARCH_COL_OFFER"));
+
+            //Load data.
+            List<OrdenVentaBE> data = new MarketBL().recomendar(Session.GetInstance().getActiveClient());
+
+            //Fill the grid.
+            this.fillData(data);
         }
 
         private void Btn_refresh_Click(object sender, EventArgs e)
@@ -70,7 +76,8 @@ namespace UI
                 DataGridViewRow selectedRow = this.frm_recom_list.Rows[selectedrowindex];
                 string idValue = Convert.ToString(selectedRow.Cells[0].Value);
 
-                new OperacionView(long.Parse(idValue)).Show();
+                if (idValue!="")
+                    new OperacionView(long.Parse(idValue)).Show();
             }
         }
 
@@ -82,7 +89,7 @@ namespace UI
         private void fillData(List<OrdenVentaBE> orders)
         {
             this.frm_recom_list.Rows.Clear();
-
+            Debug.WriteLine("-ddddd->" + orders.Count.ToString());
             if (orders.Count > 0)
             {
                 //Loop to fill data.
@@ -131,8 +138,7 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-           List<OrdenVentaBE> data = new MarketBL().recomendar(Session.GetInstance().getActiveClient());
-           this.fillData(data);
+ 
         }
     }
 }
