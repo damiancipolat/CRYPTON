@@ -57,7 +57,8 @@ namespace UI
                 DataGridViewRow selectedRow = this.usr_search_data.Rows[selectedrowindex];
                 string idValue = Convert.ToString(selectedRow.Cells[0].Value);
 
-                new OperacionView(long.Parse(idValue)).Show();
+                if (idValue!=""&&idValue!=null)
+                    new OperacionView(long.Parse(idValue)).Show();
             }
 
         }

@@ -101,7 +101,7 @@ namespace BL
             if (orden.ofrece.cod != "ARS")
             {
                 //Calculo el fee de la red de cripto.
-                double networkFee = Convert.ToDouble(this.fetchNetworkFee(orden.ofrece.cod, destinyWallet.direccion, orden.cantidad.ToString()));
+                double networkFee = Convert.ToDouble(this.fetchNetworkFee(orden.pide.cod, destinyWallet.direccion, orden.precio.ToString()));
 
                 //Agrego.
                 taxList.Add((networkFee, "TAX_NETWORK_FEE"));
