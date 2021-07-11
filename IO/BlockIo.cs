@@ -21,6 +21,11 @@ namespace IO
             this.apiKey = keyCode;
         }
 
+        private string numberFormat(string input)
+        {
+            return input.Replace(",", ".");
+        }
+
         public NewWallet createWallet()
         {
             //Armo la url.
@@ -92,10 +97,13 @@ namespace IO
         }
 
         //Obtiene el costo estimado de la transferencia.
-        public Fee estimateTransaction(string to, float ammount)
+        public Fee estimateTransaction(string to, string ammount)
         {
+            //Corrijo el formato del numero.
+            ammount = this.numberFormat(ammount);
+
             //Armo la url.
-            string url = this.host + "get_address_balance/?api_key=" + this.apiKey + "&amounts=" + ammount.ToString()+ "&to_addresses="+to;
+            string url = this.host + "get_network_fee_estimate/?api_key=" + this.apiKey + "&amounts=" + ammount+ "&to_addresses="+to;
 
             //Hago el request.
             var result = new Request().GET(url);

@@ -433,6 +433,20 @@ namespace UI
         {
             new OperacionView(2).Show();
         }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            
+            ClienteBE cli = new ClienteBL().findById(3);
+            OrdenVentaBE vta = new OrdenVentaBL().load(3);
+
+
+            List<(string, string, string)> list = new OrdenCompraBL().getTaxesToBuy(vta, cli);
+
+            foreach ((string, string, string) tmp in list)
+                Debug.WriteLine("----->>>"+tmp.Item1+" "+tmp.Item2+" "+tmp.Item3);
+
+        }
     }
 }
  

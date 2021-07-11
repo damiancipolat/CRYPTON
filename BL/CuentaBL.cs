@@ -35,7 +35,7 @@ namespace BL
             cuenta.idcuenta = newId;
 
             //Proceso la creación de las billeteras
-            // this.crearBilleteras(cuenta, cliente);
+            this.crearBilleteras(cuenta, cliente);
 
             //Proceso el alta de los permisos.
             this.registerClientPermission(cliente);
@@ -47,7 +47,7 @@ namespace BL
         private void crearBilleteras(CuentaBE cuenta, ClienteBE cliente)
         {
             BilleteraBL walletBL = new BilleteraBL();
-            /*
+            
             //ARS
             int arsId = walletBL.crear(cuenta, cliente, "ARS");
             Bitacora.GetInstance().log("Se ha creado la cuenta en ars pesos id:" + arsId.ToString(), true);
@@ -63,7 +63,7 @@ namespace BL
             //DOG
             int dogId = walletBL.crear(cuenta, cliente, "DOG");
             Bitacora.GetInstance().log("Se ha creado la cuenta en doge id:" + dogId.ToString(), true);
-            */
+            
         }
 
         //Traigo la cuenta activa de un cliente.
@@ -125,6 +125,17 @@ namespace BL
         public List<BilleteraBE> traerBilleterasList(CuentaBE cuenta)
         {
             return new BilleteraDAL().findByCuenta(cuenta.idcuenta);
+        }
+
+        //Traigo las billeteras que tiene un cliente en base a su cuenta activa.
+        public Dictionary<string, BilleteraBE> traerBilleterasCliente(ClienteBE cliente)
+        {
+            CuentaBE activeAccount = this.traerActiva(cliente);
+
+            if (activeAccount == null)
+                throw new Exception("No active account for this client.");
+
+            return this.traerBilleteras(activeAccount);
         }
 
         //-------------------------------------

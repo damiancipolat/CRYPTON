@@ -229,7 +229,7 @@ create table api_keys(
 );
 
 insert into api_keys(ambiente,btc,ltc,dog) values('TEST_1','70d1-1c21-b76c-fb00','34e3-4277-7289-6fd6','7c02-9d46-b312-25ef');
-insert into api_keys(ambiente,btc,ltc,dog) values('TEST_2','8e15-55be-cccd-b33c','7ebe-8f45-4490-37d4','cece-b117-15ca-e13d');
+insert into api_keys(ambiente,btc,ltc,dog) values('TEST_2','7ebe-8f45-4490-37d4','8e15-55be-cccd-b33c','cece-b117-15ca-e13d');
 insert into api_keys(ambiente,btc,ltc,dog) values('PROD','6195-52ea-f8fb-dfc1','b311-ecc3-0e70-3c50','611f-3c58-e739-3378');
 
 --Cuentas
@@ -751,3 +751,14 @@ insert into idioma_palabras(code,clave,valor) values('ENG','OP_REQ','For:');
 
 select * from idioma_palabras
 select * from orden_venta
+
+select * from cliente
+select * from usuario
+select * from cuentas
+select * from billetera
+select * from api_keys
+
+update orden_venta set precio=0.001 where idorden=3
+
+
+-- update orden_venta set pide='LTC' where idorden=3

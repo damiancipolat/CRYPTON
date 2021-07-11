@@ -50,7 +50,7 @@ namespace BL
         }
 
         //Crea la billetera para criptomonedas usa block.io
-        public BilleteraBE crearCrypto(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
+        private BilleteraBE crearCrypto(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
         {
             //Obtengo las claves de la red que corresponde la moneda.
             string networkKey = this.getKeys(this.getEnvironment(), moneda.cod);
@@ -75,7 +75,7 @@ namespace BL
         }
 
         //Cuenta en ARS, no usa proveedor.
-        public BilleteraBE crearARS(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
+        private BilleteraBE crearARS(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
         {
             //Creo la billetera.
             BilleteraBE wallet = new BilleteraBE();

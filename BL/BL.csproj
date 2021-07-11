@@ -53,6 +53,7 @@
     <Compile Include="MarketBL.cs" />
     <Compile Include="MonedaBL.cs" />
     <Compile Include="OperacionesBL.cs" />
+    <Compile Include="OrdenCompraBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />
     <Compile Include="PermisoBL.cs" />
     <Compile Include="UsuarioBL.cs" />

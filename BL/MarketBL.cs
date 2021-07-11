@@ -28,7 +28,6 @@ namespace BL
             return new MonedaBE();
         }
 
-        //todo
         public List<OrdenVentaBE> recomendar(ClienteBE cliente)
         {
             //Traigo la combinatoria de monedas buscada.

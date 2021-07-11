@@ -35,6 +35,11 @@ namespace BL
             return new UsuarioBL().save(newUser);
         }
 
+        public ClienteBE findById(long id)
+        {
+            return new ClienteDAL().findById(id);
+        }
+
         public ClienteBE findByUser(UsuarioBE user)
         {
             return new ClienteDAL().findByUser(user);
