@@ -43,57 +43,49 @@ namespace BL
             }
         }
 
+
+        //TAX ------------------------------------------------------------------------
+
         //Valido los montos de ambas cuentas comprador y vendedor.
-        public void validateSwipe(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
-        {
-            //Traigo billetera de cada una de las partes.
-            Dictionary<string, BilleteraBE> buyerWallet = new CuentaBL().traerBilleterasCliente(buyer);
-            Dictionary<string, BilleteraBE> sellerWallet = new CuentaBL().traerBilleterasCliente(seller);
+        public void validateSwipeAmmount(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
+        {/*
+            //Traigo billeteras de cada parte.
+            Dictionary<string, BilleteraBE> buyerWallets = new CuentaBL().traerBilleterasCliente(buyer);
+            Dictionary<string, BilleteraBE> sellerWallets = new CuentaBL().traerBilleterasCliente(seller);
+
+            //Traigo billetera de origen de ambas partes.
+            originBuyerWallet 
+
+            //Traigo billetera de cada una de las partes en base a la moneda.
+            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[orden.ofrece.cod].idwallet,true);
+            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[orden.pide.cod].idwallet,true);
+
+            //Obtengo los saldos de ambas cuentas.
+            double sellerBalance = sellerWallet.saldo;
+            double buyerBalance = buyerWallet.saldo;
+
+            //Traigo el impuesto que debera pagar el vendedor.
+            double sellerPlatformFee = ((new ComisionValorBL().getSellCost() * orden.cantidad) / 100);
+            double buyerPlatformFee = ((new ComisionValorBL().getBuyCost() * orden.precio) / 100);*/
+
 
         }
 
-        //Proceso de compra.
-        public void buyOrder(OrdenVentaBE orden, ClienteBE comprador)
-        {
-            //Validar montos.
 
-
-        }
-        //Calcula el costo de hacer la transferencia de la cuenta del vendedor al comprador.
-        public string calcTransferenceCost(OrdenVentaBE orden,ClienteBE comprador)
-        {
-            //Traigo la wallet destino del comprador.
-            Dictionary<string, BilleteraBE> walletCluster = new CuentaBL().traerBilleterasCliente(comprador);
-
-            //Obtengo la billetera segun la moneda.
-            BilleteraBE destiny = walletCluster[orden.pide.cod];
-
-            //Obtengo las claves de la red que corresponde la moneda.
-            string networkKey = this.getKeys(this.getEnvironment(), orden.pide.cod);
-            
-            //Creo la wallet en block.io            
-            Fee fees = new BlockIo(networkKey).estimateTransaction(destiny.direccion,orden.precio.ToString());
-
-            //Llamo a la capa de io para consultar el precio de transferencia.
-            return fees.data.estimated_network_fee;
-        }
-
+        //Obtengo en forma de lista todos los impuestos para hacer la compra.
         public List<(string, string,string)> getTaxesToBuy(OrdenVentaBE orden,ClienteBE buyer)
         {
             List<(string, string, string)> taxList = new List<(string, string, string)>();
 
-            //Calculo el impuesto de la plataforma.
-            double platFormTax = ((new ComisionValorBL().getBuyCost() * orden.precio) / 100);
+            //Traigo la lista de impuestos para esta operacion.
+            List <(double, string)> buyerTaxList = new TaxManager().getBuyerTaxes(orden,buyer,orden.vendedor);
 
-            //Casteo a formato de string con ".".
-            string formatedValue = platFormTax.ToString("0.000000").Replace(",", ".");
-            taxList.Add((formatedValue, orden.pide.cod,"TAX_PLATFORM_FOR_BUY"));
-
-            //Si es una compra de una moneda cripto, se agregan costos de la red de cripto.
-            if (orden.pide.cod != "ARS")
+            //Adapto el formato para una ui.
+            foreach ((double, string) tmpValue in buyerTaxList)
             {
-                string networkFee = this.calcTransferenceCost(orden, buyer);
-                taxList.Add((networkFee, orden.pide.cod, "TAX_NETWORK_FEE"));
+                //Casteo a formato de string con ".".
+                string formatedValue = tmpValue.Item1.ToString("0.000000").Replace(",", ".");
+                taxList.Add((formatedValue,orden.pide.cod,tmpValue.Item2));
             }
 
             return taxList;

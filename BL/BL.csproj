@@ -56,6 +56,7 @@
     <Compile Include="OrdenCompraBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />
     <Compile Include="PermisoBL.cs" />
+    <Compile Include="TaxManager.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="ReportingBL.cs" />
     <Compile Include="BilleteraBL.cs" />
