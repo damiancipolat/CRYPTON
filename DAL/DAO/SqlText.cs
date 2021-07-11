@@ -24,7 +24,7 @@ namespace DAL.DAO
             {
                 //Append value, handle types.
                 if (this.comparer.IsNumber(kvp.Value))
-                    fields = fields + kvp.Value + ",";
+                    fields = fields + kvp.Value.ToString().Replace(',', '.') + ",";
 
                 if (this.comparer.isString(kvp.Value))
                     fields = fields + "'" + kvp.Value + "'" + ",";

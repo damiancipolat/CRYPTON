@@ -9,10 +9,12 @@ namespace BE
     public class ComisionBE : EntityBE
     {
         public Int64 idcobro;
-        public ComisionValorBE operacion;
+        public Operaciones tipo_operacion;
         public Int64 referencia;
         public MonedaBE moneda;
-        public float valor;
+        public double valor;
         public DateTime fecCobro;
+        public int processed;
+        public long idwallet;
     }
 }

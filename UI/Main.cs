@@ -437,10 +437,14 @@ namespace UI
         private void Button10_Click(object sender, EventArgs e)
         {
             OrdenVentaBE order = new OrdenVentaBL().load(3);
-            ClienteBE seller = order.vendedor;
+            BilleteraBE wallet = new BilleteraBL().getById(7, false);
+            new ComisionBL().applyFromSell(order,wallet);
+
+            /*
+             ClienteBE seller = order.vendedor;
             ClienteBE buyer = new ClienteBL().findById(3);
             new OrdenCompraBL().validateSwipeAmmount(order, buyer, seller);
-
+            */
         }
     }
 }

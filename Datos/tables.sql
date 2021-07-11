@@ -115,10 +115,6 @@ insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',3);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM001','OP001',3);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM001','OP002',3);
 
-select * from usuario
-select * from rol_permiso
-select * from permiso
-
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',2);
 
 --Tabla que relaciona permisos con usuarios.
@@ -209,7 +205,6 @@ insert into conversiones(codCripto,cantCripto,valorUSD) values('BTC',1,33655.80)
 insert into conversiones(codCripto,cantCripto,valorUSD) values('LTC',1,132.82);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('DOG',1,0.216820);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('ARS',1,0.010);
-select * from conversiones
 
 --Tabla de contactos.
 create table cliente_agenda(
@@ -313,13 +308,15 @@ create table transferencias(
 --Tabla de comisiones.
 create table comisiones(
 	idcobro  bigint identity(1,1) primary key,
-	operacion bigint,
+	tipo_operacion bigint,
 	referencia bigint,
 	moneda varchar(10),
-	valor bigint,
-	fecCobro datetime,	
+	valor float,
+	fecCobro datetime,
+	processed int,
 	deleted datetime
 );
+select * from comisiones
 
 --Tabla de comisiones - valor
 create table comision_operacion_valor
@@ -582,6 +579,9 @@ insert into idioma_palabras(code,clave,valor) values('ES','OP_BTN_BUY','Comprar'
 insert into idioma_palabras(code,clave,valor) values('ES','OP_BTN_CLOSE','Cancelar');
 insert into idioma_palabras(code,clave,valor) values('ES','OP_OFFER','Pide:');
 insert into idioma_palabras(code,clave,valor) values('ES','OP_REQ','Por:');
+insert into idioma_palabras(code,clave,valor) values('ES','TAX_PLATFORM_FOR_BUY','Comision de la operación');
+insert into idioma_palabras(code,clave,valor) values('ES','TAX_PLATFORM_FOR_SELL','Comision de la operación');
+insert into idioma_palabras(code,clave,valor) values('ES','TAX_NETWORK_FEE','Costo de transferencia de la red');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -748,11 +748,9 @@ insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_BUY','Buy');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_CLOSE','Cancel');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_OFFER','Offer:');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_REQ','For:');
-
 insert into idioma_palabras(code,clave,valor) values('ENG','TAX_PLATFORM_FOR_BUY','Platform fee for this operation');
+insert into idioma_palabras(code,clave,valor) values('ENG','TAX_PLATFORM_FOR_SELL','Platform fee for this operation');
 insert into idioma_palabras(code,clave,valor) values('ENG','TAX_NETWORK_FEE','Network transference fee');
-
-
 
 select * from idioma_palabras
 select * from orden_venta
@@ -763,7 +761,33 @@ select * from cuentas
 select * from billetera
 select * from api_keys
 
-update orden_venta set ordenEstado=1
+update billetera set direccion='QifTmS7Vx8JF7rzBSzFnJs8cubeYVtGQRV' where idwallet=3
 
-select * from cliente where idcliente=5;
+update orden_venta set ordenEstado=1
+update cliente set idusuario=6 where idcliente=4
+select * from cliente
 -- update orden_venta set pide='LTC' where idorden=3
+
+select * from usuario where idusuario=5;
+select * from cliente where idcliente=4;
+select * from cuentas where cliente=3
+select * from orden_venta
+
+select * from billetera where idcliente=3;
+
+update billetera set direccion ='2MzZSEKfAUmGyoi2wsAB41qK2PzwjLoCYeD' where idwallet = 6;
+update billetera set direccion ='Qfku2FMrND7qvh8M9Ftcgfe6PKcJqeEcvD' where idwallet = 7;
+update billetera set direccion ='2MuwQvcnXp9K1uCjyxjo829QF6rpCrVYRYz' where idwallet = 8;
+
+update billetera set direccion ='2MzLGvu9FddUtFBhyWvbCMFsC4a3E9yhkfG' where idwallet = 2;
+update billetera set direccion ='QaJcKeeeby8Zv2Fuz7WdDEKGjQgNr9kgHx' where idwallet = 3;
+update billetera set direccion ='2MveQJs2ibWmBwuTKBVHPVjfzbppNYofkFh' where idwallet = 4;
+
+select distinct ov.ofrece,ov.pide from orden_compra as oc inner join orden_venta as ov on ov.idorden = oc.idorden where oc.comprador=3;
+
+update orden_venta set vendedor=4 where idorden=3
+
+select * from orden_venta
+
+btc 4
+ltc 3

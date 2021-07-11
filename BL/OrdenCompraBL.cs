@@ -47,7 +47,7 @@ namespace BL
         //TAX ------------------------------------------------------------------------
 
         //Valido los montos de ambas cuentas comprador y vendedor.
-        public void validateSwipeAmmount(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
+        public bool validateSwipeAmmount(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
         {
             //Traigo los saldos actuales de cada una de las wallets partes del swipe.
             BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[orden.ofrece.cod].idwallet, true);
@@ -57,16 +57,34 @@ namespace BL
             List<(double, string)> sellerTaxes = new TaxManager().getSellerTaxes(orden,buyer,seller);
             List<(double, string)> buyerTaxes = new TaxManager().getBuyerTaxes(orden, buyer, seller);
 
-            Debug.WriteLine("buyer"+buyerWallet.saldo.ToString()+ buyerWallet.moneda.cod);
+            //Sumarizo los impuestos del vendedor.
+            double finalSellerTotal = 0;
+            foreach ((double, string) tmpSeller in buyerTaxes)
+                finalSellerTotal = +finalSellerTotal + tmpSeller.Item1;
+
+            //Sumarizo los impuestos del comprador.
+            double finalBuyerTotal = 0;
             foreach ((double, string) tmpBuyer in buyerTaxes)
-                Debug.WriteLine("tax for buyer ->>"+tmpBuyer.Item1.ToString()+" "+tmpBuyer.Item2);
+                finalBuyerTotal = +finalBuyerTotal + tmpBuyer.Item1;
 
-            Debug.WriteLine("seller" + sellerWallet.saldo.ToString() + sellerWallet.moneda.cod);
-            foreach ((double, string) tmpSeller in sellerTaxes)
-                Debug.WriteLine("tax for seller ->>" + tmpSeller.Item1.ToString() + " " + tmpSeller.Item2);
+            //Valido saldo del vendedor.
+            if (!(sellerWallet.saldo>= (finalSellerTotal+orden.cantidad)))
+                throw new Exception("El saldo de la cuenta del vendedor no puede cubrir la operacion");
 
+            //Valido saldo comprador.
+            if (!(buyerWallet.saldo >= (finalBuyerTotal + orden.precio)))
+                throw new Exception("El saldo de la cuenta del comprador no puede cubrir la operacion");
+
+            return true;
         }
 
+        //Extraigo los costos de las comisiones de la operación para registrarlas en el comisiondor.
+        public void registrarComisiones(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
+        {
+            //Traigo los impuestos de ambas partes.
+            List<(double, string)> sellerTaxes = new TaxManager().getSellerTaxes(orden, buyer, seller);
+            List<(double, string)> buyerTaxes = new TaxManager().getBuyerTaxes(orden, buyer, seller);
+        }
 
         //Obtengo en forma de lista todos los impuestos para hacer la compra.
         public List<(string, string,string)> getTaxesToBuy(OrdenVentaBE orden,ClienteBE buyer)

@@ -7,7 +7,7 @@ using BE;
 
 namespace DAL
 {
-    public class ComisionesDAL : AbstractDAL<ComisionBE>
+    public class ComisionDAL : AbstractDAL<ComisionBE>
     {
 
         //Bindea la lista de campos de un registro de una consulta, con un objeto BE.
@@ -24,7 +24,7 @@ namespace DAL
 
             //Seteo el valor.
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
-            comisionTarget.operacion = new ComisionValorDAL().findById((long)mapa["operacion"]);
+            comisionTarget.tipo_operacion = (Operaciones)mapa["operacion"];
 
             return comisionTarget;
 
@@ -67,11 +67,13 @@ namespace DAL
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"operacion",comision.operacion},
+                {"operacion",comision.tipo_operacion},
                 { "referencia",comision.referencia},
                 { "moneda",comision.moneda.cod},
                 { "valor",comision.valor},
-                { "fecCobro",comision.fecCobro}
+                { "fecCobro",comision.fecCobro},
+                { "processed",comision.processed},
+                { "idwallet",comision.idwallet}
             };
 
             return this.getUpdate().updateSchemaById(schema, "comisiones", "idcobro", comision.idcobro);
@@ -82,11 +84,13 @@ namespace DAL
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"operacion",comision.operacion},
+                {"tipo_operacion",(int)comision.tipo_operacion },
                 { "referencia",comision.referencia},
                 { "moneda",comision.moneda.cod},
                 { "valor",comision.valor},
-                { "fecCobro",comision.fecCobro}
+                { "fecCobro",(comision.fecCobro != null) ? comision.fecCobro.ToString("yyyy-MM-dd HH:mm:ss") :null},
+                { "processed",comision.processed},
+                { "idwallet",comision.idwallet}
             };
 
             return this.getInsert().insertSchema(schema, "comisiones", true);
