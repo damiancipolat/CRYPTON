@@ -13,7 +13,7 @@ namespace BE
         public DateTime fecOperacion;
         public ClienteBE comprador;
         public MonedaBE moneda;
-        public int cantidad;
+        public float cantidad;
         public float precio;
     }
 }

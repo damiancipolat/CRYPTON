@@ -64,7 +64,14 @@ namespace UI
 
         private void Btn_refresh_Click(object sender, EventArgs e)
         {
+            if (this.frm_recom_list.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = this.frm_recom_list.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = this.frm_recom_list.Rows[selectedrowindex];
+                string idValue = Convert.ToString(selectedRow.Cells[0].Value);
 
+                new OperacionView(long.Parse(idValue)).Show();
+            }
         }
 
         private void Sell_close_Click(object sender, EventArgs e)

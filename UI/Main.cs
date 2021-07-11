@@ -428,6 +428,11 @@ namespace UI
         {
             new frm_recomendations().Show();
         }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            new OperacionView(2).Show();
+        }
     }
 }
  

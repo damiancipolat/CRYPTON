@@ -573,6 +573,13 @@ insert into idioma_palabras(code,clave,valor) values('ES','RECOM_TITLE','Recomen
 insert into idioma_palabras(code,clave,valor) values('ES','RECOM_DESCRIP','En esta sección veras ofertas para tí.');
 insert into idioma_palabras(code,clave,valor) values('ES','RECOM_CLOSE','Cerrar');
 insert into idioma_palabras(code,clave,valor) values('ES','RECOM_VIEW','Ver');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_TITLE','Ordén');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_SELLER','Publicado por:');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_DETAIL_LABEL','Detalle de venta:');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_TAX_LABEL','Impuestos:');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_TAX_LABEL_INFO','En esta seccón ves el detalle de impuestos.');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_BTN_BUY','Comprar');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_BTN_CLOSE','Cancelar');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -730,6 +737,13 @@ insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_TITLE','Recome
 insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_DESCRIP','In this section you can see the purchase recommendations suitable for you.');
 insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_CLOSE','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_VIEW','View');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_TITLE','Order');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_SELLER','Published by:');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_DETAIL_LABEL','Sell order detail:');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_TAX_LABEL','Taxes:');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_TAX_LABEL_INFO','In this section you can see the tax list for this operation.');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_BUY','Buy');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_CLOSE','Cancel');
 
 select * from idioma_palabras
 select * from orden_venta
