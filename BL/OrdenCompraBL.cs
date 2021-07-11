@@ -48,26 +48,22 @@ namespace BL
 
         //Valido los montos de ambas cuentas comprador y vendedor.
         public void validateSwipeAmmount(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
-        {/*
-            //Traigo billeteras de cada parte.
-            Dictionary<string, BilleteraBE> buyerWallets = new CuentaBL().traerBilleterasCliente(buyer);
-            Dictionary<string, BilleteraBE> sellerWallets = new CuentaBL().traerBilleterasCliente(seller);
+        {
+            //Traigo los saldos actuales de cada una de las wallets partes del swipe.
+            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[orden.ofrece.cod].idwallet, true);
+            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[orden.pide.cod].idwallet, true);
 
-            //Traigo billetera de origen de ambas partes.
-            originBuyerWallet 
+            //Traigo los impuestos de ambas partes.
+            List<(double, string)> sellerTaxes = new TaxManager().getSellerTaxes(orden,buyer,seller);
+            List<(double, string)> buyerTaxes = new TaxManager().getBuyerTaxes(orden, buyer, seller);
 
-            //Traigo billetera de cada una de las partes en base a la moneda.
-            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[orden.ofrece.cod].idwallet,true);
-            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[orden.pide.cod].idwallet,true);
+            Debug.WriteLine("buyer"+buyerWallet.saldo.ToString()+ buyerWallet.moneda.cod);
+            foreach ((double, string) tmpBuyer in buyerTaxes)
+                Debug.WriteLine("tax for buyer ->>"+tmpBuyer.Item1.ToString()+" "+tmpBuyer.Item2);
 
-            //Obtengo los saldos de ambas cuentas.
-            double sellerBalance = sellerWallet.saldo;
-            double buyerBalance = buyerWallet.saldo;
-
-            //Traigo el impuesto que debera pagar el vendedor.
-            double sellerPlatformFee = ((new ComisionValorBL().getSellCost() * orden.cantidad) / 100);
-            double buyerPlatformFee = ((new ComisionValorBL().getBuyCost() * orden.precio) / 100);*/
-
+            Debug.WriteLine("seller" + sellerWallet.saldo.ToString() + sellerWallet.moneda.cod);
+            foreach ((double, string) tmpSeller in sellerTaxes)
+                Debug.WriteLine("tax for seller ->>" + tmpSeller.Item1.ToString() + " " + tmpSeller.Item2);
 
         }
 
