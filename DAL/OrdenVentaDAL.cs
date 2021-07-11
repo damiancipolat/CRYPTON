@@ -65,7 +65,7 @@ namespace DAL
         {
             //Creo un esquema dinamico para serejecutado.
             var schema = new Dictionary<string, Object>{
-                { "ordenEstado",OrdenEstado.DISPONIBLE}
+                { "ordenEstado",(int)OrdenEstado.DISPONIBLE}
             };
 
             List<object> result = this.getSelect().selectAndLast(schema, "orden_venta","idorden",10);
