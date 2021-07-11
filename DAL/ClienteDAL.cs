@@ -61,7 +61,7 @@ namespace DAL
         //Este metodo obtiene el cliente en base al usuariobe.
         public ClienteBE findByUser(UsuarioBE user)
         {
-            List<object> result = this.getSelect().selectById("cliente", "idcliente", user.idusuario);
+            List<object> result = this.getSelect().selectById("cliente", "idusuario", user.idusuario);
 
             //Bindeo con el esquema.
             return this.bindSchema((List<object>)result[0]);

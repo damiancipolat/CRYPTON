@@ -749,6 +749,11 @@ insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_CLOSE','Cance
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_OFFER','Offer:');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_REQ','For:');
 
+insert into idioma_palabras(code,clave,valor) values('ENG','TAX_PLATFORM_FOR_BUY','Platform fee for this operation');
+insert into idioma_palabras(code,clave,valor) values('ENG','TAX_NETWORK_FEE','Network transference fee');
+
+
+
 select * from idioma_palabras
 select * from orden_venta
 
@@ -758,7 +763,7 @@ select * from cuentas
 select * from billetera
 select * from api_keys
 
-update orden_venta set precio=0.001 where idorden=3
+update orden_venta set ordenEstado=1
 
-
+select * from cliente where idcliente=5;
 -- update orden_venta set pide='LTC' where idorden=3

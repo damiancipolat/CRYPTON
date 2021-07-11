@@ -62,19 +62,11 @@ namespace UI
             this.op_offer_label.Text = Idioma.GetInstance().translate("OP_OFFER") + " "+this.orden.cantidad.ToString()+" "+this.orden.ofrece.cod;
             this.op_req_label.Text = Idioma.GetInstance().translate("OP_REQ")+" "+this.orden.precio.ToString() + " " + this.orden.pide.cod;
 
-            //Traigo el costo de la plataforma.
-            this.platFormTax = ((new ComisionValorBL().getBuyCost() * this.orden.precio) / 100);
-            this.tax_box.Text = "- Adicional comision plataforma: " +"+"+this.platFormTax.ToString()+this.orden.pide.cod;
+            //Cargo los costos de operacion.
+            List<(string, string, string)> list = new OrdenCompraBL().getTaxesToBuy(this.orden, Session.GetInstance().getActiveClient());
 
-            //Si la moneda es cripto incluyo costo de transferencia de la red de cripto.
-            if (this.orden.pide.cod == "ARS")
-            {
-                this.tax_box.Text = this.tax_box.Text + Environment.NewLine + "- Adicional red cripto: 0,000154LTC";
-            }
-            else
-            {
-                this.tax_box.Text = this.tax_box.Text + Environment.NewLine + "- No incluye adicional por costo de transferencia red cripto.";
-            }
+            foreach ((string, string, string) tmp in list)
+                this.tax_box.Text = this.tax_box.Text + tmp.Item1 + " " + tmp.Item2 + " " + Idioma.GetInstance().translate(tmp.Item3) + Environment.NewLine;
         }
 
         private void Btn_close_Click(object sender, EventArgs e)

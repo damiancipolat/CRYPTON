@@ -68,6 +68,8 @@ namespace BL
 
             //Calculo el impuesto de la plataforma.
             double platFormTax = ((new ComisionValorBL().getBuyCost() * orden.precio) / 100);
+
+            //Casteo a formato de string con ".".
             string formatedValue = platFormTax.ToString("0.000000").Replace(",", ".");
             taxList.Add((formatedValue, orden.pide.cod,"TAX_PLATFORM_FOR_BUY"));
 
