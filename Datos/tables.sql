@@ -580,6 +580,8 @@ insert into idioma_palabras(code,clave,valor) values('ES','OP_TAX_LABEL','Impues
 insert into idioma_palabras(code,clave,valor) values('ES','OP_TAX_LABEL_INFO','En esta seccón ves el detalle de impuestos.');
 insert into idioma_palabras(code,clave,valor) values('ES','OP_BTN_BUY','Comprar');
 insert into idioma_palabras(code,clave,valor) values('ES','OP_BTN_CLOSE','Cancelar');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_OFFER','Pide:');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_REQ','Por:');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -744,6 +746,8 @@ insert into idioma_palabras(code,clave,valor) values('ENG','OP_TAX_LABEL','Taxes
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_TAX_LABEL_INFO','In this section you can see the tax list for this operation.');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_BUY','Buy');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_CLOSE','Cancel');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_OFFER','Offer:');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_REQ','For:');
 
 select * from idioma_palabras
 select * from orden_venta

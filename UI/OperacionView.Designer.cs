@@ -38,7 +38,7 @@
             this.op_tax_label = new System.Windows.Forms.Label();
             this.btn_buy = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tax_box = new System.Windows.Forms.TextBox();
             this.op_label_tax_info = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             this.op_seller.ForeColor = System.Drawing.Color.Chocolate;
             this.op_seller.Location = new System.Drawing.Point(112, 74);
             this.op_seller.Name = "op_seller";
-            this.op_seller.Size = new System.Drawing.Size(120, 30);
+            this.op_seller.Size = new System.Drawing.Size(96, 24);
             this.op_seller.TabIndex = 21;
             this.op_seller.Text = "op_seller";
             // 
@@ -70,7 +70,7 @@
             this.op_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op_id.Location = new System.Drawing.Point(111, 21);
             this.op_id.Name = "op_id";
-            this.op_id.Size = new System.Drawing.Size(126, 48);
+            this.op_id.Size = new System.Drawing.Size(101, 38);
             this.op_id.TabIndex = 20;
             this.op_id.Text = "op_id";
             this.op_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -82,7 +82,7 @@
             this.op_detail_label.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.op_detail_label.Location = new System.Drawing.Point(21, 117);
             this.op_detail_label.Name = "op_detail_label";
-            this.op_detail_label.Size = new System.Drawing.Size(189, 30);
+            this.op_detail_label.Size = new System.Drawing.Size(151, 24);
             this.op_detail_label.TabIndex = 23;
             this.op_detail_label.Text = "op_detail_label";
             this.op_detail_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,7 +94,7 @@
             this.op_offer_label.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.op_offer_label.Location = new System.Drawing.Point(21, 159);
             this.op_offer_label.Name = "op_offer_label";
-            this.op_offer_label.Size = new System.Drawing.Size(160, 30);
+            this.op_offer_label.Size = new System.Drawing.Size(128, 24);
             this.op_offer_label.TabIndex = 25;
             this.op_offer_label.Text = "op_offer_label";
             this.op_offer_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,7 +106,7 @@
             this.op_req_label.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.op_req_label.Location = new System.Drawing.Point(21, 198);
             this.op_req_label.Name = "op_req_label";
-            this.op_req_label.Size = new System.Drawing.Size(150, 30);
+            this.op_req_label.Size = new System.Drawing.Size(120, 24);
             this.op_req_label.TabIndex = 26;
             this.op_req_label.Text = "op_req_label";
             this.op_req_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,7 +118,7 @@
             this.op_tax_label.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.op_tax_label.Location = new System.Drawing.Point(21, 241);
             this.op_tax_label.Name = "op_tax_label";
-            this.op_tax_label.Size = new System.Drawing.Size(160, 30);
+            this.op_tax_label.Size = new System.Drawing.Size(128, 24);
             this.op_tax_label.TabIndex = 27;
             this.op_tax_label.Text = "op_tax_label";
             this.op_tax_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,16 +146,16 @@
             this.btn_close.UseVisualStyleBackColor = false;
             this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
-            // textBox1
+            // tax_box
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(24, 323);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(429, 118);
-            this.textBox1.TabIndex = 31;
+            this.tax_box.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.tax_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tax_box.Location = new System.Drawing.Point(24, 323);
+            this.tax_box.Multiline = true;
+            this.tax_box.Name = "tax_box";
+            this.tax_box.ReadOnly = true;
+            this.tax_box.Size = new System.Drawing.Size(429, 118);
+            this.tax_box.TabIndex = 31;
             // 
             // op_label_tax_info
             // 
@@ -172,7 +172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 533);
             this.Controls.Add(this.op_label_tax_info);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tax_box);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_buy);
             this.Controls.Add(this.op_tax_label);
@@ -206,7 +206,7 @@
         private System.Windows.Forms.Label op_tax_label;
         private System.Windows.Forms.Button btn_buy;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tax_box;
         private System.Windows.Forms.Label op_label_tax_info;
     }
 }

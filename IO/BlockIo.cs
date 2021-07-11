@@ -91,9 +91,24 @@ namespace IO
             return new object();
         }
 
-        public float estimateTransaction(string to, float ammount)
+        //Obtiene el costo estimado de la transferencia.
+        public Fee estimateTransaction(string to, float ammount)
         {
-            return 0;
+            //Armo la url.
+            string url = this.host + "get_address_balance/?api_key=" + this.apiKey + "&amounts=" + ammount.ToString()+ "&to_addresses="+to;
+
+            //Hago el request.
+            var result = new Request().GET(url);
+
+            //Si es erroneo lanzo excepcion.
+            if (!result.IsSuccessStatusCode)
+                throw new Exception("Request not success," + result.StatusCode);
+
+            //Extraigo en forma de json.
+            string json = result.Content.ReadAsStringAsync().Result;
+
+            //Descerializo y convierto al tipo de retorno.
+            return JsonConvert.DeserializeObject<Fee>(json);            
         }
 
         public object decodeTransaction(string data)
