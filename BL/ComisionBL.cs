@@ -13,6 +13,19 @@ namespace BL
 {
     public class ComisionBL
     {
+        //Traigo el total de comisiones pendientes de una wallet.
+        public double pendingAmmount(BilleteraBE wallet)
+        {
+            List<ComisionBE> comisiones = new ComisionDAL().pendingByWallet(wallet);
+            double result = 0 ;
+
+            foreach (ComisionBE comision in comisiones)
+                result = result + comision.valor;
+
+            return result;
+
+        }
+
         //Registro comision para una venta.
         public int applyFromSell(OrdenVentaBE order, BilleteraBE wallet)
         {

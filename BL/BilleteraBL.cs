@@ -137,7 +137,10 @@ namespace BL
             //Si piden saldo actualizado lo traigo del blockio
             if (updatedBalance && wallet.moneda.cod != "ARS")
                 wallet.saldo = float.Parse(this.getBalance(wallet.direccion, wallet.moneda));
-            
+
+            //Busco si esta wallet tiene cobro de comisiones pendientes y se la descuento.
+            wallet.saldo = wallet.saldo - (new ComisionBL().pendingAmmount(wallet));
+
             return wallet;
         }
 

@@ -24,7 +24,7 @@ namespace DAL
 
             //Seteo el valor.
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
-            comisionTarget.tipo_operacion = (Operaciones)mapa["operacion"];
+            comisionTarget.tipo_operacion = (Operaciones)mapa["tipo_operacion"];
 
             return comisionTarget;
 
@@ -54,6 +54,25 @@ namespace DAL
                 lista.Add(this.bindSchema(row));
 
             return lista;
+        }
+
+        //Traigo lista de comisiones pendientes de una walley.
+        public List<ComisionBE> pendingByWallet(BilleteraBE wallet)
+        {
+            //Busco en la bd por wallet y estado.
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
+                {"idwallet",wallet.idwallet},
+                {"processed",0}
+            }, "comisiones");
+
+            //Lista resultado.
+            List<ComisionBE> lista = new List<ComisionBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+
         }
 
         //Borra el usuario.
