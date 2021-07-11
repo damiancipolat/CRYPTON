@@ -122,7 +122,7 @@ namespace DAL
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"idusuario",client.idusuario},
+                {"idusuario",client.usuario.idusuario},
                 {"tipoDoc",client.tipoDoc},
                 {"numero",client.numero},
                 {"fec_nac",client.fec_nac},

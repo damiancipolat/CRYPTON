@@ -43,6 +43,22 @@ namespace BL
             }
         }
 
+        //Valido los montos de ambas cuentas comprador y vendedor.
+        public void validateSwipe(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
+        {
+            //Traigo billetera de cada una de las partes.
+            Dictionary<string, BilleteraBE> buyerWallet = new CuentaBL().traerBilleterasCliente(buyer);
+            Dictionary<string, BilleteraBE> sellerWallet = new CuentaBL().traerBilleterasCliente(seller);
+
+        }
+
+        //Proceso de compra.
+        public void buyOrder(OrdenVentaBE orden, ClienteBE comprador)
+        {
+            //Validar montos.
+
+
+        }
         //Calcula el costo de hacer la transferencia de la cuenta del vendedor al comprador.
         public string calcTransferenceCost(OrdenVentaBE orden,ClienteBE comprador)
         {

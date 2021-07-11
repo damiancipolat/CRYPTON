@@ -46,9 +46,6 @@ namespace BL
             int insertedId = new UsuarioDAL().save(user);
             Debug.WriteLine("Grabado user"+insertedId.ToString());
 
-            //Set id.
-            user.idusuario = insertedId;
-
             //Actualizo el DVV de usuarios.
             new DvvDAL().updateHash("usuario", new UsuarioDAL().getEntityHash());
 
