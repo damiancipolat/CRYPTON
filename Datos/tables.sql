@@ -308,15 +308,15 @@ create table transferencias(
 --Tabla de comisiones.
 create table comisiones(
 	idcobro  bigint identity(1,1) primary key,
-	tipo_operacion bigint,
-	referencia bigint,
+	tipo_operacion int,
+	referencia bigint,	
 	moneda varchar(10),
+	idwallet bigint,
 	valor float,
 	fecCobro datetime,
 	processed int,
 	deleted datetime
 );
-select * from comisiones
 
 --Tabla de comisiones - valor
 create table comision_operacion_valor

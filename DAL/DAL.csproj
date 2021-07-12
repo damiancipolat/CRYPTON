@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AbstractDAL.cs" />
     <Compile Include="ApiKeyDAL.cs" />
+    <Compile Include="NotificacionDAL.cs" />
     <Compile Include="MonedaDAL.cs" />
     <Compile Include="BilleteraDAL.cs" />
     <Compile Include="ClienteAgenda.cs" />
