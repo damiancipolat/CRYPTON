@@ -39,11 +39,12 @@ namespace UI
             {
                 try
                 {
-
+                    new OrdenCompraBL().comprar(this.orden, Session.GetInstance().getActiveClient());
+                    MessageBox.Show(Idioma.GetInstance().translate("BUY_SUCCESS"));
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(Idioma.GetInstance().translate("BUY_ERROR"));
                 }
             }
         }
@@ -66,8 +67,8 @@ namespace UI
             this.translateTexts();
 
             //Seteo campos.
-            this.op_offer_label.Text = Idioma.GetInstance().translate("OP_OFFER") + " "+this.orden.cantidad.ToString()+" "+this.orden.ofrece.cod;
-            this.op_req_label.Text = Idioma.GetInstance().translate("OP_REQ")+" "+this.orden.precio.ToString() + " " + this.orden.pide.cod;
+            this.op_offer_label.Text = Idioma.GetInstance().translate("OP_OFFER") + " "+this.orden.cantidad.ToString("0.000000000") + " "+this.orden.ofrece.cod;
+            this.op_req_label.Text = Idioma.GetInstance().translate("OP_REQ")+" "+this.orden.precio.ToString("0.000000000") + " " + this.orden.pide.cod;
 
             //Cargo los costos de operacion.
             List<(string, string, string)> list = new OrdenCompraBL().getTaxesToBuy(this.orden, Session.GetInstance().getActiveClient());
