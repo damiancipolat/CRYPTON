@@ -21,10 +21,12 @@ DROP TABLE IF EXISTS orden_compra;
 DROP TABLE IF EXISTS orden_estado;
 DROP TABLE IF EXISTS comisiones;
 DROP TABLE IF EXISTS comisiones_valor;
+DROP TABLE IF EXISTS comision_operacion_valor;
 DROP TABLE IF EXISTS permiso;
 DROP TABLE IF EXISTS rol_permiso;
 DROP TABLE IF EXISTS usuario_permiso;
 DROP TABLE IF EXISTS conversiones;
+DROP TABLE IF EXISTS notificaciones;
 DROP TABLE IF EXISTS admin_backup;
 DROP TABLE IF EXISTS dvv;
 DROP TABLE IF EXISTS idiomas;
@@ -70,7 +72,6 @@ create table permiso
 	es_patente bit,
 	deleted datetime
 );
-select * from permiso
 
 --Esquema de roles
 insert into permiso(codpermiso,nombre,es_patente) values('R001','Usuario',0);
@@ -93,8 +94,8 @@ create table rol_permiso
 	codpermiso varchar(20),
 	idusuario bigint
 );
-select * from usuario
 
+/*
 --Cliente 
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R002',5);
@@ -104,7 +105,7 @@ insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI003',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI004',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI005',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI006',5);
-select * from rol_permiso
+
 --Empleado IT
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',2);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',2);
@@ -112,6 +113,7 @@ insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','R004',2);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0001',2);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0002',2);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0003',2);
+*/
 
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
@@ -130,8 +132,7 @@ create table admin_backup
 	[type] varchar(100),
 	deleted datetime
 );
-select * from billetera
-select * from api_keys
+
 --Validaciones de identidad, se ingresa documentacion y estado.
 create table solic_onboarding(
 	idsolic bigint identity(1,1) primary key,
@@ -315,8 +316,6 @@ create table comisiones(
 	deleted datetime
 );
 
-select * from billetera where idcliente=3
-
 --Tabla de comisiones - valor
 create table comision_operacion_valor
 (
@@ -324,9 +323,6 @@ create table comision_operacion_valor
 	descrip varchar(100),
 	valor float
 );
-
-select * from orden_venta where idorden=3
-update orden_venta set cantidad=0.00002000 where idorden=3
 
 insert into comision_operacion_valor(descrip,valor) values('Compra',0.5);
 insert into comision_operacion_valor(descrip,valor) values('Venta',0.5);
@@ -783,43 +779,3 @@ insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_BUY_SUCCESS','
 insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_BUY_OK_SUCCESS','Hi %c! the purchase of your order was successful!');
 insert into idioma_palabras(code,clave,valor) values('ENG','BUY_SUCCESS','You have purchased the order, wait some minutes to see the balance updated in your wallet!');
 insert into idioma_palabras(code,clave,valor) values('ENG','BUY_ERROR','An error has produced buying the order..');
-
-select * from idioma_palabras
-select * from orden_venta
-
-select * from cliente
-select * from usuario
-select * from cuentas
-select * from billetera
-select * from api_keys
-
-update billetera set direccion='QifTmS7Vx8JF7rzBSzFnJs8cubeYVtGQRV' where idwallet=3
-
-update orden_venta set ordenEstado=1
-update cliente set idusuario=6 where idcliente=4
-select * from cliente
--- update orden_venta set pide='LTC' where idorden=3
-
-select * from usuario where idusuario=5;
-select * from cliente where idcliente=4;
-select * from cuentas where cliente=3
-select * from orden_venta
-
-select * from billetera where idcliente=3;
-
-update billetera set direccion ='2MzZSEKfAUmGyoi2wsAB41qK2PzwjLoCYeD' where idwallet = 6;
-update billetera set direccion ='Qfku2FMrND7qvh8M9Ftcgfe6PKcJqeEcvD' where idwallet = 7;
-update billetera set direccion ='2MuwQvcnXp9K1uCjyxjo829QF6rpCrVYRYz' where idwallet = 8;
-
-update billetera set direccion ='2MzLGvu9FddUtFBhyWvbCMFsC4a3E9yhkfG' where idwallet = 2;
-update billetera set direccion ='QaJcKeeeby8Zv2Fuz7WdDEKGjQgNr9kgHx' where idwallet = 3;
-update billetera set direccion ='2MveQJs2ibWmBwuTKBVHPVjfzbppNYofkFh' where idwallet = 4;
-
-select distinct ov.ofrece,ov.pide from orden_compra as oc inner join orden_venta as ov on ov.idorden = oc.idorden where oc.comprador=3;
-
-update orden_venta set vendedor=4 where idorden=3
-
-select * from orden_venta
-
-btc 4
-ltc 3
