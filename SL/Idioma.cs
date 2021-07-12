@@ -81,8 +81,19 @@ namespace SL
         //Traduzco la clave usando el idioma por defecto.
         public string translate(string key)
         {
-            Debug.WriteLine("-->"+this.words.Count.ToString());
-            return this.words.ContainsKey(key) ? this.words[key] : key;
+            if (this.words.ContainsKey(key))
+            {
+                string word = this.words[key];
+
+                if (word != "")
+                    return this.words[key];
+                else
+                    return key;
+            }
+            else
+            {
+                return key;
+            }
         }
 
         //Traduzco la clave en base a un idioma.
