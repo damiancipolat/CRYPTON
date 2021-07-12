@@ -450,7 +450,7 @@ namespace UI
 
             new ComisionBL().applyFromSell(order,wallet);
             new ComisionBL().pendingAmmount(wallet);
-            /*
+            /*  
              ClienteBE seller = order.vendedor;
             ClienteBE buyer = new ClienteBL().findById(3);
             new OrdenCompraBL().validateSwipeAmmount(order, buyer, seller);
