@@ -54,12 +54,14 @@ namespace UI
                 CuentaBE cuenta = new CuentaBL().traer(this.accountId);
                 Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta);
 
+                BilleteraBL walletBiz = new BilleteraBL();
+                
                 //Cargo los saldos.
-                this.ars_saldo.Text = wallets["ARS"].saldo.ToString() + " ARS";
-                this.btc_saldo.Text = wallets["BTC"].saldo.ToString() + " BTC";
-                this.ltc_saldo.Text = wallets["LTC"].saldo.ToString() + " LTC";
-                this.dog_saldo.Text = wallets["DOG"].saldo.ToString() + " DOG";
-
+                this.ars_saldo.Text = walletBiz.getById(wallets["ARS"].idwallet, false).saldo.ToString() + " ARS";
+                this.btc_saldo.Text = walletBiz.getById(wallets["BTC"].idwallet, true).saldo.ToString("0.000000000") + " BTC";
+                this.ltc_saldo.Text = walletBiz.getById(wallets["LTC"].idwallet, true).saldo.ToString("0.000000000") + " LTC";
+                this.dog_saldo.Text = walletBiz.getById(wallets["DOG"].idwallet, true).saldo.ToString("0.000000000") + " DOG";
+                
                 //Cargo las direcciones.
                 this.ars_address.Text = wallets["ARS"].direccion;
                 this.btc_address.Text = wallets["BTC"].direccion;
@@ -67,7 +69,7 @@ namespace UI
                 this.dog_address.Text = wallets["DOG"].direccion;
 
                 Debug.WriteLine("ARS>>>" + wallets["ARS"].direccion);
-                Debug.WriteLine("BTC>>>" + wallets["BTC"].direccion);
+                Debug.WriteLine("BTC>>>" + wallets["BTC"].direccion+" " + wallets["BTC"].saldo.ToString());
                 Debug.WriteLine("LTC>>>" + wallets["LTC"].direccion);
                 Debug.WriteLine("DOG>>>" + wallets["DOG"].direccion);
 

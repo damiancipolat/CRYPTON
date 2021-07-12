@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Configuration;
+using System.Globalization;
 using BL.Exceptions;
 using BE;
 using DAL;
@@ -136,10 +137,20 @@ namespace BL
 
             //Si piden saldo actualizado lo traigo del blockio
             if (updatedBalance && wallet.moneda.cod != "ARS")
-                wallet.saldo = float.Parse(this.getBalance(wallet.direccion, wallet.moneda));
+            {
+                //Casteo el formato.
+                string balance = this.getBalance(wallet.direccion, wallet.moneda);
+                NumberFormatInfo provider = new NumberFormatInfo();
+                provider.NumberDecimalSeparator = ".";
+                provider.NumberGroupSeparator = ",";
+                
+                //Actualizo.
+                wallet.saldo = Convert.ToDouble(balance, provider);
+            }                
 
             //Busco si esta wallet tiene cobro de comisiones pendientes y se la descuento.
-            wallet.saldo = wallet.saldo - (new ComisionBL().pendingAmmount(wallet));
+            double pendingTaxes = (new ComisionBL().pendingAmmount(wallet));
+            Debug.WriteLine("Pending taxes for wallet "+id+" - "+pendingTaxes.ToString());
 
             return wallet;
         }
