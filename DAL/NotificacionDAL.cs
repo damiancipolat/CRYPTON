@@ -63,7 +63,7 @@ namespace DAL
             List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
                 {"idcliente",client.idcliente},
                 {"marked",0}
-            }, "comisiones");
+            }, "notificaciones");
 
             //Lista resultado.
             List<NotificacionBE> lista = new List<NotificacionBE>();

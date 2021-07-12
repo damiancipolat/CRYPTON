@@ -124,6 +124,12 @@
     <Compile Include="MySellOrders.Designer.cs">
       <DependentUpon>MySellOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotificationsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotificationsFrm.Designer.cs">
+      <DependentUpon>NotificationsFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notifications\INotification.cs" />
     <Compile Include="Notifications\Notificator.cs" />
     <Compile Include="OperacionView.cs">
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MySellOrders.resx">
       <DependentUpon>MySellOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationsFrm.resx">
+      <DependentUpon>NotificationsFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperacionView.resx">
       <DependentUpon>OperacionView.cs</DependentUpon>
@@ -328,6 +337,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\neural.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

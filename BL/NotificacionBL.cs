@@ -22,7 +22,7 @@ namespace BL
         {
             return new NotificacionDAL().save(notif);
         }
-        public List<NotificacionBE> findByClient(ClienteBE client)
+        public List<NotificacionBE> pendingToRead(ClienteBE client)
         {
             return new NotificacionDAL().pendingToRead(client);
         }

@@ -447,6 +447,12 @@ namespace UI
             new OrdenCompraBL().validateSwipeAmmount(order, buyer, seller);
             */
         }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            ClienteBE cli = new ClienteBL().findById(4);
+            new NotificationsFrm(cli).Show();
+        }
     }
 }
  

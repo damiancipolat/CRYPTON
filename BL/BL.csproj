@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteBL.cs" />
+    <Compile Include="NotificacionBL.cs" />
     <Compile Include="ComisionBL.cs" />
     <Compile Include="ComisionValorBL.cs" />
     <Compile Include="CuentaBL.cs" />
