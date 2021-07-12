@@ -78,11 +78,12 @@ namespace UI
 
             //Bindeo menu cliente.
             this.main_menu_operate.Text = Idioma.GetInstance().translate("MAIN_MENU_OPERATE");
-            this.main_menu_buy.Text = Idioma.GetInstance().translate("MAIN_MENU_BUY");
-            this.main_menu_sell.Text = Idioma.GetInstance().translate("MAIN_MENU_SELL");
             this.main_menu_search.Text = Idioma.GetInstance().translate("MAIN_MENU_SEARCH");
-            this.main_menu_deposit.Text = Idioma.GetInstance().translate("MAIN_MENU_DEPOSIT");
-            this.main_menu_extract.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT");
+            this.main_menu_recomendations.Text = Idioma.GetInstance().translate("MAIN_MENU_RECOMENDATIONS");
+            this.main_menu_my_sells.Text = Idioma.GetInstance().translate("MAIN_MENU_MY_SELLS");
+            this.main_menu_notifications.Text= Idioma.GetInstance().translate("MAIN_MENU_NOTIFICATIONS");
+            this.main_menu_balance.Text = Idioma.GetInstance().translate("MAIN_MENU_MY_WALLETS");
+            this.main_menu_publish.Text= Idioma.GetInstance().translate("MAIN_MENU_SELL");
 
             //bindeo menuit
             this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
@@ -127,7 +128,7 @@ namespace UI
                 new frm_signup(this).Show();
         }
 
-        //Manejo el menu de cliente.
+        //Oculto/Muestro el menu de cliente.
         private void handleClientMenu()
         {
             List<Componente> permissions = Session.GetInstance().getPermissions();
@@ -135,24 +136,44 @@ namespace UI
 
             //Set items if the code exist in the list.
             this.main_menu_operate.Visible = true;
-            this.main_menu_search.Visible = permBL.hasPermission(permissions, "USR005");
-            this.main_menu_sell.Visible = permBL.hasPermission(permissions, "USR004");
-            this.main_menu_buy.Visible = permBL.hasPermission(permissions, "USR003");
-            this.main_menu_deposit.Visible = permBL.hasPermission(permissions, "USR002");
-            this.main_menu_extract.Visible = permBL.hasPermission(permissions, "USR001");
+            this.main_menu_search.Visible = permBL.hasPermission(permissions, "CLI001");
+            this.main_menu_recomendations.Visible = permBL.hasPermission(permissions, "CLI002");
+            this.main_menu_my_sells.Visible = permBL.hasPermission(permissions, "CLI003");
+            this.main_menu_balance.Visible = permBL.hasPermission(permissions, "CLI004");
+            this.main_menu_notifications.Visible = permBL.hasPermission(permissions, "CLI005");
+            this.main_menu_publish.Visible = permBL.hasPermission(permissions, "CLI006");            
         }
 
         //Manejo el menu de empleado.
         private void handleEmployeeMenu()
         {
-            List<Componente> permissions = Session.GetInstance().getPermissions();
+           /* List<Componente> permissions = Session.GetInstance().getPermissions();
             PermisoBL permBL = new PermisoBL();
 
             //It menu
             this.main_menu_it.Visible = permBL.hasPermission(permissions, "ADM003");
             this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, "IT0001");
             this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, "IT0002");
-            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, "IT0003");
+            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, "IT0003");*/
+        }
+
+
+        //Manejo el menu ocultando mostrando.
+        private void handleMenu()
+        {
+            List<Componente> permissions = Session.GetInstance().getPermissions();
+            PermisoBL permBL = new PermisoBL();
+
+            //Set items if the code exist in the list.
+            this.main_menu_operate.Visible = permBL.hasPermission(permissions, "R002"); ;
+            /*
+            this.main_menu_operate.Visible = true;
+            this.main_menu_search.Visible = permBL.hasPermission(permissions, "USR005");
+            this.main_menu_sell.Visible = permBL.hasPermission(permissions, "USR004");
+            this.main_menu_buy.Visible = permBL.hasPermission(permissions, "USR003");
+            this.main_menu_deposit.Visible = permBL.hasPermission(permissions, "USR002");
+            this.main_menu_extract.Visible = permBL.hasPermission(permissions, "USR001");
+            */
         }
 
         //Oculto menu en base a los permisos.
@@ -166,15 +187,8 @@ namespace UI
             {
                 UsuarioTipo userType = Session.GetInstance().getUser().tipoUsuario;
 
-                //Manejo menu de clientes.
-                if (userType == UsuarioTipo.CLIENTE && isActive)
-                {
+                if (userType == UsuarioTipo.CLIENTE)
                     this.handleClientMenu();
-                }                    
-
-                //Manejo menu de empleados.
-                if (userType == UsuarioTipo.EMPLEADO && isActive)
-                    this.handleEmployeeMenu();
             }          
 
             //Si esta desactivada la sesion.
@@ -195,11 +209,6 @@ namespace UI
 
                 //Client menu
                 this.main_menu_operate.Visible = false;
-                this.main_menu_search.Visible = false;
-                this.main_menu_sell.Visible = false;
-                this.main_menu_buy.Visible = false;
-                this.main_menu_deposit.Visible = false;
-                this.main_menu_extract.Visible = false;
 
                 //IT MENU
                 this.main_menu_it.Visible = false;
@@ -452,6 +461,37 @@ namespace UI
         {
             ClienteBE cli = new ClienteBL().findById(4);
             new NotificationsFrm(cli).Show();
+        }
+
+        private void Main_menu_recomendations_Click(object sender, EventArgs e)
+        {
+            new frm_recomendations().Show();
+        }
+
+        private void Main_menu_my_sells_Click(object sender, EventArgs e)
+        {
+            new MySellOrders().Show();
+        }
+
+        private void Main_menu_search_Click(object sender, EventArgs e)
+        {
+            new BuscadorOfertas().Show();
+        }
+
+        private void Main_menu_publish_Click(object sender, EventArgs e)
+        {
+            new frm_publish_sell().Show();
+        }
+
+        private void Main_menu_balance_Click(object sender, EventArgs e)
+        {
+            CuentaBE cta = new CuentaBL().traerActiva(Session.GetInstance().getActiveClient());
+            new frm_wallets(cta.idcuenta).Show();
+        }
+
+        private void Main_menu_notifications_Click(object sender, EventArgs e)
+        {
+            new NotificationsFrm(Session.GetInstance().getActiveClient()).Show();
         }
     }
 }

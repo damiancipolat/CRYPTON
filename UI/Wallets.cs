@@ -37,6 +37,7 @@ namespace UI
             this.your_wallets_label.Text = Idioma.GetInstance().translate("YOUR_WALLETS_LABEL");
             this.your_wallets_descrip_label.Text = Idioma.GetInstance().translate("YOUR_WALLETS_DESCRIPT");
             this.Text = Idioma.GetInstance().translate("YOUR_WALLETS_LABEL");
+            this.btn_refresh.Text= Idioma.GetInstance().translate("BTN_UPDATE_PERMISSION");
         }
 
         private void Button1_Click(object sender, EventArgs e)

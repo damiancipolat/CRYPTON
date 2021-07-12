@@ -69,10 +69,18 @@ create table permiso
 	nombre varchar(150),
 	es_patente bit,
 	deleted datetime
-);
+);select * from cliente
 
 --Esquema de roles
 insert into permiso(codpermiso,nombre,es_patente) values('R001','Usuario',0);
+insert into permiso(codpermiso,nombre,es_patente) values('R002','Cliente',0);
+insert into permiso(codpermiso,nombre,es_patente) values('CLI001','Buscar ofertas',1);
+insert into permiso(codpermiso,nombre,es_patente) values('CLI002','Recomendaciones',1);
+insert into permiso(codpermiso,nombre,es_patente) values('CLI003','Mis publicaciones',1);
+insert into permiso(codpermiso,nombre,es_patente) values('CLI004','Mis saldos',1);
+insert into permiso(codpermiso,nombre,es_patente) values('CLI005','Notificaciones',1);
+insert into permiso(codpermiso,nombre,es_patente) values('CLI006','Publicar venta',1);
+/*
 insert into permiso(codpermiso,nombre,es_patente) values('R003','Empleado',0);
 insert into permiso(codpermiso,nombre,es_patente) values('ADM001','Operaciones',0);
 insert into permiso(codpermiso,nombre,es_patente) values('OP001','Ingresos',1);
@@ -88,6 +96,7 @@ insert into permiso(codpermiso,nombre,es_patente) values('USR002','Ingresar',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR003','Comprar',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR004','Vender',1);
 insert into permiso(codpermiso,nombre,es_patente) values('USR005','Buscar',1);
+*/
 
 create table rol_permiso
 (
@@ -95,6 +104,17 @@ create table rol_permiso
 	codpermiso varchar(20),
 	idusuario bigint
 );
+select * from usuario
+
+--Cliente 
+insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',5);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R002',5);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI001',5);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI002',5);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI003',5);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI004',5);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI005',5);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI006',5);
 
 --Empleado IT
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',1);
@@ -368,15 +388,20 @@ create table orden_compra(
 	deleted datetime
 );
 
-select * from orden_compra
-select distinct ov.ofrece,ov.pide from orden_compra as oc
-inner join orden_venta as ov on ov.idorden = oc.idorden
-where oc.comprador=;
-
 insert into orden_compra(idorden,fecOperacion,comprador,moneda,cantidad,precio) values(2,GETDATE(),1,'BTC',1,0);
 insert into orden_compra(idorden,fecOperacion,comprador,moneda,cantidad,precio) values(3,GETDATE(),1,'LTC',1,0);
 
-
+--Notificaciones
+create table notificaciones
+(
+	idnotification bigint not NULL identity(1,1) PRIMARY KEY,
+	idcliente bigint,
+	payload text,
+	fecRegistro datetime,
+	marked int
+);
+insert into notificaciones(idcliente,payload,fecRegistro,marked) values(4,'HOLAAAAAA dsf sdfdsf sdf sd fsdfsdfsdfsdfsd',getdate(),0);
+select * from cliente
 --Bitacora. 
 CREATE TABLE bitacora
 (
@@ -457,9 +482,13 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Re
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNOUT','Cerrar sesión');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXIT','Salir');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_OPERATE','Operar');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BUY','Comprar');
-insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SELL','Vender');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SEARCH','Buscar');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SELL','Vender');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_RECOMENDATIONS','Recomendaciones');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_NOTIFICATIONS','Notificaciones');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_MY_WALLETS','Mis billeteras');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_MY_SELLS','Mis publicaciones');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BUY','Comprar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_DEPOSIT','Ingresar saldo');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT','Retirar saldo');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT','IT');
@@ -582,6 +611,12 @@ insert into idioma_palabras(code,clave,valor) values('ES','OP_REQ','Por:');
 insert into idioma_palabras(code,clave,valor) values('ES','TAX_PLATFORM_FOR_BUY','Comision de la operación');
 insert into idioma_palabras(code,clave,valor) values('ES','TAX_PLATFORM_FOR_SELL','Comision de la operación');
 insert into idioma_palabras(code,clave,valor) values('ES','TAX_NETWORK_FEE','Costo de transferencia de la red');
+insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_TITLE','Notificaciones');
+insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_DESCRIP','Estas son tus notificaciones');
+insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_DATE','Fecha envio');
+insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_TEXT','Mensaje');
+
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -632,6 +667,10 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNUP','R
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNOUT','Sign out');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXIT','Exit');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_OPERATE','Operate');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_RECOMENDATIONS','Recommendations');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_NOTIFICATIONS','Notifications');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_MY_WALLETS','My wallets');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_MY_SELLS','My publications');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_BUY','Buy');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SELL','Sell');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SEARCH','Search');
@@ -751,6 +790,11 @@ insert into idioma_palabras(code,clave,valor) values('ENG','OP_REQ','For:');
 insert into idioma_palabras(code,clave,valor) values('ENG','TAX_PLATFORM_FOR_BUY','Platform fee for this operation');
 insert into idioma_palabras(code,clave,valor) values('ENG','TAX_PLATFORM_FOR_SELL','Platform fee for this operation');
 insert into idioma_palabras(code,clave,valor) values('ENG','TAX_NETWORK_FEE','Network transference fee');
+insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_TITLE','Notifications');
+insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_DESCRIP','This are your notifications');
+insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_DATE','Date');
+insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_TEXT','Message');
 
 select * from idioma_palabras
 select * from orden_venta

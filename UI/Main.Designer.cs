@@ -44,11 +44,12 @@
             this.main_menu_signout = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_operate = new System.Windows.Forms.ToolStripMenuItem();
-            this.main_menu_buy = new System.Windows.Forms.ToolStripMenuItem();
-            this.main_menu_sell = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_recomendations = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_search = new System.Windows.Forms.ToolStripMenuItem();
-            this.main_menu_deposit = new System.Windows.Forms.ToolStripMenuItem();
-            this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_my_sells = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_balance = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_notifications = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_publish = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_add_user = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,13 +58,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -186,7 +182,7 @@
             this.main_menu_signout,
             this.main_menu_exit});
             this.main_menu_start.Name = "main_menu_start";
-            this.main_menu_start.Size = new System.Drawing.Size(59, 24);
+            this.main_menu_start.Size = new System.Drawing.Size(59, 34);
             this.main_menu_start.Text = "Inicio";
             this.main_menu_start.Click += new System.EventHandler(this.InicioToolStripMenuItem_Click);
             // 
@@ -221,46 +217,58 @@
             // main_menu_operate
             // 
             this.main_menu_operate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.main_menu_buy,
-            this.main_menu_sell,
+            this.main_menu_recomendations,
             this.main_menu_search,
-            this.main_menu_deposit,
-            this.main_menu_extract});
+            this.main_menu_my_sells,
+            this.main_menu_balance,
+            this.main_menu_notifications,
+            this.main_menu_publish});
             this.main_menu_operate.Name = "main_menu_operate";
             this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
             this.main_menu_operate.Text = "Operar";
             this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
             // 
-            // main_menu_buy
+            // main_menu_recomendations
             // 
-            this.main_menu_buy.Name = "main_menu_buy";
-            this.main_menu_buy.Size = new System.Drawing.Size(224, 26);
-            this.main_menu_buy.Text = "main_menu_buy";
-            // 
-            // main_menu_sell
-            // 
-            this.main_menu_sell.Name = "main_menu_sell";
-            this.main_menu_sell.Size = new System.Drawing.Size(224, 26);
-            this.main_menu_sell.Text = "main_menu_sell";
-            this.main_menu_sell.Click += new System.EventHandler(this.Main_menu_sell_Click);
+            this.main_menu_recomendations.Name = "main_menu_recomendations";
+            this.main_menu_recomendations.Size = new System.Drawing.Size(281, 26);
+            this.main_menu_recomendations.Text = "main_menu_recomendations";
+            this.main_menu_recomendations.Click += new System.EventHandler(this.Main_menu_recomendations_Click);
             // 
             // main_menu_search
             // 
             this.main_menu_search.Name = "main_menu_search";
-            this.main_menu_search.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_search.Size = new System.Drawing.Size(281, 26);
             this.main_menu_search.Text = "main_menu_search";
+            this.main_menu_search.Click += new System.EventHandler(this.Main_menu_search_Click);
             // 
-            // main_menu_deposit
+            // main_menu_my_sells
             // 
-            this.main_menu_deposit.Name = "main_menu_deposit";
-            this.main_menu_deposit.Size = new System.Drawing.Size(224, 26);
-            this.main_menu_deposit.Text = "main_menu_deposit";
+            this.main_menu_my_sells.Name = "main_menu_my_sells";
+            this.main_menu_my_sells.Size = new System.Drawing.Size(281, 26);
+            this.main_menu_my_sells.Text = "main_menu_my_sells";
+            this.main_menu_my_sells.Click += new System.EventHandler(this.Main_menu_my_sells_Click);
             // 
-            // main_menu_extract
+            // main_menu_balance
             // 
-            this.main_menu_extract.Name = "main_menu_extract";
-            this.main_menu_extract.Size = new System.Drawing.Size(224, 26);
-            this.main_menu_extract.Text = "main_menu_extract";
+            this.main_menu_balance.Name = "main_menu_balance";
+            this.main_menu_balance.Size = new System.Drawing.Size(281, 26);
+            this.main_menu_balance.Text = "main_menu_balance";
+            this.main_menu_balance.Click += new System.EventHandler(this.Main_menu_balance_Click);
+            // 
+            // main_menu_notifications
+            // 
+            this.main_menu_notifications.Name = "main_menu_notifications";
+            this.main_menu_notifications.Size = new System.Drawing.Size(281, 26);
+            this.main_menu_notifications.Text = "main_menu_notifications";
+            this.main_menu_notifications.Click += new System.EventHandler(this.Main_menu_notifications_Click);
+            // 
+            // main_menu_publish
+            // 
+            this.main_menu_publish.Name = "main_menu_publish";
+            this.main_menu_publish.Size = new System.Drawing.Size(281, 26);
+            this.main_menu_publish.Text = "main_menu_publish";
+            this.main_menu_publish.Click += new System.EventHandler(this.Main_menu_publish_Click);
             // 
             // main_menu_it
             // 
@@ -269,7 +277,7 @@
             this.main_menu_it_user_manager,
             this.main_menu_it_lang_manager});
             this.main_menu_it.Name = "main_menu_it";
-            this.main_menu_it.Size = new System.Drawing.Size(35, 24);
+            this.main_menu_it.Size = new System.Drawing.Size(35, 34);
             this.main_menu_it.Text = "IT";
             // 
             // main_menu_it_add_user
@@ -335,49 +343,9 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click_1);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(170, 349);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 28);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "vender";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(170, 397);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 32);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "buscar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(170, 451);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 50);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "mis ventas";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(163, 530);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(82, 45);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "recom";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.Button8_Click);
-            // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(163, 610);
+            this.button9.Location = new System.Drawing.Point(170, 360);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(85, 39);
             this.button9.TabIndex = 21;
@@ -395,28 +363,13 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(258, 133);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(53, 53);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "notif";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.Button11_Click);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -465,11 +418,6 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_exit;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem main_menu_operate;
-        private System.Windows.Forms.ToolStripMenuItem main_menu_buy;
-        private System.Windows.Forms.ToolStripMenuItem main_menu_sell;
-        private System.Windows.Forms.ToolStripMenuItem main_menu_search;
-        private System.Windows.Forms.ToolStripMenuItem main_menu_deposit;
-        private System.Windows.Forms.ToolStripMenuItem main_menu_extract;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_add_user;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_user_manager;
@@ -477,13 +425,14 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_lang_manager;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_recomendations;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_search;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_my_sells;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_notifications;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_balance;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_publish;
     }
 }
 
