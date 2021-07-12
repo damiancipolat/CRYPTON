@@ -69,7 +69,8 @@ create table permiso
 	nombre varchar(150),
 	es_patente bit,
 	deleted datetime
-);select * from cliente
+);
+select * from permiso
 
 --Esquema de roles
 insert into permiso(codpermiso,nombre,es_patente) values('R001','Usuario',0);
@@ -80,23 +81,11 @@ insert into permiso(codpermiso,nombre,es_patente) values('CLI003','Mis publicaci
 insert into permiso(codpermiso,nombre,es_patente) values('CLI004','Mis saldos',1);
 insert into permiso(codpermiso,nombre,es_patente) values('CLI005','Notificaciones',1);
 insert into permiso(codpermiso,nombre,es_patente) values('CLI006','Publicar venta',1);
-/*
 insert into permiso(codpermiso,nombre,es_patente) values('R003','Empleado',0);
-insert into permiso(codpermiso,nombre,es_patente) values('ADM001','Operaciones',0);
-insert into permiso(codpermiso,nombre,es_patente) values('OP001','Ingresos',1);
-insert into permiso(codpermiso,nombre,es_patente) values('OP002','Retiros',1);
-insert into permiso(codpermiso,nombre,es_patente) values('ADM002','Marketing',1);
-insert into permiso(codpermiso,nombre,es_patente) values('ADM003','IT',0);
+insert into permiso(codpermiso,nombre,es_patente) values('R004','IT',0);
 insert into permiso(codpermiso,nombre,es_patente) values('IT0001','Alta usuarios',1);
 insert into permiso(codpermiso,nombre,es_patente) values('IT0002','Gestion usuarios',1);
 insert into permiso(codpermiso,nombre,es_patente) values('IT0003','Gestion idiomas',1);
-insert into permiso(codpermiso,nombre,es_patente) values('R002','Cliente',0);
-insert into permiso(codpermiso,nombre,es_patente) values('USR001','Extraer',1);
-insert into permiso(codpermiso,nombre,es_patente) values('USR002','Ingresar',1);
-insert into permiso(codpermiso,nombre,es_patente) values('USR003','Comprar',1);
-insert into permiso(codpermiso,nombre,es_patente) values('USR004','Vender',1);
-insert into permiso(codpermiso,nombre,es_patente) values('USR005','Buscar',1);
-*/
 
 create table rol_permiso
 (
@@ -117,25 +106,12 @@ insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI005',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI006',5);
 
 --Empleado IT
-insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM003',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','IT0001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','IT0002',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM003','IT0003',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM001','OP001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM001','OP002',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM002',1);
-
---Empleado Operaciones
-insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',3);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',3);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','ADM001',3);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM001','OP001',3);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('ADM001','OP002',3);
-
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',2);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',2);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','R004',2);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0001',2);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0002',2);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0003',2);
 
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
@@ -400,8 +376,7 @@ create table notificaciones
 	fecRegistro datetime,
 	marked int
 );
-insert into notificaciones(idcliente,payload,fecRegistro,marked) values(4,'HOLAAAAAA dsf sdfdsf sdf sd fsdfsdfsdfsdfsd',getdate(),0);
-select * from cliente
+
 --Bitacora. 
 CREATE TABLE bitacora
 (

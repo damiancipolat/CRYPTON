@@ -147,33 +147,14 @@ namespace UI
         //Manejo el menu de empleado.
         private void handleEmployeeMenu()
         {
-           /* List<Componente> permissions = Session.GetInstance().getPermissions();
-            PermisoBL permBL = new PermisoBL();
-
-            //It menu
-            this.main_menu_it.Visible = permBL.hasPermission(permissions, "ADM003");
-            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, "IT0001");
-            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, "IT0002");
-            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, "IT0003");*/
-        }
-
-
-        //Manejo el menu ocultando mostrando.
-        private void handleMenu()
-        {
             List<Componente> permissions = Session.GetInstance().getPermissions();
             PermisoBL permBL = new PermisoBL();
 
-            //Set items if the code exist in the list.
-            this.main_menu_operate.Visible = permBL.hasPermission(permissions, "R002"); ;
-            /*
-            this.main_menu_operate.Visible = true;
-            this.main_menu_search.Visible = permBL.hasPermission(permissions, "USR005");
-            this.main_menu_sell.Visible = permBL.hasPermission(permissions, "USR004");
-            this.main_menu_buy.Visible = permBL.hasPermission(permissions, "USR003");
-            this.main_menu_deposit.Visible = permBL.hasPermission(permissions, "USR002");
-            this.main_menu_extract.Visible = permBL.hasPermission(permissions, "USR001");
-            */
+            //It menu
+            this.main_menu_it.Visible = permBL.hasPermission(permissions, "R004");
+            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, "IT0001");
+            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, "IT0002");
+            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, "IT0003");
         }
 
         //Oculto menu en base a los permisos.
@@ -189,6 +170,9 @@ namespace UI
 
                 if (userType == UsuarioTipo.CLIENTE)
                     this.handleClientMenu();
+
+                if (userType == UsuarioTipo.EMPLEADO)
+                    this.handleEmployeeMenu();
             }          
 
             //Si esta desactivada la sesion.
