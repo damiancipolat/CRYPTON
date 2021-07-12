@@ -70,7 +70,7 @@ namespace UI
             MonedaBE destino = new MonedaBL().getByCode(this.moneda_ofrece.Items[this.moneda_ofrece.SelectedIndex].ToString());
 
             //Traigo el resultado.
-            List<OrdenVentaBE> results = new OrdenVentaBL().buscar(destino, origen);
+            List<OrdenVentaBE> results = new OrdenVentaBL().buscar(destino, origen, Session.GetInstance().getActiveClient());
 
             //Lleno la grilla.
             this.fillData(results);

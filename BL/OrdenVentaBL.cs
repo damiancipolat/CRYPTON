@@ -47,9 +47,20 @@ namespace BL
 
         public float cotizar(OrdenVentaBE orden,BilleteraBE destino) { return 0; }
 
-        public List<OrdenVentaBE> buscar(MonedaBE ofrece, MonedaBE pide)
+        public List<OrdenVentaBE> buscar(MonedaBE ofrece, MonedaBE pide,ClienteBE cliente)
         {
-            return new OrdenVentaDAL().search(ofrece,pide);
+            //Traigo los datos.
+            List<OrdenVentaBE> results = new OrdenVentaDAL().search(ofrece,pide);
+
+            //Cargo lista de resultados.
+            List<OrdenVentaBE> final = new List<OrdenVentaBE>();
+
+            //Itero para excluir ventas publicadas por mi mismo.
+            foreach (OrdenVentaBE tmpOrder in results)
+                if (tmpOrder.vendedor.idcliente != cliente.idcliente)
+                    final.Add(tmpOrder);
+
+            return final;
         }
 
         public List<OrdenVentaBE> orderBySeller(ClienteBE cliente)

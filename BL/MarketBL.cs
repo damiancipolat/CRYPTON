@@ -50,7 +50,7 @@ namespace BL
                 MonedaBE pideMoney = new MonedaBL().getByCode(combination.Item2);
 
                 //Busco.
-                List<OrdenVentaBE> founded = new OrdenVentaBL().buscar(ofreceMoney, pideMoney);
+                List<OrdenVentaBE> founded = new OrdenVentaBL().buscar(ofreceMoney, pideMoney,cliente);
 
                 if (founded.Count > 0)
                     result.AddRange(founded);

@@ -58,7 +58,7 @@
     <Compile Include="Operations\Commission.cs" />
     <Compile Include="Operations\EstimateTaxesForBuy.cs" />
     <Compile Include="Operations\NotificateBuySuccess.cs" />
-    <Compile Include="Operations\Swipe.cs" />
+    <Compile Include="Operations\Swiper.cs" />
     <Compile Include="Operations\ValidateSwipe.cs" />
     <Compile Include="OrdenCompraBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />
