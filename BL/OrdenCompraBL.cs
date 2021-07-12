@@ -30,20 +30,33 @@ namespace BL
         }
 
         //Hago la operacion de comprar.
-        public void comprar(OrdenVentaBE orden, ClienteBE buyer)
+        public long comprar(OrdenVentaBE orden, ClienteBE buyer)
         {
             //Valido los montos.
-           // this.validateSwipeAmmount(orden,buyer,orden.vendedor);
+            new ValidateSwipe().validate(orden, buyer);
 
-            //Registro la comision de la venta.
-            //this.registrarComisionVenta(orden,buyer,orden.vendedor);
+            //Armo la orden de compra.
+            OrdenCompraBE buyOrder = new OrdenCompraBE();
+            buyOrder.comprador = buyer;
+            buyOrder.cantidad = (float)orden.cantidad;
+            buyOrder.moneda = orden.pide;
+            buyOrder.ordenVenta = orden;
+            buyOrder.precio = (float)orden.precio;
+            buyOrder.fecOperacion = DateTime.Now;
+
+            long orderId = new OrdenCompraDAL().save(buyOrder);
+            buyOrder.idcompra = orderId;
+
+            //Registro las comisiones.
+            new Commission().commisionate(buyOrder);
 
             //Hago el intercambio
-            //this.swipe(orden,buyer);
+            this.swipe(orden,buyer);
 
             //cargo las notificaciones.
-            //new NotificacionBL().save(sellNes);
+            new NotificateBuySuccess().notificate(buyOrder);
 
+            return orderId;
         }
     }
 }

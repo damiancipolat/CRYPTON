@@ -72,8 +72,20 @@ namespace BL.Operations
             transfer.valor = ammount;
             //transfer.idorden = idoperacion;
 
-            return new TransferenciaDAL().save(transfer);
-    }
+            //Guardo.
+            int transfId = new TransferenciaDAL().save(transfer);
+
+            //Actualizo saldos.
+            BilleteraBL walletBiz = new BilleteraBL();
+
+            //Extraigo la cantidad de $ del origen.
+            walletBiz.extraer(origen, ammount);
+
+            //La agrego en el despinto.
+            walletBiz.depositar(destino,ammount);
+
+            return transfId;
+        }
 
         //Hago las transferencias cruzadas A->B.
         private void swipePart1(OrdenVentaBE orden, ClienteBE buyer)

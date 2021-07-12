@@ -115,7 +115,7 @@ namespace BL
         }
 
         //Esta operacion solo funciona si la moneda es ARS.
-        public int depositar(BilleteraBE target, float ammount)
+        public int depositar(BilleteraBE target, double ammount)
         {
             if (target.moneda.cod != "ARS")
                 throw new Exception("Operation allowed only to wallets in ARS");
@@ -131,7 +131,7 @@ namespace BL
         }
 
         //Esta operacion solo funciona si la moneda es ARS.
-        public int extraer(BilleteraBE target, float ammount)
+        public int extraer(BilleteraBE target, double ammount)
         {
             if (target.moneda.cod != "ARS")
                 throw new Exception("Operation allowed only to wallets in ARS");
