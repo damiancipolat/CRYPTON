@@ -48,6 +48,7 @@ namespace UI
                         TreeNode newRama = new TreeNode();
                         newRama.Tag = "F";
                         newRama.Name = item.Nombre;
+                        newRama.ImageKey = nodo.Cod;
                         rama.Nodes.Add(newRama);
 
                         //Call recursive.
@@ -58,6 +59,7 @@ namespace UI
                         TreeNode hoja = new TreeNode();
                         hoja.Text = item.Nombre;
                         hoja.Name = item.Cod;
+                        hoja.ImageKey = nodo.Cod;
                         hoja.Tag ="P";
                         rama.Nodes.Add(hoja);
                         Debug.WriteLine("hoja ____>" + item.Cod + "," + item.Nombre + ", hoja *");
@@ -134,7 +136,7 @@ namespace UI
             if (this.permission_tree.SelectedNode != null)
             {
                 TreeNode node = this.permission_tree.SelectedNode;
-                Debug.WriteLine("-)-)"+node.Text+"__"+node.Name+" tag:"+node.Tag);
+                Debug.WriteLine("Haz clickeado sobre:"+node.ImageKey+" "+node.Text+"__"+node.Name+" tag:"+node.Tag);
             }
         }
 
@@ -152,7 +154,7 @@ namespace UI
                 {
                     //Remove permission.
                     TreeNode node = this.permission_tree.SelectedNode;
-                    new PermisoBL().removeToUser(node.Tag.ToString(),node.Name, this.user.idusuario);
+                    new PermisoBL().removeToUser(node.ImageKey,node.Name, this.user.idusuario);
 
                     //Draw the tree.
                     this.drawPermissionTree();
