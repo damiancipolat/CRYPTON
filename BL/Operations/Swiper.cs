@@ -43,8 +43,40 @@ namespace BL.Operations
             }
         }
 
+        //Transferencia de cripto usando blockio
+        private string cryptoTransfer(string origen, string destino, string money, double ammount)
+        {
+            //Traigo las claves.
+            string originKey = this.getKeys(this.getEnvironment(), money);
+
+            //Casteo el formato de la moneda.
+            string moneyFormatedA = ammount.ToString("0.000000000").Replace(",", ".");
+
+            //Hago el request.
+            Transference result = new BlockIo(originKey).makeTransference(origen, destino, moneyFormatedA);
+            Debug.WriteLine("Transference" + result.block_io_transference.data.network + "   " + result.block_io_transference.data.txid);
+
+            return result.block_io_transference.data.txid;
+        }
+
+        //Transferencia desde una cuenta en ars a la otra.
+        private int arsTransfer(BilleteraBE origen, BilleteraBE destino, double ammount, long idoperacion)
+        {
+            //Armo la nueva transferencia.
+            TransferenciasBE transfer = new TransferenciasBE();
+
+            transfer.moneda = origen.moneda;
+            transfer.cliente = origen.cliente;
+            transfer.origen = origen;
+            transfer.destino = destino;
+            transfer.valor = ammount;
+            //transfer.idorden = idoperacion;
+
+            return new TransferenciaDAL().save(transfer);
+    }
+
         //Hago las transferencias cruzadas A->B.
-        private string swipePart1(OrdenVentaBE orden, ClienteBE buyer)
+        private void swipePart1(OrdenVentaBE orden, ClienteBE buyer)
         {
             //Preparo el primer lado de la transferencia A----->B
             ClienteBE seller = orden.vendedor;
@@ -53,22 +85,14 @@ namespace BL.Operations
             BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[originMoney].idwallet, true);
             BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[originMoney].idwallet, true);
 
-            string originKey = this.getKeys(this.getEnvironment(), originMoney);
-
-            Debug.WriteLine("operacion>" + sellerWallet.direccion + "->" + buyerWallet.direccion + orden.cantidad.ToString() + " " + originMoney);
-
-            //Casteo
-            string moneyFormatedA = orden.cantidad.ToString("0.000000000").Replace(",", ".");
-
-            //Hago el request.
-            Transference result = new BlockIo(originKey).makeTransference(sellerWallet.direccion, buyerWallet.direccion, moneyFormatedA);
-            Debug.WriteLine("Transference" + result.block_io_transference.data.network + "   " + result.block_io_transference.data.txid);
-
-            return result.block_io_transference.data.txid;
+            if (orden.ofrece.cod != "ARS")
+                this.cryptoTransfer(sellerWallet.direccion, buyerWallet.direccion, originMoney, orden.cantidad);
+            else
+                this.arsTransfer(sellerWallet,buyerWallet, orden.cantidad, orden.idorden);
         }
 
         //Hago las transferencias cruzadas B->A.
-        private string swipePart2(OrdenVentaBE orden, ClienteBE buyer)
+        private void swipePart2(OrdenVentaBE orden, ClienteBE buyer)
         {
             //Preparo el primer lado de la transferencia B--->A
             ClienteBE seller = orden.vendedor;
@@ -76,33 +100,26 @@ namespace BL.Operations
 
             BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[originMoney].idwallet, true);
             BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[originMoney].idwallet, true);
-
-            string originKey = this.getKeys(this.getEnvironment(), originMoney);
-            Debug.WriteLine("operacion>" + buyerWallet.direccion + "->" + sellerWallet.direccion + orden.precio.ToString() + " " + originMoney);
-
-            //Casteo
-            string moneyFormatedA = orden.precio.ToString("0.000000000").Replace(",", ".");
-
-            //Hago el request.
-            Transference result = new BlockIo(originKey).makeTransference(buyerWallet.direccion, sellerWallet.direccion, moneyFormatedA);
-            Debug.WriteLine("Transference" + result.block_io_transference.data.network + "   " + result.block_io_transference.data.txid);
-
-            return result.block_io_transference.data.txid;
+            
+            if (orden.ofrece.cod != "ARS")
+                this.cryptoTransfer(buyerWallet.direccion, sellerWallet.direccion, originMoney, orden.precio);
+            else
+                this.arsTransfer(sellerWallet, buyerWallet, orden.cantidad, orden.idorden);
         }
-        
+
         //Intercambio saldos entre 2 clientes en base a una orden de venta.
         public List<string> swipe(OrdenVentaBE orden, ClienteBE buyer)
         {
             //Hago A->B
-            string tx1 = this.swipePart1(orden, buyer);
+            this.swipePart1(orden, buyer);
 
             //Hago A<-B
-            string tx2 = this.swipePart2(orden, buyer);
+            this.swipePart2(orden, buyer);
 
             //Retorno los id de transacciones.
             List<string> result = new List<string>();
-            result.Add(tx1);
-            result.Add(tx2);
+            result.Add("a");
+            result.Add("b");
 
             return result;
         }

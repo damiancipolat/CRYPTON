@@ -13,7 +13,7 @@ namespace BE
         public ClienteBE cliente;
         public BilleteraBE origen;
         public BilleteraBE destino;
-        public float valor;
+        public double valor;
         public MonedaBE moneda;
         public int idorden;
     }
