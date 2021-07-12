@@ -98,7 +98,7 @@ namespace BL
             taxList.Add((buyerPlatformFee, "TAX_PLATFORM_FOR_BUY"));
 
             //Traigo el costo la red.
-            if (orden.ofrece.cod != "ARS")
+            if (orden.pide.cod != "ARS")
             {
                 //Calculo el fee de la red de cripto.
                 double networkFee = Convert.ToDouble(this.fetchNetworkFee(orden.pide.cod, destinyWallet.direccion, orden.precio.ToString()));

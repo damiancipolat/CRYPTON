@@ -58,6 +58,11 @@ namespace BL
             int empleId = new EmpleadoDAL().insert(emple);
             emple.idempleado = empleId;
 
+            //Registro.
+            PermisoBL perm = new PermisoBL();
+            perm.bindSpecificToUser(null, "R001", empleId);
+            perm.bindSpecificToUser("R001", "R003", empleId);
+
             return emple;
         }
     }

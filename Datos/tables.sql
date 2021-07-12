@@ -107,13 +107,13 @@ insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI005',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI006',5);
 
 --Empleado IT
-insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',2);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',2);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','R004',2);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0001',2);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0002',2);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0003',2);
-*/
+insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','R004',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0001',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0002',1);
+insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0003',1);
+*/select * from rol_permiso
 
 --Tabla que relaciona permisos con usuarios.
 create table usuario_permiso
@@ -223,6 +223,7 @@ create table api_keys(
 
 insert into api_keys(ambiente,btc,ltc,dog) values('TEST_1','70d1-1c21-b76c-fb00','34e3-4277-7289-6fd6','7c02-9d46-b312-25ef');
 insert into api_keys(ambiente,btc,ltc,dog) values('TEST_2','7ebe-8f45-4490-37d4','8e15-55be-cccd-b33c','cece-b117-15ca-e13d');
+insert into api_keys(ambiente,btc,ltc,dog) values('TEST_3','445a-3f29-2ac6-1193','81ae-7b52-0529-5eb2','b5a7-8ef5-79da-85c7');
 insert into api_keys(ambiente,btc,ltc,dog) values('PROD','6195-52ea-f8fb-dfc1','b311-ecc3-0e70-3c50','611f-3c58-e739-3378');
 
 --Cuentas
@@ -341,7 +342,6 @@ create table orden_venta(
 	ordenEstado int,
 	deleted datetime
 );
-select distinct ofrece,pide from orden_venta
 
 --Tabla de tipo de ordenes.
 create table orden_estado(

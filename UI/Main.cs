@@ -429,16 +429,8 @@ namespace UI
 
         private void Button10_Click(object sender, EventArgs e)
         {
-            OrdenVentaBE order = new OrdenVentaBL().load(3);
-            BilleteraBE wallet = new BilleteraBL().getById(7, false);           
-
-            new ComisionBL().applyFromSell(order,wallet);
-            new ComisionBL().pendingAmmount(wallet);
-            /*  
-             ClienteBE seller = order.vendedor;
-            ClienteBE buyer = new ClienteBL().findById(3);
-            new OrdenCompraBL().validateSwipeAmmount(order, buyer, seller);
-            */
+            //new RegisterUser().Show();
+            new UsersControl().Show();
         }
 
         private void Button11_Click(object sender, EventArgs e)
@@ -480,9 +472,7 @@ namespace UI
 
         private void Button5_Click_1(object sender, EventArgs e)
         {
-            OrdenVentaBE order = new OrdenVentaBL().load(3);
-            ClienteBE cli = new ClienteBL().findById(3);
-            new OrdenCompraBL().swipe(order, cli);
+
         }
     }
 }

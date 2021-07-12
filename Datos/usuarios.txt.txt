@@ -1,0 +1,20 @@
+USUARIOS DE IT:
+---------------
+
+roberto@gmail.com
+123456
+
+matias@gmail.com
+123456
+
+USUARIOS CLIENTES:
+-----------------
+
+damian.cipolat@gmail.com
+123456
+
+charlie.brown@gmail.com
+123456
+
+alf@gmail.com
+123456

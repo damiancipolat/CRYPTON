@@ -55,8 +55,6 @@
             this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_lang_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -310,33 +308,11 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(1235, 81);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(80, 30);
-            this.button10.TabIndex = 22;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.Button10_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(434, 138);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click_1);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button10);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -386,14 +362,12 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_add_user;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_user_manager;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_lang_manager;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ToolStripMenuItem main_menu_recomendations;
         private System.Windows.Forms.ToolStripMenuItem main_menu_search;
         private System.Windows.Forms.ToolStripMenuItem main_menu_my_sells;
         private System.Windows.Forms.ToolStripMenuItem main_menu_notifications;
         private System.Windows.Forms.ToolStripMenuItem main_menu_balance;
         private System.Windows.Forms.ToolStripMenuItem main_menu_publish;
-        private System.Windows.Forms.Button button5;
     }
 }
 
