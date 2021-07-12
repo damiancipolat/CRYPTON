@@ -89,10 +89,10 @@ namespace UI
                         new string[] {
                         order.idorden.ToString(),
                         order.vendedor.alias,
-                        order.cantidad.ToString(),
-                        order.pide.cod,
-                        order.precio.ToString(),
-                        order.ofrece.cod
+                        order.cantidad.ToString("0.000000000"),
+                        order.ofrece.cod,
+                        order.precio.ToString("0.000000000"),
+                        order.pide.cod                        
                     });
                 }
             }
@@ -131,10 +131,10 @@ namespace UI
             this.usr_search_data.Columns.Clear();
             this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_ID"), Idioma.GetInstance().translate("SEARCH_COL_ID"));
             this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_SELLER"), Idioma.GetInstance().translate("SEARCH_COL_SELLER"));
+            this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_OFFER"), Idioma.GetInstance().translate("SEARCH_COL_OFFER"));
             this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_QTY"), Idioma.GetInstance().translate("SEARCH_COL_QTY"));
             this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_REQ"), Idioma.GetInstance().translate("SEARCH_COL_REQ"));
-            this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_PRICE"), Idioma.GetInstance().translate("SEARCH_COL_PRICE"));
-            this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_OFFER"), Idioma.GetInstance().translate("SEARCH_COL_OFFER"));
+            this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_PRICE"), Idioma.GetInstance().translate("SEARCH_COL_PRICE"));                        
         }
     }
 }

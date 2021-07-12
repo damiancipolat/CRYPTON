@@ -51,12 +51,12 @@
             this.ars_label = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.your_wallets_descrip_label = new System.Windows.Forms.Label();
             this.your_wallets_label = new System.Windows.Forms.Label();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.your_wallets_descrip_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -331,17 +331,6 @@
             this.panel11.Size = new System.Drawing.Size(540, 67);
             this.panel11.TabIndex = 44;
             // 
-            // your_wallets_descrip_label
-            // 
-            this.your_wallets_descrip_label.AutoSize = true;
-            this.your_wallets_descrip_label.BackColor = System.Drawing.Color.Transparent;
-            this.your_wallets_descrip_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.your_wallets_descrip_label.Location = new System.Drawing.Point(15, 36);
-            this.your_wallets_descrip_label.Name = "your_wallets_descrip_label";
-            this.your_wallets_descrip_label.Size = new System.Drawing.Size(210, 20);
-            this.your_wallets_descrip_label.TabIndex = 51;
-            this.your_wallets_descrip_label.Text = "your_wallets_descrip_label";
-            // 
             // your_wallets_label
             // 
             this.your_wallets_label.AutoSize = true;
@@ -392,6 +381,18 @@
             this.button1.Size = new System.Drawing.Size(48, 47);
             this.button1.TabIndex = 37;
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // your_wallets_descrip_label
+            // 
+            this.your_wallets_descrip_label.AutoSize = true;
+            this.your_wallets_descrip_label.BackColor = System.Drawing.Color.Transparent;
+            this.your_wallets_descrip_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.your_wallets_descrip_label.Location = new System.Drawing.Point(15, 36);
+            this.your_wallets_descrip_label.Name = "your_wallets_descrip_label";
+            this.your_wallets_descrip_label.Size = new System.Drawing.Size(210, 20);
+            this.your_wallets_descrip_label.TabIndex = 51;
+            this.your_wallets_descrip_label.Text = "your_wallets_descrip_label";
+            this.your_wallets_descrip_label.Visible = false;
             // 
             // frm_wallets
             // 

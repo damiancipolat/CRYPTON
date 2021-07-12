@@ -477,6 +477,13 @@ namespace UI
         {
             new NotificationsFrm(Session.GetInstance().getActiveClient()).Show();
         }
+
+        private void Button5_Click_1(object sender, EventArgs e)
+        {
+            OrdenVentaBE order = new OrdenVentaBL().load(3);
+            ClienteBE cli = new ClienteBL().findById(3);
+            new OrdenCompraBL().swipe(order, cli);
+        }
     }
 }
  

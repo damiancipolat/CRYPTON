@@ -104,7 +104,7 @@ insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI003',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI004',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI005',5);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI006',5);
-
+select * from rol_permiso
 --Empleado IT
 insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',2);
 insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',2);
@@ -130,7 +130,8 @@ create table admin_backup
 	[type] varchar(100),
 	deleted datetime
 );
-
+select * from billetera
+select * from api_keys
 --Validaciones de identidad, se ingresa documentacion y estado.
 create table solic_onboarding(
 	idsolic bigint identity(1,1) primary key,

@@ -84,11 +84,12 @@ namespace BL
             //Registro.
             perm.bindSpecificToUser(null,"R001", clientId);
             perm.bindSpecificToUser("R001","R002", clientId);
-            perm.bindSpecificToUser("R002", "USR001", clientId);
-            perm.bindSpecificToUser("R002", "USR002", clientId);
-            perm.bindSpecificToUser("R002", "USR003", clientId);
-            perm.bindSpecificToUser("R002", "USR004", clientId);
-            perm.bindSpecificToUser("R002", "USR005", clientId);
+            perm.bindSpecificToUser("R002", "CLI001", clientId);
+            perm.bindSpecificToUser("R002", "CLI002", clientId);
+            perm.bindSpecificToUser("R002", "CLI003", clientId);
+            perm.bindSpecificToUser("R002", "CLI004", clientId);
+            perm.bindSpecificToUser("R002", "CLI005", clientId);
+            perm.bindSpecificToUser("R002", "CLI006", clientId);
         }
 
         //CONSULTA --------------------------------------------------------------

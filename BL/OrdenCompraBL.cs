@@ -43,9 +43,25 @@ namespace BL
             }
         }
 
+        //Obtengo en forma de lista todos los impuestos para hacer la compra.
+        public List<(string, string, string)> getTaxesToBuy(OrdenVentaBE orden, ClienteBE buyer)
+        {
+            List<(string, string, string)> taxList = new List<(string, string, string)>();
 
-        //TAX ------------------------------------------------------------------------
+            //Traigo la lista de impuestos para esta operacion.
+            List<(double, string)> buyerTaxList = new TaxManager().getBuyerTaxes(orden, buyer, orden.vendedor);
 
+            //Adapto el formato para una ui.
+            foreach ((double, string) tmpValue in buyerTaxList)
+            {
+                //Casteo a formato de string con ".".
+                string formatedValue = tmpValue.Item1.ToString("0.000000").Replace(",", ".");
+                taxList.Add((formatedValue, orden.pide.cod, tmpValue.Item2));
+            }
+
+            return taxList;
+        }
+                
         //Valido los montos de ambas cuentas comprador y vendedor.
         public bool validateSwipeAmmount(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
         {
@@ -79,30 +95,101 @@ namespace BL
         }
 
         //Extraigo los costos de las comisiones de la operación para registrarlas en el comisiondor.
-        public void registrarComisiones(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
+        public void registrarComisionVenta(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
         {
             //Traigo los impuestos de ambas partes.
             List<(double, string)> sellerTaxes = new TaxManager().getSellerTaxes(orden, buyer, seller);
             List<(double, string)> buyerTaxes = new TaxManager().getBuyerTaxes(orden, buyer, seller);
+
+            //Busco la comision y la aplico en cada caso.
+            foreach ((double, string) taxObj in sellerTaxes)
+            {
+                if (taxObj.Item2 == "TAX_PLATFORM_FOR_SELL")
+                {
+                    //Traigo la billetera del vendedor.
+                    BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[orden.ofrece.cod].idwallet,true);
+
+                    //Aplico la comision.
+                    new ComisionBL().applyFromSell(orden, sellerWallet);
+                }                    
+            }
         }
 
-        //Obtengo en forma de lista todos los impuestos para hacer la compra.
-        public List<(string, string,string)> getTaxesToBuy(OrdenVentaBE orden,ClienteBE buyer)
+        //Hago las transferencias cruzadas A->B.
+        public string swipePart1(OrdenVentaBE orden, ClienteBE buyer)
         {
-            List<(string, string, string)> taxList = new List<(string, string, string)>();
+            //Preparo el primer lado de la transferencia A----->B
+            ClienteBE seller = orden.vendedor;
+            string originMoney = orden.ofrece.cod;
+           
+            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[originMoney].idwallet, true);
+            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[originMoney].idwallet, true);
 
-            //Traigo la lista de impuestos para esta operacion.
-            List <(double, string)> buyerTaxList = new TaxManager().getBuyerTaxes(orden,buyer,orden.vendedor);
+            string originKey = this.getKeys(this.getEnvironment(), originMoney);
 
-            //Adapto el formato para una ui.
-            foreach ((double, string) tmpValue in buyerTaxList)
-            {
-                //Casteo a formato de string con ".".
-                string formatedValue = tmpValue.Item1.ToString("0.000000").Replace(",", ".");
-                taxList.Add((formatedValue,orden.pide.cod,tmpValue.Item2));
-            }
+            Debug.WriteLine("operacion>" + sellerWallet.direccion + "->" + buyerWallet.direccion + orden.cantidad.ToString()+ " " + originMoney);
 
-            return taxList;
+            //Casteo
+            string moneyFormatedA = orden.cantidad.ToString("0.000000000").Replace(",", ".");
+
+            //Hago el request.
+            Transference result = new BlockIo(originKey).makeTransference(sellerWallet.direccion, buyerWallet.direccion, moneyFormatedA);
+            Debug.WriteLine("Transference" + result.block_io_transference.data.network + "   " + result.block_io_transference.data.txid);
+
+            return result.block_io_transference.data.txid;
+        }
+
+        //Hago las transferencias cruzadas B->A.
+        public string swipePart2 (OrdenVentaBE orden, ClienteBE buyer)
+        {
+            //Preparo el primer lado de la transferencia B--->A
+            ClienteBE seller = orden.vendedor;
+            string originMoney = orden.pide.cod;
+
+            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[originMoney].idwallet, true);
+            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[originMoney].idwallet, true);
+
+            string originKey = this.getKeys(this.getEnvironment(), originMoney);
+            Debug.WriteLine("operacion>" + buyerWallet.direccion + "->" + sellerWallet.direccion + orden.precio.ToString() + " " + originMoney);
+
+            //Casteo
+            string moneyFormatedA = orden.precio.ToString("0.000000000").Replace(",", ".");
+
+            //Hago el request.
+            Transference result = new BlockIo(originKey).makeTransference(buyerWallet.direccion, sellerWallet.direccion, moneyFormatedA);
+            Debug.WriteLine("Transference" + result.block_io_transference.data.network + "   " + result.block_io_transference.data.txid);
+
+            return result.block_io_transference.data.txid;
+        }
+
+        //Hago swipe.
+        public (string, string) swipe(OrdenVentaBE orden, ClienteBE buyer)
+        {
+            //Hago A->B
+            string tx1 = this.swipePart1(orden, buyer);
+
+            //Hago A<-B
+            string tx2 = this.swipePart2(orden, buyer);
+
+            //Retorno los id de transacciones.
+            return (tx1, tx2);
+        }
+
+        //Hago la operacion de comprar.
+        public void comprar(OrdenVentaBE orden, ClienteBE buyer)
+        {
+            //Valido los montos.
+            this.validateSwipeAmmount(orden,buyer,orden.vendedor);
+
+            //Registro la comision de la venta.
+            this.registrarComisionVenta(orden,buyer,orden.vendedor);
+
+            //Hago el intercambio
+            this.swipe(orden,buyer);
+
+            //cargo las notificaciones.
+            //new NotificacionBL().save(sellNes);
+
         }
     }
 }

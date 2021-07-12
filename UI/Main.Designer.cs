@@ -60,6 +60,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -182,7 +183,7 @@
             this.main_menu_signout,
             this.main_menu_exit});
             this.main_menu_start.Name = "main_menu_start";
-            this.main_menu_start.Size = new System.Drawing.Size(59, 34);
+            this.main_menu_start.Size = new System.Drawing.Size(59, 24);
             this.main_menu_start.Text = "Inicio";
             this.main_menu_start.Click += new System.EventHandler(this.InicioToolStripMenuItem_Click);
             // 
@@ -277,7 +278,7 @@
             this.main_menu_it_user_manager,
             this.main_menu_it_lang_manager});
             this.main_menu_it.Name = "main_menu_it";
-            this.main_menu_it.Size = new System.Drawing.Size(35, 34);
+            this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
             // 
             // main_menu_it_add_user
@@ -363,11 +364,22 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(434, 138);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click_1);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button4);
@@ -433,6 +445,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_notifications;
         private System.Windows.Forms.ToolStripMenuItem main_menu_balance;
         private System.Windows.Forms.ToolStripMenuItem main_menu_publish;
+        private System.Windows.Forms.Button button5;
     }
 }
 

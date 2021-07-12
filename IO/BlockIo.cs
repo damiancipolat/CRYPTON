@@ -12,6 +12,7 @@ namespace IO
     public class BlockIo
     {
         private string apiKey;
+        private string pin;
         private string host;
 
         //todo
@@ -19,6 +20,7 @@ namespace IO
         {
             this.host = "https://block.io/api/v2/";
             this.apiKey = keyCode;
+            this.pin = "153629damian20403629";
         }
 
         private string numberFormat(string input)
@@ -91,9 +93,23 @@ namespace IO
             return new object();
         }
 
-        public object makeTransference(string to, float ammount )
+        public Transference makeTransference(string from, string to, string ammount)
         {
-            return new object();
+            //Armo la url.
+            string url = "http://127.0.0.1:8080/send-transaction/"+this.pin+"/"+this.apiKey+"/"+from+"/"+to+"/"+ammount;
+
+            //Hago el request.
+            var result = new Request().GET(url);
+
+            //Si es erroneo lanzo excepcion.
+            if (!result.IsSuccessStatusCode)
+                throw new Exception("Request not success," + result.StatusCode);
+
+            //Extraigo en forma de json.
+            string json = result.Content.ReadAsStringAsync().Result;
+
+            //Descerializo y convierto al tipo de retorno.
+            return JsonConvert.DeserializeObject<Transference>(json);
         }
 
         //Obtiene el costo estimado de la transferencia.
