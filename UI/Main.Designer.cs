@@ -55,10 +55,6 @@
             this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_lang_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
@@ -314,46 +310,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(173, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "idioma";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_7);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(170, 260);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 24);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "new user";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(170, 301);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 28);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "permisos";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click_1);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(170, 360);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(85, 39);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "opreation";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
-            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(1235, 81);
@@ -381,10 +337,6 @@
             this.ClientSize = new System.Drawing.Size(1428, 780);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -433,11 +385,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_it;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_add_user;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_user_manager;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_lang_manager;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ToolStripMenuItem main_menu_recomendations;
         private System.Windows.Forms.ToolStripMenuItem main_menu_search;

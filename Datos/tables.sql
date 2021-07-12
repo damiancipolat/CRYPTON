@@ -315,6 +315,8 @@ create table comisiones(
 	deleted datetime
 );
 
+select * from billetera where idcliente=3
+
 --Tabla de comisiones - valor
 create table comision_operacion_valor
 (
@@ -322,6 +324,9 @@ create table comision_operacion_valor
 	descrip varchar(100),
 	valor float
 );
+
+select * from orden_venta where idorden=3
+update orden_venta set cantidad=0.00002000 where idorden=3
 
 insert into comision_operacion_valor(descrip,valor) values('Compra',0.5);
 insert into comision_operacion_valor(descrip,valor) values('Venta',0.5);
@@ -592,7 +597,8 @@ insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_DESCRIP','Estas
 insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_CLOSE','Cerrar');
 insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_DATE','Fecha envio');
 insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_TEXT','Mensaje');
-
+insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_BUY_SUCCESS','Felicitaciones tu orden fue comprada por %c');
+insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_BUY_OK_SUCCESS','Hola %c! la compra de la orden fue exitosa!');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -771,6 +777,8 @@ insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_DESCRIP','This
 insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_CLOSE','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_DATE','Date');
 insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_TEXT','Message');
+insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_BUY_SUCCESS','Congratulations, your order was buy by %c');
+insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_BUY_OK_SUCCESS','Hi %c! the purchase of your order was successful!');
 
 select * from idioma_palabras
 select * from orden_venta

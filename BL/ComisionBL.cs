@@ -63,5 +63,10 @@ namespace BL
 
             return new ComisionDAL().save(comision);
         }
+
+        public int save(ComisionBE comision)
+        {
+            return new ComisionDAL().save(comision);
+        }
     }
 }

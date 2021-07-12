@@ -32,5 +32,11 @@ namespace BL
             ComisionValorBE data = new ComisionValorDAL().findById((int)Operaciones.EXTRACT);
             return data.valor;
         }
+
+        //Calculo el impuesto para un precio.
+        public double calcTaxForPrice(double value, double tax)
+        {
+            return (tax * value) / 100;
+        }
     }
 }

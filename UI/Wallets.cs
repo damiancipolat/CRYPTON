@@ -57,10 +57,10 @@ namespace UI
                 BilleteraBL walletBiz = new BilleteraBL();
                 
                 //Cargo los saldos.
-                this.ars_saldo.Text = walletBiz.getById(wallets["ARS"].idwallet, false).saldo.ToString() + " ARS";
-                this.btc_saldo.Text = walletBiz.getById(wallets["BTC"].idwallet, true).saldo.ToString("0.000000000") + " BTC";
-                this.ltc_saldo.Text = walletBiz.getById(wallets["LTC"].idwallet, true).saldo.ToString("0.000000000") + " LTC";
-                this.dog_saldo.Text = walletBiz.getById(wallets["DOG"].idwallet, true).saldo.ToString("0.000000000") + " DOG";
+                this.ars_saldo.Text = wallets["ARS"].saldo.ToString() + " ARS";
+                this.btc_saldo.Text = wallets["BTC"].saldo.ToString("0.000000000") + " BTC";
+                this.ltc_saldo.Text = wallets["LTC"].saldo.ToString("0.000000000") + " LTC";
+                this.dog_saldo.Text = wallets["DOG"].saldo.ToString("0.000000000") + " DOG";
                 
                 //Cargo las direcciones.
                 this.ars_address.Text = wallets["ARS"].direccion;

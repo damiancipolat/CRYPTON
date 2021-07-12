@@ -64,28 +64,27 @@ namespace UI
                 this.Close();
             }
             catch (InputException ex){
-               /* MessageBox.Show(
-                    Idioma.GetInstance().translateKey(ex.Message),
-                    Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"),
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("LOGIN_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK, 
-                    MessageBoxIcon.Exclamation);*/
+                    MessageBoxIcon.Exclamation);
             }
             catch (ServiceException ex)
             {
-               /* MessageBox.Show(
-                    Idioma.GetInstance().translateKey(ex.Message),
-                    Idioma.GetInstance().translateKey("LOGIN_INPUT_ERROR_TITLE"),
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("LOGIN_INPUT_ERROR_TITLE"),
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);*/
+                    MessageBoxIcon.Error);
             }
             catch (IntegrityException ex)
-            {
-               /* Debug.WriteLine("+++++"+ex.Message);
+            {               
                 MessageBox.Show(
-                    Idioma.GetInstance().translateKey(ex.Message),
-                    Idioma.GetInstance().translateKey("INTEGRITY_ERROR"),
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("INTEGRITY_ERROR"),
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);*/                
+                    MessageBoxIcon.Error);
             }
         }
 

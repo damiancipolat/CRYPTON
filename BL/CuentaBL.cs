@@ -113,11 +113,14 @@ namespace BL
             //Armo el diccionario de retorno.
             Dictionary<string, BilleteraBE> walletAccount = new Dictionary<string, BilleteraBE>();
 
+            BilleteraBL walletBiz = new BilleteraBL();
+
             //Cargo el diccionario.
-            walletAccount.Add("ARS", wallets.SingleOrDefault(i => i.moneda.cod == "ARS"));
-            walletAccount.Add("BTC", wallets.SingleOrDefault(i => i.moneda.cod == "BTC"));
-            walletAccount.Add("LTC", wallets.SingleOrDefault(i => i.moneda.cod == "LTC"));
-            walletAccount.Add("DOG", wallets.SingleOrDefault(i => i.moneda.cod == "DOG"));
+            walletAccount.Add("ARS", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "ARS").idwallet, false));
+            walletAccount.Add("BTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "BTC").idwallet, true));
+            walletAccount.Add("LTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "LTC").idwallet, true));
+            walletAccount.Add("DOG", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "DOG").idwallet, true));
+                        
 
             return walletAccount;
         }

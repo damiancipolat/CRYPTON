@@ -37,7 +37,14 @@ namespace UI
 
             if (dr == DialogResult.Yes && this.orden!=null)
             {
+                try
+                {
 
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 
