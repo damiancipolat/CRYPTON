@@ -108,6 +108,44 @@ namespace BL
             return new BilleteraDAL().insert(newWallet);
         }
 
+        //MODIFICACION-------------------------------------------------------------
+        public int update(BilleteraBE wallet)
+        {
+            return new BilleteraDAL().update(wallet);
+        }
+
+        //Esta operacion solo funciona si la moneda es ARS.
+        public int depositar(BilleteraBE target, float ammount)
+        {
+            if (target.moneda.cod != "ARS")
+                throw new Exception("Operation allowed only to wallets in ARS");
+
+            //Traigo la wallet.
+            BilleteraBE wallet = this.getById(target.idwallet, false);
+
+            //Incremento el saldo.
+            wallet.saldo = wallet.saldo + ammount;
+
+            //Guardo.
+            return this.update(wallet);
+        }
+
+        //Esta operacion solo funciona si la moneda es ARS.
+        public int extraer(BilleteraBE target, float ammount)
+        {
+            if (target.moneda.cod != "ARS")
+                throw new Exception("Operation allowed only to wallets in ARS");
+
+            //Traigo la wallet.
+            BilleteraBE wallet = this.getById(target.idwallet, false);
+
+            //Incremento el saldo.
+            wallet.saldo = wallet.saldo - ammount;
+
+            //Guardo.
+            return this.update(wallet);
+        }
+        
         //CONSULTA-----------------------------------------------------------------
 
         //Obtengo el balance de la cuenta y moneda..
@@ -164,8 +202,6 @@ namespace BL
 
         //-------------------------------------------------------------------------
 
-        public void depositar(BilleteraBE target, float ammount) { }
-        public void extraer(BilleteraBE target, float ammount) { }
         public void transferir(BilleteraBE origen, BilleteraBE destino, float ammount) { }
         public float traerSaldo(BilleteraBE wallet) { return 0; }
         public void traerOperaciones(BilleteraBE wallet) { }
