@@ -400,14 +400,207 @@ create table idiomas
 insert into idiomas(code,descripcion) values('ES','Español');
 insert into idiomas(code,descripcion) values('ENG','English');
 
+--Tabla de palabras
+create table palabras
+(
+	word varchar(50) primary key
+);
+
+insert into palabras values('ADDRESS');
+insert into palabras values('ARS_LABEL');
+insert into palabras values('BAD_DNI');
+insert into palabras values('BAD_PHONE');
+insert into palabras values('BAD_TRAMITE');
+insert into palabras values('BIRTH_DATE');
+insert into palabras values('BTC_LABEL');
+insert into palabras values('BTN_CLOSE_PERMISSION');
+insert into palabras values('BTN_COMPOUND_PERMISSION');
+insert into palabras values('BTN_DEL_PERMISSION');
+insert into palabras values('BTN_UPDATE_PERMISSION');
+insert into palabras values('BUTTON_CANCEL');
+insert into palabras values('BUTTON_OK');
+insert into palabras values('BUY_ERROR');
+insert into palabras values('BUY_SUCCESS');
+insert into palabras values('DOCUMENT_NUMBER');
+insert into palabras values('DOG_LABEL');
+insert into palabras values('HELLO');
+insert into palabras values('INTEGRITY_ERROR');
+insert into palabras values('INTEGRITY_USERS_CORRUPT');
+insert into palabras values('INTEGRITY_USERS_ENTITY_FAIL');
+insert into palabras values('INTEGRITY_USERS_NOT_FOUND');
+insert into palabras values('LANG_CHOOSE_TITLE');
+insert into palabras values('LANGUAGE_CHANGE_ERROR');
+insert into palabras values('LANGUAGE_CHANGE_OK');
+insert into palabras values('LOGIN');
+insert into palabras values('LOGIN_BTN_CANCEL');
+insert into palabras values('LOGIN_BTN_INGRESAR');
+insert into palabras values('LOGIN_INPUT_ERROR');
+insert into palabras values('LOGIN_INPUT_ERROR_TITLE');
+insert into palabras values('LOGIN_SERVICE_ERROR');
+insert into palabras values('LOGIN_TITLE_1');
+insert into palabras values('LOGIN_TITLE_EMAIL');
+insert into palabras values('LOGIN_TITLE_PASSWORD');
+insert into palabras values('LTC_LABEL');
+insert into palabras values('MAIN_BTN_LOGIN');
+insert into palabras values('MAIN_CHANGE_LANGUAGE');
+insert into palabras values('MAIN_MENU_BACKUP');
+insert into palabras values('MAIN_MENU_BUY');
+insert into palabras values('MAIN_MENU_DEPOSIT');
+insert into palabras values('MAIN_MENU_EXIT');
+insert into palabras values('MAIN_MENU_EXTRACT');
+insert into palabras values('MAIN_MENU_IT');
+insert into palabras values('MAIN_MENU_IT_ADD_USER');
+insert into palabras values('MAIN_MENU_IT_LANG_MANAGER');
+insert into palabras values('MAIN_MENU_IT_USER_MANAGER');
+insert into palabras values('MAIN_MENU_LANGUAGE');
+insert into palabras values('MAIN_MENU_LOGIN');
+insert into palabras values('MAIN_MENU_MY_SELLS');
+insert into palabras values('MAIN_MENU_MY_WALLETS');
+insert into palabras values('MAIN_MENU_NOTIFICATIONS');
+insert into palabras values('MAIN_MENU_OPERATE');
+insert into palabras values('MAIN_MENU_PERMISSION');
+insert into palabras values('MAIN_MENU_RECOMENDATIONS');
+insert into palabras values('MAIN_MENU_SEARCH');
+insert into palabras values('MAIN_MENU_SELL');
+insert into palabras values('MAIN_MENU_SIGNOUT');
+insert into palabras values('MAIN_MENU_SIGNUP');
+insert into palabras values('MAIN_MENU_START');
+insert into palabras values('MAIN_MENU_USER');
+insert into palabras values('MAIN_SPLASH_ACTIVITY');
+insert into palabras values('MAIN_SPLASH_TITLE');
+insert into palabras values('MY_SELL_FINISH_CONFIRM');
+insert into palabras values('MY_SELL_FINISH_SUCCESS');
+insert into palabras values('MY_SELL_FINISH_TITLE');
+insert into palabras values('MY_SELL_ORDERS_PAUSE');
+insert into palabras values('MY_SELL_ORDERS_TITLE');
+insert into palabras values('NOTIF_BUY_OK_SUCCESS');
+insert into palabras values('NOTIF_BUY_SUCCESS');
+insert into palabras values('NOTIF_CLOSE');
+insert into palabras values('NOTIF_DATE');
+insert into palabras values('NOTIF_DESCRIP');
+insert into palabras values('NOTIF_TEXT');
+insert into palabras values('NOTIF_TITLE');
+insert into palabras values('OP_BTN_BUY');
+insert into palabras values('OP_BTN_CLOSE');
+insert into palabras values('OP_DETAIL_LABEL');
+insert into palabras values('OP_OFFER');
+insert into palabras values('OP_REQ');
+insert into palabras values('OP_SELLER');
+insert into palabras values('OP_TAX_LABEL');
+insert into palabras values('OP_TAX_LABEL_INFO');
+insert into palabras values('OP_TITLE');
+insert into palabras values('ORDER_NUMER');
+insert into palabras values('PERMISSION_ABM');
+insert into palabras values('PERMISSION_LABEL');
+insert into palabras values('PERMISSION_TITLE');
+insert into palabras values('PHONE_NUMBER');
+insert into palabras values('RECOM_CLOSE');
+insert into palabras values('RECOM_DESCRIP');
+insert into palabras values('RECOM_TITLE');
+insert into palabras values('RECOM_VIEW');
+insert into palabras values('REGISTER_INPUT_EMAIL_ERROR');
+insert into palabras values('REGISTER_INPUT_ERROR');
+insert into palabras values('REGISTER_INPUT_ERROR_TITLE');
+insert into palabras values('REGISTER_INPUT_SUCCESS');
+insert into palabras values('SEARCH_BTN_BY');
+insert into palabras values('SEARCH_BTN_CLOSE');
+insert into palabras values('SEARCH_BTN_SEARCH');
+insert into palabras values('SEARCH_BTN_VIEW');
+insert into palabras values('SEARCH_COL_ID');
+insert into palabras values('SEARCH_COL_OFFER');
+insert into palabras values('SEARCH_COL_PRICE');
+insert into palabras values('SEARCH_COL_QTY');
+insert into palabras values('SEARCH_COL_REQ');
+insert into palabras values('SEARCH_COL_SELLER');
+insert into palabras values('SEARCH_COL_STATUS');
+insert into palabras values('SEARCH_DESCRIP');
+insert into palabras values('SEARCH_TITLE');
+insert into palabras values('SELL_CLOSE');
+insert into palabras values('SELL_INPUT');
+insert into palabras values('SELL_MONEY');
+insert into palabras values('SELL_MONEY_EXCED');
+insert into palabras values('SELL_MONEY_FREE_PRICE');
+insert into palabras values('SELL_MONEY_MARKET_PRICE');
+insert into palabras values('SELL_MONEY_MISMATCH');
+insert into palabras values('SELL_MONEY_SUCCESS');
+insert into palabras values('SELL_PUBLISH');
+insert into palabras values('SELL_RECEIVE');
+insert into palabras values('SELL_TAX');
+insert into palabras values('SELL_TITLE');
+insert into palabras values('SIGNUP_ALIAS');
+insert into palabras values('SIGNUP_CANCEL');
+insert into palabras values('SIGNUP_DNI_REPEATED');
+insert into palabras values('SIGNUP_EMAIL');
+insert into palabras values('SIGNUP_EMAIL_REPEATED');
+insert into palabras values('SIGNUP_LEGACY');
+insert into palabras values('SIGNUP_NAME');
+insert into palabras values('SIGNUP_OK');
+insert into palabras values('SIGNUP_PWD');
+insert into palabras values('SIGNUP_SURNAME');
+insert into palabras values('SINGUP_DESCRIP');
+insert into palabras values('SINGUP_DESCRIPTION');
+insert into palabras values('SINGUP_TITLE');
+insert into palabras values('TAX_NETWORK_FEE');
+insert into palabras values('TAX_PLATFORM_FOR_BUY');
+insert into palabras values('TAX_PLATFORM_FOR_SELL');
+insert into palabras values('UI_LANG_NEW_KEY');
+insert into palabras values('UI_LANG_NEW_KEY_DESCRIP');
+insert into palabras values('UI_LANG_NEW_KEY_TITLE');
+insert into palabras values('UI_LANG_NEW_VALUE_TITLE');
+insert into palabras values('USR_COL_EMAIL');
+insert into palabras values('USR_COL_ID');
+insert into palabras values('USR_COL_NAME');
+insert into palabras values('USR_COL_SURNAME');
+insert into palabras values('USR_COL_TYPE');
+insert into palabras values('USR_LANG_COL_CODE');
+insert into palabras values('USR_LANG_COL_VALUE');
+insert into palabras values('USR_LANG_DELETE_CONFIRM');
+insert into palabras values('USR_LANG_DELETE_CONFIRM_TITLE');
+insert into palabras values('USR_LANG_NEW');
+insert into palabras values('USR_LANG_NEW_ERROR');
+insert into palabras values('USR_LANG_NEW_NAME');
+insert into palabras values('USR_LANG_NEW_OK');
+insert into palabras values('USR_LANG_NEW_REQUIRED');
+insert into palabras values('USR_LANG_UI_ADD_LANGUAGE');
+insert into palabras values('USR_LANG_UI_CLOSE_LANGUAGE');
+insert into palabras values('USR_LANG_UI_DEL_LANGUAGE');
+insert into palabras values('USR_LANG_UI_DESCRIP');
+insert into palabras values('USR_LANG_UI_EDIT_LANGUAGE');
+insert into palabras values('USR_LANG_UI_NEW_LANGUAGE');
+insert into palabras values('USR_LANG_UI_REFRESH_LANGUAGE');
+insert into palabras values('USR_LANG_UI_TITLE');
+insert into palabras values('USR_LANG_UPD_OK');
+insert into palabras values('USR_LANG_UPD_REQUIRED');
+insert into palabras values('USR_PERM_ADD_CONFIRM_DESCRIP');
+insert into palabras values('USR_PERM_ADD_CONFIRM_TITLE');
+insert into palabras values('USR_PERM_ADD_DENY');
+insert into palabras values('USR_PERM_ADD_ERROR');
+insert into palabras values('USR_PERM_BTN');
+insert into palabras values('USR_PERM_COMP_ADD_DESCRIP');
+insert into palabras values('USR_PERM_COMP_ADD_TITLE');
+insert into palabras values('USR_PERM_DEL_CONFIRM_DESCRIP');
+insert into palabras values('USR_PERM_DEL_CONFIRM_TITLE');
+insert into palabras values('USR_PERM_DEL_REQ');
+insert into palabras values('USR_PERM_DEL_SUCESS');
+insert into palabras values('USR_SEARCH');
+insert into palabras values('USR_SEARCH_BTN');
+insert into palabras values('USR_SEARCH_CLOSE');
+insert into palabras values('USR_SEARCH_DESCRIP');
+insert into palabras values('USR_SEARCH_LABEL');
+insert into palabras values('WELCOME');
+insert into palabras values('YOUR_DOCUMENTS');
+insert into palabras values('YOUR_USER_LABEL');
+insert into palabras values('YOUR_WALLETS_DESCRIPT');
+insert into palabras values('YOUR_WALLETS_LABEL');
+
 --Tabla de palabras por idioma.
 create table idioma_palabras
-(
-	idpalabra int identity(1,1) primary key,
+(	
 	code varchar(50),
 	clave varchar(50),
 	valor varchar(100),
-	deleted datetime
+	deleted datetime,
+	CONSTRAINT pk_idioma_palabra PRIMARY KEY (code,clave)
 );
 
 --ESPAÑOL
