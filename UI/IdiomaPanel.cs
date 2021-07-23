@@ -37,8 +37,6 @@ namespace UI
             this.usr_lang_del_all_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_DEL_LANGUAGE");            
             this.usr_lang_ui_refresh_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_REFRESH_LANGUAGE");
             this.usr_lang_ui_edit_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_EDIT_LANGUAGE");
-            this.usr_lang_ui_add_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_ADD_LANGUAGE");
-            this.usr_lang_ui_del_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_DEL_LANGUAGE");
             this.usr_lang_ui_close_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_CLOSE_LANGUAGE");
             this.Text = Idioma.GetInstance().translate("USR_LANG_UI_TITLE");
         }
@@ -225,6 +223,11 @@ namespace UI
                 this.fillDataGrid(new IdiomaBL().loadWords(this.idiomas[this.idioma_combo.SelectedIndex].code));
                 */
             }
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            new TemplateFrm().Show();
         }
     }
 }

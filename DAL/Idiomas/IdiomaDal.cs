@@ -82,6 +82,30 @@ namespace DAL.Idiomas
 
         //Palabras--------------------------------------------------------
 
+        //Obtengo las palabras del template
+        public Dictionary<string, string> loadTemplate()
+        {
+            List<Object> words = new QuerySelect().selectAll("palabras");
+
+            //Validateresult.
+            Dictionary<string, string> result = new Dictionary<string, string>();
+
+            if (words.Count == 0)
+                return result;
+
+            //Load the dictionary.
+            foreach (List<object> row in words)
+            {
+                Dictionary<string, object> word = new SqlParser().rowToDictionary(row);
+                Debug.WriteLine("Loading word -->" + word["word"].ToString() + ":" + word["word"].ToString());
+
+                //Agrego en la lista.
+                result.Add(word["word"].ToString(), word["word"].ToString());
+            }
+
+            return result;
+        }
+
         //Obtengo las palabras de un idioma.
         public Dictionary<string, string> loadWords(string langCode)
         {
@@ -144,6 +168,22 @@ namespace DAL.Idiomas
             };
 
             return this.getDelete().deleteSchema(schema, "idioma_palabras");
+        }
+
+        //Template--------------------------------------------------------
+
+        //Agrego un nuevo valor en el template.
+        public int addTemplateKey(string key) 
+        {
+            string sql = "insert into palabras(word) values('" + key + "');";
+            return this.getInsert().query(sql);
+        }
+
+        //Boroo un valor en el template.
+        public int deleteTemplateKey(string key)
+        {
+            string sql = "delete from palabras where word='" + key + "';";
+            return this.getDelete().query(sql);
         }
     }
 }

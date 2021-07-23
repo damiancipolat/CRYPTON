@@ -17,13 +17,10 @@ namespace BL
         //Clona un lenguaje y lo retorna para mostrarlo en una ui.
         public Dictionary<string, string> getTemplate()
         {
-            IdiomaDAL lang = new IdiomaDAL();
-            string langCode = ConfigurationManager.AppSettings["Language"];
-
-            Debug.WriteLine("Loading words from language:"+ langCode);
+            Debug.WriteLine("Loading words from template");
 
             //Recupero el 1ero.
-            return lang.loadWords(langCode);
+            return new IdiomaDAL().loadTemplate();
 
         }
 
@@ -68,7 +65,13 @@ namespace BL
 
         //PALABRAS ------------------------------------------------------------
 
-        //Grabo las palabras de un
+        //Traigo el template.
+        public Dictionary<string, string> loadTemplate()
+        {
+            return new IdiomaDAL().loadTemplate();
+        }
+
+        //Grabo las palabras de un idioma nuevo.
         private void fillWords(string code)
         {
             IdiomaDAL lang = new IdiomaDAL();
@@ -99,6 +102,34 @@ namespace BL
         public int deleteWord(string langCode, string langKey)
         {
             return new IdiomaDAL().deleteWord(langCode,langKey);
+        }
+
+        //Borro una palabra en todos los idiomas.
+        public void deleteWordAll(string key)
+        {
+            //Borro la clave.
+            new IdiomaDAL().deleteTemplateKey(key);
+
+            //Traigo todos los idiomas.
+            List<IdiomaBE> idiomas = this.getList();
+
+            //Borro de cada idioma.
+            foreach (IdiomaBE idioma in idiomas)
+                this.deleteWord(idioma.code,key);
+        }
+
+        //Agrego una palabra en todos los idiomas.
+        public void createWordAll(string key)
+        {
+            //Grabo la nueva clave.
+            new IdiomaDAL().addTemplateKey(key);
+
+            //Traigo todos los idiomas.
+            List<IdiomaBE> idiomas = this.getList();
+
+            //Los guardo en la tabla de palabras idioma.
+            foreach (IdiomaBE idioma in idiomas)
+                this.recordWord(idioma.code, key, "");
         }
     }
 }

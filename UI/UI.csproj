@@ -164,6 +164,12 @@
     <Compile Include="RegisterUser.Designer.cs">
       <DependentUpon>RegisterUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="TemplateFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateFrm.Designer.cs">
+      <DependentUpon>TemplateFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterUser.resx">
       <DependentUpon>RegisterUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateFrm.resx">
+      <DependentUpon>TemplateFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersControl.resx">
       <DependentUpon>UsersControl.cs</DependentUpon>

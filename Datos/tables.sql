@@ -594,6 +594,12 @@ insert into palabras values('YOUR_DOCUMENTS');
 insert into palabras values('YOUR_USER_LABEL');
 insert into palabras values('YOUR_WALLETS_DESCRIPT');
 insert into palabras values('YOUR_WALLETS_LABEL');
+insert into palabras values('TEMPLATE_EDITOR');
+insert into palabras values('TEMPLATE_EDITOR_ADD');
+insert into palabras values('TEMPLATE_EDITOR_DELETE');
+insert into palabras values('TEMPLATE_CONFIRM_DELETE');
+insert into palabras values('TEMPLATE_EDITOR_ADD_OK');
+insert into palabras values('TEMPLATE_EDITOR_DELETE_OK');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -801,6 +807,12 @@ insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_BUY_SUCCESS','F
 insert into idioma_palabras(code,clave,valor) values('ES','NOTIF_BUY_OK_SUCCESS','Hola %c! la compra de la orden fue exitosa!');
 insert into idioma_palabras(code,clave,valor) values('ES','BUY_SUCCESS','Haz comprado la orden, espera unos minutos para ver el saldo actualizado en tu billetera!');
 insert into idioma_palabras(code,clave,valor) values('ES','BUY_ERROR','Se produjo un error no se podra realizar la compra!');
+insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_EDITOR','Editar diccionario');
+insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_EDITOR_ADD','Agregar clave');
+insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_EDITOR_DELETE','Borrar clave');
+insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_CONFIRM_DELETE','¿Seguro desea borrar la clave, se borrara en todos los idiomas que la tengan?');
+insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_EDITOR_ADD_OK','Clave creada ok!');
+insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_EDITOR_DELETE_OK','Clave borrada ok!');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -984,3 +996,9 @@ insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_BUY_SUCCESS','
 insert into idioma_palabras(code,clave,valor) values('ENG','NOTIF_BUY_OK_SUCCESS','Hi %c! the purchase of your order was successful!');
 insert into idioma_palabras(code,clave,valor) values('ENG','BUY_SUCCESS','You have purchased the order, wait some minutes to see the balance updated in your wallet!');
 insert into idioma_palabras(code,clave,valor) values('ENG','BUY_ERROR','An error has produced buying the order..');
+insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_EDITOR','Dictionary edit');
+insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_EDITOR_ADD','Add key');
+insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_EDITOR_DELETE','Delete key');
+insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_CONFIRM_DELETE','Do you want to delete this key and in the associated languages?');
+insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_EDITOR_ADD_OK','Key created ok!');
+insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_EDITOR_DELETE_OK','Key deleted ok!');
