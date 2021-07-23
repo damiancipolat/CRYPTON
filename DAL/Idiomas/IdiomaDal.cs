@@ -27,6 +27,8 @@ namespace DAL.Idiomas
             return userTarget;
         }
 
+        //Idiomas--------------------------------------------------------
+
         //Obtengo la lista completa de idiomas.
         public List<IdiomaBE> findAll()
         {
@@ -54,6 +56,31 @@ namespace DAL.Idiomas
             return this.bindSchema((List<object>)result[0]);
 
         }
+
+        //Agrega un nuevo idioma.
+        public int insert(IdiomaBE idioma)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"code",idioma.code},
+                {"descripcion",idioma.descripcion }
+            };
+
+            return this.getInsert().insertSchema(schema, "idiomas", false);
+        }
+
+        //Borro el idioma.
+        public int delete(IdiomaBE idioma)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"code",idioma.code}
+            };
+
+            return this.getDelete().deleteSchema(schema, "idiomas");
+        }
+
+        //Palabras--------------------------------------------------------
 
         //Obtengo las palabras de un idioma.
         public Dictionary<string, string> loadWords(string langCode)
@@ -99,20 +126,24 @@ namespace DAL.Idiomas
         //Borro la palabra.
         public int deleteWord(string langCode, string langKey)
         {
-            string sql = "delete from idioma_palabras where code='"+langCode+"' and clave='"+langKey+"';";
-            return this.getDelete().query(sql);
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"code",langCode},
+                {"clave",langKey }
+            };
+
+            return this.getDelete().deleteSchema(schema, "idioma_palabras");
         }
 
-        //Agrega un nuevo idioma.
-        public int insert(IdiomaBE idioma)
+        //Borro todas las palabra de un idioma.
+        public int deleteLanguageWords(string langCode)
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"code",idioma.code},
-                {"descripcion",idioma.descripcion }
+                {"code",langCode}
             };
 
-            return this.getInsert().insertSchema(schema, "idiomas", false);
+            return this.getDelete().deleteSchema(schema, "idioma_palabras");
         }
     }
 }

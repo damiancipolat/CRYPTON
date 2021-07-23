@@ -34,6 +34,7 @@ namespace UI
             this.usr_lang_ui_title.Text = Idioma.GetInstance().translate("USR_LANG_UI_TITLE");
             this.usr_lang_ui_descrip.Text = Idioma.GetInstance().translate("USR_LANG_UI_DESCRIP");
             this.usr_lang_ui_new_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_NEW_LANGUAGE");
+            this.usr_lang_del_all_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_DEL_LANGUAGE");            
             this.usr_lang_ui_refresh_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_REFRESH_LANGUAGE");
             this.usr_lang_ui_edit_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_EDIT_LANGUAGE");
             this.usr_lang_ui_add_language.Text = Idioma.GetInstance().translate("USR_LANG_UI_ADD_LANGUAGE");
@@ -198,6 +199,31 @@ namespace UI
                 //Actualizo
                 this.selectedIdioma = this.idiomas[this.idioma_combo.SelectedIndex];
                 this.fillDataGrid(new IdiomaBL().loadWords(this.idiomas[this.idioma_combo.SelectedIndex].code));
+            }
+        }
+
+        private void Usr_lang_del_all_language_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show(
+                Idioma.GetInstance().translate("USR_LANG_ALL_DELETE_CONFIRM_TITLE"),
+                Idioma.GetInstance().translate("USR_LANG_UI_DEL_LANGUAGE"),
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (dr == DialogResult.Yes)
+            {
+                //Borro el idioma.
+                new IdiomaBL().delete(this.selectedIdioma);
+
+                //Mensaje de exito.
+                MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_DELETE_OK"));
+
+                /*
+                //Actualizo
+                this.selectedIdioma = this.idiomas[this.idioma_combo.SelectedIndex];
+                this.fillDataGrid(new IdiomaBL().loadWords(this.idiomas[this.idioma_combo.SelectedIndex].code));
+                */
             }
         }
     }

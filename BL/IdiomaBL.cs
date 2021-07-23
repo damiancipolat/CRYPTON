@@ -54,6 +54,18 @@ namespace BL
             this.fillWords(lang.code);
         }
 
+        //Borro un idioma.
+        public int delete(IdiomaBE idioma)
+        {
+            IdiomaDAL lang = new IdiomaDAL();
+
+            //Borro todas las palabras del idioma.
+            lang.deleteLanguageWords(idioma.code);
+
+            //Borro el idioma.
+            return lang.delete(idioma);
+        }
+
         //PALABRAS ------------------------------------------------------------
 
         //Grabo las palabras de un

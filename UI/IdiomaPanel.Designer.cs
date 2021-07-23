@@ -39,6 +39,8 @@
             this.usr_lang_ui_descrip = new System.Windows.Forms.Label();
             this.usr_lang_ui_new_language = new System.Windows.Forms.Button();
             this.usr_lang_ui_refresh_language = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.usr_lang_del_all_language = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idioma_list)).BeginInit();
             this.SuspendLayout();
@@ -59,24 +61,24 @@
             this.usr_lang_ui_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usr_lang_ui_title.Location = new System.Drawing.Point(71, 21);
             this.usr_lang_ui_title.Name = "usr_lang_ui_title";
-            this.usr_lang_ui_title.Size = new System.Drawing.Size(235, 36);
+            this.usr_lang_ui_title.Size = new System.Drawing.Size(188, 29);
             this.usr_lang_ui_title.TabIndex = 3;
             this.usr_lang_ui_title.Text = "usr_lang_ui_title";
             // 
             // idioma_list
             // 
             this.idioma_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.idioma_list.Location = new System.Drawing.Point(12, 214);
+            this.idioma_list.Location = new System.Drawing.Point(12, 305);
             this.idioma_list.Name = "idioma_list";
             this.idioma_list.RowHeadersWidth = 51;
             this.idioma_list.RowTemplate.Height = 24;
-            this.idioma_list.Size = new System.Drawing.Size(703, 565);
+            this.idioma_list.Size = new System.Drawing.Size(703, 474);
             this.idioma_list.TabIndex = 39;
             // 
             // usr_lang_ui_edit_language
             // 
             this.usr_lang_ui_edit_language.BackColor = System.Drawing.SystemColors.Info;
-            this.usr_lang_ui_edit_language.Location = new System.Drawing.Point(272, 158);
+            this.usr_lang_ui_edit_language.Location = new System.Drawing.Point(272, 211);
             this.usr_lang_ui_edit_language.Name = "usr_lang_ui_edit_language";
             this.usr_lang_ui_edit_language.Size = new System.Drawing.Size(139, 38);
             this.usr_lang_ui_edit_language.TabIndex = 43;
@@ -88,7 +90,7 @@
             // 
             this.usr_lang_ui_del_language.BackColor = System.Drawing.Color.LightCoral;
             this.usr_lang_ui_del_language.ForeColor = System.Drawing.Color.White;
-            this.usr_lang_ui_del_language.Location = new System.Drawing.Point(576, 158);
+            this.usr_lang_ui_del_language.Location = new System.Drawing.Point(576, 211);
             this.usr_lang_ui_del_language.Name = "usr_lang_ui_del_language";
             this.usr_lang_ui_del_language.Size = new System.Drawing.Size(139, 38);
             this.usr_lang_ui_del_language.TabIndex = 44;
@@ -99,7 +101,7 @@
             // usr_lang_ui_add_language
             // 
             this.usr_lang_ui_add_language.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.usr_lang_ui_add_language.Location = new System.Drawing.Point(425, 158);
+            this.usr_lang_ui_add_language.Location = new System.Drawing.Point(425, 211);
             this.usr_lang_ui_add_language.Name = "usr_lang_ui_add_language";
             this.usr_lang_ui_add_language.Size = new System.Drawing.Size(139, 38);
             this.usr_lang_ui_add_language.TabIndex = 45;
@@ -124,7 +126,7 @@
             this.idioma_combo.FormattingEnabled = true;
             this.idioma_combo.Location = new System.Drawing.Point(22, 100);
             this.idioma_combo.Name = "idioma_combo";
-            this.idioma_combo.Size = new System.Drawing.Size(590, 37);
+            this.idioma_combo.Size = new System.Drawing.Size(503, 37);
             this.idioma_combo.TabIndex = 47;
             this.idioma_combo.SelectedIndexChanged += new System.EventHandler(this.Idioma_combo_SelectedIndexChanged);
             // 
@@ -134,7 +136,7 @@
             this.usr_lang_ui_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usr_lang_ui_descrip.Location = new System.Drawing.Point(21, 66);
             this.usr_lang_ui_descrip.Name = "usr_lang_ui_descrip";
-            this.usr_lang_ui_descrip.Size = new System.Drawing.Size(224, 30);
+            this.usr_lang_ui_descrip.Size = new System.Drawing.Size(179, 24);
             this.usr_lang_ui_descrip.TabIndex = 48;
             this.usr_lang_ui_descrip.Text = "usr_lang_ui_descrip";
             this.usr_lang_ui_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,7 +156,7 @@
             // 
             this.usr_lang_ui_refresh_language.BackColor = System.Drawing.Color.LightGreen;
             this.usr_lang_ui_refresh_language.ForeColor = System.Drawing.Color.Black;
-            this.usr_lang_ui_refresh_language.Location = new System.Drawing.Point(12, 158);
+            this.usr_lang_ui_refresh_language.Location = new System.Drawing.Point(12, 211);
             this.usr_lang_ui_refresh_language.Name = "usr_lang_ui_refresh_language";
             this.usr_lang_ui_refresh_language.Size = new System.Drawing.Size(89, 38);
             this.usr_lang_ui_refresh_language.TabIndex = 50;
@@ -162,11 +164,33 @@
             this.usr_lang_ui_refresh_language.UseVisualStyleBackColor = false;
             this.usr_lang_ui_refresh_language.Click += new System.EventHandler(this.Button4_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Location = new System.Drawing.Point(23, 157);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(690, 1);
+            this.panel1.TabIndex = 51;
+            // 
+            // usr_lang_del_all_language
+            // 
+            this.usr_lang_del_all_language.BackColor = System.Drawing.Color.LightCoral;
+            this.usr_lang_del_all_language.ForeColor = System.Drawing.Color.White;
+            this.usr_lang_del_all_language.Location = new System.Drawing.Point(538, 100);
+            this.usr_lang_del_all_language.Name = "usr_lang_del_all_language";
+            this.usr_lang_del_all_language.Size = new System.Drawing.Size(84, 38);
+            this.usr_lang_del_all_language.TabIndex = 52;
+            this.usr_lang_del_all_language.Text = "usr_lang_ui_del_language";
+            this.usr_lang_del_all_language.UseVisualStyleBackColor = false;
+            this.usr_lang_del_all_language.Click += new System.EventHandler(this.Usr_lang_del_all_language_Click);
+            // 
             // IdiomaPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 859);
+            this.Controls.Add(this.usr_lang_del_all_language);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.usr_lang_ui_refresh_language);
             this.Controls.Add(this.usr_lang_ui_new_language);
             this.Controls.Add(this.usr_lang_ui_descrip);
@@ -205,5 +229,7 @@
         private System.Windows.Forms.Label usr_lang_ui_descrip;
         private System.Windows.Forms.Button usr_lang_ui_new_language;
         private System.Windows.Forms.Button usr_lang_ui_refresh_language;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button usr_lang_del_all_language;
     }
 }

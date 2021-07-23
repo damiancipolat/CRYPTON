@@ -399,6 +399,7 @@ create table idiomas
 
 insert into idiomas(code,descripcion) values('ES','Español');
 insert into idiomas(code,descripcion) values('ENG','English');
+insert into idiomas(code,descripcion) values('ASG','Asgardiano');
 
 --Tabla de palabras
 create table palabras
@@ -564,6 +565,7 @@ insert into palabras values('USR_LANG_NEW_REQUIRED');
 insert into palabras values('USR_LANG_UI_ADD_LANGUAGE');
 insert into palabras values('USR_LANG_UI_CLOSE_LANGUAGE');
 insert into palabras values('USR_LANG_UI_DEL_LANGUAGE');
+insert into palabras values('USR_LANG_ALL_DELETE_CONFIRM_TITLE');
 insert into palabras values('USR_LANG_UI_DESCRIP');
 insert into palabras values('USR_LANG_UI_EDIT_LANGUAGE');
 insert into palabras values('USR_LANG_UI_NEW_LANGUAGE');
@@ -602,6 +604,14 @@ create table idioma_palabras
 	deleted datetime,
 	CONSTRAINT pk_idioma_palabra PRIMARY KEY (code,clave)
 );
+
+/*
+insert into idioma_palabras(code,clave,valor)
+select 'ASG',clave,valor from idioma_palabras
+where code='ES'
+*/
+
+select * from idiomas
 
 --ESPAÑOL
 insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');
@@ -725,6 +735,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','UI_LANG_NEW_VALUE_TIT
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_UPD_OK','Lenguage actualizad correctamente');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_DELETE_CONFIRM','Borrar palabra');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_DELETE_CONFIRM_TITLE','¿Seguro queres borrar esta palabra?');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_LANG_ALL_DELETE_CONFIRM_TITLE','¿Seguro queres borrar lenguaje, se borraran todas las palabras?');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_DEL_CONFIRM_TITLE','Seguro que desea borrar?');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_DEL_CONFIRM_DESCRIP','Eliga una opción');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_PERM_DEL_SUCESS','Permiso borrado!');
@@ -897,6 +908,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_REFRESH_
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_EDIT_LANGUAGE','Edit word');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_ADD_LANGUAGE','Add');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_DEL_LANGUAGE','Delete');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_ALL_DELETE_CONFIRM_TITLE','Do you want to delete this language and all his words?');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_CLOSE_LANGUAGE','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','UI_LANG_NEW_KEY','New word');
 insert into idioma_palabras(code,clave,valor) values('ENG','UI_LANG_NEW_KEY_DESCRIP','Write the key value for the new word');
