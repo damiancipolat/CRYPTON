@@ -606,6 +606,15 @@ insert into palabras values('EDIT_PATENTE_SELECTOR_TITLE');
 insert into palabras values('EDIT_PATENTE_SELECTOR_DESCRIP');
 insert into palabras values('EDIT_FAMILY_SELECTOR_TITLE');
 insert into palabras values('EDIT_FAMILY_SELECTOR_DESCRIP');
+insert into palabras values('COMP_CRUD_TITLE_FAMILY');
+insert into palabras values('COMP_CRUD_TITLE_PATENT');
+insert into palabras values('COMP_CRUD_DESCRIPTION');
+insert into palabras values('COMP_CRUD_ADD');
+insert into palabras values('COMP_CRUD_CLOSE');
+insert into palabras values('COMP_CRUD_DELETE');
+insert into palabras values('COMP_CRUD_ADD_VALUE');
+insert into palabras values('COMP_CRUD_ADD_DESCRIP');
+
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -825,6 +834,14 @@ insert into idioma_palabras(code,clave,valor) values('ES','EDIT_PATENTE_SELECTOR
 insert into idioma_palabras(code,clave,valor) values('ES','EDIT_PATENTE_SELECTOR_DESCRIP','Desde aqui podes elegir una patente');
 insert into idioma_palabras(code,clave,valor) values('ES','EDIT_FAMILY_SELECTOR_TITLE','Elige una familia');
 insert into idioma_palabras(code,clave,valor) values('ES','EDIT_FAMILY_SELECTOR_DESCRIP','Elige una familia desde aqui');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_TITLE_FAMILY','Editar familias');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_TITLE_PATENT','Editar patentes');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DESCRIPTION','Desde aqui podes borrar y agregar');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_ADD','Agregar');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DELETE','Borrar');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_ADD_VALUE','Agregar nuevo valor');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_ADD_DESCRIP','Complete el valor');
 
 select * from idioma_palabras where code='ES'
 --ENGLISH
@@ -1021,3 +1038,11 @@ insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_PATENTE_SELECTO
 insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_PATENTE_SELECTOR_DESCRIP','You can choose a patent here');
 insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_FAMILY_SELECTOR_TITLE','Choose a family');
 insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_FAMILY_SELECTOR_DESCRIP','You can choose a family here');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_TITLE_FAMILY','Edit family');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_TITLE_PATENT','Edit patents');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DESCRIPTION','You can edit and add data from here');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_ADD','Add');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DELETE','Delete');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_ADD_VALUE','Add new value');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_ADD_DESCRIP','Complete the value here');

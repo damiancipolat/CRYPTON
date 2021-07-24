@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
 using UI.Notifications;
+using UI.Permisos;
 using DAL.Permiso.nuevo;
 
 namespace UI
@@ -526,6 +527,16 @@ namespace UI
 
                 //MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_OK"));
             }
+        }
+
+        private void Button4_Click_2(object sender, EventArgs e)
+        {
+            new ComponentCrudFrm("family").Show();
+        }
+
+        private void Button5_Click_2(object sender, EventArgs e)
+        {
+            new ComponentCrudFrm("patent").Show();
         }
     }
 }

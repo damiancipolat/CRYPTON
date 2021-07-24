@@ -82,6 +82,12 @@
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Permisos\ComponentCrudFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Permisos\ComponentCrudFrm.Designer.cs">
+      <DependentUpon>ComponentCrudFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Permisos\ComponenteSelectorFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </Compile>
     <EmbeddedResource Include="BuscadorOfertas.resx">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permisos\ComponentCrudFrm.resx">
+      <DependentUpon>ComponentCrudFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Permisos\ComponenteSelectorFrm.resx">
       <DependentUpon>ComponenteSelectorFrm.cs</DependentUpon>
