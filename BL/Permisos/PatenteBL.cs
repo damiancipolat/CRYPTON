@@ -15,6 +15,11 @@ namespace BL.Permisos
             return new PatenteDAL().save(value);
         }
 
+        public int delete(int id)
+        {
+            return new PatenteDAL().delete(id);
+        }
+
         public List<Patente2> getAll()
         {
             return new PatenteDAL().getAll();

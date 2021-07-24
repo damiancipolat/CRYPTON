@@ -15,6 +15,11 @@ namespace BL.Permisos
             return new FamiliaDAL().save(value);
         }
 
+        public int delete(int id)
+        {
+            return new FamiliaDAL().delete(id);
+        }
+
         public List<Familia2> getAll()
         {
             return new FamiliaDAL().getAll();

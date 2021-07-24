@@ -31,7 +31,7 @@ namespace DAL.DAO
         public int deleteById(string key, long id, string tabla)
         {
             //Genero el sql dinamico.
-            string sql = "delete from "+tabla+" where "+key+"id="+id+";";
+            string sql = "delete from "+tabla+" where "+key+"="+id+";";
             Debug.WriteLine("Generated sql:" + sql);
 
             //Ejecuto la consulta.

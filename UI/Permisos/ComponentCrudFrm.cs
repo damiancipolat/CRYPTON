@@ -82,7 +82,30 @@ namespace UI.Permisos
 
         private void Comp_crud_delete_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show(
+                Idioma.GetInstance().translate("COMP_CRUD_DELETE_CONFIRM"),
+                Idioma.GetInstance().translate("COMP_CRUD_DELETE_TITLE"),                
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
 
+            if (dr == DialogResult.Yes)
+            {
+                Componente2 comp = this.innerList[this.comp_crud_list.SelectedIndex];
+
+                //Grabo.
+                if (this.mode == "family")
+                    new FamiliaBL().delete(comp.Id);
+
+                if (this.mode == "patent")
+                    new PatenteBL().delete(comp.Id);
+
+                //Recargo.
+                this.loadData();
+
+                //Exitos.
+                MessageBox.Show(Idioma.GetInstance().translate("COMP_CRUD_DELETE_OK"));
+            }
         }
 
         private void Comp_crud_add_Click(object sender, EventArgs e)

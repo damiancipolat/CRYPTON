@@ -614,7 +614,9 @@ insert into palabras values('COMP_CRUD_CLOSE');
 insert into palabras values('COMP_CRUD_DELETE');
 insert into palabras values('COMP_CRUD_ADD_VALUE');
 insert into palabras values('COMP_CRUD_ADD_DESCRIP');
-
+insert into palabras values('COMP_CRUD_DELETE_TITLE');
+insert into palabras values('COMP_CRUD_DELETE_CONFIRM');
+insert into palabras values('COMP_CRUD_DELETE_OK');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -842,8 +844,10 @@ insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_CLOSE','Cer
 insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DELETE','Borrar');
 insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_ADD_VALUE','Agregar nuevo valor');
 insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_ADD_DESCRIP','Complete el valor');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DELETE_TITLE','Borrar');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DELETE_CONFIRM','¿Quiere borrar este valor?');
+insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DELETE_OK','Borrado ok!');
 
-select * from idioma_palabras where code='ES'
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
 insert into idioma_palabras(code,clave,valor) values('ENG','HELLO','Hello');
@@ -1046,3 +1050,6 @@ insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_CLOSE','Cl
 insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DELETE','Delete');
 insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_ADD_VALUE','Add new value');
 insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_ADD_DESCRIP','Complete the value here');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DELETE_TITLE','Delete');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DELETE_CONFIRM','Do you want to delete this value?');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DELETE_OK','Delete ok!');

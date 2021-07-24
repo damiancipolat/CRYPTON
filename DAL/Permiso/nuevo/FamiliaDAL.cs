@@ -23,6 +23,12 @@ namespace DAL.Permiso.nuevo
             return builder.insertSchema(schema, "permiso_new", true);
         }
 
+        public int delete(int id)
+        {
+            QueryDelete builder = new QueryDelete();
+            return builder.deleteById("id",id,"permiso_new");
+        }
+
         public List<Familia2> getAll()
         {
             //Instancio el sql builder y ejecuto el query.
