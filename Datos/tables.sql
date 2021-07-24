@@ -600,6 +600,12 @@ insert into palabras values('TEMPLATE_EDITOR_DELETE');
 insert into palabras values('TEMPLATE_CONFIRM_DELETE');
 insert into palabras values('TEMPLATE_EDITOR_ADD_OK');
 insert into palabras values('TEMPLATE_EDITOR_DELETE_OK');
+insert into palabras values('EDIT_PATENT_TITLE');
+insert into palabras values('EDIT_PATENT_DESCRIP');
+insert into palabras values('EDIT_PATENTE_SELECTOR_TITLE');
+insert into palabras values('EDIT_PATENTE_SELECTOR_DESCRIP');
+insert into palabras values('EDIT_FAMILY_SELECTOR_TITLE');
+insert into palabras values('EDIT_FAMILY_SELECTOR_DESCRIP');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -813,7 +819,14 @@ insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_EDITOR_DELET
 insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_CONFIRM_DELETE','¿Seguro desea borrar la clave, se borrara en todos los idiomas que la tengan?');
 insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_EDITOR_ADD_OK','Clave creada ok!');
 insert into idioma_palabras(code,clave,valor) values('ES','TEMPLATE_EDITOR_DELETE_OK','Clave borrada ok!');
+insert into idioma_palabras(code,clave,valor) values('ES','EDIT_PATENTE_TITLE','Editar patentes');
+insert into idioma_palabras(code,clave,valor) values('ES','EDIT_PATENTE_DESCRIP','Desde aqui podes crear o borrar patentes');
+insert into idioma_palabras(code,clave,valor) values('ES','EDIT_PATENTE_SELECTOR_TITLE','Selecciona una patente');
+insert into idioma_palabras(code,clave,valor) values('ES','EDIT_PATENTE_SELECTOR_DESCRIP','Desde aqui podes elegir una patente');
+insert into idioma_palabras(code,clave,valor) values('ES','EDIT_FAMILY_SELECTOR_TITLE','Elige una familia');
+insert into idioma_palabras(code,clave,valor) values('ES','EDIT_FAMILY_SELECTOR_DESCRIP','Elige una familia desde aqui');
 
+select * from idioma_palabras where code='ES'
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
 insert into idioma_palabras(code,clave,valor) values('ENG','HELLO','Hello');
@@ -1002,3 +1015,9 @@ insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_EDITOR_DELE
 insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_CONFIRM_DELETE','Do you want to delete this key and in the associated languages?');
 insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_EDITOR_ADD_OK','Key created ok!');
 insert into idioma_palabras(code,clave,valor) values('ENG','TEMPLATE_EDITOR_DELETE_OK','Key deleted ok!');
+insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_PATENTE_TITLE','Patent editor');
+insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_PATENTE_DESCRIP','You can manage the patents here.');
+insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_PATENTE_SELECTOR_TITLE','Choose a patent');
+insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_PATENTE_SELECTOR_DESCRIP','You can choose a patent here');
+insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_FAMILY_SELECTOR_TITLE','Choose a family');
+insert into idioma_palabras(code,clave,valor) values('ENG','EDIT_FAMILY_SELECTOR_DESCRIP','You can choose a family here');

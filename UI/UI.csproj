@@ -82,16 +82,22 @@
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Permisos\ComponenteSelectorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Permisos\ComponenteSelectorFrm.Designer.cs">
+      <DependentUpon>ComponenteSelectorFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_publish_sell.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_publish_sell.Designer.cs">
       <DependentUpon>frm_publish_sell.cs</DependentUpon>
     </Compile>
-    <Compile Include="IdiomaPanel.cs">
+    <Compile Include="Idioma\IdiomaPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IdiomaPanel.Designer.cs">
+    <Compile Include="Idioma\IdiomaPanel.Designer.cs">
       <DependentUpon>IdiomaPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="InputForm.cs">
@@ -100,10 +106,10 @@
     <Compile Include="InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Language.cs">
+    <Compile Include="Idioma\Language.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Language.Designer.cs">
+    <Compile Include="Idioma\Language.Designer.cs">
       <DependentUpon>Language.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -191,16 +197,19 @@
     <EmbeddedResource Include="BuscadorOfertas.resx">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Permisos\ComponenteSelectorFrm.resx">
+      <DependentUpon>ComponenteSelectorFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_publish_sell.resx">
       <DependentUpon>frm_publish_sell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IdiomaPanel.resx">
+    <EmbeddedResource Include="Idioma\IdiomaPanel.resx">
       <DependentUpon>IdiomaPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Language.resx">
+    <EmbeddedResource Include="Idioma\Language.resx">
       <DependentUpon>Language.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">

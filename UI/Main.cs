@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
 using UI.Notifications;
+using DAL.Permiso.nuevo;
 
 namespace UI
 {
@@ -473,6 +474,58 @@ namespace UI
         private void Button5_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_Click_8(object sender, EventArgs e)
+        {
+            //Load data.
+            List<Patente2> patentes = new PatenteDAL().getAll();
+            List<Componente2> tmp2 = new List<Componente2>();
+
+            foreach (Patente2 pat in patentes)
+                tmp2.Add((Componente2)pat);
+            
+            //Show input.            
+            ComponenteSelectorFrm frm = new ComponenteSelectorFrm(Idioma.GetInstance().translate("EDIT_PATENTE_SELECTOR_TITLE"),Idioma.GetInstance().translate("EDIT_PATENTE_SELECTOR_DESCRIP"),tmp2);
+            frm.ShowDialog();
+
+            //Obtengo el valor. 
+            int value = frm.getSelected();
+
+            if (value >= 0)
+            {
+                MessageBox.Show("---->" + value.ToString());
+                //new IdiomaBL().create(value);
+               // this.reloadLanguages();
+
+                //MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_OK"));
+            }
+        }
+
+        private void Button3_Click_2(object sender, EventArgs e)
+        {
+            //Load data.
+            List<Familia2> familias = new FamiliaDAL().getAll();
+            List<Componente2> compList = new List<Componente2>();
+
+            foreach (Familia2 fam in familias)
+                compList.Add((Componente2)fam);
+
+            //Show input.
+            ComponenteSelectorFrm frm = new ComponenteSelectorFrm(Idioma.GetInstance().translate("EDIT_FAMILY_SELECTOR_TITLE"), Idioma.GetInstance().translate("EDIT_FAMILY_SELECTOR_DESCRIP"), compList);
+            frm.ShowDialog();
+
+            //Obtengo el valor. 
+            int value = frm.getSelected();
+
+            if (value >= 0)
+            {
+                MessageBox.Show("---->" + value.ToString());
+                //new IdiomaBL().create(value);
+                // this.reloadLanguages();
+
+                //MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_OK"));
+            }
         }
     }
 }
