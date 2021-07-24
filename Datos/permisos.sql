@@ -23,4 +23,10 @@ insert into permiso_new(nombre) values('F1');
 insert into permiso_new(nombre) values('F2');
 insert into permiso_new(nombre) values('F3');
 
+--Armo un arbol.
+insert into permiso_permiso_new values();
+
+
 select * from permiso_permiso_new;
+select * from permiso_new
+insert into permiso_new(nombre,permiso) values('','');

@@ -156,6 +156,12 @@
     <Compile Include="PermisosFrm.Designer.cs">
       <DependentUpon>PermisosFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Permisos\TreeEditorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Permisos\TreeEditorFrm.Designer.cs">
+      <DependentUpon>TreeEditorFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recomendations.cs">
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PermisosFrm.resx">
       <DependentUpon>PermisosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permisos\TreeEditorFrm.resx">
+      <DependentUpon>TreeEditorFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

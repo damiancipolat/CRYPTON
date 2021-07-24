@@ -54,11 +54,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -153,7 +154,7 @@
             this.main_menu_signout,
             this.main_menu_exit});
             this.main_menu_start.Name = "main_menu_start";
-            this.main_menu_start.Size = new System.Drawing.Size(59, 34);
+            this.main_menu_start.Size = new System.Drawing.Size(59, 24);
             this.main_menu_start.Text = "Inicio";
             this.main_menu_start.Click += new System.EventHandler(this.InicioToolStripMenuItem_Click);
             // 
@@ -195,7 +196,7 @@
             this.main_menu_notifications,
             this.main_menu_publish});
             this.main_menu_operate.Name = "main_menu_operate";
-            this.main_menu_operate.Size = new System.Drawing.Size(69, 34);
+            this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
             this.main_menu_operate.Text = "Operar";
             this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
             // 
@@ -248,7 +249,7 @@
             this.main_menu_it_user_manager,
             this.main_menu_it_lang_manager});
             this.main_menu_it.Name = "main_menu_it";
-            this.main_menu_it.Size = new System.Drawing.Size(35, 34);
+            this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
             // 
             // main_menu_it_add_user
@@ -302,6 +303,16 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click_2);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(101, 234);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(168, 41);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "crud patente";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click_2);
+            // 
             // toolStripSplitButton2
             // 
             this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -342,21 +353,22 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // button5
+            // button6
             // 
-            this.button5.Location = new System.Drawing.Point(101, 234);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(168, 41);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "crud patente";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click_2);
+            this.button6.Location = new System.Drawing.Point(101, 352);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(168, 51);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click_1);
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -420,6 +432,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 

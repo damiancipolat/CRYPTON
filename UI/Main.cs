@@ -538,6 +538,11 @@ namespace UI
         {
             new ComponentCrudFrm("patent").Show();
         }
+
+        private void Button6_Click_1(object sender, EventArgs e)
+        {
+            new TreeEditorFrm().Show();
+        }
     }
 }
  
