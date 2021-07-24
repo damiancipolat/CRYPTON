@@ -10,6 +10,11 @@ namespace BL.Permisos
 {
     public class PatenteBL
     {
+        public int save(string value)
+        {
+            return new PatenteDAL().save(value);
+        }
+
         public List<Patente2> getAll()
         {
             return new PatenteDAL().getAll();

@@ -96,11 +96,18 @@ namespace UI.Permisos
 
             if (value != null)
             {
-                MessageBox.Show("....." + value);
-                //new IdiomaBL().create(value);
-                //this.reloadLanguages();
+                //Grabo.
+                if (this.mode == "family")
+                    new FamiliaBL().save(value);
 
-                //MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_OK"));
+                if (this.mode == "patent")
+                    new PatenteBL().save(value);
+
+                //Recargo.
+                this.loadData();
+
+                //Exitos.
+                MessageBox.Show(Idioma.GetInstance().translate("TEMPLATE_EDITOR_ADD_OK"));
             }
         }
     }

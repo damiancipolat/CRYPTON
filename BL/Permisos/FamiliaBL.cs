@@ -10,6 +10,11 @@ namespace BL.Permisos
 {
     public class FamiliaBL
     {
+        public int save(string value)
+        {
+            return new FamiliaDAL().save(value);
+        }
+
         public List<Familia2> getAll()
         {
             return new FamiliaDAL().getAll();

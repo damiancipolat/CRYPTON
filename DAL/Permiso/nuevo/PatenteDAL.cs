@@ -14,6 +14,17 @@ namespace DAL.Permiso.nuevo
 {
     public class PatenteDAL
     {
+        public int save(string value)
+        {
+            var schema = new Dictionary<string, Object>{
+                {"nombre",value},
+                {"permiso", value}
+            };
+
+            QueryInsert builder = new QueryInsert();
+            return builder.insertSchema(schema, "permiso_new", true);
+        }
+
         public List<Patente2> getAll()
         {
             //Instancio el sql builder y ejecuto el query.
