@@ -88,5 +88,12 @@ namespace DAL.Permiso.nuevo
             reader.Close();
             return lista;
         }
+
+        public void FillFamilyComponents(Familia2 familia)
+        {
+            familia.VaciarHijos();
+            foreach (var item in GetAll("=" + familia.Id))
+                familia.AgregarHijo(item);
+        }
     }
 }

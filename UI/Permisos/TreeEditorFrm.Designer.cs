@@ -36,10 +36,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.usr_lang_del_all_language = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.tree_family_list = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,7 @@
             this.permission_tree.Name = "permission_tree";
             this.permission_tree.Size = new System.Drawing.Size(1182, 426);
             this.permission_tree.TabIndex = 35;
+            this.permission_tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Permission_tree_AfterSelect);
             // 
             // pictureBox1
             // 
@@ -118,6 +120,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -126,6 +129,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 64);
             this.panel1.TabIndex = 57;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightGreen;
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(1063, 14);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 33);
+            this.button3.TabIndex = 61;
+            this.button3.Text = "Guardar";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -162,16 +176,17 @@
             this.tree_family_list.TabIndex = 0;
             this.tree_family_list.SelectedIndexChanged += new System.EventHandler(this.Tree_family_list_SelectedIndexChanged);
             // 
-            // button3
+            // button6
             // 
-            this.button3.BackColor = System.Drawing.Color.LightGreen;
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(1063, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 33);
-            this.button3.TabIndex = 61;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(362, 14);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(61, 33);
+            this.button6.TabIndex = 62;
+            this.button6.Text = "Ver";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // TreeEditorFrm
             // 
@@ -214,5 +229,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
     }
 }

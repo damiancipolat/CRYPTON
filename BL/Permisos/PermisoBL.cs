@@ -30,6 +30,11 @@ namespace BL.Permisos
             return existe;
         }
 
+        public void FillFamilyComponents(Familia2 familia)
+        {
+            new PermisoDAL().FillFamilyComponents(familia);
+        }
+
         public IList<Componente2> GetAll(string familia)
         {
             return new PermisoDAL().GetAll(familia);

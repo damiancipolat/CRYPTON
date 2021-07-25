@@ -19,7 +19,8 @@ namespace UI.Permisos
     {
         private List<Familia2> innerFamilia = new List<Familia2>();
         private List<Patente2> innerPatente = new List<Patente2>();
-        private Familia2 selectedFamily;
+        private int selectedFamilyId;
+        private Familia2 seleccion;
 
         public TreeEditorFrm()
         {
@@ -32,21 +33,22 @@ namespace UI.Permisos
             this.innerFamilia = new FamiliaBL().getAll();
             this.innerPatente = new PatenteBL().getAll();
 
-            //Borro
+            //Cargo el combo de lista de familias.
             this.tree_family_list.Items.Clear();
 
-            //Cargo items.
             foreach (Familia2 family in this.innerFamilia)
                 this.tree_family_list.Items.Add(family.Nombre);
 
+            //Si hay datos selecciono por defecto el 1ro.
             if (this.innerFamilia.Count > 0)
             {
                 //Seteo defaults.
-                this.tree_family_list.SelectedIndex = 0;
-                this.selectedFamily = this.innerFamilia[this.tree_family_list.SelectedIndex];
+                //this.tree_family_list.SelectedIndex = 0;
+                this.seleccion = this.innerFamilia[0];
 
+                Debug.WriteLine("-------"+this.seleccion.Id.ToString()+"____"+this.seleccion.Nombre);
                 //Dibujo el arbol.
-                this.MostrarFamilia(this.selectedFamily, true);
+                //this.MostrarFamilia(this.seleccion.Id, true);
             }
         }
 
@@ -65,13 +67,15 @@ namespace UI.Permisos
             this.Close();
         }
 
+        //CRUD arbol ---------------------------------------------------------
+
+        //Agregar FAMILIA.
         private void Button5_Click(object sender, EventArgs e)
         {
             //Load data.
-            List<Familia2> familias = new FamiliaBL().getAll();
             List<Componente2> compList = new List<Componente2>();
 
-            foreach (Familia2 fam in familias)
+            foreach (Familia2 fam in this.innerFamilia)
                 compList.Add((Componente2)fam);
 
             //Show input.
@@ -81,16 +85,28 @@ namespace UI.Permisos
             //Obtengo el valor. 
             int value = frm.getSelected();
 
-            if (value >= 0)
-            {
-                MessageBox.Show("---->" + value.ToString());
-                //new IdiomaBL().create(value);
-                // this.reloadLanguages();
+            if ((value < 0)|| (this.seleccion == null))
+                return;
+            
+            //Extraigo la familia.
+            Familia2 familia = this.innerFamilia[value];
 
-                //MessageBox.Show(Idioma.GetInstance().translate("USR_LANG_NEW_OK"));
+            if (familia != null)
+            {
+                PermisoBL repo = new PermisoBL();
+
+                if (repo.Existe(this.seleccion, familia.Id))
+                    MessageBox.Show("ya exsite la familia indicada");
+                else
+                {
+                    repo.FillFamilyComponents(familia);
+                    this.seleccion.AgregarHijo(familia);
+                    MostrarFamilia(false);
+                }
             }
         }
 
+        //Agregar PATENTE.
         private void Button4_Click(object sender, EventArgs e)
         {
             //Load data.
@@ -110,37 +126,36 @@ namespace UI.Permisos
             if (value < 0)
                 return;
 
-            if (this.selectedFamily == null)
-                return;
-
-            //Traigo la patente.
-            Patente2 selectedPatente = this.innerPatente[value];
-
-            if (selectedPatente != null)
+            if (seleccion != null)
             {
-                var esta = new PermisoBL().Existe(this.selectedFamily, selectedPatente.Id);
-                if (esta)
-                    MessageBox.Show("ya exsite la patente indicada");
-                else
+                var patente = (Patente2)this.innerPatente[value];
+
+                if (patente != null)
                 {
-                    this.selectedFamily.AgregarHijo(selectedPatente);
-                    MostrarFamilia(this.selectedFamily,false);
+                    if (new PermisoBL().Existe(seleccion, patente.Id))
+                        MessageBox.Show("ya exsite la patente indicada");
+                    else
+                    {
+                        seleccion.AgregarHijo(patente);
+                        MostrarFamilia(false);
+                    }
                 }
             }
         }
 
-
         //Render del arbol --------------------------------------------------
 
         //Muestra el contenido de una familia.
-        private void MostrarFamilia(Familia2 seleccion, bool init)
+        private void MostrarFamilia(bool init)
         {
-            IList<Componente2> flia = null;
+            if (seleccion == null) return;
 
+            IList<Componente2> flia = null;
             if (init)
             {
                 //traigo los hijos de la base
-                flia = new PermisoBL().GetAll("=" + this.selectedFamily.Id.ToString());
+                flia = new PermisoBL().GetAll("=" + seleccion.Id);
+
 
                 foreach (var i in flia)
                     seleccion.AgregarHijo(i);
@@ -157,7 +172,9 @@ namespace UI.Permisos
             this.permission_tree.Nodes.Add(root);
 
             foreach (var item in flia)
+            {
                 MostrarEnTreeView(root, item);
+            }
 
             permission_tree.ExpandAll();
         }
@@ -172,28 +189,31 @@ namespace UI.Permisos
             if (c.Hijos != null)
             {
                 foreach (var item in c.Hijos)
+                {
+                    Debug.WriteLine(">>>>" + item.Nombre);
                     MostrarEnTreeView(n, item);
+                }                    
             }
         }
 
         //Cuando selecciona el combo.
         private void Tree_family_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Actualizo.
-            this.selectedFamily = this.innerFamilia[this.tree_family_list.SelectedIndex];
-
-            //Dibujo el arbol.
-            this.MostrarFamilia(this.selectedFamily, true);
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void Permission_tree_AfterSelect(object sender, TreeViewEventArgs e)
         {
-           
+
         }
 
-        private void Btn_update_permission_Click(object sender, EventArgs e)
+        private void Button6_Click(object sender, EventArgs e)
         {
+            var tmp = (Familia2)this.innerFamilia[this.tree_family_list.SelectedIndex];
+            this.seleccion = new Familia2();
+            this.seleccion.Id = tmp.Id;
+            this.seleccion.Nombre = tmp.Nombre;
 
+            this.MostrarFamilia(true);
         }
     }
 }
