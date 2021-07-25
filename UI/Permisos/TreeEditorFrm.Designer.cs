@@ -41,6 +41,7 @@
             this.tree_crud_add_family = new System.Windows.Forms.Button();
             this.tree_crud_add_patent = new System.Windows.Forms.Button();
             this.tree_family_list = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -189,11 +190,22 @@
             this.tree_family_list.TabIndex = 0;
             this.tree_family_list.SelectedIndexChanged += new System.EventHandler(this.Tree_family_list_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(630, 89);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 58;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
             // TreeEditorFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 776);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tree_crud_close);
             this.Controls.Add(this.tree_crud_family);
@@ -231,5 +243,6 @@
         private System.Windows.Forms.Button tree_crud_add_family;
         private System.Windows.Forms.Button tree_crud_save;
         private System.Windows.Forms.Button tree_crud_view;
+        private System.Windows.Forms.Button button1;
     }
 }

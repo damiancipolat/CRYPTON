@@ -20,6 +20,7 @@ namespace UI.Permisos
         private List<Familia2> innerFamilia = new List<Familia2>();
         private List<Patente2> innerPatente = new List<Patente2>();        
         private Familia2 seleccion;
+        private List<Tuple<string,int, int>> operations = new List<Tuple<string, int, int>> ();
 
         public TreeEditorFrm()
         {
@@ -58,6 +59,10 @@ namespace UI.Permisos
                     MessageBox.Show("ya exsite la familia indicada");
                 else
                 {
+                    //Registro la operacion en el buffer de operaciones.
+                    this.operations.Add(Tuple.Create("add",this.seleccion.Id,familia.Id));
+
+                    //Impacto el cambio en la ui.
                     repo.FillFamilyComponents(familia);
                     this.seleccion.AgregarHijo(familia);
                     MostrarFamilia(false);
@@ -95,6 +100,10 @@ namespace UI.Permisos
                         MessageBox.Show("ya exsite la patente indicada");
                     else
                     {
+                        //Registro la operacion en el buffer de operaciones.
+                        this.operations.Add(Tuple.Create("add", this.seleccion.Id, patente.Id));
+
+                        //Impactio en UI.
                         seleccion.AgregarHijo(patente);
                         MostrarFamilia(false);
                     }
@@ -114,7 +123,6 @@ namespace UI.Permisos
             {
                 //traigo los hijos de la base
                 flia = new PermisoBL().GetAll("=" + seleccion.Id);
-
 
                 foreach (var i in flia)
                     seleccion.AgregarHijo(i);
@@ -142,16 +150,14 @@ namespace UI.Permisos
         private void MostrarEnTreeView(TreeNode tn, Componente2 c)
         {
             TreeNode n = new TreeNode(c.Nombre);
+            n.Tag = c.Id.ToString();
             tn.Tag = c;
             tn.Nodes.Add(n);
 
             if (c.Hijos != null)
             {
                 foreach (var item in c.Hijos)
-                {
-                    Debug.WriteLine(">>>>" + item.Nombre);
                     MostrarEnTreeView(n, item);
-                }                    
             }
         }
 
@@ -244,10 +250,27 @@ namespace UI.Permisos
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            if (this.seleccion != null)
+            foreach (Tuple<string, int, int> tmp in this.operations)
             {
-                new PermisoBL().GuardarFamilia(this.seleccion);
+                Debug.WriteLine("-->" + tmp.Item1 + "," + tmp.Item2.ToString() + "," + tmp.Item3.ToString());
+            }
+                
+                //new PermisoBL().GuardarFamilia(this.seleccion);
+
                 MessageBox.Show("Save ok!");
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            if (this.permission_tree.SelectedNode != null)
+            {
+                //Registro la operacion en el buffer de operaciones.       
+                Debug.WriteLine("qqqqq>>"+ this.permission_tree.SelectedNode.Tag.ToString());
+                //Componente2 comp = (Componente2)this.permission_tree.SelectedNode.Tag;
+                //this.operations.Add(Tuple.Create("del", this.seleccion.Id,comp.Id));
+
+                //TreeNode node = this.permission_tree.SelectedNode;
+                //this.permission_tree.Nodes.Remove(node);
             }
         }
     }
