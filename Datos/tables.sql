@@ -617,6 +617,15 @@ insert into palabras values('COMP_CRUD_ADD_DESCRIP');
 insert into palabras values('COMP_CRUD_DELETE_TITLE');
 insert into palabras values('COMP_CRUD_DELETE_CONFIRM');
 insert into palabras values('COMP_CRUD_DELETE_OK');
+insert into palabras values('TREE_TITLE_EDITOR');
+insert into palabras values('TREE_DESCRIP_EDITOR');
+insert into palabras values('TREE_CRUD_FAMILY');
+insert into palabras values('TREE_CRUD_PATENT');
+insert into palabras values('TREE_CRUD_VIEW');
+insert into palabras values('TREE_CRUD_ADD_FAMILY');
+insert into palabras values('TREE_CRUD_ADD_PATENT');
+insert into palabras values('TREE_CRUD_SAVE');
+insert into palabras values('TREE_CRUD_CLOSE');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -847,6 +856,15 @@ insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_ADD_DESCRIP
 insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DELETE_TITLE','Borrar');
 insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DELETE_CONFIRM','¿Quiere borrar este valor?');
 insert into idioma_palabras(code,clave,valor) values('ES','COMP_CRUD_DELETE_OK','Borrado ok!');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_TITLE_EDITOR','Editor de familias/permisos');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_DESCRIP_EDITOR','Recorda que las familias se edita separads.');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_FAMILY','ABM Familia');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_PATENT','ABM Patente');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_VIEW','Ver');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_ADD_FAMILY','+ Familia');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_ADD_PATENT','+ Patente');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_SAVE','Guardar');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_CLOSE','Cerrar');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1053,3 +1071,12 @@ insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_ADD_DESCRI
 insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DELETE_TITLE','Delete');
 insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DELETE_CONFIRM','Do you want to delete this value?');
 insert into idioma_palabras(code,clave,valor) values('ENG','COMP_CRUD_DELETE_OK','Delete ok!');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_TITLE_EDITOR','Permission editor');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_DESCRIP_EDITOR','Remember you edit the familys separatedly');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_FAMILY','CRUD Family');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_PATENT','CRUD patent');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_VIEW','View');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_ADD_FAMILY','+ Family');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_ADD_PATENT','+ Patent');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_SAVE','Save');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_CLOSE','Close');

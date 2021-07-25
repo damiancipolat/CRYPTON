@@ -18,49 +18,12 @@ namespace UI.Permisos
     public partial class TreeEditorFrm : Form
     {
         private List<Familia2> innerFamilia = new List<Familia2>();
-        private List<Patente2> innerPatente = new List<Patente2>();
-        private int selectedFamilyId;
+        private List<Patente2> innerPatente = new List<Patente2>();        
         private Familia2 seleccion;
 
         public TreeEditorFrm()
         {
             InitializeComponent();            
-        }
-
-        private void TreeEditorFrm_Load(object sender, EventArgs e)
-        {
-            //Load familia and patente.
-            this.innerFamilia = new FamiliaBL().getAll();
-            this.innerPatente = new PatenteBL().getAll();
-
-            //Cargo el combo de lista de familias.
-            this.tree_family_list.Items.Clear();
-
-            foreach (Familia2 family in this.innerFamilia)
-                this.tree_family_list.Items.Add(family.Nombre);
-
-            //Si hay datos selecciono por defecto el 1ro.
-            if (this.innerFamilia.Count > 0)
-            {
-                //Seteo defaults.
-                this.tree_family_list.SelectedIndex = 0;
-                this.seleccion = this.innerFamilia[0];
-            }
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            new ComponentCrudFrm("family").Show();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            new ComponentCrudFrm("patent").Show();
-        }
-
-        private void Usr_lang_del_all_language_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         //CRUD arbol ---------------------------------------------------------
@@ -139,7 +102,7 @@ namespace UI.Permisos
             }
         }
 
-        //Render del arbol --------------------------------------------------
+        //Render del arbol ---------------------------------------------------
 
         //Muestra el contenido de una familia.
         private void MostrarFamilia(bool init)
@@ -192,17 +155,79 @@ namespace UI.Permisos
             }
         }
 
+        //Eventos UI ---------------------------------------------------------
+
+        private void translateText()
+        {
+            this.Text= Idioma.GetInstance().translate("TREE_TITLE_EDITOR");
+            this.tree_title_editor.Text = Idioma.GetInstance().translate("TREE_TITLE_EDITOR");
+            this.tree_descrip_editor.Text = Idioma.GetInstance().translate("TREE_DESCRIP_EDITOR");
+            this.tree_crud_family.Text = Idioma.GetInstance().translate("TREE_CRUD_FAMILY");
+            this.tree_crud_patent.Text = Idioma.GetInstance().translate("TREE_CRUD_PATENT");
+            this.tree_crud_view.Text = Idioma.GetInstance().translate("TREE_CRUD_VIEW");
+            this.tree_crud_add_family.Text = Idioma.GetInstance().translate("TREE_CRUD_ADD_FAMILY");
+            this.tree_crud_add_patent.Text = Idioma.GetInstance().translate("TREE_CRUD_ADD_PATENT");
+            this.tree_crud_save.Text = Idioma.GetInstance().translate("TREE_CRUD_SAVE");
+            this.tree_crud_close.Text= Idioma.GetInstance().translate("TREE_CRUD_CLOSE");
+        }
+
+        private void TreeEditorFrm_Load(object sender, EventArgs e)
+        {
+            //Traduzco.
+            this.translateText();
+
+            //Load familia and patente.
+            this.innerFamilia = new FamiliaBL().getAll();
+            this.innerPatente = new PatenteBL().getAll();
+
+            //Cargo el combo de lista de familias.
+            this.tree_family_list.Items.Clear();
+
+            foreach (Familia2 family in this.innerFamilia)
+                this.tree_family_list.Items.Add(family.Nombre);
+
+            //Si hay datos selecciono por defecto el 1ro.
+            if (this.innerFamilia.Count > 0)
+            {
+                //Seteo defaults.
+                this.tree_family_list.SelectedIndex = 0;
+                this.seleccion = this.innerFamilia[0];
+                this.verFamilia();
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            new ComponentCrudFrm("family").Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            new ComponentCrudFrm("patent").Show();
+        }
+
+        private void Usr_lang_del_all_language_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         //Cuando selecciona el combo.
         private void Tree_family_list_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (this.seleccion != null)
+                this.verFamilia();
         }
 
         private void Permission_tree_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
+            if (this.permission_tree.SelectedNode != null)
+            {
+                TreeNode node = this.permission_tree.SelectedNode;
+                Debug.WriteLine("Haz clickeado sobre:" + node.ImageKey + " " + node.Text + "__" + node.Name + " tag:" + node.Tag);
+            }
         }
 
-        private void Button6_Click(object sender, EventArgs e)
+        private void verFamilia()
         {
             var tmp = (Familia2)this.innerFamilia[this.tree_family_list.SelectedIndex];
             this.seleccion = new Familia2();
@@ -210,6 +235,11 @@ namespace UI.Permisos
             this.seleccion.Nombre = tmp.Nombre;
 
             this.MostrarFamilia(true);
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            this.verFamilia();
         }
 
         private void Button3_Click(object sender, EventArgs e)

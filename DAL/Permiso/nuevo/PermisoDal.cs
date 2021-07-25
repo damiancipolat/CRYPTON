@@ -95,7 +95,7 @@ namespace DAL.Permiso.nuevo
             foreach (var item in GetAll("=" + familia.Id))
                 familia.AgregarHijo(item);
         }
-
+        
         public void GuardarFamilia(Familia2 c)
         {
             //Borro el permiso root.
