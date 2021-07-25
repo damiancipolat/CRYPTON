@@ -378,5 +378,8 @@
   <ItemGroup>
     <None Include="Resources\notification.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

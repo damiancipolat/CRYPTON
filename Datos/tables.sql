@@ -627,6 +627,8 @@ insert into palabras values('TREE_CRUD_ADD_PATENT');
 insert into palabras values('TREE_CRUD_SAVE');
 insert into palabras values('TREE_CRUD_CLOSE');
 insert into palabras values('TREE_CRUD_DELETE');
+insert into palabras values('TREE_PATENT_EXISTS');
+insert into palabras values('TREE_FAMILY_EXISTS');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -867,6 +869,8 @@ insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_ADD_PATENT'
 insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_SAVE','Guardar');
 insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_CLOSE','Cerrar');
 insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_DELETE','Borrar');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_PATENT_EXISTS','La patente ya existe!');
+insert into idioma_palabras(code,clave,valor) values('ES','TREE_FAMILY_EXISTS','La familia ya existe!');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1083,3 +1087,5 @@ insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_ADD_PATENT
 insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_SAVE','Save');
 insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_CLOSE','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_DELETE','Delete');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_PATENT_EXISTS','The patent already exists!');
+insert into idioma_palabras(code,clave,valor) values('ENG','TREE_FAMILY_EXISTS','The family already exists!');

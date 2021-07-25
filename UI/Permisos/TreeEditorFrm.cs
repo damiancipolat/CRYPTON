@@ -57,11 +57,17 @@ namespace UI.Permisos
                 PermisoBL repo = new PermisoBL();
 
                 if (repo.Existe(this.seleccion, familia.Id))
-                    MessageBox.Show("ya exsite la familia indicada");
+                    MessageBox.Show(Idioma.GetInstance().translate("TREE_FAMILY_EXISTS"));
                 else
                 {
                     //Registro la operacion en el buffer de operaciones.
-                    this.operations.Add(Tuple.Create("add",this.seleccion.Id,familia.Id,""));
+                    this.operations.Add(
+                        Tuple.Create(
+                            "add",
+                            this.seleccion.Id
+                            ,familia.Id,
+                            "")
+                    );
 
                     //Impacto el cambio en la ui.
                     repo.FillFamilyComponents(familia);
@@ -101,11 +107,16 @@ namespace UI.Permisos
                 if (patente != null)
                 {
                     if (new PermisoBL().Existe(seleccion, patente.Id))
-                        MessageBox.Show("ya exsite la patente indicada");
+                        MessageBox.Show(Idioma.GetInstance().translate("TREE_PATENT_EXISTS"));
                     else
                     {
                         //Registro la operacion en el buffer de operaciones.
-                        this.operations.Add(Tuple.Create("add", this.seleccion.Id, patente.Id,""));
+                        this.operations.Add(
+                            Tuple.Create(
+                                "add", 
+                                this.seleccion.Id, 
+                                patente.Id,"")
+                        );
 
                         //Impactio en UI.
                         seleccion.AgregarHijo(patente);
@@ -209,12 +220,15 @@ namespace UI.Permisos
             this.tree_crud_delete.Text= Idioma.GetInstance().translate("TREE_CRUD_DELETE");
         }
 
-        private void TreeEditorFrm_Load(object sender, EventArgs e)
+        private void refreshData()
         {
             //Traduzco.
             this.translateText();
 
             //Load familia and patente.
+            this.innerFamilia.Clear();
+            this.innerPatente.Clear();
+
             this.innerFamilia = new FamiliaBL().getAll();
             this.innerPatente = new PatenteBL().getAll();
 
@@ -232,6 +246,11 @@ namespace UI.Permisos
                 this.seleccion = this.innerFamilia[0];
                 this.verFamilia();
             }
+        }
+
+        private void TreeEditorFrm_Load(object sender, EventArgs e)
+        {
+            this.refreshData();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -306,8 +325,8 @@ namespace UI.Permisos
             if (this.permission_tree.SelectedNode != null)
             {
                 DialogResult selection = MessageBox.Show(
-                    Idioma.GetInstance().translate("Desea borrar?"),
-                    Idioma.GetInstance().translate("Seleccione una opcion."),
+                    Idioma.GetInstance().translate("COMP_CRUD_DELETE_CONFIRM"),
+                    Idioma.GetInstance().translate("COMP_CRUD_DELETE_TITLE"),
                     MessageBoxButtons.YesNo);
 
                 if (selection == DialogResult.Yes)
@@ -316,7 +335,13 @@ namespace UI.Permisos
                     TreeNode node = this.permission_tree.SelectedNode;
 
                     //Registro en el buffer.;
-                    this.operations.Add(Tuple.Create("del", Int32.Parse(node.Parent.Tag.ToString()), Int32.Parse(node.Tag.ToString()), node.ImageKey));
+                    this.operations.Add(
+                        Tuple.Create(
+                            "del", 
+                            Int32.Parse(node.Parent.Tag.ToString()), 
+                            Int32.Parse(node.Tag.ToString()), 
+                            node.ImageKey)
+                     );
 
                     //Borro el nodo.
                     this.permission_tree.Nodes.Remove(node);
@@ -337,6 +362,11 @@ namespace UI.Permisos
             {
                 Debug.WriteLine("----->" + ops.Item1 + "," + ops.Item2 + "," + ops.Item3 + "," + ops.Item4);
             }
+        }
+
+        private void Button1_Click_3(object sender, EventArgs e)
+        {
+            this.refreshData();
         }
     }
 }

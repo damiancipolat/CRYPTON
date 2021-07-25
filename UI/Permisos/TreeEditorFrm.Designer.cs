@@ -31,7 +31,6 @@
             this.tree_descrip_editor = new System.Windows.Forms.Label();
             this.tree_title_editor = new System.Windows.Forms.Label();
             this.permission_tree = new System.Windows.Forms.TreeView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tree_crud_patent = new System.Windows.Forms.Button();
             this.tree_crud_family = new System.Windows.Forms.Button();
             this.tree_crud_close = new System.Windows.Forms.Button();
@@ -42,9 +41,10 @@
             this.tree_crud_add_family = new System.Windows.Forms.Button();
             this.tree_crud_add_patent = new System.Windows.Forms.Button();
             this.tree_family_list = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tree_descrip_editor
@@ -77,19 +77,9 @@
             this.permission_tree.TabIndex = 35;
             this.permission_tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Permission_tree_AfterSelect);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.permiso;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(81, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 39;
-            this.pictureBox1.TabStop = false;
-            // 
             // tree_crud_patent
             // 
-            this.tree_crud_patent.Location = new System.Drawing.Point(187, 115);
+            this.tree_crud_patent.Location = new System.Drawing.Point(242, 115);
             this.tree_crud_patent.Name = "tree_crud_patent";
             this.tree_crud_patent.Size = new System.Drawing.Size(149, 45);
             this.tree_crud_patent.TabIndex = 53;
@@ -99,7 +89,7 @@
             // 
             // tree_crud_family
             // 
-            this.tree_crud_family.Location = new System.Drawing.Point(23, 115);
+            this.tree_crud_family.Location = new System.Drawing.Point(84, 115);
             this.tree_crud_family.Name = "tree_crud_family";
             this.tree_crud_family.Size = new System.Drawing.Size(149, 45);
             this.tree_crud_family.TabIndex = 54;
@@ -204,22 +194,34 @@
             this.tree_family_list.TabIndex = 0;
             this.tree_family_list.SelectedIndexChanged += new System.EventHandler(this.Tree_family_list_SelectedIndexChanged);
             // 
-            // button2
+            // button1
             // 
-            this.button2.Location = new System.Drawing.Point(430, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 30);
-            this.button2.TabIndex = 59;
-            this.button2.Text = "xxx";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
+            this.button1.BackgroundImage = global::UI.Properties.Resources.refresh_icon;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(23, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 45);
+            this.button1.TabIndex = 60;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_3);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.permiso;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(81, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabStop = false;
             // 
             // TreeEditorFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 776);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tree_crud_close);
             this.Controls.Add(this.tree_crud_family);
@@ -235,8 +237,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TreeEditorFrm";
             this.Load += new System.EventHandler(this.TreeEditorFrm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,6 +260,6 @@
         private System.Windows.Forms.Button tree_crud_save;
         private System.Windows.Forms.Button tree_crud_view;
         private System.Windows.Forms.Button tree_crud_delete;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
