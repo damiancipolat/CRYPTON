@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace UI.Permisos
         private List<Familia2> innerFamilia = new List<Familia2>();
         private List<Patente2> innerPatente = new List<Patente2>();        
         private Familia2 seleccion;
-        private List<Tuple<string,int, int>> operations = new List<Tuple<string, int, int>> ();
+        private List<Tuple<string,int, int, string>> operations = new List<Tuple<string, int, int, string>> ();
 
         public TreeEditorFrm()
         {
@@ -60,12 +61,15 @@ namespace UI.Permisos
                 else
                 {
                     //Registro la operacion en el buffer de operaciones.
-                    this.operations.Add(Tuple.Create("add",this.seleccion.Id,familia.Id));
+                    this.operations.Add(Tuple.Create("add",this.seleccion.Id,familia.Id,""));
 
                     //Impacto el cambio en la ui.
                     repo.FillFamilyComponents(familia);
                     this.seleccion.AgregarHijo(familia);
                     MostrarFamilia(false);
+
+                    //Purgar la grilla.
+                    this.purgeFromOps();
                 }
             }
         }
@@ -101,11 +105,35 @@ namespace UI.Permisos
                     else
                     {
                         //Registro la operacion en el buffer de operaciones.
-                        this.operations.Add(Tuple.Create("add", this.seleccion.Id, patente.Id));
+                        this.operations.Add(Tuple.Create("add", this.seleccion.Id, patente.Id,""));
 
                         //Impactio en UI.
                         seleccion.AgregarHijo(patente);
                         MostrarFamilia(false);
+
+                        //Purgar la grilla.
+                        this.purgeFromOps();
+                    }
+                }
+            }
+        }
+
+        //Purgo el arbol.
+        private void purgeFromOps()
+        {
+            foreach (Tuple<string, int, int, string> ops in this.operations)
+            {
+                if (ops.Item1 == "del")
+                {
+                    //Busco el nodo.
+                    TreeNode node = new NodeSearch().GetNode(this.permission_tree.Nodes, ops.Item4);
+
+                    //Si existe, lo borro en el control.
+                    if (node != null)
+                    {
+                        node.BackColor = Color.Yellow;
+                        Debug.WriteLine("Encontre:" + node.Name + "," + node.ImageKey);
+                        this.permission_tree.Nodes.Remove(node);
                     }
                 }
             }
@@ -132,17 +160,19 @@ namespace UI.Permisos
                 flia = seleccion.Hijos;
             }
 
+            //Borro la lista de nodos.
             this.permission_tree.Nodes.Clear();
 
+            //Armo el root padre y lo cargo.
             TreeNode root = new TreeNode(seleccion.Nombre);
-            root.Tag = seleccion;
+            root.Tag = seleccion.Id.ToString();
             this.permission_tree.Nodes.Add(root);
 
+            //Cargo recursivamente.
             foreach (var item in flia)
-            {
                 MostrarEnTreeView(root, item);
-            }
 
+            //Expando la lista de items.
             permission_tree.ExpandAll();
         }
 
@@ -151,7 +181,8 @@ namespace UI.Permisos
         {
             TreeNode n = new TreeNode(c.Nombre);
             n.Tag = c.Id.ToString();
-            tn.Tag = c;
+            n.ImageKey= this.seleccion.Id + ":" + c.Id.ToString()+":"+c.Nombre;
+            //n.Tag = n.ImageKey;
             tn.Nodes.Add(n);
 
             if (c.Hijos != null)
@@ -175,6 +206,7 @@ namespace UI.Permisos
             this.tree_crud_add_patent.Text = Idioma.GetInstance().translate("TREE_CRUD_ADD_PATENT");
             this.tree_crud_save.Text = Idioma.GetInstance().translate("TREE_CRUD_SAVE");
             this.tree_crud_close.Text= Idioma.GetInstance().translate("TREE_CRUD_CLOSE");
+            this.tree_crud_delete.Text= Idioma.GetInstance().translate("TREE_CRUD_DELETE");
         }
 
         private void TreeEditorFrm_Load(object sender, EventArgs e)
@@ -229,12 +261,16 @@ namespace UI.Permisos
             if (this.permission_tree.SelectedNode != null)
             {
                 TreeNode node = this.permission_tree.SelectedNode;
-                Debug.WriteLine("Haz clickeado sobre:" + node.ImageKey + " " + node.Text + "__" + node.Name + " tag:" + node.Tag);
+                Debug.WriteLine("Haz clickeado sobre:" + node.ImageKey + " " + node.Text + "__" + node.Name + " tag:" + node.Tag+ " >"+node.ImageKey);
             }
         }
 
         private void verFamilia()
         {
+            //Borro las operaciones.
+            this.operations.Clear();
+
+            //Rendereo.
             var tmp = (Familia2)this.innerFamilia[this.tree_family_list.SelectedIndex];
             this.seleccion = new Familia2();
             this.seleccion.Id = tmp.Id;
@@ -250,27 +286,57 @@ namespace UI.Permisos
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            foreach (Tuple<string, int, int> tmp in this.operations)
-            {
-                Debug.WriteLine("-->" + tmp.Item1 + "," + tmp.Item2.ToString() + "," + tmp.Item3.ToString());
-            }
-                
-                //new PermisoBL().GuardarFamilia(this.seleccion);
+            //Armo una lista de proceso.
+            List<Tuple<string, int, int>> process = new List<Tuple<string, int, int>>();
 
-                MessageBox.Show("Save ok!");
+            //Itero y cargo.
+            foreach (Tuple<string, int, int, string> tuple in this.operations)
+                process.Add(Tuple.Create(tuple.Item1,tuple.Item2,tuple.Item3));
+
+            //Proceso el guardado.
+            new PermisoBL().GuardarFamilia(process);
+
+            //Fin y exito.
+            MessageBox.Show("Save ok!");
+            this.verFamilia();
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
             if (this.permission_tree.SelectedNode != null)
             {
-                //Registro la operacion en el buffer de operaciones.       
-                Debug.WriteLine("qqqqq>>"+ this.permission_tree.SelectedNode.Tag.ToString());
-                //Componente2 comp = (Componente2)this.permission_tree.SelectedNode.Tag;
-                //this.operations.Add(Tuple.Create("del", this.seleccion.Id,comp.Id));
+                DialogResult selection = MessageBox.Show(
+                    Idioma.GetInstance().translate("Desea borrar?"),
+                    Idioma.GetInstance().translate("Seleccione una opcion."),
+                    MessageBoxButtons.YesNo);
 
-                //TreeNode node = this.permission_tree.SelectedNode;
-                //this.permission_tree.Nodes.Remove(node);
+                if (selection == DialogResult.Yes)
+                {
+                    //Obtengo el nodo elegido.
+                    TreeNode node = this.permission_tree.SelectedNode;
+
+                    //Registro en el buffer.;
+                    this.operations.Add(Tuple.Create("del", this.seleccion.Id, Int32.Parse(node.Tag.ToString()), node.ImageKey));
+
+                    //Borro el nodo.
+                    this.permission_tree.Nodes.Remove(node);
+                }
+            }
+        }
+
+        //-----------------------------------------------------------------------
+
+
+        private void Button1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            foreach (Tuple<string, int, int, string> ops in this.operations)
+            {
+                Debug.WriteLine("----->" + ops.Item1 + "," + ops.Item2 + "," + ops.Item3 + "," + ops.Item4);
             }
         }
     }

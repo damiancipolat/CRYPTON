@@ -156,6 +156,7 @@
     <Compile Include="PermisosFrm.Designer.cs">
       <DependentUpon>PermisosFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Permisos\NodeSearch.cs" />
     <Compile Include="Permisos\TreeEditorFrm.cs">
       <SubType>Form</SubType>
     </Compile>

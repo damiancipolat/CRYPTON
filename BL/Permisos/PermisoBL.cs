@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using BE;
 using BE.Permisos;
 using DAL.Permiso.nuevo;
@@ -35,9 +39,22 @@ namespace BL.Permisos
             new PermisoDAL().FillFamilyComponents(familia);
         }
 
-        public void GuardarFamilia(Familia2 c)
+        public void GuardarFamilia(List<Tuple<string, int, int>> operations)
         {
-            new PermisoDAL().GuardarFamilia(c);
+            //Proceso las operaciones.
+            foreach (Tuple<string, int, int> operation in operations)
+            {
+                PermisoDAL bizDal = new PermisoDAL();
+                string mode = operation.Item1;
+
+                //Si son agregados.
+                if (mode == "add")
+                    bizDal.save(operation.Item2, operation.Item3);
+
+                //Si es borrar
+                if (mode == "del")
+                    bizDal.remove(operation.Item2, operation.Item3);
+            }
         }
 
         public IList<Componente2> GetAll(string familia)

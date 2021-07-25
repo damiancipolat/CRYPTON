@@ -95,24 +95,27 @@ namespace DAL.Permiso.nuevo
             foreach (var item in GetAll("=" + familia.Id))
                 familia.AgregarHijo(item);
         }
-        
-        public void GuardarFamilia(Familia2 c)
-        {
-            //Borro el permiso root.
-            QueryDelete builderDelete = new QueryDelete();
-            builderDelete.deleteById("id_permiso_padre", c.Id, "permiso_permiso_new");
 
-            //Agrego recursivamente.
-            foreach (var item in c.Hijos)
-            {   
-                var schema = new Dictionary<string, Object>{
-                    {"id_permiso_padre",c.Id},
-                    {"id_permiso_hijo", item.Id }
+        public int remove(int padre, int hijo)
+        {
+            var schema = new Dictionary<string, Object>{
+                    {"id_permiso_padre",padre},
+                    {"id_permiso_hijo",hijo}
+            };
+
+            QueryDelete builderDelete = new QueryDelete();
+            return builderDelete.deleteSchema(schema, "permiso_permiso_new");
+        }
+
+        public int save(int padre, int hijo)
+        {
+            var schema = new Dictionary<string, Object>{
+                    {"id_permiso_padre",padre},
+                    {"id_permiso_hijo", hijo }
                 };
 
-                QueryInsert builderInsert = new QueryInsert();
-                builderInsert.insertSchema(schema, "permiso_permiso_new", false);
-            }
+            QueryInsert builderInsert = new QueryInsert();
+            return builderInsert.insertSchema(schema, "permiso_permiso_new", false);
         }
     }
 }
