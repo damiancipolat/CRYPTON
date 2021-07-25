@@ -182,7 +182,7 @@ namespace UI.Permisos
             TreeNode n = new TreeNode(c.Nombre);
             n.Tag = c.Id.ToString();
             n.ImageKey= this.seleccion.Id + ":" + c.Id.ToString()+":"+c.Nombre;
-            //n.Tag = n.ImageKey;
+            
             tn.Nodes.Add(n);
 
             if (c.Hijos != null)
@@ -316,7 +316,7 @@ namespace UI.Permisos
                     TreeNode node = this.permission_tree.SelectedNode;
 
                     //Registro en el buffer.;
-                    this.operations.Add(Tuple.Create("del", this.seleccion.Id, Int32.Parse(node.Tag.ToString()), node.ImageKey));
+                    this.operations.Add(Tuple.Create("del", Int32.Parse(node.Parent.Tag.ToString()), Int32.Parse(node.Tag.ToString()), node.ImageKey));
 
                     //Borro el nodo.
                     this.permission_tree.Nodes.Remove(node);
@@ -325,7 +325,6 @@ namespace UI.Permisos
         }
 
         //-----------------------------------------------------------------------
-
 
         private void Button1_Click_2(object sender, EventArgs e)
         {
