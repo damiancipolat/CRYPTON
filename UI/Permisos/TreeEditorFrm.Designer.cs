@@ -140,12 +140,13 @@
             this.button3.TabIndex = 61;
             this.button3.Text = "Guardar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.Info;
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(832, 14);
+            this.button5.Location = new System.Drawing.Point(836, 14);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(101, 33);
             this.button5.TabIndex = 60;
@@ -157,7 +158,7 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.Info;
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(949, 14);
+            this.button4.Location = new System.Drawing.Point(950, 14);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(101, 33);
             this.button4.TabIndex = 59;

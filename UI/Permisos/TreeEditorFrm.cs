@@ -43,12 +43,8 @@ namespace UI.Permisos
             if (this.innerFamilia.Count > 0)
             {
                 //Seteo defaults.
-                //this.tree_family_list.SelectedIndex = 0;
+                this.tree_family_list.SelectedIndex = 0;
                 this.seleccion = this.innerFamilia[0];
-
-                Debug.WriteLine("-------"+this.seleccion.Id.ToString()+"____"+this.seleccion.Nombre);
-                //Dibujo el arbol.
-                //this.MostrarFamilia(this.seleccion.Id, true);
             }
         }
 
@@ -214,6 +210,15 @@ namespace UI.Permisos
             this.seleccion.Nombre = tmp.Nombre;
 
             this.MostrarFamilia(true);
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (this.seleccion != null)
+            {
+                new PermisoBL().GuardarFamilia(this.seleccion);
+                MessageBox.Show("Save ok!");
+            }
         }
     }
 }

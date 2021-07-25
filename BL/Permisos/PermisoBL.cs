@@ -35,6 +35,11 @@ namespace BL.Permisos
             new PermisoDAL().FillFamilyComponents(familia);
         }
 
+        public void GuardarFamilia(Familia2 c)
+        {
+            new PermisoDAL().GuardarFamilia(c);
+        }
+
         public IList<Componente2> GetAll(string familia)
         {
             return new PermisoDAL().GetAll(familia);
