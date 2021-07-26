@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE.Permisos;
 
 namespace BE
 {
@@ -22,5 +23,20 @@ namespace BE
         public UsuarioTipo tipoUsuario;
         public string pwd;
         public string hash;
+        public List<Componente2> _permisos;
+
+        public List<Componente2> Permisos
+        {
+            get
+            {
+                return _permisos;
+            }
+        }
+
+        public UsuarioBE()
+        {
+            _permisos = new List<Componente2>();
+        }
+
     }
 }

@@ -543,6 +543,11 @@ namespace UI
         {
             new TreeEditorFrm().Show();
         }
+
+        private void Button7_Click_1(object sender, EventArgs e)
+        {
+            new UserTreeFrm().Show();
+        }
     }
 }
  

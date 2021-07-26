@@ -13,7 +13,7 @@ using DAL.Permiso.nuevo;
 
 namespace BL.Permisos
 {
-    public class PermisoBL
+    public class PermisoBL2
     {
         public bool Existe(Componente2 c, int id)
         {
@@ -61,5 +61,6 @@ namespace BL.Permisos
         {
             return new PermisoDAL().GetAll(familia);
         }
+
     }
 }

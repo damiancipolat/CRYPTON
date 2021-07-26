@@ -26,6 +26,12 @@ namespace BL
             return new UsuarioDAL().searchByText(text);
         }
 
+        //Traigo todos los usuarios.
+        public List<UsuarioBE> getAll()
+        {
+            return new UsuarioDAL().findAll();
+        }
+
         //Buscar por id.
         public UsuarioBE findById(int id)
         {

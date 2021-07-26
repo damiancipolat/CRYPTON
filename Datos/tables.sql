@@ -629,6 +629,8 @@ insert into palabras values('TREE_CRUD_CLOSE');
 insert into palabras values('TREE_CRUD_DELETE');
 insert into palabras values('TREE_PATENT_EXISTS');
 insert into palabras values('TREE_FAMILY_EXISTS');
+insert into palabras values('USER_TREE_EDITOR_TITLE');
+insert into palabras values('USER_TREE_EDITOR_DESCRIP');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -871,6 +873,8 @@ insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_CLOSE','Cer
 insert into idioma_palabras(code,clave,valor) values('ES','TREE_CRUD_DELETE','Borrar');
 insert into idioma_palabras(code,clave,valor) values('ES','TREE_PATENT_EXISTS','La patente ya existe!');
 insert into idioma_palabras(code,clave,valor) values('ES','TREE_FAMILY_EXISTS','La familia ya existe!');
+insert into idioma_palabras(code,clave,valor) values('ES','USER_TREE_EDITOR_TITLE','Editor usuario/permisos');
+insert into idioma_palabras(code,clave,valor) values('ES','USER_TREE_EDITOR_DESCRIP','Desde aqui podes configurar los permisos que tiene cada usuario.');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1089,3 +1093,5 @@ insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_CLOSE','Cl
 insert into idioma_palabras(code,clave,valor) values('ENG','TREE_CRUD_DELETE','Delete');
 insert into idioma_palabras(code,clave,valor) values('ENG','TREE_PATENT_EXISTS','The patent already exists!');
 insert into idioma_palabras(code,clave,valor) values('ENG','TREE_FAMILY_EXISTS','The family already exists!');
+insert into idioma_palabras(code,clave,valor) values('ENG','USER_TREE_EDITOR_TITLE','User/permission editor');
+insert into idioma_palabras(code,clave,valor) values('ENG','USER_TREE_EDITOR_DESCRIP','You can edit from this module, the permission of each user.');

@@ -54,7 +54,7 @@ namespace UI.Permisos
 
             if (familia != null)
             {
-                PermisoBL repo = new PermisoBL();
+                PermisoBL2 repo = new PermisoBL2();
 
                 if (repo.Existe(this.seleccion, familia.Id))
                     MessageBox.Show(Idioma.GetInstance().translate("TREE_FAMILY_EXISTS"));
@@ -106,7 +106,7 @@ namespace UI.Permisos
 
                 if (patente != null)
                 {
-                    if (new PermisoBL().Existe(seleccion, patente.Id))
+                    if (new PermisoBL2().Existe(seleccion, patente.Id))
                         MessageBox.Show(Idioma.GetInstance().translate("TREE_PATENT_EXISTS"));
                     else
                     {
@@ -161,7 +161,7 @@ namespace UI.Permisos
             if (init)
             {
                 //traigo los hijos de la base
-                flia = new PermisoBL().GetAll("=" + seleccion.Id);
+                flia = new PermisoBL2().GetAll("=" + seleccion.Id);
 
                 foreach (var i in flia)
                     seleccion.AgregarHijo(i);
@@ -313,7 +313,7 @@ namespace UI.Permisos
                 process.Add(Tuple.Create(tuple.Item1,tuple.Item2,tuple.Item3));
 
             //Proceso el guardado.
-            new PermisoBL().GuardarFamilia(process);
+            new PermisoBL2().GuardarFamilia(process);
 
             //Fin y exito.
             MessageBox.Show("Save ok!");
