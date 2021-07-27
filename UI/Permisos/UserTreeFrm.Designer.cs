@@ -39,7 +39,6 @@
             this.user_tree_descrip_editor = new System.Windows.Forms.Label();
             this.user_tree_title_editor = new System.Windows.Forms.Label();
             this.user_permission_tree = new System.Windows.Forms.TreeView();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +46,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.user_tree_crud_delete);
             this.panel1.Controls.Add(this.user_tree_crud_save);
             this.panel1.Controls.Add(this.user_tree_crud_add_family);
@@ -145,7 +143,7 @@
             this.user_tree_descrip_editor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user_tree_descrip_editor.Location = new System.Drawing.Point(112, 66);
             this.user_tree_descrip_editor.Name = "user_tree_descrip_editor";
-            this.user_tree_descrip_editor.Size = new System.Drawing.Size(244, 25);
+            this.user_tree_descrip_editor.Size = new System.Drawing.Size(195, 20);
             this.user_tree_descrip_editor.TabIndex = 63;
             this.user_tree_descrip_editor.Text = "user_tree_descrip_editor";
             this.user_tree_descrip_editor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,7 +154,7 @@
             this.user_tree_title_editor.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user_tree_title_editor.Location = new System.Drawing.Point(108, 19);
             this.user_tree_title_editor.Name = "user_tree_title_editor";
-            this.user_tree_title_editor.Size = new System.Drawing.Size(403, 48);
+            this.user_tree_title_editor.Size = new System.Drawing.Size(322, 38);
             this.user_tree_title_editor.TabIndex = 62;
             this.user_tree_title_editor.Text = "user_tree_title_editor";
             this.user_tree_title_editor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,16 +165,6 @@
             this.user_permission_tree.Name = "user_permission_tree";
             this.user_permission_tree.Size = new System.Drawing.Size(1182, 426);
             this.user_permission_tree.TabIndex = 61;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(415, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // UserTreeFrm
             // 
@@ -215,6 +203,5 @@
         private System.Windows.Forms.Label user_tree_descrip_editor;
         private System.Windows.Forms.Label user_tree_title_editor;
         private System.Windows.Forms.TreeView user_permission_tree;
-        private System.Windows.Forms.Button button1;
     }
 }

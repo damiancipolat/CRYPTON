@@ -56,39 +56,30 @@ namespace DAL.Permiso.nuevo
             reader.Close();
         }
       
-        public void SavePermission(UsuarioBE u)
+        public void save(int userId, int permisoId)
         {
-            /*
-            try
-            {
-                var cnn = new SqlConnection(GetConnectionString());
-                cnn.Open();
+            QueryInsert builder = new QueryInsert();
 
-                var cmd = new SqlCommand();
-                cmd.Connection = cnn;
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"id_usuario",userId},
+                {"id_permiso",permisoId}
+            };
 
-                cmd.CommandText = $@"delete from usuarios_permisos where id_usuario=@id;";
-                cmd.Parameters.Add(new SqlParameter("id", u.Id));
-                cmd.ExecuteNonQuery();
+            builder.insertSchema(schema, "usuarios_permisos", false);
+        }
 
-                foreach (var item in u.Permisos)
-                {
-                    cmd = new SqlCommand();
-                    cmd.Connection = cnn;
+        public void delete(int userId, int permisoId)
+        {
+            QueryDelete builder = new QueryDelete();
 
-                    cmd.CommandText = $@"insert into usuarios_permisos (id_usuario,id_permiso) values (@id_usuario,@id_permiso) "; ;
-                    cmd.Parameters.Add(new SqlParameter("id_usuario", u.Id));
-                    cmd.Parameters.Add(new SqlParameter("id_permiso", item.Id));
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"id_usuario",userId},
+                {"id_permiso",permisoId}
+            };
 
-                    cmd.ExecuteNonQuery();
-                }
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }*/
+            builder.deleteSchema(schema, "usuarios_permisos");
         }
     }
 }

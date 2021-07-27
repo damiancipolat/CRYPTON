@@ -13,15 +13,21 @@ using BE.Permisos;
 using BL.Permisos;
 using BL;
 using SL;
+using UI.Permisos;
 
 namespace UI.Permisos
 {
     public partial class UserTreeFrm : Form
     {
         private UsuarioBE selected;
+
+        //Listas.
         private List<Familia2> innerFamilia = new List<Familia2>();
         private List<Patente2> innerPatente = new List<Patente2>();
         private List<UsuarioBE> innerUsers = new List<UsuarioBE>();
+
+        //Operaciones
+        private List<Tuple<string, int, int>> operations = new List<Tuple<string, int, int>>();
 
         public UserTreeFrm()
         {
@@ -82,10 +88,25 @@ namespace UI.Permisos
             MostrarPermisos(tmpUser);
         }
 
-        void LlenarTreeView(TreeNode padre, Componente2 c)
+        private void UserTreeFrm_Load(object sender, EventArgs e)
+        {
+            this.translateText();
+            this.loadData();
+            this.loadUserData();
+        }
+
+        //Traigo el usuario que esta seleccionado.
+        public UsuarioBE getSelected()
+        {
+            return this.innerUsers[this.user_tree_family_list.SelectedIndex];
+        }
+
+        //Render arbol ----------------------------------------------------------------
+
+        public void LlenarTreeView(TreeNode padre, Componente2 c)
         {
             TreeNode hijo = new TreeNode(c.Nombre);
-            hijo.Tag = c;
+            hijo.Tag = c.Id;
             padre.Nodes.Add(hijo);
 
             foreach (var item in c.Hijos)
@@ -109,24 +130,55 @@ namespace UI.Permisos
             this.user_permission_tree.ExpandAll();
         }
 
-        private void UserTreeFrm_Load(object sender, EventArgs e)
+        //Purgo el arbol.
+        private void purgeFromOps()
         {
-            this.translateText();
-            this.loadData();
-            this.loadUserData();
-        }
+            foreach (Tuple<string, int, int> ops in this.operations)
+            {
+                if (ops.Item1 == "del")
+                {
+                    //Busco el nodo.
+                    TreeNode node = new NodeSearch().GetNode(this.user_permission_tree.Nodes,ops.Item3.ToString());
 
-        //Traigo el usuario que esta seleccionado.
-        public UsuarioBE getSelected()
-        {
-            return this.innerUsers[this.user_tree_family_list.SelectedIndex];
-        }        
+                    //Si existe, lo borro en el control.
+                    if (node != null)
+                    {
+                        node.BackColor = Color.Yellow;
+                        Debug.WriteLine("Encontre:" + node.Name + "," + node.ImageKey);
+                        this.user_permission_tree.Nodes.Remove(node);
+                    }
+                }
+            }
+        }
 
         //Eventos UI ------------------------------------------------------------------
 
         private void User_tree_crud_delete_Click(object sender, EventArgs e)
         {
+            if (this.user_permission_tree.SelectedNode != null)
+            {
+                DialogResult selection = MessageBox.Show(
+                    Idioma.GetInstance().translate("COMP_CRUD_DELETE_CONFIRM"),
+                    Idioma.GetInstance().translate("COMP_CRUD_DELETE_TITLE"),
+                    MessageBoxButtons.YesNo);
 
+                if (selection == DialogResult.Yes)
+                {
+                    //Obtengo el nodo elegido.
+                    TreeNode node = this.user_permission_tree.SelectedNode;
+
+                    //Registro en el buffer.;
+                    this.operations.Add(
+                        Tuple.Create(
+                            "del",
+                            Int32.Parse(this.selected.idusuario.ToString()),
+                            Int32.Parse(node.Tag.ToString()))
+                     );
+
+                    //Borro el nodo.
+                    this.user_permission_tree.Nodes.Remove(node);
+                }
+            }
         }
 
         private void User_tree_crud_close_Click(object sender, EventArgs e)
@@ -136,6 +188,7 @@ namespace UI.Permisos
 
         private void Tree_family_list_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.operations.Clear();
             this.loadUserData();
         }
 
@@ -162,16 +215,36 @@ namespace UI.Permisos
 
             if (familia != null)
             {
-                MessageBox.Show("@@" + familia.Nombre);
+                UsuarioBE user = this.selected;
+
+                //Revisa si la patente existe.
+                if (this.existComponente(user.Permisos, familia))
+                    MessageBox.Show("El usuario ya tiene la familia indicada");
+                else
+                {
+                    //Agrego dentro del user.
+                    user.Permisos.Add(familia);
+
+                    //Guardo la operacion.
+                    this.operations.Add(
+                        Tuple.Create(
+                            "add",
+                            Int32.Parse(this.selected.idusuario.ToString()),
+                            Int32.Parse(familia.Id.ToString()))
+                     );
+
+                    //Actualizo ui.
+                    MostrarPermisos(user);
+                }
             }
         }
 
         //Revisa si el permiso existe.
-        private bool existPatente(List<Componente2> permisos, Patente2 patente)
+        private bool existComponente(List<Componente2> permisos, Componente2 comp)
         {
             foreach (Componente2 item in permisos)
             {
-                if (new PermisoBL2().Existe(item, patente.Id))
+                if (new PermisoBL2().Existe(item, comp.Id))
                     return true;
             }
 
@@ -206,11 +279,22 @@ namespace UI.Permisos
                 UsuarioBE user = this.selected;
 
                 //Revisa si la patente existe.
-                if (this.existPatente(user.Permisos,patente))
+                if (this.existComponente(user.Permisos,patente))
                     MessageBox.Show("El usuario ya tiene la patente indicada");
                 else
                 {
+                    //Agrego dentro de usuarios.
                     user.Permisos.Add(patente);
+
+                    //Guardo la operacion.
+                    this.operations.Add(
+                        Tuple.Create(
+                            "add",
+                            Int32.Parse(this.selected.idusuario.ToString()),
+                            Int32.Parse(patente.Id.ToString()))
+                     );
+
+                    //Actualizo UI.
                     MostrarPermisos(user);
                 }
             }
@@ -218,33 +302,26 @@ namespace UI.Permisos
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            UsuarioBE seleccion = this.innerUsers[0];
 
-            UsuarioBE tmp = new UsuarioBE();
-            tmp.idusuario = seleccion.idusuario;
-            tmp.nombre = seleccion.nombre;
-
-            Debug.WriteLine("--aaaaaaaaaaaaaa-->" + tmp.nombre);
-            UserPermisoBL repo = new UserPermisoBL();
-            repo.FillUserComponents(tmp);
-
-            Debug.WriteLine(">>>" + tmp.Permisos.Count.ToString());
-            MostrarPermisos(tmp);
         }
 
         private void User_tree_crud_save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // repo.GuardarPermisos(tmp);
-                MessageBox.Show("Usuario guardado correctamente");
-            }
-            catch (Exception)
-            {
+            //Proceso la operacion.
+            new UserPermisoBL().GuardarPermisos(this.operations);
 
-                MessageBox.Show("Error al guardar el usuario");
+            //Fin y exito.
+            MessageBox.Show("Save ok!");
 
-            }
+            //Recargo
+            this.operations.Clear();
+            this.loadUserData();
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            foreach (Tuple<string, int, int> ops in this.operations)
+                Debug.WriteLine(">>>"+ops.Item1+","+ops.Item2+","+ops.Item3);
         }
     }
 }

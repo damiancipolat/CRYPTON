@@ -10,7 +10,7 @@ using System.Diagnostics;
 using BE;
 using BE.Permisos;
 using DAL.Permiso.nuevo;
-
+using BL.Permisos;
 
 namespace BL.Permisos
 {
@@ -21,9 +21,26 @@ namespace BL.Permisos
             new UserPermisoDAL().FillUserComponents(u);
         }
 
-        public void SavePermission(UsuarioBE u)
+        public void GuardarPermisos(List<Tuple<string,int,int>> operations)
         {
-            new UserPermisoDAL().SavePermission(u);
+            foreach (Tuple<string, int, int> op in operations)
+            {
+                if (op.Item1 == "add")
+                    this.save(op.Item2,op.Item3);
+
+                if (op.Item1 == "del")
+                    this.delete(op.Item2,op.Item3);
+            }
+        }
+
+        public void save(int userId, int permisoId)
+        {
+            new UserPermisoDAL().save(userId,permisoId);
+        }
+
+        public void delete(int userId, int permisoId)
+        {
+            new UserPermisoDAL().delete(userId, permisoId);
         }
     }
 }
