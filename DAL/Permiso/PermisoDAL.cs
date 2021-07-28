@@ -9,96 +9,119 @@ using BE.Permisos;
 using DAL.DAO;
 using DAL.Permiso;
 
-namespace DAL
+namespace DAL.Permiso
 {
     public class PermisoDAL
     {
-        protected PermisoSQL sqlGen = new PermisoSQL();
-
-        //Bindea los registros y le da forma de arbol.
-        protected List<Componente> bindAll(SqlDataReader reader)
+        private Componente GetComponent(int id, IList<Componente> lista)
         {
-            List<Componente> lista = new List<Componente>();
-
-            while (reader.Read())
-            {
-                string id_padre = "";
-
-                if (reader["codrol"] != DBNull.Value)
-                    id_padre = reader.GetString(reader.GetOrdinal("codrol"));
-
-                //Bindeo campos a tipos.
-                string cod = reader.GetString(reader.GetOrdinal("id"));
-                string nombre = reader.GetString(reader.GetOrdinal("nombre"));
-                long userId = Convert.ToInt64(reader.GetValue(reader.GetOrdinal("idusuario")));
-                bool patente = reader.GetBoolean(reader.GetOrdinal("es_patente"));
-
-                //Seteo la rama / hoja.
-                Componente c = (!patente) ? (Componente)new Familia() : (Componente)new Patente();
- 
-                //Bindeo campos
-                c.Cod = cod;
-                c.Nombre = nombre;
-                c.UserId = userId;
-
-                //Busco el padre.
-                Componente padre = this.GetComponent(id_padre, lista);
-
-                if (padre == null)
-                    lista.Add(c);
-                else
-                    padre.AgregarHijo(c);                 
-
-            }
-
-            return lista;
-        }
-
-        //Busca el componente recursivamente.
-        protected Componente GetComponent(string id, IList<Componente> lista)
-        {
-            Componente component = lista != null ? lista.Where(i => i.Cod.Equals(id)).FirstOrDefault() : null;
+            Componente component = lista != null ? lista.Where(i => i.Id.Equals(id)).FirstOrDefault() : null;
 
             if (component == null && lista != null)
             {
                 foreach (var c in lista)
                 {
-                    var l = this.GetComponent(id, c.Hijos);
-                    if (l != null && l.Cod == id) return l;
+                    var l = GetComponent(id, c.Hijos);
+                    if (l != null && l.Id == id)
+                        return l;
                     else
-                    if (l != null)
-                        return GetComponent(id, l.Hijos);
-
+                    {
+                        if (l != null)
+                            return GetComponent(id, l.Hijos);
+                    }
                 }
             }
 
             return component;
-
         }
 
-        //Ejecuta la busqueda tanto por cliente o libre.
-        protected List<Componente> Find(string sql)
+        public IList<Componente> GetAll(string familia)
         {
-            //Instancio el sql builder.
+            string where = "is NULL";
+            if (!String.IsNullOrEmpty(familia))
+                where = familia;
+
+            //Armo el query recursivo.
+            string sql = $@"with recursivo as (
+                        select sp2.id_permiso_padre, sp2.id_permiso_hijo  from permiso_permiso_new SP2
+                        where sp2.id_permiso_padre {where}
+                        UNION ALL 
+                        select sp.id_permiso_padre, sp.id_permiso_hijo from permiso_permiso_new sp 
+                        inner join recursivo r on r.id_permiso_hijo= sp.id_permiso_padre
+                        )
+                        select r.id_permiso_padre,r.id_permiso_hijo,p.id,p.nombre, p.permiso
+                        from recursivo r 
+                        inner join permiso_new p on r.id_permiso_hijo = p.id ";
+
+            //Hago la consulta.
             QuerySelect builder = new QuerySelect();
             SqlDataReader reader = builder.query(sql);
 
-            //Parseo el data reader a lista.
-            List<Componente> lista = this.bindAll(reader);
+            var lista = new List<Componente>();
+            while (reader.Read())
+            {
+                int id_padre = 0;
+                if (reader["id_permiso_padre"] != DBNull.Value)
+                    id_padre = reader.GetInt32(reader.GetOrdinal("id_permiso_padre"));
 
-            //Cierro punteros.
+                int id = reader.GetInt32(reader.GetOrdinal("id"));
+                string nombre = reader.GetString(reader.GetOrdinal("nombre"));
+                string permiso = (reader["permiso"] != DBNull.Value)?reader.GetString(reader.GetOrdinal("permiso")):string.Empty;
+
+                Componente c;
+                if (string.IsNullOrEmpty(permiso))
+                    c = new Familia();
+                else
+                    c = new Patente();
+
+                c.Id = id;
+                c.Nombre = nombre;
+
+                var padre = GetComponent(id_padre, lista);
+
+                if (padre == null)
+                    lista.Add(c);
+                else
+                    padre.AgregarHijo(c);
+            }
+
             reader.Close();
-            builder.closeConnection();
-
             return lista;
         }
 
-        //Revisa si el codigo de permiso existe en la list recursivamente.
-        public bool hasPermission(IList<Componente> lista, string id)
+        public void FillFamilyComponents(Familia familia)
         {
-            Componente c = this.GetComponent(id, lista);
-            
-            return c != null;
+            familia.VaciarHijos();
+            foreach (var item in GetAll("=" + familia.Id))
+                familia.AgregarHijo(item);
+        }
+
+        public int remove(int padre, int hijo)
+        {
+            var schema = new Dictionary<string, Object>{
+                    {"id_permiso_padre",padre},
+                    {"id_permiso_hijo",hijo}
+            };
+
+            QueryDelete builderDelete = new QueryDelete();
+            return builderDelete.deleteSchema(schema, "permiso_permiso_new");
+        }
+
+        public int save(int padre, int hijo)
+        {
+            var schema = new Dictionary<string, Object>{
+                    {"id_permiso_padre",padre},
+                    {"id_permiso_hijo", hijo }
+                };
+
+            QueryInsert builderInsert = new QueryInsert();
+            return builderInsert.insertSchema(schema, "permiso_permiso_new", false);
+        }
+
+        //Revisa si el codigo de permiso existe en la list recursivamente.
+        public bool hasPermission(IList<Componente> lista, int id)
+        {
+            return this.GetComponent(id, lista)!=null;
         }
     }
 }

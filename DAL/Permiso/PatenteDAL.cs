@@ -10,7 +10,7 @@ using BE.Permisos;
 using DAL;
 using DAL.DAO;
 
-namespace DAL.Permiso.nuevo
+namespace DAL.Permiso
 {
     public class PatenteDAL
     {
@@ -31,21 +31,21 @@ namespace DAL.Permiso.nuevo
             return builder.deleteById("id", id, "permiso_new");
         }
 
-        public List<Patente2> getAll()
+        public List<Patente> getAll()
         {
             //Instancio el sql builder y ejecuto el query.
             string sql = "select * from permiso_new p where p.permiso is not null;";
             QuerySelect builder = new QuerySelect();
             SqlDataReader reader = builder.query(sql);
 
-            var lista = new List<Patente2>();
+            var lista = new List<Patente>();
 
             while (reader.Read())
             {
                 int id = reader.GetInt32(reader.GetOrdinal("id"));
                 string nombre = reader.GetString(reader.GetOrdinal("nombre"));
 
-                Patente2 c = new Patente2();
+                Patente c = new Patente();
                 c.Id = id;
                 c.Nombre = nombre;
                 lista.Add(c);

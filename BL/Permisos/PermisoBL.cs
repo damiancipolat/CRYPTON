@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using BE;
 using BE.Permisos;
-using DAL.Permiso.nuevo;
+using DAL.Permiso;
 
 namespace BL.Permisos
 {
-    public class PermisoBL2
+    public class PermisoBL
     {
-        public bool Existe(Componente2 c, int id)
+        public bool Existe(Componente c, int id)
         {
             bool existe = false;
 
@@ -34,7 +34,7 @@ namespace BL.Permisos
             return existe;
         }
 
-        public void FillFamilyComponents(Familia2 familia)
+        public void FillFamilyComponents(Familia familia)
         {
             new PermisoDAL().FillFamilyComponents(familia);
         }
@@ -57,10 +57,15 @@ namespace BL.Permisos
             }
         }
 
-        public IList<Componente2> GetAll(string familia)
+        public IList<Componente> GetAll(string familia)
         {
             return new PermisoDAL().GetAll(familia);
         }
 
+        //Revisa si el permiso esta dentro de la lista.
+        public bool hasPermission(IList<Componente> permisos, string id)
+        {
+            return new PermisoDAL().hasPermission(permisos, int.Parse(id));
+        }
     }
 }

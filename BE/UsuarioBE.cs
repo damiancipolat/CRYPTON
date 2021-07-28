@@ -23,9 +23,9 @@ namespace BE
         public UsuarioTipo tipoUsuario;
         public string pwd;
         public string hash;
-        public List<Componente2> _permisos;
+        public List<Componente> _permisos;
 
-        public List<Componente2> Permisos
+        public List<Componente> Permisos
         {
             get
             {
@@ -35,7 +35,7 @@ namespace BE
 
         public UsuarioBE()
         {
-            _permisos = new List<Componente2>();
+            _permisos = new List<Componente>();
         }
 
     }

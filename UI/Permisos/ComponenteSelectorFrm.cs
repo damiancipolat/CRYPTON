@@ -16,10 +16,10 @@ namespace UI
     {
         private string title;
         private string description;
-        private List<Componente2> compList = new List<Componente2>();
+        private List<Componente> compList = new List<Componente>();
         private int selectedIx = -1;
 
-        public ComponenteSelectorFrm(string title, string description, List<Componente2> innerList)
+        public ComponenteSelectorFrm(string title, string description, List<Componente> innerList)
         {
             InitializeComponent();
             this.title = title;
@@ -38,11 +38,11 @@ namespace UI
             this.Close();
         }
 
-        private void fillItems(List<Componente2> list)
+        private void fillItems(List<Componente> list)
         {
             this.comp_list.Items.Clear();
 
-            foreach (Componente2 comp in list)
+            foreach (Componente comp in list)
                 this.comp_list.Items.Add(comp.Nombre);
         }
 

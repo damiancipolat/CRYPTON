@@ -93,8 +93,8 @@ namespace UI
                 DataGridViewRow selectedRow = this.usr_data.Rows[selectedrowindex];
                 string idValue = Convert.ToString(selectedRow.Cells["id"].Value);
 
-                UsuarioBE user = new UsuarioBL().findById(Int32.Parse(idValue));
-                new PermisosFrm(user).Show();
+                //UsuarioBE user = new UsuarioBL().findById(Int32.Parse(idValue));
+                //new PermisosFrm(user).Show();
 
             }
             else

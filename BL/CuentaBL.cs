@@ -78,7 +78,7 @@ namespace BL
             Debug.WriteLine("Bind client permission of if: "+cliente.idusuario);
 
             //Cargo el arbol de permisos para un usuario que arranca de cero.
-            PermisoBL perm = new PermisoBL();
+            /*PermisoBL perm = new PermisoBL();
             long clientId = cliente.usuario.idusuario;
 
             //Registro.
@@ -89,7 +89,7 @@ namespace BL
             perm.bindSpecificToUser("R002", "CLI003", clientId);
             perm.bindSpecificToUser("R002", "CLI004", clientId);
             perm.bindSpecificToUser("R002", "CLI005", clientId);
-            perm.bindSpecificToUser("R002", "CLI006", clientId);
+            perm.bindSpecificToUser("R002", "CLI006", clientId);*/
         }
 
         //CONSULTA --------------------------------------------------------------

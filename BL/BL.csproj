@@ -62,7 +62,6 @@
     <Compile Include="Operations\ValidateSwipe.cs" />
     <Compile Include="OrdenCompraBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />
-    <Compile Include="PermisoBL.cs" />
     <Compile Include="Permisos\FamiliaBL.cs" />
     <Compile Include="Permisos\PatenteBL.cs" />
     <Compile Include="Permisos\PermisoBL.cs" />

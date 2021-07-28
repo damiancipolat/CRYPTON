@@ -18,7 +18,7 @@ namespace UI.Permisos
     public partial class ComponentCrudFrm : Form
     {
         private string mode;
-        private List<Componente2> innerList = new List<Componente2>();
+        private List<Componente> innerList = new List<Componente>();
 
         public ComponentCrudFrm(string mode)
         {
@@ -44,20 +44,20 @@ namespace UI.Permisos
         private void loadData()
         {
             //Cargo contenido.
-            List<Componente2> compList = new List<Componente2>();
+            List<Componente> compList = new List<Componente>();
 
             if (this.mode == "family")
             {
-                List<Familia2> familias = new FamiliaBL().getAll();
-                foreach (Familia2 fam in familias)
-                    compList.Add((Componente2)fam);
+                List<Familia> familias = new FamiliaBL().getAll();
+                foreach (Familia fam in familias)
+                    compList.Add((Componente)fam);
             }
 
             if (this.mode == "patent")
             {
-                List<Patente2> patentes = new PatenteBL().getAll();
-                foreach (Patente2 pat in patentes)
-                    compList.Add((Componente2)pat);
+                List<Patente> patentes = new PatenteBL().getAll();
+                foreach (Patente pat in patentes)
+                    compList.Add((Componente)pat);
             }
 
             this.innerList = compList;
@@ -65,7 +65,7 @@ namespace UI.Permisos
             //Cargo la ui.
             this.comp_crud_list.Items.Clear();
 
-            foreach (Componente2 comp in compList)
+            foreach (Componente comp in compList)
                 this.comp_crud_list.Items.Add(comp.Nombre);
         }
 
@@ -91,7 +91,7 @@ namespace UI.Permisos
 
             if (dr == DialogResult.Yes)
             {
-                Componente2 comp = this.innerList[this.comp_crud_list.SelectedIndex];
+                Componente comp = this.innerList[this.comp_crud_list.SelectedIndex];
 
                 //Grabo.
                 if (this.mode == "family")

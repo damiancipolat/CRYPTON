@@ -10,17 +10,22 @@ using BE;
 using DAL.DAO;
 using DAL.Permiso;
 
-namespace DAL.Permiso.nuevo
+namespace DAL.Permiso
 {
     public class UserPermisoDAL
     {
-        public void FillUserComponents(UsuarioBE u)
+        public List<Componente> getPermmision(UsuarioBE user)
         {
+            List<Componente> permList = new List<Componente>();
+
             //Hago la consulta.
-            string sql = "select p.* from usuarios_permisos up inner join permiso_new p on up.id_permiso=p.id where id_usuario=" + u.idusuario;
+            string sql = "select p.* from usuarios_permisos up inner join permiso_new p on up.id_permiso=p.id where id_usuario=" + user.idusuario;
+            
+            //Abro conexion.
             QuerySelect builder = new QuerySelect();
             SqlDataReader reader = builder.query(sql);
 
+            //Parsear datos.
             while (reader.Read())
             {
                 var idp = reader.GetInt32(reader.GetOrdinal("id"));
@@ -30,17 +35,17 @@ namespace DAL.Permiso.nuevo
                 if (reader["permiso"] != DBNull.Value)
                     permisop = reader.GetString(reader.GetOrdinal("permiso"));
 
-                Componente2 c1;
+                Componente c1;
                 if (!String.IsNullOrEmpty(permisop))
                 {
-                    c1 = new Patente2();
+                    c1 = new Patente();
                     c1.Id = idp;
                     c1.Nombre = nombrep;
-                    u.Permisos.Add(c1);
+                    permList.Add(c1);
                 }
                 else
                 {
-                    c1 = new Familia2();
+                    c1 = new Familia();
                     c1.Id = idp;
                     c1.Nombre = nombrep;
 
@@ -50,10 +55,23 @@ namespace DAL.Permiso.nuevo
                     {
                         c1.AgregarHijo(familia);
                     }
-                    u.Permisos.Add(c1);
+                    permList.Add(c1);
                 }
             }
+
+            //Cierro conexion.
             reader.Close();
+
+            return permList;
+        }
+
+        public void FillUserComponents(UsuarioBE u)
+        {
+            //Traigo la lista de permisos.
+            List<Componente> permList = this.getPermmision(u);
+
+            //Agrego los permisos.
+            u.Permisos.AddRange(permList);
         }
       
         public void save(int userId, int permisoId)

@@ -59,10 +59,10 @@ namespace BL
             emple.idempleado = empleId;
 
             //Registro.
-            PermisoBL perm = new PermisoBL();
+            /*PermisoBL perm = new PermisoBL();
             perm.bindSpecificToUser(null, "R001", empleId);
             perm.bindSpecificToUser("R001", "R003", empleId);
-
+            */
             return emple;
         }
     }

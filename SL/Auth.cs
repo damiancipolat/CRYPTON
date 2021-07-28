@@ -34,7 +34,7 @@ namespace SL
         //Traigo la lista de permisos para el usuario que se logea.
         private List<Componente> getPermission(UsuarioBE user)
         {
-            return new PermisoUserDAL().FindAllClient(user);
+            return new UserPermisoDAL().getPermmision(user);
         }
 
         //Activo la sesion, cargo idioma y permisos.

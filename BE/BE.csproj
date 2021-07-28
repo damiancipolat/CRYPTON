@@ -60,11 +60,8 @@
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="OrdenVentaBE.cs" />
     <Compile Include="Permisos\Componente.cs" />
-    <Compile Include="Permisos\Componente2.cs" />
     <Compile Include="Permisos\Familia.cs" />
-    <Compile Include="Permisos\Familia2.cs" />
     <Compile Include="Permisos\Patente.cs" />
-    <Compile Include="Permisos\Patente2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolicOnboardingBE.cs" />
     <Compile Include="SolicOperacionBE.cs" />

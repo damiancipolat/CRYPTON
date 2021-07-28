@@ -9,7 +9,7 @@ using BE;
 using BE.Permisos;
 using DAL.DAO;
 
-namespace DAL.Permiso.nuevo
+namespace DAL.Permiso
 {
     public class FamiliaDAL
     {
@@ -29,21 +29,21 @@ namespace DAL.Permiso.nuevo
             return builder.deleteById("id",id,"permiso_new");
         }
 
-        public List<Familia2> getAll()
+        public List<Familia> getAll()
         {
             //Instancio el sql builder y ejecuto el query.
             string sql = "select * from permiso_new p where p.permiso is null;";
             QuerySelect builder = new QuerySelect();
             SqlDataReader reader = builder.query(sql);
 
-            var lista = new List<Familia2>();
+            var lista = new List<Familia>();
 
             while (reader.Read())
             {
                 int id = reader.GetInt32(reader.GetOrdinal("id"));
                 string nombre = reader.GetString(reader.GetOrdinal("nombre"));
 
-                Familia2 c = new Familia2();
+                Familia c = new Familia();
                 c.Id = id;
                 c.Nombre = nombre;
                 lista.Add(c);

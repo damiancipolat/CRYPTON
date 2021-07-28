@@ -69,14 +69,10 @@
     <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="OrdenCompraDAL.cs" />
     <Compile Include="OrdenVentaDAL.cs" />
-    <Compile Include="Permiso\nuevo\FamiliaDAL.cs" />
-    <Compile Include="Permiso\nuevo\PatenteDAL.cs" />
-    <Compile Include="Permiso\nuevo\UserPermisoDAL.cs" />
-    <Compile Include="Permiso\nuevo\PermisoDAL.cs" />
-    <Compile Include="Permiso\PermisoTodoDAL.cs" />
+    <Compile Include="Permiso\FamiliaDAL.cs" />
+    <Compile Include="Permiso\PatenteDAL.cs" />
+    <Compile Include="Permiso\UserPermisoDAL.cs" />
     <Compile Include="Permiso\PermisoDAL.cs" />
-    <Compile Include="Permiso\PermisoSQL.cs" />
-    <Compile Include="Permiso\PermisoUserDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin\BackupDAL.cs" />
     <Compile Include="SolicOnboardingDAL.cs" />

@@ -1,13 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BE.Permisos;
 
 namespace BE.Permisos
 {
-    public class Familia: Componente
+    public class Familia : Componente
     {
         private IList<Componente> _hijos;
         public Familia()
@@ -24,6 +24,10 @@ namespace BE.Permisos
 
         }
 
+        public override void VaciarHijos()
+        {
+            _hijos = new List<Componente>();
+        }
         public override void AgregarHijo(Componente c)
         {
             _hijos.Add(c);

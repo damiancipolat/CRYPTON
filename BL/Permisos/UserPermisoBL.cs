@@ -9,15 +9,20 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using BE;
 using BE.Permisos;
-using DAL.Permiso.nuevo;
+using DAL.Permiso;
 using BL.Permisos;
 
 namespace BL.Permisos
 {
     public class UserPermisoBL
     {
-        public void FillUserComponents(UsuarioBE u)
+        public List<Componente> getPermission(UsuarioBE u)
         {
+            return new UserPermisoDAL().getPermmision(u);
+        }
+
+        public void FillUserComponents(UsuarioBE u)
+        {            
             new UserPermisoDAL().FillUserComponents(u);
         }
 

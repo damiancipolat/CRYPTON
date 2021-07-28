@@ -18,9 +18,9 @@ namespace UI.Permisos
 {
     public partial class TreeEditorFrm : Form
     {
-        private List<Familia2> innerFamilia = new List<Familia2>();
-        private List<Patente2> innerPatente = new List<Patente2>();        
-        private Familia2 seleccion;
+        private List<Familia> innerFamilia = new List<Familia>();
+        private List<Patente> innerPatente = new List<Patente>();        
+        private Familia seleccion;
         private List<Tuple<string,int, int, string>> operations = new List<Tuple<string, int, int, string>> ();
 
         public TreeEditorFrm()
@@ -34,10 +34,10 @@ namespace UI.Permisos
         private void Button5_Click(object sender, EventArgs e)
         {
             //Load data.
-            List<Componente2> compList = new List<Componente2>();
+            List<Componente> compList = new List<Componente>();
 
-            foreach (Familia2 fam in this.innerFamilia)
-                compList.Add((Componente2)fam);
+            foreach (Familia fam in this.innerFamilia)
+                compList.Add((Componente)fam);
 
             //Show input.
             ComponenteSelectorFrm frm = new ComponenteSelectorFrm(Idioma.GetInstance().translate("EDIT_FAMILY_SELECTOR_TITLE"), Idioma.GetInstance().translate("EDIT_FAMILY_SELECTOR_DESCRIP"), compList);
@@ -50,11 +50,11 @@ namespace UI.Permisos
                 return;
             
             //Extraigo la familia.
-            Familia2 familia = this.innerFamilia[value];
+            Familia familia = this.innerFamilia[value];
 
             if (familia != null)
             {
-                PermisoBL2 repo = new PermisoBL2();
+                PermisoBL repo = new PermisoBL();
 
                 if (repo.Existe(this.seleccion, familia.Id))
                     MessageBox.Show(Idioma.GetInstance().translate("TREE_FAMILY_EXISTS"));
@@ -84,10 +84,10 @@ namespace UI.Permisos
         private void Button4_Click(object sender, EventArgs e)
         {
             //Load data.
-            List<Componente2> tmp2 = new List<Componente2>();
+            List<Componente> tmp2 = new List<Componente>();
 
-            foreach (Patente2 pat in this.innerPatente)
-                tmp2.Add((Componente2)pat);
+            foreach (Patente pat in this.innerPatente)
+                tmp2.Add((Componente)pat);
 
             //Show input.            
             ComponenteSelectorFrm frm = new ComponenteSelectorFrm(Idioma.GetInstance().translate("EDIT_PATENTE_SELECTOR_TITLE"), Idioma.GetInstance().translate("EDIT_PATENTE_SELECTOR_DESCRIP"), tmp2);
@@ -102,11 +102,11 @@ namespace UI.Permisos
 
             if (seleccion != null)
             {
-                var patente = (Patente2)this.innerPatente[value];
+                var patente = (Patente)this.innerPatente[value];
 
                 if (patente != null)
                 {
-                    if (new PermisoBL2().Existe(seleccion, patente.Id))
+                    if (new PermisoBL().Existe(seleccion, patente.Id))
                         MessageBox.Show(Idioma.GetInstance().translate("TREE_PATENT_EXISTS"));
                     else
                     {
@@ -157,11 +157,11 @@ namespace UI.Permisos
         {
             if (seleccion == null) return;
 
-            IList<Componente2> flia = null;
+            IList<Componente> flia = null;
             if (init)
             {
                 //traigo los hijos de la base
-                flia = new PermisoBL2().GetAll("=" + seleccion.Id);
+                flia = new PermisoBL().GetAll("=" + seleccion.Id);
 
                 foreach (var i in flia)
                     seleccion.AgregarHijo(i);
@@ -188,7 +188,7 @@ namespace UI.Permisos
         }
 
         //Dibuja en el treeview.
-        private void MostrarEnTreeView(TreeNode tn, Componente2 c)
+        private void MostrarEnTreeView(TreeNode tn, Componente c)
         {
             TreeNode n = new TreeNode(c.Nombre);
             n.Tag = c.Id.ToString();
@@ -235,7 +235,7 @@ namespace UI.Permisos
             //Cargo el combo de lista de familias.
             this.tree_family_list.Items.Clear();
 
-            foreach (Familia2 family in this.innerFamilia)
+            foreach (Familia family in this.innerFamilia)
                 this.tree_family_list.Items.Add(family.Nombre);
 
             //Si hay datos selecciono por defecto el 1ro.
@@ -290,8 +290,8 @@ namespace UI.Permisos
             this.operations.Clear();
 
             //Rendereo.
-            var tmp = (Familia2)this.innerFamilia[this.tree_family_list.SelectedIndex];
-            this.seleccion = new Familia2();
+            var tmp = (Familia)this.innerFamilia[this.tree_family_list.SelectedIndex];
+            this.seleccion = new Familia();
             this.seleccion.Id = tmp.Id;
             this.seleccion.Nombre = tmp.Nombre;
 
@@ -313,7 +313,7 @@ namespace UI.Permisos
                 process.Add(Tuple.Create(tuple.Item1,tuple.Item2,tuple.Item3));
 
             //Proceso el guardado.
-            new PermisoBL2().GuardarFamilia(process);
+            new PermisoBL().GuardarFamilia(process);
 
             //Fin y exito.
             MessageBox.Show("Save ok!");

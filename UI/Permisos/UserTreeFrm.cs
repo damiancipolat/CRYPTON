@@ -22,8 +22,8 @@ namespace UI.Permisos
         private UsuarioBE selected;
 
         //Listas.
-        private List<Familia2> innerFamilia = new List<Familia2>();
-        private List<Patente2> innerPatente = new List<Patente2>();
+        private List<Familia> innerFamilia = new List<Familia>();
+        private List<Patente> innerPatente = new List<Patente>();
         private List<UsuarioBE> innerUsers = new List<UsuarioBE>();
 
         //Operaciones
@@ -103,7 +103,7 @@ namespace UI.Permisos
 
         //Render arbol ----------------------------------------------------------------
 
-        public void LlenarTreeView(TreeNode padre, Componente2 c)
+        public void LlenarTreeView(TreeNode padre, Componente c)
         {
             TreeNode hijo = new TreeNode(c.Nombre);
             hijo.Tag = c.Id;
@@ -195,10 +195,10 @@ namespace UI.Permisos
         private void User_tree_crud_add_family_Click(object sender, EventArgs e)
         {
             //Load data.
-            List<Componente2> compList = new List<Componente2>();
+            List<Componente> compList = new List<Componente>();
 
-            foreach (Familia2 fam in this.innerFamilia)
-                compList.Add((Componente2)fam);
+            foreach (Familia fam in this.innerFamilia)
+                compList.Add((Componente)fam);
 
             //Show input.
             ComponenteSelectorFrm frm = new ComponenteSelectorFrm(Idioma.GetInstance().translate("EDIT_FAMILY_SELECTOR_TITLE"), Idioma.GetInstance().translate("EDIT_FAMILY_SELECTOR_DESCRIP"), compList);
@@ -211,7 +211,7 @@ namespace UI.Permisos
                 return;
 
             //Obtengo la familia seleccionada.
-            Familia2 familia = this.innerFamilia[value];
+            Familia familia = this.innerFamilia[value];
 
             if (familia != null)
             {
@@ -240,11 +240,11 @@ namespace UI.Permisos
         }
 
         //Revisa si el permiso existe.
-        private bool existComponente(List<Componente2> permisos, Componente2 comp)
+        private bool existComponente(List<Componente> permisos, Componente comp)
         {
-            foreach (Componente2 item in permisos)
+            foreach (Componente item in permisos)
             {
-                if (new PermisoBL2().Existe(item, comp.Id))
+                if (new PermisoBL().Existe(item, comp.Id))
                     return true;
             }
 
@@ -254,10 +254,10 @@ namespace UI.Permisos
         private void User_tree_crud_add_patent_Click(object sender, EventArgs e)
         {
             //Load data.
-            List<Componente2> tmp2 = new List<Componente2>();
+            List<Componente> tmp2 = new List<Componente>();
 
-            foreach (Patente2 pat in this.innerPatente)
-                tmp2.Add((Componente2)pat);
+            foreach (Patente pat in this.innerPatente)
+                tmp2.Add((Componente)pat);
 
             //Show input.            
             ComponenteSelectorFrm frm = new ComponenteSelectorFrm(Idioma.GetInstance().translate("EDIT_PATENTE_SELECTOR_TITLE"), Idioma.GetInstance().translate("EDIT_PATENTE_SELECTOR_DESCRIP"), tmp2);
@@ -271,7 +271,7 @@ namespace UI.Permisos
                 return;
 
             //Obtengo la familia seleccionada.
-            Patente2 patente = this.innerPatente[value];
+            Patente patente = this.innerPatente[value];
 
             if (patente != null)
             {

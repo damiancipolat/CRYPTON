@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Permiso.nuevo;
+using DAL.Permiso;
 using BE.Permisos;
 
 namespace BL.Permisos
@@ -20,7 +20,7 @@ namespace BL.Permisos
             return new FamiliaDAL().delete(id);
         }
 
-        public List<Familia2> getAll()
+        public List<Familia> getAll()
         {
             return new FamiliaDAL().getAll();
         }

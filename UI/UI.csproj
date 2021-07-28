@@ -150,12 +150,6 @@
     <Compile Include="OperacionView.Designer.cs">
       <DependentUpon>OperacionView.cs</DependentUpon>
     </Compile>
-    <Compile Include="PermisosFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PermisosFrm.Designer.cs">
-      <DependentUpon>PermisosFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Permisos\NodeSearch.cs" />
     <Compile Include="Permisos\TreeEditorFrm.cs">
       <SubType>Form</SubType>
@@ -248,9 +242,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OperacionView.resx">
       <DependentUpon>OperacionView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PermisosFrm.resx">
-      <DependentUpon>PermisosFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Permisos\TreeEditorFrm.resx">
       <DependentUpon>TreeEditorFrm.cs</DependentUpon>
