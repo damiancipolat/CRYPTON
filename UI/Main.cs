@@ -506,6 +506,20 @@ namespace UI
         {
             new UserTreeFrm().Show();
         }
+
+        private void Button1_Click_9(object sender, EventArgs e)
+        {
+            IList<Componente> tmp = new PermisoBL().GetAll("=11");
+
+            foreach (Componente cmp in tmp)
+            {
+                Debug.WriteLine("-->" + cmp.Id.ToString() + "," + cmp.Nombre);
+
+                if (cmp.Hijos!=null)
+                    Debug.WriteLine("hijos-->" + cmp.Hijos.Count.ToString());
+            }
+                
+        }
     }
 }
  

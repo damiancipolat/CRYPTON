@@ -54,13 +54,10 @@
             this.main_menu_it_add_user = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_lang_manager = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -302,46 +299,6 @@
             this.main_menu_it_lang_manager.Text = "Gestor idiomas";
             this.main_menu_it_lang_manager.Click += new System.EventHandler(this.GestorIdiomasToolStripMenuItem_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(106, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 46);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "btn_patente";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_8);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(101, 162);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 50);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "btn_familia";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click_2);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(101, 290);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 41);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "crud familia";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click_2);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(101, 234);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(168, 41);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "crud patente";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click_2);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::UI.Properties.Resources.background2;
@@ -360,7 +317,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(168, 51);
             this.button6.TabIndex = 18;
-            this.button6.Text = "button6";
+            this.button6.Text = "Permisos";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click_1);
             // 
@@ -370,21 +327,28 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(168, 51);
             this.button7.TabIndex = 19;
-            this.button7.Text = "user permision";
+            this.button7.Text = "Permisos usuario";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(113, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_9);
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -440,12 +404,9 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_notifications;
         private System.Windows.Forms.ToolStripMenuItem main_menu_balance;
         private System.Windows.Forms.ToolStripMenuItem main_menu_publish;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button1;
     }
 }
 

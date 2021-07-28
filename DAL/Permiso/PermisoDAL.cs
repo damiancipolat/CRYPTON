@@ -16,11 +16,13 @@ namespace DAL.Permiso
         private Componente GetComponent(int id, IList<Componente> lista)
         {
             Componente component = lista != null ? lista.Where(i => i.Id.Equals(id)).FirstOrDefault() : null;
-
+            
             if (component == null && lista != null)
             {
                 foreach (var c in lista)
                 {
+                    Debug.WriteLine("@@@@" + c.Nombre);
+
                     var l = GetComponent(id, c.Hijos);
                     if (l != null && l.Id == id)
                         return l;
@@ -38,37 +40,45 @@ namespace DAL.Permiso
         public IList<Componente> GetAll(string familia)
         {
             string where = "is NULL";
+
             if (!String.IsNullOrEmpty(familia))
                 where = familia;
 
-            //Armo el query recursivo.
             string sql = $@"with recursivo as (
-                        select sp2.id_permiso_padre, sp2.id_permiso_hijo  from permiso_permiso_new SP2
-                        where sp2.id_permiso_padre {where}
+                        select sp2.id_permiso_padre, sp2.id_permiso_hijo  from permiso_permiso SP2
+                        where sp2.id_permiso_padre {where} --acá se va variando la familia que busco
                         UNION ALL 
-                        select sp.id_permiso_padre, sp.id_permiso_hijo from permiso_permiso_new sp 
+                        select sp.id_permiso_padre, sp.id_permiso_hijo from permiso_permiso sp 
                         inner join recursivo r on r.id_permiso_hijo= sp.id_permiso_padre
                         )
                         select r.id_permiso_padre,r.id_permiso_hijo,p.id,p.nombre, p.permiso
                         from recursivo r 
-                        inner join permiso_new p on r.id_permiso_hijo = p.id ";
+                        inner join permiso p on r.id_permiso_hijo = p.id
+                        order by p.permiso";
 
             //Hago la consulta.
             QuerySelect builder = new QuerySelect();
             SqlDataReader reader = builder.query(sql);
 
-            var lista = new List<Componente>();
+            List<Componente> lista = new List<Componente>();
+
             while (reader.Read())
             {
                 int id_padre = 0;
                 if (reader["id_permiso_padre"] != DBNull.Value)
+                {
                     id_padre = reader.GetInt32(reader.GetOrdinal("id_permiso_padre"));
+                }
 
-                int id = reader.GetInt32(reader.GetOrdinal("id"));
-                string nombre = reader.GetString(reader.GetOrdinal("nombre"));
-                string permiso = (reader["permiso"] != DBNull.Value)?reader.GetString(reader.GetOrdinal("permiso")):string.Empty;
+                var id = reader.GetInt32(reader.GetOrdinal("id"));
+                var nombre = reader.GetString(reader.GetOrdinal("nombre"));
+
+                var permiso = string.Empty;
+                if (reader["permiso"] != DBNull.Value)
+                    permiso = reader.GetString(reader.GetOrdinal("permiso"));
 
                 Componente c;
+
                 if (string.IsNullOrEmpty(permiso))
                     c = new Familia();
                 else
@@ -104,7 +114,7 @@ namespace DAL.Permiso
             };
 
             QueryDelete builderDelete = new QueryDelete();
-            return builderDelete.deleteSchema(schema, "permiso_permiso_new");
+            return builderDelete.deleteSchema(schema, "permiso_permiso");
         }
 
         public int save(int padre, int hijo)
@@ -115,7 +125,7 @@ namespace DAL.Permiso
                 };
 
             QueryInsert builderInsert = new QueryInsert();
-            return builderInsert.insertSchema(schema, "permiso_permiso_new", false);
+            return builderInsert.insertSchema(schema, "permiso_permiso", false);
         }
 
         //Revisa si el codigo de permiso existe en la list recursivamente.

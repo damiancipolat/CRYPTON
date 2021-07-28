@@ -22,19 +22,19 @@ namespace DAL.Permiso
             };
 
             QueryInsert builder = new QueryInsert();
-            return builder.insertSchema(schema, "permiso_new", true);
+            return builder.insertSchema(schema, "permiso", true);
         }
 
         public int delete(int id)
         {
             QueryDelete builder = new QueryDelete();
-            return builder.deleteById("id", id, "permiso_new");
+            return builder.deleteById("id", id, "permiso");
         }
 
         public List<Patente> getAll()
         {
             //Instancio el sql builder y ejecuto el query.
-            string sql = "select * from permiso_new p where p.permiso is not null;";
+            string sql = "select * from permiso p where p.permiso is not null;";
             QuerySelect builder = new QuerySelect();
             SqlDataReader reader = builder.query(sql);
 

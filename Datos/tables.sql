@@ -22,15 +22,15 @@ DROP TABLE IF EXISTS orden_estado;
 DROP TABLE IF EXISTS comisiones;
 DROP TABLE IF EXISTS comisiones_valor;
 DROP TABLE IF EXISTS comision_operacion_valor;
-DROP TABLE IF EXISTS permiso;
-DROP TABLE IF EXISTS rol_permiso;
-DROP TABLE IF EXISTS usuario_permiso;
 DROP TABLE IF EXISTS conversiones;
 DROP TABLE IF EXISTS notificaciones;
 DROP TABLE IF EXISTS admin_backup;
 DROP TABLE IF EXISTS dvv;
 DROP TABLE IF EXISTS idiomas;
 DROP TABLE IF EXISTS idioma_palabras;
+DROP TABLE IF EXISTS permiso;
+DROP TABLE IF EXISTS permiso_permiso;
+DROP TABLE IF EXISTS usuarios_permisos;
 
 --Tabla de usuarios.
 create table usuario(
@@ -64,63 +64,55 @@ create table dvv(
 
 insert into dvv(tabla,[hash],fecUpdate) values('usuario','',GETDATE());
 
---Tabla de permisos
-create table permiso
-(	
-	codpermiso varchar(20) primary key,
-	nombre varchar(150),
-	es_patente bit,
-	deleted datetime
+--Permisos
+CREATE TABLE permiso(
+	id int IDENTITY(1,1) NOT NULL,
+	nombre varchar(100) NULL,	
+	permiso varchar(50) NULL
+);
+select * from permiso
+CREATE TABLE permiso_permiso(
+	id_permiso_padre int NULL,
+	id_permiso_hijo int NULL
 );
 
---Esquema de roles
-insert into permiso(codpermiso,nombre,es_patente) values('R001','Usuario',0);
-insert into permiso(codpermiso,nombre,es_patente) values('R002','Cliente',0);
-insert into permiso(codpermiso,nombre,es_patente) values('CLI001','Buscar ofertas',1);
-insert into permiso(codpermiso,nombre,es_patente) values('CLI002','Recomendaciones',1);
-insert into permiso(codpermiso,nombre,es_patente) values('CLI003','Mis publicaciones',1);
-insert into permiso(codpermiso,nombre,es_patente) values('CLI004','Mis saldos',1);
-insert into permiso(codpermiso,nombre,es_patente) values('CLI005','Notificaciones',1);
-insert into permiso(codpermiso,nombre,es_patente) values('CLI006','Publicar venta',1);
-insert into permiso(codpermiso,nombre,es_patente) values('R003','Empleado',0);
-insert into permiso(codpermiso,nombre,es_patente) values('R004','IT',0);
-insert into permiso(codpermiso,nombre,es_patente) values('IT0001','Alta usuarios',1);
-insert into permiso(codpermiso,nombre,es_patente) values('IT0002','Gestion usuarios',1);
-insert into permiso(codpermiso,nombre,es_patente) values('IT0003','Gestion idiomas',1);
-
-create table rol_permiso
-(
-	codrol varchar(20),
-	codpermiso varchar(20),
-	idusuario bigint
+CREATE TABLE usuarios_permisos(
+	id_usuario int not null,
+	id_permiso int not null
 );
 
-/*
---Cliente 
-insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',5);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R002',5);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI001',5);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI002',5);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI003',5);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI004',5);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI005',5);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R002','CLI006',5);
+--Permisos de cliente
+insert into permiso(nombre,permiso) values('Buscar ofertas','P');
+insert into permiso(nombre,permiso) values('Recomendaciones','P');
+insert into permiso(nombre,permiso) values('Mis publicaciones','P');
+insert into permiso(nombre,permiso) values('Mis saldos','P');
+insert into permiso(nombre,permiso) values('Publicar venta','P');
+insert into permiso(nombre,permiso) values('Alta de usuarios','P');
+insert into permiso(nombre,permiso) values('Gestion de usuarios','P');
+insert into permiso(nombre,permiso) values('Gestion de permisos','P');
+insert into permiso(nombre,permiso) values('Gestion de idiomas','P');
 
---Empleado IT
-insert into rol_permiso(codrol,codpermiso,idusuario) values(NULL,'R001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R001','R003',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R003','R004',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0001',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0002',1);
-insert into rol_permiso(codrol,codpermiso,idusuario) values('R004','IT0003',1);
-*/select * from rol_permiso
+--Familias
+insert into permiso(nombre,permiso) values('Cliente',null);
+insert into permiso(nombre,permiso) values('Empleado',null);
+insert into permiso(nombre,permiso) values('IT',null);
 
---Tabla que relaciona permisos con usuarios.
-create table usuario_permiso
-(
-	idusuario bigint,
-	codpermiso varchar(20)
-);
+--Relacion permisos-cliente
+insert into permiso_permiso values(10,1);
+insert into permiso_permiso values(10,2);
+insert into permiso_permiso values(10,3);
+insert into permiso_permiso values(10,4);
+insert into permiso_permiso values(10,5);
+
+--Relacion permisos-empleado
+insert into permiso_permiso values(11,12);
+insert into permiso_permiso values(12,6);
+insert into permiso_permiso values(12,7);
+insert into permiso_permiso values(12,8);
+insert into permiso_permiso values(12,9);
+
+select * from permiso_permiso
+select * from permiso
 
 --Tabla de registro de backups.
 create table admin_backup
@@ -641,14 +633,6 @@ create table idioma_palabras
 	deleted datetime,
 	CONSTRAINT pk_idioma_palabra PRIMARY KEY (code,clave)
 );
-
-/*
-insert into idioma_palabras(code,clave,valor)
-select 'ASG',clave,valor from idioma_palabras
-where code='ES'
-*/
-
-select * from idiomas
 
 --ESPAÑOL
 insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');

@@ -163,8 +163,11 @@ namespace UI.Permisos
                 //traigo los hijos de la base
                 flia = new PermisoBL().GetAll("=" + seleccion.Id);
 
-                foreach (var i in flia)
+                foreach (Componente i in flia)
+                {
                     seleccion.AgregarHijo(i);
+                }
+                    
             }
             else
             {
