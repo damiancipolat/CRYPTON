@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using BE;
 using BE.Permisos;
 using DAL;
@@ -84,6 +85,7 @@ namespace SL
         //Set permission list.
         public void setPermission(List<Componente> permissions)
         {
+            Debug.WriteLine("Loading permission in session count:" + permissions.Count.ToString());
             this.permissions = permissions;
         }
 

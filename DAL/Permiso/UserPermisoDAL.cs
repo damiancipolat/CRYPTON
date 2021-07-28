@@ -19,7 +19,7 @@ namespace DAL.Permiso
             List<Componente> permList = new List<Componente>();
 
             //Hago la consulta.
-            string sql = "select p.* from usuarios_permisos up inner join permiso_new p on up.id_permiso=p.id where id_usuario=" + user.idusuario;
+            string sql = "select p.* from usuarios_permisos up inner join permiso p on up.id_permiso=p.id where id_usuario=" + user.idusuario;
             
             //Abro conexion.
             QuerySelect builder = new QuerySelect();

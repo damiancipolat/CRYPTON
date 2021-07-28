@@ -136,14 +136,16 @@ namespace UI
             List<Componente> permissions = Session.GetInstance().getPermissions();
             PermisoBL permBL = new PermisoBL();
 
+            Debug.WriteLine("------+++"+ permBL.hasPermission(permissions, (int)PermisoCodes.SEARCH).ToString());
+
             //Set items if the code exist in the list.
             this.main_menu_operate.Visible = true;
-            this.main_menu_search.Visible = permBL.hasPermission(permissions, "CLI001");
-            this.main_menu_recomendations.Visible = permBL.hasPermission(permissions, "CLI002");
-            this.main_menu_my_sells.Visible = permBL.hasPermission(permissions, "CLI003");
-            this.main_menu_balance.Visible = permBL.hasPermission(permissions, "CLI004");
-            this.main_menu_notifications.Visible = permBL.hasPermission(permissions, "CLI005");
-            this.main_menu_publish.Visible = permBL.hasPermission(permissions, "CLI006");            
+            this.main_menu_search.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.SEARCH);
+            this.main_menu_recomendations.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.RECOMENDATIONS);
+            this.main_menu_my_sells.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_SELLS);
+            this.main_menu_balance.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_BALANCE);
+            this.main_menu_notifications.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_NOTIFICATIONS);
+            this.main_menu_publish.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.PUBLISH);            
         }
 
         //Manejo el menu de empleado.
@@ -151,12 +153,12 @@ namespace UI
         {
             List<Componente> permissions = Session.GetInstance().getPermissions();
             PermisoBL permBL = new PermisoBL();
-
+            
             //It menu
-            this.main_menu_it.Visible = permBL.hasPermission(permissions, "R004");
-            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, "IT0001");
-            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, "IT0002");
-            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, "IT0003");
+            this.main_menu_it.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.IT);
+            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.ADD_USER);
+            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MANAGE_USER);
+            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MANAGE_LANGUAGE);
         }
 
         //Oculto menu en base a los permisos.
@@ -233,22 +235,6 @@ namespace UI
         {
             this.adjustControls();
         }
-
-        private void Btn_login_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_login_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Main_Shown(object sender, EventArgs e)
-        {
-
-        }
-
         private void CambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Language(this.uiEvents).Show();
@@ -279,85 +265,20 @@ namespace UI
         {
             this.openLogin();
         }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InicioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Button2_Click_2(object sender, EventArgs e)
+         private void Button2_Click_2(object sender, EventArgs e)
         {
             new frm_publish_sell().Show();
         }
-
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void Main_menu_operate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Button1_Click_2(object sender, EventArgs e)
         {
             new frm_wallets(2).Show();
-        }
-
-        private void Button2_Click_3(object sender, EventArgs e)
-        {
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Main_splash_activity_panel_Paint(object sender, PaintEventArgs e)
-        {
         }
 
         private void Button1_Click_3(object sender, EventArgs e)
         {
             new frm_publish_sell().Show();
         }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click_4(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button2_Click_4(object sender, EventArgs e)
-        {
-
-        }
-
         private void AltaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new RegisterUser().Show();
@@ -366,11 +287,6 @@ namespace UI
         private void GestorPermisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new UsersControl().Show();
-        }
-
-        private void Button1_Click_5(object sender, EventArgs e)
-        {
-   
         }
 
         private void Button1_Click_6(object sender, EventArgs e)
@@ -398,12 +314,6 @@ namespace UI
         {
             new UsersControl().Show();
         }
-
-        private void Main_menu_sell_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button5_Click(object sender, EventArgs e)
         {
             new frm_publish_sell().Show();
@@ -428,7 +338,6 @@ namespace UI
         {
             new OperacionView(2).Show();
         }
-
         private void Button10_Click(object sender, EventArgs e)
         {
             //new RegisterUser().Show();
@@ -471,22 +380,7 @@ namespace UI
         {
             new NotificationsFrm(Session.GetInstance().getActiveClient()).Show();
         }
-
-        private void Button5_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click_8(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button3_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Button4_Click_2(object sender, EventArgs e)
         {
             new ComponentCrudFrm("family").Show();

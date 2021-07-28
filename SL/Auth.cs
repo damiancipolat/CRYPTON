@@ -74,6 +74,7 @@ namespace SL
         public UsuarioBE login(string email, string pwd)
         {
             Bitacora.GetInstance().log("Request login of user:" + email);
+            Debug.WriteLine("Request login of user:" + email);
 
             //Antes de hacer el login, hago una prueba de integridad.
             Integrity.GetInstance().validateComplete();

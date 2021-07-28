@@ -170,7 +170,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1428, 28);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // main_menu_start
             // 
@@ -182,7 +181,6 @@
             this.main_menu_start.Name = "main_menu_start";
             this.main_menu_start.Size = new System.Drawing.Size(59, 24);
             this.main_menu_start.Text = "Inicio";
-            this.main_menu_start.Click += new System.EventHandler(this.InicioToolStripMenuItem_Click);
             // 
             // main_menu_login
             // 
@@ -224,7 +222,6 @@
             this.main_menu_operate.Name = "main_menu_operate";
             this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
             this.main_menu_operate.Text = "Operar";
-            this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
             // 
             // main_menu_recomendations
             // 
@@ -309,7 +306,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(1428, 780);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // button6
             // 
@@ -358,7 +354,6 @@
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crypton - home";
-            this.Shown += new System.EventHandler(this.Main_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.main_splash.ResumeLayout(false);

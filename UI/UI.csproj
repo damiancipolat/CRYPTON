@@ -150,6 +150,7 @@
     <Compile Include="OperacionView.Designer.cs">
       <DependentUpon>OperacionView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Permisos\Constants.cs" />
     <Compile Include="Permisos\NodeSearch.cs" />
     <Compile Include="Permisos\TreeEditorFrm.cs">
       <SubType>Form</SubType>
