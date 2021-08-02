@@ -58,6 +58,7 @@
     <Compile Include="BitacoraBE.cs" />
     <Compile Include="MonedaBE.cs" />
     <Compile Include="OrdenCompra.cs" />
+    <Compile Include="OrdenVentaBE2.cs" />
     <Compile Include="OrdenVentaBE.cs" />
     <Compile Include="Permisos\Componente.cs" />
     <Compile Include="Permisos\Familia.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="SolicOperacionBE.cs" />
     <Compile Include="TransferenciasBE.cs" />
     <Compile Include="UsuarioBE.cs" />
+    <Compile Include="ValueObject\Money.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

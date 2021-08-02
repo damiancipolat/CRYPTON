@@ -1,0 +1,171 @@
+
+{
+	"info": {
+		"_postman_id": "f77efc97-2a1a-401c-8fae-030d3ab91484",
+		"name": "BlockIO - Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get list of the addressess",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/BTC/wallet/addresses",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"BTC",
+						"wallet",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get wallet balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/BTC/wallet/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC/balance",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"BTC",
+						"wallet",
+						"2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Money price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/BTC/price",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"BTC",
+						"price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Estimate network fee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ammount\":\"0.00001671\",\n    \"destination\":\"2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/BTC/wallet/fee",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"BTC",
+						"wallet",
+						"fee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer money",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ammount\":\"0.00001671\",    \n    \"origin\":\"2NBXsXdeeoEVsdKQEAtRaRdR6tRbJMNf6g4\",\n    \"destination\":\"2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/BTC/wallet/transfer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"BTC",
+						"wallet",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/BTC/wallet",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"BTC",
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

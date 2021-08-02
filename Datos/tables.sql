@@ -190,11 +190,14 @@ create table conversiones(
 	valorUSD float,
 	deleted datetime
 );
-
+select * from conversiones
 insert into conversiones(codCripto,cantCripto,valorUSD) values('BTC',1,33655.80);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('LTC',1,132.82);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('DOG',1,0.216820);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('ARS',1,0.010);
+
+select (0.00003090*0.21682)
+select 0.0000066997380/0.010
 
 --Tabla de contactos.
 create table cliente_agenda(
@@ -316,7 +319,7 @@ create table comision_operacion_valor
 	descrip varchar(100),
 	valor float
 );
-
+select * from comision_operacion_valor
 insert into comision_operacion_valor(descrip,valor) values('Compra',0.5);
 insert into comision_operacion_valor(descrip,valor) values('Venta',0.5);
 insert into comision_operacion_valor(descrip,valor) values('Extraccion',2.5);
@@ -325,15 +328,21 @@ insert into comision_operacion_valor(descrip,valor) values('Extraccion',2.5);
 create table orden_venta(
 	idorden  bigint identity(1,1) primary key,
 	vendedor bigint,
-	cantidad float,
+	cantidad varchar(12), --money
 	ofrece varchar(10),
 	pide varchar(10),
-	precio float,
+	precio varchar(12), --money
 	fecCreacion datetime,
 	fecFin datetime,
 	ordenEstado int,
 	deleted datetime
 );
+
+/*
+select * from orden_venta
+insert into orden_venta select vendedor,cantidad,ofrece,pide,precio,fecCreacion,fecFin,ordenEstado,deleted from ##orden_venta
+select * into ##orden_venta from orden_venta
+update orden_venta set cantidad='0.00003090' where idorden=4;*/
 
 --Tabla de tipo de ordenes.
 create table orden_estado(
@@ -623,6 +632,7 @@ insert into palabras values('TREE_PATENT_EXISTS');
 insert into palabras values('TREE_FAMILY_EXISTS');
 insert into palabras values('USER_TREE_EDITOR_TITLE');
 insert into palabras values('USER_TREE_EDITOR_DESCRIP');
+insert into palabras values('SEEL_TAX_LABEL');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -859,6 +869,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','TREE_PATENT_EXISTS','
 insert into idioma_palabras(code,clave,valor) values('ES','TREE_FAMILY_EXISTS','La familia ya existe!');
 insert into idioma_palabras(code,clave,valor) values('ES','USER_TREE_EDITOR_TITLE','Editor usuario/permisos');
 insert into idioma_palabras(code,clave,valor) values('ES','USER_TREE_EDITOR_DESCRIP','Desde aqui podes configurar los permisos que tiene cada usuario.');
+insert into idioma_palabras(code,clave,valor) values('ES','SEEL_TAX_LABEL','La venta tendra una comisión de %d.');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1079,3 +1090,4 @@ insert into idioma_palabras(code,clave,valor) values('ENG','TREE_PATENT_EXISTS',
 insert into idioma_palabras(code,clave,valor) values('ENG','TREE_FAMILY_EXISTS','The family already exists!');
 insert into idioma_palabras(code,clave,valor) values('ENG','USER_TREE_EDITOR_TITLE','User/permission editor');
 insert into idioma_palabras(code,clave,valor) values('ENG','USER_TREE_EDITOR_DESCRIP','You can edit from this module, the permission of each user.');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEEL_TAX_LABEL','The tax operation is %d.');

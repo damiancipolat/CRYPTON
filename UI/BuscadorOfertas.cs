@@ -66,8 +66,8 @@ namespace UI
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
             //Traigo las monedas.
-            MonedaBE origen = new MonedaBL().getByCode(this.moneda_pide.Items[this.moneda_pide.SelectedIndex].ToString());
-            MonedaBE destino = new MonedaBL().getByCode(this.moneda_ofrece.Items[this.moneda_ofrece.SelectedIndex].ToString());
+            MonedaBE origen = new MonedaBL2().getByCode(this.moneda_pide.Items[this.moneda_pide.SelectedIndex].ToString());
+            MonedaBE destino = new MonedaBL2().getByCode(this.moneda_ofrece.Items[this.moneda_ofrece.SelectedIndex].ToString());
 
             //Traigo el resultado.
             List<OrdenVentaBE> results = new OrdenVentaBL().buscar(destino, origen, Session.GetInstance().getActiveClient());
@@ -111,7 +111,7 @@ namespace UI
             this.translateTexts();
 
             //Cargo monedas.
-            List<MonedaBE> monedas = new MonedaBL().getAll();
+            List<MonedaBE> monedas = new MonedaBL2().getAll();
 
             //Cargo los combos.
             foreach (MonedaBE money in monedas)

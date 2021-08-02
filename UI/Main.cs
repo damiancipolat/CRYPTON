@@ -4,6 +4,7 @@ using BL;
 using DAL;
 using SL;
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
@@ -11,6 +12,7 @@ using System.Windows.Forms;
 using UI.Notifications;
 using UI.Permisos;
 using BL.Permisos;
+using BE.ValueObject;
 
 namespace UI
 {
@@ -403,16 +405,28 @@ namespace UI
 
         private void Button1_Click_9(object sender, EventArgs e)
         {
-            IList<Componente> tmp = new PermisoBL().GetAll("=11");
+            OrdenVentaBE2 order = new OrdenVentaDAL2().findById(4);
+            Debug.WriteLine("-------->"+order.cantidad.ToString());
+            /*NumberFormatInfo nfi = new NumberFormatInfo();
+            nfi.NumberDecimalSeparator = ".";
 
-            foreach (Componente cmp in tmp)
-            {
-                Debug.WriteLine("-->" + cmp.Id.ToString() + "," + cmp.Nombre);
+            //String -> Decimal
+            var maxBtc = "0.00003090";
+            var maxBtcDecimal = Decimal.Parse(maxBtc, CultureInfo.InvariantCulture)+new Decimal(0.00001);
 
-                if (cmp.Hijos!=null)
-                    Debug.WriteLine("hijos-->" + cmp.Hijos.Count.ToString());
-            }
-                
+            //Decimal -> String
+            var maxBtcString = maxBtcDecimal.ToString(CultureInfo.InvariantCulture);
+            Debug.WriteLine("++++++++++++++++++++++>"+maxBtcString);*/
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            MonedaBE a = new MonedaBL2().getByCode("DOG");
+            MonedaBE b = new MonedaBL2().getByCode("ARS");
+
+            Money value = new Money("0.00003090");
+            decimal final = new MonedaBL2().convertMoney(a,b,value.getValue());
+            Debug.WriteLine("resultad--->" + final.ToString());
         }
     }
 }

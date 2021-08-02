@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteBL.cs" />
+    <Compile Include="MonedaBL.cs" />
     <Compile Include="NotificacionBL.cs" />
     <Compile Include="ComisionBL.cs" />
     <Compile Include="ComisionValorBL.cs" />
@@ -53,7 +54,7 @@
     <Compile Include="ConversorBL.cs" />
     <Compile Include="IdiomaBL.cs" />
     <Compile Include="MarketBL.cs" />
-    <Compile Include="MonedaBL.cs" />
+    <Compile Include="MonedaBL2.cs" />
     <Compile Include="OperacionesBL.cs" />
     <Compile Include="Operations\Commission.cs" />
     <Compile Include="Operations\EstimateTaxesForBuy.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Operations\ValidateSwipe.cs" />
     <Compile Include="OrdenCompraBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />
+    <Compile Include="OrdenVentaBL2.cs" />
     <Compile Include="Permisos\FamiliaBL.cs" />
     <Compile Include="Permisos\PatenteBL.cs" />
     <Compile Include="Permisos\PermisoBL.cs" />

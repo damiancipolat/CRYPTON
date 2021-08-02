@@ -68,6 +68,7 @@
     <Compile Include="Idiomas\IdiomaDAL.cs" />
     <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="OrdenCompraDAL.cs" />
+    <Compile Include="OrdenVentaDAL2.cs" />
     <Compile Include="OrdenVentaDAL.cs" />
     <Compile Include="Permiso\FamiliaDAL.cs" />
     <Compile Include="Permiso\PatenteDAL.cs" />

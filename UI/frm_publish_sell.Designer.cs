@@ -44,6 +44,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sell_tax = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,7 @@
             this.moneda_a_combo.Name = "moneda_a_combo";
             this.moneda_a_combo.Size = new System.Drawing.Size(155, 37);
             this.moneda_a_combo.TabIndex = 10;
+            this.moneda_a_combo.SelectedIndexChanged += new System.EventHandler(this.Moneda_a_combo_SelectedIndexChanged);
             // 
             // sell_input
             // 
@@ -153,6 +155,7 @@
             this.moneda_b_combo.Name = "moneda_b_combo";
             this.moneda_b_combo.Size = new System.Drawing.Size(155, 37);
             this.moneda_b_combo.TabIndex = 14;
+            this.moneda_b_combo.SelectedIndexChanged += new System.EventHandler(this.Moneda_b_combo_SelectedIndexChanged);
             // 
             // sell_receive
             // 
@@ -208,11 +211,22 @@
             this.sell_tax.TabIndex = 22;
             this.sell_tax.Text = "sell_tax";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(469, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 51);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
             // frm_publish_sell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 456);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.sell_tax);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioButton2);
@@ -258,5 +272,6 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label sell_tax;
+        private System.Windows.Forms.Button button1;
     }
 }

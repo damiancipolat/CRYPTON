@@ -46,8 +46,8 @@ namespace BL
             foreach ((string, string) combination in moneyCombinations)
             {
                 //Traigo las monedas.
-                MonedaBE ofreceMoney = new MonedaBL().getByCode(combination.Item1);
-                MonedaBE pideMoney = new MonedaBL().getByCode(combination.Item2);
+                MonedaBE ofreceMoney = new MonedaBL2().getByCode(combination.Item1);
+                MonedaBE pideMoney = new MonedaBL2().getByCode(combination.Item2);
 
                 //Busco.
                 List<OrdenVentaBE> founded = new OrdenVentaBL().buscar(ofreceMoney, pideMoney,cliente);
