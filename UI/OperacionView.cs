@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using SL;
 using BL;
 using BE;
+using BE.ValueObject;
 
 namespace UI
 {
     public partial class OperacionView : Form
     {
-        private OrdenVentaBE orden;
+        private OrdenVentaBE2 orden;
         private double platFormTax;
 
         public OperacionView(long id)
@@ -23,7 +24,7 @@ namespace UI
             InitializeComponent();
 
             //Cargo la orden internamente.
-            this.orden = new OrdenVentaBL().load(id);
+            this.orden = new OrdenVentaBL2().load(id);
         }
 
         private void Btn_accept_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace UI
             );
 
             if (dr == DialogResult.Yes && this.orden!=null)
-            {
+            {/*
                 try
                 {
                     new OrdenCompraBL().comprar(this.orden, Session.GetInstance().getActiveClient());
@@ -45,7 +46,7 @@ namespace UI
                 catch (Exception ex)
                 {
                     MessageBox.Show(Idioma.GetInstance().translate("BUY_ERROR"));
-                }
+                }*/
             }
         }
 
@@ -67,8 +68,8 @@ namespace UI
             this.translateTexts();
 
             //Seteo campos.
-            this.op_offer_label.Text = Idioma.GetInstance().translate("OP_OFFER") + " "+this.orden.cantidad.ToString("0.000000000") + " "+this.orden.ofrece.cod;
-            this.op_req_label.Text = Idioma.GetInstance().translate("OP_REQ")+" "+this.orden.precio.ToString("0.000000000") + " " + this.orden.pide.cod;
+            this.op_offer_label.Text = Idioma.GetInstance().translate("OP_OFFER") + " "+new Money(this.orden.cantidad.getValue()).ToString() + " "+this.orden.ofrece.cod;
+            this.op_req_label.Text = Idioma.GetInstance().translate("OP_REQ")+" "+new Money(this.orden.precio.getValue()).ToString() + " " + this.orden.pide.cod;
 
             //Cargo los costos de operacion.
             List<(string, string, string)> list = new OrdenCompraBL().getTaxesToBuy(this.orden, Session.GetInstance().getActiveClient());

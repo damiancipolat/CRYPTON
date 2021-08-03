@@ -59,52 +59,38 @@ namespace UI
 
         private void Publish_ok_Click(object sender, EventArgs e)
         {
-            /*.
-            this.txt_ammount_enter.Text = this.txt_ammount_enter.Text.Replace(',', '.');
-            this.txt_ammount_receive.Text = this.txt_ammount_receive.Text.Replace(',', '.');
-            */
-            /*
-            //Traigo valores y conversiones.
-            double input = Convert.ToDouble(this.txt_ammount_enter.Text);
-            double value = Convert.ToDouble(this.txt_ammount_receive.Text);
-            double cotiz = this.getConversion();
-            string destiny = this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString();
-
             //Valido que no sea la misma moneda.
             if (this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex] == this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex])
             {
-                MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_MISMATCH"));                
-                return;
-            }
-
-            //Valido que si esta seleccionado libre eleccion no supere la cotizacion.
-            if (this.radioButton1.Checked && value >= cotiz)
-            {
-                MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_EXCED") + cotiz.ToString()+" "+destiny);
+                MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_MISMATCH"));
                 return;
             }
 
             //Traigo las monedas.
             MonedaBE origen = new MonedaBL2().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
             MonedaBE destino = new MonedaBL2().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
+            
+            //Traigo valores y conversiones.
+            double input = Convert.ToDouble(this.txt_ammount_enter.Text);
+            double value = Convert.ToDouble(this.txt_ammount_receive.Text);            
 
             //Creo el objeto venta.
-            OrdenVentaBE order = new OrdenVentaBE();
-            order.cantidad = input;
-            order.precio = value;
+            OrdenVentaBE2 order = new OrdenVentaBE2();
+            order.cantidad = new Money(this.txt_ammount_enter.Text);
+            order.precio = new Money(this.txt_ammount_receive.Text);
             order.ofrece = origen;
             order.pide = destino;
             order.fecCreacion = DateTime.Now;
             order.fecFin = DateTime.Now;
             order.ordenEstado = OrdenEstado.DISPONIBLE;
-            order.vendedor = new ClienteBL().findByUser(Session.GetInstance().getUser()); ;
+            order.vendedor = new ClienteBL().findByUser(Session.GetInstance().getUser());
 
             //Creo la orden.
-            new OrdenVentaBL().create(order);
+            new OrdenVentaBL2().create(order);
             MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_SUCCESS"));
 
             //Cierro.
-            this.Close();*/
+            this.Close();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -161,29 +147,11 @@ namespace UI
             decimal convertedValue = new MonedaBL2().convertMoney(origen, destino, offerValue.getValue());
 
             //Tengo en cuenta que si es ARS tengo que redondear
-            return (destino.cod == "ARS") ? Convert.ToDecimal(Math.Round(convertedValue, 2)) : convertedValue;           
+            return (destino.cod == "ARS") ? Convert.ToDecimal(Math.Round(convertedValue, 2)) : Convert.ToDecimal(Math.Round(convertedValue, 8));           
         }
 
+        //Calculo la conversion e impuestos.
         private void calculateValues()
-        {           
-            //Obtengo las monedas
-            MonedaBE origen = new MonedaBL2().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
-            MonedaBE destino = new MonedaBL2().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
-
-            //Obtengo el valor de la conversion.
-            decimal convertedValue = this.getConversion(origen,destino, this.txt_ammount_enter.Text);
-
-            //Calculo los impuestos de esta operacion.
-            decimal taxes = this.getTaxes(convertedValue);
-
-            //Seteo valor de conversion.
-            this.txt_ammount_receive.Text = new Money(convertedValue).ToString();
-
-            //Seteo valor de impuesto.
-            this.sell_tax.Text = Idioma.GetInstance().translate("SEEL_TAX_LABEL").Replace("%d", new Money(taxes).ToString()+" "+origen.cod);
-        }
-
-        private void applyConversion()
         {
             try
             {
@@ -194,34 +162,23 @@ namespace UI
                     MonedaBE origen = new MonedaBL2().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
                     MonedaBE destino = new MonedaBL2().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
 
+                    //Obtengo el valor de la conversion.
+                    decimal convertedValue = this.getConversion(origen, destino, this.txt_ammount_enter.Text);
 
+                    //Calculo los impuestos de esta operacion.
+                    decimal taxes = this.getTaxes(convertedValue);
 
+                    //Seteo valor de conversion.
+                    this.txt_ammount_receive.Text = new Money(convertedValue).ToString();
 
-                    //Actualizo la conversion de la moneda.
-                    //Money value = new Money(this.getConversion());
-                    //this.txt_ammount_receive.Text = value.ToString();
-
-                    //Actualizo y muestro el de impuestos de la operación.
-                    /*
-                    //Convierto input a valor.
-                    double inputValue = Convert.ToDouble(this.txt_ammount_enter.Text);
-                    double result = 0;// new MonedaBL2().convertMoney(origen, destino, inputValue);
-
-                    //Actualizo los costos.
-                    double taxValue = (result * this.tax) / 100;
-                    this.sell_tax.Text=Idioma.GetInstance().translate("SELL_TAX") + " " + tax.ToString() + "% = "+taxValue.ToString()+destino.cod;
-
-                    return result;
-                    */
+                    //Seteo valor de impuesto.
+                    this.sell_tax.Text = Idioma.GetInstance().translate("SEEL_TAX_LABEL").Replace("%d", new Money(taxes).ToString() + " " + origen.cod);
                 }
-
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error en la convesion:"+ex.Message);
+                Debug.WriteLine("Error en la convesion:" + ex.Message);
             }
-
-            //0.00003090
         }
 
         private void Txt_ammount_receive_TextChanged(object sender, EventArgs e)
@@ -231,22 +188,22 @@ namespace UI
 
         private void Txt_ammount_receive_Click(object sender, EventArgs e)
         {
-            this.applyConversion();
+            this.calculateValues();
         }
 
         private void Txt_ammount_receive_Enter(object sender, EventArgs e)
         {
-            this.applyConversion();
+            this.calculateValues();
         }
 
         private void Txt_ammount_enter_Leave(object sender, EventArgs e)
         {
-            this.applyConversion();
+            this.calculateValues();
         }
 
         private void Txt_ammount_enter_Click(object sender, EventArgs e)
         {
-            this.applyConversion();
+            this.calculateValues();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -258,12 +215,12 @@ namespace UI
 
         private void Moneda_a_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.calculateValues();
         }
 
         private void Moneda_b_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.calculateValues();
         }
 
         private void Button1_Click_1(object sender, EventArgs e)

@@ -35,6 +35,11 @@ namespace BL
             return new OrdenVentaDAL2().update(order);
         }
 
+        public OrdenVentaBE2 load(long id)
+        {
+            return new OrdenVentaDAL2().findById(id);
+        }
+
         public int delete(OrdenVentaBE2 venta)
         {
             return new OrdenVentaDAL2().delete(venta.idorden);

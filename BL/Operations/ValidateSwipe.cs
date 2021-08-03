@@ -13,7 +13,7 @@ namespace BL.Operations
     {
         //Valido los montos de ambas cuentas comprador y vendedor.
         public bool validate(OrdenVentaBE orden, ClienteBE buyer)
-        {
+        {/*
             //Cargo el vendedor.
             ClienteBE seller = orden.vendedor;
 
@@ -42,7 +42,7 @@ namespace BL.Operations
             //Valido saldo comprador.
             if (!(buyerWallet.saldo >= (finalBuyerTotal + orden.precio)))
                 throw new Exception("El saldo de la cuenta del comprador no puede cubrir la operacion");
-
+                */
             return true;
         }
 

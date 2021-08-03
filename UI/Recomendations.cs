@@ -57,12 +57,12 @@ namespace UI
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_ID"), Idioma.GetInstance().translate("SEARCH_COL_ID"));
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_SELLER"), Idioma.GetInstance().translate("SEARCH_COL_SELLER"));
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_QTY"), Idioma.GetInstance().translate("SEARCH_COL_QTY"));
-            this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_REQ"), Idioma.GetInstance().translate("SEARCH_COL_REQ"));
-            this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_PRICE"), Idioma.GetInstance().translate("SEARCH_COL_PRICE"));
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_OFFER"), Idioma.GetInstance().translate("SEARCH_COL_OFFER"));
+            this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_PRICE"), Idioma.GetInstance().translate("SEARCH_COL_PRICE"));
+            this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_REQ"), Idioma.GetInstance().translate("SEARCH_COL_REQ"));           
 
             //Load data.
-            List<OrdenVentaBE> data = new MarketBL().recomendar(Session.GetInstance().getActiveClient());
+            List<OrdenVentaBE2> data = new MarketBL().recomendar(Session.GetInstance().getActiveClient());
 
             //Fill the grid.
             this.fillData(data);
@@ -86,14 +86,14 @@ namespace UI
             this.Close();
         }
 
-        private void fillData(List<OrdenVentaBE> orders)
+        private void fillData(List<OrdenVentaBE2> orders)
         {
             this.frm_recom_list.Rows.Clear();
-            Debug.WriteLine("-ddddd->" + orders.Count.ToString());
+
             if (orders.Count > 0)
             {
                 //Loop to fill data.
-                foreach (OrdenVentaBE order in orders)
+                foreach (OrdenVentaBE2 order in orders)
                 {
                     //Texto de orden de estado.
                     string status = "";
@@ -120,9 +120,9 @@ namespace UI
                         order.idorden.ToString(),
                         order.vendedor.alias,
                         order.cantidad.ToString(),
-                        order.pide.cod,
-                        order.precio.ToString(),
                         order.ofrece.cod,
+                        order.precio.ToString(),
+                        order.pide.cod,
                         status
                     });
                 }

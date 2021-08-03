@@ -337,8 +337,14 @@ create table orden_venta(
 	ordenEstado int,
 	deleted datetime
 );
+select * from orden_venta
 
 /*
+
+	cantidad ofrece
+	precio	 pide
+
+
 select * from orden_venta
 insert into orden_venta select vendedor,cantidad,ofrece,pide,precio,fecCreacion,fecFin,ordenEstado,deleted from ##orden_venta
 select * into ##orden_venta from orden_venta

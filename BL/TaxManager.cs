@@ -83,16 +83,20 @@ namespace BL
         }
 
         //Traigo los costos de operacion para el vendedor.
-        public List<(double, string)> getBuyerTaxes(OrdenVentaBE orden, ClienteBE buyer, ClienteBE seller)
+        public List<(decimal, string)> getBuyerTaxes(OrdenVentaBE2 orden, ClienteBE buyer, ClienteBE seller)
         {
-            List<(double, string)> taxList = new List<(double, string)>();
+            List<(decimal, string)> taxList = new List<(decimal, string)>();
 
             //Traigo la billetera del vendedor y del cliente de la misma moneda.
             BilleteraBE originWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[orden.pide.cod].idwallet, true);
             BilleteraBE destinyWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[orden.pide.cod].idwallet, true);
 
             //Traigo la comision de la plataforma por la venta.
-            double buyerPlatformFee = ((new ComisionValorBL().getBuyCost() * orden.precio) / 100);
+            decimal buyCost = Convert.ToDecimal(new ComisionValorBL().getBuyCost());
+            decimal orderPrice = orden.precio.getValue();
+
+            //Calculo usando regla de 3.
+            decimal buyerPlatformFee = (buyCost * orderPrice)/100;
 
             //Agrego costos de plataforma.
             taxList.Add((buyerPlatformFee, "TAX_PLATFORM_FOR_BUY"));
@@ -101,10 +105,10 @@ namespace BL
             if (orden.pide.cod != "ARS")
             {
                 //Calculo el fee de la red de cripto.
-                double networkFee = Convert.ToDouble(this.fetchNetworkFee(orden.pide.cod, destinyWallet.direccion, orden.precio.ToString()));
+                //double networkFee = Convert.ToDouble(this.fetchNetworkFee(orden.pide.cod, destinyWallet.direccion, orden.precio.ToString()));
 
                 //Agrego.
-                taxList.Add((networkFee, "TAX_NETWORK_FEE"));
+               // taxList.Add((networkFee, "TAX_NETWORK_FEE"));
             }
 
             return taxList;

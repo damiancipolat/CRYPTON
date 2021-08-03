@@ -18,7 +18,7 @@ namespace BL
     public class OrdenCompraBL
     {
         //Obtengo en forma de lista todos los impuestos para hacer la compra.
-        public List<(string, string, string)> getTaxesToBuy(OrdenVentaBE orden, ClienteBE buyer)
+        public List<(string, string, string)> getTaxesToBuy(OrdenVentaBE2 orden, ClienteBE buyer)
         {
             return new EstimateTaxesForBuy().getTaxesToBuy(orden,buyer);
         }                
