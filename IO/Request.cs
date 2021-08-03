@@ -38,7 +38,17 @@ namespace IO
 
         public HttpResponseMessage POST(string url,HttpContent body)
         {
-            return this.client.PostAsync(url,body).Result;
+            Debug.WriteLine("POST:" + url);
+
+            //Prepare the request.
+            this.client.BaseAddress = new Uri(url);
+
+            //Make the request.
+            var responseTask = this.client.PostAsync(url,body);
+            responseTask.Wait();
+
+            //Return the response.
+            return responseTask.Result;
         }
     }
 }

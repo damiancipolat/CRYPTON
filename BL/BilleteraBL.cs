@@ -60,7 +60,7 @@ namespace BL
                 throw new BusinessException("Keys not found");
 
             //Creo la wallet en block.io
-            NewWallet created = new BlockIo(networkKey).createWallet();
+            NewWallet created = new BlockIo().createWallet(moneda.cod);
             Bitacora.GetInstance().log("Se ha creado :"+moneda.cod+"/"+created.data.address,true);
 
             //Creo la billetera.
@@ -158,7 +158,7 @@ namespace BL
                 throw new BusinessException("Keys not found");
 
             //Consulto el balance en block.io.
-            Balance balance = new BlockIo(networkKey).getBalance(address);
+            Balance balance = new BlockIo().getBalance(moneda.cod,address);
             Bitacora.GetInstance().log("Se ha consultado el balance:" + moneda.cod + "/" + address+", "+balance.data.available_balance, true);
 
             return balance.data.available_balance;

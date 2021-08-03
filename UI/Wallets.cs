@@ -52,7 +52,7 @@ namespace UI
             {
                 //Cargo las billeteras.
                 CuentaBE cuenta = new CuentaBL().traer(this.accountId);
-                Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta);
+                Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta,true);
 
                 BilleteraBL walletBiz = new BilleteraBL();
                 

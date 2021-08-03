@@ -4,23 +4,21 @@ using System.Configuration;
 using System.Globalization;
 using System.Diagnostics;
 using System.Text;
+using System.Net.Http;
 using IO.Responses;
+using IO.RequestFormat;
 using Newtonsoft.Json;
 
 namespace IO
 {
     public class BlockIo
     {
-        private string apiKey;
-        private string pin;
         private string host;
 
         //todo
-        public BlockIo(string keyCode)
+        public BlockIo()
         {
-            this.host = "https://block.io/api/v2/";
-            this.apiKey = keyCode;
-            this.pin = "153629damian20403629";
+            this.host= ConfigurationManager.AppSettings["ApiHost"];
         }
 
         private string numberFormat(string input)
@@ -28,30 +26,32 @@ namespace IO
             return input.Replace(",", ".");
         }
 
-        public NewWallet createWallet()
+        public NewWallet createWallet(string money)
         {
             //Armo la url.
-            string url = this.host + "get_new_address/?api_key=" + this.apiKey;
+            string url = this.host + "/" + money.ToUpper() + "/wallet";
+
+            //Preparo el body.
+            var data = new StringContent("", Encoding.UTF8, "application/json");
 
             //Hago el request.
-            var result = new Request().GET(url);
+            var result = new Request().POST(url, data);
 
             //Si es erroneo lanzo excepcion.
             if (!result.IsSuccessStatusCode)
                 throw new Exception("Request not success," + result.StatusCode);
 
             //Extraigo en forma de json.
-            string json = result.Content.ReadAsStringAsync().Result;
+            string jsonResponse = result.Content.ReadAsStringAsync().Result;
 
             //Descerializo y convierto al tipo de retorno.
-            return JsonConvert.DeserializeObject<NewWallet>(json);
-
+            return JsonConvert.DeserializeObject<NewWallet>(jsonResponse);
         }
 
-        public Balance getBalance(string address)
+        public Balance getBalance(string money, string address)
         {
             //Armo la url.
-            string url = this.host + "get_address_balance/?api_key=" + this.apiKey + "&addresses=" + address;
+            string url = this.host+ "/"+money.ToUpper()+"/wallet/"+address+"/balance";
 
             //Hago el request.
             var result = new Request().GET(url);
@@ -67,79 +67,62 @@ namespace IO
             return JsonConvert.DeserializeObject<Balance>(json);
         }
 
-        public Balance test()
-        {
-            string tmp = "{\"status\":\"success\",\"data\":{\"network\":\"LTCTEST\",\"available_balance\":\"100.0\",\"pending_received_balance\":\"100.0\",\"balances\":[{\"user_id\":3,\"label\":\"thora48\",\"address\":\"Qfku2FMrND7qvh8M9Ftcgfe6PKcJqeEcvD\",\"available_balance\":\"0.00000000\",\"pending_received_balance\":\"0.00000000\"}]}}";
-            return JsonConvert.DeserializeObject<Balance>(tmp);
-        }
-
-        public object getWalletBalance(string address)
-        {
-            return new object();
-        }
-
-        public object validateWallet(string address)
-        {
-            return new object();
-        }
-
-        public object getCotization()
-        {
-            return new object();
-        }
-
-        public object getCotizationBase(string money)
-        {
-            return new object();
-        }
-
-        public Transference makeTransference(string from, string to, string ammount)
+        public Transference makeTransference(string money, string from, string to, string ammount)
         {
             //Armo la url.
-            string url = "http://127.0.0.1:8080/send-transaction/"+this.pin+"/"+this.apiKey+"/"+from+"/"+to+"/"+ammount;
+            string url = this.host + "/" + money.ToUpper() + "/wallet/transfer";
+
+            //Armo el objeto body.
+            TransferenceReq request = new TransferenceReq();
+            request.ammount = ammount;
+            request.origin = from;
+            request.destination = to;
+
+            //Preparo el body.
+            var json = JsonConvert.SerializeObject(request);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
 
             //Hago el request.
-            var result = new Request().GET(url);
+            var result = new Request().POST(url, data);
 
             //Si es erroneo lanzo excepcion.
             if (!result.IsSuccessStatusCode)
                 throw new Exception("Request not success," + result.StatusCode);
 
             //Extraigo en forma de json.
-            string json = result.Content.ReadAsStringAsync().Result;
+            string jsonResponse = result.Content.ReadAsStringAsync().Result;
 
             //Descerializo y convierto al tipo de retorno.
-            return JsonConvert.DeserializeObject<Transference>(json);
+            return JsonConvert.DeserializeObject<Transference>(jsonResponse);
         }
 
         //Obtiene el costo estimado de la transferencia.
-        public Fee estimateTransaction(string to, string ammount)
+        public Fee estimateTransaction(string money, string to, string ammount)
         {
-            //Corrijo el formato del numero.
-            ammount = this.numberFormat(ammount);
-
             //Armo la url.
-            string url = this.host + "get_network_fee_estimate/?api_key=" + this.apiKey + "&amounts=" + ammount+ "&to_addresses="+to;
+            string url = this.host + "/" + money.ToUpper() + "/wallet/fee";
+
+            //Armo el objeto body.
+            BalanceReq request = new BalanceReq();
+            request.ammount = ammount;
+            request.destination = to;
+
+            //Preparo el body.
+            var json = JsonConvert.SerializeObject(request);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
 
             //Hago el request.
-            var result = new Request().GET(url);
+            var result = new Request().POST(url, data);
+
+            //Extraigo en forma de json.
+            string jsonResponse = result.Content.ReadAsStringAsync().Result;
 
             //Si es erroneo lanzo excepcion.
             if (!result.IsSuccessStatusCode)
-                throw new Exception("Request not success," + result.StatusCode);
-
-            //Extraigo en forma de json.
-            string json = result.Content.ReadAsStringAsync().Result;
+                throw new Exception(jsonResponse);
 
             //Descerializo y convierto al tipo de retorno.
-            return JsonConvert.DeserializeObject<Fee>(json);            
+            return JsonConvert.DeserializeObject<Fee>(jsonResponse);
         }
-
-        public object decodeTransaction(string data)
-        {
-            return new object();
-        }
-
-        public float convertirMoneda(string monedaA, string monedaB) { return 0; }
     }
 }

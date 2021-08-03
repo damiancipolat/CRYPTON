@@ -13,6 +13,9 @@ using UI.Notifications;
 using UI.Permisos;
 using BL.Permisos;
 using BE.ValueObject;
+using IO;
+using IO.Responses;
+using IO.RequestFormat;
 
 namespace UI
 {
@@ -405,18 +408,19 @@ namespace UI
 
         private void Button1_Click_9(object sender, EventArgs e)
         {
-            OrdenVentaBE2 order = new OrdenVentaDAL2().findById(4);
-            Debug.WriteLine("-------->"+order.cantidad.ToString());
-            /*NumberFormatInfo nfi = new NumberFormatInfo();
-            nfi.NumberDecimalSeparator = ".";
+            /*
+            Balance response = new BlockIo().getBalance("BTC", "2NBbkWNmuHWGTKUCrtLsgknnS1o3KLiH7kH");
+            Debug.WriteLine("-->" + response.data.available_balance);
+            */
 
-            //String -> Decimal
-            var maxBtc = "0.00003090";
-            var maxBtcDecimal = Decimal.Parse(maxBtc, CultureInfo.InvariantCulture)+new Decimal(0.00001);
-
-            //Decimal -> String
-            var maxBtcString = maxBtcDecimal.ToString(CultureInfo.InvariantCulture);
-            Debug.WriteLine("++++++++++++++++++++++>"+maxBtcString);*/
+            /*
+            Fee response = new BlockIo().estimateTransaction("BTC", "2NBbkWNmuHWGTKUCrtLsgknnS1o3KLiH7kH", "0.00001671") ;
+            Debug.WriteLine("-->" + response.data.estimated_network_fee);
+            */
+            /*
+            NewWallet response = new BlockIo().createWallet("BTC");
+            Debug.WriteLine("-->" + response.data.address);
+            */
         }
 
         private void Button3_Click(object sender, EventArgs e)

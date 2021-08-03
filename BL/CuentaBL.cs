@@ -101,7 +101,7 @@ namespace BL
         }
 
         //Consulto las billeteras asociadas a una cuenta retorno en forma de diccionario.
-        public Dictionary<string, BilleteraBE> traerBilleteras(CuentaBE cuenta)
+        public Dictionary<string, BilleteraBE> traerBilleteras(CuentaBE cuenta, bool balanceUpdate)
         {
             //Recupero las billeteras de esta cuenta.
             List<BilleteraBE> wallets = new BilleteraDAL().findByCuenta(cuenta.idcuenta);
@@ -117,9 +117,9 @@ namespace BL
 
             //Cargo el diccionario.
             walletAccount.Add("ARS", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "ARS").idwallet, false));
-            walletAccount.Add("BTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "BTC").idwallet, true));
-            walletAccount.Add("LTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "LTC").idwallet, true));
-            walletAccount.Add("DOG", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "DOG").idwallet, true));
+            walletAccount.Add("BTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "BTC").idwallet, balanceUpdate));
+            walletAccount.Add("LTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "LTC").idwallet, balanceUpdate));
+            walletAccount.Add("DOG", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "DOG").idwallet, balanceUpdate));
                         
 
             return walletAccount;
@@ -132,14 +132,14 @@ namespace BL
         }
 
         //Traigo las billeteras que tiene un cliente en base a su cuenta activa.
-        public Dictionary<string, BilleteraBE> traerBilleterasCliente(ClienteBE cliente)
+        public Dictionary<string, BilleteraBE> traerBilleterasCliente(ClienteBE cliente,bool balanceUpdate=false)
         {
             CuentaBE activeAccount = this.traerActiva(cliente);
 
             if (activeAccount == null)
                 throw new Exception("No active account for this client.");
 
-            return this.traerBilleteras(activeAccount);
+            return this.traerBilleteras(activeAccount, balanceUpdate);
         }
 
         //-------------------------------------

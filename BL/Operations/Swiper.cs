@@ -16,44 +16,14 @@ namespace BL.Operations
 {
     public class Swiper
     {
-        //Obtengo las claves en base a la configuración.
-        private ApiKeysBE getEnvironment()
-        {
-            //Traigo el ambiente desde la configuración.
-            string envConfig = ConfigurationManager.AppSettings["Environment"];
-
-            //Consulto desde la bd.
-            return new ApiKeysDAL().findByCode(envConfig);
-
-        }
-
-        //Extraigo la clave en base a la moneda.
-        private string getKeys(ApiKeysBE keys, string money)
-        {
-            switch (money)
-            {
-                case "BTC":
-                    return keys.btc;
-                case "LTC":
-                    return keys.ltc;
-                case "DOG":
-                    return keys.dog;
-                default:
-                    return "";
-            }
-        }
-
         //Transferencia de cripto usando blockio
         private string cryptoTransfer(string origen, string destino, string money, double ammount)
         {
-            //Traigo las claves.
-            string originKey = this.getKeys(this.getEnvironment(), money);
-
             //Casteo el formato de la moneda.
             string moneyFormatedA = ammount.ToString("0.000000000").Replace(",", ".");
 
             //Hago el request.
-            Transference result = new BlockIo(originKey).makeTransference(origen, destino, moneyFormatedA);
+            Transference result = new BlockIo().makeTransference(money,origen, destino, moneyFormatedA);
             Debug.WriteLine("Transference" + result.block_io_transference.data.network + "   " + result.block_io_transference.data.txid);
 
             return result.block_io_transference.data.txid;

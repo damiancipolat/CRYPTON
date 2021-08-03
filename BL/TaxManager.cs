@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using SL;
 using BE;
+using BE.ValueObject;
 using IO;
 using IO.Responses;
 using DAL;
@@ -15,43 +16,14 @@ namespace BL
 {
     public class TaxManager
     {
-        private ApiKeysBE getEnvironment()
+        //Hago un pedido de estimacion.
+        private Money fetchNetworkFee(string money, string direccion, string valor)
         {
-            //Traigo el ambiente desde la configuración.
-            string envConfig = ConfigurationManager.AppSettings["Environment"];
+            //Pido estimar la transferencia.
+            Fee dataFee = new BlockIo().estimateTransaction(money, direccion, valor);
 
-            //Consulto desde la bd.
-            return new ApiKeysDAL().findByCode(envConfig);
-
-        }
-
-        //Extraigo la clave en base a la moneda.
-        private string getKeys(ApiKeysBE keys, string money)
-        {
-            switch (money)
-            {
-                case "BTC":
-                    return keys.btc;
-                case "LTC":
-                    return keys.ltc;
-                case "DOG":
-                    return keys.dog;
-                default:
-                    return "";
-            }
-        }
-
-        //Traigo las comisiones de uso de la red.
-        private string fetchNetworkFee(string moneyCode, string address, string value)
-        {
-            //Obtengo las claves de la red que corresponde la moneda.
-            string networkKey = this.getKeys(this.getEnvironment(), moneyCode);
-
-            //Creo la wallet en block.io            
-            Fee dataFee = new BlockIo(networkKey).estimateTransaction(address, value);
-
-            //Obtengo los campos.
-            return dataFee.data.estimated_network_fee;
+            //Casteo valores.
+            return new Money(dataFee.data.estimated_network_fee);
         }
 
         //Traigo los costos de operacion para el vendedor.
@@ -73,10 +45,10 @@ namespace BL
             if (orden.ofrece.cod != "ARS")
             {
                 //Calculo el fee de la red de cripto.
-                double networkFee = Convert.ToDouble(this.fetchNetworkFee(orden.ofrece.cod, destinyWallet.direccion, orden.cantidad.ToString()));
+                //double networkFee = Convert.ToDouble(this.fetchNetworkFee(orden.ofrece.cod, destinyWallet.direccion, orden.cantidad.ToString()));
 
                 //Agrego.
-                taxList.Add((networkFee, "TAX_NETWORK_FEE"));
+                //taxList.Add((networkFee, "TAX_NETWORK_FEE"));
             }
 
             return taxList;
@@ -87,9 +59,8 @@ namespace BL
         {
             List<(decimal, string)> taxList = new List<(decimal, string)>();
 
-            //Traigo la billetera del vendedor y del cliente de la misma moneda.
-            BilleteraBE originWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[orden.pide.cod].idwallet, true);
-            BilleteraBE destinyWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[orden.pide.cod].idwallet, true);
+            //Traigo la billetera del vendedor y del cliente de la misma moneda.            
+            BilleteraBE destinyWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller,false))[orden.pide.cod].idwallet, false);
 
             //Traigo la comision de la plataforma por la venta.
             decimal buyCost = Convert.ToDecimal(new ComisionValorBL().getBuyCost());
@@ -104,11 +75,11 @@ namespace BL
             //Traigo el costo la red.
             if (orden.pide.cod != "ARS")
             {
-                //Calculo el fee de la red de cripto.
-                //double networkFee = Convert.ToDouble(this.fetchNetworkFee(orden.pide.cod, destinyWallet.direccion, orden.precio.ToString()));
-
-                //Agrego.
-               // taxList.Add((networkFee, "TAX_NETWORK_FEE"));
+                //Casteo valores.
+                Money valueFee = this.fetchNetworkFee(orden.pide.cod, destinyWallet.direccion, orden.precio.ToString());
+                
+                //Agrego el impuesto.
+                taxList.Add((valueFee.getValue(), "TAX_NETWORK_FEE"));
             }
 
             return taxList;
