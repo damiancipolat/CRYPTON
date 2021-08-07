@@ -37,5 +37,15 @@ namespace BE.ValueObject
         {
             return this._inner.ToString(CultureInfo.InvariantCulture);
         }
+
+        public string ToShortString()
+        {
+            return Convert.ToDecimal(Math.Round(this._inner, 2)).ToString(CultureInfo.InvariantCulture);
+        }
+
+        public string ToFormatString()
+        {
+            return Convert.ToDecimal(Math.Round(this._inner, 8)).ToString(CultureInfo.InvariantCulture);
+        }
     }
 }

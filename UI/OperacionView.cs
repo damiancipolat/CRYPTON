@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 using SL;
 using BL;
 using BE;
@@ -60,10 +61,14 @@ namespace UI
             this.op_label_tax_info.Text= Idioma.GetInstance().translate("OP_TAX_LABEL_INFO");
             this.btn_close.Text = Idioma.GetInstance().translate("OP_BTN_CLOSE");
             this.btn_buy.Text = Idioma.GetInstance().translate("OP_BTN_BUY");
+            this.op_final_cost.Text= Idioma.GetInstance().translate("OP_TOTAL");
         }
 
         private void OperacionView_Load(object sender, EventArgs e)
         {
+            //Valor final.
+            decimal final;
+
             //Traduzco los textos.
             this.translateTexts();
 
@@ -71,11 +76,25 @@ namespace UI
             this.op_offer_label.Text = Idioma.GetInstance().translate("OP_OFFER") + " "+new Money(this.orden.cantidad.getValue()).ToString() + " "+this.orden.ofrece.cod;
             this.op_req_label.Text = Idioma.GetInstance().translate("OP_REQ")+" "+new Money(this.orden.precio.getValue()).ToString() + " " + this.orden.pide.cod;
 
+            //Agregoe el valor de la orden.
+            final = this.orden.precio.getValue();
+
             //Cargo los costos de operacion.
             List<(string, string, string)> list = new OrdenCompraBL().getTaxesToBuy(this.orden, Session.GetInstance().getActiveClient());
 
             foreach ((string, string, string) tmp in list)
+            {
+                //Registro el impuesto.
                 this.tax_box.Text = this.tax_box.Text + tmp.Item1 + " " + tmp.Item2 + " " + Idioma.GetInstance().translate(tmp.Item3) + Environment.NewLine;
+
+                //Contabilizo el valor.
+                final = final + new Money(tmp.Item1).getValue();
+            }
+
+            //Seteo el valor final.            
+            this.op_final_total.Text = (this.orden.pide.cod == "ARS" 
+                ? new Money(final).ToShortString()
+                : new Money(final).ToFormatString())+" " + this.orden.pide.cod;
         }
 
         private void Btn_close_Click(object sender, EventArgs e)

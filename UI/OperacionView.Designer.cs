@@ -40,6 +40,8 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.tax_box = new System.Windows.Forms.TextBox();
             this.op_label_tax_info = new System.Windows.Forms.Label();
+            this.op_final_cost = new System.Windows.Forms.Label();
+            this.op_final_total = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,9 +128,9 @@
             // btn_buy
             // 
             this.btn_buy.BackColor = System.Drawing.Color.LightGreen;
-            this.btn_buy.Location = new System.Drawing.Point(158, 462);
+            this.btn_buy.Location = new System.Drawing.Point(26, 565);
             this.btn_buy.Name = "btn_buy";
-            this.btn_buy.Size = new System.Drawing.Size(139, 50);
+            this.btn_buy.Size = new System.Drawing.Size(203, 50);
             this.btn_buy.TabIndex = 29;
             this.btn_buy.Text = "btn_buy";
             this.btn_buy.UseVisualStyleBackColor = false;
@@ -138,9 +140,9 @@
             // 
             this.btn_close.BackColor = System.Drawing.Color.Tomato;
             this.btn_close.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_close.Location = new System.Drawing.Point(316, 462);
+            this.btn_close.Location = new System.Drawing.Point(250, 565);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(139, 50);
+            this.btn_close.Size = new System.Drawing.Size(203, 50);
             this.btn_close.TabIndex = 30;
             this.btn_close.Text = "btn_close";
             this.btn_close.UseVisualStyleBackColor = false;
@@ -166,15 +168,40 @@
             this.op_label_tax_info.TabIndex = 32;
             this.op_label_tax_info.Text = "op_label_tax_info";
             // 
+            // op_final_cost
+            // 
+            this.op_final_cost.AutoSize = true;
+            this.op_final_cost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.op_final_cost.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.op_final_cost.Location = new System.Drawing.Point(21, 461);
+            this.op_final_cost.Name = "op_final_cost";
+            this.op_final_cost.Size = new System.Drawing.Size(165, 30);
+            this.op_final_cost.TabIndex = 33;
+            this.op_final_cost.Text = "op_final_cost";
+            this.op_final_cost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // op_final_total
+            // 
+            this.op_final_total.AutoSize = true;
+            this.op_final_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.op_final_total.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.op_final_total.Location = new System.Drawing.Point(25, 507);
+            this.op_final_total.Name = "op_final_total";
+            this.op_final_total.Size = new System.Drawing.Size(165, 30);
+            this.op_final_total.TabIndex = 34;
+            this.op_final_total.Text = "op_final_total";
+            // 
             // OperacionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 533);
+            this.ClientSize = new System.Drawing.Size(479, 642);
+            this.Controls.Add(this.btn_buy);
+            this.Controls.Add(this.btn_close);
+            this.Controls.Add(this.op_final_total);
+            this.Controls.Add(this.op_final_cost);
             this.Controls.Add(this.op_label_tax_info);
             this.Controls.Add(this.tax_box);
-            this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.btn_buy);
             this.Controls.Add(this.op_tax_label);
             this.Controls.Add(this.op_req_label);
             this.Controls.Add(this.op_offer_label);
@@ -208,5 +235,7 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.TextBox tax_box;
         private System.Windows.Forms.Label op_label_tax_info;
+        private System.Windows.Forms.Label op_final_cost;
+        private System.Windows.Forms.Label op_final_total;
     }
 }

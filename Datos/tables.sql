@@ -649,6 +649,7 @@ insert into palabras values('WALLET_BTN_CLOSE');
 insert into palabras values('WALLET_MONEY');
 insert into palabras values('WALLET_READY_VALUE');
 insert into palabras values('WALLET_PENDING_VALUE');
+insert into palabras values('OP_TOTAL');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -836,6 +837,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','OP_BTN_BUY','Comprar'
 insert into idioma_palabras(code,clave,valor) values('ES','OP_BTN_CLOSE','Cancelar');
 insert into idioma_palabras(code,clave,valor) values('ES','OP_OFFER','Pide:');
 insert into idioma_palabras(code,clave,valor) values('ES','OP_REQ','Por:');
+insert into idioma_palabras(code,clave,valor) values('ES','OP_TOTAL','Costo total:');
 insert into idioma_palabras(code,clave,valor) values('ES','TAX_PLATFORM_FOR_BUY','Comision de la operación');
 insert into idioma_palabras(code,clave,valor) values('ES','TAX_PLATFORM_FOR_SELL','Comision de la operación');
 insert into idioma_palabras(code,clave,valor) values('ES','TAX_NETWORK_FEE','Costo de transferencia de la red');
@@ -1066,6 +1068,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_BUY','Buy');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_BTN_CLOSE','Cancel');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_OFFER','Offer:');
 insert into idioma_palabras(code,clave,valor) values('ENG','OP_REQ','For:');
+insert into idioma_palabras(code,clave,valor) values('ENG','OP_TOTAL','Final balance:');
 insert into idioma_palabras(code,clave,valor) values('ENG','TAX_PLATFORM_FOR_BUY','Platform fee for this operation');
 insert into idioma_palabras(code,clave,valor) values('ENG','TAX_PLATFORM_FOR_SELL','Platform fee for this operation');
 insert into idioma_palabras(code,clave,valor) values('ENG','TAX_NETWORK_FEE','Network transference fee');
