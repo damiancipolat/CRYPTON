@@ -40,10 +40,10 @@ namespace BL.Operations
         public void notificate(OrdenCompraBE orden)
         {
             //Notificar al vendedor.
-            this.notificateSeller(orden.ordenVenta, orden.comprador);
+           // this.notificateSeller(orden.ordenVenta, orden.comprador);
 
             //Notificar al comprador.
-            this.notificateBuyer(orden.comprador);
+           // this.notificateBuyer(orden.comprador);
         }
     }
 }

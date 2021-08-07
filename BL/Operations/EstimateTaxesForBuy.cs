@@ -17,7 +17,7 @@ namespace BL.Operations
             List<(string, string, string)> taxList = new List<(string, string, string)>();
 
             //Traigo la lista de impuestos para esta operacion.
-            List<(decimal, string)> buyerTaxList = new TaxManager().getBuyerTaxes(orden, buyer, orden.vendedor);
+            List<(decimal, string)> buyerTaxList = new TaxManager().getBuyerTaxes(orden, buyer);
 
             //Adapto el formato para una ui.
             foreach ((decimal, string) tmpValue in buyerTaxList)

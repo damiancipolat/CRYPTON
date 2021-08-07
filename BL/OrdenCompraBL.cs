@@ -8,6 +8,7 @@ using System.Diagnostics;
 
 using SL;
 using BE;
+using BE.ValueObject;
 using BL.Operations;
 using IO;
 using IO.Responses;
@@ -30,19 +31,23 @@ namespace BL
         }
 
         //Hago la operacion de comprar.
-        public long comprar(OrdenVentaBE orden, ClienteBE buyer)
+        public long comprar(OrdenVentaBE2 orden, ClienteBE buyer)
         {
             //Valido los montos.
             new ValidateSwipe().validate(orden, buyer);
+            Debug.WriteLine("La operacion "+orden.idorden.ToString()+" se puede realizar!");
 
             //Armo la orden de compra.
             OrdenCompraBE buyOrder = new OrdenCompraBE();
             buyOrder.comprador = buyer;
-            buyOrder.cantidad = (float)orden.cantidad;
+            buyOrder.cantidad = orden.cantidad;
             buyOrder.moneda = orden.pide;
             buyOrder.ordenVenta = orden;
-            buyOrder.precio = (float)orden.precio;
+            buyOrder.precio = orden.precio;
             buyOrder.fecOperacion = DateTime.Now;
+
+            /*
+
 
             long orderId = new OrdenCompraDAL().save(buyOrder);
             buyOrder.idcompra = orderId;
@@ -56,7 +61,8 @@ namespace BL
             //cargo las notificaciones.
             new NotificateBuySuccess().notificate(buyOrder);
 
-            return orderId;
+            return orderId;*/
+            return 1;
         }
     }
 }

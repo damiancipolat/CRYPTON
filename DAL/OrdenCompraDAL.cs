@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using BE;
+using BE.ValueObject;
 
 namespace DAL
 {
@@ -23,6 +24,13 @@ namespace DAL
 
             //Bindeo campos con la lista de resultados.
             this.binder.match(fieldData, ordenCompra);
+
+            //Actualizo el tipo de usuario que es un enum.            
+            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
+
+            //Cambio los campos de moneda.
+            ordenCompra.cantidad = new Money((string)mapa["cantidad"]);
+            ordenCompra.precio = new Money((string)mapa["precio"]);
 
             return ordenCompra;
 
@@ -104,8 +112,8 @@ namespace DAL
                 { "fecOperacion",compra.fecOperacion},
                 { "comprador",compra.comprador.idusuario},
                 { "moneda",compra.moneda.cod},
-                { "cantidad",compra.cantidad},
-                { "precio",compra.precio}
+                { "cantidad",compra.cantidad.ToString()},
+                { "precio",compra.precio.ToString()}
             };
 
             return this.getInsert().insertSchema(schema, "orden_compra", true);
@@ -126,8 +134,8 @@ namespace DAL
                 { "fecOperacion",compra.fecOperacion},
                 { "comprador",compra.comprador.idusuario},
                 { "moneda",compra.moneda.cod},
-                { "cantidad",compra.cantidad},
-                { "precio",compra.precio}
+                { "cantidad",compra.cantidad.ToString()},
+                { "precio",compra.precio.ToString()}
             };
 
             return this.getUpdate().updateSchemaById(schema, "orden_compra", "idorden", compra.idcompra);

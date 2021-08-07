@@ -196,9 +196,6 @@ insert into conversiones(codCripto,cantCripto,valorUSD) values('LTC',1,132.82);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('DOG',1,0.216820);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('ARS',1,0.010);
 
-select (0.00003090*0.21682)
-select 0.0000066997380/0.010
-
 --Tabla de contactos.
 create table cliente_agenda(
 	idcontacto bigint identity(1,1) primary key,
@@ -337,20 +334,6 @@ create table orden_venta(
 	ordenEstado int,
 	deleted datetime
 );
-select * from orden_venta
-
-/*
-
-	cantidad ofrece
-	precio	 pide
-
-
-select * from orden_venta
-insert into orden_venta select vendedor,cantidad,ofrece,pide,precio,fecCreacion,fecFin,ordenEstado,deleted from ##orden_venta
-select * into ##orden_venta from orden_venta
-update orden_venta set cantidad='0.00003090' where idorden=4;*/
-select * from billetera
-BTC 2NBbkWNmuHWGTKUCrtLsgknnS1o3KLiH7kH
 
 --Tabla de tipo de ordenes.
 create table orden_estado(
@@ -371,12 +354,9 @@ create table orden_compra(
 	comprador bigint,
 	moneda varchar(10),
 	cantidad int,
-	precio float,
+	precio varchar(12),
 	deleted datetime
 );
-
-insert into orden_compra(idorden,fecOperacion,comprador,moneda,cantidad,precio) values(2,GETDATE(),1,'BTC',1,0);
-insert into orden_compra(idorden,fecOperacion,comprador,moneda,cantidad,precio) values(3,GETDATE(),1,'LTC',1,0);
 
 --Notificaciones
 create table notificaciones

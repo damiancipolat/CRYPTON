@@ -38,7 +38,7 @@ namespace UI
             );
 
             if (dr == DialogResult.Yes && this.orden!=null)
-            {/*
+            {
                 try
                 {
                     new OrdenCompraBL().comprar(this.orden, Session.GetInstance().getActiveClient());
@@ -46,8 +46,9 @@ namespace UI
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(Idioma.GetInstance().translate("BUY_ERROR"));
-                }*/
+                    Debug.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

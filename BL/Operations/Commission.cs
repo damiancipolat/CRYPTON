@@ -61,7 +61,7 @@ namespace BL.Operations
 
             //Obtengo el valor de la comision.
             ComisionValorBL comVL = new ComisionValorBL();
-            comx.valor = comVL.calcTaxForPrice(order.precio, comVL.getBuyCost());
+            //comx.valor = comVL.calcTaxForPrice(order.precio, comVL.getBuyCost());
 
             //Registro como no procesado.
             comx.processed = 0;
@@ -73,7 +73,7 @@ namespace BL.Operations
         public Dictionary<ComisionBE, ComisionBE> commisionate(OrdenCompraBE orden)
         {
             //Creo comision para la venta.
-            ComisionBE comSell = this.getForSell(orden.ordenVenta);
+           /* ComisionBE comSell = this.getForSell(orden.ordenVenta);
 
             //Creo comision para la compra.
             ComisionBE comBuy = this.getForBuy(orden);
@@ -82,10 +82,10 @@ namespace BL.Operations
             new ComisionBL().save(comSell);
 
             //Registro las comisiones para la compra.
-            new ComisionBL().save(comBuy);
+            new ComisionBL().save(comBuy);*/
 
             Dictionary<ComisionBE, ComisionBE> comDictionary = new Dictionary<ComisionBE, ComisionBE>();
-            comDictionary.Add(comSell,comBuy);
+            //comDictionary.Add(comSell,comBuy);
 
             return comDictionary;
         }

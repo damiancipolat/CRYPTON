@@ -58,7 +58,7 @@
     <Compile Include="IdiomaBE.cs" />
     <Compile Include="BitacoraBE.cs" />
     <Compile Include="MonedaBE.cs" />
-    <Compile Include="OrdenCompra.cs" />
+    <Compile Include="OrdenCompraBE.cs" />
     <Compile Include="OrdenVentaBE2.cs" />
     <Compile Include="OrdenVentaBE.cs" />
     <Compile Include="Permisos\Componente.cs" />
