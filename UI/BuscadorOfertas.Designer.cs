@@ -50,7 +50,7 @@
             this.search_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_title.Location = new System.Drawing.Point(98, 12);
             this.search_title.Name = "search_title";
-            this.search_title.Size = new System.Drawing.Size(201, 40);
+            this.search_title.Size = new System.Drawing.Size(161, 32);
             this.search_title.TabIndex = 0;
             this.search_title.Text = "search_title";
             this.search_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -71,7 +71,7 @@
             this.search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_descrip.Location = new System.Drawing.Point(102, 52);
             this.search_descrip.Name = "search_descrip";
-            this.search_descrip.Size = new System.Drawing.Size(155, 25);
+            this.search_descrip.Size = new System.Drawing.Size(124, 20);
             this.search_descrip.TabIndex = 37;
             this.search_descrip.Text = "search_descrip";
             this.search_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -84,13 +84,13 @@
             this.moneda_ofrece.FormattingEnabled = true;
             this.moneda_ofrece.Location = new System.Drawing.Point(18, 16);
             this.moneda_ofrece.Name = "moneda_ofrece";
-            this.moneda_ofrece.Size = new System.Drawing.Size(194, 28);
+            this.moneda_ofrece.Size = new System.Drawing.Size(254, 28);
             this.moneda_ofrece.TabIndex = 38;
             // 
             // btn_search
             // 
             this.btn_search.BackColor = System.Drawing.Color.LightGreen;
-            this.btn_search.Location = new System.Drawing.Point(470, 11);
+            this.btn_search.Location = new System.Drawing.Point(660, 12);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(119, 38);
             this.btn_search.TabIndex = 40;
@@ -102,7 +102,7 @@
             // 
             this.btn_by.AutoSize = true;
             this.btn_by.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_by.Location = new System.Drawing.Point(221, 20);
+            this.btn_by.Location = new System.Drawing.Point(287, 20);
             this.btn_by.Name = "btn_by";
             this.btn_by.Size = new System.Drawing.Size(64, 20);
             this.btn_by.TabIndex = 41;
@@ -114,9 +114,9 @@
             this.moneda_pide.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.moneda_pide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moneda_pide.FormattingEnabled = true;
-            this.moneda_pide.Location = new System.Drawing.Point(270, 16);
+            this.moneda_pide.Location = new System.Drawing.Point(362, 16);
             this.moneda_pide.Name = "moneda_pide";
-            this.moneda_pide.Size = new System.Drawing.Size(181, 28);
+            this.moneda_pide.Size = new System.Drawing.Size(254, 28);
             this.moneda_pide.TabIndex = 42;
             // 
             // usr_search_data
@@ -126,13 +126,13 @@
             this.usr_search_data.Name = "usr_search_data";
             this.usr_search_data.RowHeadersWidth = 51;
             this.usr_search_data.RowTemplate.Height = 24;
-            this.usr_search_data.Size = new System.Drawing.Size(743, 383);
+            this.usr_search_data.Size = new System.Drawing.Size(933, 383);
             this.usr_search_data.TabIndex = 43;
             this.usr_search_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usr_data_CellContentClick);
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(626, 577);
+            this.btn_close.Location = new System.Drawing.Point(816, 576);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(143, 49);
             this.btn_close.TabIndex = 44;
@@ -150,7 +150,7 @@
             this.panel1.Controls.Add(this.btn_by);
             this.panel1.Location = new System.Drawing.Point(164, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(605, 64);
+            this.panel1.Size = new System.Drawing.Size(795, 64);
             this.panel1.TabIndex = 45;
             // 
             // btn_view
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 650);
+            this.ClientSize = new System.Drawing.Size(985, 645);
             this.Controls.Add(this.btn_view);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_close);
