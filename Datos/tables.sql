@@ -349,6 +349,8 @@ select * from orden_venta
 insert into orden_venta select vendedor,cantidad,ofrece,pide,precio,fecCreacion,fecFin,ordenEstado,deleted from ##orden_venta
 select * into ##orden_venta from orden_venta
 update orden_venta set cantidad='0.00003090' where idorden=4;*/
+select * from billetera
+BTC 2NBbkWNmuHWGTKUCrtLsgknnS1o3KLiH7kH
 
 --Tabla de tipo de ordenes.
 create table orden_estado(
@@ -639,6 +641,14 @@ insert into palabras values('TREE_FAMILY_EXISTS');
 insert into palabras values('USER_TREE_EDITOR_TITLE');
 insert into palabras values('USER_TREE_EDITOR_DESCRIP');
 insert into palabras values('SEEL_TAX_LABEL');
+insert into palabras values('TAX_NETWORK_FEE_ERROR');
+insert into palabras values('WALLET_TITLE');
+insert into palabras values('WALLET_DESCRIP');
+insert into palabras values('WALLET_BTN_REFRESH');
+insert into palabras values('WALLET_BTN_CLOSE');
+insert into palabras values('WALLET_MONEY');
+insert into palabras values('WALLET_READY_VALUE');
+insert into palabras values('WALLET_PENDING_VALUE');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -876,6 +886,15 @@ insert into idioma_palabras(code,clave,valor) values('ES','TREE_FAMILY_EXISTS','
 insert into idioma_palabras(code,clave,valor) values('ES','USER_TREE_EDITOR_TITLE','Editor usuario/permisos');
 insert into idioma_palabras(code,clave,valor) values('ES','USER_TREE_EDITOR_DESCRIP','Desde aqui podes configurar los permisos que tiene cada usuario.');
 insert into idioma_palabras(code,clave,valor) values('ES','SEEL_TAX_LABEL','La venta tendra una comisión de %d.');
+insert into idioma_palabras(code,clave,valor) values('ES','TAX_NETWORK_FEE_ERROR','No se puede obtener el costo de transferencia.');
+insert into idioma_palabras(code,clave,valor) values('ES','WALLET_TITLE','Tús billeteras');
+insert into idioma_palabras(code,clave,valor) values('ES','WALLET_DESCRIP','Aquí veras tus distintas monedas.');
+insert into idioma_palabras(code,clave,valor) values('ES','WALLET_BTN_REFRESH','Actualizar');
+insert into idioma_palabras(code,clave,valor) values('ES','WALLET_BTN_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','WALLET_MONEY','Moneda');
+insert into idioma_palabras(code,clave,valor) values('ES','WALLET_ADDRESS','Dirección');
+insert into idioma_palabras(code,clave,valor) values('ES','WALLET_READY_VALUE','Saldo disponible');
+insert into idioma_palabras(code,clave,valor) values('ES','WALLET_PENDING_VALUE','Saldo pendiente');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1097,3 +1116,13 @@ insert into idioma_palabras(code,clave,valor) values('ENG','TREE_FAMILY_EXISTS',
 insert into idioma_palabras(code,clave,valor) values('ENG','USER_TREE_EDITOR_TITLE','User/permission editor');
 insert into idioma_palabras(code,clave,valor) values('ENG','USER_TREE_EDITOR_DESCRIP','You can edit from this module, the permission of each user.');
 insert into idioma_palabras(code,clave,valor) values('ENG','SEEL_TAX_LABEL','The tax operation is %d.');
+insert into idioma_palabras(code,clave,valor) values('ENG','TAX_NETWORK_FEE_ERROR','Unable to fetch transaction fee.');
+insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_TITLE','Your wallets');
+insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_DESCRIP','You will see your moneys.');
+insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_BTN_REFRESH','Refresh');
+insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_BTN_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_MONEY','Money');
+insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_ADDRESS','Address');
+insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_READY_VALUE','Available balance');
+insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_PENDING_VALUE','Pending balance');
+

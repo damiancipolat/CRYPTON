@@ -408,6 +408,8 @@ namespace UI
 
         private void Button1_Click_9(object sender, EventArgs e)
         {
+            BilleteraBE2 wallet = new BilleteraBL2().getById(4, true);
+            Debug.WriteLine("saldo "+wallet.saldo.ToString());
             /*
             Balance response = new BlockIo().getBalance("BTC", "2NBbkWNmuHWGTKUCrtLsgknnS1o3KLiH7kH");
             Debug.WriteLine("-->" + response.data.available_balance);

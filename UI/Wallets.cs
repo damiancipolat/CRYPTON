@@ -28,16 +28,11 @@ namespace UI
         private void translateTexts()
         {
             //Labels.
-            this.ars_label.Text = Idioma.GetInstance().translate("ARS_LABEL");
-            this.dog_label.Text = Idioma.GetInstance().translate("DOG_LABEL");
-            this.ltc_label.Text = Idioma.GetInstance().translate("LTC_LABEL");
-            this.btc_label.Text = Idioma.GetInstance().translate("BTC_LABEL");
-
-            //Bindeo menu inicio.
-            this.your_wallets_label.Text = Idioma.GetInstance().translate("YOUR_WALLETS_LABEL");
-            this.your_wallets_descrip_label.Text = Idioma.GetInstance().translate("YOUR_WALLETS_DESCRIPT");
-            this.Text = Idioma.GetInstance().translate("YOUR_WALLETS_LABEL");
-            this.btn_refresh.Text= Idioma.GetInstance().translate("BTN_UPDATE_PERMISSION");
+            this.Text= Idioma.GetInstance().translate("WALLET_BTN_CLOSE");
+            this.wallet_btn_close.Text = Idioma.GetInstance().translate("WALLET_BTN_CLOSE");
+            this.wallet_btn_refresh.Text = Idioma.GetInstance().translate("WALLET_BTN_REFRESH");
+            this.wallet_title.Text = Idioma.GetInstance().translate("WALLET_TITLE");
+            this.wallet_descrip.Text = Idioma.GetInstance().translate("WALLET_DESCRIP");;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -52,39 +47,68 @@ namespace UI
             {
                 //Cargo las billeteras.
                 CuentaBE cuenta = new CuentaBL().traer(this.accountId);
-                Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta,true);
+                Dictionary<string, BilleteraBE2> wallets = new CuentaBL2().traerBilleteras(cuenta, true);
 
-                BilleteraBL walletBiz = new BilleteraBL();
-                
-                //Cargo los saldos.
-                this.ars_saldo.Text = wallets["ARS"].saldo.ToString() + " ARS";
-                this.btc_saldo.Text = wallets["BTC"].saldo.ToString("0.000000000") + " BTC";
-                this.ltc_saldo.Text = wallets["LTC"].saldo.ToString("0.000000000") + " LTC";
-                this.dog_saldo.Text = wallets["DOG"].saldo.ToString("0.000000000") + " DOG";
-                
-                //Cargo las direcciones.
-                this.ars_address.Text = wallets["ARS"].direccion;
-                this.btc_address.Text = wallets["BTC"].direccion;
-                this.ltc_address.Text = wallets["LTC"].direccion;
-                this.dog_address.Text = wallets["DOG"].direccion;
+                //Borro las filas.
+                this.frm_wallet_list.Rows.Clear();
 
-                Debug.WriteLine("ARS>>>" + wallets["ARS"].direccion);
-                Debug.WriteLine("BTC>>>" + wallets["BTC"].direccion+" " + wallets["BTC"].saldo.ToString());
-                Debug.WriteLine("LTC>>>" + wallets["LTC"].direccion);
-                Debug.WriteLine("DOG>>>" + wallets["DOG"].direccion);
+                //Agrego ARS
+                Debug.WriteLine("Load ARS");
+                this.frm_wallet_list.Rows.Add(new string[] {
+                    wallets["ARS"].moneda.cod,
+                    wallets["ARS"].direccion,
+                    wallets["ARS"].saldo.ToString(),
+                    wallets["ARS"].saldo_pending.ToString()
+                });
 
+                //Agrego BTC
+                Debug.WriteLine("Load BTC");
+                this.frm_wallet_list.Rows.Add(new string[] {
+                    wallets["BTC"].moneda.cod,
+                    wallets["BTC"].direccion,
+                    wallets["BTC"].saldo.ToString(),
+                    wallets["BTC"].saldo_pending.ToString()
+                    });
+
+                //Agrego LTC
+                Debug.WriteLine("Load LTC");
+                this.frm_wallet_list.Rows.Add(new string[] {
+                    wallets["LTC"].moneda.cod,
+                    wallets["LTC"].direccion,
+                    wallets["LTC"].saldo.ToString(),
+                    wallets["LTC"].saldo_pending.ToString()
+                });
+
+                //Agrego DOG
+                Debug.WriteLine("Load DOG");
+                this.frm_wallet_list.Rows.Add(new string[] {
+                    wallets["DOG"].moneda.cod,
+                    wallets["DOG"].direccion,
+                    wallets["DOG"].saldo.ToString(),
+                    wallets["DOG"].saldo_pending.ToString()
+                });
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Hubo un problema al cargar los datos");
+                Debug.WriteLine(ex.Message);
             }
-
         }
 
         private void Frm_wallets_Load(object sender, EventArgs e)
         {
             //Traduszco los textos y cargo los datos.
             this.translateTexts();
+
+            //Load columns.
+            this.frm_wallet_list.ReadOnly = true;
+            this.frm_wallet_list.Columns.Clear();
+            this.frm_wallet_list.Columns.Add(Idioma.GetInstance().translate("WALLET_MONEY"), Idioma.GetInstance().translate("WALLET_MONEY"));
+            this.frm_wallet_list.Columns.Add(Idioma.GetInstance().translate("WALLET_ADDRESS"), Idioma.GetInstance().translate("WALLET_ADDRESS"));
+            this.frm_wallet_list.Columns.Add(Idioma.GetInstance().translate("WALLET_READY_VALUE"), Idioma.GetInstance().translate("WALLET_READY_VALUE"));
+            this.frm_wallet_list.Columns.Add(Idioma.GetInstance().translate("WALLET_PENDING_VALUE"), Idioma.GetInstance().translate("WALLET_PENDING_VALUE"));
+
+            //Load wallet data.
             this.loadWallets();
         }
 
@@ -106,6 +130,11 @@ namespace UI
         private void Button2_Click(object sender, EventArgs e)
         {
             this.loadWallets();
+        }
+
+        private void Wallet_btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

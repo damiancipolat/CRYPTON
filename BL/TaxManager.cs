@@ -75,11 +75,19 @@ namespace BL
             //Traigo el costo la red.
             if (orden.pide.cod != "ARS")
             {
-                //Casteo valores.
-                Money valueFee = this.fetchNetworkFee(orden.pide.cod, destinyWallet.direccion, orden.precio.ToString());
-                
-                //Agrego el impuesto.
-                taxList.Add((valueFee.getValue(), "TAX_NETWORK_FEE"));
+                try
+                {
+                    //Casteo valores.
+                    Money valueFee = this.fetchNetworkFee(orden.pide.cod, destinyWallet.direccion, orden.precio.ToString());
+
+                    //Agrego el impuesto.
+                    taxList.Add((valueFee.getValue(), "TAX_NETWORK_FEE"));
+                }
+                catch(Exception error)
+                {
+                    taxList.Add((0, "TAX_NETWORK_FEE_ERROR"));
+                }
+
             }
 
             return taxList;

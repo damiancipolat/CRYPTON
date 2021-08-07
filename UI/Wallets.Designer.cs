@@ -28,53 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_wallets));
+            this.wallet_descrip = new System.Windows.Forms.Label();
+            this.wallet_title = new System.Windows.Forms.Label();
+            this.wallet_btn_refresh = new System.Windows.Forms.Button();
+            this.frm_wallet_list = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.dog_address = new System.Windows.Forms.Label();
-            this.dog_saldo = new System.Windows.Forms.Label();
-            this.dog_label = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.ltc_address = new System.Windows.Forms.Label();
-            this.ltc_saldo = new System.Windows.Forms.Label();
-            this.ltc_label = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btc_address = new System.Windows.Forms.Label();
-            this.btc_saldo = new System.Windows.Forms.Label();
-            this.btc_label = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ars_address = new System.Windows.Forms.Label();
-            this.ars_saldo = new System.Windows.Forms.Label();
-            this.ars_label = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.your_wallets_label = new System.Windows.Forms.Label();
-            this.btn_refresh = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.your_wallets_descrip_label = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.wallet_btn_close = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.frm_wallet_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
+            // 
+            // wallet_descrip
+            // 
+            this.wallet_descrip.AutoSize = true;
+            this.wallet_descrip.BackColor = System.Drawing.Color.Transparent;
+            this.wallet_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wallet_descrip.Location = new System.Drawing.Point(99, 60);
+            this.wallet_descrip.Name = "wallet_descrip";
+            this.wallet_descrip.Size = new System.Drawing.Size(116, 20);
+            this.wallet_descrip.TabIndex = 51;
+            this.wallet_descrip.Text = "wallet_descrip";
+            // 
+            // wallet_title
+            // 
+            this.wallet_title.AutoSize = true;
+            this.wallet_title.Cursor = System.Windows.Forms.Cursors.Default;
+            this.wallet_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wallet_title.Location = new System.Drawing.Point(95, 26);
+            this.wallet_title.Name = "wallet_title";
+            this.wallet_title.Size = new System.Drawing.Size(113, 25);
+            this.wallet_title.TabIndex = 50;
+            this.wallet_title.Text = "wallet_title";
+            // 
+            // wallet_btn_refresh
+            // 
+            this.wallet_btn_refresh.Location = new System.Drawing.Point(639, 78);
+            this.wallet_btn_refresh.Name = "wallet_btn_refresh";
+            this.wallet_btn_refresh.Size = new System.Drawing.Size(95, 38);
+            this.wallet_btn_refresh.TabIndex = 49;
+            this.wallet_btn_refresh.Text = "wallet_btn_refresh";
+            this.wallet_btn_refresh.UseVisualStyleBackColor = true;
+            this.wallet_btn_refresh.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // frm_wallet_list
+            // 
+            this.frm_wallet_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.frm_wallet_list.Location = new System.Drawing.Point(31, 132);
+            this.frm_wallet_list.Name = "frm_wallet_list";
+            this.frm_wallet_list.RowHeadersWidth = 51;
+            this.frm_wallet_list.RowTemplate.Height = 24;
+            this.frm_wallet_list.Size = new System.Drawing.Size(703, 188);
+            this.frm_wallet_list.TabIndex = 36;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.wallet1;
+            this.pictureBox1.Location = new System.Drawing.Point(31, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 52;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox10
             // 
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox10.Image = global::UI.Properties.Resources.BTC;
-            this.pictureBox10.Location = new System.Drawing.Point(15, 19);
+            this.pictureBox10.Location = new System.Drawing.Point(69, 348);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(30, 30);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -85,322 +113,63 @@
             // 
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox6.Image = global::UI.Properties.Resources.LTC;
-            this.pictureBox6.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox6.Location = new System.Drawing.Point(107, 348);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(30, 30);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 32;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox4.Image = global::UI.Properties.Resources.DOGE;
-            this.pictureBox4.Location = new System.Drawing.Point(15, 19);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 32;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(560, 653);
-            this.panel1.TabIndex = 35;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.pictureBox4);
-            this.panel10.Controls.Add(this.dog_address);
-            this.panel10.Controls.Add(this.dog_saldo);
-            this.panel10.Controls.Add(this.dog_label);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(10, 503);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(540, 142);
-            this.panel10.TabIndex = 48;
-            // 
-            // dog_address
-            // 
-            this.dog_address.AutoSize = true;
-            this.dog_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dog_address.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dog_address.Location = new System.Drawing.Point(10, 97);
-            this.dog_address.Name = "dog_address";
-            this.dog_address.Size = new System.Drawing.Size(441, 25);
-            this.dog_address.TabIndex = 31;
-            this.dog_address.Text = "2NDSqEkWPyvTeQpdNBP1nG64iCtZcXZXSNU";
-            // 
-            // dog_saldo
-            // 
-            this.dog_saldo.AutoSize = true;
-            this.dog_saldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dog_saldo.ForeColor = System.Drawing.Color.White;
-            this.dog_saldo.Location = new System.Drawing.Point(10, 61);
-            this.dog_saldo.Name = "dog_saldo";
-            this.dog_saldo.Size = new System.Drawing.Size(171, 25);
-            this.dog_saldo.TabIndex = 30;
-            this.dog_saldo.Text = "$100.5000000000";
-            // 
-            // dog_label
-            // 
-            this.dog_label.AutoSize = true;
-            this.dog_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dog_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dog_label.Location = new System.Drawing.Point(56, 19);
-            this.dog_label.Name = "dog_label";
-            this.dog_label.Size = new System.Drawing.Size(139, 25);
-            this.dog_label.TabIndex = 25;
-            this.dog_label.Text = "DOG_LABEL";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.pictureBox6);
-            this.panel9.Controls.Add(this.ltc_address);
-            this.panel9.Controls.Add(this.ltc_saldo);
-            this.panel9.Controls.Add(this.ltc_label);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(10, 361);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(540, 142);
-            this.panel9.TabIndex = 47;
-            // 
-            // ltc_address
-            // 
-            this.ltc_address.AutoSize = true;
-            this.ltc_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltc_address.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ltc_address.Location = new System.Drawing.Point(10, 97);
-            this.ltc_address.Name = "ltc_address";
-            this.ltc_address.Size = new System.Drawing.Size(441, 25);
-            this.ltc_address.TabIndex = 31;
-            this.ltc_address.Text = "2NDSqEkWPyvTeQpdNBP1nG64iCtZcXZXSNU";
-            // 
-            // ltc_saldo
-            // 
-            this.ltc_saldo.AutoSize = true;
-            this.ltc_saldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltc_saldo.ForeColor = System.Drawing.Color.White;
-            this.ltc_saldo.Location = new System.Drawing.Point(10, 61);
-            this.ltc_saldo.Name = "ltc_saldo";
-            this.ltc_saldo.Size = new System.Drawing.Size(171, 25);
-            this.ltc_saldo.TabIndex = 30;
-            this.ltc_saldo.Text = "$100.5000000000";
-            // 
-            // ltc_label
-            // 
-            this.ltc_label.AutoSize = true;
-            this.ltc_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ltc_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltc_label.Location = new System.Drawing.Point(56, 19);
-            this.ltc_label.Name = "ltc_label";
-            this.ltc_label.Size = new System.Drawing.Size(133, 25);
-            this.ltc_label.TabIndex = 25;
-            this.ltc_label.Text = "LTC_LABEL";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.pictureBox10);
-            this.panel7.Controls.Add(this.btc_address);
-            this.panel7.Controls.Add(this.btc_saldo);
-            this.panel7.Controls.Add(this.btc_label);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(10, 219);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(540, 142);
-            this.panel7.TabIndex = 46;
-            // 
-            // btc_address
-            // 
-            this.btc_address.AutoSize = true;
-            this.btc_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btc_address.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btc_address.Location = new System.Drawing.Point(10, 97);
-            this.btc_address.Name = "btc_address";
-            this.btc_address.Size = new System.Drawing.Size(441, 25);
-            this.btc_address.TabIndex = 31;
-            this.btc_address.Text = "2NDSqEkWPyvTeQpdNBP1nG64iCtZcXZXSNU";
-            // 
-            // btc_saldo
-            // 
-            this.btc_saldo.AutoSize = true;
-            this.btc_saldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btc_saldo.ForeColor = System.Drawing.Color.White;
-            this.btc_saldo.Location = new System.Drawing.Point(10, 61);
-            this.btc_saldo.Name = "btc_saldo";
-            this.btc_saldo.Size = new System.Drawing.Size(171, 25);
-            this.btc_saldo.TabIndex = 30;
-            this.btc_saldo.Text = "$100.5000000000";
-            // 
-            // btc_label
-            // 
-            this.btc_label.AutoSize = true;
-            this.btc_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btc_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btc_label.Location = new System.Drawing.Point(56, 18);
-            this.btc_label.Name = "btc_label";
-            this.btc_label.Size = new System.Drawing.Size(135, 25);
-            this.btc_label.TabIndex = 25;
-            this.btc_label.Text = "BTC_LABEL";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.ars_address);
-            this.panel2.Controls.Add(this.ars_saldo);
-            this.panel2.Controls.Add(this.ars_label);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(10, 77);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 142);
-            this.panel2.TabIndex = 45;
-            // 
-            // ars_address
-            // 
-            this.ars_address.AutoSize = true;
-            this.ars_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ars_address.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ars_address.Location = new System.Drawing.Point(10, 97);
-            this.ars_address.Name = "ars_address";
-            this.ars_address.Size = new System.Drawing.Size(441, 25);
-            this.ars_address.TabIndex = 31;
-            this.ars_address.Text = "2NDSqEkWPyvTeQpdNBP1nG64iCtZcXZXSNU";
-            // 
-            // ars_saldo
-            // 
-            this.ars_saldo.AutoSize = true;
-            this.ars_saldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ars_saldo.ForeColor = System.Drawing.Color.White;
-            this.ars_saldo.Location = new System.Drawing.Point(10, 61);
-            this.ars_saldo.Name = "ars_saldo";
-            this.ars_saldo.Size = new System.Drawing.Size(171, 25);
-            this.ars_saldo.TabIndex = 30;
-            this.ars_saldo.Text = "$100.5000000000";
-            // 
-            // ars_label
-            // 
-            this.ars_label.AutoSize = true;
-            this.ars_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ars_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ars_label.Location = new System.Drawing.Point(56, 20);
-            this.ars_label.Name = "ars_label";
-            this.ars_label.Size = new System.Drawing.Size(135, 25);
-            this.ars_label.TabIndex = 25;
-            this.ars_label.Text = "ARS_LABEL";
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox5.Image = global::UI.Properties.Resources.argentina;
-            this.pictureBox5.Location = new System.Drawing.Point(15, 19);
+            this.pictureBox5.Location = new System.Drawing.Point(31, 348);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 29;
             this.pictureBox5.TabStop = false;
             // 
-            // panel11
+            // pictureBox4
             // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel11.Controls.Add(this.your_wallets_descrip_label);
-            this.panel11.Controls.Add(this.your_wallets_label);
-            this.panel11.Controls.Add(this.btn_refresh);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(10, 10);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(540, 67);
-            this.panel11.TabIndex = 44;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pictureBox4.Image = global::UI.Properties.Resources.DOGE;
+            this.pictureBox4.Location = new System.Drawing.Point(145, 348);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 32;
+            this.pictureBox4.TabStop = false;
             // 
-            // your_wallets_label
+            // wallet_btn_close
             // 
-            this.your_wallets_label.AutoSize = true;
-            this.your_wallets_label.Cursor = System.Windows.Forms.Cursors.Default;
-            this.your_wallets_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.your_wallets_label.Location = new System.Drawing.Point(11, 7);
-            this.your_wallets_label.Name = "your_wallets_label";
-            this.your_wallets_label.Size = new System.Drawing.Size(190, 25);
-            this.your_wallets_label.TabIndex = 50;
-            this.your_wallets_label.Text = "your_wallets_label";
-            // 
-            // btn_refresh
-            // 
-            this.btn_refresh.Location = new System.Drawing.Point(436, 6);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(95, 52);
-            this.btn_refresh.TabIndex = 49;
-            this.btn_refresh.Text = "btn_refresh";
-            this.btn_refresh.UseVisualStyleBackColor = true;
-            this.btn_refresh.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(898, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "label1";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::UI.Properties.Resources.wallet;
-            this.pictureBox3.Location = new System.Drawing.Point(673, 13);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 35;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.UseWaitCursor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1378, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 47);
-            this.button1.TabIndex = 37;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // your_wallets_descrip_label
-            // 
-            this.your_wallets_descrip_label.AutoSize = true;
-            this.your_wallets_descrip_label.BackColor = System.Drawing.Color.Transparent;
-            this.your_wallets_descrip_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.your_wallets_descrip_label.Location = new System.Drawing.Point(15, 36);
-            this.your_wallets_descrip_label.Name = "your_wallets_descrip_label";
-            this.your_wallets_descrip_label.Size = new System.Drawing.Size(210, 20);
-            this.your_wallets_descrip_label.TabIndex = 51;
-            this.your_wallets_descrip_label.Text = "your_wallets_descrip_label";
-            this.your_wallets_descrip_label.Visible = false;
+            this.wallet_btn_close.BackColor = System.Drawing.Color.Crimson;
+            this.wallet_btn_close.ForeColor = System.Drawing.Color.White;
+            this.wallet_btn_close.Location = new System.Drawing.Point(569, 338);
+            this.wallet_btn_close.Name = "wallet_btn_close";
+            this.wallet_btn_close.Size = new System.Drawing.Size(165, 49);
+            this.wallet_btn_close.TabIndex = 54;
+            this.wallet_btn_close.Text = "wallet_btn_close";
+            this.wallet_btn_close.UseVisualStyleBackColor = false;
+            this.wallet_btn_close.Click += new System.EventHandler(this.Wallet_btn_close_Click);
             // 
             // frm_wallets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(560, 653);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(766, 410);
+            this.Controls.Add(this.wallet_btn_close);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.wallet_btn_refresh);
+            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.wallet_descrip);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.frm_wallet_list);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.wallet_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -408,24 +177,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Billeteras";
             this.Load += new System.EventHandler(this.Frm_wallets_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.frm_wallet_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -433,30 +192,12 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label dog_address;
-        private System.Windows.Forms.Label dog_saldo;
-        private System.Windows.Forms.Label dog_label;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label ltc_address;
-        private System.Windows.Forms.Label ltc_saldo;
-        private System.Windows.Forms.Label ltc_label;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label btc_address;
-        private System.Windows.Forms.Label btc_saldo;
-        private System.Windows.Forms.Label btc_label;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label ars_address;
-        private System.Windows.Forms.Label ars_saldo;
-        private System.Windows.Forms.Label ars_label;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button btn_refresh;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label your_wallets_label;
-        private System.Windows.Forms.Label your_wallets_descrip_label;
+        private System.Windows.Forms.Button wallet_btn_refresh;
+        private System.Windows.Forms.Label wallet_title;
+        private System.Windows.Forms.Label wallet_descrip;
+        private System.Windows.Forms.DataGridView frm_wallet_list;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button wallet_btn_close;
     }
 }
