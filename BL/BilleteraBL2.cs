@@ -187,8 +187,8 @@ namespace BL
             }                
 
             //Busco si esta wallet tiene cobro de comisiones pendientes y se la descuento.
-            double pendingTaxes = (new ComisionBL().pendingAmmount(wallet));
-            Debug.WriteLine("Pending taxes for wallet "+id+" - "+pendingTaxes.ToString());
+            //double pendingTaxes = (new ComisionBL().pendingAmmount(wallet));
+            //Debug.WriteLine("Pending taxes for wallet "+id+" - "+pendingTaxes.ToString());
 
             return wallet;
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE.ValueObject;
 
 namespace BE
 {
@@ -12,7 +13,7 @@ namespace BE
         public Operaciones tipo_operacion;
         public Int64 referencia;
         public MonedaBE moneda;
-        public double valor;
+        public Money valor;
         public DateTime fecCobro;
         public int processed;
         public long idwallet;

@@ -303,7 +303,7 @@ create table comisiones(
 	referencia bigint,	
 	moneda varchar(10),
 	idwallet bigint,
-	valor float,
+	valor varchar(12),
 	fecCobro datetime,
 	processed int,
 	deleted datetime
@@ -357,7 +357,7 @@ create table orden_compra(
 	precio varchar(12),
 	deleted datetime
 );
-
+select * from orden_compra
 --Notificaciones
 create table notificaciones
 (

@@ -47,7 +47,7 @@
     <Compile Include="CuentaBL2.cs" />
     <Compile Include="MonedaBL.cs" />
     <Compile Include="NotificacionBL.cs" />
-    <Compile Include="ComisionBL.cs" />
+    <Compile Include="ComisionBL3.cs" />
     <Compile Include="ComisionValorBL.cs" />
     <Compile Include="CuentaBL.cs" />
     <Compile Include="EmpleadoBL.cs" />

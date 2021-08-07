@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using BE.ValueObject;
 
 namespace DAL
 {
@@ -25,6 +26,7 @@ namespace DAL
             //Seteo el valor.
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
             comisionTarget.tipo_operacion = (Operaciones)mapa["tipo_operacion"];
+            comisionTarget.valor = new Money((double)mapa["valor"]);
 
             return comisionTarget;
 
@@ -89,7 +91,7 @@ namespace DAL
                 {"operacion",comision.tipo_operacion},
                 { "referencia",comision.referencia},
                 { "moneda",comision.moneda.cod},
-                { "valor",comision.valor},
+                { "valor",comision.valor.ToFormatString()},
                 { "fecCobro",comision.fecCobro},
                 { "processed",comision.processed},
                 { "idwallet",comision.idwallet}
@@ -103,10 +105,10 @@ namespace DAL
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
-                {"tipo_operacion",(int)comision.tipo_operacion },
+                { "tipo_operacion",(int)comision.tipo_operacion },
                 { "referencia",comision.referencia},
                 { "moneda",comision.moneda.cod},
-                { "valor",comision.valor},
+                { "valor",comision.valor.ToFormatString()},
                 { "fecCobro",(comision.fecCobro != null) ? comision.fecCobro.ToString("yyyy-MM-dd HH:mm:ss") :null},
                 { "processed",comision.processed},
                 { "idwallet",comision.idwallet}

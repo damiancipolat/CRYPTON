@@ -46,16 +46,14 @@ namespace BL
             buyOrder.precio = orden.precio;
             buyOrder.fecOperacion = DateTime.Now;
 
-            /*
-
-
+            //Grabo la entidad.
             long orderId = new OrdenCompraDAL().save(buyOrder);
             buyOrder.idcompra = orderId;
 
             //Registro las comisiones.
-            new Commission().commisionate(buyOrder);
-
-            //Hago el intercambio
+            new Commission().commisionate(buyOrder, orden, buyer);
+            /*
+                                                      //Hago el intercambio
             this.swipe(orden,buyer);
 
             //cargo las notificaciones.

@@ -11,24 +11,24 @@ using BL;
 
 namespace BL
 {
-    public class ComisionBL
+    public class ComisionBL3
     {
         //Traigo el total de comisiones pendientes de una wallet.
         public double pendingAmmount(BilleteraBE wallet)
-        {
+        {/*
             List<ComisionBE> comisiones = new ComisionDAL().pendingByWallet(wallet);
             double result = 0 ;
 
             foreach (ComisionBE comision in comisiones)
                 result = result + comision.valor;
-
-            return result;
+            */
+            return 0;
 
         }
 
         //Registro comision para una venta.
         public int applyFromSell(OrdenVentaBE order, BilleteraBE wallet)
-        {
+        {/*
             //Traigo el costo de la operacion.
             double tax = new ComisionValorBL().getSellCost();
 
@@ -42,12 +42,13 @@ namespace BL
             comision.processed = 0;
             comision.idwallet = wallet.idwallet;
 
-            return new ComisionDAL().save(comision);
+            return new ComisionDAL().save(comision);*/
+            return 0;
         }
 
         //Registro comision para una compra.
         public int applyFromBuy(OrdenCompraBE order,BilleteraBE wallet)
-        {
+        {/*
             //Traigo el costo de la operacion.
             double tax = new ComisionValorBL().getBuyCost();
 
@@ -61,7 +62,8 @@ namespace BL
             comision.processed = 0;
             comision.idwallet = wallet.idwallet;
 
-            return new ComisionDAL().save(comision);
+            return new ComisionDAL().save(comision);*/
+            return 0;
         }
 
         public int save(ComisionBE comision)

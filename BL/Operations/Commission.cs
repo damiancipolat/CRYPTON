@@ -4,88 +4,79 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using BE.ValueObject;
 using SL;
 using BL;
+using DAL;
 
 namespace BL.Operations
 {
     public class Commission
     {
-        //Creacion / calculo de comision para venta.
-        private ComisionBE getForSell(OrdenVentaBE order)
+        //Traigo la comision del comprador.
+        private ComisionBE fromBuy(OrdenVentaBE2 orden, ClienteBE buyer)
         {
             //Traigo las billeteras del cliente.
-            Dictionary<string, BilleteraBE> clientWallets = new CuentaBL().traerBilleterasCliente(order.vendedor);
+            Dictionary<string, BilleteraBE2> clientWallets = new CuentaBL2().traerBilleterasCliente(buyer);
 
-            //Obtengo la billetera puntual de esta operacion.
-            BilleteraBE wallet = clientWallets[order.ofrece.cod];
+            //Traigo la billetera.
+            BilleteraBE2 wallet = clientWallets[orden.pide.cod];
 
-            if (wallet == null)
-                throw new Exception("Wallet not found for this money");
-
-            //Armo el dto de comision.
-            ComisionBE comx = new ComisionBE();
-            comx.idwallet = wallet.idwallet;
-            comx.moneda = order.ofrece;
-            comx.referencia = order.idorden;
-            comx.tipo_operacion = Operaciones.VENTA;
-
-            //Obtengo el valor de la comision.
-            ComisionValorBL comVL = new ComisionValorBL();            
-            comx.valor = comVL.calcTaxForPrice(order.cantidad, comVL.getSellCost());
-
-            //Registro como no procesado.
-            comx.processed = 0;
-
-            return comx;
-        }
-
-        //Creacion / calculo de comision para compra.
-        private ComisionBE getForBuy(OrdenCompraBE order)
-        {
-            //Traigo las billeteras del cliente.
-            Dictionary<string, BilleteraBE> clientWallets = new CuentaBL().traerBilleterasCliente(order.comprador);
-
-            //Obtengo la billetera puntual de esta operacion.
-            BilleteraBE wallet = clientWallets[order.moneda.cod];
-
-            if (wallet == null)
-                throw new Exception("Wallet not found for this money");
-
-            //Armo el dto de comision.
-            ComisionBE comx = new ComisionBE();
-            comx.idwallet = wallet.idwallet;
-            comx.moneda = order.moneda;
-            comx.referencia = order.idcompra;
-            comx.tipo_operacion = Operaciones.COMPRA;
+            //Creo la comision.
+            ComisionBE comision = new ComisionBE();
+            comision.tipo_operacion = Operaciones.COMPRA;
+            comision.referencia = orden.idorden;
+            comision.moneda = orden.pide;
+            comision.idwallet = wallet.idwallet;
+            comision.fecCobro = DateTime.Now;
+            comision.processed = 0;
 
             //Obtengo el valor de la comision.
             ComisionValorBL comVL = new ComisionValorBL();
-            //comx.valor = comVL.calcTaxForPrice(order.precio, comVL.getBuyCost());
+            comision.valor = new Money((orden.precio.getValue() * Convert.ToDecimal(comVL.getBuyCost())) / 100);
 
-            //Registro como no procesado.
-            comx.processed = 0;
+            return comision;
+        }
 
-            return comx;
+        //Traigo la comision del vendedor.
+        private ComisionBE fromSell(OrdenVentaBE2 orden, ClienteBE seller)
+        {
+            //Traigo las billeteras del cliente.
+            Dictionary<string, BilleteraBE2> clientWallets = new CuentaBL2().traerBilleterasCliente(seller);
+
+            //Traigo la billetera.
+            BilleteraBE2 wallet = clientWallets[orden.pide.cod];
+
+            //Creo la comision.
+            ComisionBE comision = new ComisionBE();
+            comision.tipo_operacion = Operaciones.VENTA;
+            comision.referencia = orden.idorden;
+            comision.moneda = orden.ofrece;
+            comision.idwallet = wallet.idwallet;
+            comision.fecCobro = DateTime.Now;
+            comision.processed = 0;
+
+            //Obtengo el valor de la comision.
+            ComisionValorBL comVL = new ComisionValorBL();
+            comision.valor = new Money((orden.cantidad.getValue() * Convert.ToDecimal(comVL.getSellCost())) / 100);
+
+            return comision;
         }
 
         //Creo las comisiones para una compra.
-        public Dictionary<ComisionBE, ComisionBE> commisionate(OrdenCompraBE orden)
+        public Dictionary<ComisionBE, ComisionBE> commisionate(OrdenCompraBE compra, OrdenVentaBE2 venta, ClienteBE buyer)
         {
-            //Creo comision para la venta.
-           /* ComisionBE comSell = this.getForSell(orden.ordenVenta);
+            //Obtengo la comision del vendedor.
+            ComisionBE comSell = this.fromSell(venta, venta.vendedor);
+            new ComisionDAL().save(comSell);
 
-            //Creo comision para la compra.
-            ComisionBE comBuy = this.getForBuy(orden);
+            //Obtengo la comision del comprador.
+            ComisionBE comBuy = this.fromBuy(venta,buyer);
+            new ComisionDAL().save(comBuy);            
 
-            //Registro las comisiones para la venta.
-            new ComisionBL().save(comSell);
-
-            //Registro las comisiones para la compra.
-            new ComisionBL().save(comBuy);*/
-
-            Dictionary<ComisionBE, ComisionBE> comDictionary = new Dictionary<ComisionBE, ComisionBE>();
-            //comDictionary.Add(comSell,comBuy);
+            //Retorno la lista de comisiones.
+            Dictionary <ComisionBE, ComisionBE> comDictionary = new Dictionary<ComisionBE, ComisionBE>();
+            comDictionary.Add(comSell, comBuy);
 
             return comDictionary;
         }
