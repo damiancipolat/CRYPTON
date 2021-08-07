@@ -377,7 +377,7 @@ namespace UI
 
         private void Main_menu_balance_Click(object sender, EventArgs e)
         {
-            CuentaBE cta = new CuentaBL().traerActiva(Session.GetInstance().getActiveClient());
+            CuentaBE cta = new CuentaBL2().traerActiva(Session.GetInstance().getActiveClient());
             new frm_wallets(cta.idcuenta).Show();
         }
 

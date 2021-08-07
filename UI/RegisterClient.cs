@@ -104,7 +104,7 @@ namespace UI
                 newClient = new ClienteBL().save(newClient);                
 
                 //Creo la cuenta del cliente y sus respectivas billeteras
-                new CuentaBL().crear(newClient);
+                new CuentaBL2().crear(newClient);
                 
                 //Mensaje de exito.
                 MessageBox.Show(

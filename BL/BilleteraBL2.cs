@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Globalization;
 using BL.Exceptions;
 using BE;
+using BE.ValueObject;
 using DAL;
 using IO;
 using IO.Responses;
@@ -23,42 +24,9 @@ namespace BL
 
         //CREACION --------------------------------------------------------------
 
-        //Obtengo las claves en base a la configuración.
-        private ApiKeysBE getEnvironment()
-        {
-            //Traigo el ambiente desde la configuración.
-            string envConfig = ConfigurationManager.AppSettings["Environment"];
-
-            //Consulto desde la bd.
-            return new ApiKeysDAL().findByCode(envConfig);
-
-        }
-
-        //Extraigo la clave en base a la moneda.
-        private string getKeys(ApiKeysBE keys, string money)
-        {
-            switch (money)
-            {
-                case "BTC":
-                    return keys.btc;
-                case "LTC":
-                    return keys.ltc;
-                case "DOG":
-                    return keys.dog;
-                default:
-                    return "";
-            }
-        }
-
         //Crea la billetera para criptomonedas usa block.io
         private BilleteraBE crearCrypto(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
         {
-            //Obtengo las claves de la red que corresponde la moneda.
-            string networkKey = this.getKeys(this.getEnvironment(), moneda.cod);
-            
-            if (networkKey == null)
-                throw new BusinessException("Keys not found");
-
             //Creo la wallet en block.io
             NewWallet created = new BlockIo().createWallet(moneda.cod);
             Bitacora.GetInstance().log("Se ha creado :"+moneda.cod+"/"+created.data.address,true);
@@ -109,38 +77,38 @@ namespace BL
         }
 
         //MODIFICACION-------------------------------------------------------------
-        public int update(BilleteraBE wallet)
+        public int update(BilleteraBE2 wallet)
         {
-            return new BilleteraDAL().update(wallet);
+            return new BilleteraDAL2().update(wallet);
         }
 
         //Esta operacion solo funciona si la moneda es ARS.
-        public int depositar(BilleteraBE target, double ammount)
+        public int depositar(BilleteraBE2 target, double ammount)
         {
             if (target.moneda.cod != "ARS")
                 throw new Exception("Operation allowed only to wallets in ARS");
 
             //Traigo la wallet.
-            BilleteraBE wallet = this.getById(target.idwallet, false);
+            BilleteraBE2 wallet = this.getById(target.idwallet, false);
 
             //Incremento el saldo.
-            wallet.saldo = wallet.saldo + ammount;
+            wallet.saldo = new Money(wallet.saldo.getValue() + Convert.ToDecimal(ammount));
 
             //Guardo.
             return this.update(wallet);
         }
 
         //Esta operacion solo funciona si la moneda es ARS.
-        public int extraer(BilleteraBE target, double ammount)
+        public int extraer(BilleteraBE2 target, double ammount)
         {
             if (target.moneda.cod != "ARS")
                 throw new Exception("Operation allowed only to wallets in ARS");
 
             //Traigo la wallet.
-            BilleteraBE wallet = this.getById(target.idwallet, false);
+            BilleteraBE2 wallet = this.getById(target.idwallet, false);
 
             //Incremento el saldo.
-            wallet.saldo = wallet.saldo - ammount;
+            wallet.saldo = new Money(wallet.saldo.getValue() - Convert.ToDecimal(ammount));
 
             //Guardo.
             return this.update(wallet);
@@ -151,12 +119,6 @@ namespace BL
         //Obtengo el balance de la cuenta y moneda..
         private string getBalance(string address, MonedaBE moneda)
         {
-            //Obtengo las claves de la red que corresponde la moneda.
-            string networkKey = this.getKeys(this.getEnvironment(), moneda.cod);
-
-            if (networkKey == null)
-                throw new BusinessException("Keys not found");
-
             //Consulto el balance en block.io.
             Balance balance = new BlockIo().getBalance(moneda.cod,address);
             Bitacora.GetInstance().log("Se ha consultado el balance:" + moneda.cod + "/" + address+", "+balance.data.available_balance, true);
@@ -165,10 +127,10 @@ namespace BL
         }
 
         //Obtengo info de la billetera, pudiendo tener el saldo actualizado o no.
-        public BilleteraBE getById(long id, bool updatedBalance=false)
+        public BilleteraBE2 getById(long id, bool updatedBalance=false)
         {
             //Recupero de la bd los datos, si no existe retorno null.
-            BilleteraBE wallet = new BilleteraDAL().findById(id);
+            BilleteraBE2 wallet = new BilleteraDAL2().findById(id);
 
             if (wallet == null)
                 return null;
@@ -178,26 +140,10 @@ namespace BL
             {
                 //Casteo el formato.
                 string balance = this.getBalance(wallet.direccion, wallet.moneda);
-                NumberFormatInfo provider = new NumberFormatInfo();
-                provider.NumberDecimalSeparator = ".";
-                provider.NumberGroupSeparator = ",";
-                
-                //Actualizo.
-                wallet.saldo = Convert.ToDouble(balance, provider);
-            }                
-
-            //Busco si esta wallet tiene cobro de comisiones pendientes y se la descuento.
-            //double pendingTaxes = (new ComisionBL().pendingAmmount(wallet));
-            //Debug.WriteLine("Pending taxes for wallet "+id+" - "+pendingTaxes.ToString());
+                wallet.saldo = new Money(balance);
+            }
 
             return wallet;
-        }
-
-        //Indica si la cuenta tiene X capacidad para cubrir un fondo.
-        public Boolean canCover(BilleteraBE wallet, float saldoCubrir)
-        {
-            BilleteraBE walletFounded = this.getById(wallet.idwallet, true);
-            return walletFounded.saldo > saldoCubrir;
         }
 
         //-------------------------------------------------------------------------

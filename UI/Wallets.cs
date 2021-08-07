@@ -28,7 +28,7 @@ namespace UI
         private void translateTexts()
         {
             //Labels.
-            this.Text= Idioma.GetInstance().translate("WALLET_BTN_CLOSE");
+            this.Text= Idioma.GetInstance().translate("WALLET_TITLE");
             this.wallet_btn_close.Text = Idioma.GetInstance().translate("WALLET_BTN_CLOSE");
             this.wallet_btn_refresh.Text = Idioma.GetInstance().translate("WALLET_BTN_REFRESH");
             this.wallet_title.Text = Idioma.GetInstance().translate("WALLET_TITLE");
@@ -46,7 +46,7 @@ namespace UI
             try
             {
                 //Cargo las billeteras.
-                CuentaBE cuenta = new CuentaBL().traer(this.accountId);
+                CuentaBE cuenta = new CuentaBL2().traer(this.accountId);
                 Dictionary<string, BilleteraBE2> wallets = new CuentaBL2().traerBilleteras(cuenta, true);
 
                 //Borro las filas.

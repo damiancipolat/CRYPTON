@@ -35,7 +35,7 @@ namespace BL
             string moneda = orden.ofrece.cod;
 
             //Traigo la billetera de ambas parte de la misma moneda.            
-            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer, false))[moneda].idwallet, false);
+            BilleteraBE2 buyerWallet = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(buyer, false))[moneda].idwallet, false);
 
             //Traigo el costo fijo de la plataforma.
             decimal sellerPlatformFee = ((Convert.ToDecimal(new ComisionValorBL().getSellCost()) * orden.cantidad.getValue()) / 100);
@@ -70,7 +70,7 @@ namespace BL
             string moneda = orden.ofrece.cod;
 
             //Traigo la billetera de ambas parte de la misma moneda.
-            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller, false))[moneda].idwallet, false);
+            BilleteraBE2 sellerWallet = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(seller, false))[moneda].idwallet, false);
 
             //Traigo el costo fijo de la plataforma.
             decimal buyerPlatformFee = ((Convert.ToDecimal(new ComisionValorBL().getSellCost()) * orden.cantidad.getValue()) / 100);

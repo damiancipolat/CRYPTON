@@ -15,7 +15,7 @@ using DAL;
 namespace BL.Operations
 {
     public class Swiper
-    {
+    {/*
         //Transferencia de cripto usando blockio
         private string cryptoTransfer(string origen, string destino, string money, double ammount)
         {
@@ -87,21 +87,21 @@ namespace BL.Operations
                 this.cryptoTransfer(buyerWallet.direccion, sellerWallet.direccion, originMoney, orden.precio);
             else
                 this.arsTransfer(sellerWallet, buyerWallet, orden.cantidad, orden.idorden);
-        }
+        }*/
 
         //Intercambio saldos entre 2 clientes en base a una orden de venta.
         public List<string> swipe(OrdenVentaBE orden, ClienteBE buyer)
-        {
+        {/*
             //Hago A->B
             this.swipePart1(orden, buyer);
 
             //Hago A<-B
             this.swipePart2(orden, buyer);
-
+            */
             //Retorno los id de transacciones.
             List<string> result = new List<string>();
-            result.Add("a");
-            result.Add("b");
+           /* result.Add("a");
+            result.Add("b");*/
 
             return result;
         }

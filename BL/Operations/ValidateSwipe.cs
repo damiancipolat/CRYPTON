@@ -51,8 +51,8 @@ namespace BL.Operations
             decimal sellerCost = this.getSellerCost(orden,buyer);
 
             //Traigo las wallets de ambas partes.
-            BilleteraBE2 sellerWallet = new BilleteraBL2().getById((new CuentaBL().traerBilleterasCliente(orden.vendedor, false))[orden.ofrece.cod].idwallet, true);
-            BilleteraBE2 buyerWallet = new BilleteraBL2().getById((new CuentaBL().traerBilleterasCliente(buyer, false))[orden.pide.cod].idwallet, true);
+            BilleteraBE2 sellerWallet = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(orden.vendedor, false))[orden.ofrece.cod].idwallet, true);
+            BilleteraBE2 buyerWallet = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(buyer, false))[orden.pide.cod].idwallet, true);
 
             Debug.WriteLine("buyer>"+buyerCost.ToString()+" -- "+buyerWallet.saldo.ToString());
             Debug.WriteLine("seller>" + sellerCost.ToString() + " -- " + sellerWallet.saldo.ToString());
