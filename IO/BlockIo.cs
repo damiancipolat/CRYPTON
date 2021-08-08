@@ -14,22 +14,26 @@ namespace IO
     public class BlockIo
     {
         private string host;
+        private string env;
 
         //todo
         public BlockIo()
         {
+            //Cargo config.
             this.host= ConfigurationManager.AppSettings["ApiHost"];
-        }
+            this.env = ConfigurationManager.AppSettings["Environment"];
 
-        private string numberFormat(string input)
-        {
-            return input.Replace(",", ".");
+            //Seteo mock host.
+            if (this.env == "DEVELOP")
+                this.host = this.host + "/mock";
+
+            Debug.WriteLine("!!!!!!!!!"+this.host);
         }
 
         public NewWallet createWallet(string money)
         {
             //Armo la url.
-            string url = this.host + "/" + money.ToUpper() + "/wallet";
+            string url = this.host+"/"+money.ToUpper()+"/wallet";
 
             //Preparo el body.
             var data = new StringContent("", Encoding.UTF8, "application/json");
@@ -51,7 +55,7 @@ namespace IO
         public Balance getBalance(string money, string address)
         {
             //Armo la url.
-            string url = this.host+ "/"+money.ToUpper()+"/wallet/"+address+"/balance";
+            string url = this.host+"/"+money.ToUpper()+"/wallet/"+address+"/balance";
 
             //Hago el request.
             var result = new Request().GET(url);
@@ -70,7 +74,7 @@ namespace IO
         public Transference makeTransference(string money, string from, string to, string ammount)
         {
             //Armo la url.
-            string url = this.host + "/" + money.ToUpper() + "/wallet/transfer";
+            string url = this.host+"/"+money.ToUpper()+"/wallet/transfer";
 
             //Armo el objeto body.
             TransferenceReq request = new TransferenceReq();
@@ -100,7 +104,7 @@ namespace IO
         public Fee estimateTransaction(string money, string to, string ammount)
         {
             //Armo la url.
-            string url = this.host + "/" + money.ToUpper() + "/wallet/fee";
+            string url = this.host+"/"+money.ToUpper()+"/wallet/fee";
 
             //Armo el objeto body.
             BalanceReq request = new BalanceReq();
