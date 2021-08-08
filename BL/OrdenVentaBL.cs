@@ -35,6 +35,16 @@ namespace BL
             return new OrdenVentaDAL().update(order);
         }
 
+        public int close(OrdenVentaBE2 order)
+        {
+            if (order == null)
+                throw new Exception("Order not found!");
+
+            //Doy de baja la orden.    
+            order.ordenEstado = OrdenEstado.VENDIDA;
+            return new OrdenVentaDAL2().update(order);
+        }
+
         public int delete(OrdenVentaBE venta)
         {
             return new OrdenVentaDAL().delete(venta.idorden);

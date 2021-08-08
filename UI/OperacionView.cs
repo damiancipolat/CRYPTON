@@ -39,8 +39,8 @@ namespace UI
 
             if (dr == DialogResult.Yes && this.orden!=null)
             {
-                try
-                {
+               // try
+                //{
                     //Proceso la compra.
                     new OrdenCompraBL().comprar(
                         this.orden, 
@@ -49,12 +49,12 @@ namespace UI
                     );
 
                     MessageBox.Show(Idioma.GetInstance().translate("BUY_SUCCESS"));
-                }
+               /* }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.Message);
                     MessageBox.Show(ex.Message);
-                }
+                }*/
             }
         }
 

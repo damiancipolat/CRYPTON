@@ -408,21 +408,7 @@ namespace UI
 
         private void Button1_Click_9(object sender, EventArgs e)
         {
-            BilleteraBE2 wallet = new BilleteraBL2().getById(4, true);
-            Debug.WriteLine("saldo "+wallet.saldo.ToString());
-            /*
-            Balance response = new BlockIo().getBalance("BTC", "2NBbkWNmuHWGTKUCrtLsgknnS1o3KLiH7kH");
-            Debug.WriteLine("-->" + response.data.available_balance);
-            */
-
-            /*
-            Fee response = new BlockIo().estimateTransaction("BTC", "2NBbkWNmuHWGTKUCrtLsgknnS1o3KLiH7kH", "0.00001671") ;
-            Debug.WriteLine("-->" + response.data.estimated_network_fee);
-            */
-            /*
-            NewWallet response = new BlockIo().createWallet("BTC");
-            Debug.WriteLine("-->" + response.data.address);
-            */
+            ClienteBE client = Session.GetInstance().getActiveClient();
         }
 
         private void Button3_Click(object sender, EventArgs e)

@@ -91,6 +91,7 @@ insert into permiso(nombre,permiso) values('Alta de usuarios','P');
 insert into permiso(nombre,permiso) values('Gestion de usuarios','P');
 insert into permiso(nombre,permiso) values('Gestion de permisos','P');
 insert into permiso(nombre,permiso) values('Gestion de idiomas','P');
+insert into permiso(nombre,permiso) values('Notificaciones','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('Cliente',null);
@@ -110,9 +111,6 @@ insert into permiso_permiso values(12,6);
 insert into permiso_permiso values(12,7);
 insert into permiso_permiso values(12,8);
 insert into permiso_permiso values(12,9);
-
-select * from permiso_permiso
-select * from permiso
 
 --Tabla de registro de backups.
 create table admin_backup
@@ -352,7 +350,7 @@ create table orden_compra(
 	idorden bigint,
 	fecOperacion datetime,
 	comprador bigint,
-	cantidad int,
+	cantidad varchar(12),
 	moneda varchar(10),
 	deleted datetime
 );

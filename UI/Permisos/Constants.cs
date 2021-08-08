@@ -12,7 +12,7 @@ namespace UI.Permisos
         RECOMENDATIONS=2,
         MY_SELLS=3,
         MY_BALANCE=4,
-        MY_NOTIFICATIONS=0,
+        MY_NOTIFICATIONS=16,
         PUBLISH=5,
         ADD_USER=6,
         MANAGE_USER=7,

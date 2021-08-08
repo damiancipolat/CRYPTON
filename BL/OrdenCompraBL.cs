@@ -40,7 +40,7 @@ namespace BL
             //Armo la orden de compra.
             OrdenCompraBE buyOrder = new OrdenCompraBE();
             buyOrder.comprador = buyer;
-            buyOrder.cantidad = orden.cantidad;
+            buyOrder.cantidad = total;
             buyOrder.moneda = orden.pide;
             buyOrder.ordenVenta = orden;
             buyOrder.fecOperacion = DateTime.Now;
@@ -51,14 +51,19 @@ namespace BL
 
             //Registro las comisiones.
             new Commission().commisionate(buyOrder, orden, buyer);
-            /*
-                                                      //Hago el intercambio
-            this.swipe(orden,buyer);
+
+            //Marco como vendida la orden de venta.
+            new OrdenVentaBL2().close(orden);
 
             //cargo las notificaciones.
             new NotificateBuySuccess().notificate(buyOrder);
+            
+            /*
+              this.swipe(orden,buyer);
+              */
 
-            return orderId;*/
+
+            /*return orderId;*/
             return 1;
         }
     }
