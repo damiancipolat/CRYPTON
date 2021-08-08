@@ -11,10 +11,10 @@ namespace BE
         public Int64 idtransf;
         public DateTime fecProc;
         public ClienteBE cliente;
-        public BilleteraBE origen;
-        public BilleteraBE destino;
-        public double valor;
+        public BilleteraBE2 origen;
+        public BilleteraBE2 destino;
+        public decimal valor;
         public MonedaBE moneda;
-        public int idorden;
+        public long idorden;
     }
 }

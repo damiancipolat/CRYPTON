@@ -81,21 +81,61 @@ namespace BL
         {
             return new BilleteraDAL2().update(wallet);
         }
-
-        //Esta operacion solo funciona si la moneda es ARS.
-        public int depositar(BilleteraBE2 target, double ammount)
+        
+        //Descuenta de una billetera un valor, solo para ars.
+        private int descontarARS(BilleteraBE2 wallet, decimal ammount)
         {
-            if (target.moneda.cod != "ARS")
-                throw new Exception("Operation allowed only to wallets in ARS");
+            //Valido si es la misma moneda.
+            if (wallet.moneda.cod != "ARS")
+                throw new Exception("Operation allow onyl to ars acconut");
 
-            //Traigo la wallet.
-            BilleteraBE2 wallet = this.getById(target.idwallet, false);
+            //Valido si hay suficiente saldo.
+            if (wallet.saldo.getValue()<ammount)
+                throw new Exception("Operation allow onyl to ars account");
 
-            //Incremento el saldo.
-            wallet.saldo = new Money(wallet.saldo.getValue() + Convert.ToDecimal(ammount));
+            //Actualizo el saldo.
+            decimal value = wallet.saldo.getValue() - ammount;
+            wallet.saldo = new Money(value);
+
+            return this.update(wallet);
+        }
+
+        //Registro la transferencia.
+        private int recordTransference(long opId, ClienteBE cliente,BilleteraBE2 origen, BilleteraBE2 destino, MonedaBE moneda, decimal ammount)
+        {
+            //Armo la nueva transferencia.
+            TransferenciasBE transfer = new TransferenciasBE();
+
+            transfer.fecProc = DateTime.Now;
+            transfer.moneda = origen.moneda;
+            transfer.cliente = cliente;
+            transfer.origen = origen;
+            transfer.destino = destino;
+            transfer.valor = ammount;
+            transfer.idorden = opId;
 
             //Guardo.
-            return this.update(wallet);
+            return new TransferenciaDAL().save(transfer);
+        }
+
+        //Esta operacion solo funciona si la moneda es ARS.
+        public int transferir(long tranId, BilleteraBE2 origen, BilleteraBE2 destino, Money ammount)
+        {
+            //Valido tipo de monedas.
+            if (origen.moneda.cod != destino.moneda.cod)
+                throw new Exception("Unable to make transference, the money type need to be the same");
+
+            //Obtengo la moneda.
+            MonedaBE moneda = origen.moneda;
+
+            //Hago el movimiento en base al tipo de cuenta.
+            if (moneda.cod == "ARS")
+                this.descontarARS(origen, ammount.getValue());
+            else
+                new BlockIo().makeTransference(moneda.cod, origen.direccion, destino.direccion, ammount.ToFormatString());
+
+            //Grabo la transferencia.
+            return this.recordTransference(tranId, origen.cliente, origen, destino,moneda, ammount.getValue());
         }
 
         //Esta operacion solo funciona si la moneda es ARS.
@@ -147,7 +187,6 @@ namespace BL
         }
 
         //-------------------------------------------------------------------------
-
         public void transferir(BilleteraBE origen, BilleteraBE destino, float ammount) { }
         public float traerSaldo(BilleteraBE wallet) { return 0; }
         public void traerOperaciones(BilleteraBE wallet) { }
