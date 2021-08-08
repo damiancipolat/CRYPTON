@@ -315,7 +315,7 @@ create table comision_operacion_valor
 	descrip varchar(100),
 	valor float
 );
-select * from comision_operacion_valor
+
 insert into comision_operacion_valor(descrip,valor) values('Compra',0.5);
 insert into comision_operacion_valor(descrip,valor) values('Venta',0.5);
 insert into comision_operacion_valor(descrip,valor) values('Extraccion',2.5);
@@ -391,7 +391,8 @@ insert into idiomas(code,descripcion) values('ASG','Asgardiano');
 --Tabla de palabras
 create table palabras
 (
-	word varchar(50) primary key
+	word varchar(50) primary key,
+	fecCreation datetime
 );
 
 insert into palabras values('ADDRESS');
@@ -1112,18 +1113,3 @@ insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_READY_VALUE',
 insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_PENDING_VALUE','Pending balance');
 insert into idioma_palabras(code,clave,valor) values('ENG','MY_BUYS','My buys');
 insert into idioma_palabras(code,clave,valor) values('ENG','BUY_DATE','Buy date');
-
-        public Int64 idcompra;
-        public OrdenVentaBE2 ordenVenta;
-        public DateTime fecOperacion;
-        public ClienteBE comprador;        
-        public Money cantidad;
-        public MonedaBE moneda;
-
-
-id
-fecCompra
-cantidad
-ofrece
-precio
-pide

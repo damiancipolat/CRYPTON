@@ -175,7 +175,7 @@ namespace DAL.Idiomas
         //Agrego un nuevo valor en el template.
         public int addTemplateKey(string key) 
         {
-            string sql = "insert into palabras(word) values('" + key + "');";
+            string sql = "insert into palabras(word,fecCreation) values('" + key + "',GETDATE()); ";
             return this.getInsert().query(sql);
         }
 
