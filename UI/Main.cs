@@ -414,10 +414,20 @@ namespace UI
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            BilleteraBE2 b1 = new BilleteraBL2().getById(4);
-            BilleteraBE2 b2 = new BilleteraBL2().getById(8);
+            //Cargo las billeteras.
+            CuentaBE cuenta = new CuentaBL2().traer(5);
+            Dictionary<string, BilleteraBE2> wallets = new CuentaBL2().traerBilleteras(cuenta, true);
 
-            new BilleteraBL2().transferir(123485, b1, b2, new Money("0.01701671"));
+            BilleteraBE2 wallet = wallets["ARS"];
+            Debug.WriteLine(wallet.moneda.cod+" "+wallet.direccion+" "+wallet.saldo.ToString()+"  "+wallet.saldo_pending.ToString());
+
+
+            /*
+                    wallets["ARS"].moneda.cod,
+                    wallets["ARS"].direccion,
+                    wallets["ARS"].saldo.ToString(),
+                    wallets["ARS"].saldo_pending.ToString()             
+             */
         }
 
         private void Main_menu_operate_Click(object sender, EventArgs e)

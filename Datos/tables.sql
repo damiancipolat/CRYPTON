@@ -246,7 +246,7 @@ create table billetera(
 	moneda varchar(10),
 	direccion varchar(50),
 	fecCreacion datetime,
-	saldo float,
+	saldo varchar(12=,
 	deleted datetime
 );
 

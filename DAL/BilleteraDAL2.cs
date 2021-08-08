@@ -39,7 +39,7 @@ namespace DAL
             //Si la moneda no es crypto cargo el saldo.
             if (wallet.moneda.cod == "ARS")
             {
-                wallet.saldo = new Money((double)mapa["saldo"]);
+                wallet.saldo = new Money(mapa["saldo"]);
                 wallet.saldo_pending = new Money("0");
             }
 
@@ -103,7 +103,7 @@ namespace DAL
                 {"idcuenta", wallet.cuenta.idcuenta},
                 {"direccion", wallet.direccion},
                 {"fecCreacion", wallet.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss.fff")},
-                {"saldo", wallet.saldo.getValue()}
+                {"saldo", wallet.saldo.ToFormatString()}
             };
 
             return this.getInsert().insertSchema(schema, "billetera", true);
@@ -124,7 +124,7 @@ namespace DAL
                 {"moneda", wallet.moneda.cod},
                 {"direccion", wallet.direccion},
                 {"fecCreacion", wallet.fecCreacion},
-                {"saldo", wallet.saldo.getValue()}
+                {"saldo", wallet.saldo.ToFormatString()}
             };
 
             return this.getUpdate().updateSchemaById(schema, "billetera", "idwallet", wallet.idwallet);

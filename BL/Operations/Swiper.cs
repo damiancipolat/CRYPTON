@@ -15,95 +15,39 @@ using DAL;
 namespace BL.Operations
 {
     public class Swiper
-    {/*
-        //Transferencia de cripto usando blockio
-        private string cryptoTransfer(string origen, string destino, string money, double ammount)
+    {
+        private int swipePart1(OrdenVentaBE2 orden, ClienteBE buyer)
         {
-            //Casteo el formato de la moneda.
-            string moneyFormatedA = ammount.ToString("0.000000000").Replace(",", ".");
+            string moneda = orden.ofrece.cod;
 
-            //Hago el request.
-            Transference result = new BlockIo().makeTransference(money,origen, destino, moneyFormatedA);
-            Debug.WriteLine("Transference" + result.block_io_transference.data.network + "   " + result.block_io_transference.data.txid);
+            //Traigo las billetersa de esta parte.
+            BilleteraBE2 origin = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(orden.vendedor, false))[moneda].idwallet, false);
+            BilleteraBE2 destiny = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(buyer, false))[moneda].idwallet, false);
 
-            return result.block_io_transference.data.txid;
+            return new BilleteraBL2().transferir(orden.idorden, origin, destiny, orden.cantidad);
         }
 
-        //Transferencia desde una cuenta en ars a la otra.
-        private int arsTransfer(BilleteraBE origen, BilleteraBE destino, double ammount, long idoperacion)
+        private int swipePart2(OrdenVentaBE2 orden, ClienteBE buyer)
         {
-            //Armo la nueva transferencia.
-            TransferenciasBE transfer = new TransferenciasBE();
+            string moneda = orden.pide.cod;
 
-            transfer.moneda = origen.moneda;
-            transfer.cliente = origen.cliente;
-            transfer.origen = origen;
-            transfer.destino = destino;
-            transfer.valor = ammount;
-            //transfer.idorden = idoperacion;
+            //Traigo las billetersa de esta parte.
+            BilleteraBE2 origin = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(orden.vendedor, false))[moneda].idwallet, false);
+            BilleteraBE2 destiny = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(buyer, false))[moneda].idwallet, false);
 
-            //Guardo.
-            int transfId = new TransferenciaDAL().save(transfer);
-
-            //Actualizo saldos.
-            BilleteraBL walletBiz = new BilleteraBL();
-
-            //Extraigo la cantidad de $ del origen.
-            walletBiz.extraer(origen, ammount);
-
-            //La agrego en el despinto.
-            walletBiz.depositar(destino,ammount);
-
-            return transfId;
+            return new BilleteraBL2().transferir(orden.idorden, origin, destiny, orden.precio);
         }
-
-        //Hago las transferencias cruzadas A->B.
-        private void swipePart1(OrdenVentaBE orden, ClienteBE buyer)
-        {
-            //Preparo el primer lado de la transferencia A----->B
-            ClienteBE seller = orden.vendedor;
-            string originMoney = orden.ofrece.cod;
-
-            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[originMoney].idwallet, true);
-            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[originMoney].idwallet, true);
-
-            if (orden.ofrece.cod != "ARS")
-                this.cryptoTransfer(sellerWallet.direccion, buyerWallet.direccion, originMoney, orden.cantidad);
-            else
-                this.arsTransfer(sellerWallet,buyerWallet, orden.cantidad, orden.idorden);
-        }
-
-        //Hago las transferencias cruzadas B->A.
-        private void swipePart2(OrdenVentaBE orden, ClienteBE buyer)
-        {
-            //Preparo el primer lado de la transferencia B--->A
-            ClienteBE seller = orden.vendedor;
-            string originMoney = orden.pide.cod;
-
-            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller))[originMoney].idwallet, true);
-            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer))[originMoney].idwallet, true);
-            
-            if (orden.ofrece.cod != "ARS")
-                this.cryptoTransfer(buyerWallet.direccion, sellerWallet.direccion, originMoney, orden.precio);
-            else
-                this.arsTransfer(sellerWallet, buyerWallet, orden.cantidad, orden.idorden);
-        }*/
 
         //Intercambio saldos entre 2 clientes en base a una orden de venta.
-        public List<string> swipe(OrdenVentaBE orden, ClienteBE buyer)
-        {/*
-            //Hago A->B
-            this.swipePart1(orden, buyer);
+        public void swipe(OrdenVentaBE2 orden, ClienteBE buyer)
+        {
+            BilleteraBL2 biz = new BilleteraBL2();
 
-            //Hago A<-B
+            //Transfiero de ORIGEN->DESTINO la 1ra moneda.
+            this.swipePart1(orden,buyer);
+
+            //Transfiero de ORIGEN<-DESTINO la 2da moneda.
             this.swipePart2(orden, buyer);
-            */
-            //Retorno los id de transacciones.
-            List<string> result = new List<string>();
-           /* result.Add("a");
-            result.Add("b");*/
-
-            return result;
         }
 
     }

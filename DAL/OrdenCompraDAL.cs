@@ -113,7 +113,7 @@ namespace DAL
                 { "fecOperacion",compra.fecOperacion},
                 { "comprador",compra.comprador.idcliente},
                 { "moneda",compra.moneda.cod},
-                { "cantidad",compra.cantidad.ToString()}
+                { "cantidad",compra.cantidad.ToFormatString()}
             };
 
             return this.getInsert().insertSchema(schema, "orden_compra", true);

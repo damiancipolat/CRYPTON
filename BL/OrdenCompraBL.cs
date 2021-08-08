@@ -24,12 +24,6 @@ namespace BL
             return new EstimateTaxesForBuy().getTaxesToBuy(orden,buyer);
         }                
 
-        //Hago swipe.
-        public List<string> swipe(OrdenVentaBE orden, ClienteBE buyer)
-        {
-            return new Swiper().swipe(orden,buyer);
-        }
-
         //Busco por cliente.
         public List<OrdenCompraBE> findByClient(ClienteBE cliente)
         {
@@ -58,19 +52,16 @@ namespace BL
             //Registro las comisiones.
             new Commission().commisionate(buyOrder, orden, buyer);
 
+            //Hago el intercambio.
+            new Swiper().swipe(orden, buyer);
+
             //Marco como vendida la orden de venta.
             new OrdenVentaBL2().close(orden);
 
             //cargo las notificaciones.
             new NotificateBuySuccess().notificate(buyOrder);
             
-            /*
-              this.swipe(orden,buyer);
-              */
-
-
-            /*return orderId;*/
-            return 1;
+            return orderId;
         }
     }
 }

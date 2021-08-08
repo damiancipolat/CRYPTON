@@ -43,14 +43,17 @@ namespace UI
         //Cargo los saldos de las billeteras.
         private void loadWallets()
         {
-            try
-            {
+             try
+             {
                 //Cargo las billeteras.
                 CuentaBE cuenta = new CuentaBL2().traer(this.accountId);
                 Dictionary<string, BilleteraBE2> wallets = new CuentaBL2().traerBilleteras(cuenta, true);
 
                 //Borro las filas.
                 this.frm_wallet_list.Rows.Clear();
+
+                BilleteraBE2 wallet = wallets["BTC"];
+                Debug.WriteLine(wallet.moneda.cod + " " + wallet.direccion + " " + wallet.saldo.ToString() + "  " + wallet.saldo_pending.ToString());
 
                 //Agrego ARS
                 Debug.WriteLine("Load ARS");

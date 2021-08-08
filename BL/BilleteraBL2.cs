@@ -204,7 +204,9 @@ namespace BL
             {
                 //Casteo el formato.
                 string balance = this.getBalance(wallet.direccion, wallet.moneda);
+                Debug.WriteLine("!######################" + balance);
                 wallet.saldo = new Money(balance);
+                wallet.saldo_pending = new Money("0");
             }
 
             return wallet;
