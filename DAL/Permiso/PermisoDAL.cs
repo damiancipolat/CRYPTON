@@ -13,6 +13,30 @@ namespace DAL.Permiso
 {
     public class PermisoDAL
     {
+        //Busco dentro del arbol por nombre.
+        private Componente GetComponentByName(string name, IList<Componente> lista)
+        {
+            Componente component = lista != null ? lista.Where(i => i.Nombre.Equals(name)).FirstOrDefault() : null;
+
+            if (component == null && lista != null)
+            {
+                foreach (var c in lista)
+                {
+                    var l = GetComponentByName(name, c.Hijos);
+                    if (l != null && l.Nombre == name)
+                        return l;
+                    else
+                    {
+                        if (l != null)
+                            return GetComponentByName(name, l.Hijos);
+                    }
+                }
+            }
+
+            return component;
+        }
+
+        //Busco dentro del arbol por id.
         private Componente GetComponent(int id, IList<Componente> lista)
         {
             Componente component = lista != null ? lista.Where(i => i.Id.Equals(id)).FirstOrDefault() : null;
@@ -132,6 +156,12 @@ namespace DAL.Permiso
         public bool hasPermission(IList<Componente> lista, int id)
         {
             return this.GetComponent(id, lista)!=null;
+        }
+
+        //Revisa si el codigo de permiso existe en la list recursivamente busca por nombre.
+        public bool hasPermissionByName(IList<Componente> lista, string name)
+        {
+            return this.GetComponentByName(name, lista) != null;
         }
     }
 }

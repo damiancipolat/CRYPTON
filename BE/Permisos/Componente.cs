@@ -14,7 +14,6 @@ namespace BE.Permisos
         public abstract IList<Componente> Hijos { get; }
         public abstract void AgregarHijo(Componente c);
         public abstract void VaciarHijos();
-
         public override string ToString()
         {
             return Nombre;

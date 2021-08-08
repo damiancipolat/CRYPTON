@@ -70,7 +70,7 @@ CREATE TABLE permiso(
 	nombre varchar(100) NULL,	
 	permiso varchar(50) NULL
 );
-select * from permiso
+
 CREATE TABLE permiso_permiso(
 	id_permiso_padre int NULL,
 	id_permiso_hijo int NULL
@@ -80,6 +80,8 @@ CREATE TABLE usuarios_permisos(
 	id_usuario int not null,
 	id_permiso int not null
 );
+
+select * from permiso
 
 --Permisos de cliente
 insert into permiso(nombre,permiso) values('Buscar ofertas','P');

@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 
 namespace UI.Permisos
 {
-    enum PermisoCodes:int
+    enum PermisoCodes
     {
-        SEARCH=1,
-        RECOMENDATIONS=2,
-        MY_SELLS=3,
-        MY_BUYS = 17,
-        MY_BALANCE =4,
-        MY_NOTIFICATIONS=16,
-        PUBLISH=5,
-        ADD_USER=6,
-        MANAGE_USER=7,
-        MANAGE_LANGUAGE=8,
-        IT = 12
+        SEARCH_OFFERS,
+        RECOMENDATIONS,
+        MY_PUBLICATIONS,
+        MY_BALANCE,
+        PUBLISH_OFFER,
+        CREATE_USER,
+        MANAGE_USERS,
+        MANAGE_PERMISSION,
+        MANAGE_LANGUAGES,
+        CLIENTS,
+        IT,
+        EMPLOYEES,
+        NOTIFICATIONS,
+        MY_BUYS
     }
 }

@@ -63,10 +63,10 @@ namespace BL.Permisos
         }
 
         //Revisa si el permiso esta dentro de la lista.
-        public bool hasPermission(IList<Componente> permisos, int id)
+        public bool hasPermission(IList<Componente> permisos, string name)
         {
-            Debug.WriteLine("Check permssion:"+id.ToString());
-            return new PermisoDAL().hasPermission(permisos, id);
+            Debug.WriteLine("Check permssion:"+name);
+            return new PermisoDAL().hasPermissionByName(permisos, name);
         }
     }
 }

@@ -144,13 +144,14 @@ namespace UI
 
             //Set items if the code exist in the list.
             this.main_menu_operate.Visible = true;
-            this.main_menu_search.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.SEARCH);
-            this.main_menu_recomendations.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.RECOMENDATIONS);
-            this.main_menu_my_sells.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_SELLS);
-            this.main_menu_balance.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_BALANCE);
-            this.main_menu_notifications.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_NOTIFICATIONS);
-            this.main_menu_publish.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.PUBLISH);
-            this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_BUYS);          
+            this.main_menu_search.Visible = permBL.hasPermission(permissions,PermisoCodes.SEARCH_OFFERS.ToString());
+            this.main_menu_recomendations.Visible = permBL.hasPermission(permissions, PermisoCodes.RECOMENDATIONS.ToString());
+            this.main_menu_my_sells.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_PUBLICATIONS.ToString());
+            this.main_menu_balance.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_BALANCE.ToString());
+            this.main_menu_notifications.Visible = permBL.hasPermission(permissions, PermisoCodes.NOTIFICATIONS.ToString());
+            this.main_menu_publish.Visible = permBL.hasPermission(permissions, PermisoCodes.PUBLISH_OFFER.ToString());
+            this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_BUYS.ToString());
+            this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_BUYS.ToString());
         }
 
         //Manejo el menu de empleado.
@@ -160,10 +161,10 @@ namespace UI
             PermisoBL permBL = new PermisoBL();
             
             //It menu
-            this.main_menu_it.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.IT);
-            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.ADD_USER);
-            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MANAGE_USER);
-            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MANAGE_LANGUAGE);
+            this.main_menu_it.Visible = permBL.hasPermission(permissions, PermisoCodes.IT.ToString());
+            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, PermisoCodes.CREATE_USER.ToString());
+            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_USERS.ToString());
+            this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_LANGUAGES.ToString());
         }
 
         //Oculto menu en base a los permisos.
