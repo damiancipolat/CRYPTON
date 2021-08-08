@@ -103,7 +103,7 @@ namespace DAL
                 {"idcuenta", wallet.cuenta.idcuenta},
                 {"direccion", wallet.direccion},
                 {"fecCreacion", wallet.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss.fff")},
-                {"saldo", wallet.saldo}
+                {"saldo", wallet.saldo.getValue()}
             };
 
             return this.getInsert().insertSchema(schema, "billetera", true);
@@ -124,7 +124,7 @@ namespace DAL
                 {"moneda", wallet.moneda.cod},
                 {"direccion", wallet.direccion},
                 {"fecCreacion", wallet.fecCreacion},
-                {"saldo", wallet.saldo}
+                {"saldo", wallet.saldo.getValue()}
             };
 
             return this.getUpdate().updateSchemaById(schema, "billetera", "idwallet", wallet.idwallet);

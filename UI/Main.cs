@@ -414,12 +414,10 @@ namespace UI
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            MonedaBE a = new MonedaBL2().getByCode("DOG");
-            MonedaBE b = new MonedaBL2().getByCode("ARS");
+            BilleteraBE2 b1 = new BilleteraBL2().getById(4);
+            BilleteraBE2 b2 = new BilleteraBL2().getById(8);
 
-            Money value = new Money("0.00003090");
-            decimal final = new MonedaBL2().convertMoney(a,b,value.getValue());
-            Debug.WriteLine("resultad--->" + final.ToString());
+            new BilleteraBL2().transferir(123485, b1, b2, new Money("0.01701671"));
         }
 
         private void Main_menu_operate_Click(object sender, EventArgs e)

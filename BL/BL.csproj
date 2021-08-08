@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BilleteraBL2.cs" />
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CuentaBL2.cs" />
     <Compile Include="MonedaBL.cs" />
@@ -71,7 +70,7 @@
     <Compile Include="TaxManager.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="ReportingBL.cs" />
-    <Compile Include="BilleteraBL.cs" />
+    <Compile Include="BilleteraBL2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

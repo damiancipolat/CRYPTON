@@ -288,7 +288,7 @@ insert into solic_estados(descrip) values('Rechazada');
 create table transferencias(
 	idtransf bigint identity(1,1) primary key,
 	fecProc datetime,
-	idcliente bigint,
+	cliente bigint,
 	origen bigint,
 	destino bigint,
 	valor float,
