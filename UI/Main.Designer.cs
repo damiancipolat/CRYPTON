@@ -356,6 +356,7 @@
             this.main_menu_my_buys.Name = "main_menu_my_buys";
             this.main_menu_my_buys.Size = new System.Drawing.Size(281, 26);
             this.main_menu_my_buys.Text = "main_menu_my_buys";
+            this.main_menu_my_buys.Click += new System.EventHandler(this.Main_menu_my_buys_Click);
             // 
             // frm_main
             // 

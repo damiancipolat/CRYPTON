@@ -82,6 +82,12 @@
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="MyBuysFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyBuysFrm.Designer.cs">
+      <DependentUpon>MyBuysFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Permisos\ComponentCrudFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </Compile>
     <EmbeddedResource Include="BuscadorOfertas.resx">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyBuysFrm.resx">
+      <DependentUpon>MyBuysFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Permisos\ComponentCrudFrm.resx">
       <DependentUpon>ComponentCrudFrm.cs</DependentUpon>
@@ -387,6 +396,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wallet1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-bag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

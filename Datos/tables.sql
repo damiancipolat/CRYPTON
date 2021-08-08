@@ -629,6 +629,7 @@ insert into palabras values('WALLET_READY_VALUE');
 insert into palabras values('WALLET_PENDING_VALUE');
 insert into palabras values('OP_TOTAL');
 insert into palabras values('MY_BUYS');
+insert into palabras values('BUY_DATE');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -877,6 +878,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','WALLET_ADDRESS','Dire
 insert into idioma_palabras(code,clave,valor) values('ES','WALLET_READY_VALUE','Saldo disponible');
 insert into idioma_palabras(code,clave,valor) values('ES','WALLET_PENDING_VALUE','Saldo pendiente');
 insert into idioma_palabras(code,clave,valor) values('ES','MY_BUYS','Mis compras');
+insert into idioma_palabras(code,clave,valor) values('ES','BUY_DATE','Fecha de compra');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1109,4 +1111,19 @@ insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_ADDRESS','Add
 insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_READY_VALUE','Available balance');
 insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_PENDING_VALUE','Pending balance');
 insert into idioma_palabras(code,clave,valor) values('ENG','MY_BUYS','My buys');
+insert into idioma_palabras(code,clave,valor) values('ENG','BUY_DATE','Buy date');
 
+        public Int64 idcompra;
+        public OrdenVentaBE2 ordenVenta;
+        public DateTime fecOperacion;
+        public ClienteBE comprador;        
+        public Money cantidad;
+        public MonedaBE moneda;
+
+
+id
+fecCompra
+cantidad
+ofrece
+precio
+pide

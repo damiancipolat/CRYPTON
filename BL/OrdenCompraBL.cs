@@ -30,6 +30,12 @@ namespace BL
             return new Swiper().swipe(orden,buyer);
         }
 
+        //Busco por cliente.
+        public List<OrdenCompraBE> findByClient(ClienteBE cliente)
+        {
+            return new OrdenCompraDAL().findByClient(cliente);
+        }
+
         //Hago la operacion de comprar.
         public long comprar(OrdenVentaBE2 orden, ClienteBE buyer, Money total)
         {

@@ -28,8 +28,10 @@ namespace DAL
             //Actualizo el tipo de usuario que es un enum.            
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
 
-            //Cambio los campos de moneda.
+            //Bindeo los campos a objetos.
             ordenCompra.cantidad = new Money((string)mapa["cantidad"]);
+            ordenCompra.ordenVenta = new OrdenVentaDAL2().findById((long)mapa["idorden"]);
+            ordenCompra.moneda = new MonedaDAL().findByCode((string)mapa["moneda"]);
 
             return ordenCompra;
 
@@ -109,7 +111,7 @@ namespace DAL
             var schema = new Dictionary<string, Object>{
                 { "idorden",compra.ordenVenta.idorden},
                 { "fecOperacion",compra.fecOperacion},
-                { "comprador",compra.comprador.idusuario},
+                { "comprador",compra.comprador.idcliente},
                 { "moneda",compra.moneda.cod},
                 { "cantidad",compra.cantidad.ToString()}
             };
@@ -130,7 +132,7 @@ namespace DAL
             var schema = new Dictionary<string, Object>{
                 { "idorden",compra.ordenVenta.idorden},
                 { "fecOperacion",compra.fecOperacion},
-                { "comprador",compra.comprador.idusuario},
+                { "comprador",compra.comprador.idcliente},
                 { "moneda",compra.moneda.cod},
                 { "cantidad",compra.cantidad.ToString()}
             };

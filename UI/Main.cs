@@ -142,8 +142,6 @@ namespace UI
             List<Componente> permissions = Session.GetInstance().getPermissions();
             PermisoBL permBL = new PermisoBL();
 
-            Debug.WriteLine("------+++"+ permBL.hasPermission(permissions, (int)PermisoCodes.SEARCH).ToString());
-
             //Set items if the code exist in the list.
             this.main_menu_operate.Visible = true;
             this.main_menu_search.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.SEARCH);
@@ -426,6 +424,11 @@ namespace UI
         private void Main_menu_operate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Main_menu_my_buys_Click(object sender, EventArgs e)
+        {
+            new MyBuysFrm().Show();
         }
     }
 }

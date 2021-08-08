@@ -243,6 +243,16 @@ namespace UI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shopping_bag {
+            get {
+                object obj = ResourceManager.GetObject("shopping-bag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wall_clock {
             get {
                 object obj = ResourceManager.GetObject("wall-clock", resourceCulture);
