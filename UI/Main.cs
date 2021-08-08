@@ -91,6 +91,7 @@ namespace UI
             this.main_menu_notifications.Text= Idioma.GetInstance().translate("MAIN_MENU_NOTIFICATIONS");
             this.main_menu_balance.Text = Idioma.GetInstance().translate("MAIN_MENU_MY_WALLETS");
             this.main_menu_publish.Text= Idioma.GetInstance().translate("MAIN_MENU_SELL");
+            this.main_menu_my_buys.Text= Idioma.GetInstance().translate("MY_BUYS");
 
             //bindeo menuit
             this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
@@ -150,7 +151,8 @@ namespace UI
             this.main_menu_my_sells.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_SELLS);
             this.main_menu_balance.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_BALANCE);
             this.main_menu_notifications.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_NOTIFICATIONS);
-            this.main_menu_publish.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.PUBLISH);            
+            this.main_menu_publish.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.PUBLISH);
+            this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, (int)PermisoCodes.MY_BUYS);          
         }
 
         //Manejo el menu de empleado.
@@ -419,6 +421,11 @@ namespace UI
             Money value = new Money("0.00003090");
             decimal final = new MonedaBL2().convertMoney(a,b,value.getValue());
             Debug.WriteLine("resultad--->" + final.ToString());
+        }
+
+        private void Main_menu_operate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

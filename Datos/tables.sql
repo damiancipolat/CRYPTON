@@ -92,6 +92,7 @@ insert into permiso(nombre,permiso) values('Gestion de usuarios','P');
 insert into permiso(nombre,permiso) values('Gestion de permisos','P');
 insert into permiso(nombre,permiso) values('Gestion de idiomas','P');
 insert into permiso(nombre,permiso) values('Notificaciones','P');
+insert into permiso(nombre,permiso) values('Mis compras','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('Cliente',null);
@@ -627,6 +628,7 @@ insert into palabras values('WALLET_MONEY');
 insert into palabras values('WALLET_READY_VALUE');
 insert into palabras values('WALLET_PENDING_VALUE');
 insert into palabras values('OP_TOTAL');
+insert into palabras values('MY_BUYS');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -874,6 +876,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','WALLET_MONEY','Moneda
 insert into idioma_palabras(code,clave,valor) values('ES','WALLET_ADDRESS','Dirección');
 insert into idioma_palabras(code,clave,valor) values('ES','WALLET_READY_VALUE','Saldo disponible');
 insert into idioma_palabras(code,clave,valor) values('ES','WALLET_PENDING_VALUE','Saldo pendiente');
+insert into idioma_palabras(code,clave,valor) values('ES','MY_BUYS','Mis compras');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1105,4 +1108,5 @@ insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_MONEY','Money
 insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_ADDRESS','Address');
 insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_READY_VALUE','Available balance');
 insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_PENDING_VALUE','Pending balance');
+insert into idioma_palabras(code,clave,valor) values('ENG','MY_BUYS','My buys');
 

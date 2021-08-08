@@ -59,6 +59,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.main_menu_my_buys = new System.Windows.Forms.ToolStripMenuItem();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -219,10 +220,12 @@
             this.main_menu_my_sells,
             this.main_menu_balance,
             this.main_menu_notifications,
-            this.main_menu_publish});
+            this.main_menu_publish,
+            this.main_menu_my_buys});
             this.main_menu_operate.Name = "main_menu_operate";
             this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
             this.main_menu_operate.Text = "Operar";
+            this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
             // 
             // main_menu_recomendations
             // 
@@ -279,21 +282,21 @@
             // main_menu_it_add_user
             // 
             this.main_menu_it_add_user.Name = "main_menu_it_add_user";
-            this.main_menu_it_add_user.Size = new System.Drawing.Size(199, 26);
+            this.main_menu_it_add_user.Size = new System.Drawing.Size(224, 26);
             this.main_menu_it_add_user.Text = "Alta de usuarios";
             this.main_menu_it_add_user.Click += new System.EventHandler(this.AltaDeUsuariosToolStripMenuItem_Click);
             // 
             // main_menu_it_user_manager
             // 
             this.main_menu_it_user_manager.Name = "main_menu_it_user_manager";
-            this.main_menu_it_user_manager.Size = new System.Drawing.Size(199, 26);
+            this.main_menu_it_user_manager.Size = new System.Drawing.Size(224, 26);
             this.main_menu_it_user_manager.Text = "Gestor permisos";
             this.main_menu_it_user_manager.Click += new System.EventHandler(this.GestorPermisosToolStripMenuItem_Click);
             // 
             // main_menu_it_lang_manager
             // 
             this.main_menu_it_lang_manager.Name = "main_menu_it_lang_manager";
-            this.main_menu_it_lang_manager.Size = new System.Drawing.Size(199, 26);
+            this.main_menu_it_lang_manager.Size = new System.Drawing.Size(224, 26);
             this.main_menu_it_lang_manager.Text = "Gestor idiomas";
             this.main_menu_it_lang_manager.Click += new System.EventHandler(this.GestorIdiomasToolStripMenuItem_Click);
             // 
@@ -347,6 +350,12 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // main_menu_my_buys
+            // 
+            this.main_menu_my_buys.Name = "main_menu_my_buys";
+            this.main_menu_my_buys.Size = new System.Drawing.Size(281, 26);
+            this.main_menu_my_buys.Text = "main_menu_my_buys";
             // 
             // frm_main
             // 
@@ -415,6 +424,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_my_buys;
     }
 }
 
