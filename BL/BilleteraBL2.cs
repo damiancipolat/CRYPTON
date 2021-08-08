@@ -181,13 +181,13 @@ namespace BL
         //CONSULTA-----------------------------------------------------------------
 
         //Obtengo el balance de la cuenta y moneda..
-        private string getBalance(string address, MonedaBE moneda)
+        private (string,string) getBalance(string address, MonedaBE moneda)
         {
             //Consulto el balance en block.io.
             Balance balance = new BlockIo().getBalance(moneda.cod, address);
             Bitacora.GetInstance().log("Se ha consultado el balance:" + moneda.cod + "/" + address + ", " + balance.data.available_balance, true);
 
-            return balance.data.available_balance;
+            return (balance.data.available_balance,balance.data.pending_received_balance);
         }
 
         //Obtengo info de la billetera, pudiendo tener el saldo actualizado o no.
@@ -203,10 +203,10 @@ namespace BL
             if (updatedBalance && wallet.moneda.cod != "ARS")
             {
                 //Casteo el formato.
-                string balance = this.getBalance(wallet.direccion, wallet.moneda);
-                Debug.WriteLine("!######################" + balance);
-                wallet.saldo = new Money(balance);
-                wallet.saldo_pending = new Money("0");
+                (string, string) result = this.getBalance(wallet.direccion, wallet.moneda);
+                
+                wallet.saldo = new Money(result.Item1);
+                wallet.saldo_pending = new Money(result.Item2);
             }
 
             return wallet;
