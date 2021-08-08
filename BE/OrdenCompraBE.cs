@@ -12,9 +12,8 @@ namespace BE
         public Int64 idcompra;
         public OrdenVentaBE2 ordenVenta;
         public DateTime fecOperacion;
-        public ClienteBE comprador;
-        public MonedaBE moneda;
+        public ClienteBE comprador;        
         public Money cantidad;
-        public Money precio;
+        public MonedaBE moneda;
     }
 }

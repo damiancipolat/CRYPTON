@@ -18,7 +18,7 @@ namespace UI
     public partial class OperacionView : Form
     {
         private OrdenVentaBE2 orden;
-        private double platFormTax;
+        private Money finalValue;
 
         public OperacionView(long id)
         {
@@ -41,7 +41,13 @@ namespace UI
             {
                 try
                 {
-                    new OrdenCompraBL().comprar(this.orden, Session.GetInstance().getActiveClient());
+                    //Proceso la compra.
+                    new OrdenCompraBL().comprar(
+                        this.orden, 
+                        Session.GetInstance().getActiveClient(),
+                        this.finalValue
+                    );
+
                     MessageBox.Show(Idioma.GetInstance().translate("BUY_SUCCESS"));
                 }
                 catch (Exception ex)
@@ -96,6 +102,9 @@ namespace UI
             this.op_final_total.Text = (this.orden.pide.cod == "ARS" 
                 ? new Money(final).ToShortString()
                 : new Money(final).ToFormatString())+" " + this.orden.pide.cod;
+
+            //Guardo el costo total.
+            this.finalValue = new Money(final);
         }
 
         private void Btn_close_Click(object sender, EventArgs e)

@@ -301,8 +301,8 @@ create table comisiones(
 	idcobro  bigint identity(1,1) primary key,
 	tipo_operacion int,
 	referencia bigint,	
-	moneda varchar(10),
 	idwallet bigint,
+	moneda varchar(10),
 	valor varchar(12),
 	fecCobro datetime,
 	processed int,
@@ -352,12 +352,11 @@ create table orden_compra(
 	idorden bigint,
 	fecOperacion datetime,
 	comprador bigint,
-	moneda varchar(10),
 	cantidad int,
-	precio varchar(12),
+	moneda varchar(10),
 	deleted datetime
 );
-select * from orden_compra
+
 --Notificaciones
 create table notificaciones
 (

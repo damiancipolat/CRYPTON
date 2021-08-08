@@ -31,7 +31,7 @@ namespace BL
         }
 
         //Hago la operacion de comprar.
-        public long comprar(OrdenVentaBE2 orden, ClienteBE buyer)
+        public long comprar(OrdenVentaBE2 orden, ClienteBE buyer, Money total)
         {
             //Valido los montos.
             new ValidateSwipe().validate(orden, buyer);
@@ -43,7 +43,6 @@ namespace BL
             buyOrder.cantidad = orden.cantidad;
             buyOrder.moneda = orden.pide;
             buyOrder.ordenVenta = orden;
-            buyOrder.precio = orden.precio;
             buyOrder.fecOperacion = DateTime.Now;
 
             //Grabo la entidad.
