@@ -81,24 +81,23 @@ CREATE TABLE usuarios_permisos(
 	id_permiso int not null
 );
 
-select * from permiso
-
 --Permisos de cliente
-insert into permiso(nombre,permiso) values('Buscar ofertas','P');
-insert into permiso(nombre,permiso) values('Recomendaciones','P');
-insert into permiso(nombre,permiso) values('Mis publicaciones','P');
-insert into permiso(nombre,permiso) values('Mis saldos','P');
-insert into permiso(nombre,permiso) values('Publicar venta','P');
-insert into permiso(nombre,permiso) values('Alta de usuarios','P');
-insert into permiso(nombre,permiso) values('Gestion de usuarios','P');
-insert into permiso(nombre,permiso) values('Gestion de permisos','P');
-insert into permiso(nombre,permiso) values('Gestion de idiomas','P');
-insert into permiso(nombre,permiso) values('Notificaciones','P');
-insert into permiso(nombre,permiso) values('Mis compras','P');
+insert into permiso(nombre,permiso) values('SEARCH_OFFERS','P');
+insert into permiso(nombre,permiso) values('RECOMENDATIONS','P');
+insert into permiso(nombre,permiso) values('MY_PUBLICATIONS','P');
+insert into permiso(nombre,permiso) values('MY_BALANCE','P');
+insert into permiso(nombre,permiso) values('PUBLISH_OFFER','P');
+insert into permiso(nombre,permiso) values('CREATE_USER','P');
+insert into permiso(nombre,permiso) values('MANAGE_USERS','P');
+insert into permiso(nombre,permiso) values('MANAGE_PERMISSION','P');
+insert into permiso(nombre,permiso) values('MANAGE_USER_PERMISSION','P')
+insert into permiso(nombre,permiso) values('MANAGE_LANGUAGES','P');
+insert into permiso(nombre,permiso) values('NOTIFICATIONS','P');
+insert into permiso(nombre,permiso) values('MY_BUYS','P');
 
 --Familias
-insert into permiso(nombre,permiso) values('Cliente',null);
-insert into permiso(nombre,permiso) values('Empleado',null);
+insert into permiso(nombre,permiso) values('CLIENTS',null);
+insert into permiso(nombre,permiso) values('EMPLOYEES',null);
 insert into permiso(nombre,permiso) values('IT',null);
 
 --Relacion permisos-cliente
@@ -114,6 +113,7 @@ insert into permiso_permiso values(12,6);
 insert into permiso_permiso values(12,7);
 insert into permiso_permiso values(12,8);
 insert into permiso_permiso values(12,9);
+insert into permiso_permiso values(12,18);
 
 --Tabla de registro de backups.
 create table admin_backup

@@ -10,6 +10,12 @@ matias@gmail.com
 prueba@gmail.com
 123456
 
+thor@gmail.com
+123456
+
+bart@gmail.com
+123456
+
 USUARIOS CLIENTES:
 -----------------
 

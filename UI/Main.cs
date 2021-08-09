@@ -97,7 +97,8 @@ namespace UI
             this.main_menu_it_add_user.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_ADD_USER");
             this.main_menu_it_user_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_MANAGER");
             this.main_menu_it_lang_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_LANG_MANAGER");
-            this.main_menu_it_user_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_PERM_MANAGER");
+            this.main_menu_it_user_perm_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_PERM_MANAGER");
+            this.main_menu_it_perm_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_PERMISSION");            
 
         }
 
@@ -159,12 +160,14 @@ namespace UI
         {
             List<Componente> permissions = Session.GetInstance().getPermissions();
             PermisoBL permBL = new PermisoBL();
-            
+
             //It menu
-            this.main_menu_it.Visible = permBL.hasPermission(permissions, PermisoCodes.IT.ToString());
-            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, PermisoCodes.CREATE_USER.ToString());
-            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_USERS.ToString());
+            this.main_menu_it.Visible = true;//permBL.hasPermission(permissions, PermisoCodes.IT.ToString());
             this.main_menu_it_lang_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_LANGUAGES.ToString());
+            this.main_menu_it_user_perm_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_USER_PERMISSION.ToString());
+            this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, PermisoCodes.CREATE_USER.ToString());
+            this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_USERS.ToString());            
+            this.main_menu_it_perm_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_PERMISSION.ToString());
         }
 
         //Oculto menu en base a los permisos.
@@ -431,6 +434,11 @@ namespace UI
         private void GestorDePermisosUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new UserTreeFrm().Show();
+        }
+
+        private void Main_menu_it_perm_manager_Click(object sender, EventArgs e)
+        {
+            new TreeEditorFrm().Show();
         }
     }
 }
