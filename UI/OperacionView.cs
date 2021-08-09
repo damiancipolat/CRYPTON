@@ -49,6 +49,7 @@ namespace UI
                     );
 
                     MessageBox.Show(Idioma.GetInstance().translate("BUY_SUCCESS"));
+                    this.Close();
                }
                catch (Exception ex)
                 {

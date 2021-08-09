@@ -1,7 +1,7 @@
 USUARIOS DE IT:
 ---------------
 
-roberto@gmail.com
+roberto@gmail.com<-------
 123456
 
 matias@gmail.com
@@ -25,5 +25,8 @@ damian.cipolat@gmail.com
 charlie.brown@gmail.com
 123456
 
-alf@gmail.com
+alf@gmail.com<-----
+123456
+
+uai@gmail.com<--- user nuevo con 2 permisos sueltos
 123456
