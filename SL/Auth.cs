@@ -77,7 +77,7 @@ namespace SL
             Debug.WriteLine("Request login of user:" + email);
 
             //Antes de hacer el login, hago una prueba de integridad.
-            Integrity.GetInstance().validateComplete();
+            //Integrity.GetInstance().validateComplete();
 
             //Valido las credenciales y obtengo el usuario logeado.
             UsuarioBE user = this.checkCredentials(email,pwd);

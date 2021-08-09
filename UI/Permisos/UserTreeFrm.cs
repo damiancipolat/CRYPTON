@@ -25,13 +25,17 @@ namespace UI.Permisos
         private List<Familia> innerFamilia = new List<Familia>();
         private List<Patente> innerPatente = new List<Patente>();
         private List<UsuarioBE> innerUsers = new List<UsuarioBE>();
+        private UsuarioBE innerSelected=null;
 
         //Operaciones
         private List<Tuple<string, int, int>> operations = new List<Tuple<string, int, int>>();
 
-        public UserTreeFrm()
+        public UserTreeFrm(UsuarioBE userDefault=null)
         {
             InitializeComponent();
+
+            if (userDefault != null)
+                this.innerSelected = userDefault;
         }
 
         //Carga de datos -----------------------------------------------------------------
@@ -64,7 +68,26 @@ namespace UI.Permisos
                 this.user_tree_family_list.Items.Add(user.nombre + "," + user.apellido);
 
             if (this.innerUsers.Count > 0)
-                this.user_tree_family_list.SelectedIndex = 0;
+            {
+                //Si hay un usuario seteado por defecto.
+                if (this.innerSelected != null)
+                {
+                    //Encuentro su ubicacion dentro del combo para marcarlo.
+                    for (int i = 0; i <=this.innerUsers.Count-1; i++)
+                    {
+                        UsuarioBE user = this.innerUsers[i];
+                        if (user.idusuario == this.innerSelected.idusuario)
+                        {
+                            Debug.WriteLine("user selected"+i.ToString());
+                            this.user_tree_family_list.SelectedIndex = i;
+                        }                            
+                    }
+                }
+                else
+                {
+                    this.user_tree_family_list.SelectedIndex = 0;
+                }
+            }                
         }
 
         private void loadUserData()

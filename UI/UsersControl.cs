@@ -11,6 +11,7 @@ using BE;
 using BL;
 using SL;
 using SEC;
+using UI.Permisos;
 
 namespace UI
 {
@@ -93,9 +94,10 @@ namespace UI
                 DataGridViewRow selectedRow = this.usr_data.Rows[selectedrowindex];
                 string idValue = Convert.ToString(selectedRow.Cells["id"].Value);
 
-                //UsuarioBE user = new UsuarioBL().findById(Int32.Parse(idValue));
-                //new PermisosFrm(user).Show();
+                UsuarioBE user = new UsuarioBL().findById(Int32.Parse(idValue));
 
+                if (user != null)
+                    new UserTreeFrm(user).Show();
             }
             else
             {

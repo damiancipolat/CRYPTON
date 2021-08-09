@@ -45,7 +45,6 @@
     <Compile Include="NotificacionBE.cs" />
     <Compile Include="EntityBE.cs" />
     <Compile Include="Admin\BackupBE.cs" />
-    <Compile Include="ApiKeyBE.cs" />
     <Compile Include="ClienteAgenda.cs" />
     <Compile Include="ClienteBE.cs" />
     <Compile Include="ComisionValorBE.cs" />
