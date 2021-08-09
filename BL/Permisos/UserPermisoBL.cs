@@ -21,6 +21,11 @@ namespace BL.Permisos
             return new UserPermisoDAL().getPermmision(u);
         }
 
+        public Patente findByName(string name)
+        {
+            return new UserPermisoDAL().findByName(name);
+        }
+
         public void FillUserComponents(UsuarioBE u)
         {            
             new UserPermisoDAL().FillUserComponents(u);
@@ -38,11 +43,10 @@ namespace BL.Permisos
             }
         }
 
-        public void save(int userId, int permisoId)
+        public void save(long userId, int permisoId)
         {
             new UserPermisoDAL().save(userId,permisoId);
         }
-
         public void delete(int userId, int permisoId)
         {
             new UserPermisoDAL().delete(userId, permisoId);

@@ -33,7 +33,6 @@ namespace BL.Permisos
 
             return existe;
         }
-
         public void FillFamilyComponents(Familia familia)
         {
             new PermisoDAL().FillFamilyComponents(familia);

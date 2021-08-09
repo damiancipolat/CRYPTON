@@ -8,7 +8,8 @@ using System.Diagnostics;
 using BE;
 using DAL;
 using SL;
-using SEC;
+using BL.Permisos;
+using BE.Permisos;
 
 namespace BL
 {
@@ -75,21 +76,15 @@ namespace BL
         //Registra la lista de permisos que le corresponden a un cliente.
         public void registerClientPermission(ClienteBE cliente)
         {
-            Debug.WriteLine("Bind client permission of if: "+cliente.idusuario);
+            Debug.WriteLine("Bind client permission of if: "+cliente.usuario.idusuario);
+            UserPermisoBL biz = new UserPermisoBL();
 
-            //Cargo el arbol de permisos para un usuario que arranca de cero.
-            /*PermisoBL perm = new PermisoBL();
-            long clientId = cliente.usuario.idusuario;
-
-            //Registro.
-            perm.bindSpecificToUser(null,"R001", clientId);
-            perm.bindSpecificToUser("R001","R002", clientId);
-            perm.bindSpecificToUser("R002", "CLI001", clientId);
-            perm.bindSpecificToUser("R002", "CLI002", clientId);
-            perm.bindSpecificToUser("R002", "CLI003", clientId);
-            perm.bindSpecificToUser("R002", "CLI004", clientId);
-            perm.bindSpecificToUser("R002", "CLI005", clientId);
-            perm.bindSpecificToUser("R002", "CLI006", clientId);*/
+            //Busco por patente.
+            Patente pat = biz.findByName("CLIENTS");
+            
+            //Registro la familia al nuevo cliente.
+            if (pat != null)
+                biz.save(cliente.usuario.idusuario, pat.Id);
         }
 
         //CONSULTA --------------------------------------------------------------
@@ -119,8 +114,7 @@ namespace BL
             walletAccount.Add("ARS", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "ARS").idwallet, false));
             walletAccount.Add("BTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "BTC").idwallet, balanceUpdate));
             walletAccount.Add("LTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "LTC").idwallet, balanceUpdate));
-            walletAccount.Add("DOG", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "DOG").idwallet, balanceUpdate));
-                        
+            walletAccount.Add("DOG", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "DOG").idwallet, balanceUpdate));   
 
             return walletAccount;
         }
@@ -141,10 +135,5 @@ namespace BL
 
             return this.traerBilleteras(activeAccount, balanceUpdate);
         }
-
-        //-------------------------------------
-
-        public void darBaja(CuentaBE cuenta) { }
-        public void bloquear(CuentaBE cuenta) { }
     }
 }

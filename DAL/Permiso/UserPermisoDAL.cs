@@ -74,7 +74,7 @@ namespace DAL.Permiso
             u.Permisos.AddRange(permList);
         }
       
-        public void save(int userId, int permisoId)
+        public void save(long userId, int permisoId)
         {
             QueryInsert builder = new QueryInsert();
 
@@ -99,5 +99,29 @@ namespace DAL.Permiso
 
             builder.deleteSchema(schema, "usuarios_permisos");
         }
+
+        public Patente findByName(string name)
+        {
+            //Instancio el sql builder y ejecuto el query.
+            string sql = "select * from permiso p where nombre='"+name+"';";
+            QuerySelect builder = new QuerySelect();
+            SqlDataReader reader = builder.query(sql);
+
+            if (reader.HasRows)
+            {
+                //Leo un registro.
+                reader.Read();
+
+                //Cargo la patente.
+                Patente c = new Patente();
+                c.Id = reader.GetInt32(reader.GetOrdinal("id"));
+                c.Nombre = reader.GetString(reader.GetOrdinal("nombre"));
+
+                return c;
+            }
+
+            return null;
+        }
+
     }
 }

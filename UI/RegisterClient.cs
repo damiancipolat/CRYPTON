@@ -69,8 +69,8 @@ namespace UI
 
         private void Signup_ok_Click(object sender, EventArgs e)
         {
-            try
-            {
+           try
+           {
                 //Valido el input.
                 UserValidator.GetInstance().validateRegister(
                     this.signup_txt_name.Text,
@@ -122,7 +122,6 @@ namespace UI
             }
             catch (BusinessException ex)
             {
-                Debug.WriteLine("----->" + ex.Message);
                 MessageBox.Show(
                     Idioma.GetInstance().translate(ex.Message),
                     Idioma.GetInstance().translate("REGISTER_INPUT_ERROR_TITLE"),
@@ -139,6 +138,11 @@ namespace UI
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation
                 );
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("----->" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 

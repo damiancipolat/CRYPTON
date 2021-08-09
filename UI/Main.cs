@@ -320,6 +320,7 @@ namespace UI
         {
             new UsersControl().Show();
         }
+
         private void Button5_Click(object sender, EventArgs e)
         {
             new frm_publish_sell().Show();
@@ -409,25 +410,11 @@ namespace UI
 
         private void Button1_Click_9(object sender, EventArgs e)
         {
-            ClienteBE client = Session.GetInstance().getActiveClient();
+
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            //Cargo las billeteras.
-            CuentaBE cuenta = new CuentaBL2().traer(5);
-            Dictionary<string, BilleteraBE2> wallets = new CuentaBL2().traerBilleteras(cuenta, true);
-
-            BilleteraBE2 wallet = wallets["ARS"];
-            Debug.WriteLine(wallet.moneda.cod+" "+wallet.direccion+" "+wallet.saldo.ToString()+"  "+wallet.saldo_pending.ToString());
-
-
-            /*
-                    wallets["ARS"].moneda.cod,
-                    wallets["ARS"].direccion,
-                    wallets["ARS"].saldo.ToString(),
-                    wallets["ARS"].saldo_pending.ToString()             
-             */
         }
 
         private void Main_menu_operate_Click(object sender, EventArgs e)
