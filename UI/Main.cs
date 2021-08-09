@@ -24,7 +24,6 @@ namespace UI
         //Bus de notificaciones.
         private Notificator uiEvents = new Notificator();
         private string defaultLang=null;
-
         public frm_main()
         {
             InitializeComponent();
@@ -98,7 +97,8 @@ namespace UI
             this.main_menu_it_add_user.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_ADD_USER");
             this.main_menu_it_user_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_MANAGER");
             this.main_menu_it_lang_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_LANG_MANAGER");
-            
+            this.main_menu_it_user_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_PERM_MANAGER");
+
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -285,6 +285,7 @@ namespace UI
         {
             new frm_publish_sell().Show();
         }
+
         private void AltaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new RegisterUser().Show();
@@ -425,6 +426,11 @@ namespace UI
         private void Main_menu_my_buys_Click(object sender, EventArgs e)
         {
             new MyBuysFrm().Show();
+        }
+
+        private void GestorDePermisosUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserTreeFrm().Show();
         }
     }
 }
