@@ -27,7 +27,7 @@ namespace BL
         }
 
         //Traigo los costos de operacion para el vendedor.
-        public List<(decimal, string)> getSellerTaxes(OrdenVentaBE2 orden, ClienteBE buyer)
+        public List<(decimal, string)> getSellerTaxes(OrdenVentaBE orden, ClienteBE buyer)
         {
             List<(decimal, string)> taxList = new List<(decimal, string)>();
 
@@ -35,7 +35,7 @@ namespace BL
             string moneda = orden.ofrece.cod;
 
             //Traigo la billetera de ambas parte de la misma moneda.            
-            BilleteraBE2 buyerWallet = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(buyer, false))[moneda].idwallet, false);
+            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer, false))[moneda].idwallet, false);
 
             //Traigo el costo fijo de la plataforma.
             decimal sellerPlatformFee = ((Convert.ToDecimal(new ComisionValorBL().getSellCost()) * orden.cantidad.getValue()) / 100);
@@ -62,7 +62,7 @@ namespace BL
         }
 
         //Traigo los costos de operacion para el vendedor.
-        public List<(decimal, string)> getBuyerTaxes(OrdenVentaBE2 orden, ClienteBE seller)
+        public List<(decimal, string)> getBuyerTaxes(OrdenVentaBE orden, ClienteBE seller)
         {
             List<(decimal, string)> taxList = new List<(decimal, string)>();
 
@@ -70,7 +70,7 @@ namespace BL
             string moneda = orden.ofrece.cod;
 
             //Traigo la billetera de ambas parte de la misma moneda.
-            BilleteraBE2 sellerWallet = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(seller, false))[moneda].idwallet, false);
+            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller, false))[moneda].idwallet, false);
 
             //Traigo el costo fijo de la plataforma.
             decimal buyerPlatformFee = ((Convert.ToDecimal(new ComisionValorBL().getSellCost()) * orden.cantidad.getValue()) / 100);

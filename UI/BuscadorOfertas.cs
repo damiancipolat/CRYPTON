@@ -66,24 +66,24 @@ namespace UI
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
             //Traigo las monedas.
-            MonedaBE origen = new MonedaBL2().getByCode(this.moneda_pide.Items[this.moneda_pide.SelectedIndex].ToString());
-            MonedaBE destino = new MonedaBL2().getByCode(this.moneda_ofrece.Items[this.moneda_ofrece.SelectedIndex].ToString());
+            MonedaBE origen = new MonedaBL().getByCode(this.moneda_pide.Items[this.moneda_pide.SelectedIndex].ToString());
+            MonedaBE destino = new MonedaBL().getByCode(this.moneda_ofrece.Items[this.moneda_ofrece.SelectedIndex].ToString());
 
             //Traigo el resultado.
-            List<OrdenVentaBE2> results = new OrdenVentaBL2().buscar(destino, origen, Session.GetInstance().getActiveClient());
+            List<OrdenVentaBE> results = new OrdenVentaBL().buscar(destino, origen, Session.GetInstance().getActiveClient());
 
             //Lleno la grilla.
             this.fillData(results);
         }
 
-        private void fillData(List<OrdenVentaBE2> orders)
+        private void fillData(List<OrdenVentaBE> orders)
         {
             this.usr_search_data.Rows.Clear();
 
             if (orders.Count > 0)
             {
                 //Loop to fill data.
-                foreach (OrdenVentaBE2 order in orders)
+                foreach (OrdenVentaBE order in orders)
                 {
                     this.usr_search_data.Rows.Add(
                         new string[] {
@@ -108,7 +108,7 @@ namespace UI
             this.translateTexts();
 
             //Cargo monedas.
-            List<MonedaBE> monedas = new MonedaBL2().getAll();
+            List<MonedaBE> monedas = new MonedaBL().getAll();
 
             //Cargo los combos.
             foreach (MonedaBE money in monedas)

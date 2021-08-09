@@ -44,10 +44,9 @@
   <ItemGroup>
     <Compile Include="AbstractDAL.cs" />
     <Compile Include="ApiKeyDAL.cs" />
-    <Compile Include="BilleteraDAL2.cs" />
+    <Compile Include="BilleteraDAL.cs" />
     <Compile Include="NotificacionDAL.cs" />
     <Compile Include="MonedaDAL.cs" />
-    <Compile Include="BilleteraDAL.cs" />
     <Compile Include="ClienteAgenda.cs" />
     <Compile Include="ComisionDAL.cs" />
     <Compile Include="ComisionValorDAL.cs" />
@@ -69,7 +68,6 @@
     <Compile Include="Idiomas\IdiomaDAL.cs" />
     <Compile Include="Mapper\EntityBinder.cs" />
     <Compile Include="OrdenCompraDAL.cs" />
-    <Compile Include="OrdenVentaDAL2.cs" />
     <Compile Include="OrdenVentaDAL.cs" />
     <Compile Include="Permiso\FamiliaDAL.cs" />
     <Compile Include="Permiso\PatenteDAL.cs" />

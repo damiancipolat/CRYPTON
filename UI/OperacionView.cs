@@ -17,7 +17,7 @@ namespace UI
 {
     public partial class OperacionView : Form
     {
-        private OrdenVentaBE2 orden;
+        private OrdenVentaBE orden;
         private Money finalValue;
 
         public OperacionView(long id)
@@ -25,7 +25,7 @@ namespace UI
             InitializeComponent();
 
             //Cargo la orden internamente.
-            this.orden = new OrdenVentaBL2().load(id);
+            this.orden = new OrdenVentaBL().load(id);
         }
 
         private void Btn_accept_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace BL.Operations
     public class ValidateSwipe
     {
         //Traigo el costo para el comprador.
-        private decimal getBuyerCost(OrdenVentaBE2 orden,ClienteBE seller)
+        private decimal getBuyerCost(OrdenVentaBE orden,ClienteBE seller)
         {
             //Traigo la lista de impuestos.
             List<(decimal, string)> buyerTaxes = new TaxManager().getBuyerTaxes(orden, seller);
@@ -28,7 +28,7 @@ namespace BL.Operations
         }
 
         //Traigo el costo para el vendedor.
-        private decimal getSellerCost(OrdenVentaBE2 orden, ClienteBE buyer)
+        private decimal getSellerCost(OrdenVentaBE orden, ClienteBE buyer)
         {
             //Traigo la lista de impuestos.
             List<(decimal, string)> sellerTaxes = new TaxManager().getSellerTaxes(orden, buyer);
@@ -44,15 +44,15 @@ namespace BL.Operations
         }
 
         //Valido los montos de ambas cuentas comprador y vendedor.
-        public bool validate(OrdenVentaBE2 orden, ClienteBE buyer)
+        public bool validate(OrdenVentaBE orden, ClienteBE buyer)
         {
             //Traigo costos de ambas partes.
             decimal buyerCost = this.getBuyerCost(orden,orden.vendedor);
             decimal sellerCost = this.getSellerCost(orden,buyer);
 
             //Traigo las wallets de ambas partes.
-            BilleteraBE2 sellerWallet = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(orden.vendedor, false))[orden.ofrece.cod].idwallet, true);
-            BilleteraBE2 buyerWallet = new BilleteraBL2().getById((new CuentaBL2().traerBilleterasCliente(buyer, false))[orden.pide.cod].idwallet, true);
+            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(orden.vendedor, false))[orden.ofrece.cod].idwallet, true);
+            BilleteraBE buyerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(buyer, false))[orden.pide.cod].idwallet, true);
 
             Debug.WriteLine("buyer>"+buyerCost.ToString()+" -- "+buyerWallet.saldo.ToString());
             Debug.WriteLine("seller>" + sellerCost.ToString() + " -- " + sellerWallet.saldo.ToString());

@@ -32,14 +32,14 @@ namespace UI
             this.btn_refresh.Text = Idioma.GetInstance().translate("USR_LANG_UI_REFRESH_LANGUAGE");
         }
 
-        private void fillData(List<OrdenVentaBE2> orders)
+        private void fillData(List<OrdenVentaBE> orders)
         {
             this.usr_orders_data.Rows.Clear();
 
             if (orders.Count > 0)
             {
                 //Loop to fill data.
-                foreach (OrdenVentaBE2 order in orders)
+                foreach (OrdenVentaBE order in orders)
                 {
                     //Texto de orden de estado.
                     string status="";
@@ -88,7 +88,7 @@ namespace UI
             ClienteBE cli = Session.GetInstance().getActiveClient();
 
             //Carg la lista de ordenes.
-            List<OrdenVentaBE2> orders = new OrdenVentaBL2().orderBySeller(cli);
+            List<OrdenVentaBE> orders = new OrdenVentaBL().orderBySeller(cli);
 
             //Cargo la grilla
             this.fillData(orders);
@@ -134,7 +134,7 @@ namespace UI
                     string idValue = Convert.ToString(selectedRow.Cells[0].Value);
 
                     //Finalizo la orden.
-                    new OrdenVentaBL2().finish(long.Parse(idValue));
+                    new OrdenVentaBL().finish(long.Parse(idValue));
 
                     //Msj de exito.
                     MessageBox.Show(Idioma.GetInstance().translate("MY_SELL_FINISH_SUCCESS"));

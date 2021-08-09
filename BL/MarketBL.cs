@@ -28,7 +28,7 @@ namespace BL
             return new MonedaBE();
         }
 
-        public List<OrdenVentaBE2> recomendar(ClienteBE cliente)
+        public List<OrdenVentaBE> recomendar(ClienteBE cliente)
         {
             //return new OrdenVentaDAL().getLastActivities();
 
@@ -37,20 +37,20 @@ namespace BL
 
             //Si no se pudo recuperar ninguna moneda "favorita", retorno las ultimas 10 ordenes de venta publicadas activas.
             if (moneyCombinations.Count == 0)
-                return new OrdenVentaDAL2().getLastActivities();
+                return new OrdenVentaDAL().getLastActivities();
 
             //Lista de resultados.
-            List<OrdenVentaBE2> result = new List<OrdenVentaBE2>();
+            List<OrdenVentaBE> result = new List<OrdenVentaBE>();
 
             //Loop
             foreach ((string, string) combination in moneyCombinations)
             {
                 //Traigo las monedas.
-                MonedaBE ofreceMoney = new MonedaBL2().getByCode(combination.Item1);
-                MonedaBE pideMoney = new MonedaBL2().getByCode(combination.Item2);
+                MonedaBE ofreceMoney = new MonedaBL().getByCode(combination.Item1);
+                MonedaBE pideMoney = new MonedaBL().getByCode(combination.Item2);
 
                 //Busco.
-                List<OrdenVentaBE2> founded = new OrdenVentaBL2().buscar(ofreceMoney, pideMoney,cliente);
+                List<OrdenVentaBE> founded = new OrdenVentaBL().buscar(ofreceMoney, pideMoney,cliente);
 
                 if (founded.Count > 0)
                     result.AddRange(founded);

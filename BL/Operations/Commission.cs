@@ -14,13 +14,13 @@ namespace BL.Operations
     public class Commission
     {
         //Traigo la comision del comprador.
-        private ComisionBE fromBuy(OrdenVentaBE2 orden, ClienteBE buyer)
+        private ComisionBE fromBuy(OrdenVentaBE orden, ClienteBE buyer)
         {
             //Traigo las billeteras del cliente.
-            Dictionary<string, BilleteraBE2> clientWallets = new CuentaBL2().traerBilleterasCliente(buyer);
+            Dictionary<string, BilleteraBE> clientWallets = new CuentaBL().traerBilleterasCliente(buyer);
 
             //Traigo la billetera.
-            BilleteraBE2 wallet = clientWallets[orden.pide.cod];
+            BilleteraBE wallet = clientWallets[orden.pide.cod];
 
             //Creo la comision.
             ComisionBE comision = new ComisionBE();
@@ -39,13 +39,13 @@ namespace BL.Operations
         }
 
         //Traigo la comision del vendedor.
-        private ComisionBE fromSell(OrdenVentaBE2 orden, ClienteBE seller)
+        private ComisionBE fromSell(OrdenVentaBE orden, ClienteBE seller)
         {
             //Traigo las billeteras del cliente.
-            Dictionary<string, BilleteraBE2> clientWallets = new CuentaBL2().traerBilleterasCliente(seller);
+            Dictionary<string, BilleteraBE> clientWallets = new CuentaBL().traerBilleterasCliente(seller);
 
             //Traigo la billetera.
-            BilleteraBE2 wallet = clientWallets[orden.pide.cod];
+            BilleteraBE wallet = clientWallets[orden.pide.cod];
 
             //Creo la comision.
             ComisionBE comision = new ComisionBE();
@@ -64,7 +64,7 @@ namespace BL.Operations
         }
 
         //Creo las comisiones para una compra.
-        public Dictionary<ComisionBE, ComisionBE> commisionate(OrdenCompraBE compra, OrdenVentaBE2 venta, ClienteBE buyer)
+        public Dictionary<ComisionBE, ComisionBE> commisionate(OrdenCompraBE compra, OrdenVentaBE venta, ClienteBE buyer)
         {
             //Obtengo la comision del vendedor.
             ComisionBE comSell = this.fromSell(venta, venta.vendedor);

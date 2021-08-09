@@ -10,7 +10,7 @@ namespace BE
     public class OrdenCompraBE : EntityBE
     {
         public Int64 idcompra;
-        public OrdenVentaBE2 ordenVenta;
+        public OrdenVentaBE ordenVenta;
         public DateTime fecOperacion;
         public ClienteBE comprador;        
         public Money cantidad;

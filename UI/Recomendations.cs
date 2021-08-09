@@ -62,7 +62,7 @@ namespace UI
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_REQ"), Idioma.GetInstance().translate("SEARCH_COL_REQ"));           
 
             //Load data.
-            List<OrdenVentaBE2> data = new MarketBL().recomendar(Session.GetInstance().getActiveClient());
+            List<OrdenVentaBE> data = new MarketBL().recomendar(Session.GetInstance().getActiveClient());
 
             //Fill the grid.
             this.fillData(data);
@@ -86,14 +86,14 @@ namespace UI
             this.Close();
         }
 
-        private void fillData(List<OrdenVentaBE2> orders)
+        private void fillData(List<OrdenVentaBE> orders)
         {
             this.frm_recom_list.Rows.Clear();
 
             if (orders.Count > 0)
             {
                 //Loop to fill data.
-                foreach (OrdenVentaBE2 order in orders)
+                foreach (OrdenVentaBE order in orders)
                 {
                     //Texto de orden de estado.
                     string status = "";

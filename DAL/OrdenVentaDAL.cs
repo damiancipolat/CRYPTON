@@ -1,9 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using BE.ValueObject;
 using DAL;
 
 namespace DAL
@@ -26,6 +28,10 @@ namespace DAL
             //Actualizo el tipo de usuario que es un enum.            
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
 
+            //Cambio los campos de moneda.
+            ordenVenta.cantidad = new Money((string)mapa["cantidad"]);
+            ordenVenta.precio = new Money((string)mapa["precio"]);
+
             //Bindeo campos.
             ordenVenta.ofrece = new MonedaDAL().findByCode((string)mapa["ofrece"]);
             ordenVenta.pide = new MonedaDAL().findByCode((string)mapa["pide"]);
@@ -45,7 +51,7 @@ namespace DAL
 
         }
 
-        //Este metodo retorna una lista de clientes.
+        //Este metodo retorna una lista de todas las ordenes de venta.
         public List<OrdenVentaBE> findAll()
         {
             //Busco en la bd por id.
@@ -95,10 +101,10 @@ namespace DAL
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
                 { "vendedor",venta.vendedor.idcliente},
-                { "cantidad",venta.cantidad},
+                { "cantidad",venta.cantidad.ToString()},
                 { "ofrece",venta.ofrece.cod},
                 { "pide",venta.pide.cod},
-                { "precio",venta.precio},
+                { "precio",venta.precio.ToString()},
                 { "fecCreacion",(venta.fecCreacion!=null)?venta.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss"):null},
                 { "fecFin",(venta.fecFin!=null)?venta.fecFin.ToString("yyyy-MM-dd HH:mm:ss"):null},
                 { "ordenEstado",(int)venta.ordenEstado}
@@ -119,10 +125,10 @@ namespace DAL
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
                 { "vendedor",venta.vendedor.idcliente},
-                { "cantidad",venta.cantidad},
+                { "cantidad",venta.cantidad.ToString()},
                 { "ofrece",venta.ofrece.cod},
                 { "pide",venta.pide.cod},
-                { "precio",venta.precio},
+                { "precio",venta.precio.ToString()},
                 { "fecCreacion",(venta.fecCreacion!=null)?venta.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss"):null},
                 { "fecFin",(venta.fecFin!=null)?venta.fecFin.ToString("yyyy-MM-dd HH:mm:ss"):null},
                 { "ordenEstado",(int)venta.ordenEstado}
@@ -132,7 +138,7 @@ namespace DAL
         }
 
         //Buscar por monedas
-        public List<OrdenVentaBE> search(MonedaBE ofrece, MonedaBE pide)
+        public List<OrdenVentaBE> searchByMoneys(MonedaBE ofrece, MonedaBE pide)
         {
             //Busco en la bd por dni.
             List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
@@ -151,7 +157,7 @@ namespace DAL
         }
 
         //Buscar de un vendedor.
-        public List<OrdenVentaBE> bySeller(ClienteBE seller)
+        public List<OrdenVentaBE> searchBySeller(ClienteBE seller)
         {
             //Busco en la bd por dni.
             List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{

@@ -25,7 +25,7 @@ namespace BL
 
         public int finish(long idorden)
         {
-            OrdenVentaBE order = this.load(idorden);
+            OrdenVentaBE order = new OrdenVentaDAL().findById(idorden);
 
             if (order == null)
                 throw new Exception("Order not found!");
@@ -35,19 +35,14 @@ namespace BL
             return new OrdenVentaDAL().update(order);
         }
 
-        public int close(OrdenVentaBE2 order)
+        public int close(OrdenVentaBE order)
         {
             if (order == null)
                 throw new Exception("Order not found!");
 
             //Doy de baja la orden.    
             order.ordenEstado = OrdenEstado.VENDIDA;
-            return new OrdenVentaDAL2().update(order);
-        }
-
-        public int delete(OrdenVentaBE venta)
-        {
-            return new OrdenVentaDAL().delete(venta.idorden);
+            return new OrdenVentaDAL().update(order);
         }
 
         public OrdenVentaBE load(long id)
@@ -55,12 +50,17 @@ namespace BL
             return new OrdenVentaDAL().findById(id);
         }
 
+        public int delete(OrdenVentaBE venta)
+        {
+            return new OrdenVentaDAL().delete(venta.idorden);
+        }
+
         public float cotizar(OrdenVentaBE orden,BilleteraBE destino) { return 0; }
 
         public List<OrdenVentaBE> buscar(MonedaBE ofrece, MonedaBE pide,ClienteBE cliente)
         {
             //Traigo los datos.
-            List<OrdenVentaBE> results = new OrdenVentaDAL().search(ofrece,pide);
+            List<OrdenVentaBE> results = new OrdenVentaDAL().searchByMoneys(ofrece,pide);
 
             //Cargo lista de resultados.
             List<OrdenVentaBE> final = new List<OrdenVentaBE>();
@@ -75,7 +75,7 @@ namespace BL
 
         public List<OrdenVentaBE> orderBySeller(ClienteBE cliente)
         {
-            return new OrdenVentaDAL().bySeller(cliente);
+            return new OrdenVentaDAL().searchBySeller(cliente);
         }
 
         public bool validar(OrdenVentaBE orden, ClienteBE cliente)

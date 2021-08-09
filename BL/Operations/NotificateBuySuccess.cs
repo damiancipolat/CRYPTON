@@ -24,7 +24,7 @@ namespace BL.Operations
         }
 
         //Envio la notificacion al vendedor.
-        private int notificateSeller(OrdenVentaBE2 orden,ClienteBE buyer)
+        private int notificateSeller(OrdenVentaBE orden,ClienteBE buyer)
         {
             string message = Idioma.GetInstance().translate("NOTIF_BUY_SUCCESS").Replace("%c",buyer.alias);
             return this.notificateClient(orden.vendedor, message);

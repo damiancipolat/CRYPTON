@@ -67,8 +67,7 @@ insert into dvv(tabla,[hash],fecUpdate) values('usuario','',GETDATE());
 --Permisos
 CREATE TABLE permiso(
 	id int IDENTITY(1,1) NOT NULL,
-	nombre varchar(100) NULL,	
-	permiso varchar(50) NULL
+	nombre varchar(100) NULL
 );
 
 CREATE TABLE permiso_permiso(
@@ -191,7 +190,7 @@ create table conversiones(
 	valorUSD float,
 	deleted datetime
 );
-select * from conversiones
+
 insert into conversiones(codCripto,cantCripto,valorUSD) values('BTC',1,33655.80);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('LTC',1,132.82);
 insert into conversiones(codCripto,cantCripto,valorUSD) values('DOG',1,0.216820);

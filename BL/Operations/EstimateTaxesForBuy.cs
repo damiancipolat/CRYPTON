@@ -12,7 +12,7 @@ namespace BL.Operations
     public class EstimateTaxesForBuy
     {
         //Obtengo en forma de lista todos los impuestos para hacer la compra.
-        public List<(string, string, string)> getTaxesToBuy(OrdenVentaBE2 orden, ClienteBE buyer)
+        public List<(string, string, string)> getTaxesToBuy(OrdenVentaBE orden, ClienteBE buyer)
         {
             List<(string, string, string)> taxList = new List<(string, string, string)>();
 

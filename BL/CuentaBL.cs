@@ -13,9 +13,9 @@ using BE.Permisos;
 
 namespace BL
 {
-    public class CuentaBL2
+    public class CuentaBL
     {
-        public CuentaBL2()
+        public CuentaBL()
         {
             //..
         }
@@ -47,7 +47,7 @@ namespace BL
         //Proceso la creación de las 4 billeteras.
         private void crearBilleteras(CuentaBE cuenta, ClienteBE cliente)
         {
-            BilleteraBL2 walletBL = new BilleteraBL2();
+            BilleteraBL walletBL = new BilleteraBL();
             
             //ARS
             int arsId = walletBL.crear(cuenta, cliente, "ARS");
@@ -96,19 +96,19 @@ namespace BL
         }
 
         //Consulto las billeteras asociadas a una cuenta retorno en forma de diccionario.
-        public Dictionary<string, BilleteraBE2> traerBilleteras(CuentaBE cuenta, bool balanceUpdate)
+        public Dictionary<string, BilleteraBE> traerBilleteras(CuentaBE cuenta, bool balanceUpdate)
         {
             //Recupero las billeteras de esta cuenta.
-            List<BilleteraBE2> wallets = new BilleteraDAL2().findByCuenta(cuenta.idcuenta);
+            List<BilleteraBE> wallets = new BilleteraDAL().findByCuenta(cuenta.idcuenta);
 
             //Valido si hay cuentas.
             if (wallets.Count == 0)
                 throw new Exception("Wallets not found for this account");
 
             //Armo el diccionario de retorno.
-            Dictionary<string, BilleteraBE2> walletAccount = new Dictionary<string, BilleteraBE2>();
+            Dictionary<string, BilleteraBE> walletAccount = new Dictionary<string, BilleteraBE>();
 
-            BilleteraBL2 walletBiz = new BilleteraBL2();
+            BilleteraBL walletBiz = new BilleteraBL();
 
             //Cargo el diccionario.
             walletAccount.Add("ARS", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "ARS").idwallet, false));
@@ -120,13 +120,13 @@ namespace BL
         }
 
         //Consulto las billeteras asociadas a una cuenta retorno en forma de lista.
-        public List<BilleteraBE2> traerBilleterasList(CuentaBE cuenta)
+        public List<BilleteraBE> traerBilleterasList(CuentaBE cuenta)
         {
-            return new BilleteraDAL2().findByCuenta(cuenta.idcuenta);
+            return new BilleteraDAL().findByCuenta(cuenta.idcuenta);
         }
 
         //Traigo las billeteras que tiene un cliente en base a su cuenta activa.
-        public Dictionary<string, BilleteraBE2> traerBilleterasCliente(ClienteBE cliente,bool balanceUpdate=false)
+        public Dictionary<string, BilleteraBE> traerBilleterasCliente(ClienteBE cliente,bool balanceUpdate=false)
         {
             CuentaBE activeAccount = this.traerActiva(cliente);
 

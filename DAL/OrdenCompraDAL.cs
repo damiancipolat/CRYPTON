@@ -30,7 +30,7 @@ namespace DAL
 
             //Bindeo los campos a objetos.
             ordenCompra.cantidad = new Money((string)mapa["cantidad"]);
-            ordenCompra.ordenVenta = new OrdenVentaDAL2().findById((long)mapa["idorden"]);
+            ordenCompra.ordenVenta = new OrdenVentaDAL().findById((long)mapa["idorden"]);
             ordenCompra.moneda = new MonedaDAL().findByCode((string)mapa["moneda"]);
 
             return ordenCompra;

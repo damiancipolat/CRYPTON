@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using BE;
+using BE.ValueObject;
 
 namespace DAL
 {
@@ -34,6 +36,13 @@ namespace DAL
             //Traigo el cliente.
             wallet.cliente = new ClienteDAL().findById((long)mapa["idcliente"]);
 
+            //Si la moneda no es crypto cargo el saldo.
+            if (wallet.moneda.cod == "ARS")
+            {
+                wallet.saldo = new Money(mapa["saldo"]);
+                wallet.saldo_pending = new Money("0");
+            }
+
             return wallet;
 
         }
@@ -53,7 +62,7 @@ namespace DAL
         public List<BilleteraBE> findAll()
         {
             //Busco en la bd por id.
-            List<object> result = this.getSelect().selectAll("solic_onboarding");
+            List<object> result = this.getSelect().selectAll("billetera");
 
             //Lista resultado.
             List<BilleteraBE> lista = new List<BilleteraBE>();
@@ -94,7 +103,7 @@ namespace DAL
                 {"idcuenta", wallet.cuenta.idcuenta},
                 {"direccion", wallet.direccion},
                 {"fecCreacion", wallet.fecCreacion.ToString("yyyy-MM-dd HH:mm:ss.fff")},
-                {"saldo", wallet.saldo}
+                {"saldo", wallet.saldo.ToFormatString()}
             };
 
             return this.getInsert().insertSchema(schema, "billetera", true);
@@ -115,7 +124,7 @@ namespace DAL
                 {"moneda", wallet.moneda.cod},
                 {"direccion", wallet.direccion},
                 {"fecCreacion", wallet.fecCreacion},
-                {"saldo", wallet.saldo}
+                {"saldo", wallet.saldo.ToFormatString()}
             };
 
             return this.getUpdate().updateSchemaById(schema, "billetera", "idwallet", wallet.idwallet);

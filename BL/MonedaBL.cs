@@ -6,33 +6,44 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using DAL;
 using BE;
+using BE.ValueObject;
 
 namespace BL
 {
     public class MonedaBL
     {
         //Convierto de una moneda a usd.
-        private double convertToUsd(MonedaBE moneda, double cantidad)
+        private decimal convertToUsd(MonedaBE moneda, decimal moneyValor)
+        {
+            //Traigo valores de la moneda la cual queremos convertir a usd.
+            ConversionesBE conversion = new ConversionesDAL().findByCode(moneda.cod);
+
+            //Convierto todo a decimal.
+            decimal usdValor = Convert.ToDecimal(conversion.valorUSD);
+            decimal cantCripto = Convert.ToDecimal(conversion.cantCripto);
+
+            //Hago regla de 3, cantCripto=1.
+            return (moneyValor * usdValor) / cantCripto;
+        }
+
+        //Convierto de usd a una moneda X.
+        private decimal convertFromUSD(MonedaBE moneda, decimal usdValor)
         {
             //Traigo info de conversion.
             ConversionesBE conversion = new ConversionesDAL().findByCode(moneda.cod);
 
-            //Convierto a usd.
-            return (cantidad * conversion.valorUSD / conversion.cantCripto);
-        }
+            //Convierto todo a decimal.
+            decimal cantCripto = Convert.ToDecimal(conversion.cantCripto);
+            decimal convUsd = Convert.ToDecimal(conversion.valorUSD);
 
-        //Convierto de usd a una moneda X.
-        private double convertFromUSD(MonedaBE moneda, double usdAmmount)
-        {
-            //Traigo info de conversion.
-            ConversionesBE conversion = new ConversionesDAL().findByCode(moneda.cod);            
-            return  (conversion.cantCripto * usdAmmount) / conversion.valorUSD;
+            return (usdValor * cantCripto) / convUsd;
         }
 
         //Convierto un valor X a Y.
-        public double convertMoney(MonedaBE origen, MonedaBE destino, double cantidad)
+        public decimal convertMoney(MonedaBE origen, MonedaBE destino, decimal cantidad)
         {
-            return this.convertFromUSD(destino,this.convertToUsd(origen, cantidad));
+            //Origen  ---> USD ---> Destino
+            return this.convertFromUSD(destino, this.convertToUsd(origen, cantidad));
         }
 
         //Traigo la lista de monedas.

@@ -16,23 +16,23 @@ using SL;
 
 namespace BL
 {
-    public class BilleteraBL2
+    public class BilleteraBL
     {
-        public BilleteraBL2()
+        public BilleteraBL()
         {
         }
 
         //CREACION --------------------------------------------------------------
 
         //Crea la billetera para criptomonedas usa block.io
-        private BilleteraBE2 crearCrypto(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
+        private BilleteraBE crearCrypto(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
         {
             //Creo la wallet en block.io
             NewWallet created = new BlockIo().createWallet(moneda.cod);
             Bitacora.GetInstance().log("Se ha creado :" + moneda.cod + "/" + created.data.address, true);
 
             //Creo la billetera.
-            BilleteraBE2 wallet = new BilleteraBE2();
+            BilleteraBE wallet = new BilleteraBE();
             wallet.cliente = cliente;
             wallet.direccion = created.data.address;
             wallet.fecCreacion = DateTime.Now;
@@ -45,10 +45,10 @@ namespace BL
         }
 
         //Cuenta en ARS, no usa proveedor.
-        private BilleteraBE2 crearARS(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
+        private BilleteraBE crearARS(CuentaBE cuenta, ClienteBE cliente, MonedaBE moneda)
         {
             //Creo la billetera.
-            BilleteraBE2 wallet = new BilleteraBE2();
+            BilleteraBE wallet = new BilleteraBE();
             wallet.cliente = cliente;
             wallet.direccion = cuenta.idcuenta.ToString() + "-" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + "-" + cliente.idcliente.ToString();
             wallet.fecCreacion = DateTime.Now;
@@ -70,22 +70,22 @@ namespace BL
                 throw new BusinessException("Money not found");
 
             //Creo la nueva billetera.
-            BilleteraBE2 newWallet = (money.cod == "ARS")
+            BilleteraBE newWallet = (money.cod == "ARS")
                 ? this.crearARS(cuenta, cliente, money)
                 : this.crearCrypto(cuenta, cliente, money);
 
             //Proceso guardado en la bd.
-            return new BilleteraDAL2().insert(newWallet);
+            return new BilleteraDAL().insert(newWallet);
         }
 
         //MODIFICACION-------------------------------------------------------------
-        public int update(BilleteraBE2 wallet)
+        public int update(BilleteraBE wallet)
         {
-            return new BilleteraDAL2().update(wallet);
+            return new BilleteraDAL().update(wallet);
         }
 
         //Agrega dinero a una billetera.
-        private int acreditarARS(BilleteraBE2 wallet, decimal ammount)
+        private int acreditarARS(BilleteraBE wallet, decimal ammount)
         {
             //Valido si es la misma moneda.
             if (wallet.moneda.cod != "ARS")
@@ -103,7 +103,7 @@ namespace BL
         }
 
         //Descuenta de una billetera un valor, solo para ars.
-        private int descontarARS(BilleteraBE2 wallet, decimal ammount)
+        private int descontarARS(BilleteraBE wallet, decimal ammount)
         {
             //Valido si es la misma moneda.
             if (wallet.moneda.cod != "ARS")
@@ -121,7 +121,7 @@ namespace BL
         }
 
         //Registro la transferencia.
-        private int recordTransference(long opId, ClienteBE cliente, BilleteraBE2 origen, BilleteraBE2 destino, MonedaBE moneda, decimal ammount)
+        private int recordTransference(long opId, ClienteBE cliente, BilleteraBE origen, BilleteraBE destino, MonedaBE moneda, decimal ammount)
         {
             //Armo la nueva transferencia.
             TransferenciasBE transfer = new TransferenciasBE();
@@ -139,7 +139,7 @@ namespace BL
         }
 
         //Esta operacion solo funciona si la moneda es ARS.
-        public int transferir(long tranId, BilleteraBE2 origen, BilleteraBE2 destino, Money ammount)
+        public int transferir(long tranId, BilleteraBE origen, BilleteraBE destino, Money ammount)
         {
             //Valido tipo de monedas.
             if (origen.moneda.cod != destino.moneda.cod)
@@ -164,13 +164,13 @@ namespace BL
         }
 
         //Esta operacion solo funciona si la moneda es ARS.
-        public int extraer(BilleteraBE2 target, double ammount)
+        public int extraer(BilleteraBE target, double ammount)
         {
             if (target.moneda.cod != "ARS")
                 throw new Exception("Operation allowed only to wallets in ARS");
 
             //Traigo la wallet.
-            BilleteraBE2 wallet = this.getById(target.idwallet, false);
+            BilleteraBE wallet = this.getById(target.idwallet, false);
 
             //Incremento el saldo.
             wallet.saldo = new Money(wallet.saldo.getValue() - Convert.ToDecimal(ammount));
@@ -191,10 +191,10 @@ namespace BL
         }
 
         //Obtengo info de la billetera, pudiendo tener el saldo actualizado o no.
-        public BilleteraBE2 getById(long id, bool updatedBalance = false)
+        public BilleteraBE getById(long id, bool updatedBalance = false)
         {
             //Recupero de la bd los datos, si no existe retorno null.
-            BilleteraBE2 wallet = new BilleteraDAL2().findById(id);
+            BilleteraBE wallet = new BilleteraDAL().findById(id);
 
             if (wallet == null)
                 return null;

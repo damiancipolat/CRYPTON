@@ -43,8 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteBL.cs" />
-    <Compile Include="CuentaBL2.cs" />
-    <Compile Include="MonedaBL.cs" />
+    <Compile Include="CuentaBL.cs" />
     <Compile Include="NotificacionBL.cs" />
     <Compile Include="ComisionValorBL.cs" />
     <Compile Include="EmpleadoBL.cs" />
@@ -53,7 +52,7 @@
     <Compile Include="ConversorBL.cs" />
     <Compile Include="IdiomaBL.cs" />
     <Compile Include="MarketBL.cs" />
-    <Compile Include="MonedaBL2.cs" />
+    <Compile Include="MonedaBL.cs" />
     <Compile Include="OperacionesBL.cs" />
     <Compile Include="Operations\Commission.cs" />
     <Compile Include="Operations\EstimateTaxesForBuy.cs" />
@@ -62,7 +61,6 @@
     <Compile Include="Operations\ValidateSwipe.cs" />
     <Compile Include="OrdenCompraBL.cs" />
     <Compile Include="OrdenVentaBL.cs" />
-    <Compile Include="OrdenVentaBL2.cs" />
     <Compile Include="Permisos\FamiliaBL.cs" />
     <Compile Include="Permisos\PatenteBL.cs" />
     <Compile Include="Permisos\PermisoBL.cs" />
@@ -70,7 +68,7 @@
     <Compile Include="TaxManager.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="ReportingBL.cs" />
-    <Compile Include="BilleteraBL2.cs" />
+    <Compile Include="BilleteraBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

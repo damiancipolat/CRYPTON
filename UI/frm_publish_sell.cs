@@ -67,15 +67,15 @@ namespace UI
             }
 
             //Traigo las monedas.
-            MonedaBE origen = new MonedaBL2().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
-            MonedaBE destino = new MonedaBL2().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
+            MonedaBE origen = new MonedaBL().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
+            MonedaBE destino = new MonedaBL().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
             
             //Traigo valores y conversiones.
             double input = Convert.ToDouble(this.txt_ammount_enter.Text);
             double value = Convert.ToDouble(this.txt_ammount_receive.Text);            
 
             //Creo el objeto venta.
-            OrdenVentaBE2 order = new OrdenVentaBE2();
+            OrdenVentaBE order = new OrdenVentaBE();
             order.cantidad = new Money(this.txt_ammount_enter.Text);
             order.precio = new Money(this.txt_ammount_receive.Text);
             order.ofrece = origen;
@@ -86,7 +86,7 @@ namespace UI
             order.vendedor = new ClienteBL().findByUser(Session.GetInstance().getUser());
 
             //Creo la orden.
-            new OrdenVentaBL2().create(order);
+            new OrdenVentaBL().create(order);
             MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_SUCCESS"));
 
             //Cierro.
@@ -104,7 +104,7 @@ namespace UI
             this.translateTexts();
 
             //Cargo las monedas.
-            List<MonedaBE> monedas = new MonedaBL2().getAll();
+            List<MonedaBE> monedas = new MonedaBL().getAll();
 
             //Cargo los combos.
             foreach (MonedaBE money in monedas)
@@ -144,7 +144,7 @@ namespace UI
             Money offerValue = new Money(monto);
 
             //Convierto el valor ingresado al valor pedido.
-            decimal convertedValue = new MonedaBL2().convertMoney(origen, destino, offerValue.getValue());
+            decimal convertedValue = new MonedaBL().convertMoney(origen, destino, offerValue.getValue());
 
             //Tengo en cuenta que si es ARS tengo que redondear
             return (destino.cod == "ARS") ? Convert.ToDecimal(Math.Round(convertedValue, 2)) : Convert.ToDecimal(Math.Round(convertedValue, 8));           
@@ -159,8 +159,8 @@ namespace UI
                 if (this.radioButton2.Checked)
                 {
                     //Obtengo las monedas
-                    MonedaBE origen = new MonedaBL2().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
-                    MonedaBE destino = new MonedaBL2().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
+                    MonedaBE origen = new MonedaBL().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
+                    MonedaBE destino = new MonedaBL().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
 
                     //Obtengo el valor de la conversion.
                     decimal convertedValue = this.getConversion(origen, destino, this.txt_ammount_enter.Text);

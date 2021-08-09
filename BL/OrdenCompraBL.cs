@@ -19,7 +19,7 @@ namespace BL
     public class OrdenCompraBL
     {
         //Obtengo en forma de lista todos los impuestos para hacer la compra.
-        public List<(string, string, string)> getTaxesToBuy(OrdenVentaBE2 orden, ClienteBE buyer)
+        public List<(string, string, string)> getTaxesToBuy(OrdenVentaBE orden, ClienteBE buyer)
         {
             return new EstimateTaxesForBuy().getTaxesToBuy(orden,buyer);
         }                
@@ -31,7 +31,7 @@ namespace BL
         }
 
         //Hago la operacion de comprar.
-        public long comprar(OrdenVentaBE2 orden, ClienteBE buyer, Money total)
+        public long comprar(OrdenVentaBE orden, ClienteBE buyer, Money total)
         {
             //Valido los montos.
             new ValidateSwipe().validate(orden, buyer);
@@ -56,7 +56,7 @@ namespace BL
             new Swiper().swipe(orden, buyer);
 
             //Marco como vendida la orden de venta.
-            new OrdenVentaBL2().close(orden);
+            new OrdenVentaBL().close(orden);
 
             //cargo las notificaciones.
             new NotificateBuySuccess().notificate(buyOrder);
