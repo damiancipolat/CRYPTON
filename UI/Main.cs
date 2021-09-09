@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using UI.Notifications;
 using UI.Permisos;
+using UI.Admin;
 using BL.Permisos;
 using BE.ValueObject;
 using IO;
@@ -443,10 +444,12 @@ namespace UI
 
         private void Button1_Click_4(object sender, EventArgs e)
         {
-            List<BitacoraBE> lista = new BitacoraDAL().search("*", "2021-08-01", "2021-11-01", "");
+            new frm_bitacora().Show();
+            /*List<BitacoraBE> lista = new BitacoraDAL().search("*", "2021-08-01", "2021-11-01", "");
 
             foreach (BitacoraBE a in lista)
                 Debug.WriteLine("++" + a.payload);
+                */
             /*
             List<string> opa = new BitacoraDAL().getActivities();
 

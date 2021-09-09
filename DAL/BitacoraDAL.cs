@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Globalization;
 using BE;
 using DAL.DAO;
 
@@ -75,25 +76,28 @@ namespace DAL
             where = where + ((text != "") ? $"and like '%{text}%'" : "");
 
             //Instancio el sql builder y ejecuto el query.
-            string sql = $"select id,idusuario,activity,payload from bitacora where {where}";
+            string sql = $"select id,idusuario,activity,payload,fec_log from bitacora where {where}";
             QuerySelect builder = new QuerySelect();
             SqlDataReader reader = builder.query(sql);
 
             var lista = new List<BitacoraBE>();
 
             while (reader.Read())
-            {
-                BitacoraBE logBE = new BitacoraBE();
+            {                
                 int iduser = Convert.ToInt32(reader.GetValue(1));
+
+                //Armo la estructura.
+                BitacoraBE logBE = new BitacoraBE();
                 logBE.id = Convert.ToInt32(reader.GetValue(0));
                 logBE.usuario = (iduser!=0)?new UsuarioDAL().findById(Convert.ToInt32(reader.GetValue(1))):null;
                 logBE.actividad = reader.GetValue(2).ToString();
                 logBE.payload = reader.GetValue(3).ToString();
+                logBE.fecLog = DateTime.ParseExact(reader.GetValue(4).ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);                
+                
                 lista.Add(logBE);
             }
 
             return lista;
         }
-
     }
 }

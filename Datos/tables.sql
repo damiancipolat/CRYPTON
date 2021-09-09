@@ -884,6 +884,20 @@ insert into idioma_palabras(code,clave,valor) values('ES','MY_BUYS','Mis compras
 insert into idioma_palabras(code,clave,valor) values('ES','BUY_DATE','Fecha de compra');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_USER_PERM_MANAGER','Gestionar permisos de usuarios');
 
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_ACTIV_TITLE','Actividad');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_FROM_TITLE','Desde:');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_TO_TITLE','Hasta:');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_TEXT_TITLE','Texto:');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_SEARCH_TITLE','Buscar');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_SEARCH_DESCRIP','Buscar en los registros');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_BTN_SEARCH','Buscar');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_BTN_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_ID','LogId');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_FECHA','Fecha log');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_USUARIO','Usuario');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_ACTIVIDAD','Actividad');
+insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_TEXTO','Descripcion');
+
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
 insert into idioma_palabras(code,clave,valor) values('ENG','HELLO','Hello');
@@ -1117,5 +1131,16 @@ insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_PENDING_VALUE
 insert into idioma_palabras(code,clave,valor) values('ENG','MY_BUYS','My buys');
 insert into idioma_palabras(code,clave,valor) values('ENG','BUY_DATE','Buy date');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_USER_PERM_MANAGER','Manage user permission');
-
-select * from bitacora
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_ACTIV_TITLE','Activation tag');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_FROM_TITLE','From:');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_TO_TITLE','To:');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_TEXT_TITLE','Text:');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_SEARCH_TITLE','Search');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_SEARCH_DESCRIP','Search in the log database');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_BTN_SEARCH','Search');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_BTN_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_ID','LogId');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_FECHA','Log date');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_USUARIO','User');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_ACTIVIDAD','Activity');
+insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_TEXTO','Description');
