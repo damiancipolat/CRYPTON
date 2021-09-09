@@ -29,7 +29,7 @@ namespace BL
         {
             //Creo la wallet en block.io
             NewWallet created = new BlockIo().createWallet(moneda.cod);
-            Bitacora.GetInstance().log("Se ha creado :" + moneda.cod + "/" + created.data.address, true);
+            Bitacora.GetInstance().log("SIGNUP","Se ha creado :" + moneda.cod + "/" + created.data.address, true);
 
             //Creo la billetera.
             BilleteraBE wallet = new BilleteraBE();
@@ -185,7 +185,7 @@ namespace BL
         {
             //Consulto el balance en block.io.
             Balance balance = new BlockIo().getBalance(moneda.cod, address);
-            Bitacora.GetInstance().log("Se ha consultado el balance:" + moneda.cod + "/" + address + ", " + balance.data.available_balance, true);
+            Bitacora.GetInstance().log("BALANCE","Se ha consultado el balance:" + moneda.cod + "/" + address + ", " + balance.data.available_balance, true);
 
             return (balance.data.available_balance,balance.data.pending_received_balance);
         }

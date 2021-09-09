@@ -10,8 +10,8 @@ namespace BE
     {
         public int id;
         public UsuarioBE usuario;
-        public int type;
         public DateTime fecLog;
-        public String payload;
+        public string actividad;
+        public string payload;
     }
 }

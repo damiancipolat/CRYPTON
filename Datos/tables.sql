@@ -366,17 +366,17 @@ create table notificaciones
 	fecRegistro datetime,
 	marked int
 );
-
+select distinct activity from bitacora;
 --Bitacora. 
 CREATE TABLE bitacora
 (
 	id bigint not NULL identity(1,1) PRIMARY KEY,
-	idusuario bigint NULL,
-	[type] bigint NULL,
+	idusuario bigint NULL,	
 	fec_log datetime NULL,
+	activity varchar(150),
 	payload TEXT not NULL	
 );
-
+select * from bitacora
 --Tabla de idiomas.
 create table idiomas
 (
@@ -1117,3 +1117,5 @@ insert into idioma_palabras(code,clave,valor) values('ENG','WALLET_PENDING_VALUE
 insert into idioma_palabras(code,clave,valor) values('ENG','MY_BUYS','My buys');
 insert into idioma_palabras(code,clave,valor) values('ENG','BUY_DATE','Buy date');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_USER_PERM_MANAGER','Manage user permission');
+
+select * from bitacora

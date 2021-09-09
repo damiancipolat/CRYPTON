@@ -51,19 +51,19 @@ namespace BL
             
             //ARS
             int arsId = walletBL.crear(cuenta, cliente, "ARS");
-            Bitacora.GetInstance().log("Se ha creado la cuenta en ars pesos id:" + arsId.ToString(), true);
+            Bitacora.GetInstance().log("SIGNUP","Se ha creado la cuenta en ars pesos id:" + arsId.ToString(), true);
 
             //BTC
             int btcId = walletBL.crear(cuenta, cliente, "BTC");
-            Bitacora.GetInstance().log("Se ha creado la cuenta en bitcoin:" + btcId.ToString(), true);
+            Bitacora.GetInstance().log("SIGNUP", "Se ha creado la cuenta en bitcoin:" + btcId.ToString(), true);
 
             //LTC
             int ltcId = walletBL.crear(cuenta, cliente, "LTC");
-            Bitacora.GetInstance().log("Se ha creado la cuenta en litecoin id:" + ltcId.ToString(), true);
+            Bitacora.GetInstance().log("SIGNUP", "Se ha creado la cuenta en litecoin id:" + ltcId.ToString(), true);
 
             //DOG
             int dogId = walletBL.crear(cuenta, cliente, "DOG");
-            Bitacora.GetInstance().log("Se ha creado la cuenta en doge id:" + dogId.ToString(), true);
+            Bitacora.GetInstance().log("SIGNUP", "Se ha creado la cuenta en doge id:" + dogId.ToString(), true);
             
         }
 

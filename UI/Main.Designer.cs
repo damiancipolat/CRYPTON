@@ -55,9 +55,10 @@
             this.main_menu_it_add_user = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_user_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_lang_manager = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.main_menu_it_user_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -307,17 +308,6 @@
             this.main_menu_it_lang_manager.Text = "main_menu_it_lang_manager";
             this.main_menu_it_lang_manager.Click += new System.EventHandler(this.GestorIdiomasToolStripMenuItem_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::UI.Properties.Resources.background2;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1428, 780);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // main_menu_it_user_perm_manager
             // 
             this.main_menu_it_user_perm_manager.Name = "main_menu_it_user_perm_manager";
@@ -332,11 +322,33 @@
             this.main_menu_it_perm_manager.Text = "main_menu_it_perm_manager";
             this.main_menu_it_perm_manager.Click += new System.EventHandler(this.Main_menu_it_perm_manager_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::UI.Properties.Resources.background2;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1428, 780);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(197, 116);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_4);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -394,6 +406,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_my_buys;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_user_perm_manager;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_perm_manager;
+        private System.Windows.Forms.Button button1;
     }
 }
 

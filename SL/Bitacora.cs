@@ -24,14 +24,14 @@ namespace SL
             return _instance;
         }
 
-        public int log(string payload, bool debug=false)
+        public int log(string actividad,string payload,bool debug=false)
         {
             //Creo la entidad bitacora.
             BitacoraBE logBE = new BitacoraBE();
             logBE.payload = payload;
             logBE.usuario = Session.GetInstance().getUser();
             logBE.fecLog =DateTime.Now;
-            logBE.type = 1;
+            logBE.actividad = actividad!=null?actividad:"LOG";
 
             if (debug)
                 Debug.WriteLine(payload);
