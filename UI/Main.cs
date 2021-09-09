@@ -443,12 +443,14 @@ namespace UI
 
         private void Button1_Click_4(object sender, EventArgs e)
         {
-            new BitacoraDAL().search("*", "2019-01-01", "2019-02-02", "555W");
+            List<BitacoraBE> lista = new BitacoraDAL().search("*", "2021-08-01", "2021-11-01", "");
+
+            foreach (BitacoraBE a in lista)
+                Debug.WriteLine("++" + a.payload);
             /*
             List<string> opa = new BitacoraDAL().getActivities();
 
-            foreach (string activ in opa)
-                Debug.WriteLine("++"+activ);
+
                 */
         }
     }

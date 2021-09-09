@@ -366,7 +366,7 @@ create table notificaciones
 	fecRegistro datetime,
 	marked int
 );
-select distinct activity from bitacora;
+
 --Bitacora. 
 CREATE TABLE bitacora
 (

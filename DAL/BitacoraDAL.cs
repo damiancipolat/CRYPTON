@@ -74,10 +74,8 @@ namespace DAL
             //Agrego la busqueda por regext.
             where = where + ((text != "") ? $"and like '%{text}%'" : "");
 
-            Debug.WriteLine(">>>>>"+where);
-            /*
             //Instancio el sql builder y ejecuto el query.
-            string sql = "select * from permiso p where p.permiso is not null;";
+            string sql = $"select id,idusuario,activity,payload from bitacora where {where}";
             QuerySelect builder = new QuerySelect();
             SqlDataReader reader = builder.query(sql);
 
@@ -85,17 +83,16 @@ namespace DAL
 
             while (reader.Read())
             {
-                int id = reader.GetInt32(reader.GetOrdinal("id"));
-                string nombre = reader.GetString(reader.GetOrdinal("nombre"));
-
-                Patente c = new Patente();
-                c.Id = id;
-                c.Nombre = nombre;
-                lista.Add(c);
+                BitacoraBE logBE = new BitacoraBE();
+                int iduser = Convert.ToInt32(reader.GetValue(1));
+                logBE.id = Convert.ToInt32(reader.GetValue(0));
+                logBE.usuario = (iduser!=0)?new UsuarioDAL().findById(Convert.ToInt32(reader.GetValue(1))):null;
+                logBE.actividad = reader.GetValue(2).ToString();
+                logBE.payload = reader.GetValue(3).ToString();
+                lista.Add(logBE);
             }
 
-            return lista;*/
-            return new List<BitacoraBE>();
+            return lista;
         }
 
     }
