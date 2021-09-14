@@ -69,6 +69,10 @@ namespace DAL
             //Agrego el filtro de actividad.
             where = (activity == "*") ? "" : $"activity='{activity}' and ";
 
+            //Convierto formato de fechas.
+            from = DateTime.ParseExact(from, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+            to = DateTime.ParseExact(to,"dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+            
             //Agrego el filtro de fecha.
             where = where + ($"fec_log>= '{from}' and fec_log<='{to}'");
 
@@ -78,7 +82,7 @@ namespace DAL
             //Instancio el sql builder y ejecuto el query.
             string sql = $"select id,idusuario,activity,payload,fec_log from bitacora where {where}";
             QuerySelect builder = new QuerySelect();
-            SqlDataReader reader = builder.query(sql);
+            SqlDataReader reader = builder.query(sql);           
 
             var lista = new List<BitacoraBE>();
 
@@ -92,7 +96,7 @@ namespace DAL
                 logBE.usuario = (iduser!=0)?new UsuarioDAL().findById(Convert.ToInt32(reader.GetValue(1))):null;
                 logBE.actividad = reader.GetValue(2).ToString();
                 logBE.payload = reader.GetValue(3).ToString();
-                logBE.fecLog = DateTime.ParseExact(reader.GetValue(4).ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);                
+                logBE.fecLog = Convert.ToDateTime(reader.GetValue(4));
                 
                 lista.Add(logBE);
             }

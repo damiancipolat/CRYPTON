@@ -99,8 +99,8 @@ namespace UI
             this.main_menu_it_user_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_MANAGER");
             this.main_menu_it_lang_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_LANG_MANAGER");
             this.main_menu_it_user_perm_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_PERM_MANAGER");
-            this.main_menu_it_perm_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_PERMISSION");            
-
+            this.main_menu_it_perm_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_PERMISSION");
+            this.main_menu_it_log.Text = Idioma.GetInstance().translate("MAIN_MENU_LOG_SEARCH");
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -169,6 +169,7 @@ namespace UI
             this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, PermisoCodes.CREATE_USER.ToString());
             this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_USERS.ToString());            
             this.main_menu_it_perm_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_PERMISSION.ToString());
+            this.main_menu_it_log.Visible = permBL.hasPermission(permissions, PermisoCodes.SEARCH_LOG.ToString());            
         }
 
         //Oculto menu en base a los permisos.
@@ -444,17 +445,12 @@ namespace UI
 
         private void Button1_Click_4(object sender, EventArgs e)
         {
+
+        }
+
+        private void Main_menu_it_log_Click(object sender, EventArgs e)
+        {
             new frm_bitacora().Show();
-            /*List<BitacoraBE> lista = new BitacoraDAL().search("*", "2021-08-01", "2021-11-01", "");
-
-            foreach (BitacoraBE a in lista)
-                Debug.WriteLine("++" + a.payload);
-                */
-            /*
-            List<string> opa = new BitacoraDAL().getActivities();
-
-
-                */
         }
     }
 }

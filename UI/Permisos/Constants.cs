@@ -22,6 +22,7 @@ namespace UI.Permisos
         IT,
         EMPLOYEES,
         NOTIFICATIONS,
-        MY_BUYS
+        MY_BUYS,
+        SEARCH_LOG
     }
 }

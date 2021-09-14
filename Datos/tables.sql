@@ -93,6 +93,7 @@ insert into permiso(nombre,permiso) values('MANAGE_USER_PERMISSION','P')
 insert into permiso(nombre,permiso) values('MANAGE_LANGUAGES','P');
 insert into permiso(nombre,permiso) values('NOTIFICATIONS','P');
 insert into permiso(nombre,permiso) values('MY_BUYS','P');
+insert into permiso(nombre,permiso) values('SEARCH_LOG','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('CLIENTS',null);
@@ -376,7 +377,7 @@ CREATE TABLE bitacora
 	activity varchar(150),
 	payload TEXT not NULL	
 );
-select * from bitacora
+
 --Tabla de idiomas.
 create table idiomas
 (
@@ -633,6 +634,20 @@ insert into palabras(word) values('OP_TOTAL');
 insert into palabras(word) values('MY_BUYS');
 insert into palabras(word) values('BUY_DATE');
 insert into palabras(word) values('MAIN_MENU_IT_USER_PERM_MANAGER');
+insert into palabras(word) values('LOG_ACTIV_TITLE');
+insert into palabras(word) values('LOG_FROM_TITLE');
+insert into palabras(word) values('LOG_TO_TITLE');
+insert into palabras(word) values('LOG_TEXT_TITLE');
+insert into palabras(word) values('LOG_SEARCH_TITLE');
+insert into palabras(word) values('LOG_SEARCH_DESCRIP');
+insert into palabras(word) values('LOG_BTN_SEARCH');
+insert into palabras(word) values('LOG_BTN_CLOSE');
+insert into palabras(word) values('LOG_COL_ID');
+insert into palabras(word) values('LOG_COL_FECHA');
+insert into palabras(word) values('LOG_COL_USUARIO');
+insert into palabras(word) values('LOG_COL_ACTIVIDAD');
+insert into palabras(word) values('LOG_COL_TEXTO');
+insert into palabras(word) values('MAIN_MENU_LOG_SEARCH');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -703,6 +718,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BUY','Compr
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_DEPOSIT','Ingresar saldo');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT','Retirar saldo');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT','IT');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOG_SEARCH','Buscar en bitacora');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BACKUP','Backup');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PERMISSION','Permisos');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usuarios');
@@ -883,7 +899,6 @@ insert into idioma_palabras(code,clave,valor) values('ES','WALLET_PENDING_VALUE'
 insert into idioma_palabras(code,clave,valor) values('ES','MY_BUYS','Mis compras');
 insert into idioma_palabras(code,clave,valor) values('ES','BUY_DATE','Fecha de compra');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_USER_PERM_MANAGER','Gestionar permisos de usuarios');
-
 insert into idioma_palabras(code,clave,valor) values('ES','LOG_ACTIV_TITLE','Actividad');
 insert into idioma_palabras(code,clave,valor) values('ES','LOG_FROM_TITLE','Desde:');
 insert into idioma_palabras(code,clave,valor) values('ES','LOG_TO_TITLE','Hasta:');
@@ -957,6 +972,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SEARCH','S
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_DEPOSIT','Enter balance');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXTRACT','Withdraw balance');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT','TI');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_LOG_SEARCH','Log search');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_BACKUP','Backup');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_PERMISSION','Permissions');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_USER','Users');
