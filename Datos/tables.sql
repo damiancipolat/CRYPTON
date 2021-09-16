@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS tipo_usuario;
 DROP TABLE IF EXISTS solic_onboarding;
 DROP TABLE IF EXISTS onboarding_estados;
 DROP TABLE IF EXISTS cliente;
+DROP TABLE IF EXISTS cliente_cambios;
 DROP TABLE IF EXISTS moneda;
 DROP TABLE IF EXISTS empleado;
 DROP TABLE IF EXISTS cliente_agenda;
@@ -163,6 +164,21 @@ create table cliente(
 	valido varchar(1),
 	deleted datetime
 );
+
+create table cliente_cambios(
+	idchange bigint identity(1,1) primary key,
+	change_date datetime,
+	idcliente bigint,	
+	tipoDoc varchar(10),
+	numero varchar(100),
+	fec_nac datetime,
+	num_tramite varchar(50),
+	domicilio varchar(100),
+	telefono varchar(100)
+);
+
+select * from usuario
+select * from cliente
 
 create table empleado(
 	idempleado bigint identity(1,1) primary key,
@@ -648,6 +664,18 @@ insert into palabras(word) values('LOG_COL_USUARIO');
 insert into palabras(word) values('LOG_COL_ACTIVIDAD');
 insert into palabras(word) values('LOG_COL_TEXTO');
 insert into palabras(word) values('MAIN_MENU_LOG_SEARCH');
+insert into palabras(word) values('USR_SEARCHER');
+insert into palabras(word) values('USR_CONTROL_BTN_CHANGE');
+insert into palabras(word) values('USR_CONTROL_COL_CHANGE_TDOC');
+insert into palabras(word) values('USR_CONTROL_COL_CHANGE_NUM');
+insert into palabras(word) values('USR_CONTROL_COL_CHANGE_FEC_NAC');
+insert into palabras(word) values('USR_CONTROL_COL_CHANGRE_NUM_TRAMITE');
+insert into palabras(word) values('USR_CONTROL_COL_CHANGE_ADDRESS');
+insert into palabras(word) values('USR_CONTROL_COL_CHANGE_EMAIL');
+insert into palabras(word) values('USR_CONTROL_COL_CHANGE_PHONE');
+insert into palabras(word) values('FRM_CHANGE_CONTROL');
+insert into palabras(word) values('FRM_CHANGE_CONTROL_BTN_RECOVE');
+insert into palabras(word) values('USR_CHANGE_CLOSE');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -912,6 +940,19 @@ insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_FECHA','Fecha
 insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_USUARIO','Usuario');
 insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_ACTIVIDAD','Actividad');
 insert into idioma_palabras(code,clave,valor) values('ES','LOG_COL_TEXTO','Descripcion');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_SEARCHER','Buscador de usuarios');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_BTN_CHANGE','Ctrl. cambios');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_TDOC','Tipo documento');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_NUM','Número');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_FEC_NAC','Fecha nacimiento');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGRE_NUM_TRAMITE','N° operation');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_ADDRESS','Direccón');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_EMAIL','Email');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_PHONE','Telefono');
+insert into idioma_palabras(code,clave,valor) values('ES','FRM_CHANGE_CONTROL','Control de cambios');
+insert into idioma_palabras(code,clave,valor) values('ES','FRM_CHANGE_CONTROL_BTN_RECOVE','Aplicar cambios');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_CLOSE','Cerrar');
+
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1160,3 +1201,21 @@ insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_FECHA','Log 
 insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_USUARIO','User');
 insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_ACTIVIDAD','Activity');
 insert into idioma_palabras(code,clave,valor) values('ENG','LOG_COL_TEXTO','Description');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_SEARCHER','User searcher');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_BTN_CHANGE','Change ctrl.');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_TDOC','Doc type');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_NUM','Number');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_FEC_NAC','Birth date');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGRE_NUM_TRAMITE','N° operation');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_ADDRESS','Address');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_EMAIL','Email');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_PHONE','Phone');
+insert into idioma_palabras(code,clave,valor) values('ENG','FRM_CHANGE_CONTROL','Changes control');
+insert into idioma_palabras(code,clave,valor) values('ENG','FRM_CHANGE_CONTROL_BTN_RECOVE','Restore changes');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_CLOSE','Close');
+
+
+select * from usuario where tipo_usuario=1;
+select * from cliente where idusuario=6; --4
+
+select * from cliente_cambios

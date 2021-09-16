@@ -20,6 +20,7 @@ namespace BE
         public string valido;
 
         public ClienteBE() { }
+
         public ClienteBE(UsuarioBE user, string tdoc, string num,string numTramite, DateTime fecNac, string domic, string email, string tel)
         {
             this.usuario = user;

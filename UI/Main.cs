@@ -13,6 +13,7 @@ using UI.Notifications;
 using UI.Permisos;
 using UI.Admin;
 using BL.Permisos;
+using BL.ChangeControl;
 using BE.ValueObject;
 using IO;
 using IO.Responses;
@@ -452,7 +453,11 @@ namespace UI
         {
             new frm_bitacora().Show();
         }
+
+        private void Button1_Click_5(object sender, EventArgs e)
+        {
+            ClienteBE cli = new ClienteBL().findById(4);
+            new ClientChangeBL().recordChange(cli);
+        }
     }
 }
- 
- 

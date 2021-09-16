@@ -79,7 +79,29 @@ namespace BL
             int clientId = new ClienteDAL().insert(cliente);
             cliente.idcliente = clientId;
 
+            //Registro el historial de cambios.
+            new ClienteChangeDAL().insert(cliente);
+
             return cliente;
+        }
+
+        public int update(ClienteBE cliente)
+        {
+            //Actualizo los cambios.
+            int result = new ClienteDAL().update(cliente);
+
+            //Registro el cambio.
+            new ClienteChangeDAL().insert(cliente);
+
+            return result;
+        }
+
+        //Recupera el cambio en base a un id.
+        public int recoverFromChange(long id)
+        {
+            //Recupero en base a un id.
+            ClienteChangeBE change = new ClienteChangeDAL().findById(id);
+            return 1;
         }
     }
 }

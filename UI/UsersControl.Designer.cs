@@ -33,10 +33,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.usr_search_close = new System.Windows.Forms.Button();
             this.usr_data = new System.Windows.Forms.DataGridView();
-            this.usr_search_btn = new System.Windows.Forms.Button();
             this.usr_search_txt = new System.Windows.Forms.TextBox();
             this.usr_search_label = new System.Windows.Forms.Label();
             this.usr_perm_btn = new System.Windows.Forms.Button();
+            this.usr_ctrl_changes = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.usr_search_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usr_data)).BeginInit();
             this.SuspendLayout();
@@ -44,10 +46,10 @@
             // usr_search_descrip
             // 
             this.usr_search_descrip.AutoSize = true;
-            this.usr_search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usr_search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usr_search_descrip.Location = new System.Drawing.Point(104, 64);
             this.usr_search_descrip.Name = "usr_search_descrip";
-            this.usr_search_descrip.Size = new System.Drawing.Size(219, 30);
+            this.usr_search_descrip.Size = new System.Drawing.Size(241, 30);
             this.usr_search_descrip.TabIndex = 34;
             this.usr_search_descrip.Text = "usr_search_descrip";
             this.usr_search_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -75,50 +77,43 @@
             // 
             // usr_search_close
             // 
-            this.usr_search_close.Location = new System.Drawing.Point(783, 626);
+            this.usr_search_close.BackColor = System.Drawing.Color.LightCoral;
+            this.usr_search_close.ForeColor = System.Drawing.Color.White;
+            this.usr_search_close.Location = new System.Drawing.Point(953, 693);
             this.usr_search_close.Name = "usr_search_close";
             this.usr_search_close.Size = new System.Drawing.Size(165, 46);
             this.usr_search_close.TabIndex = 37;
             this.usr_search_close.Text = "usr_search_close";
-            this.usr_search_close.UseVisualStyleBackColor = true;
+            this.usr_search_close.UseVisualStyleBackColor = false;
             this.usr_search_close.Click += new System.EventHandler(this.Button1_Click);
             // 
             // usr_data
             // 
             this.usr_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usr_data.Location = new System.Drawing.Point(26, 196);
+            this.usr_data.Location = new System.Drawing.Point(26, 239);
             this.usr_data.Name = "usr_data";
             this.usr_data.RowHeadersWidth = 51;
             this.usr_data.RowTemplate.Height = 24;
-            this.usr_data.Size = new System.Drawing.Size(922, 408);
+            this.usr_data.Size = new System.Drawing.Size(1089, 430);
             this.usr_data.TabIndex = 38;
-            // 
-            // usr_search_btn
-            // 
-            this.usr_search_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.usr_search_btn.Location = new System.Drawing.Point(809, 136);
-            this.usr_search_btn.Name = "usr_search_btn";
-            this.usr_search_btn.Size = new System.Drawing.Size(139, 41);
-            this.usr_search_btn.TabIndex = 39;
-            this.usr_search_btn.Text = "usr_search_btn";
-            this.usr_search_btn.UseVisualStyleBackColor = false;
-            this.usr_search_btn.Click += new System.EventHandler(this.Usr_search_btn_Click);
+            this.usr_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usr_data_CellClick);
+            this.usr_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usr_data_CellContentClick);
             // 
             // usr_search_txt
             // 
             this.usr_search_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usr_search_txt.Location = new System.Drawing.Point(451, 139);
+            this.usr_search_txt.Location = new System.Drawing.Point(543, 181);
             this.usr_search_txt.Name = "usr_search_txt";
-            this.usr_search_txt.Size = new System.Drawing.Size(343, 34);
+            this.usr_search_txt.Size = new System.Drawing.Size(419, 34);
             this.usr_search_txt.TabIndex = 40;
             // 
             // usr_search_label
             // 
             this.usr_search_label.AutoSize = true;
             this.usr_search_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usr_search_label.Location = new System.Drawing.Point(452, 103);
+            this.usr_search_label.Location = new System.Drawing.Point(543, 143);
             this.usr_search_label.Name = "usr_search_label";
-            this.usr_search_label.Size = new System.Drawing.Size(191, 30);
+            this.usr_search_label.Size = new System.Drawing.Size(153, 24);
             this.usr_search_label.TabIndex = 41;
             this.usr_search_label.Text = "usr_search_label";
             this.usr_search_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -126,7 +121,7 @@
             // usr_perm_btn
             // 
             this.usr_perm_btn.BackColor = System.Drawing.SystemColors.Info;
-            this.usr_perm_btn.Location = new System.Drawing.Point(26, 135);
+            this.usr_perm_btn.Location = new System.Drawing.Point(26, 177);
             this.usr_perm_btn.Name = "usr_perm_btn";
             this.usr_perm_btn.Size = new System.Drawing.Size(139, 38);
             this.usr_perm_btn.TabIndex = 42;
@@ -134,15 +129,47 @@
             this.usr_perm_btn.UseVisualStyleBackColor = false;
             this.usr_perm_btn.Click += new System.EventHandler(this.Usr_perm_btn_Click);
             // 
+            // usr_ctrl_changes
+            // 
+            this.usr_ctrl_changes.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.usr_ctrl_changes.Location = new System.Drawing.Point(177, 177);
+            this.usr_ctrl_changes.Name = "usr_ctrl_changes";
+            this.usr_ctrl_changes.Size = new System.Drawing.Size(139, 38);
+            this.usr_ctrl_changes.TabIndex = 43;
+            this.usr_ctrl_changes.Text = "usr_ctrl_changes";
+            this.usr_ctrl_changes.UseVisualStyleBackColor = false;
+            this.usr_ctrl_changes.Click += new System.EventHandler(this.Usr_ctrl_changes_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(26, 109);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1089, 10);
+            this.panel3.TabIndex = 46;
+            // 
+            // usr_search_btn
+            // 
+            this.usr_search_btn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.usr_search_btn.Location = new System.Drawing.Point(974, 180);
+            this.usr_search_btn.Name = "usr_search_btn";
+            this.usr_search_btn.Size = new System.Drawing.Size(139, 38);
+            this.usr_search_btn.TabIndex = 39;
+            this.usr_search_btn.Text = "usr_search_btn";
+            this.usr_search_btn.UseVisualStyleBackColor = false;
+            this.usr_search_btn.Click += new System.EventHandler(this.Usr_search_btn_Click);
+            // 
             // UsersControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 692);
-            this.Controls.Add(this.usr_perm_btn);
+            this.ClientSize = new System.Drawing.Size(1140, 758);
+            this.Controls.Add(this.usr_ctrl_changes);
             this.Controls.Add(this.usr_search_label);
-            this.Controls.Add(this.usr_search_txt);
+            this.Controls.Add(this.usr_perm_btn);
             this.Controls.Add(this.usr_search_btn);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.usr_search_txt);
             this.Controls.Add(this.usr_data);
             this.Controls.Add(this.usr_search_close);
             this.Controls.Add(this.pictureBox1);
@@ -169,9 +196,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button usr_search_close;
         private System.Windows.Forms.DataGridView usr_data;
-        private System.Windows.Forms.Button usr_search_btn;
         private System.Windows.Forms.TextBox usr_search_txt;
         private System.Windows.Forms.Label usr_search_label;
         private System.Windows.Forms.Button usr_perm_btn;
+        private System.Windows.Forms.Button usr_ctrl_changes;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button usr_search_btn;
     }
 }

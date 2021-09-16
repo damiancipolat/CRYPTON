@@ -81,6 +81,12 @@
     <Compile Include="Admin\frm_bitacora.Designer.cs">
       <DependentUpon>frm_bitacora.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\frm_cambios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frm_cambios.Designer.cs">
+      <DependentUpon>frm_cambios.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscadorOfertas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </Compile>
     <EmbeddedResource Include="Admin\frm_bitacora.resx">
       <DependentUpon>frm_bitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frm_cambios.resx">
+      <DependentUpon>frm_cambios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscadorOfertas.resx">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
