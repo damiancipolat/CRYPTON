@@ -459,5 +459,21 @@ namespace UI
             ClienteBE cli = new ClienteBL().findById(4);
             new ClientChangeBL().recordChange(cli);
         }
+
+        private void Main_menu_it_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button3_Click_2(object sender, EventArgs e)
+        {
+        new UsersControl().Show();
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            new TreeEditorFrm().Show();
+        }
     }
 }

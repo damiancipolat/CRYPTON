@@ -32,11 +32,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.main_splash = new System.Windows.Forms.Panel();
             this.main_btn_register = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.main_splash_title = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
-            this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.main_menu_start = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_login = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,12 +55,14 @@
             this.main_menu_it_user_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_log = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,16 +109,6 @@
             this.main_btn_register.UseVisualStyleBackColor = false;
             this.main_btn_register.Click += new System.EventHandler(this.Button1_Click_1);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
-            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
             // main_splash_title
             // 
             this.main_splash_title.AutoSize = true;
@@ -141,24 +130,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(1428, 26);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripSplitButton2
-            // 
-            this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.main_change_language});
-            this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
-            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
-            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
-            this.toolStripSplitButton2.Text = "toolStripSplitButton2";
-            // 
-            // main_change_language
-            // 
-            this.main_change_language.Name = "main_change_language";
-            this.main_change_language.Size = new System.Drawing.Size(247, 26);
-            this.main_change_language.Text = "main_change_language";
-            this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -288,6 +259,7 @@
             this.main_menu_it.Name = "main_menu_it";
             this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
+            this.main_menu_it.Click += new System.EventHandler(this.Main_menu_it_Click);
             // 
             // main_menu_it_add_user
             // 
@@ -331,6 +303,34 @@
             this.main_menu_it_log.Text = "main_menu_it_log";
             this.main_menu_it_log.Click += new System.EventHandler(this.Main_menu_it_log_Click);
             // 
+            // toolStripSplitButton2
+            // 
+            this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_change_language});
+            this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
+            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
+            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
+            this.toolStripSplitButton2.Text = "toolStripSplitButton2";
+            // 
+            // main_change_language
+            // 
+            this.main_change_language.Name = "main_change_language";
+            this.main_change_language.Size = new System.Drawing.Size(247, 26);
+            this.main_change_language.Text = "main_change_language";
+            this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
+            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::UI.Properties.Resources.background2;
@@ -342,22 +342,11 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(126, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 35);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_5);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -371,11 +360,11 @@
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.main_splash.ResumeLayout(false);
             this.main_splash.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -416,7 +405,6 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_user_perm_manager;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_perm_manager;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_log;
-        private System.Windows.Forms.Button button1;
     }
 }
 

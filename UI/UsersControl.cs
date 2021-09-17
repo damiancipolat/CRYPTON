@@ -44,6 +44,9 @@ namespace UI
 
         private void UsersControl_Load(object sender, EventArgs e)
         {
+            this.usr_perm_btn.Enabled = false;
+            this.usr_ctrl_changes.Enabled = false;
+
             //Translate text.
             this.translateTexts();
             this.usr_data.ReadOnly = true;

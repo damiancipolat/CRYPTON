@@ -22,12 +22,14 @@ DROP TABLE IF EXISTS orden_compra;
 DROP TABLE IF EXISTS orden_estado;
 DROP TABLE IF EXISTS comisiones;
 DROP TABLE IF EXISTS comisiones_valor;
+DROP TABLE IF EXISTS control_cambios;
 DROP TABLE IF EXISTS comision_operacion_valor;
 DROP TABLE IF EXISTS conversiones;
 DROP TABLE IF EXISTS notificaciones;
 DROP TABLE IF EXISTS admin_backup;
 DROP TABLE IF EXISTS dvv;
 DROP TABLE IF EXISTS idiomas;
+DROP TABLE IF EXISTS palabras;
 DROP TABLE IF EXISTS idioma_palabras;
 DROP TABLE IF EXISTS permiso;
 DROP TABLE IF EXISTS permiso_permiso;
@@ -68,7 +70,8 @@ insert into dvv(tabla,[hash],fecUpdate) values('usuario','',GETDATE());
 --Permisos
 CREATE TABLE permiso(
 	id int IDENTITY(1,1) NOT NULL,
-	nombre varchar(100) NULL
+	nombre varchar(100) NULL,
+	permiso varchar(100)
 );
 
 CREATE TABLE permiso_permiso(
@@ -176,9 +179,6 @@ create table cliente_cambios(
 	domicilio varchar(100),
 	telefono varchar(100)
 );
-
-select * from usuario
-select * from cliente
 
 create table empleado(
 	idempleado bigint identity(1,1) primary key,
@@ -676,6 +676,11 @@ insert into palabras(word) values('USR_CONTROL_COL_CHANGE_PHONE');
 insert into palabras(word) values('FRM_CHANGE_CONTROL');
 insert into palabras(word) values('FRM_CHANGE_CONTROL_BTN_RECOVE');
 insert into palabras(word) values('USR_CHANGE_CLOSE');
+insert into palabras(word) values('USR_TXT_CTRL_TITLE');
+insert into palabras(word) values('USR_TXT_CTRL_DESCRIP');
+insert into palabras(word) values('USR_CHANGE_CONFIRM');
+insert into palabras(word) values('USR_CHANGE_TITLE');
+insert into palabras(word) values('USR_CHANGE_RESTORE_SUCCESS');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -950,9 +955,13 @@ insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANG
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_EMAIL','Email');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_PHONE','Telefono');
 insert into idioma_palabras(code,clave,valor) values('ES','FRM_CHANGE_CONTROL','Control de cambios');
-insert into idioma_palabras(code,clave,valor) values('ES','FRM_CHANGE_CONTROL_BTN_RECOVE','Aplicar cambios');
+insert into idioma_palabras(code,clave,valor) values('ES','FRM_CHANGE_CONTROL_BTN_RECOVE','Recuperar cambio');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_CLOSE','Cerrar');
-
+insert into idioma_palabras(code,clave,valor) values('ES','USR_TXT_CTRL_TITLE','Control de cambos');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_TXT_CTRL_DESCRIP','Aqui podes ver los cambios realizados y recuperarlos.');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_CONFIRM','Confirmar restore?');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_TITLE','¿Seguro deseas recuperar la entidad a este punto?');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_RESTORE_SUCCESS','Restore exitoso!');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1213,9 +1222,13 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHAN
 insert into idioma_palabras(code,clave,valor) values('ENG','FRM_CHANGE_CONTROL','Changes control');
 insert into idioma_palabras(code,clave,valor) values('ENG','FRM_CHANGE_CONTROL_BTN_RECOVE','Restore changes');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_TXT_CTRL_TITLE','Changes control');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_TXT_CTRL_DESCRIP','Here you can see the entity changes and restore if you want.');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_CONFIRM','Confirm restore');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_TITLE','Do you want to restore the entity at this point?');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_RESTORE_SUCCESS','Restore success!');
 
+--select * from usuario
+--select * from cliente
 
-select * from usuario where tipo_usuario=1;
-select * from cliente where idusuario=6; --4
-
-select * from cliente_cambios
+update usuario set tipo_usuario=2 where idusuario=5

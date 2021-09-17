@@ -45,8 +45,6 @@ namespace DAL.Permiso
             {
                 foreach (var c in lista)
                 {
-                    Debug.WriteLine("@@@@" + c.Nombre);
-
                     var l = GetComponent(id, c.Hijos);
                     if (l != null && l.Id == id)
                         return l;

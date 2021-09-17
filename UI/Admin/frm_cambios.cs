@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
+using BL;
 using SL;
 using BL.ChangeControl;
 
@@ -32,7 +33,9 @@ namespace UI.Admin
             this.Text = Idioma.GetInstance().translate("FRM_CHANGE_CONTROL");
             this.change_btn_apply.Text = Idioma.GetInstance().translate("USR_CHANGE_CLOSE");
             this.change_btn_apply.Text = Idioma.GetInstance().translate("FRM_CHANGE_CONTROL_BTN_RECOVE");
-            this.usr_change_close.Text = Idioma.GetInstance().translate("USR_CHANGE_CLOSE");
+            this.usr_change_close.Text = Idioma.GetInstance().translate("USR_CHANGE_CLOSE");            
+            this.txt_ctrl_title.Text = Idioma.GetInstance().translate("USR_TXT_CTRL_TITLE");
+            this.txt_ctrl_descrip.Text = Idioma.GetInstance().translate("USR_TXT_CTRL_DESCRIP");
         }
 
         private void fillData()
@@ -78,13 +81,34 @@ namespace UI.Admin
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            /*
-            int selectedrowindex = this.usr_data.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = this.usr_data.Rows[selectedrowindex];
+            //Si esta seleccionado.
+            if (this.usr_data.SelectedCells.Count > 0)
+            {
+                //Obtengo la columna.
+                int selectedrowindex = this.usr_data.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = this.usr_data.Rows[selectedrowindex];
 
-            //Busco el usuario en base al id.
-            string selectedId = selectedRow.Cells[0].Value.ToString();
-            */
+                //Busco el usuario en base al id.
+                string selectedId = selectedRow.Cells[0].Value.ToString();
+
+                //Msg de confirmacion.
+                DialogResult dr = MessageBox.Show(
+                    Idioma.GetInstance().translate("USR_CHANGE_TITLE"),
+                    Idioma.GetInstance().translate("USR_CHANGE_CONFIRM"),                    
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (dr == DialogResult.Yes)
+                {
+                    //Busco la entidad y la restauro.
+                    new ClientChangeBL().recoverFrom(Convert.ToInt64(selectedId));
+
+                    //Comunico.
+                    MessageBox.Show(Idioma.GetInstance().translate("USR_CHANGE_RESTORE_SUCCESS"));
+
+                }
+            }
         }
 
         private void Usr_change_close_Click(object sender, EventArgs e)
@@ -95,6 +119,16 @@ namespace UI.Admin
         private void Usr_data_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Usr_change_close_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
