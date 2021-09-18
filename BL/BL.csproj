@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\BackupBL.cs" />
     <Compile Include="BitacoraBL.cs" />
     <Compile Include="ChangeControl\ClientChangeBL.cs" />
     <Compile Include="ClienteBL.cs" />

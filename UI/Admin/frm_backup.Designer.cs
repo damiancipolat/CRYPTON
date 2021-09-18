@@ -91,6 +91,7 @@
             this.btn_new_backup.TabIndex = 44;
             this.btn_new_backup.Text = "btn_new_backup";
             this.btn_new_backup.UseVisualStyleBackColor = false;
+            this.btn_new_backup.Click += new System.EventHandler(this.Btn_new_backup_Click);
             // 
             // btn_load_backup
             // 
@@ -102,6 +103,7 @@
             this.btn_load_backup.TabIndex = 50;
             this.btn_load_backup.Text = "btn_load_backup";
             this.btn_load_backup.UseVisualStyleBackColor = false;
+            this.btn_load_backup.Click += new System.EventHandler(this.Btn_load_backup_Click);
             // 
             // pictureBox1
             // 
@@ -130,6 +132,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_backup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_backup";
             this.Load += new System.EventHandler(this.Frm_backup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usr_data)).EndInit();
@@ -148,5 +151,6 @@
         private System.Windows.Forms.DataGridView usr_data;
         private System.Windows.Forms.Button btn_new_backup;
         private System.Windows.Forms.Button btn_load_backup;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

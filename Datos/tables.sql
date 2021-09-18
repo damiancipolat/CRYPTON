@@ -698,7 +698,10 @@ insert into palabras(word) values('TXT_BACKUP_DESCRIP');
 insert into palabras(word) values('BTN_NEW_BACKUP');
 insert into palabras(word) values('BTN_LOAD_BACKUP');
 insert into palabras(word) values('BTN_CLOSE_BACKUP');
-
+insert into palabras(word) values('BACKUP_COL_PATH');
+insert into palabras(word) values('BACKUP_COL_FEC');
+insert into palabras(word) values('BACKUP_COL_TYPE');
+insert into palabras(word) values('BACKUP_MSG_RESTORE_DESCRIP');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -996,6 +999,12 @@ insert into idioma_palabras(code,clave,valor) values('ES','TXT_BACKUP_DESCRIP','
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_NEW_BACKUP','Nuevo backup');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_LOAD_BACKUP','Cargar backup');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_CLOSE_BACKUP','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_COL_PATH','Path');
+insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_COL_FEC','Fecha');
+insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_COL_TYPE','Tipo');
+insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_TITLE','Backup');
+insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_DESCRIP','¿Queres realizar un nuevo backup?');
+insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_RESTORE_DESCRIP','¿Queres cargar este backup?');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1277,9 +1286,18 @@ insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_DESCRIP',
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_NEW_BACKUP','New backup');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_LOAD_BACKUP','Load backup');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_CLOSE_BACKUP','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_COL_PATH','Path');
+insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_COL_FEC','Date');
+insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_COL_TYPE','Type');
+insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_TITLE','Backup');
+insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_DESCRIP','Do you want to make a new backup?');
+insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_RESTORE_DESCRIP','Do you want to restore to this backup?');
 
 --select * from usuario
 --select * from cliente
 
 
 select * from cliente_cambios where idchange=10012;
+select * from admin_backup
+truncate table admin_backup
+BACKUP DATABASE Crypton TO DISK = 'C:\Users\54116\Desktop\crypton_backup_09.18.2021.12.43.28.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB'
