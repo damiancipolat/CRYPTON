@@ -24,6 +24,7 @@ namespace UI
 
         public frm_profile(ClienteBE client)
         {
+            Debug.WriteLine("*****" + client.idcliente.ToString());
             InitializeComponent();
             this.client = client;
         }

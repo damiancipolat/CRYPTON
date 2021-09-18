@@ -41,6 +41,7 @@ namespace UI.Admin
         private void fillData()
         {
             this.usr_data.Rows.Clear();
+            this.listChanges.Reverse(0, this.listChanges.Count);
 
             //Loop to fill data.
             foreach (ClienteChangeBE client in this.listChanges)

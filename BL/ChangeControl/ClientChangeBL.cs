@@ -30,11 +30,13 @@ namespace BL.ChangeControl
 
             //Armo la copia.
             ClienteBE client = new ClienteBE();
+            client.idcliente = change.idcliente;
             client.tipoDoc = change.tipoDoc;
             client.numero = change.numero;
             client.fec_nac = change.fec_nac;
             client.num_tramite = change.num_tramite;
-            client.telefono = change.telefono;
+            client.telefono = change.telefono;            
+            client.domicilio = change.domicilio;
 
             //Actualizo en base al cambio.
             return new ClienteDAL().update(client);

@@ -156,7 +156,7 @@ namespace DAL
                 {"valido",client.valido}
             };
 
-            return this.getUpdate().updateSchemaById(schema, "cliente", "idusuario", client.idcliente);
+            return this.getUpdate().updateSchemaById(schema, "cliente", "idcliente", client.idcliente);
         }
     }
 }
