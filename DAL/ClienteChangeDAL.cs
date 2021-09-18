@@ -78,7 +78,7 @@ namespace DAL
                 {"idcliente",client.idcliente},
                 {"tipoDoc",client.tipoDoc},
                 {"numero",client.numero},
-                {"fec_nac",client.fec_nac},
+                {"fec_nac",client.fec_nac.ToString("yyyy-MM-dd HH:mm:ss")},
                 {"num_tramite",client.num_tramite},
                 {"domicilio",client.domicilio},
                 {"telefono",client.telefono}

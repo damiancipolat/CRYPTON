@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Diagnostics;
 using BE;
 using BL;
 using BL.Exceptions;
@@ -52,6 +54,7 @@ namespace UI
             //Bindeo campos.
             this.txt_phone.Text = this.client.telefono;
             this.txt_address.Text = this.client.domicilio;
+            this.txt_birth_date.Text= this.client.fec_nac.ToString("dd/MM/yyyy");
             this.txt_tramite.Text = this.client.num_tramite;
             this.txt_num_doc.Text = this.client.numero;
             this.txt_type_doc.Text = this.client.tipoDoc;
@@ -59,8 +62,8 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+           try
+           {
                 new ClientValidator().validateUpdate(
                     this.txt_type_doc.Text,
                     this.txt_num_doc.Text,
@@ -75,6 +78,7 @@ namespace UI
                 this.client.num_tramite = this.txt_tramite.Text;
                 this.client.numero = this.txt_num_doc.Text;
                 this.client.tipoDoc = this.txt_type_doc.Text;
+                this.client.fec_nac= DateTime.ParseExact(this.txt_birth_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                 //Guardo y cierro.
                 new ClienteBL().update(this.client);
