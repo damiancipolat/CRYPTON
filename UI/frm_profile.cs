@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
 using BL;
+using BL.Exceptions;
 using SL;
+using VL;
+using VL.Exceptions;
 
 namespace UI
 {
@@ -38,6 +41,7 @@ namespace UI
             this.txt_profile_phone.Text = Idioma.GetInstance().translate("PROFILE_PHONE");
             this.btn_close.Text = Idioma.GetInstance().translate("PROFILE_CLOSE");
             this.btn_ok.Text = Idioma.GetInstance().translate("PROFILE_OK");
+            this.Text= Idioma.GetInstance().translate("PROFILE_FORM");
         }
 
         private void Frm_profile_Load(object sender, EventArgs e)
@@ -55,7 +59,49 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                new ClientValidator().validateUpdate(
+                    this.txt_type_doc.Text,
+                    this.txt_num_doc.Text,
+                    this.txt_profile_address.Text,
+                    this.txt_tramite.Text,
+                    this.txt_address.Text,
+                    this.txt_phone.Text);
 
+                //Bindeo campos.
+                this.client.telefono = this.txt_phone.Text;
+                this.client.domicilio = this.txt_address.Text;
+                this.client.num_tramite = this.txt_tramite.Text;
+                this.client.numero = this.txt_num_doc.Text;
+                this.client.tipoDoc = this.txt_type_doc.Text;
+
+                //Guardo y cierro.
+                new ClienteBL().update(this.client);
+                this.Close();
+            }
+            catch (BusinessException ex)
+            {
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("REGISTER_INPUT_ERROR_TITLE"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation
+                );
+            }
+            catch (InputException ex)
+            {
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("REGISTER_INPUT_ERROR_TITLE"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

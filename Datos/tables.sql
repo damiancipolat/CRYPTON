@@ -766,6 +766,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_BACKUP','Ba
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PERMISSION','Permisos');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usuarios');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LANGUAGE','Idioma');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PROFILE','Perfil');
 insert into idioma_palabras(code,clave,valor) values('ES','LANGUAGE_CHANGE_OK','Idioma cargado con exito');
 insert into idioma_palabras(code,clave,valor) values('ES','LANGUAGE_CHANGE_ERROR','Error al cambiar el lenguaje');
 insert into idioma_palabras(code,clave,valor) values('ES','YOUR_USER_LABEL','Tú usuario:');
@@ -1046,6 +1047,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_BACKUP','B
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_PERMISSION','Permissions');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_USER','Users');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_LANGUAGE','Languages');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_PROFILE','Profile');
 insert into idioma_palabras(code,clave,valor) values('ENG','LANGUAGE_CHANGE_OK','The language has been successfully changed');
 insert into idioma_palabras(code,clave,valor) values('ENG','LANGUAGE_CHANGE_ERROR','There was a problem trying to change the language');
 insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_USER_LABEL','Your user info:');

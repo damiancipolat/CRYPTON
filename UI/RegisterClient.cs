@@ -131,7 +131,6 @@ namespace UI
             }
             catch (InputException ex)
             {
-                Debug.WriteLine("----->" + ex.Message);
                 MessageBox.Show(
                     Idioma.GetInstance().translate(ex.Message),
                     Idioma.GetInstance().translate("REGISTER_INPUT_ERROR_TITLE"),
@@ -141,7 +140,6 @@ namespace UI
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("----->" + ex.Message);
                 MessageBox.Show(ex.Message);
             }
         }

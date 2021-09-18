@@ -93,6 +93,7 @@ namespace UI
             this.main_menu_balance.Text = Idioma.GetInstance().translate("MAIN_MENU_MY_WALLETS");
             this.main_menu_publish.Text= Idioma.GetInstance().translate("MAIN_MENU_SELL");
             this.main_menu_my_buys.Text= Idioma.GetInstance().translate("MY_BUYS");
+            this.main_menu_profile.Text = Idioma.GetInstance().translate("MAIN_MENU_PROFILE");
 
             //bindeo menuit
             this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
@@ -156,6 +157,7 @@ namespace UI
             this.main_menu_publish.Visible = permBL.hasPermission(permissions, PermisoCodes.PUBLISH_OFFER.ToString());
             this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_BUYS.ToString());
             this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_BUYS.ToString());
+            this.main_menu_profile.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_PROFILE.ToString());
         }
 
         //Manejo el menu de empleado.

@@ -23,6 +23,7 @@ namespace UI.Permisos
         EMPLOYEES,
         NOTIFICATIONS,
         MY_BUYS,
+        MY_PROFILE,
         SEARCH_LOG
     }
 }
