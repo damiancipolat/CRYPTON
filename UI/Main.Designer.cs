@@ -55,12 +55,13 @@
             this.main_menu_it_user_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_log = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_client = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_profile = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_it_backup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.main_menu_client = new System.Windows.Forms.ToolStripMenuItem();
-            this.main_menu_profile = new System.Windows.Forms.ToolStripMenuItem();
             this.main_splash.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -161,28 +162,28 @@
             // main_menu_login
             // 
             this.main_menu_login.Name = "main_menu_login";
-            this.main_menu_login.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_login.Size = new System.Drawing.Size(223, 26);
             this.main_menu_login.Text = "main_menu_login";
             this.main_menu_login.Click += new System.EventHandler(this.Main_menu_login_Click);
             // 
             // main_menu_signup
             // 
             this.main_menu_signup.Name = "main_menu_signup";
-            this.main_menu_signup.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_signup.Size = new System.Drawing.Size(223, 26);
             this.main_menu_signup.Text = "main_menu_signup";
             this.main_menu_signup.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
             // 
             // main_menu_signout
             // 
             this.main_menu_signout.Name = "main_menu_signout";
-            this.main_menu_signout.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_signout.Size = new System.Drawing.Size(223, 26);
             this.main_menu_signout.Text = "main_menu_signout";
             this.main_menu_signout.Click += new System.EventHandler(this.Main_menu_signout_Click);
             // 
             // main_menu_exit
             // 
             this.main_menu_exit.Name = "main_menu_exit";
-            this.main_menu_exit.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_exit.Size = new System.Drawing.Size(223, 26);
             this.main_menu_exit.Text = "main_menu_exit";
             this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -258,7 +259,8 @@
             this.main_menu_it_lang_manager,
             this.main_menu_it_user_perm_manager,
             this.main_menu_it_perm_manager,
-            this.main_menu_it_log});
+            this.main_menu_it_log,
+            this.main_menu_it_backup});
             this.main_menu_it.Name = "main_menu_it";
             this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
@@ -306,6 +308,28 @@
             this.main_menu_it_log.Text = "main_menu_it_log";
             this.main_menu_it_log.Click += new System.EventHandler(this.Main_menu_it_log_Click);
             // 
+            // main_menu_client
+            // 
+            this.main_menu_client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_menu_profile});
+            this.main_menu_client.Name = "main_menu_client";
+            this.main_menu_client.Size = new System.Drawing.Size(69, 24);
+            this.main_menu_client.Text = "Cliente";
+            // 
+            // main_menu_profile
+            // 
+            this.main_menu_profile.Name = "main_menu_profile";
+            this.main_menu_profile.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_profile.Text = "main_menu_profile";
+            this.main_menu_profile.Click += new System.EventHandler(this.MainToolStripMenuItem_Click);
+            // 
+            // main_menu_it_backup
+            // 
+            this.main_menu_it_backup.Name = "main_menu_it_backup";
+            this.main_menu_it_backup.Size = new System.Drawing.Size(322, 26);
+            this.main_menu_it_backup.Text = "main_menu_it_backup";
+            this.main_menu_it_backup.Click += new System.EventHandler(this.Main_menu_it_backup_Click);
+            // 
             // toolStripSplitButton2
             // 
             this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -344,21 +368,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(1428, 780);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // main_menu_client
-            // 
-            this.main_menu_client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.main_menu_profile});
-            this.main_menu_client.Name = "main_menu_client";
-            this.main_menu_client.Size = new System.Drawing.Size(69, 24);
-            this.main_menu_client.Text = "Cliente";
-            // 
-            // main_menu_profile
-            // 
-            this.main_menu_profile.Name = "main_menu_profile";
-            this.main_menu_profile.Size = new System.Drawing.Size(224, 26);
-            this.main_menu_profile.Text = "main_menu_profile";
-            this.main_menu_profile.Click += new System.EventHandler(this.MainToolStripMenuItem_Click);
             // 
             // frm_main
             // 
@@ -425,6 +434,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_log;
         private System.Windows.Forms.ToolStripMenuItem main_menu_client;
         private System.Windows.Forms.ToolStripMenuItem main_menu_profile;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_it_backup;
     }
 }
 

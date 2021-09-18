@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using DAL.DAO;
-using BE;
+using BE.Admin;
 
 namespace DAL.Admin
 {
@@ -14,7 +14,7 @@ namespace DAL.Admin
     {
 
         //Agrega un nuevo registro de backup
-        public int insert(BackupBE backup)
+        private int insert(BackupBE backup)
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{

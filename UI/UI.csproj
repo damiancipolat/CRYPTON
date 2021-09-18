@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\frm_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frm_backup.Designer.cs">
+      <DependentUpon>frm_backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\frm_bitacora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     <Compile Include="Word.Designer.cs">
       <DependentUpon>Word.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\frm_backup.resx">
+      <DependentUpon>frm_backup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\frm_bitacora.resx">
       <DependentUpon>frm_bitacora.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +438,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\registros-medicos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

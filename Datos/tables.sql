@@ -99,6 +99,7 @@ insert into permiso(nombre,permiso) values('MANAGE_LANGUAGES','P');
 insert into permiso(nombre,permiso) values('NOTIFICATIONS','P');
 insert into permiso(nombre,permiso) values('MY_BUYS','P');
 insert into permiso(nombre,permiso) values('SEARCH_LOG','P');
+insert into permiso(nombre,permiso) values('BACKUP','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('CLIENTS',null);
@@ -474,6 +475,7 @@ insert into palabras(word) values('MAIN_MENU_SIGNOUT');
 insert into palabras(word) values('MAIN_MENU_SIGNUP');
 insert into palabras(word) values('MAIN_MENU_START');
 insert into palabras(word) values('MAIN_MENU_USER');
+insert into palabras(word) values('MAIN_MENU_IT_BACKUP');
 insert into palabras(word) values('MAIN_SPLASH_ACTIVITY');
 insert into palabras(word) values('MAIN_SPLASH_TITLE');
 insert into palabras(word) values('MY_SELL_FINISH_CONFIRM');
@@ -691,6 +693,12 @@ insert into palabras(word) values('PROFILE_PHONE');
 insert into palabras(word) values('PROFILE_CLOSE');
 insert into palabras(word) values('PROFILE_OK');
 insert into palabras(word) values('PROFILE_FORM');
+insert into palabras(word) values('TXT_BACKUP_TITLE');
+insert into palabras(word) values('TXT_BACKUP_DESCRIP');
+insert into palabras(word) values('BTN_NEW_BACKUP');
+insert into palabras(word) values('BTN_LOAD_BACKUP');
+insert into palabras(word) values('BTN_CLOSE_BACKUP');
+
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -767,6 +775,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PERMISSION'
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usuarios');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LANGUAGE','Idioma');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PROFILE','Perfil');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_BACKUP','Backup');
 insert into idioma_palabras(code,clave,valor) values('ES','LANGUAGE_CHANGE_OK','Idioma cargado con exito');
 insert into idioma_palabras(code,clave,valor) values('ES','LANGUAGE_CHANGE_ERROR','Error al cambiar el lenguaje');
 insert into idioma_palabras(code,clave,valor) values('ES','YOUR_USER_LABEL','Tú usuario:');
@@ -982,6 +991,11 @@ insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_PHONE','Telef
 insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_CLOSE','Cerrar');
 insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_OK','Guardar');
 insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_FORM','Perfil de cliente');
+insert into idioma_palabras(code,clave,valor) values('ES','TXT_BACKUP_TITLE','Backup');
+insert into idioma_palabras(code,clave,valor) values('ES','TXT_BACKUP_DESCRIP','Maneje aqui la creación carga de backups.');
+insert into idioma_palabras(code,clave,valor) values('ES','BTN_NEW_BACKUP','Nuevo backup');
+insert into idioma_palabras(code,clave,valor) values('ES','BTN_LOAD_BACKUP','Cargar backup');
+insert into idioma_palabras(code,clave,valor) values('ES','BTN_CLOSE_BACKUP','Cerrar');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1084,6 +1098,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_COL_TYPE','User 
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_ADD_USER','Add new user');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_USER_MANAGER','User control');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_LANG_MANAGER','Manage language');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_IT_BACKUP','Backup');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_TITLE','Language editor');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_DESCRIP','In this section you customize the system language.');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_LANG_UI_NEW_LANGUAGE','New');
@@ -1257,6 +1272,14 @@ insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_PHONE','Phon
 insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_CLOSE','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_OK','Save');
 insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_FORM','Client profile');
+insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_TITLE','Backup');
+insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_DESCRIP','Manage here the system backups.');
+insert into idioma_palabras(code,clave,valor) values('ENG','BTN_NEW_BACKUP','New backup');
+insert into idioma_palabras(code,clave,valor) values('ENG','BTN_LOAD_BACKUP','Load backup');
+insert into idioma_palabras(code,clave,valor) values('ENG','BTN_CLOSE_BACKUP','Close');
 
 --select * from usuario
 --select * from cliente
+
+
+select * from cliente_cambios where idchange=10012;

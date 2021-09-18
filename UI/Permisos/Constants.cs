@@ -24,6 +24,7 @@ namespace UI.Permisos
         NOTIFICATIONS,
         MY_BUYS,
         MY_PROFILE,
-        SEARCH_LOG
+        SEARCH_LOG,
+        BACKUP
     }
 }

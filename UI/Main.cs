@@ -103,6 +103,7 @@ namespace UI
             this.main_menu_it_user_perm_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_PERM_MANAGER");
             this.main_menu_it_perm_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_PERMISSION");
             this.main_menu_it_log.Text = Idioma.GetInstance().translate("MAIN_MENU_LOG_SEARCH");
+            this.main_menu_it_backup.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_BACKUP");
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -173,7 +174,8 @@ namespace UI
             this.main_menu_it_add_user.Visible = permBL.hasPermission(permissions, PermisoCodes.CREATE_USER.ToString());
             this.main_menu_it_user_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_USERS.ToString());            
             this.main_menu_it_perm_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_PERMISSION.ToString());
-            this.main_menu_it_log.Visible = permBL.hasPermission(permissions, PermisoCodes.SEARCH_LOG.ToString());            
+            this.main_menu_it_log.Visible = permBL.hasPermission(permissions, PermisoCodes.SEARCH_LOG.ToString());
+            this.main_menu_it_backup.Visible = permBL.hasPermission(permissions, PermisoCodes.BACKUP.ToString());
         }
 
         //Oculto menu en base a los permisos.
@@ -484,6 +486,11 @@ namespace UI
         {
             ClienteBE cli = Session.GetInstance().getActiveClient();
             new frm_profile(cli).Show();
+        }
+
+        private void Main_menu_it_backup_Click(object sender, EventArgs e)
+        {
+            new frm_backup().Show();
         }
     }
 }
