@@ -147,6 +147,7 @@ namespace UI
 
             //Set items if the code exist in the list.
             this.main_menu_operate.Visible = true;
+            this.main_menu_client.Visible = true;
             this.main_menu_search.Visible = permBL.hasPermission(permissions,PermisoCodes.SEARCH_OFFERS.ToString());
             this.main_menu_recomendations.Visible = permBL.hasPermission(permissions, PermisoCodes.RECOMENDATIONS.ToString());
             this.main_menu_my_sells.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_PUBLICATIONS.ToString());
@@ -209,6 +210,7 @@ namespace UI
 
                 //Client menu
                 this.main_menu_operate.Visible = false;
+                this.main_menu_client.Visible = false;
 
                 //IT MENU
                 this.main_menu_it.Visible = false;
@@ -474,6 +476,12 @@ namespace UI
         private void Button4_Click(object sender, EventArgs e)
         {
             new TreeEditorFrm().Show();
+        }
+
+        private void MainToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClienteBE cli = Session.GetInstance().getActiveClient();
+            new frm_profile(cli).Show();
         }
     }
 }

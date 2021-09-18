@@ -89,6 +89,7 @@ insert into permiso(nombre,permiso) values('SEARCH_OFFERS','P');
 insert into permiso(nombre,permiso) values('RECOMENDATIONS','P');
 insert into permiso(nombre,permiso) values('MY_PUBLICATIONS','P');
 insert into permiso(nombre,permiso) values('MY_BALANCE','P');
+insert into permiso(nombre,permiso) values('MY_PROFILE','P');
 insert into permiso(nombre,permiso) values('PUBLISH_OFFER','P');
 insert into permiso(nombre,permiso) values('CREATE_USER','P');
 insert into permiso(nombre,permiso) values('MANAGE_USERS','P');
@@ -681,6 +682,15 @@ insert into palabras(word) values('USR_TXT_CTRL_DESCRIP');
 insert into palabras(word) values('USR_CHANGE_CONFIRM');
 insert into palabras(word) values('USR_CHANGE_TITLE');
 insert into palabras(word) values('USR_CHANGE_RESTORE_SUCCESS');
+insert into palabras(word) values('PROFILE_TYPE_DOC');
+insert into palabras(word) values('PROFILE_DOC_NUMBER');
+insert into palabras(word) values('PROFILE_BIRTH_DATE');
+insert into palabras(word) values('PROFILE_TRAMITE');
+insert into palabras(word) values('PROFILE_ADDRESS');
+insert into palabras(word) values('PROFILE_PHONE');
+insert into palabras(word) values('PROFILE_CLOSE');
+insert into palabras(word) values('PROFILE_OK');
+insert into palabras(word) values('PROFILE_FORM');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -962,6 +972,15 @@ insert into idioma_palabras(code,clave,valor) values('ES','USR_TXT_CTRL_DESCRIP'
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_CONFIRM','Confirmar restore?');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_TITLE','¿Seguro deseas recuperar la entidad a este punto?');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_RESTORE_SUCCESS','Restore exitoso!');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_TYPE_DOC','Tipo de documento:');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_DOC_NUMBER','Número de documento:');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_BIRTH_DATE','Fecha de nacimiento:');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_TRAMITE','Número de tramite:');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_ADDRESS','Dirección:');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_PHONE','Telefono:');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_OK','Guardar');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_FORM','Perfil de cliente');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1227,8 +1246,15 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_TXT_CTRL_DESCRIP
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_CONFIRM','Confirm restore');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_TITLE','Do you want to restore the entity at this point?');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_RESTORE_SUCCESS','Restore success!');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_TYPE_DOC','Document type:');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_DOC_NUMBER','Id number:');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_BIRTH_DATE','Birth Date:');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_TRAMITE','Tramit number:');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_ADDRESS','Address:');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_PHONE','Phone number:');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_OK','Save');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_FORM','Client profile');
 
 --select * from usuario
 --select * from cliente
-
-update usuario set tipo_usuario=2 where idusuario=5

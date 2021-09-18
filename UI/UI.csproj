@@ -94,6 +94,12 @@
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="frm_profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_profile.Designer.cs">
+      <DependentUpon>frm_profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyBuysFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscadorOfertas.resx">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_profile.resx">
+      <DependentUpon>frm_profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyBuysFrm.resx">
       <DependentUpon>MyBuysFrm.cs</DependentUpon>
