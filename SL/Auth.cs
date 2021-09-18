@@ -10,9 +10,9 @@ using DAL.Idiomas;
 using DAL.Permiso;
 using BE;
 using BE.Permisos;
-using SL;
 using SEC;
 using SL.Exceptions;
+using SL;
 
 namespace SL
 {

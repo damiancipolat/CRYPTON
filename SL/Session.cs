@@ -7,6 +7,7 @@ using System.Diagnostics;
 using BE;
 using BE.Permisos;
 using DAL;
+using SL;
 
 namespace SL
 {

@@ -492,5 +492,10 @@ namespace UI
         {
             new frm_backup().Show();
         }
+
+        private void Button1_Click_8(object sender, EventArgs e)
+        {
+            new FileLayer().log("aaa", "aaa");
+        }
     }
 }

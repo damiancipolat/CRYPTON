@@ -32,8 +32,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.main_splash = new System.Windows.Forms.Panel();
             this.main_btn_register = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.main_splash_title = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.main_menu_start = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_login = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,17 +58,14 @@
             this.main_menu_it_user_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_log = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_it_backup = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_client = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_profile = new System.Windows.Forms.ToolStripMenuItem();
-            this.main_menu_it_backup = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
-            this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.main_splash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +112,16 @@
             this.main_btn_register.UseVisualStyleBackColor = false;
             this.main_btn_register.Click += new System.EventHandler(this.Button1_Click_1);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
+            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
             // main_splash_title
             // 
             this.main_splash_title.AutoSize = true;
@@ -133,6 +143,24 @@
             this.statusStrip1.Size = new System.Drawing.Size(1428, 26);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripSplitButton2
+            // 
+            this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_change_language});
+            this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
+            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
+            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
+            this.toolStripSplitButton2.Text = "toolStripSplitButton2";
+            // 
+            // main_change_language
+            // 
+            this.main_change_language.Name = "main_change_language";
+            this.main_change_language.Size = new System.Drawing.Size(247, 26);
+            this.main_change_language.Text = "main_change_language";
+            this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -308,6 +336,13 @@
             this.main_menu_it_log.Text = "main_menu_it_log";
             this.main_menu_it_log.Click += new System.EventHandler(this.Main_menu_it_log_Click);
             // 
+            // main_menu_it_backup
+            // 
+            this.main_menu_it_backup.Name = "main_menu_it_backup";
+            this.main_menu_it_backup.Size = new System.Drawing.Size(322, 26);
+            this.main_menu_it_backup.Text = "main_menu_it_backup";
+            this.main_menu_it_backup.Click += new System.EventHandler(this.Main_menu_it_backup_Click);
+            // 
             // main_menu_client
             // 
             this.main_menu_client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -319,44 +354,9 @@
             // main_menu_profile
             // 
             this.main_menu_profile.Name = "main_menu_profile";
-            this.main_menu_profile.Size = new System.Drawing.Size(224, 26);
+            this.main_menu_profile.Size = new System.Drawing.Size(218, 26);
             this.main_menu_profile.Text = "main_menu_profile";
             this.main_menu_profile.Click += new System.EventHandler(this.MainToolStripMenuItem_Click);
-            // 
-            // main_menu_it_backup
-            // 
-            this.main_menu_it_backup.Name = "main_menu_it_backup";
-            this.main_menu_it_backup.Size = new System.Drawing.Size(322, 26);
-            this.main_menu_it_backup.Text = "main_menu_it_backup";
-            this.main_menu_it_backup.Click += new System.EventHandler(this.Main_menu_it_backup_Click);
-            // 
-            // toolStripSplitButton2
-            // 
-            this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.main_change_language});
-            this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
-            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
-            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
-            this.toolStripSplitButton2.Text = "toolStripSplitButton2";
-            // 
-            // main_change_language
-            // 
-            this.main_change_language.Name = "main_change_language";
-            this.main_change_language.Size = new System.Drawing.Size(247, 26);
-            this.main_change_language.Text = "main_change_language";
-            this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
-            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -387,11 +387,11 @@
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.main_splash.ResumeLayout(false);
             this.main_splash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

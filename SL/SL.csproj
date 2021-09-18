@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
-    <Compile Include="Bitacora.cs" />
+    <Compile Include="Bitacora\BdLayer.cs" />
+    <Compile Include="Bitacora\Bitacora.cs" />
+    <Compile Include="Bitacora\FileLayer.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />
     <Compile Include="Comisiones.cs" />
     <Compile Include="Idioma.cs" />
