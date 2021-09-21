@@ -702,6 +702,7 @@ insert into palabras(word) values('BACKUP_COL_PATH');
 insert into palabras(word) values('BACKUP_COL_FEC');
 insert into palabras(word) values('BACKUP_COL_TYPE');
 insert into palabras(word) values('BACKUP_MSG_RESTORE_DESCRIP');
+insert into palabras(word) values('TXT_BACKUP_TITLE_LIST');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1005,6 +1006,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_COL_TYPE','Tip
 insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_TITLE','Backup');
 insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_DESCRIP','¿Queres realizar un nuevo backup?');
 insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_RESTORE_DESCRIP','¿Queres cargar este backup?');
+insert into idioma_palabras(code,clave,valor) values('ES','TXT_BACKUP_TITLE_LIST','Estos son los backups que has realizado.');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1292,6 +1294,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_COL_TYPE','Ty
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_TITLE','Backup');
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_DESCRIP','Do you want to make a new backup?');
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_RESTORE_DESCRIP','Do you want to restore to this backup?');
+insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_TITLE_LIST','Your previous backups.');
 
 --select * from usuario
 --select * from cliente
@@ -1301,3 +1304,6 @@ select * from cliente_cambios where idchange=10012;
 select * from admin_backup
 truncate table admin_backup
 BACKUP DATABASE Crypton TO DISK = 'C:\Users\54116\Desktop\crypton_backup_09.18.2021.12.43.28.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB'
+
+
+select * from bitacora order by id desc;

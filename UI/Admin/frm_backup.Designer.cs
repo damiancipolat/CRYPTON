@@ -35,6 +35,7 @@
             this.btn_new_backup = new System.Windows.Forms.Button();
             this.btn_load_backup = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_backup_title_list = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usr_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,11 +76,11 @@
             // usr_data
             // 
             this.usr_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usr_data.Location = new System.Drawing.Point(33, 199);
+            this.usr_data.Location = new System.Drawing.Point(33, 242);
             this.usr_data.Name = "usr_data";
             this.usr_data.RowHeadersWidth = 51;
             this.usr_data.RowTemplate.Height = 24;
-            this.usr_data.Size = new System.Drawing.Size(817, 575);
+            this.usr_data.Size = new System.Drawing.Size(817, 532);
             this.usr_data.TabIndex = 45;
             // 
             // btn_new_backup
@@ -116,11 +117,22 @@
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_backup_title_list
+            // 
+            this.txt_backup_title_list.AutoSize = true;
+            this.txt_backup_title_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_backup_title_list.Location = new System.Drawing.Point(34, 199);
+            this.txt_backup_title_list.Name = "txt_backup_title_list";
+            this.txt_backup_title_list.Size = new System.Drawing.Size(221, 25);
+            this.txt_backup_title_list.TabIndex = 51;
+            this.txt_backup_title_list.Text = "txt_backup_title_list";
+            // 
             // frm_backup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 867);
+            this.Controls.Add(this.txt_backup_title_list);
             this.Controls.Add(this.btn_load_backup);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_backup_descrip);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Button btn_new_backup;
         private System.Windows.Forms.Button btn_load_backup;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Label txt_backup_title_list;
     }
 }

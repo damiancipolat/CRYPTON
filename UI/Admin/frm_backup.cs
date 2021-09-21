@@ -32,6 +32,7 @@ namespace UI.Admin
             this.btn_close_backup.Text= Idioma.GetInstance().translate("BTN_CLOSE_BACKUP");
             this.btn_new_backup.Text = Idioma.GetInstance().translate("BTN_NEW_BACKUP");
             this.btn_load_backup.Text = Idioma.GetInstance().translate("BTN_LOAD_BACKUP");
+            this.txt_backup_title_list.Text = Idioma.GetInstance().translate("TXT_BACKUP_TITLE_LIST");
         }
 
         private void Usr_change_close_Click(object sender, EventArgs e)
