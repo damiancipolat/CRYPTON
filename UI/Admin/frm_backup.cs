@@ -130,7 +130,7 @@ namespace UI.Admin
 
                 //Msg de confirmacion.
                 DialogResult dr = MessageBox.Show(
-                    Idioma.GetInstance().translate("BACKUP_MSG_DESCRIP"),
+                    Idioma.GetInstance().translate("BACKUP_MSG_RESTORE_DESCRIP"),
                     Idioma.GetInstance().translate("BACKUP_MSG_TITLE"),
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question

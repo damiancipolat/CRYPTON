@@ -89,7 +89,7 @@ namespace DAL.Admin
         public int restoreBackup(BackupBE backup)
         {
             //Ejecuto el backup.
-            string sql = "use master;RESTORE DATABASE Crypton FROM DISK = 'C:\\crypton_backup_bd_20210503054138.bak' WITH FILE = 1, NOUNLOAD, STATS = 5; ";
+            string sql = "use master;RESTORE DATABASE Crypton FROM DISK = '"+backup.path+"' WITH FILE = 1, NOUNLOAD, STATS = 5; ";
             QueryInsert cmd = new QueryInsert();
             Debug.WriteLine("QUERY:" + sql);
 
