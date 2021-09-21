@@ -88,7 +88,8 @@ namespace UI
             final = this.orden.precio.getValue();
 
             //Cargo los costos de operacion.
-            List<(string, string, string)> list = new OrdenCompraBL().getTaxesToBuy(this.orden, Session.GetInstance().getActiveClient());
+            ClienteBE client = Session.GetInstance().getActiveClient();
+            List<(string, string, string)> list = new OrdenCompraBL().getTaxesToBuy(this.orden, client);
 
             foreach ((string, string, string) tmp in list)
             {
@@ -103,6 +104,8 @@ namespace UI
             this.op_final_total.Text = (this.orden.pide.cod == "ARS" 
                 ? new Money(final).ToShortString()
                 : new Money(final).ToFormatString())+" " + this.orden.pide.cod;
+
+            Bitacora.GetInstance().log("VIEW", "Visualizando operacion:"+this.orden.idorden.ToString()+" "+client.email);
 
             //Guardo el costo total.
             this.finalValue = new Money(final);

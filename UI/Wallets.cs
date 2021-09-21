@@ -103,6 +103,9 @@ namespace UI
             //Traduszco los textos y cargo los datos.
             this.translateTexts();
 
+            //Cargo la billetera.
+            Bitacora.GetInstance().log("WALLET", "Cargando wallet:" + Session.GetInstance().getActiveClient().email);
+
             //Load columns.
             this.frm_wallet_list.ReadOnly = true;
             this.frm_wallet_list.Columns.Clear();

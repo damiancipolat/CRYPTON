@@ -70,6 +70,7 @@ namespace UI
 
                 //Guardo el usuario.
                 new EmpleadoBL().save(newEmp);
+                Bitacora.GetInstance().log("SIGNUP", "Signup de EMPLEADO:" + newEmp.email);
 
                 MessageBox.Show("Usuario creado con exito!");
                 this.Close();
@@ -77,7 +78,6 @@ namespace UI
             }
             catch (BusinessException ex)
             {
-                Debug.WriteLine("----->" + ex.Message);
                 MessageBox.Show(
                     Idioma.GetInstance().translate(ex.Message),
                     Idioma.GetInstance().translate("REGISTER_INPUT_ERROR_TITLE"),

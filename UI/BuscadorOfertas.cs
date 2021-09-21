@@ -65,12 +65,16 @@ namespace UI
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
+            ClienteBE client = Session.GetInstance().getActiveClient();
+
             //Traigo las monedas.
             MonedaBE origen = new MonedaBL().getByCode(this.moneda_pide.Items[this.moneda_pide.SelectedIndex].ToString());
             MonedaBE destino = new MonedaBL().getByCode(this.moneda_ofrece.Items[this.moneda_ofrece.SelectedIndex].ToString());
 
+            Bitacora.GetInstance().log("SEARCH", "Buscando ofertas:" + client.email+" "+origen.cod+"x"+destino.cod);
+
             //Traigo el resultado.
-            List<OrdenVentaBE> results = new OrdenVentaBL().buscar(destino, origen, Session.GetInstance().getActiveClient());
+            List<OrdenVentaBE> results = new OrdenVentaBL().buscar(destino, origen, client);
 
             //Lleno la grilla.
             this.fillData(results);

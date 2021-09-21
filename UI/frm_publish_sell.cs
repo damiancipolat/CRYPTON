@@ -72,7 +72,9 @@ namespace UI
             
             //Traigo valores y conversiones.
             double input = Convert.ToDouble(this.txt_ammount_enter.Text);
-            double value = Convert.ToDouble(this.txt_ammount_receive.Text);            
+            double value = Convert.ToDouble(this.txt_ammount_receive.Text);
+
+            UsuarioBE user = Session.GetInstance().getUser();
 
             //Creo el objeto venta.
             OrdenVentaBE order = new OrdenVentaBE();
@@ -83,8 +85,11 @@ namespace UI
             order.fecCreacion = DateTime.Now;
             order.fecFin = DateTime.Now;
             order.ordenEstado = OrdenEstado.DISPONIBLE;
-            order.vendedor = new ClienteBL().findByUser(Session.GetInstance().getUser());
+            order.vendedor = new ClienteBL().findByUser(user);
 
+            //Vender
+            Bitacora.GetInstance().log("SELL", "Publis new order:" + user.email+" value:"+ this.txt_ammount_enter.Text+":"+origen.cod);
+            
             //Creo la orden.
             new OrdenVentaBL().create(order);
             MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_SUCCESS"));

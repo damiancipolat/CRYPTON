@@ -64,7 +64,7 @@
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(148, 46);
             this.btn_ok.TabIndex = 42;
-            this.btn_ok.Text = "button1";
+            this.btn_ok.Text = "btn_ok";
             this.btn_ok.UseVisualStyleBackColor = false;
             this.btn_ok.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -74,7 +74,7 @@
             this.txt_profile_type_doc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_profile_type_doc.Location = new System.Drawing.Point(18, 24);
             this.txt_profile_type_doc.Name = "txt_profile_type_doc";
-            this.txt_profile_type_doc.Size = new System.Drawing.Size(223, 25);
+            this.txt_profile_type_doc.Size = new System.Drawing.Size(178, 20);
             this.txt_profile_type_doc.TabIndex = 43;
             this.txt_profile_type_doc.Text = "txt_profile_type_doc";
             // 
@@ -100,7 +100,7 @@
             this.txt_profile_doc_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_profile_doc_number.Location = new System.Drawing.Point(22, 108);
             this.txt_profile_doc_number.Name = "txt_profile_doc_number";
-            this.txt_profile_doc_number.Size = new System.Drawing.Size(256, 25);
+            this.txt_profile_doc_number.Size = new System.Drawing.Size(205, 20);
             this.txt_profile_doc_number.TabIndex = 45;
             this.txt_profile_doc_number.Text = "txt_profile_doc_number";
             // 
@@ -119,7 +119,7 @@
             this.txt_profile_birth_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_profile_birth_date.Location = new System.Drawing.Point(22, 193);
             this.txt_profile_birth_date.Name = "txt_profile_birth_date";
-            this.txt_profile_birth_date.Size = new System.Drawing.Size(234, 25);
+            this.txt_profile_birth_date.Size = new System.Drawing.Size(187, 20);
             this.txt_profile_birth_date.TabIndex = 48;
             this.txt_profile_birth_date.Text = "txt_profile_birth_date";
             // 
@@ -137,7 +137,7 @@
             this.txt_profile_tramite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_profile_tramite.Location = new System.Drawing.Point(22, 280);
             this.txt_profile_tramite.Name = "txt_profile_tramite";
-            this.txt_profile_tramite.Size = new System.Drawing.Size(203, 25);
+            this.txt_profile_tramite.Size = new System.Drawing.Size(162, 20);
             this.txt_profile_tramite.TabIndex = 49;
             this.txt_profile_tramite.Text = "txt_profile_tramite";
             // 
@@ -155,7 +155,7 @@
             this.txt_profile_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_profile_address.Location = new System.Drawing.Point(22, 360);
             this.txt_profile_address.Name = "txt_profile_address";
-            this.txt_profile_address.Size = new System.Drawing.Size(213, 25);
+            this.txt_profile_address.Size = new System.Drawing.Size(170, 20);
             this.txt_profile_address.TabIndex = 51;
             this.txt_profile_address.Text = "txt_profile_address";
             // 
@@ -173,7 +173,7 @@
             this.txt_profile_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_profile_phone.Location = new System.Drawing.Point(22, 452);
             this.txt_profile_phone.Name = "txt_profile_phone";
-            this.txt_profile_phone.Size = new System.Drawing.Size(191, 25);
+            this.txt_profile_phone.Size = new System.Drawing.Size(153, 20);
             this.txt_profile_phone.TabIndex = 53;
             this.txt_profile_phone.Text = "txt_profile_phone";
             // 

@@ -83,6 +83,9 @@ namespace UI
         {
             if (this.usr_search_txt.Text != "")
             {
+                Bitacora.GetInstance().log("USER", "User:" +Session.GetInstance().getUser().email+" buscando:"+ this.usr_search_txt.Text);
+
+                //Buscar.
                 List<UsuarioBE> users = new UsuarioBL().searchByText(this.usr_search_txt.Text);
                 this.usr_data.Rows.Clear();
 

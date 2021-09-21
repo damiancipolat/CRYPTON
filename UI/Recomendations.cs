@@ -59,10 +59,13 @@ namespace UI
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_QTY"), Idioma.GetInstance().translate("SEARCH_COL_QTY"));
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_OFFER"), Idioma.GetInstance().translate("SEARCH_COL_OFFER"));
             this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_PRICE"), Idioma.GetInstance().translate("SEARCH_COL_PRICE"));
-            this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_REQ"), Idioma.GetInstance().translate("SEARCH_COL_REQ"));           
+            this.frm_recom_list.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_REQ"), Idioma.GetInstance().translate("SEARCH_COL_REQ"));
 
             //Load data.
-            List<OrdenVentaBE> data = new MarketBL().recomendar(Session.GetInstance().getActiveClient());
+            ClienteBE client = Session.GetInstance().getActiveClient();
+            List<OrdenVentaBE> data = new MarketBL().recomendar(client);
+
+            Bitacora.GetInstance().log("RECOMENDATIONS", "Carga de recomendaciones:" + client.email+" encontrados:"+data.Count.ToString());
 
             //Fill the grid.
             this.fillData(data);

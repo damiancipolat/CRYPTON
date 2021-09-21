@@ -105,7 +105,8 @@ namespace UI
 
                 //Creo la cuenta del cliente y sus respectivas billeteras
                 new CuentaBL().crear(newClient);
-                
+                Bitacora.GetInstance().log("SIGNUP","Signup de cliente:"+newClient.email);
+
                 //Mensaje de exito.
                 MessageBox.Show(
                     Idioma.GetInstance().translate("REGISTER_INPUT_SUCCESS"),

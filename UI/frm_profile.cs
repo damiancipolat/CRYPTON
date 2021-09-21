@@ -24,7 +24,6 @@ namespace UI
 
         public frm_profile(ClienteBE client)
         {
-            Debug.WriteLine("*****" + client.idcliente.ToString());
             InitializeComponent();
             this.client = client;
         }
@@ -49,6 +48,9 @@ namespace UI
 
         private void Frm_profile_Load(object sender, EventArgs e)
         {
+            //Log
+            Bitacora.GetInstance().log("PROFILE", "Load profile:" + this.client.email);
+
             //Traduzco.
             this.translateText();
 
@@ -63,8 +65,8 @@ namespace UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-           try
-           {
+            try
+            {
                 new ClientValidator().validateUpdate(
                     this.txt_type_doc.Text,
                     this.txt_num_doc.Text,
@@ -79,7 +81,10 @@ namespace UI
                 this.client.num_tramite = this.txt_tramite.Text;
                 this.client.numero = this.txt_num_doc.Text;
                 this.client.tipoDoc = this.txt_type_doc.Text;
-                this.client.fec_nac= DateTime.ParseExact(this.txt_birth_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                this.client.fec_nac = DateTime.ParseExact(this.txt_birth_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                //Log.
+                Bitacora.GetInstance().log("PROFILE", "Update profile:"+this.client.email);
 
                 //Guardo y cierro.
                 new ClienteBL().update(this.client);
