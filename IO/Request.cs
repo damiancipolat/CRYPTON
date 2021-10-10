@@ -50,5 +50,21 @@ namespace IO
             //Return the response.
             return responseTask.Result;
         }
+
+        public HttpResponseMessage POSTWithAuth(string url, HttpContent body,string token)
+        {
+            Debug.WriteLine("POST:" + url);
+
+            //Prepare the request.
+            this.client.BaseAddress = new Uri(url);
+            this.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            //Make the request.
+            var responseTask = this.client.PostAsync(url, body);
+            responseTask.Wait();
+
+            //Return the response.
+            return responseTask.Result;
+        }
     }
 }

@@ -18,6 +18,8 @@ using BE.ValueObject;
 using IO;
 using IO.Responses;
 using IO.RequestFormat;
+using SEC;
+using SEC.Exceptions;
 
 namespace UI
 {
@@ -496,6 +498,40 @@ namespace UI
         private void Button1_Click_8(object sender, EventArgs e)
         {
             new FileLayer().log("aaa", "aaa");
+        }
+
+        private void Frm_main_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                //Antes de hacer el login, hago una prueba de integridad.
+                Integrity.GetInstance().validateComplete();
+            }
+            catch (IntegrityException ex)
+            {
+                Bitacora.GetInstance().log("INTEGRITY", ex.Message);
+
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("INTEGRITY_ERROR"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                Bitacora.GetInstance().log("INTEGRITY",ex.Message);
+
+                MessageBox.Show(
+                    ex.Message,
+                    Idioma.GetInstance().translate("ERROR"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void Button1_Click_10(object sender, EventArgs e)
+        {
+
         }
     }
 }

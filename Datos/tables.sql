@@ -48,6 +48,12 @@ create table usuario(
 	deleted datetime
 );
 
+/*
+select * from usuario
+update usuario set alias='a' where idusuario=4;
+select * from dvv
+*/
+
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
 	tipo_usuario int identity(1,1) primary key,

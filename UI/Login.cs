@@ -60,6 +60,8 @@ namespace UI
 
                 //Hago el login.
                 new Auth().login(this.txt_email.Text, this.txt_pwd.Text);
+
+                //Cierro.
                 this.parent.render();
                 this.Close();
             }
@@ -75,14 +77,6 @@ namespace UI
                 MessageBox.Show(
                     Idioma.GetInstance().translate(ex.Message),
                     Idioma.GetInstance().translate("LOGIN_INPUT_ERROR_TITLE"),
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            catch (IntegrityException ex)
-            {               
-                MessageBox.Show(
-                    Idioma.GetInstance().translate(ex.Message),
-                    Idioma.GetInstance().translate("INTEGRITY_ERROR"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }

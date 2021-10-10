@@ -46,6 +46,8 @@ namespace BL
 
             //Encripto simetricamente el email.
             user.email = Cripto.GetInstance().Encrypt(user.email);
+
+            //Hago un DVH para este registro de la entidad.
             user.hash = new HashUsuario().hash(user);
             
             //Registro el usuario.

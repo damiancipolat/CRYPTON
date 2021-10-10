@@ -118,34 +118,44 @@ namespace UI.Admin
 
         private void Btn_load_backup_Click(object sender, EventArgs e)
         {
-            //Si esta seleccionado.
-            if (this.usr_data.SelectedCells.Count > 0)
+            try
             {
-                //Obtengo la columna.
-                int selectedrowindex = this.usr_data.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = this.usr_data.Rows[selectedrowindex];
-
-                //Busco el usuario en base al id.
-                string selectedId = selectedRow.Cells[0].Value.ToString();
-
-                //Msg de confirmacion.
-                DialogResult dr = MessageBox.Show(
-                    Idioma.GetInstance().translate("BACKUP_MSG_RESTORE_DESCRIP"),
-                    Idioma.GetInstance().translate("BACKUP_MSG_TITLE"),
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
-
-                if (dr == DialogResult.Yes)
+                //Si esta seleccionado.
+                if (this.usr_data.SelectedCells.Count > 0)
                 {
-                    //Busco el backup.
-                    BackupBE data = new BackupBL().findById(Convert.ToInt32(selectedId));
+                    //Obtengo la columna.
+                    int selectedrowindex = this.usr_data.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = this.usr_data.Rows[selectedrowindex];
 
-                    //Recupero.
-                    new BackupBL().restoreBackup(data);
-                    MessageBox.Show("Restore ok!");
+                    //Busco el usuario en base al id.
+                    string selectedId = selectedRow.Cells[0].Value.ToString();
+
+                    //Msg de confirmacion.
+                    DialogResult dr = MessageBox.Show(
+                        Idioma.GetInstance().translate("BACKUP_MSG_RESTORE_DESCRIP"),
+                        Idioma.GetInstance().translate("BACKUP_MSG_TITLE"),
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        //Busco el backup.
+                        BackupBE data = new BackupBL().findById(Convert.ToInt32(selectedId));
+
+                        //Recupero.
+                        new BackupBL().restoreBackup(data);
+                        MessageBox.Show("Restore ok!");
+                    }
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("BACKUP_ERROR"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
     }

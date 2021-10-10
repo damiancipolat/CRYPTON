@@ -8,6 +8,7 @@ using DAL;
 using BE;
 using SEC;
 using SEC.Exceptions;
+using IO;
 
 namespace SEC
 {
@@ -26,6 +27,17 @@ namespace SEC
             return _instance;
         }
 
+        //Notifica al administrador.
+        private void notiyAdmin(string origin)
+        {
+            //Data send.
+            string payload = "Hubo un error al validar la integridad BD usuarios, detalle:"+origin;
+            string admin = "damian.cipolat@gmail.com";
+
+            //Envio el email.
+            new Mailer().send(admin,payload);
+        }
+
         //Verifica integridad solo de usuarios.
         private bool validateDvhUsers()
         {
@@ -33,7 +45,10 @@ namespace SEC
 
             //Validate no result.
             if (userList.Count == 0)
+            {
+                this.notiyAdmin("DVH-USER");
                 throw new IntegrityException("INTEGRITY_USERS_NOT_FOUND");
+            }                
 
             //Compare current hash vs column hash.
             foreach (UsuarioBE user in userList)
@@ -42,7 +57,10 @@ namespace SEC
 
                 //Compare table hash with computed hash.
                 if (newHash != user.hash)
+                {
+                    this.notiyAdmin("DVH-USER-CORRUPT");
                     throw new IntegrityException("INTEGRITY_USERS_CORRUPT");
+                }                    
             }
 
             return true;
@@ -59,14 +77,20 @@ namespace SEC
 
             //Traigo la tabla del dvv para usuarios.
             DvhBE dvBE = dv.find("usuario");
-            
+
             //If not found register.
             if (dvBE == null)
+            {
+                this.notiyAdmin("DVV-USER");
                 throw new IntegrityException("INTEGRITY_USERS_ENTITY_FAIL");
+            }
 
             //Comparo hashes.
             if (fullHash != dvBE.hash)
+            {
+                this.notiyAdmin("DVV-USER");
                 throw new IntegrityException("INTEGRITY_USERS_ENTITY_FAIL");
+            }                
 
             return true;
         }

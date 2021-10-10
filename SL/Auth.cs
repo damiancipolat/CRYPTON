@@ -13,6 +13,7 @@ using BE.Permisos;
 using SEC;
 using SL.Exceptions;
 using SL;
+using SEC;
 
 namespace SL
 {
@@ -73,11 +74,9 @@ namespace SL
         //Valida usuario y contraseña para ingresar.
         public UsuarioBE login(string email, string pwd)
         {
+            //Registro en la bitacora.
             Bitacora.GetInstance().log("LOGIN","Request login of user:" + email);
             Debug.WriteLine("Request login of user:" + email);
-
-            //Antes de hacer el login, hago una prueba de integridad.
-            //Integrity.GetInstance().validateComplete();
 
             //Valido las credenciales y obtengo el usuario logeado.
             UsuarioBE user = this.checkCredentials(email,pwd);
