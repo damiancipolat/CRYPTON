@@ -18,6 +18,7 @@ namespace BE
         public string email;
         public string telefono;
         public string valido;
+        public string cbu;
 
         public ClienteBE() { }
 

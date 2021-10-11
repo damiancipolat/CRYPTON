@@ -95,13 +95,5 @@ namespace BL
 
             return result;
         }
-
-        //Recupera el cambio en base a un id.
-        public int recoverFromChange(long id)
-        {
-            //Recupero en base a un id.
-            ClienteChangeBE change = new ClienteChangeDAL().findById(id);
-            return 1;
-        }
     }
 }

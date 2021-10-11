@@ -49,8 +49,16 @@ create table usuario(
 );
 
 /*
-select * from usuario
-update usuario set alias='a' where idusuario=4;
+select * from cliente
+select * from usuario;
+select * from dvv;
+update dvv set "hash"='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99';
+*/
+select * from comisiones
+
+/*
+select * from usuario  where idusuario=4;
+update usuario set hash='4ace166b6ebac5a0a7fc65215355b02f' where idusuario=4;
 select * from dvv
 */
 
@@ -162,6 +170,9 @@ insert into onboarding_estados values('Valido');
 insert into onboarding_estados values('Rechazado');
 insert into onboarding_estados values('Ilegible');
 
+select * from cliente
+--update cliente set cbu='0070064130004043187745';
+
 --Informacion personal del cliente pedido del BCRA.
 create table cliente(
 	idcliente bigint identity(1,1) primary key,
@@ -173,6 +184,7 @@ create table cliente(
 	domicilio varchar(100),
 	telefono varchar(100),
 	valido varchar(1),
+	cbu varchar(50),
 	deleted datetime
 );
 
@@ -185,7 +197,8 @@ create table cliente_cambios(
 	fec_nac datetime,
 	num_tramite varchar(50),
 	domicilio varchar(100),
-	telefono varchar(100)
+	telefono varchar(100),
+	cbu varchar(50)
 );
 
 create table empleado(
@@ -699,6 +712,7 @@ insert into palabras(word) values('PROFILE_PHONE');
 insert into palabras(word) values('PROFILE_CLOSE');
 insert into palabras(word) values('PROFILE_OK');
 insert into palabras(word) values('PROFILE_FORM');
+insert into palabras(word) values('PROFILE_CBU');
 insert into palabras(word) values('TXT_BACKUP_TITLE');
 insert into palabras(word) values('TXT_BACKUP_DESCRIP');
 insert into palabras(word) values('BTN_NEW_BACKUP');
@@ -1001,6 +1015,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_PHONE','Telef
 insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_CLOSE','Cerrar');
 insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_OK','Guardar');
 insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_FORM','Perfil de cliente');
+insert into idioma_palabras(code,clave,valor) values('ES','PROFILE_CBU','CBU');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_BACKUP_TITLE','Backup');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_BACKUP_DESCRIP','Maneje aqui la creación carga de backups.');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_NEW_BACKUP','Nuevo backup');
@@ -1289,6 +1304,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_PHONE','Phon
 insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_CLOSE','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_OK','Save');
 insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_FORM','Client profile');
+insert into idioma_palabras(code,clave,valor) values('ENG','PROFILE_CBU','CBU');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_TITLE','Backup');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_DESCRIP','Manage here the system backups.');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_NEW_BACKUP','New backup');

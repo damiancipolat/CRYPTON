@@ -41,6 +41,7 @@ namespace UI
             this.txt_profile_tramite.Text = Idioma.GetInstance().translate("PROFILE_TRAMITE");
             this.txt_profile_address.Text = Idioma.GetInstance().translate("PROFILE_ADDRESS");
             this.txt_profile_phone.Text = Idioma.GetInstance().translate("PROFILE_PHONE");
+            this.txt_profile_cbu.Text= Idioma.GetInstance().translate("PROFILE_CBU");
             this.btn_close.Text = Idioma.GetInstance().translate("PROFILE_CLOSE");
             this.btn_ok.Text = Idioma.GetInstance().translate("PROFILE_OK");
             this.Text= Idioma.GetInstance().translate("PROFILE_FORM");
@@ -61,6 +62,8 @@ namespace UI
             this.txt_tramite.Text = this.client.num_tramite;
             this.txt_num_doc.Text = this.client.numero;
             this.txt_type_doc.Text = this.client.tipoDoc;
+            this.txt_cbu.Text = this.client.cbu;
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -81,6 +84,7 @@ namespace UI
                 this.client.num_tramite = this.txt_tramite.Text;
                 this.client.numero = this.txt_num_doc.Text;
                 this.client.tipoDoc = this.txt_type_doc.Text;
+                this.client.cbu = this.txt_cbu.Text;
                 this.client.fec_nac = DateTime.ParseExact(this.txt_birth_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                 //Log.

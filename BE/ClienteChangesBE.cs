@@ -17,5 +17,6 @@ namespace BE
         public string num_tramite;
         public string domicilio;
         public string telefono;
+        public string cbu;
     }
 }

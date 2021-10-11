@@ -28,8 +28,7 @@ namespace SL
         {
             //Armo instancias.
             BdLayer bdLogLayer = new BdLayer();
-            FileLayer fileLogLayer = new FileLayer();
-               
+            FileLayer fileLogLayer = new FileLayer();               
 
             //Intento grabar el log en la bd, si falla se graba en un archivo.
             try

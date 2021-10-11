@@ -81,7 +81,8 @@ namespace DAL
                 {"fec_nac",client.fec_nac.ToString("yyyy-MM-dd HH:mm:ss")},
                 {"num_tramite",client.num_tramite},
                 {"domicilio",client.domicilio},
-                {"telefono",client.telefono}
+                {"telefono",client.telefono},
+                {"cbu",client.cbu}
             };
 
             QueryInsert builder = new QueryInsert();

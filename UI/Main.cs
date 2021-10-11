@@ -533,5 +533,12 @@ namespace UI
         {
 
         }
+
+        private void Button1_Click_11(object sender, EventArgs e)
+        {
+            UsuarioBE user = new UsuarioBL().findById(4);
+            string hash = new HashUsuario().hash(user);
+            Debug.WriteLine(">>>" + hash);
+        }
     }
 }

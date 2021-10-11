@@ -129,7 +129,8 @@ namespace DAL
                 {"num_tramite",client.num_tramite},
                 {"domicilio",client.domicilio},
                 {"telefono",client.telefono},
-                {"valido",client.valido}
+                {"valido",client.valido},
+                {"cbu",client.cbu}
             };
 
             QueryInsert builder = new QueryInsert();
@@ -153,7 +154,8 @@ namespace DAL
                 {"num_tramite",client.num_tramite},
                 {"domicilio",client.domicilio},
                 {"telefono",client.telefono},
-                {"valido",client.valido}
+                {"valido",client.valido},
+                {"cbu",client.cbu}
             };
 
             return this.getUpdate().updateSchemaById(schema, "cliente", "idcliente", client.idcliente);

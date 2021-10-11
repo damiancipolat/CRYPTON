@@ -42,13 +42,15 @@
             this.txt_profile_address = new System.Windows.Forms.Label();
             this.txt_phone = new System.Windows.Forms.TextBox();
             this.txt_profile_phone = new System.Windows.Forms.Label();
+            this.txt_cbu = new System.Windows.Forms.TextBox();
+            this.txt_profile_cbu = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_close
             // 
             this.btn_close.BackColor = System.Drawing.Color.LightCoral;
             this.btn_close.ForeColor = System.Drawing.Color.White;
-            this.btn_close.Location = new System.Drawing.Point(181, 546);
+            this.btn_close.Location = new System.Drawing.Point(181, 637);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(150, 46);
             this.btn_close.TabIndex = 41;
@@ -60,7 +62,7 @@
             // 
             this.btn_ok.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_ok.ForeColor = System.Drawing.Color.White;
-            this.btn_ok.Location = new System.Drawing.Point(18, 546);
+            this.btn_ok.Location = new System.Drawing.Point(18, 637);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(148, 46);
             this.btn_ok.TabIndex = 42;
@@ -177,11 +179,31 @@
             this.txt_profile_phone.TabIndex = 53;
             this.txt_profile_phone.Text = "txt_profile_phone";
             // 
+            // txt_cbu
+            // 
+            this.txt_cbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cbu.Location = new System.Drawing.Point(24, 575);
+            this.txt_cbu.Name = "txt_cbu";
+            this.txt_cbu.Size = new System.Drawing.Size(309, 27);
+            this.txt_cbu.TabIndex = 56;
+            // 
+            // txt_profile_cbu
+            // 
+            this.txt_profile_cbu.AutoSize = true;
+            this.txt_profile_cbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_profile_cbu.Location = new System.Drawing.Point(24, 544);
+            this.txt_profile_cbu.Name = "txt_profile_cbu";
+            this.txt_profile_cbu.Size = new System.Drawing.Size(133, 20);
+            this.txt_profile_cbu.TabIndex = 55;
+            this.txt_profile_cbu.Text = "txt_profile_cbu";
+            // 
             // frm_profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 620);
+            this.ClientSize = new System.Drawing.Size(356, 711);
+            this.Controls.Add(this.txt_cbu);
+            this.Controls.Add(this.txt_profile_cbu);
             this.Controls.Add(this.txt_phone);
             this.Controls.Add(this.txt_profile_phone);
             this.Controls.Add(this.txt_address);
@@ -224,5 +246,7 @@
         private System.Windows.Forms.Label txt_profile_address;
         private System.Windows.Forms.TextBox txt_phone;
         private System.Windows.Forms.Label txt_profile_phone;
+        private System.Windows.Forms.TextBox txt_cbu;
+        private System.Windows.Forms.Label txt_profile_cbu;
     }
 }

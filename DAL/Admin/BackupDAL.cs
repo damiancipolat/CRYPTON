@@ -71,14 +71,14 @@ namespace DAL.Admin
         //Proceso el backup.
         public int makeBackup(BackupBE backup)
         {
+            //Registro el backup.
+            this.insert(backup);
+
             //Ejecuto el backup.
             string sql = "BACKUP DATABASE Crypton TO DISK = '" + backup.path + "' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB'";
             QueryInsert cmd = new QueryInsert();
 
             Debug.WriteLine("QUERY:"+sql);
-
-            //Registro el backup.
-            this.insert(backup);
 
             //Retorno la ejecucion del comando.
             return cmd.query(sql);

@@ -48,14 +48,15 @@ namespace SEC
             {
                 this.notiyAdmin("DVH-USER");
                 throw new IntegrityException("INTEGRITY_USERS_NOT_FOUND");
-            }                
+            }
 
             //Compare current hash vs column hash.
             foreach (UsuarioBE user in userList)
             {
                 string newHash = new HashUsuario().hash(user);
+                Debug.WriteLine("comparing hash id:" + user.idusuario.ToString() + " " + newHash + " --- " + user.hash);
 
-                //Compare table hash with computed hash.
+                //Compare table hash with computed hash.                
                 if (newHash != user.hash)
                 {
                     this.notiyAdmin("DVH-USER-CORRUPT");
@@ -84,6 +85,8 @@ namespace SEC
                 this.notiyAdmin("DVV-USER");
                 throw new IntegrityException("INTEGRITY_USERS_ENTITY_FAIL");
             }
+
+            Debug.WriteLine("Compare entity full hash:"+fullHash+"  "+dvBE.hash);
 
             //Comparo hashes.
             if (fullHash != dvBE.hash)
