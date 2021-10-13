@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using BE.ValueObject;
+using System.Globalization;
+using DAL.DAO;
 
 namespace DAL
 {
@@ -58,6 +60,13 @@ namespace DAL
             return lista;
         }
 
+        //Buscar comisiones por fecha, TODO
+        public List<ComisionBE> findByDate(string type, string from, string to)
+        {
+            var lista = new List<ComisionBE>();
+            return lista;
+        }
+
         //Traigo lista de comisiones pendientes de una walley.
         public List<ComisionBE> pendingByWallet(BilleteraBE wallet)
         {
@@ -74,7 +83,6 @@ namespace DAL
                 lista.Add(this.bindSchema(row));
 
             return lista;
-
         }
 
         //Borra el usuario.

@@ -35,6 +35,9 @@ DROP TABLE IF EXISTS permiso;
 DROP TABLE IF EXISTS permiso_permiso;
 DROP TABLE IF EXISTS usuarios_permisos;
 
+select * from orden_compra;
+select * from comisiones;
+
 --Tabla de usuarios.
 create table usuario(
 	idusuario bigint identity(1,1) primary key,

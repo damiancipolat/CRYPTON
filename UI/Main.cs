@@ -20,6 +20,7 @@ using IO.Responses;
 using IO.RequestFormat;
 using SEC;
 using SEC.Exceptions;
+using UI.Comisiones;
 
 namespace UI
 {
@@ -539,6 +540,11 @@ namespace UI
             UsuarioBE user = new UsuarioBL().findById(4);
             string hash = new HashUsuario().hash(user);
             Debug.WriteLine(">>>" + hash);
+        }
+
+        private void Button1_Click_12(object sender, EventArgs e)
+        {
+            new frm_ganancias().Show();
         }
     }
 }

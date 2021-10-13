@@ -100,6 +100,18 @@
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Comisiones\frm_cobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comisiones\frm_cobrar.Designer.cs">
+      <DependentUpon>frm_cobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comisiones\frm_ganancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comisiones\frm_ganancias.Designer.cs">
+      <DependentUpon>frm_ganancias.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +261,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscadorOfertas.resx">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comisiones\frm_cobrar.resx">
+      <DependentUpon>frm_cobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comisiones\frm_ganancias.resx">
+      <DependentUpon>frm_ganancias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_profile.resx">
       <DependentUpon>frm_profile.cs</DependentUpon>
@@ -441,6 +459,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
