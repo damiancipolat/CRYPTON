@@ -72,7 +72,7 @@ namespace BL.Operations
 
             //Obtengo la comision del comprador.
             ComisionBE comBuy = this.fromBuy(venta,buyer);
-            new ComisionDAL().save(comBuy);            
+            new ComisionDAL().save(comBuy);
 
             //Retorno la lista de comisiones.
             Dictionary <ComisionBE, ComisionBE> comDictionary = new Dictionary<ComisionBE, ComisionBE>();

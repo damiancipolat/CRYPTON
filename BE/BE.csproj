@@ -66,6 +66,7 @@
     <Compile Include="SolicOnboardingBE.cs" />
     <Compile Include="SolicOperacionBE.cs" />
     <Compile Include="TransferenciasBE.cs" />
+    <Compile Include="UsuarioBloqBE.cs" />
     <Compile Include="UsuarioBE.cs" />
     <Compile Include="ValueObject\Money.cs" />
   </ItemGroup>

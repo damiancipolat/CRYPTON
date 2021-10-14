@@ -70,6 +70,7 @@
     <Compile Include="Permisos\PermisoBL.cs" />
     <Compile Include="Permisos\UserPermisoBL.cs" />
     <Compile Include="TaxManager.cs" />
+    <Compile Include="UsuarioBloqBL.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="ReportingBL.cs" />
     <Compile Include="BilleteraBL.cs" />

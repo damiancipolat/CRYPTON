@@ -178,6 +178,7 @@ namespace BL
             //Guardo.
             return this.update(wallet);
         }
+        
         //CONSULTA-----------------------------------------------------------------
 
         //Obtengo el balance de la cuenta y moneda..

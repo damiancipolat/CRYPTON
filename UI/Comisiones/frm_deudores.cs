@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace UI.Comisiones
 {
-    public partial class frm_cobrar : Form
+    public partial class frm_deudores : Form
     {
-        public frm_cobrar()
+        public frm_deudores()
         {
             InitializeComponent();
-        }
-
-        private void Btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

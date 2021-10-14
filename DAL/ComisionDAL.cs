@@ -60,12 +60,37 @@ namespace DAL
             return lista;
         }
 
+        //---------------------------------
+
+        //Traigo total de comisiones y costo de cada cliente.
+        public List<(ClienteBE,Money)> getClientPendingAmmounts()
+        {
+            var lista = new List<(ClienteBE, Money)>();
+            return lista;
+        }
+
         //Buscar comisiones por fecha, TODO
         public List<ComisionBE> findByDate(string type, string from, string to)
         {
             var lista = new List<ComisionBE>();
             return lista;
         }
+
+        //Traer comisiones pendientes, TODO
+        public List<ComisionBE> getPaymentsPending(string type, string from, string to)
+        {
+            var lista = new List<ComisionBE>();
+            return lista;
+        }
+
+        //Traigo la lista de pendientes gral, TODO
+        public List<ComisionBE> getPendings()
+        {
+            var lista = new List<ComisionBE>();
+            return lista;
+        }
+
+        //---------------------------------
 
         //Traigo lista de comisiones pendientes de una walley.
         public List<ComisionBE> pendingByWallet(BilleteraBE wallet)

@@ -106,6 +106,12 @@
     <Compile Include="Comisiones\frm_cobrar.Designer.cs">
       <DependentUpon>frm_cobrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comisiones\frm_deudores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comisiones\frm_deudores.Designer.cs">
+      <DependentUpon>frm_deudores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Comisiones\frm_ganancias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comisiones\frm_cobrar.resx">
       <DependentUpon>frm_cobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comisiones\frm_deudores.resx">
+      <DependentUpon>frm_deudores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comisiones\frm_ganancias.resx">
       <DependentUpon>frm_ganancias.cs</DependentUpon>
@@ -462,6 +471,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deuda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
