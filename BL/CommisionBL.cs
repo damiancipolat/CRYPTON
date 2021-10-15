@@ -14,5 +14,22 @@ namespace BL
         {
             return new ComisionDAL().findByDate(type, from, to);
         }
+
+        public List<ComisionBE> searchByClient(ClienteBE client)
+        {
+            return new ComisionDAL().searchByClient(client,true);
+        }
+
+        //TODO
+        public void processPayments()
+        {
+            //traigo los pendientes: new ComisionDAL().getPaymentsPending();
+            //si hay datos, proceso.
+                //traigo la billetera en ars del cliente
+                    //si tiene monto como para debitar
+                        //debito y notifico.
+                    //si no tengo saldo, envio un email al deudor.
+            //si no hay datos no hago nada.
+        }
     }
 }

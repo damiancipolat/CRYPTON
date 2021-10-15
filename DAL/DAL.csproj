@@ -78,6 +78,8 @@
     <Compile Include="SolicOnboardingDAL.cs" />
     <Compile Include="SolicOperacionDAL.cs" />
     <Compile Include="TransferenciaDAL.cs" />
+    <Compile Include="BancoDAL.cs" />
+    <Compile Include="UsuarioBloqDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>

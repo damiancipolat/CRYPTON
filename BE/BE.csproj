@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BancoBE.cs" />
     <Compile Include="BilleteraBE.cs" />
     <Compile Include="ClienteChangesBE.cs" />
     <Compile Include="NotificacionBE.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="SolicOperacionBE.cs" />
     <Compile Include="TransferenciasBE.cs" />
     <Compile Include="UsuarioBE.cs" />
+    <Compile Include="UsuarioBloqBE.cs" />
     <Compile Include="ValueObject\Money.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

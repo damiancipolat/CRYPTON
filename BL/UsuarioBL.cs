@@ -59,5 +59,10 @@ namespace BL
 
             return insertedId;
         }
+
+        public int update(UsuarioBE user)
+        {
+            return new UsuarioDAL().update(user);
+        }
     }
 }

@@ -93,6 +93,30 @@
     <Compile Include="Admin\frm_cambios.Designer.cs">
       <DependentUpon>frm_cambios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Banco\frm_buscar_cbu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco\frm_buscar_cbu.Designer.cs">
+      <DependentUpon>frm_buscar_cbu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banco\frm_cbu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco\frm_cbu.Designer.cs">
+      <DependentUpon>frm_cbu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banco\frm_lista_retiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco\frm_lista_retiro.Designer.cs">
+      <DependentUpon>frm_lista_retiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banco\frm_solic_retiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco\frm_solic_retiro.Designer.cs">
+      <DependentUpon>frm_solic_retiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscadorOfertas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +141,12 @@
     </Compile>
     <Compile Include="frm_profile.Designer.cs">
       <DependentUpon>frm_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_user_status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_user_status.Designer.cs">
+      <DependentUpon>frm_user_status.cs</DependentUpon>
     </Compile>
     <Compile Include="MyBuysFrm.cs">
       <SubType>Form</SubType>
@@ -259,6 +289,18 @@
     <EmbeddedResource Include="Admin\frm_cambios.resx">
       <DependentUpon>frm_cambios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Banco\frm_buscar_cbu.resx">
+      <DependentUpon>frm_buscar_cbu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banco\frm_cbu.resx">
+      <DependentUpon>frm_cbu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banco\frm_lista_retiro.resx">
+      <DependentUpon>frm_lista_retiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banco\frm_solic_retiro.resx">
+      <DependentUpon>frm_solic_retiro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscadorOfertas.resx">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_profile.resx">
       <DependentUpon>frm_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_user_status.resx">
+      <DependentUpon>frm_user_status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyBuysFrm.resx">
       <DependentUpon>MyBuysFrm.cs</DependentUpon>
@@ -462,6 +507,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

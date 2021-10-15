@@ -1,7 +1,6 @@
 ﻿using BE;
 using BE.Permisos;
 using BL;
-using DAL;
 using SL;
 using System;
 using System.Globalization;
@@ -12,6 +11,7 @@ using System.Windows.Forms;
 using UI.Notifications;
 using UI.Permisos;
 using UI.Admin;
+using UI.Banco;
 using BL.Permisos;
 using BL.ChangeControl;
 using BE.ValueObject;
@@ -544,7 +544,20 @@ namespace UI
 
         private void Button1_Click_12(object sender, EventArgs e)
         {
-            new frm_ganancias().Show();
+            //new frm_ganancias().Show();
+            //new frm_user_status().Show();
+            //new frm_cbu().Show();
+            //new frm_buscar_cbu().Show();
+            //new frm_solic_retiro().Show();
+            new frm_lista_retiro().Show();
+
+            /*
+            InputForm frm = new InputForm("Ingresar saldo", "Ingrese el monto a acreditar en la cuenta.");
+            frm.ShowDialog();
+
+            //Obtengo el valor. 
+            string value = frm.getValue();
+            */
         }
     }
 }

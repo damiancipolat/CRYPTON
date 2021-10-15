@@ -22,5 +22,7 @@ namespace BL
         public void acreditar(SolicOperacionBE solicitud) { }
         public void rechazar(SolicOperacionBE solicitud) { }
         public void extraer(SolicOperacionBE solicitud) { }
+
+        public int update(SolicOperacionBE solicitud) { return 0; }
     }
 }

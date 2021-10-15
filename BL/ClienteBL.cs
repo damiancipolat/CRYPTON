@@ -45,6 +45,11 @@ namespace BL
             return new ClienteDAL().findByUser(user);
         }
 
+        public ClienteBE findByCBU(string cbu)
+        {
+            return new ClienteDAL().findByCBU(cbu);
+        }
+
         public ClienteBE save(ClienteBE cliente)
         {
             //Encripto el email para hacer busquedas.

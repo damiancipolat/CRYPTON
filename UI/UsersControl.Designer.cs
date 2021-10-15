@@ -39,6 +39,7 @@
             this.usr_ctrl_changes = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.usr_search_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usr_data)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,7 @@
             this.usr_search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usr_search_descrip.Location = new System.Drawing.Point(104, 64);
             this.usr_search_descrip.Name = "usr_search_descrip";
-            this.usr_search_descrip.Size = new System.Drawing.Size(241, 30);
+            this.usr_search_descrip.Size = new System.Drawing.Size(193, 24);
             this.usr_search_descrip.TabIndex = 34;
             this.usr_search_descrip.Text = "usr_search_descrip";
             this.usr_search_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,11 +160,23 @@
             this.usr_search_btn.UseVisualStyleBackColor = false;
             this.usr_search_btn.Click += new System.EventHandler(this.Usr_search_btn_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumPurple;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(332, 177);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 38);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Cambiar estado";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // UsersControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1140, 758);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.usr_ctrl_changes);
             this.Controls.Add(this.usr_search_label);
             this.Controls.Add(this.usr_perm_btn);
@@ -202,5 +215,6 @@
         private System.Windows.Forms.Button usr_ctrl_changes;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button usr_search_btn;
+        private System.Windows.Forms.Button button1;
     }
 }

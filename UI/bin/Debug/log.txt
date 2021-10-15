@@ -1,19 +1,6 @@
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
-aaa:aaa
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
 LOGIN:Request login of user:roberto@gmail.com
 SESSION:An user has started session - email:roberto@gmail.com
 LOGIN:Login of user:roberto@gmail.com success!

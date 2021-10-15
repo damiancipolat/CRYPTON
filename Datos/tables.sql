@@ -1,6 +1,8 @@
 --Borro las tablas para volver a crearlas.
 DROP TABLE IF EXISTS usuario;
 DROP TABLE IF EXISTS tipo_usuario;
+DROP TABLE IF EXISTS usuario_estado;
+DROP TABLE IF EXISTS usuario_bloq;
 DROP TABLE IF EXISTS solic_onboarding;
 DROP TABLE IF EXISTS onboarding_estados;
 DROP TABLE IF EXISTS cliente;
@@ -34,9 +36,15 @@ DROP TABLE IF EXISTS idioma_palabras;
 DROP TABLE IF EXISTS permiso;
 DROP TABLE IF EXISTS permiso_permiso;
 DROP TABLE IF EXISTS usuarios_permisos;
+DROP TABLE IF EXISTS banco_data;
 
-select * from orden_compra;
-select * from comisiones;
+--Tabla de banco.
+create table banco_data(
+	idbanco bigint identity(1,1) primary key,
+	cbu varchar(100),
+	nombre varchar(100),
+	alias varchar(50)
+);
 
 --Tabla de usuarios.
 create table usuario(
@@ -46,24 +54,11 @@ create table usuario(
 	alias varchar(50),
 	email varchar(100),
 	tipo_usuario int,
+	estado int,
 	pwd varchar(100) NOT NULL,
 	[hash] text,
 	deleted datetime
 );
-
-/*
-select * from cliente
-select * from usuario;
-select * from dvv;
-update dvv set "hash"='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99';
-*/
-select * from comisiones
-
-/*
-select * from usuario  where idusuario=4;
-update usuario set hash='4ace166b6ebac5a0a7fc65215355b02f' where idusuario=4;
-select * from dvv
-*/
 
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
@@ -73,6 +68,24 @@ create table tipo_usuario(
 
 insert into tipo_usuario values('Cliente');
 insert into tipo_usuario values('Empleado');
+
+--Tabla de estados de usuario.
+CREATE TABLE usuario_estado(
+	[idestado] [bigint] IDENTITY(1,1) NOT NULL,
+	[nombre] varchar(100)
+);
+
+insert into usuario_estado(nombre) values('Activo');
+insert into usuario_estado(nombre) values('Inactivo');
+insert into usuario_estado(nombre) values('Bloqueado');
+
+--Tabla de bloqueo de usuarios.
+CREATE TABLE usuario_bloq(
+	[idbloq] [bigint] IDENTITY(1,1) NOT NULL,
+	[idusuario] [bigint] NULL,
+	[motivo] [varchar](200) NULL,
+	[fecBloq] [datetime] NULL
+);
 
 ---Tabla con digito verificadores verticales.
 create table dvv(
@@ -172,9 +185,6 @@ create table onboarding_estados(
 insert into onboarding_estados values('Valido');
 insert into onboarding_estados values('Rechazado');
 insert into onboarding_estados values('Ilegible');
-
-select * from cliente
---update cliente set cbu='0070064130004043187745';
 
 --Informacion personal del cliente pedido del BCRA.
 create table cliente(
@@ -1320,15 +1330,3 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_TITLE','B
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_DESCRIP','Do you want to make a new backup?');
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_RESTORE_DESCRIP','Do you want to restore to this backup?');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_TITLE_LIST','Your previous backups.');
-
---select * from usuario
---select * from cliente
-
-
-select * from cliente_cambios where idchange=10012;
-select * from admin_backup
-truncate table admin_backup
-BACKUP DATABASE Crypton TO DISK = 'C:\Users\54116\Desktop\crypton_backup_09.18.2021.12.43.28.bak' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB'
-
-
-select * from bitacora order by id desc;

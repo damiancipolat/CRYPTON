@@ -37,6 +37,12 @@ namespace DAL
 
         }
 
+        //Traigo la lista de solicitudes pendientes. TODO
+        public List<SolicOperacionBE> getPendings()
+        {
+            return new List<SolicOperacionBE>();
+        }
+
         //Este metodo retorna una lista de clientes.
         public List<SolicOperacionBE> findAll()
         {

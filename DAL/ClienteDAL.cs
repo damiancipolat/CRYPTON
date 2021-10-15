@@ -102,6 +102,26 @@ namespace DAL
             return lista;
         }
 
+        //Busca por CBU.
+        public ClienteBE findByCBU(string cbu)
+        {
+            //Busco en la bd por dni.
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
+                {"cbu",cbu}
+            }, "cliente");
+
+            //Lista resultado.
+            List<ClienteBE> lista = new List<ClienteBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            if (lista.Count > 0)
+                return lista[0];
+            else
+                return null;
+        }
+
         //Este metodo retorna una lista de clientes.
         public List<ClienteBE> findAll()
         {

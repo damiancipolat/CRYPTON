@@ -34,6 +34,7 @@ namespace SL
             try
             {
                 bdLogLayer.log(actividad, payload);
+               // throw new Exception("epa");
             }
             catch (Exception ex)
             {
