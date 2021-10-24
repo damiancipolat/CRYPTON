@@ -57,16 +57,6 @@
             this.language_combo.Size = new System.Drawing.Size(327, 37);
             this.language_combo.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.globe;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // language_accept
             // 
             this.language_accept.Location = new System.Drawing.Point(36, 152);

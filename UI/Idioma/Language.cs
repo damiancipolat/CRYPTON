@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using DAL.Idiomas;
 using BE;
 using SL;
 using UI.Notifications;

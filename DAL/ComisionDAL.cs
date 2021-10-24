@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BE;
-using BE.ValueObject;
 using System.Globalization;
 using DAL.DAO;
+using BE;
+using BE.ValueObject;
 
 namespace DAL
 {
@@ -60,13 +60,22 @@ namespace DAL
             return lista;
         }
 
+        //---------------------------------
+
+        //Traigo total de comisiones y costo de cada cliente.
+        public List<(ClienteBE,Money)> getClientPendingAmmounts()
+        {
+            var lista = new List<(ClienteBE, Money)>();
+            return lista;
+        }
+
         //Buscar comisiones por fecha, TODO
         public List<ComisionBE> findByDate(string type, string from, string to)
         {
             var lista = new List<ComisionBE>();
             return lista;
         }
-
+        
         //Traer comisiones pendientes de un cliente TODO.
         public List<ComisionBE> searchByClient(ClienteBE cliente,bool onlyPendings=false)
         {
@@ -80,7 +89,6 @@ namespace DAL
             var lista = new List<ComisionBE>();
             return lista;
         }
-
 
         //Traigo lista de comisiones pendientes de una walley.
         public List<ComisionBE> pendingByWallet(BilleteraBE wallet)

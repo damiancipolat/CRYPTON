@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using BE.ValueObject;
 using DAL;
 
 namespace BL
@@ -17,7 +18,19 @@ namespace BL
 
         public List<ComisionBE> searchByClient(ClienteBE client)
         {
-            return new ComisionDAL().searchByClient(client,true);
+            return new ComisionDAL().searchByClient(client, true);
+        }
+
+        //TODO
+        public List<(ClienteBE, Money)> getClientPendingAmmounts()
+        {
+            return new ComisionDAL().getClientPendingAmmounts();
+        }
+
+        //TODO
+        public List<ComisionBE> getPendings()
+        {
+            return new List<ComisionBE>();
         }
 
         //TODO
@@ -31,5 +44,9 @@ namespace BL
                     //si no tengo saldo, envio un email al deudor.
             //si no hay datos no hago nada.
         }
+
+        //TODO
+        public void reclaimPayment(int clientId){ }
+
     }
 }

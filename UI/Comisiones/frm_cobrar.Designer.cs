@@ -30,13 +30,13 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.bitacora_data = new System.Windows.Forms.DataGridView();
+            this.comision_data = new System.Windows.Forms.DataGridView();
             this.search_descrip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.search_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.activ_title = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.bitacora_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comision_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,7 @@
             this.button1.TabIndex = 40;
             this.button1.Text = "Cobrar comisiones";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btn_close
             // 
@@ -62,15 +63,15 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
-            // bitacora_data
+            // comision_data
             // 
-            this.bitacora_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bitacora_data.Location = new System.Drawing.Point(25, 204);
-            this.bitacora_data.Name = "bitacora_data";
-            this.bitacora_data.RowHeadersWidth = 51;
-            this.bitacora_data.RowTemplate.Height = 24;
-            this.bitacora_data.Size = new System.Drawing.Size(830, 413);
-            this.bitacora_data.TabIndex = 63;
+            this.comision_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.comision_data.Location = new System.Drawing.Point(25, 204);
+            this.comision_data.Name = "comision_data";
+            this.comision_data.RowHeadersWidth = 51;
+            this.comision_data.RowTemplate.Height = 24;
+            this.comision_data.Size = new System.Drawing.Size(830, 413);
+            this.comision_data.TabIndex = 63;
             // 
             // search_descrip
             // 
@@ -132,7 +133,7 @@
             this.ClientSize = new System.Drawing.Size(880, 712);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.bitacora_data);
+            this.Controls.Add(this.comision_data);
             this.Controls.Add(this.search_descrip);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.search_title);
@@ -142,7 +143,7 @@
             this.Name = "frm_cobrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_cobrar";
-            ((System.ComponentModel.ISupportInitialize)(this.bitacora_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comision_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -155,7 +156,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.DataGridView bitacora_data;
+        private System.Windows.Forms.DataGridView comision_data;
         private System.Windows.Forms.Label search_descrip;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label search_title;

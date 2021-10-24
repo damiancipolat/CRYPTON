@@ -81,16 +81,6 @@
             this.sell_close.UseVisualStyleBackColor = false;
             this.sell_close.Click += new System.EventHandler(this.Sell_close_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.neural;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
             // btn_view
             // 
             this.btn_view.BackColor = System.Drawing.Color.LightYellow;

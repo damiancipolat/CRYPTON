@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using SL;
 using BL;
 using BE;
-using DAL;
 
 namespace UI
 {

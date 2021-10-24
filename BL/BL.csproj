@@ -75,7 +75,7 @@
     <Compile Include="BilleteraBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BancoBL.cs" />
-    <Compile Include="UsuarioBloqBL.cs" />
+    <Compile Include="UsuarioBloq.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

@@ -20,12 +20,6 @@ namespace BL
             //..
         }
 
-        //Traigo todos los datos.
-        public List<UsuarioBloqBE> findAll()
-        {
-            return new UsuarioBloqDAL().findAll();
-        }
-
         //Buscar por id.
         public UsuarioBloqBE findById(int id)
         {

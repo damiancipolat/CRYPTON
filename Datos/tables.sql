@@ -38,6 +38,7 @@ DROP TABLE IF EXISTS permiso_permiso;
 DROP TABLE IF EXISTS usuarios_permisos;
 DROP TABLE IF EXISTS banco_data;
 
+<<<<<<< HEAD
 --Tabla de banco.
 create table banco_data(
 	idbanco bigint identity(1,1) primary key,
@@ -46,6 +47,8 @@ create table banco_data(
 	alias varchar(50)
 );
 
+=======
+>>>>>>> 46bb1d1d647be1716582d3c6547fa707875b7ba5
 --Tabla de usuarios.
 create table usuario(
 	idusuario bigint identity(1,1) primary key,
@@ -60,6 +63,19 @@ create table usuario(
 	deleted datetime
 );
 
+<<<<<<< HEAD
+=======
+--Tabla de estados de usuario.
+create table usuario_estado(
+	idestado bigint identity(1,1) primary key,
+	nombre varchar(100)
+);
+
+insert into usuario_estado(nombre) values('Activo');
+insert into usuario_estado(nombre) values('Inactivo');
+insert into usuario_estado(nombre) values('Bloquedo');
+
+>>>>>>> 46bb1d1d647be1716582d3c6547fa707875b7ba5
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
 	tipo_usuario int identity(1,1) primary key,
@@ -69,6 +85,7 @@ create table tipo_usuario(
 insert into tipo_usuario values('Cliente');
 insert into tipo_usuario values('Empleado');
 
+<<<<<<< HEAD
 --Tabla de estados de usuario.
 CREATE TABLE usuario_estado(
 	[idestado] [bigint] IDENTITY(1,1) NOT NULL,
@@ -85,6 +102,15 @@ CREATE TABLE usuario_bloq(
 	[idusuario] [bigint] NULL,
 	[motivo] [varchar](200) NULL,
 	[fecBloq] [datetime] NULL
+=======
+--Tabla de bloqueo de usuarios.
+create table usuario_bloq
+(
+	idbloq bigint identity(1,1) primary key,
+	idusuario bigint,
+	motivo varchar(200),
+	fecBloq datetime
+>>>>>>> 46bb1d1d647be1716582d3c6547fa707875b7ba5
 );
 
 ---Tabla con digito verificadores verticales.

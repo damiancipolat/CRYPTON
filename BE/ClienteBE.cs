@@ -15,7 +15,6 @@ namespace BE
         public DateTime fec_nac;
         public string num_tramite;
         public string domicilio;
-        public string email;
         public string telefono;
         public string valido;
         public string cbu;

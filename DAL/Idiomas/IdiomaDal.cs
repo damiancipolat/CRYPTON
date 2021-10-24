@@ -7,7 +7,6 @@ using System.Diagnostics;
 using BE;
 using DAL.DAO;
 
-
 namespace DAL.Idiomas
 {
     public class IdiomaDAL : AbstractDAL<IdiomaDAL>
