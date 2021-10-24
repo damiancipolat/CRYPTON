@@ -7,3 +7,12 @@ C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta d
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.csproj.CopyComplete
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.dll
 C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.pdb
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\bin\Debug\IO.dll
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\bin\Debug\IO.pdb
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\bin\Debug\Newtonsoft.Json.dll
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\bin\Debug\Newtonsoft.Json.xml
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.csprojAssemblyReference.cache
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.csproj.CoreCompileInputs.cache
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.csproj.CopyComplete
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.dll
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.pdb

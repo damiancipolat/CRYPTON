@@ -77,6 +77,8 @@ namespace UI.Admin
 
         private void Btn_search_Click(object sender, EventArgs e)
         {
+            this.bitacora_data.Rows.Clear();
+
             //Obtengo el valor elegido.
             string activTxt = this.activities[this.activ_combo.SelectedIndex];
 

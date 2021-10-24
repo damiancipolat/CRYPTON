@@ -37,7 +37,7 @@ namespace DAL
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
                 {"idusuario",iduser},                
-                { "fec_log",bitacora.fecLog.ToString("yyyy-MM-dd HH:mm:ss.fff")},
+                { "fec_log",bitacora.fecLog.ToString("yyyy-mm-dd HH:MM:ss.fff")},
                 { "activity",bitacora.actividad},
                 { "payload",bitacora.payload}
             };
@@ -77,7 +77,7 @@ namespace DAL
             where = where + ($"fec_log>= '{from}' and fec_log<='{to}'");
 
             //Agrego la busqueda por regext.
-            where = where + ((text != "") ? $"and like '%{text}%'" : "");
+            where = where + ((text != "") ? $"and payload like '%{text}%'" : "");
 
             //Instancio el sql builder y ejecuto el query.
             string sql = $"select id,idusuario,activity,payload,fec_log from bitacora where {where}";
