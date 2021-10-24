@@ -54,6 +54,17 @@ namespace SL
                 throw new Exception("Is not allow to request a client when is no the current type logged");
         }
 
+        //Get the active if is a employee.
+        public EmpleadoBE getActiveEmployee()
+        {
+            UsuarioBE me = this.getUser();
+
+            if (me.tipoUsuario == UsuarioTipo.EMPLEADO)
+                return new EmpleadoDAL().findByUser(me);
+            else
+                throw new Exception("Is not allow to request a employee when is no the current type logged");
+        }
+
         //Start the session bind values.
         public void start(UsuarioBE userParam)
         {

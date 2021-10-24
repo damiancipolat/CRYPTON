@@ -32,5 +32,3 @@ G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRY
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.csproj.CopyComplete
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.dll
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\obj\Debug\SL.pdb
-G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\bin\Debug\SL.dll.CodeAnalysisLog.xml
-G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SL\bin\Debug\SL.dll.lastcodeanalysissucceeded

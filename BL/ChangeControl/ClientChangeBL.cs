@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using BE;
+using SL;
 
 namespace BL.ChangeControl
 {
@@ -37,6 +38,12 @@ namespace BL.ChangeControl
             client.num_tramite = change.num_tramite;
             client.telefono = change.telefono;            
             client.domicilio = change.domicilio;
+
+            //Traigo el empleado de la sesion aciva.
+            EmpleadoBE employee = Session.GetInstance().getActiveEmployee();
+
+            //Registro la nueva actualizacion.
+            new ClienteChangeDAL().insertWithEmployee(client,employee);
 
             //Actualizo en base al cambio.
             return new ClienteDAL().update(client);

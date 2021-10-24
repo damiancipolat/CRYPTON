@@ -67,7 +67,6 @@ namespace DAL
             return this.bindSchema((List<object>)result[0]);
         }
 
-
         //Este metodo busca por email
         public List<UsuarioBE> findByEmail(string email)
         {

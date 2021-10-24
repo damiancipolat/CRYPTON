@@ -25,6 +25,30 @@ namespace DAL
             //Bindeo campos con la lista de resultados.
             this.binder.match(fieldData, bitacora);
 
+            /*
+            //Actualizo el tipo de usuario que es un enum.            
+            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
+
+            //Bindeo campos.
+            UsuarioBE user = new UsuarioDAL().findById((long)mapa["idusuario"]);
+
+            if (user != null)
+            {
+                userTarget.alias = user.alias;
+                userTarget.nombre = user.nombre;
+                userTarget.apellido = user.apellido;
+                userTarget.email = user.email;
+                userTarget.tipoUsuario = UsuarioTipo.CLIENTE;
+            }
+            */
+
+
+
+
+
+
+
+
             return bitacora;
 
         }

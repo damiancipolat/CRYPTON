@@ -18,5 +18,6 @@ namespace BE
         public string domicilio;
         public string telefono;
         public string cbu;
+        public EmpleadoBE rollbackUser;
     }
 }

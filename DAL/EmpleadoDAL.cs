@@ -33,7 +33,7 @@ namespace DAL
         }
 
         //Este metodo obtiene en base al ID el usuario.
-        public EmpleadoBE findById(int id)
+        public EmpleadoBE findById(long id)
         {
             //Busco en la bd por id.
             List<object> result = this.getSelect().selectById("empleado", "idempleado", id);
@@ -41,6 +41,16 @@ namespace DAL
             //Bindeo con el esquema.
             return this.bindSchema((List<object>)result[0]);
 
+        }
+
+        //Traigo por idusuario
+        public EmpleadoBE findByUser(UsuarioBE user)
+        {
+            //Busco en la bd por id.
+            List<object> result = this.getSelect().selectById("empleado", "idusuario", user.idusuario);
+
+            //Bindeo con el esquema.
+            return this.bindSchema((List<object>)result[0]);
         }
 
         //Este metodo retorna una lista de clientes.

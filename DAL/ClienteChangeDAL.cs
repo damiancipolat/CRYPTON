@@ -69,6 +69,27 @@ namespace DAL
             return lista;
         }
 
+        //Agrego un usuario registrando el empleado que hizo el cambio.
+        public int insertWithEmployee(ClienteBE client,EmpleadoBE employee)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"change_date",DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")},
+                {"idcliente",client.idcliente},
+                {"tipoDoc",client.tipoDoc},
+                {"numero",client.numero},
+                {"fec_nac",client.fec_nac.ToString("yyyy-MM-dd HH:mm:ss")},
+                {"num_tramite",client.num_tramite},
+                {"domicilio",client.domicilio},
+                {"telefono",client.telefono},
+                {"cbu",client.cbu},
+                {"rollback_user",employee.idempleado }
+            };
+
+            QueryInsert builder = new QueryInsert();
+            return builder.insertSchema(schema, "cliente_cambios", true);
+        }
+
         //Agrega un nuevo usuario.
         public int insert(ClienteBE client)
         {
