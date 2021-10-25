@@ -18,12 +18,26 @@ namespace DAL
                 return null;
 
             //Armo un usuario que sera el cual se actualizara los campos.
-            ClienteChangeBE userTarget = new ClienteChangeBE();
+            ClienteChangeBE changeTarget = new ClienteChangeBE();
 
             //Bindeo campos con la lista de resultados.
-            this.binder.match(fieldData, userTarget);
+            this.binder.match(fieldData, changeTarget);
 
-            return userTarget;
+            //Actualizo el tipo de usuario que es un enum.            
+            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
+
+            //Cargo el empleado.
+            if (mapa["rollback_user"].ToString() != "")
+            {
+                //Bindeo campos.
+                EmpleadoBE employee = new EmpleadoDAL().findById((long)mapa["rollback_user"]);
+
+                if (employee != null)
+                    changeTarget.rollbackUser = employee;
+
+            }
+
+            return changeTarget;
         }
 
         //Este metodo obtiene en base al ID el usuario.

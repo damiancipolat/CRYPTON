@@ -709,6 +709,7 @@ insert into palabras(word) values('USR_CONTROL_COL_CHANGRE_NUM_TRAMITE');
 insert into palabras(word) values('USR_CONTROL_COL_CHANGE_ADDRESS');
 insert into palabras(word) values('USR_CONTROL_COL_CHANGE_EMAIL');
 insert into palabras(word) values('USR_CONTROL_COL_CHANGE_PHONE');
+insert into palabras(word) values('USR_CONTROL_COL_CHANGE_OPERATOR');
 insert into palabras(word) values('FRM_CHANGE_CONTROL');
 insert into palabras(word) values('FRM_CHANGE_CONTROL_BTN_RECOVE');
 insert into palabras(word) values('USR_CHANGE_CLOSE');
@@ -1012,6 +1013,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANG
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_ADDRESS','Direccón');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_EMAIL','Email');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_PHONE','Telefono');
+insert into idioma_palabras(code,clave,valor) values('ES','USR_CONTROL_COL_CHANGE_OPERATOR','Rollback por');
 insert into idioma_palabras(code,clave,valor) values('ES','FRM_CHANGE_CONTROL','Control de cambios');
 insert into idioma_palabras(code,clave,valor) values('ES','FRM_CHANGE_CONTROL_BTN_RECOVE','Recuperar cambio');
 insert into idioma_palabras(code,clave,valor) values('ES','USR_CHANGE_CLOSE','Cerrar');
@@ -1301,6 +1303,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHAN
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_ADDRESS','Address');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_EMAIL','Email');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_PHONE','Phone');
+insert into idioma_palabras(code,clave,valor) values('ENG','USR_CONTROL_COL_CHANGE_OPERATOR','Rollback by');
 insert into idioma_palabras(code,clave,valor) values('ENG','FRM_CHANGE_CONTROL','Changes control');
 insert into idioma_palabras(code,clave,valor) values('ENG','FRM_CHANGE_CONTROL_BTN_RECOVE','Restore changes');
 insert into idioma_palabras(code,clave,valor) values('ENG','USR_CHANGE_CLOSE','Close');

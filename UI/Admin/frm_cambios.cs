@@ -44,17 +44,18 @@ namespace UI.Admin
             this.listChanges.Reverse(0, this.listChanges.Count);
 
             //Loop to fill data.
-            foreach (ClienteChangeBE client in this.listChanges)
+            foreach (ClienteChangeBE change in this.listChanges)
             {
                 this.usr_data.Rows.Add(
                     new string[] {
-                        client.idchange.ToString(),
-                        client.tipoDoc,
-                        client.numero,
-                        client.fec_nac.ToString("yyyy-mm-dd"),
-                        client.num_tramite,
-                        client.domicilio,
-                        client.telefono
+                        change.idchange.ToString(),
+                        change.tipoDoc,
+                        change.numero,
+                        change.fec_nac.ToString("yyyy-mm-dd"),
+                        change.num_tramite,
+                        change.domicilio,
+                        change.telefono,
+                        change.rollbackUser!=null?change.rollbackUser.alias:"-"
                 });
             }
         }
@@ -75,6 +76,7 @@ namespace UI.Admin
             this.usr_data.Columns.Add(Idioma.GetInstance().translate("USR_CONTROL_COL_CHANGRE_NUM_TRAMITE"), Idioma.GetInstance().translate("USR_CONTROL_COL_CHANGRE_NUM_TRAMITE"));
             this.usr_data.Columns.Add(Idioma.GetInstance().translate("USR_CONTROL_COL_CHANGE_ADDRESS"), Idioma.GetInstance().translate("USR_CONTROL_COL_CHANGE_ADDRESS"));
             this.usr_data.Columns.Add(Idioma.GetInstance().translate("USR_CONTROL_COL_CHANGE_PHONE"), Idioma.GetInstance().translate("USR_CONTROL_COL_CHANGE_PHONE"));
+            this.usr_data.Columns.Add(Idioma.GetInstance().translate("USR_CONTROL_COL_CHANGE_OPERATOR"), Idioma.GetInstance().translate("USR_CONTROL_COL_CHANGE_OPERATOR"));            
 
             //Load data.
             this.fillData();
