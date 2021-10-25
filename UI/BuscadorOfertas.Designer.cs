@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscadorOfertas));
             this.search_title = new System.Windows.Forms.Label();
             this.search_descrip = new System.Windows.Forms.Label();
             this.moneda_ofrece = new System.Windows.Forms.ComboBox();
@@ -157,10 +156,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 12);
+            this.pictureBox1.Image = global::UI.Properties.Resources.magnifying_glass;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 72);
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;

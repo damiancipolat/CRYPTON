@@ -159,6 +159,7 @@ create table admin_backup
 	[path] varchar(100),
 	fecRec datetime,
 	[type] varchar(100),
+	size   bigint,
 	deleted datetime
 );
 
@@ -737,6 +738,7 @@ insert into palabras(word) values('BACKUP_COL_PATH');
 insert into palabras(word) values('BACKUP_COL_FEC');
 insert into palabras(word) values('BACKUP_COL_TYPE');
 insert into palabras(word) values('BACKUP_MSG_RESTORE_DESCRIP');
+insert into palabras(word) values('BACKUP_COL_SIZE');
 insert into palabras(word) values('TXT_BACKUP_TITLE_LIST');
 
 --Tabla de palabras por idioma.
@@ -1043,6 +1045,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_COL_TYPE','Tip
 insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_TITLE','Backup');
 insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_DESCRIP','¿Queres realizar un nuevo backup?');
 insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_RESTORE_DESCRIP','¿Queres cargar este backup?');
+insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_COL_SIZE','Tamaño en bytes');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_BACKUP_TITLE_LIST','Estos son los backups que has realizado.');
 
 --ENGLISH
@@ -1333,4 +1336,5 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_COL_TYPE','Ty
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_TITLE','Backup');
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_DESCRIP','Do you want to make a new backup?');
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_RESTORE_DESCRIP','Do you want to restore to this backup?');
+insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_COL_SIZE','File size in bytes');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_TITLE_LIST','Your previous backups.');

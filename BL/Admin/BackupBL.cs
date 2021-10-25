@@ -18,6 +18,9 @@ namespace BL.Admin
             string fileStr = "crypton_backup_"+DateTime.Now.ToString("MM.dd.yyyy.HH.mm.ss")+".bak";
             backup.path = backup.path + "\\" + fileStr;
 
+            //Seteo el file size a cero.
+            backup.size = 0;
+
             return new BackupDAL().makeBackup(backup);
 
         }

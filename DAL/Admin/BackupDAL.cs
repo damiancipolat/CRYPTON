@@ -61,18 +61,52 @@ namespace DAL.Admin
                 {"idusuario",backup.usuario.idusuario},
                 {"path",backup.path},
                 {"fecRec",backup.fecRec.ToString("yyyy-MM-dd HH:mm:ss.fff")},
-                {"type",backup.type}
+                {"type",backup.type},
+                {"size",backup.size}
             };
 
             QueryInsert builder = new QueryInsert();
-            return builder.insertSchema(schema, "admin_backup");
+            return builder.insertSchema(schema, "admin_backup",true);
+        }
+
+        //Actualizar el backup.
+        public int update(BackupBE backup)
+        {
+            //Creo un esquema dinamico para ser guardado.
+            var schema = new Dictionary<string, Object>{
+                {"idusuario",backup.usuario.idusuario},
+                { "path",backup.path},
+                { "fecRec",backup.fecRec.ToString("yyyy-MM-dd HH:mm:ss.fff")},
+                { "type",backup.type},
+                { "size",backup.size}
+            };
+
+            return this.getUpdate().updateSchemaById(schema, "admin_backup", "idbackup", backup.idbackup);
+        }
+
+        //Actualizo el tamaño del archivo.
+        private long updateSize(BackupBE backup)
+        {
+            //Traigo el tamaño del archivo.
+            long fileSize = new System.IO.FileInfo(backup.path).Length;
+            Debug.WriteLine("File size of:" + backup.path + " in " + fileSize + " bytes.");
+
+            //Piso el valor.
+            backup.size = fileSize;
+
+            //Actualizo el registro.
+            return this.update(backup);
         }
 
         //Proceso el backup.
         public int makeBackup(BackupBE backup)
         {
             //Registro el backup.
-            this.insert(backup);
+            int newId = this.insert(backup);
+            Debug.WriteLine("Backup id:" + newId.ToString());
+
+            //Actualizo el id.
+            backup.idbackup = newId;
 
             //Ejecuto el backup.
             string sql = "BACKUP DATABASE Crypton TO DISK = '" + backup.path + "' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of SQLTestDB'";
@@ -81,7 +115,12 @@ namespace DAL.Admin
             Debug.WriteLine("QUERY:"+sql);
 
             //Retorno la ejecucion del comando.
-            return cmd.query(sql);
+            cmd.query(sql);
+
+            //Actualizo el tamaño del archivo.
+            this.updateSize(backup);
+
+            return newId;
             
         }
 

@@ -61,7 +61,8 @@ namespace UI.Admin
                     new string[] {
                         backup.idbackup.ToString(),
                         backup.path,
-                        backup.fecRec.ToString("yyyy-mm-dd")                        
+                        backup.fecRec.ToString("yyyy-MM-dd HH:mm:ss.fff"),
+                        backup.size.ToString()
                 });
             }
         }
@@ -78,7 +79,8 @@ namespace UI.Admin
             this.usr_data.Columns.Add(Idioma.GetInstance().translate("ID"), Idioma.GetInstance().translate("ID"));
             this.usr_data.Columns.Add(Idioma.GetInstance().translate("BACKUP_COL_PATH"), Idioma.GetInstance().translate("BACKUP_COL_PATH"));
             this.usr_data.Columns.Add(Idioma.GetInstance().translate("BACKUP_COL_FEC"), Idioma.GetInstance().translate("BACKUP_COL_FEC"));
-                       
+            this.usr_data.Columns.Add(Idioma.GetInstance().translate("BACKUP_COL_SIZE"), Idioma.GetInstance().translate("BACKUP_COL_SIZE"));            
+
             //Load data.
             this.fillData();
         }

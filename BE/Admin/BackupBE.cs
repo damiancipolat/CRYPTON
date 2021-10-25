@@ -13,5 +13,6 @@ namespace BE.Admin
         public string path;
         public DateTime fecRec;
         public string type;
+        public Int64 size;
     }
 }
