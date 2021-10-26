@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+using System.IO;
+using RestSharp;
+using RestSharp.Authenticators;
 using System.Globalization;
+using System.Configuration;
 using System.Diagnostics;
-using System.Text;
-using System.Net.Http;
-using IO.Responses;
-using IO.RequestFormat;
-using Newtonsoft.Json;
 
 namespace IO
 {
@@ -15,7 +12,6 @@ namespace IO
     {
         private string emailKey;
         private string emailHost;
-        private string emailSender;
 
         //todo
         public Mailer()
@@ -23,32 +19,28 @@ namespace IO
             //Cargo config.
             this.emailKey = ConfigurationManager.AppSettings["EmailKey"];
             this.emailHost = ConfigurationManager.AppSettings["EmailHost"];
-            this.emailSender = ConfigurationManager.AppSettings["EmailSender"];
         }
 
-        public bool send(string destiny, string payload)
+        public void send(string origin, string destiny,string subject, string payload)
         {
-            //Armo la url.
-            string url = this.emailHost + "/mail/send";
+            //Prepate the client.
+            RestClient client = new RestClient();
+            client.BaseUrl = new Uri("https://api.mailgun.net/v3");
+            client.Authenticator=new HttpBasicAuthenticator("api", this.emailKey);
 
-            //Preparo el body.
-            string json = "{\"personalizations\": [{\"to\": [{\"email\": \""+destiny+"\"}]}],\"from\": {\"email\": \""+this.emailSender+"\"},\"subject\": \"Sending with SendGrid is Fun\",\"content\": [{\"type\": \"text/plain\", \"value\": \""+payload+"\"}]}";            
-            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            //Create the request.
+            RestRequest request = new RestRequest();
+            request.AddParameter("domain", this.emailHost, ParameterType.UrlSegment);
+            request.Resource = "{domain}/messages";
+            request.AddParameter("from", origin);
+            request.AddParameter("to",destiny);
+            request.AddParameter("subject", subject);
+            request.AddParameter("text", payload);
+            request.Method = Method.POST;
 
-            //Muestro el body.
-            Debug.WriteLine("Mailer send payload: "+json);
+            //Send email.
+            client.Execute(request);
 
-            //Hago el request.
-            var result = new Request().POSTWithAuth(url, data,this.emailKey);
-
-            //Si es erroneo lanzo excepcion.
-            if (!result.IsSuccessStatusCode)
-                throw new Exception("Request not success," + result.StatusCode);
-
-            //Muestro el success.
-            Debug.WriteLine("Mailer send ok to:" + destiny);
-
-            return true;
         }
     }
 }

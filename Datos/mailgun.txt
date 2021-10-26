@@ -1,0 +1,24 @@
+MAILGUN
+-------
+
+Access credentials:
+email:damian.cipolat@gmail.com
+pwd:4297Dc3573
+
+Api keys:
+- Private API key:key-758xqhazrx8vdge5xek31b7w7i7yvup3
+- Public validation key:pubkey-3lz3lktwoy6s3op6ea54m0uxalyl3ad6
+- HTTP webhook signing key:key-758xqhazrx8vdge5xek31b7w7i7yvup3
+
+Request:
+curl -s --user 'api:key-758xqhazrx8vdge5xek31b7w7i7yvup3' \
+    https://api.mailgun.net/v3/sandbox51429.mailgun.org/messages \
+    -F from='Crypton System <crypton.system@sandbox51429.mailgun.org>' \
+    -F to=YOU@YOUR_DOMAIN_NAME \
+    -F to=damian.cipolat@gmail.com \
+    -F subject='Hello' \
+    -F text='Testing some Mailgun awesomeness!'
+
+damian.cipolat@gmail.com
+username:damcipolat
+password:4297Dc3573!

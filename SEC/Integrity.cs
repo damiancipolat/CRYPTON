@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using DAL;
 using BE;
-using SEC;
 using SEC.Exceptions;
 using IO;
 
@@ -27,17 +26,6 @@ namespace SEC
             return _instance;
         }
 
-        //Notifica al administrador.
-        private void notiyAdmin(string origin)
-        {
-            //Data send.
-            string payload = "Hubo un error al validar la integridad BD usuarios, detalle:"+origin;
-            string admin = "damian.cipolat@gmail.com";
-
-            //Envio el email.
-            new Mailer().send(admin,payload);
-        }
-
         //Verifica integridad solo de usuarios.
         private bool validateDvhUsers()
         {
@@ -46,8 +34,10 @@ namespace SEC
             //Validate no result.
             if (userList.Count == 0)
             {
-                this.notiyAdmin("DVH-USER");
-                throw new IntegrityException("INTEGRITY_USERS_NOT_FOUND");
+                throw new IntegrityException(
+                    "INTEGRITY_USERS_NOT_FOUND",
+                    "Horizontal warning - Users not found in DB"
+                );
             }
 
             //Compare current hash vs column hash.
@@ -59,9 +49,11 @@ namespace SEC
                 //Compare table hash with computed hash.                
                 if (newHash != user.hash)
                 {
-                    this.notiyAdmin("DVH-USER-CORRUPT");
-                    throw new IntegrityException("INTEGRITY_USERS_CORRUPT");
-                }                    
+                    throw new IntegrityException(
+                        "INTEGRITY_USERS_CORRUPT",
+                        "Horizontal warning - Comparing hash id:" + user.idusuario.ToString() + " " + newHash + "," + user.hash
+                    );
+                }
             }
 
             return true;
@@ -82,8 +74,10 @@ namespace SEC
             //If not found register.
             if (dvBE == null)
             {
-                this.notiyAdmin("DVV-USER");
-                throw new IntegrityException("INTEGRITY_USERS_ENTITY_FAIL");
+                throw new IntegrityException(
+                    "INTEGRITY_USERS_ENTITY_FAIL",
+                    "Vertical warning - users not found in entity integrity table"
+                );
             }
 
             Debug.WriteLine("Compare entity full hash:"+fullHash+"  "+dvBE.hash);
@@ -91,8 +85,10 @@ namespace SEC
             //Comparo hashes.
             if (fullHash != dvBE.hash)
             {
-                this.notiyAdmin("DVV-USER");
-                throw new IntegrityException("INTEGRITY_USERS_ENTITY_FAIL");
+                throw new IntegrityException(
+                    "INTEGRITY_USERS_ENTITY_FAIL",
+                    "Vertical warning - users entity table violated"
+                );
             }                
 
             return true;

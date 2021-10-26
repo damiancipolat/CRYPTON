@@ -790,10 +790,6 @@ insert into idioma_palabras(code,clave,valor) values('ES','REGISTER_INPUT_SUCCES
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_INPUT_ERROR','Email y contraseña requeridos!');
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_INPUT_ERROR_TITLE','Aviso');
 insert into idioma_palabras(code,clave,valor) values('ES','LOGIN_SERVICE_ERROR','Usuario o contraseña incorrectos!');
-insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_NOT_FOUND','No hay usuarios para validar integridad!');
-insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRUPT','Integridad corrompida bd usuarios');
-insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_ENTITY_FAIL','Integridad de tabla de usuarios comprometida');
-insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_ERROR','ERROR - integridad comprometida');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_START','Inicio');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LOGIN','Iniciar sesión');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_SIGNUP','Registrarse');
@@ -1047,6 +1043,10 @@ insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_DESCRIP','
 insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_MSG_RESTORE_DESCRIP','¿Queres cargar este backup?');
 insert into idioma_palabras(code,clave,valor) values('ES','BACKUP_COL_SIZE','Tamaño en bytes');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_BACKUP_TITLE_LIST','Estos son los backups que has realizado.');
+insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_NOT_FOUND','Violacion a la integridad, se notificara al administrador');
+insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRUPT','Violacion a la integridad, se notificara al administrador');
+insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_ENTITY_FAIL','Violacion a la integridad, se notificara al administrador');
+insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_ERROR','Violacion a la integridad, se notificara al administrador');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1087,10 +1087,6 @@ insert into idioma_palabras(code,clave,valor) values('ENG','REGISTER_INPUT_SUCCE
 insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_INPUT_ERROR','Email and password required!');
 insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_INPUT_ERROR_TITLE','Warning');
 insert into idioma_palabras(code,clave,valor) values('ENG','LOGIN_SERVICE_ERROR','The email or password was not correct!');
-insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_NOT_FOUND','There are no users to validate integrity!');
-insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_CORRUPT','Integrity corrupted bd users');
-insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_ENTITY_FAIL','User table integrity compromised');
-insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_ERROR','ERROR - integrity compromised');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_START','Start');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_LOGIN','Login');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_SIGNUP','Register');
@@ -1338,3 +1334,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_DESCRIP',
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_MSG_RESTORE_DESCRIP','Do you want to restore to this backup?');
 insert into idioma_palabras(code,clave,valor) values('ENG','BACKUP_COL_SIZE','File size in bytes');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BACKUP_TITLE_LIST','Your previous backups.');
+insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_NOT_FOUND','Violation of integrity, the administrator will be notified');
+insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_CORRUPT','Violation of integrity, the administrator will be notified');
+insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_ENTITY_FAIL','Violation of integrity, the administrator will be notified');
+insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_ERROR','Violation of integrity, the administrator will be notified');

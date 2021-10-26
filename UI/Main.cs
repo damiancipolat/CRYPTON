@@ -510,7 +510,8 @@ namespace UI
             }
             catch (IntegrityException ex)
             {
-                Bitacora.GetInstance().log("INTEGRITY", ex.Message);
+                Bitacora.GetInstance().log("VIOLATION ERROR - DETAIL", ex.metadata);
+                new NotificacionBL().notifyAdmin("VIOLATION ERROR - DETAIL", ex.metadata);
 
                 MessageBox.Show(
                     Idioma.GetInstance().translate(ex.Message),
@@ -520,7 +521,7 @@ namespace UI
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance().log("INTEGRITY",ex.Message);
+                Bitacora.GetInstance().log("INTEGRITY ERROR",ex.Message);
 
                 MessageBox.Show(
                     ex.Message,
@@ -558,6 +559,11 @@ namespace UI
             //Obtengo el valor. 
             string value = frm.getValue();
             */
+        }
+
+        private void Button1_Click_13(object sender, EventArgs e)
+        {
+            
         }
     }
 }

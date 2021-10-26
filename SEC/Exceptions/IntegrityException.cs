@@ -9,8 +9,11 @@ namespace SEC.Exceptions
 
     public class IntegrityException : Exception
     {
-        public IntegrityException(string message): base(message)
+        public string metadata;
+
+        public IntegrityException(string message, string metadata=null): base(message)
         {
+            this.metadata = metadata;
         }
     }
 }
