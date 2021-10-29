@@ -46,6 +46,8 @@ create table banco_data(
 	alias varchar(50)
 );
 
+insert into banco_data(cbu,nombre,alias) values('0070064130004043187745','Banco Galicia','Crypton.ars');
+
 --Tabla de usuarios.
 create table usuario(
 	idusuario bigint identity(1,1) primary key,
@@ -740,6 +742,15 @@ insert into palabras(word) values('BACKUP_COL_TYPE');
 insert into palabras(word) values('BACKUP_MSG_RESTORE_DESCRIP');
 insert into palabras(word) values('BACKUP_COL_SIZE');
 insert into palabras(word) values('TXT_BACKUP_TITLE_LIST');
+insert into palabras(word) values('CBU_TITLE');
+insert into palabras(word) values('CBU_TITLE_DESCRIP');
+insert into palabras(word) values('WARNING_TITLE');
+insert into palabras(word) values('WARNING_TITLE_DESCRIP');
+insert into palabras(word) values('TXT_CBU');
+insert into palabras(word) values('TXT_ALIAS');
+insert into palabras(word) values('TXT_BANK');
+insert into palabras(word) values('BTN_COPY');
+insert into palabras(word) values('BTN_CLOSE');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1047,6 +1058,15 @@ insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_NOT_F
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_CORRUPT','Violacion a la integridad, se notificara al administrador');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_USERS_ENTITY_FAIL','Violacion a la integridad, se notificara al administrador');
 insert into idioma_palabras(code,clave,valor) values('ES','INTEGRITY_ERROR','Violacion a la integridad, se notificara al administrador');
+insert into idioma_palabras(code,clave,valor) values('ES','CBU_TITLE','Consulta de CBU');
+insert into idioma_palabras(code,clave,valor) values('ES','CBU_TITLE_DESCRIP','Usa esta dirección para acreditar AR$.');
+insert into idioma_palabras(code,clave,valor) values('ES','WARNING_TITLE','AVISO:');
+insert into idioma_palabras(code,clave,valor) values('ES','WARNING_TITLE_DESCRIP','Debes transferir del mismo CBU que tenes registrado en tú perfil.');
+insert into idioma_palabras(code,clave,valor) values('ES','BTN_COPY','Copiar');
+insert into idioma_palabras(code,clave,valor) values('ES','BTN_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','TXT_CBU','CBU:');
+insert into idioma_palabras(code,clave,valor) values('ES','TXT_ALIAS','Alias:');
+insert into idioma_palabras(code,clave,valor) values('ES','TXT_BANK','Banco:');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1338,3 +1358,12 @@ insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_NOT_
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_CORRUPT','Violation of integrity, the administrator will be notified');
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_USERS_ENTITY_FAIL','Violation of integrity, the administrator will be notified');
 insert into idioma_palabras(code,clave,valor) values('ENG','INTEGRITY_ERROR','Violation of integrity, the administrator will be notified');
+insert into idioma_palabras(code,clave,valor) values('ENG','CBU_TITLE','CBU Query');
+insert into idioma_palabras(code,clave,valor) values('ENG','CBU_TITLE_DESCRIP','Use this address to make AR$ cash in.');
+insert into idioma_palabras(code,clave,valor) values('ENG','WARNING_TITLE','AVISO:');
+insert into idioma_palabras(code,clave,valor) values('ENG','WARNING_TITLE_DESCRIP','You must transfer using the same CBU registerd in your profile.');
+insert into idioma_palabras(code,clave,valor) values('ENG','BTN_COPY','Copy');
+insert into idioma_palabras(code,clave,valor) values('ENG','BTN_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','TXT_CBU','CBU:');
+insert into idioma_palabras(code,clave,valor) values('ENG','TXT_ALIAS','Alias:');
+insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BANK','Banck:');

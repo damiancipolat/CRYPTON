@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SL;
+using BE;
+using BL;
 
 namespace UI.Banco
 {
@@ -15,6 +18,45 @@ namespace UI.Banco
         public frm_cbu()
         {
             InitializeComponent();
+        }
+
+        private void loadBankdData() 
+        {
+            List<BancoBE> bankData = new BancoBL().findAll();
+            
+            if (bankData.Count > 0)
+            {
+                BancoBE data = bankData[0];
+                this.txt_cbu.Text= Idioma.GetInstance().translate("TXT_CBU")+": "+data.cbu;
+                this.txt_bank.Text = Idioma.GetInstance().translate("TXT_BANK") + ": " + data.nombre;
+                this.txt_alias.Text = Idioma.GetInstance().translate("TXT_ALIAS") + ": " + data.alias;
+            }
+            else 
+            {
+                MessageBox.Show("Bank data not found ");
+            }
+        }
+
+        private void translateText() 
+        {
+            this.Text = Idioma.GetInstance().translate("CBU_TITLE");
+            this.cbu_title.Text = Idioma.GetInstance().translate("CBU_TITLE");
+            this.cbu_title_descip.Text = Idioma.GetInstance().translate("CBU_TITLE_DESCRIP");
+            this.warning_title.Text = Idioma.GetInstance().translate("WARNING_TITLE");
+            this.warning_title_descrip.Text = Idioma.GetInstance().translate("WARNING_TITLE_DESCRIP");
+            this.btn_copy.Text = Idioma.GetInstance().translate("BTN_COPY");
+            this.btn_close.Text = Idioma.GetInstance().translate("BTN_CLOSE");            
+        }
+
+        private void frm_cbu_Load(object sender, EventArgs e)
+        {
+            this.loadBankdData();
+            this.translateText();
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

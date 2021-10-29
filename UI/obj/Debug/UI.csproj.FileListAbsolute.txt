@@ -35,7 +35,6 @@ G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRY
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\System.ValueTuple.xml
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\DAL.pdb
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\Newtonsoft.Json.xml
-G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csprojAssemblyReference.cache
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.Admin.frm_backup.resources
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.Admin.frm_bitacora.resources
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.Admin.frm_cambios.resources
@@ -73,8 +72,8 @@ G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRY
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.Word.resources
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.GenerateResource.cache
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
-G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.CopyComplete
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.exe
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.pdb
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\RestSharp.dll
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\RestSharp.xml
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.AssemblyReference.cache

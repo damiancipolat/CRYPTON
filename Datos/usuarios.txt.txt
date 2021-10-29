@@ -32,3 +32,7 @@ uai@gmail.com<--- user nuevo con 2 permisos sueltos
 123456
 
 miba@buenosaires.gob.ar
+
+AIzaSyCMPL0WXpKfkBS3x7WTfgLmG8eDbAIGhg4
+
+curl -L -X GET 'https://roads.googleapis.com/v1/snapToRoads?path=-34.6209866%2C-58.4287612&key=AIzaSyCMPL0WXpKfkBS3x7WTfgLmG8eDbAIGhg4'
