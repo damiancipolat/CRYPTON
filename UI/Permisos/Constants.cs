@@ -13,6 +13,8 @@ namespace UI.Permisos
         MY_PUBLICATIONS,
         MY_BALANCE,
         CBU,
+        CASH_IN,
+        EXTRACT,
         PUBLISH_OFFER,
         CREATE_USER,
         MANAGE_USERS,

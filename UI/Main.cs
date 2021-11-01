@@ -94,6 +94,7 @@ namespace UI
             this.main_menu_my_buys.Text= Idioma.GetInstance().translate("MY_BUYS");
             this.main_menu_profile.Text = Idioma.GetInstance().translate("MAIN_MENU_PROFILE");
             this.main_menu_cbu.Text= Idioma.GetInstance().translate("MAIN_MENU_CBU");
+            this.main_menu_extract.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT");
 
             //bindeo menuit
             this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
@@ -104,6 +105,7 @@ namespace UI
             this.main_menu_it_perm_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_PERMISSION");
             this.main_menu_it_log.Text = Idioma.GetInstance().translate("MAIN_MENU_LOG_SEARCH");
             this.main_menu_it_backup.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_BACKUP");
+            this.main_menu_op_cash_in.Text = Idioma.GetInstance().translate("MAIN_MENU_CASH_IN");
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -160,6 +162,7 @@ namespace UI
             this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_BUYS.ToString());
             this.main_menu_profile.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_PROFILE.ToString());
             this.main_menu_cbu.Visible = permBL.hasPermission(permissions, PermisoCodes.CBU.ToString());
+            this.main_menu_extract.Visible = permBL.hasPermission(permissions, PermisoCodes.EXTRACT.ToString());
         }
 
         //Manejo el menu de empleado.
@@ -177,6 +180,7 @@ namespace UI
             this.main_menu_it_perm_manager.Visible = permBL.hasPermission(permissions, PermisoCodes.MANAGE_PERMISSION.ToString());
             this.main_menu_it_log.Visible = permBL.hasPermission(permissions, PermisoCodes.SEARCH_LOG.ToString());
             this.main_menu_it_backup.Visible = permBL.hasPermission(permissions, PermisoCodes.BACKUP.ToString());
+            this.main_menu_op_cash_in.Visible = permBL.hasPermission(permissions, PermisoCodes.CASH_IN.ToString());
         }
 
         //Oculto menu en base a los permisos.
@@ -571,6 +575,16 @@ namespace UI
         private void button1_Click_14(object sender, EventArgs e)
         {
             new frm_buscar_cbu().Show();
+        }
+
+        private void main_menu_op_cash_in_Click(object sender, EventArgs e)
+        {
+            new frm_buscar_cbu().Show();
+        }
+
+        private void main_menu_extract_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

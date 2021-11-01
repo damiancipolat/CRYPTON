@@ -77,4 +77,3 @@ G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRY
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\RestSharp.dll
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\bin\Debug\RestSharp.xml
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.AssemblyReference.cache
-G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\UI\obj\Debug\UI.csproj.CopyComplete

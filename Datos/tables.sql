@@ -116,7 +116,7 @@ CREATE TABLE usuarios_permisos(
 	id_permiso int not null
 );
 
---Permisos de cliente
+--Patentes
 insert into permiso(nombre,permiso) values('SEARCH_OFFERS','P');
 insert into permiso(nombre,permiso) values('RECOMENDATIONS','P');
 insert into permiso(nombre,permiso) values('MY_PUBLICATIONS','P');
@@ -133,6 +133,8 @@ insert into permiso(nombre,permiso) values('MY_BUYS','P');
 insert into permiso(nombre,permiso) values('SEARCH_LOG','P');
 insert into permiso(nombre,permiso) values('BACKUP','P');
 insert into permiso(nombre,permiso) values('CBU','P');
+insert into permiso(nombre,permiso) values('EXTRACT','P');
+insert into permiso(nombre,permiso) values('CASH_IN','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('CLIENTS',null);
@@ -514,6 +516,7 @@ insert into palabras(word) values('MAIN_MENU_START');
 insert into palabras(word) values('MAIN_MENU_USER');
 insert into palabras(word) values('MAIN_MENU_IT_BACKUP');
 insert into palabras(word) values('MAIN_MENU_CBU');
+insert into palabras(word) values('MAIN_MENU_CASH_IN');
 insert into palabras(word) values('MAIN_SPLASH_ACTIVITY');
 insert into palabras(word) values('MAIN_SPLASH_TITLE');
 insert into palabras(word) values('MY_SELL_FINISH_CONFIRM');
@@ -752,7 +755,8 @@ insert into palabras(word) values('TXT_CBU');
 insert into palabras(word) values('TXT_ALIAS');
 insert into palabras(word) values('TXT_BANK');
 insert into palabras(word) values('BTN_COPY');
-insert into palabras(word) values('BTN_CLOSE');insert into palabras(word) values('SEARCH_CBU_TITLE');
+insert into palabras(word) values('BTN_CLOSE');
+insert into palabras(word) values('SEARCH_CBU_TITLE');
 insert into palabras(word) values('SEARCH_CBU_TITLE_DESCRIP');
 insert into palabras(word) values('SEARCH_CBU_WRITE');
 insert into palabras(word) values('SEARCH_CBU_BTN_SEARCH');
@@ -841,6 +845,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_USER','Usua
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_LANGUAGE','Idioma');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_PROFILE','Perfil');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_IT_BACKUP','Backup');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_CASH_IN','Ingresar fondos');
 insert into idioma_palabras(code,clave,valor) values('ES','LANGUAGE_CHANGE_OK','Idioma cargado con exito');
 insert into idioma_palabras(code,clave,valor) values('ES','LANGUAGE_CHANGE_ERROR','Error al cambiar el lenguaje');
 insert into idioma_palabras(code,clave,valor) values('ES','YOUR_USER_LABEL','Tú usuario:');
@@ -1163,6 +1168,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_PERMISSION
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_USER','Users');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_LANGUAGE','Languages');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_PROFILE','Profile');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_CASH_IN','Enter ammount');
 insert into idioma_palabras(code,clave,valor) values('ENG','LANGUAGE_CHANGE_OK','The language has been successfully changed');
 insert into idioma_palabras(code,clave,valor) values('ENG','LANGUAGE_CHANGE_ERROR','There was a problem trying to change the language');
 insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_USER_LABEL','Your user info:');
