@@ -132,3 +132,17 @@ VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+PROFILE:Load profile:LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM=
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af

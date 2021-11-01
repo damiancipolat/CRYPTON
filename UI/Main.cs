@@ -49,10 +49,6 @@ namespace UI
             this.main_splash.Left = (this.Width / 2) - (this.main_splash.Width / 2);
             this.main_splash.Top = (this.Height / 2) - (this.main_splash.Height / 2);
 
-            //Posiciona el splash de actividades en el centro.
-           // this.main_splash_activity_panel.Left = (this.Width / 2) - (this.main_splash_activity_panel.Width / 2);
-           // this.main_splash_activity_panel.Top = (this.Height / 2) - (this.main_splash_activity_panel.Height / 2);
-            
             //Oculto/muestro menus en base a la sesion y permisos.
             this.bindMenu();            
         }
@@ -97,6 +93,7 @@ namespace UI
             this.main_menu_publish.Text= Idioma.GetInstance().translate("MAIN_MENU_SELL");
             this.main_menu_my_buys.Text= Idioma.GetInstance().translate("MY_BUYS");
             this.main_menu_profile.Text = Idioma.GetInstance().translate("MAIN_MENU_PROFILE");
+            this.main_menu_cbu.Text= Idioma.GetInstance().translate("MAIN_MENU_CBU");
 
             //bindeo menuit
             this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
@@ -162,6 +159,7 @@ namespace UI
             this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_BUYS.ToString());
             this.main_menu_my_buys.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_BUYS.ToString());
             this.main_menu_profile.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_PROFILE.ToString());
+            this.main_menu_cbu.Visible = permBL.hasPermission(permissions, PermisoCodes.CBU.ToString());
         }
 
         //Manejo el menu de empleado.
@@ -476,8 +474,7 @@ namespace UI
 
         private void Button3_Click_2(object sender, EventArgs e)
         {
-        new UsersControl().Show();
-
+            new UsersControl().Show();
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -562,6 +559,11 @@ namespace UI
         }
 
         private void Button1_Click_13(object sender, EventArgs e)
+        {
+            new frm_cbu().Show();
+        }
+
+        private void main_menu_cbu_Click(object sender, EventArgs e)
         {
             new frm_cbu().Show();
         }

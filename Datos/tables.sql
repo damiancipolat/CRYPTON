@@ -132,6 +132,7 @@ insert into permiso(nombre,permiso) values('NOTIFICATIONS','P');
 insert into permiso(nombre,permiso) values('MY_BUYS','P');
 insert into permiso(nombre,permiso) values('SEARCH_LOG','P');
 insert into permiso(nombre,permiso) values('BACKUP','P');
+insert into permiso(nombre,permiso) values('CBU','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('CLIENTS',null);
@@ -512,6 +513,7 @@ insert into palabras(word) values('MAIN_MENU_SIGNUP');
 insert into palabras(word) values('MAIN_MENU_START');
 insert into palabras(word) values('MAIN_MENU_USER');
 insert into palabras(word) values('MAIN_MENU_IT_BACKUP');
+insert into palabras(word) values('MAIN_MENU_CBU');
 insert into palabras(word) values('MAIN_SPLASH_ACTIVITY');
 insert into palabras(word) values('MAIN_SPLASH_TITLE');
 insert into palabras(word) values('MY_SELL_FINISH_CONFIRM');
@@ -1067,6 +1069,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','BTN_CLOSE','Cerrar');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_CBU','CBU:');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_ALIAS','Alias:');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_BANK','Banco:');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_CBU','Ver cbu');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1367,3 +1370,4 @@ insert into idioma_palabras(code,clave,valor) values('ENG','BTN_CLOSE','Close');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_CBU','CBU:');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_ALIAS','Alias:');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BANK','Banck:');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_CBU','See bank codes');

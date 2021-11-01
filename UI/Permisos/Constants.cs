@@ -12,6 +12,7 @@ namespace UI.Permisos
         RECOMENDATIONS,
         MY_PUBLICATIONS,
         MY_BALANCE,
+        CBU,
         PUBLISH_OFFER,
         CREATE_USER,
         MANAGE_USERS,

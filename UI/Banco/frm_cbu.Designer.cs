@@ -39,6 +39,7 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.warning_title = new System.Windows.Forms.Label();
             this.warning_title_descrip = new System.Windows.Forms.Label();
+            this.btn_profile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +97,7 @@
             this.btn_copy.TabIndex = 68;
             this.btn_copy.Text = "btn_copy";
             this.btn_copy.UseVisualStyleBackColor = true;
+            this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
             // 
             // txt_bank
             // 
@@ -159,11 +161,23 @@
             this.warning_title_descrip.Text = "warning_title_descrip";
             this.warning_title_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btn_profile
+            // 
+            this.btn_profile.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btn_profile.Location = new System.Drawing.Point(275, 374);
+            this.btn_profile.Name = "btn_profile";
+            this.btn_profile.Size = new System.Drawing.Size(143, 49);
+            this.btn_profile.TabIndex = 70;
+            this.btn_profile.Text = "btn_profile";
+            this.btn_profile.UseVisualStyleBackColor = false;
+            this.btn_profile.Click += new System.EventHandler(this.btn_profile_Click);
+            // 
             // frm_cbu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 446);
+            this.Controls.Add(this.btn_profile);
             this.Controls.Add(this.warning_title_descrip);
             this.Controls.Add(this.warning_title);
             this.Controls.Add(this.btn_close);
@@ -199,5 +213,6 @@
         private System.Windows.Forms.Label txt_bank;
         private System.Windows.Forms.Label txt_alias;
         private System.Windows.Forms.Label warning_title_descrip;
+        private System.Windows.Forms.Button btn_profile;
     }
 }
