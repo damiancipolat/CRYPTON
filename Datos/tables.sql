@@ -752,7 +752,16 @@ insert into palabras(word) values('TXT_CBU');
 insert into palabras(word) values('TXT_ALIAS');
 insert into palabras(word) values('TXT_BANK');
 insert into palabras(word) values('BTN_COPY');
-insert into palabras(word) values('BTN_CLOSE');
+insert into palabras(word) values('BTN_CLOSE');insert into palabras(word) values('SEARCH_CBU_TITLE');
+insert into palabras(word) values('SEARCH_CBU_TITLE_DESCRIP');
+insert into palabras(word) values('SEARCH_CBU_WRITE');
+insert into palabras(word) values('SEARCH_CBU_BTN_SEARCH');
+insert into palabras(word) values('SEARCH_CBU_BTN_CASHIN');
+insert into palabras(word) values('SEARCH_CBU_BTN_CLOSE');
+insert into palabras(word) values('SEARCH_CBU_CLIENT');
+insert into palabras(word) values('SEARCH_CBU_TDOC');
+insert into palabras(word) values('SEARCH_CBU_DNI');
+insert into palabras(word) values('SEARCH_CBU_EMAIL');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1070,6 +1079,16 @@ insert into idioma_palabras(code,clave,valor) values('ES','TXT_CBU','CBU:');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_ALIAS','Alias:');
 insert into idioma_palabras(code,clave,valor) values('ES','TXT_BANK','Banco:');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_CBU','Ver cbu');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_TITLE','Buscar CBU');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_TITLE_DESCRIP','De aqui podes buscar CBU de los clientes');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_WRITE','Escriba el CBU:');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_BTN_SEARCH','Buscar');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_BTN_CASHIN','Ingresar fondos');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_BTN_CLOSE','Cerrar');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_CLIENT','CBU');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_TDOC','Tipo doc');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_DNI','DNI');
+insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_EMAIL','Email');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1371,3 +1390,25 @@ insert into idioma_palabras(code,clave,valor) values('ENG','TXT_CBU','CBU:');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_ALIAS','Alias:');
 insert into idioma_palabras(code,clave,valor) values('ENG','TXT_BANK','Banck:');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_CBU','See bank codes');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_TITLE','Search CBU');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_TITLE_DESCRIP','Find cbu clients from here:');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_WRITE','Write the CBU:');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_BTN_SEARCH','Search');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_BTN_CASHIN','Enter founds');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_BTN_CLOSE','Close');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_CLIENT','CBU');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_TDOC','Doc type');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_DNI','DNI');
+insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_EMAIL','Email');
+
+
+select * from cliente where idcliente=1;
+select * from billetera where idcliente=1 and moneda='ARS';
+--0070064130004043181234
+
+--update usuario set hash='11d71138d9ddee37d1fcce5aedec3ce4' where idusuario=1;
+update dvv set hash='11d71138d9ddee37d1fcce5aedec3ce4582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
+--update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
+select * from dvv
+
+select * from cuentas

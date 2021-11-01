@@ -567,5 +567,10 @@ namespace UI
         {
             new frm_cbu().Show();
         }
+
+        private void button1_Click_14(object sender, EventArgs e)
+        {
+            new frm_buscar_cbu().Show();
+        }
     }
 }

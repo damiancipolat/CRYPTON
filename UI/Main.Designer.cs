@@ -63,6 +63,7 @@
             this.main_menu_profile = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.main_menu_cbu = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -378,11 +379,22 @@
             this.main_menu_cbu.Text = "main_menu_cbu";
             this.main_menu_cbu.Click += new System.EventHandler(this.main_menu_cbu_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(85, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 48);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_14);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -446,6 +458,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_profile;
         private System.Windows.Forms.ToolStripMenuItem main_menu_it_backup;
         private System.Windows.Forms.ToolStripMenuItem main_menu_cbu;
+        private System.Windows.Forms.Button button1;
     }
 }
 

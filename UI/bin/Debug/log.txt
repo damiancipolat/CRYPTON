@@ -146,3 +146,21 @@ LOGIN:Login of user:damian.cipolat@gmail.com success!
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!

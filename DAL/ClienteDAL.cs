@@ -36,6 +36,9 @@ namespace DAL
                 userTarget.apellido = user.apellido;
                 userTarget.email = user.email;
                 userTarget.tipoUsuario = UsuarioTipo.CLIENTE;
+
+                //Agrego el usuario.
+                userTarget.usuario = user;
             }
 
             return userTarget;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE.ValueObject;
 
 namespace BE
 {
@@ -24,7 +25,7 @@ namespace BE
         public UsuarioBE usuario;
         public TipoSolicOperacion tipoOperacion;
         public BilleteraBE billetera;
-        public float valor;
+        public Money valor;
         public string cbu;
         public UsuarioBE operador;
         public SolicEstados estadoSolic;

@@ -85,15 +85,11 @@ namespace BL
         }
 
         //Agrega dinero a una billetera.
-        private int acreditarARS(BilleteraBE wallet, decimal ammount)
+        public int acreditarARS(BilleteraBE wallet, decimal ammount)
         {
             //Valido si es la misma moneda.
             if (wallet.moneda.cod != "ARS")
                 throw new Exception("Operation allow onyl to ars acconut");
-
-            //Valido si hay suficiente saldo.
-            if (wallet.saldo.getValue() < ammount)
-                throw new Exception("Operation allow onyl to ars account");
 
             //Actualizo el saldo.
             decimal value = wallet.saldo.getValue()+ammount;
@@ -103,7 +99,7 @@ namespace BL
         }
 
         //Descuenta de una billetera un valor, solo para ars.
-        private int descontarARS(BilleteraBE wallet, decimal ammount)
+        public int descontarARS(BilleteraBE wallet, decimal ammount)
         {
             //Valido si es la misma moneda.
             if (wallet.moneda.cod != "ARS")
