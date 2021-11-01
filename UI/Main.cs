@@ -584,7 +584,7 @@ namespace UI
 
         private void main_menu_extract_Click(object sender, EventArgs e)
         {
-
+            new frm_solic_retiro().Show();
         }
     }
 }
