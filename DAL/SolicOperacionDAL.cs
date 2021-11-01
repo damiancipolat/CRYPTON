@@ -68,10 +68,10 @@ namespace DAL
                 {"idwallet",ops.billetera.idwallet},
                 { "valor",ops.valor.getValue()},
                 { "cbu",ops.cbu},
-                { "operador",ops.operador.idusuario},
+                { "operador",ops.operador!=null?ops.operador.idusuario:0},
                 { "estado_solic",(int)ops.estadoSolic},
-                { "fecRegistro",ops.fecRegistro},
-                { "fecProceso",ops.fecProceso}
+                { "fecRegistro",ops.fecRegistro.ToString("yyyy-MM-dd HH:mm:ss.fff")},
+                { "fecProceso",ops.fecProceso.ToString("yyyy-MM-dd HH:mm:ss.fff")}
             };
 
             return this.getInsert().insertSchema(schema, "solic_operacion", true);

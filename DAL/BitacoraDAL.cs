@@ -42,13 +42,6 @@ namespace DAL
             }
             */
 
-
-
-
-
-
-
-
             return bitacora;
 
         }

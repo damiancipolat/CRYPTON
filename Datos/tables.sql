@@ -358,7 +358,8 @@ create table transferencias(
 create table comisiones(
 	idcobro  bigint identity(1,1) primary key,
 	tipo_operacion int,
-	referencia bigint,	
+	referencia bigint,
+	idcliente bigint,
 	idwallet bigint,
 	moneda varchar(10),
 	valor varchar(12),
@@ -772,6 +773,15 @@ insert into palabras(word) values('GRAL_UNABLE_TO_PROCESS');
 insert into palabras(word) values('GRAL_OPERATION_SUCCESS');
 insert into palabras(word) values('CBU_CASHIN_TITLE');
 insert into palabras(word) values('CBU_CASHIN_LABEL');
+insert into palabras(word) values('EXTRACT_ARS_TITLE');
+insert into palabras(word) values('EXTRACT_ARS_DESCRIP');
+insert into palabras(word) values('EXTRACT_ARS_VALUE_LABEL');
+insert into palabras(word) values('EXTRACT_ARS_VALUE_LABEL_DESCRIP');
+insert into palabras(word) values('EXTRACT_ARS_CBU');
+insert into palabras(word) values('EXTRACT_ARS_AMMOUNT');
+insert into palabras(word) values('EXTRACT_ARS_PENDING_DEBTS');
+insert into palabras(word) values('EXTRACT_ARS_NO_FOUNDS');
+insert into palabras(word) values('EXTRACT_ARS_OK');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1106,6 +1116,15 @@ insert into idioma_palabras(code,clave,valor) values('ES','GRAL_UNABLE_TO_PROCES
 insert into idioma_palabras(code,clave,valor) values('ES','GRAL_OPERATION_SUCCESS','Operación completa!');
 insert into idioma_palabras(code,clave,valor) values('ES','CBU_CASHIN_TITLE','Ingresar fondos');
 insert into idioma_palabras(code,clave,valor) values('ES','CBU_CASHIN_LABEL','Debe ingresar un valor en AR$');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_TITLE','Solicitar extracción');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_DESCRIP','Desde aqui solicitar enviar dinero a tu cuenta bancaria');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_VALUE_LABEL','Valor a extraer:');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_VALUE_LABEL_DESCRIP','De aqui podes pedir un retiro de dinero a tu cuenta bancaria');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_CBU','Tú CBU:');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_AMMOUNT','Saldo:');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_PENDING_DEBTS','Tenes comisiones pendientes de pagar');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_NO_FOUNDS','No tenes fondos suficientes.');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_OK','Operación exitosa.');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1424,14 +1443,39 @@ insert into idioma_palabras(code,clave,valor) values('ENG','GRAL_UNABLE_TO_PROCE
 insert into idioma_palabras(code,clave,valor) values('ENG','GRAL_OPERATION_SUCCESS','Operation success!');
 insert into idioma_palabras(code,clave,valor) values('ENG','CBU_CASHIN_TITLE','Enter value');
 insert into idioma_palabras(code,clave,valor) values('ENG','CBU_CASHIN_LABEL','You must enter AR$ ammount');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_TITLE','Request extraction');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_DESCRIP','From here request to send money to your bank account');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_VALUE_LABEL','Value to extract:');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_VALUE_LABEL_DESCRIP','From here you can request a withdrawal of money to your bank account');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_CBU','Your CBU:');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_AMMOUNT','Ammount:');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_PENDING_DEBTS','You have commision pending to payment');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_NO_FOUNDS','No founds');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_OK','Operation success!.');
 
 select * from cliente where idcliente=1;
 select * from billetera where idcliente=1 and moneda='ARS';
 --0070064130004043181234
+
 select * from solic_operacion
+select * from tipo_solic_op
+select * from comisiones
+
 --update usuario set hash='11d71138d9ddee37d1fcce5aedec3ce4' where idusuario=1;
 update dvv set hash='11d71138d9ddee37d1fcce5aedec3ce4582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
 --update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
-select * from dvv
 
+select * from dvv
 select * from cuentas
+select * from cliente
+select * from comisiones
+
+select * from comisiones where  idcliente=1 and processed=0;
+--update comisiones set processed=1
+select * from solic_operacion
+
+insert into solic_operacion(idusuario,tipo_solic,idwallet,valor,cbu,operador,estado_solic,fecRegistro,fecProceso) values(1,0,1,100,'0070064130004043181234',0,0,'01/11/2021 17:36:49','01/01/0001 0:00:00');SELECT @@IDENTITY;
+
+
+insert into comisiones(tipo_operacion,referencia,idcliente,idwallet,moneda,valor,fecCobro,processed)
+values(1,1,1,1,'ARS',100,NULL,0);

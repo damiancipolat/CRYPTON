@@ -18,10 +18,9 @@ namespace BL
         {
             //..
         }
+        
 
-        public List<SolicOperacionBE> verSolicitudes() { return new List<SolicOperacionBE>(); }
-
-        //Registro acreditación de saldos a cuentas.
+        //Registro acreditación de saldos a billetera.
         public int acreditar(SolicOperacionBE solicitud)
         {
             //Actualizo el saldo de la billetera.
@@ -31,9 +30,22 @@ namespace BL
             return new SolicOperacionDAL().save(solicitud);
         }
 
-        public void rechazar(SolicOperacionBE solicitud) { }
-        public void extraer(SolicOperacionBE solicitud) { }
+        //Registro y computo la extraccion de dinero en la billetera.
+        public int extraer(SolicOperacionBE solicitud) 
+        {
+            //Actualizo el saldo de la billetera.
+            new BilleteraBL().descontarARS(solicitud.billetera,solicitud.valor.getValue());
 
+            //Grabo la operacion.
+            return new SolicOperacionDAL().save(solicitud);
+        }
+
+        //-----------------------------
+
+        public List<SolicOperacionBE> verSolicitudes() { return new List<SolicOperacionBE>(); }
+
+        public void rechazar(SolicOperacionBE solicitud) { }
+        
         public int update(SolicOperacionBE solicitud) { return 0; }
     }
 }

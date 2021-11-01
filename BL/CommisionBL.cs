@@ -11,6 +11,32 @@ namespace BL
 {
     public class CommisionBL
     {
+        //CRUD
+        public ComisionBE findById(int id) 
+        {
+            return new ComisionDAL().findById(id);
+        }
+
+        public List<ComisionBE> findAll()
+        {
+            return new ComisionDAL().findAll();
+        }
+        public int delete(int id) 
+        {
+            return new ComisionDAL().delete(id);
+        }
+
+        public int update(ComisionBE comision)
+        {
+            return new ComisionDAL().update(comision);
+        }
+
+        public int save(ComisionBE comision)
+        {
+            return new ComisionDAL().save(comision);
+        }
+
+        //SEARCH
         public List<ComisionBE> search(string type, string from, string to)
         {
             return new ComisionDAL().findByDate(type, from, to);
@@ -18,8 +44,15 @@ namespace BL
 
         public List<ComisionBE> searchByClient(ClienteBE client)
         {
-            return new ComisionDAL().searchByClient(client, true);
+            return new ComisionDAL().searchByClient(client);
         }
+
+        public List<ComisionBE> searchByClientPendings(ClienteBE client)
+        {
+            return new ComisionDAL().searchByClientPendings(client);
+        }     
+
+        //-----------------------------------
 
         //TODO
         public List<(ClienteBE, Money)> getClientPendingAmmounts()

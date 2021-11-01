@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.search_descrip = new System.Windows.Forms.Label();
+            this.extract_ars_descrip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.search_title = new System.Windows.Forms.Label();
+            this.extract_ars_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.activ_title = new System.Windows.Forms.Label();
-            this.btn_search = new System.Windows.Forms.Button();
+            this.extract_ars_ammount = new System.Windows.Forms.Label();
+            this.extract_ars_cbu = new System.Windows.Forms.Label();
+            this.btn_ok = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.extract_ars_value_label_descrip = new System.Windows.Forms.Label();
+            this.extract_ars_input = new System.Windows.Forms.TextBox();
+            this.extract_ars_value_label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // search_descrip
+            // extract_ars_descrip
             // 
-            this.search_descrip.AutoSize = true;
-            this.search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_descrip.Location = new System.Drawing.Point(105, 57);
-            this.search_descrip.Name = "search_descrip";
-            this.search_descrip.Size = new System.Drawing.Size(520, 25);
-            this.search_descrip.TabIndex = 68;
-            this.search_descrip.Text = "Desde aqui solicitar enviar dinero a tu cuenta bancaria";
-            this.search_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.extract_ars_descrip.AutoSize = true;
+            this.extract_ars_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extract_ars_descrip.Location = new System.Drawing.Point(105, 57);
+            this.extract_ars_descrip.Name = "extract_ars_descrip";
+            this.extract_ars_descrip.Size = new System.Drawing.Size(157, 20);
+            this.extract_ars_descrip.TabIndex = 68;
+            this.extract_ars_descrip.Text = "extract_ars_descrip";
+            this.extract_ars_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -66,130 +66,133 @@
             this.pictureBox1.TabIndex = 67;
             this.pictureBox1.TabStop = false;
             // 
-            // search_title
+            // extract_ars_title
             // 
-            this.search_title.AutoSize = true;
-            this.search_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_title.Location = new System.Drawing.Point(101, 18);
-            this.search_title.Name = "search_title";
-            this.search_title.Size = new System.Drawing.Size(319, 40);
-            this.search_title.TabIndex = 66;
-            this.search_title.Text = "Solicitar extracción";
-            this.search_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.extract_ars_title.AutoSize = true;
+            this.extract_ars_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extract_ars_title.Location = new System.Drawing.Point(101, 18);
+            this.extract_ars_title.Name = "extract_ars_title";
+            this.extract_ars_title.Size = new System.Drawing.Size(215, 32);
+            this.extract_ars_title.TabIndex = 66;
+            this.extract_ars_title.Text = "extract_ars_title";
+            this.extract_ars_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.activ_title);
+            this.panel1.Controls.Add(this.extract_ars_ammount);
+            this.panel1.Controls.Add(this.extract_ars_cbu);
             this.panel1.Location = new System.Drawing.Point(24, 112);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(557, 110);
+            this.panel1.Size = new System.Drawing.Size(590, 110);
             this.panel1.TabIndex = 69;
             // 
-            // label1
+            // extract_ars_ammount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 31);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Saldo AR$: 120.555";
+            this.extract_ars_ammount.AutoSize = true;
+            this.extract_ars_ammount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extract_ars_ammount.Location = new System.Drawing.Point(16, 62);
+            this.extract_ars_ammount.Name = "extract_ars_ammount";
+            this.extract_ars_ammount.Size = new System.Drawing.Size(200, 25);
+            this.extract_ars_ammount.TabIndex = 44;
+            this.extract_ars_ammount.Text = "extract_ars_ammount";
             // 
-            // activ_title
+            // extract_ars_cbu
             // 
-            this.activ_title.AutoSize = true;
-            this.activ_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activ_title.Location = new System.Drawing.Point(16, 20);
-            this.activ_title.Name = "activ_title";
-            this.activ_title.Size = new System.Drawing.Size(406, 31);
-            this.activ_title.TabIndex = 43;
-            this.activ_title.Text = "Tú CBU: 132564564564654654894";
-            this.activ_title.Click += new System.EventHandler(this.Activ_title_Click);
+            this.extract_ars_cbu.AutoSize = true;
+            this.extract_ars_cbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extract_ars_cbu.Location = new System.Drawing.Point(16, 20);
+            this.extract_ars_cbu.Name = "extract_ars_cbu";
+            this.extract_ars_cbu.Size = new System.Drawing.Size(151, 25);
+            this.extract_ars_cbu.TabIndex = 43;
+            this.extract_ars_cbu.Text = "extract_ars_cbu";
+            this.extract_ars_cbu.Click += new System.EventHandler(this.Activ_title_Click);
             // 
-            // btn_search
+            // btn_ok
             // 
-            this.btn_search.BackColor = System.Drawing.Color.LightGreen;
-            this.btn_search.Location = new System.Drawing.Point(285, 410);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(143, 49);
-            this.btn_search.TabIndex = 73;
-            this.btn_search.Text = "Aceptar";
-            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_ok.BackColor = System.Drawing.Color.LightGreen;
+            this.btn_ok.Location = new System.Drawing.Point(318, 407);
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.Size = new System.Drawing.Size(143, 49);
+            this.btn_ok.TabIndex = 73;
+            this.btn_ok.Text = "btn_ok";
+            this.btn_ok.UseVisualStyleBackColor = false;
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
             // btn_close
             // 
             this.btn_close.BackColor = System.Drawing.Color.Tomato;
             this.btn_close.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_close.Location = new System.Drawing.Point(438, 410);
+            this.btn_close.Location = new System.Drawing.Point(471, 407);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(143, 49);
             this.btn_close.TabIndex = 72;
-            this.btn_close.Text = "Cerrar";
+            this.btn_close.Text = "btn_close";
             this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // label3
+            // extract_ars_value_label_descrip
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(457, 20);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "De aqui podes pedir un retiro de dinero a tu cuenta bancaria";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.extract_ars_value_label_descrip.AutoSize = true;
+            this.extract_ars_value_label_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extract_ars_value_label_descrip.Location = new System.Drawing.Point(22, 51);
+            this.extract_ars_value_label_descrip.Name = "extract_ars_value_label_descrip";
+            this.extract_ars_value_label_descrip.Size = new System.Drawing.Size(249, 20);
+            this.extract_ars_value_label_descrip.TabIndex = 76;
+            this.extract_ars_value_label_descrip.Text = "extract_ars_value_label_descrip";
+            this.extract_ars_value_label_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // extract_ars_input
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(23, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(328, 30);
-            this.textBox1.TabIndex = 75;
+            this.extract_ars_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extract_ars_input.Location = new System.Drawing.Point(23, 86);
+            this.extract_ars_input.Name = "extract_ars_input";
+            this.extract_ars_input.Size = new System.Drawing.Size(328, 30);
+            this.extract_ars_input.TabIndex = 75;
             // 
-            // label4
+            // extract_ars_value_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 20);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "Valor a extraer:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.extract_ars_value_label.AutoSize = true;
+            this.extract_ars_value_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extract_ars_value_label.Location = new System.Drawing.Point(19, 19);
+            this.extract_ars_value_label.Name = "extract_ars_value_label";
+            this.extract_ars_value_label.Size = new System.Drawing.Size(208, 20);
+            this.extract_ars_value_label.TabIndex = 74;
+            this.extract_ars_value_label.Text = "extract_ars_value_label";
+            this.extract_ars_value_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.extract_ars_value_label);
+            this.panel2.Controls.Add(this.extract_ars_value_label_descrip);
+            this.panel2.Controls.Add(this.extract_ars_input);
             this.panel2.Location = new System.Drawing.Point(24, 238);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(557, 142);
+            this.panel2.Size = new System.Drawing.Size(590, 142);
             this.panel2.TabIndex = 77;
             // 
             // frm_solic_retiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 478);
+            this.ClientSize = new System.Drawing.Size(634, 478);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.search_descrip);
+            this.Controls.Add(this.extract_ars_descrip);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.search_title);
+            this.Controls.Add(this.extract_ars_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_solic_retiro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitar extracción";
+            this.Load += new System.EventHandler(this.frm_solic_retiro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -202,17 +205,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label search_descrip;
+        private System.Windows.Forms.Label extract_ars_descrip;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label search_title;
+        private System.Windows.Forms.Label extract_ars_title;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label activ_title;
-        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Label extract_ars_ammount;
+        private System.Windows.Forms.Label extract_ars_cbu;
+        private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label extract_ars_value_label_descrip;
+        private System.Windows.Forms.TextBox extract_ars_input;
+        private System.Windows.Forms.Label extract_ars_value_label;
         private System.Windows.Forms.Panel panel2;
     }
 }

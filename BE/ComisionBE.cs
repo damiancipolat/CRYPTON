@@ -16,6 +16,7 @@ namespace BE
         public Money valor;
         public DateTime fecCobro;
         public int processed;
-        public long idwallet;
+        public BilleteraBE wallet;
+        public ClienteBE cliente;
     }
 }

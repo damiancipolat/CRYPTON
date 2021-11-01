@@ -27,7 +27,7 @@ namespace BL.Operations
             comision.tipo_operacion = Operaciones.COMPRA;
             comision.referencia = orden.idorden;
             comision.moneda = orden.pide;
-            comision.idwallet = wallet.idwallet;
+            comision.wallet = wallet;
             comision.fecCobro = DateTime.Now;
             comision.processed = 0;
 
@@ -52,7 +52,7 @@ namespace BL.Operations
             comision.tipo_operacion = Operaciones.VENTA;
             comision.referencia = orden.idorden;
             comision.moneda = orden.ofrece;
-            comision.idwallet = wallet.idwallet;
+            comision.wallet = wallet;
             comision.fecCobro = DateTime.Now;
             comision.processed = 0;
 
