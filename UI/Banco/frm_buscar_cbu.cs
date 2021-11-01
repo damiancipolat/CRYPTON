@@ -77,12 +77,12 @@ namespace UI.Banco
                 {
                     this.innerClient = null;
                     this.usr_search_data.Rows.Clear();
-                    MessageBox.Show("No se encontro un cliente con ese cbu");
+                    MessageBox.Show(Idioma.GetInstance().translate("GRAL_NO_RESULTS"));
                 }                    
             }
             else 
             {
-                MessageBox.Show("Debe ingresar un valor");
+                MessageBox.Show(Idioma.GetInstance().translate("GRAL_YOU_MUST_ENTER_A_VALUE"));
             }
 
         }
@@ -95,10 +95,10 @@ namespace UI.Banco
         private void search_cbu_btn_cashin_Click(object sender, EventArgs e)
         {
             if (this.innerClient == null)
-                throw new Exception("No se puede procesar");
+                throw new Exception(Idioma.GetInstance().translate("GRAL_UNABLE_TO_PROCESS"));
 
             //Cargo y muestro.
-            InputForm frm = new InputForm(Idioma.GetInstance().translate("Ingresar fondos"), Idioma.GetInstance().translate("Escriba el valor en ARS"));
+            InputForm frm = new InputForm(Idioma.GetInstance().translate("CBU_CASHIN_TITLE"), Idioma.GetInstance().translate("CBU_CASHIN_LABEL"));
             frm.ShowDialog();
 
             //Obtengo el valor. 
@@ -128,7 +128,7 @@ namespace UI.Banco
                 //Registro la operacion.
                 new OperacionesBL().acreditar(solic);
 
-                MessageBox.Show("Operacion completa!");
+                MessageBox.Show(Idioma.GetInstance().translate("GRAL_OPERATION_SUCCESS"));
             }
         }
 

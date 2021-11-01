@@ -762,6 +762,12 @@ insert into palabras(word) values('SEARCH_CBU_CLIENT');
 insert into palabras(word) values('SEARCH_CBU_TDOC');
 insert into palabras(word) values('SEARCH_CBU_DNI');
 insert into palabras(word) values('SEARCH_CBU_EMAIL');
+insert into palabras(word) values('GRAL_NO_RESULTS');
+insert into palabras(word) values('GRAL_YOU_MUST_ENTER_A_VALUE');
+insert into palabras(word) values('GRAL_UNABLE_TO_PROCESS');
+insert into palabras(word) values('GRAL_OPERATION_SUCCESS');
+insert into palabras(word) values('CBU_CASHIN_TITLE');
+insert into palabras(word) values('CBU_CASHIN_LABEL');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1089,6 +1095,12 @@ insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_CLIENT','C
 insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_TDOC','Tipo doc');
 insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_DNI','DNI');
 insert into idioma_palabras(code,clave,valor) values('ES','SEARCH_CBU_EMAIL','Email');
+insert into idioma_palabras(code,clave,valor) values('ES','GRAL_NO_RESULTS','No se han encontrado resultados');
+insert into idioma_palabras(code,clave,valor) values('ES','GRAL_YOU_MUST_ENTER_A_VALUE','Debes ingresar un valor...');
+insert into idioma_palabras(code,clave,valor) values('ES','GRAL_UNABLE_TO_PROCESS','No se pudo procesar');
+insert into idioma_palabras(code,clave,valor) values('ES','GRAL_OPERATION_SUCCESS','Operación completa!');
+insert into idioma_palabras(code,clave,valor) values('ES','CBU_CASHIN_TITLE','Ingresar fondos');
+insert into idioma_palabras(code,clave,valor) values('ES','CBU_CASHIN_LABEL','Debe ingresar un valor en AR$');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1400,12 +1412,17 @@ insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_CLIENT','
 insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_TDOC','Doc type');
 insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_DNI','DNI');
 insert into idioma_palabras(code,clave,valor) values('ENG','SEARCH_CBU_EMAIL','Email');
-
+insert into idioma_palabras(code,clave,valor) values('ENG','GRAL_NO_RESULTS','Results not found');
+insert into idioma_palabras(code,clave,valor) values('ENG','GRAL_YOU_MUST_ENTER_A_VALUE','You must enter a value..');
+insert into idioma_palabras(code,clave,valor) values('ENG','GRAL_UNABLE_TO_PROCESS','Unable to process');
+insert into idioma_palabras(code,clave,valor) values('ENG','GRAL_OPERATION_SUCCESS','Operation success!');
+insert into idioma_palabras(code,clave,valor) values('ENG','CBU_CASHIN_TITLE','Enter value');
+insert into idioma_palabras(code,clave,valor) values('ENG','CBU_CASHIN_LABEL','You must enter AR$ ammount');
 
 select * from cliente where idcliente=1;
 select * from billetera where idcliente=1 and moneda='ARS';
 --0070064130004043181234
-
+select * from solic_operacion
 --update usuario set hash='11d71138d9ddee37d1fcce5aedec3ce4' where idusuario=1;
 update dvv set hash='11d71138d9ddee37d1fcce5aedec3ce4582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
 --update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
