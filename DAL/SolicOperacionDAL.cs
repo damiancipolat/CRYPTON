@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using BE.ValueObject;
 
 namespace DAL
 {
@@ -22,6 +23,20 @@ namespace DAL
             //Bindeo campos con la lista de resultados.
             this.binder.match(fieldData, solicOperation);
 
+            //Actualizo el tipo de usuario que es un enum.            
+            Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
+
+            //Agrego el usuario.
+            solicOperation.usuario= new UsuarioDAL().findById((long)mapa["idusuario"]);
+            solicOperation.valor = new Money((double)mapa["valor"]);
+            solicOperation.billetera= new BilleteraDAL().findById((long)mapa["idwallet"]);
+
+            if ((int)mapa["tipo_solic"] == 1)
+                solicOperation.tipoOperacion = TipoSolicOperacion.INGRESO_SALDO;
+
+            if ((int)mapa["tipo_solic"] == 2)
+                solicOperation.tipoOperacion = TipoSolicOperacion.RETIRO_SALDO;
+
             return solicOperation;
 
         }
@@ -37,10 +52,21 @@ namespace DAL
 
         }
 
-        //Traigo la lista de solicitudes pendientes. TODO
+        //Traigo la lista de solicitudes pendientes.
         public List<SolicOperacionBE> getPendings()
         {
-            return new List<SolicOperacionBE>();
+            //Busco en la bd por wallet y estado.
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{                
+                {"tipo_solic",2}
+            }, "solic_operacion");
+
+            //Lista resultado.
+            List<SolicOperacionBE> lista = new List<SolicOperacionBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
         }
 
         //Este metodo retorna una lista de clientes.
@@ -64,7 +90,7 @@ namespace DAL
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
                 {"idusuario",ops.usuario.idusuario},
-                {"tipo_solic",(int)ops.estadoSolic},
+                {"tipo_solic",(int)ops.tipoOperacion},
                 {"idwallet",ops.billetera.idwallet},
                 { "valor",ops.valor.getValue()},
                 { "cbu",ops.cbu},
@@ -93,7 +119,7 @@ namespace DAL
                 {"idwallet",ops.billetera.idwallet},
                 { "valor",ops.valor.getValue()},
                 { "cbu",ops.cbu},
-                { "operador",ops.operador.idusuario},
+                { "operador",ops.operador!=null?ops.operador.idusuario:0},
                 { "estado_solic",(int)ops.estadoSolic},
                 { "fecRegistro",ops.fecRegistro},
                 { "fecProceso",ops.fecProceso}

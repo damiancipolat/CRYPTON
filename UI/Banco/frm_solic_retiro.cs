@@ -78,6 +78,7 @@ namespace UI.Banco
                     solic.cbu = this.innerClient.cbu;
                     solic.fecRegistro = DateTime.Now;
                     solic.fecProceso = DateTime.Now;
+                    solic.estadoSolic = SolicEstados.PENDIENTES;
 
                     //Proceso.
                     new OperacionesBL().extraer(solic);

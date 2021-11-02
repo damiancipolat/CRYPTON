@@ -59,13 +59,14 @@
             this.main_menu_it_perm_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_log = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_it_backup = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_op_cash_in = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_client = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_profile = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_cbu = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.main_menu_op_cash_in = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_lista_retiro = new System.Windows.Forms.ToolStripMenuItem();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -293,7 +294,8 @@
             this.main_menu_it_perm_manager,
             this.main_menu_it_log,
             this.main_menu_it_backup,
-            this.main_menu_op_cash_in});
+            this.main_menu_op_cash_in,
+            this.main_menu_lista_retiro});
             this.main_menu_it.Name = "main_menu_it";
             this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
@@ -348,6 +350,13 @@
             this.main_menu_it_backup.Text = "main_menu_it_backup";
             this.main_menu_it_backup.Click += new System.EventHandler(this.Main_menu_it_backup_Click);
             // 
+            // main_menu_op_cash_in
+            // 
+            this.main_menu_op_cash_in.Name = "main_menu_op_cash_in";
+            this.main_menu_op_cash_in.Size = new System.Drawing.Size(322, 26);
+            this.main_menu_op_cash_in.Text = "main_menu_op_cash_in";
+            this.main_menu_op_cash_in.Click += new System.EventHandler(this.main_menu_op_cash_in_Click);
+            // 
             // main_menu_client
             // 
             this.main_menu_client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -361,14 +370,14 @@
             // main_menu_profile
             // 
             this.main_menu_profile.Name = "main_menu_profile";
-            this.main_menu_profile.Size = new System.Drawing.Size(219, 26);
+            this.main_menu_profile.Size = new System.Drawing.Size(224, 26);
             this.main_menu_profile.Text = "main_menu_profile";
             this.main_menu_profile.Click += new System.EventHandler(this.MainToolStripMenuItem_Click);
             // 
             // main_menu_cbu
             // 
             this.main_menu_cbu.Name = "main_menu_cbu";
-            this.main_menu_cbu.Size = new System.Drawing.Size(219, 26);
+            this.main_menu_cbu.Size = new System.Drawing.Size(224, 26);
             this.main_menu_cbu.Text = "main_menu_cbu";
             this.main_menu_cbu.Click += new System.EventHandler(this.main_menu_cbu_Click);
             // 
@@ -400,12 +409,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_14);
             // 
-            // main_menu_op_cash_in
+            // main_menu_lista_retiro
             // 
-            this.main_menu_op_cash_in.Name = "main_menu_op_cash_in";
-            this.main_menu_op_cash_in.Size = new System.Drawing.Size(322, 26);
-            this.main_menu_op_cash_in.Text = "main_menu_op_cash_in";
-            this.main_menu_op_cash_in.Click += new System.EventHandler(this.main_menu_op_cash_in_Click);
+            this.main_menu_lista_retiro.Name = "main_menu_lista_retiro";
+            this.main_menu_lista_retiro.Size = new System.Drawing.Size(322, 26);
+            this.main_menu_lista_retiro.Text = "main_menu_lista_retiro";
+            this.main_menu_lista_retiro.Click += new System.EventHandler(this.main_menu_lista_retiro_Click);
             // 
             // frm_main
             // 
@@ -479,6 +488,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem main_menu_extract;
         private System.Windows.Forms.ToolStripMenuItem main_menu_op_cash_in;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_lista_retiro;
     }
 }
 

@@ -340,6 +340,7 @@ create table solic_estados(
 
 insert into solic_estados(descrip) values('Aprobada');
 insert into solic_estados(descrip) values('Rechazada');
+insert into solic_estados(descrip) values('Pendientes');
 
 --Tabla de transferencias.
 create table transferencias(
@@ -782,6 +783,10 @@ insert into palabras(word) values('EXTRACT_ARS_AMMOUNT');
 insert into palabras(word) values('EXTRACT_ARS_PENDING_DEBTS');
 insert into palabras(word) values('EXTRACT_ARS_NO_FOUNDS');
 insert into palabras(word) values('EXTRACT_ARS_OK');
+insert into palabras(word) values('RETIRO_TITLE');
+insert into palabras(word) values('RETIRO_TITLE_DESCRIP');
+insert into palabras(word) values('BTN_RETIRO_OK');
+insert into palabras(word) values('BTN_RETIRO_REJECT');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1125,6 +1130,10 @@ insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_AMMOUNT',
 insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_PENDING_DEBTS','Tenes comisiones pendientes de pagar');
 insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_NO_FOUNDS','No tenes fondos suficientes.');
 insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_ARS_OK','Operación exitosa.');
+insert into idioma_palabras(code,clave,valor) values('ES','RETIRO_TITLE','Extracciones');
+insert into idioma_palabras(code,clave,valor) values('ES','RETIRO_TITLE_DESCRIP','De aqui podes aprobar  / rechazar extracciones.');
+insert into idioma_palabras(code,clave,valor) values('ES','BTN_RETIRO_OK','Aceptar');
+insert into idioma_palabras(code,clave,valor) values('ES','BTN_RETIRO_REJECT','Rechazar');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1452,6 +1461,10 @@ insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_AMMOUNT'
 insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_PENDING_DEBTS','You have commision pending to payment');
 insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_NO_FOUNDS','No founds');
 insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_ARS_OK','Operation success!.');
+insert into idioma_palabras(code,clave,valor) values('ENG','RETIRO_TITLE','Withdrawal');
+insert into idioma_palabras(code,clave,valor) values('ENG','RETIRO_TITLE_DESCRIP','You can approve / reject orders from here.');
+insert into idioma_palabras(code,clave,valor) values('ENG','BTN_RETIRO_OK','Acept');
+insert into idioma_palabras(code,clave,valor) values('ENG','btn_retiro_reject','Reject');
 
 select * from cliente where idcliente=1;
 select * from billetera where idcliente=1 and moneda='ARS';
@@ -1473,6 +1486,7 @@ select * from comisiones
 select * from comisiones where  idcliente=1 and processed=0;
 --update comisiones set processed=1
 select * from solic_operacion
+select * from solic_estados
 
 insert into solic_operacion(idusuario,tipo_solic,idwallet,valor,cbu,operador,estado_solic,fecRegistro,fecProceso) values(1,0,1,100,'0070064130004043181234',0,0,'01/11/2021 17:36:49','01/01/0001 0:00:00');SELECT @@IDENTITY;
 

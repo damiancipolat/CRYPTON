@@ -10,7 +10,8 @@ namespace BE
     public enum SolicEstados
     {
         APROBADA =1,
-        RECHAZADA=2
+        RECHAZADA=2,
+        PENDIENTES = 3
     }
 
     public enum TipoSolicOperacion

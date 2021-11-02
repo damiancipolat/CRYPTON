@@ -18,7 +18,12 @@ namespace BL
         {
             //..
         }
-        
+
+        //Busco en base al id.
+        public SolicOperacionBE findById(int id) 
+        {
+            return new SolicOperacionDAL().findById(id);
+        }
 
         //Registro acreditación de saldos a billetera.
         public int acreditar(SolicOperacionBE solicitud)
@@ -40,12 +45,23 @@ namespace BL
             return new SolicOperacionDAL().save(solicitud);
         }
 
+        //Traigo la lista de operaciones pendientes.
+        public List<SolicOperacionBE> getPendings() 
+        {
+            return new SolicOperacionDAL().getPendings();
+        }
+
+        //Actualizo valores.
+        public int update(SolicOperacionBE solicitud)
+        {
+            return new SolicOperacionDAL().update(solicitud);
+        }
+
         //-----------------------------
 
         public List<SolicOperacionBE> verSolicitudes() { return new List<SolicOperacionBE>(); }
 
         public void rechazar(SolicOperacionBE solicitud) { }
         
-        public int update(SolicOperacionBE solicitud) { return 0; }
     }
 }

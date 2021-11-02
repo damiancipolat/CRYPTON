@@ -574,7 +574,9 @@ namespace UI
 
         private void button1_Click_14(object sender, EventArgs e)
         {
-            new frm_buscar_cbu().Show();
+            //new frm_lista_retiro().Show();
+            TipoSolicOperacion tipo = TipoSolicOperacion.RETIRO_SALDO;
+            Debug.WriteLine("****" + ((int)tipo).ToString());
         }
 
         private void main_menu_op_cash_in_Click(object sender, EventArgs e)
@@ -585,6 +587,11 @@ namespace UI
         private void main_menu_extract_Click(object sender, EventArgs e)
         {
             new frm_solic_retiro().Show();
+        }
+
+        private void main_menu_lista_retiro_Click(object sender, EventArgs e)
+        {
+            new frm_lista_retiro().Show();
         }
     }
 }
