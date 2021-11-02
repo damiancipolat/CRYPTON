@@ -325,3 +325,9 @@ SESSION:An user has closed the session
 LOGIN:Request login of user:damian.cipolat@gmail.com
 SESSION:An user has started session - email:damian.cipolat@gmail.com
 LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581

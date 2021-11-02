@@ -24,7 +24,6 @@ G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRY
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SEC\bin\Debug\IO.pdb
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SEC\bin\Debug\Newtonsoft.Json.xml
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SEC\obj\Debug\SEC.csproj.CoreCompileInputs.cache
-G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SEC\obj\Debug\SEC.csproj.CopyComplete
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SEC\obj\Debug\SEC.dll
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SEC\obj\Debug\SEC.pdb
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\SEC\bin\Debug\RestSharp.dll
