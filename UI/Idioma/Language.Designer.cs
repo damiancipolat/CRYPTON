@@ -30,9 +30,9 @@
         {
             this.language_txt_title = new System.Windows.Forms.Label();
             this.language_combo = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.language_accept = new System.Windows.Forms.Button();
             this.language_cancel = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,14 +77,24 @@
             this.language_cancel.UseVisualStyleBackColor = true;
             this.language_cancel.Click += new System.EventHandler(this.Language_cancel_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.globe;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Language
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 226);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.language_cancel);
             this.Controls.Add(this.language_accept);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.language_combo);
             this.Controls.Add(this.language_txt_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -105,8 +115,8 @@
 
         private System.Windows.Forms.Label language_txt_title;
         private System.Windows.Forms.ComboBox language_combo;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button language_accept;
         private System.Windows.Forms.Button language_cancel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
