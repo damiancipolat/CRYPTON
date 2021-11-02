@@ -21,6 +21,7 @@ namespace UI.Permisos
         MANAGE_PERMISSION,
         MANAGE_LANGUAGES,
         MANAGE_USER_PERMISSION,
+        EXTRACT_LIST,
         CLIENTS,
         IT,
         EMPLOYEES,

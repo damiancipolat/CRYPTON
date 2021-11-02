@@ -130,6 +130,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_lista_retiro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitudes de extraccion.";
             this.Load += new System.EventHandler(this.frm_lista_retiro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.retiro_list_data)).EndInit();

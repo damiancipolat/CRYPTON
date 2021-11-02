@@ -135,6 +135,8 @@ insert into permiso(nombre,permiso) values('BACKUP','P');
 insert into permiso(nombre,permiso) values('CBU','P');
 insert into permiso(nombre,permiso) values('EXTRACT','P');
 insert into permiso(nombre,permiso) values('CASH_IN','P');
+insert into permiso(nombre,permiso) values('EXTRACT_LIST','P');
+
 
 --Familias
 insert into permiso(nombre,permiso) values('CLIENTS',null);
@@ -787,6 +789,7 @@ insert into palabras(word) values('RETIRO_TITLE');
 insert into palabras(word) values('RETIRO_TITLE_DESCRIP');
 insert into palabras(word) values('BTN_RETIRO_OK');
 insert into palabras(word) values('BTN_RETIRO_REJECT');
+insert into palabras(word) values('MAIN_MENU_EXTRACT_ARS');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1134,6 +1137,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','RETIRO_TITLE','Extrac
 insert into idioma_palabras(code,clave,valor) values('ES','RETIRO_TITLE_DESCRIP','De aqui podes aprobar  / rechazar extracciones.');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_RETIRO_OK','Aceptar');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_RETIRO_REJECT','Rechazar');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT_ARS','Extracciones ARS');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1197,6 +1201,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_USER','Use
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_LANGUAGE','Languages');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_PROFILE','Profile');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_CASH_IN','Enter ammount');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXTRACT','Withdrawal AR$');
 insert into idioma_palabras(code,clave,valor) values('ENG','LANGUAGE_CHANGE_OK','The language has been successfully changed');
 insert into idioma_palabras(code,clave,valor) values('ENG','LANGUAGE_CHANGE_ERROR','There was a problem trying to change the language');
 insert into idioma_palabras(code,clave,valor) values('ENG','YOUR_USER_LABEL','Your user info:');
@@ -1465,6 +1470,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','RETIRO_TITLE','Withd
 insert into idioma_palabras(code,clave,valor) values('ENG','RETIRO_TITLE_DESCRIP','You can approve / reject orders from here.');
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_RETIRO_OK','Acept');
 insert into idioma_palabras(code,clave,valor) values('ENG','btn_retiro_reject','Reject');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXTRACT_ARS','Withadrawal AR$');
 
 select * from cliente where idcliente=1;
 select * from billetera where idcliente=1 and moneda='ARS';
@@ -1484,12 +1490,14 @@ select * from cliente
 select * from comisiones
 
 select * from comisiones where  idcliente=1 and processed=0;
+select * from solic_operacion where  estado_solic=2;
+
 --update comisiones set processed=1
-select * from solic_operacion
+select * from tipo_solic_op
+select idoperacion,alias,tipo_solic,cbu,valor from solic_operacion;
 select * from solic_estados
 
 insert into solic_operacion(idusuario,tipo_solic,idwallet,valor,cbu,operador,estado_solic,fecRegistro,fecProceso) values(1,0,1,100,'0070064130004043181234',0,0,'01/11/2021 17:36:49','01/01/0001 0:00:00');SELECT @@IDENTITY;
-
 
 insert into comisiones(tipo_operacion,referencia,idcliente,idwallet,moneda,valor,fecCobro,processed)
 values(1,1,1,1,'ARS',100,NULL,0);

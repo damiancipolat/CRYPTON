@@ -106,6 +106,7 @@ namespace UI
             this.main_menu_it_log.Text = Idioma.GetInstance().translate("MAIN_MENU_LOG_SEARCH");
             this.main_menu_it_backup.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_BACKUP");
             this.main_menu_op_cash_in.Text = Idioma.GetInstance().translate("MAIN_MENU_CASH_IN");
+            this.main_menu_lista_retiro.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT_ARS");
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -181,6 +182,7 @@ namespace UI
             this.main_menu_it_log.Visible = permBL.hasPermission(permissions, PermisoCodes.SEARCH_LOG.ToString());
             this.main_menu_it_backup.Visible = permBL.hasPermission(permissions, PermisoCodes.BACKUP.ToString());
             this.main_menu_op_cash_in.Visible = permBL.hasPermission(permissions, PermisoCodes.CASH_IN.ToString());
+            this.main_menu_lista_retiro.Visible = permBL.hasPermission(permissions, PermisoCodes.EXTRACT_LIST.ToString());            
         }
 
         //Oculto menu en base a los permisos.
