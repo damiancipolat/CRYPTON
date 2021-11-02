@@ -93,6 +93,12 @@
     <Compile Include="Admin\frm_cambios.Designer.cs">
       <DependentUpon>frm_cambios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Banco\frm_crypto_extract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco\frm_crypto_extract.Designer.cs">
+      <DependentUpon>frm_crypto_extract.cs</DependentUpon>
+    </Compile>
     <Compile Include="Banco\frm_buscar_cbu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,7 +129,6 @@
     <Compile Include="BuscadorOfertas.Designer.cs">
       <DependentUpon>BuscadorOfertas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Comisiones\frm_cobrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frm_cambios.resx">
       <DependentUpon>frm_cambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banco\frm_crypto_extract.resx">
+      <DependentUpon>frm_crypto_extract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Banco\frm_buscar_cbu.resx">
       <DependentUpon>frm_buscar_cbu.cs</DependentUpon>
@@ -521,6 +529,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\registros-medicos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,7 +27,7 @@ namespace IO
             if (this.env == "DEVELOP")
                 this.host = this.host + "/mock";
 
-            Debug.WriteLine("!!!!!!!!!"+this.host);
+            Debug.WriteLine(">Host:"+this.host);
         }
 
         public NewWallet createWallet(string money)

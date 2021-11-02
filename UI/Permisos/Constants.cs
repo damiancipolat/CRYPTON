@@ -15,6 +15,7 @@ namespace UI.Permisos
         CBU,
         CASH_IN,
         EXTRACT,
+        EXTRACT_CRYPTO,
         PUBLISH_OFFER,
         CREATE_USER,
         MANAGE_USERS,

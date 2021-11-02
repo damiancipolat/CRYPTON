@@ -136,7 +136,7 @@ insert into permiso(nombre,permiso) values('CBU','P');
 insert into permiso(nombre,permiso) values('EXTRACT','P');
 insert into permiso(nombre,permiso) values('CASH_IN','P');
 insert into permiso(nombre,permiso) values('EXTRACT_LIST','P');
-
+insert into permiso(nombre,permiso) values('EXTRACT_CRYPTO','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('CLIENTS',null);
@@ -790,6 +790,15 @@ insert into palabras(word) values('RETIRO_TITLE_DESCRIP');
 insert into palabras(word) values('BTN_RETIRO_OK');
 insert into palabras(word) values('BTN_RETIRO_REJECT');
 insert into palabras(word) values('MAIN_MENU_EXTRACT_ARS');
+insert into palabras(word) values('MAIN_MENU_EXTRACT_CRYPTO');
+insert into palabras(word) values('CRYPTO_EXTRACT_TXT');
+insert into palabras(word) values('CRYPTO_EXTRACT_TITLE');
+insert into palabras(word) values('CRYPTO_EXTRACT_SUCCESS');
+insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_TITLE');
+insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_DESCRIP');
+insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_ORIGIN');
+insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_VALUE');
+insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_DESTINY');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1138,6 +1147,15 @@ insert into idioma_palabras(code,clave,valor) values('ES','RETIRO_TITLE_DESCRIP'
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_RETIRO_OK','Aceptar');
 insert into idioma_palabras(code,clave,valor) values('ES','BTN_RETIRO_REJECT','Rechazar');
 insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT_ARS','Extracciones ARS');
+insert into idioma_palabras(code,clave,valor) values('ES','MAIN_MENU_EXTRACT_CRYPTO','Extraer crypto');
+insert into idioma_palabras(code,clave,valor) values('ES','CRYPTO_EXTRACT_TXT','El valor de la operacion sera %s, quiere proceder?');
+insert into idioma_palabras(code,clave,valor) values('ES','CRYPTO_EXTRACT_TITLE','Extraer cripto moneda');
+insert into idioma_palabras(code,clave,valor) values('ES','CRYPTO_EXTRACT_SUCCESS','Transferencia exitosa!');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_TITLE','Extraer crypto');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_DESCRIP','De aqui podes extraer tus crypto.');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_ORIGIN','Cuenta origen:');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_VALUE','Valor a transferir:');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_DESTINY','Dirección destino:');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1471,6 +1489,15 @@ insert into idioma_palabras(code,clave,valor) values('ENG','RETIRO_TITLE_DESCRIP
 insert into idioma_palabras(code,clave,valor) values('ENG','BTN_RETIRO_OK','Acept');
 insert into idioma_palabras(code,clave,valor) values('ENG','btn_retiro_reject','Reject');
 insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXTRACT_ARS','Withadrawal AR$');
+insert into idioma_palabras(code,clave,valor) values('ENG','MAIN_MENU_EXTRACT_CRYPTO','Withadrawal crypto');
+insert into idioma_palabras(code,clave,valor) values('ENG','CRYPTO_EXTRACT_TXT','The withdrawal has a cost of %s, do you want to proceed?');
+insert into idioma_palabras(code,clave,valor) values('ENG','CRYPTO_EXTRACT_TITLE','Money withdrawal');
+insert into idioma_palabras(code,clave,valor) values('ENG','CRYPTO_EXTRACT_SUCCESS','Transfer success!');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_TITLE','Extract crypto');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_DESCRIP','You can extract your cryptos from here');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_ORIGIN','Origin account:');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_VALUE','Ammount:');
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_DESTINY','Transfer success!');
 
 select * from cliente where idcliente=1;
 select * from billetera where idcliente=1 and moneda='ARS';
@@ -1491,6 +1518,7 @@ select * from comisiones
 
 select * from comisiones where  idcliente=1 and processed=0;
 select * from solic_operacion where  estado_solic=2;
+select * from transferencias
 
 --update comisiones set processed=1
 select * from tipo_solic_op

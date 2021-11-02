@@ -95,6 +95,7 @@ namespace UI
             this.main_menu_profile.Text = Idioma.GetInstance().translate("MAIN_MENU_PROFILE");
             this.main_menu_cbu.Text= Idioma.GetInstance().translate("MAIN_MENU_CBU");
             this.main_menu_extract.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT");
+            this.main_menu_extract_crypto.Text= Idioma.GetInstance().translate("MAIN_MENU_EXTRACT_CRYPTO");            
 
             //bindeo menuit
             this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
@@ -164,6 +165,7 @@ namespace UI
             this.main_menu_profile.Visible = permBL.hasPermission(permissions, PermisoCodes.MY_PROFILE.ToString());
             this.main_menu_cbu.Visible = permBL.hasPermission(permissions, PermisoCodes.CBU.ToString());
             this.main_menu_extract.Visible = permBL.hasPermission(permissions, PermisoCodes.EXTRACT.ToString());
+            this.main_menu_extract_crypto.Visible = permBL.hasPermission(permissions, PermisoCodes.EXTRACT_CRYPTO.ToString());
         }
 
         //Manejo el menu de empleado.
@@ -577,8 +579,9 @@ namespace UI
         private void button1_Click_14(object sender, EventArgs e)
         {
             //new frm_lista_retiro().Show();
-            TipoSolicOperacion tipo = TipoSolicOperacion.RETIRO_SALDO;
-            Debug.WriteLine("****" + ((int)tipo).ToString());
+            //TipoSolicOperacion tipo = TipoSolicOperacion.RETIRO_SALDO;
+            //Debug.WriteLine("****" + ((int)tipo).ToString());
+            //new frm_crypto_extract().Show();
         }
 
         private void main_menu_op_cash_in_Click(object sender, EventArgs e)
@@ -594,6 +597,11 @@ namespace UI
         private void main_menu_lista_retiro_Click(object sender, EventArgs e)
         {
             new frm_lista_retiro().Show();
+        }
+
+        private void main_menu_extract_crypto_Click(object sender, EventArgs e)
+        {
+            new frm_crypto_extract().Show();
         }
     }
 }
