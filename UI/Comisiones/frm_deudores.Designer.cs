@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.btn_close = new System.Windows.Forms.Button();
-            this.comision_data = new System.Windows.Forms.DataGridView();
-            this.search_descrip = new System.Windows.Forms.Label();
-            this.search_title = new System.Windows.Forms.Label();
+            this.list_comision_data = new System.Windows.Forms.DataGridView();
+            this.commision_debts_title_descrip = new System.Windows.Forms.Label();
+            this.commision_debts_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.comision_data)).BeginInit();
+            this.commision_debts_notify_btn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.list_comision_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,38 +46,39 @@
             this.btn_close.TabIndex = 70;
             this.btn_close.Text = "Cerrar";
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // comision_data
+            // list_comision_data
             // 
-            this.comision_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.comision_data.Location = new System.Drawing.Point(26, 168);
-            this.comision_data.Name = "comision_data";
-            this.comision_data.RowHeadersWidth = 51;
-            this.comision_data.RowTemplate.Height = 24;
-            this.comision_data.Size = new System.Drawing.Size(716, 481);
-            this.comision_data.TabIndex = 69;
+            this.list_comision_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.list_comision_data.Location = new System.Drawing.Point(26, 168);
+            this.list_comision_data.Name = "list_comision_data";
+            this.list_comision_data.RowHeadersWidth = 51;
+            this.list_comision_data.RowTemplate.Height = 24;
+            this.list_comision_data.Size = new System.Drawing.Size(716, 481);
+            this.list_comision_data.TabIndex = 69;
             // 
-            // search_descrip
+            // commision_debts_title_descrip
             // 
-            this.search_descrip.AutoSize = true;
-            this.search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_descrip.Location = new System.Drawing.Point(107, 60);
-            this.search_descrip.Name = "search_descrip";
-            this.search_descrip.Size = new System.Drawing.Size(426, 20);
-            this.search_descrip.TabIndex = 68;
-            this.search_descrip.Text = "Aqui se ve la lista de comisiones pendientes por cobrar.";
-            this.search_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.commision_debts_title_descrip.AutoSize = true;
+            this.commision_debts_title_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commision_debts_title_descrip.Location = new System.Drawing.Point(107, 60);
+            this.commision_debts_title_descrip.Name = "commision_debts_title_descrip";
+            this.commision_debts_title_descrip.Size = new System.Drawing.Size(240, 20);
+            this.commision_debts_title_descrip.TabIndex = 68;
+            this.commision_debts_title_descrip.Text = "commision_debts_title_descrip";
+            this.commision_debts_title_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // search_title
+            // commision_debts_title
             // 
-            this.search_title.AutoSize = true;
-            this.search_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_title.Location = new System.Drawing.Point(103, 21);
-            this.search_title.Name = "search_title";
-            this.search_title.Size = new System.Drawing.Size(138, 32);
-            this.search_title.TabIndex = 66;
-            this.search_title.Text = "Deudores";
-            this.search_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.commision_debts_title.AutoSize = true;
+            this.commision_debts_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commision_debts_title.Location = new System.Drawing.Point(103, 21);
+            this.commision_debts_title.Name = "commision_debts_title";
+            this.commision_debts_title.Size = new System.Drawing.Size(297, 32);
+            this.commision_debts_title.TabIndex = 66;
+            this.commision_debts_title.Text = "commision_debts_title";
+            this.commision_debts_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -89,33 +90,36 @@
             this.pictureBox1.TabIndex = 67;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
+            // commision_debts_notify_btn
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.Location = new System.Drawing.Point(600, 111);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 38);
-            this.button2.TabIndex = 72;
-            this.button2.Text = "Notificar deuda";
-            this.button2.UseVisualStyleBackColor = false;
+            this.commision_debts_notify_btn.BackColor = System.Drawing.SystemColors.Info;
+            this.commision_debts_notify_btn.Location = new System.Drawing.Point(600, 111);
+            this.commision_debts_notify_btn.Name = "commision_debts_notify_btn";
+            this.commision_debts_notify_btn.Size = new System.Drawing.Size(143, 38);
+            this.commision_debts_notify_btn.TabIndex = 72;
+            this.commision_debts_notify_btn.Text = "commision_debts_notify_btn";
+            this.commision_debts_notify_btn.UseVisualStyleBackColor = false;
+            this.commision_debts_notify_btn.Click += new System.EventHandler(this.button2_Click);
             // 
             // frm_deudores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 746);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.commision_debts_notify_btn);
             this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.comision_data);
-            this.Controls.Add(this.search_descrip);
+            this.Controls.Add(this.list_comision_data);
+            this.Controls.Add(this.commision_debts_title_descrip);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.search_title);
+            this.Controls.Add(this.commision_debts_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_deudores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_deudores";
-            ((System.ComponentModel.ISupportInitialize)(this.comision_data)).EndInit();
+            this.Load += new System.EventHandler(this.frm_deudores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.list_comision_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -125,10 +129,10 @@
         #endregion
 
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.DataGridView comision_data;
-        private System.Windows.Forms.Label search_descrip;
+        private System.Windows.Forms.DataGridView list_comision_data;
+        private System.Windows.Forms.Label commision_debts_title_descrip;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label search_title;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label commision_debts_title;
+        private System.Windows.Forms.Button commision_debts_notify_btn;
     }
 }

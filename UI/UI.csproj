@@ -510,6 +510,10 @@
       <Project>{ed28bbfe-01ab-4358-b7d4-fcc5b426be8e}</Project>
       <Name>BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d639a0f9-9476-4c97-9c18-3b1017683cfb}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IO\IO.csproj">
       <Project>{a3e6991b-c498-4b7f-8e3b-15b54dea1e70}</Project>
       <Name>IO</Name>
@@ -532,6 +536,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-transaction.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

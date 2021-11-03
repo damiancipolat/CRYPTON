@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.Diagnostics;
 using DAL.DAO;
 using BE;
 using BE.ValueObject;
@@ -28,7 +31,7 @@ namespace DAL
             //Seteo el valor.
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
             comisionTarget.tipo_operacion = (Operaciones)mapa["tipo_operacion"];
-            comisionTarget.valor = new Money(mapa["valor"]);
+            comisionTarget.valor = new Money((decimal)mapa["valor"]);
             comisionTarget.cliente = new ClienteDAL().findById((long)mapa["idcliente"]);
             comisionTarget.wallet = new BilleteraDAL().findById((long)mapa["idwallet"]);
 
@@ -78,7 +81,7 @@ namespace DAL
                 {"operacion",comision.tipo_operacion},
                 { "referencia",comision.referencia},
                 { "moneda",comision.moneda.cod},
-                { "valor",comision.valor.ToFormatString()},
+                { "valor",comision.valor.getValue()},
                 { "fecCobro",comision.fecCobro},
                 { "processed",comision.processed},
                 { "idwallet",comision.wallet.idwallet},
@@ -96,7 +99,7 @@ namespace DAL
                 { "tipo_operacion",(int)comision.tipo_operacion },
                 { "referencia",comision.referencia},
                 { "moneda",comision.moneda.cod},                
-                { "valor",comision.valor.ToFormatString()},
+                { "valor",comision.valor.getValue()},
                 { "fecCobro",(comision.fecCobro != null) ? comision.fecCobro.ToString("yyyy-MM-dd HH:mm:ss") :null},
                 { "processed",comision.processed},
                 { "idwallet",comision.wallet.idwallet},
@@ -179,7 +182,30 @@ namespace DAL
             return lista;
         }
 
-        //********
+        //REPORTES ----------------------
+
+        //Traigo la lista de deudores pendientes de cobrar comisiones.
+        public List<(int, int, string, float)> getDebtors() 
+        {
+            string sql = "select tipo_operacion,idcliente,moneda,SUM(valor) from comisiones where processed = 0 group by tipo_operacion,idcliente,moneda; ";
+            SqlDataReader reader = this.getSelect().query(sql);
+
+            List<(int, int, string, float)> result = new List<(int, int, string, float)>();
+
+            while (reader.Read())
+            {
+                result.Add((
+                    Convert.ToInt32(reader.GetValue(0)),
+                    Convert.ToInt32(reader.GetValue(1)),
+                    Convert.ToString(reader.GetValue(2)),
+                    Convert.ToSingle(reader.GetValue(3))
+                 ));                
+            }
+
+            return result;
+        }
+
+        //? -----------------------------
 
         //Traigo total de comisiones y costo de cada cliente, TODO
         public List<(ClienteBE,Money)> getClientPendingAmmounts()

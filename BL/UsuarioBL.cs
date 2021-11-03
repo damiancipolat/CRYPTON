@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Configuration;
 using BE;
 using BE.Permisos;
 using DAL;
@@ -62,6 +63,9 @@ namespace BL
 
         public int update(UsuarioBE user)
         {
+            //Encripto simetricamente el email.
+            user.email = Cripto.GetInstance().Encrypt(user.email);
+
             return new UsuarioDAL().update(user);
         }
     }

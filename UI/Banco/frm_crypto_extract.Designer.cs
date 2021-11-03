@@ -35,11 +35,11 @@ namespace UI.Banco
             this.extract_crypto_origin = new System.Windows.Forms.Label();
             this.extract_crypto_value = new System.Windows.Forms.Label();
             this.txt_value = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.wallet_btn_close = new System.Windows.Forms.Button();
             this.wallet_btn_ok = new System.Windows.Forms.Button();
             this.txt_destiny = new System.Windows.Forms.TextBox();
             this.extract_crypto_destiny = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@ namespace UI.Banco
             this.cmb_wallets_list.BackColor = System.Drawing.SystemColors.Info;
             this.cmb_wallets_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_wallets_list.FormattingEnabled = true;
-            this.cmb_wallets_list.Location = new System.Drawing.Point(28, 159);
+            this.cmb_wallets_list.Location = new System.Drawing.Point(28, 156);
             this.cmb_wallets_list.Name = "cmb_wallets_list";
             this.cmb_wallets_list.Size = new System.Drawing.Size(456, 37);
             this.cmb_wallets_list.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace UI.Banco
             this.extract_crypto_wallet_descrip.AutoSize = true;
             this.extract_crypto_wallet_descrip.BackColor = System.Drawing.Color.Transparent;
             this.extract_crypto_wallet_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extract_crypto_wallet_descrip.Location = new System.Drawing.Point(96, 64);
+            this.extract_crypto_wallet_descrip.Location = new System.Drawing.Point(96, 62);
             this.extract_crypto_wallet_descrip.Name = "extract_crypto_wallet_descrip";
             this.extract_crypto_wallet_descrip.Size = new System.Drawing.Size(231, 20);
             this.extract_crypto_wallet_descrip.TabIndex = 54;
@@ -91,7 +91,7 @@ namespace UI.Banco
             this.extract_crypto_value.AutoSize = true;
             this.extract_crypto_value.BackColor = System.Drawing.Color.Transparent;
             this.extract_crypto_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extract_crypto_value.Location = new System.Drawing.Point(24, 217);
+            this.extract_crypto_value.Location = new System.Drawing.Point(24, 210);
             this.extract_crypto_value.Name = "extract_crypto_value";
             this.extract_crypto_value.Size = new System.Drawing.Size(183, 20);
             this.extract_crypto_value.TabIndex = 57;
@@ -101,26 +101,16 @@ namespace UI.Banco
             // 
             this.txt_value.BackColor = System.Drawing.SystemColors.Info;
             this.txt_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_value.Location = new System.Drawing.Point(28, 253);
+            this.txt_value.Location = new System.Drawing.Point(28, 243);
             this.txt_value.Name = "txt_value";
             this.txt_value.Size = new System.Drawing.Size(456, 34);
             this.txt_value.TabIndex = 58;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.wallet1;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 55;
-            this.pictureBox1.TabStop = false;
             // 
             // wallet_btn_close
             // 
             this.wallet_btn_close.BackColor = System.Drawing.Color.Crimson;
             this.wallet_btn_close.ForeColor = System.Drawing.Color.White;
-            this.wallet_btn_close.Location = new System.Drawing.Point(333, 409);
+            this.wallet_btn_close.Location = new System.Drawing.Point(333, 390);
             this.wallet_btn_close.Name = "wallet_btn_close";
             this.wallet_btn_close.Size = new System.Drawing.Size(151, 49);
             this.wallet_btn_close.TabIndex = 60;
@@ -132,7 +122,7 @@ namespace UI.Banco
             // 
             this.wallet_btn_ok.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.wallet_btn_ok.ForeColor = System.Drawing.Color.White;
-            this.wallet_btn_ok.Location = new System.Drawing.Point(167, 408);
+            this.wallet_btn_ok.Location = new System.Drawing.Point(171, 390);
             this.wallet_btn_ok.Name = "wallet_btn_ok";
             this.wallet_btn_ok.Size = new System.Drawing.Size(151, 49);
             this.wallet_btn_ok.TabIndex = 61;
@@ -144,7 +134,7 @@ namespace UI.Banco
             // 
             this.txt_destiny.BackColor = System.Drawing.SystemColors.Info;
             this.txt_destiny.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_destiny.Location = new System.Drawing.Point(28, 344);
+            this.txt_destiny.Location = new System.Drawing.Point(28, 330);
             this.txt_destiny.Name = "txt_destiny";
             this.txt_destiny.Size = new System.Drawing.Size(456, 34);
             this.txt_destiny.TabIndex = 63;
@@ -154,15 +144,25 @@ namespace UI.Banco
             this.extract_crypto_destiny.AutoSize = true;
             this.extract_crypto_destiny.BackColor = System.Drawing.Color.Transparent;
             this.extract_crypto_destiny.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extract_crypto_destiny.Location = new System.Drawing.Point(24, 310);
+            this.extract_crypto_destiny.Location = new System.Drawing.Point(24, 297);
             this.extract_crypto_destiny.Name = "extract_crypto_destiny";
             this.extract_crypto_destiny.Size = new System.Drawing.Size(199, 20);
             this.extract_crypto_destiny.TabIndex = 62;
             this.extract_crypto_destiny.Text = "extract_crypto_destiny";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.money_transaction;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
+            // 
             // frm_crypto_extract
             // 
-            this.ClientSize = new System.Drawing.Size(510, 482);
+            this.ClientSize = new System.Drawing.Size(510, 462);
             this.Controls.Add(this.txt_destiny);
             this.Controls.Add(this.extract_crypto_destiny);
             this.Controls.Add(this.wallet_btn_ok);

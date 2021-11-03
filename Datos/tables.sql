@@ -137,6 +137,7 @@ insert into permiso(nombre,permiso) values('EXTRACT','P');
 insert into permiso(nombre,permiso) values('CASH_IN','P');
 insert into permiso(nombre,permiso) values('EXTRACT_LIST','P');
 insert into permiso(nombre,permiso) values('EXTRACT_CRYPTO','P');
+insert into permiso(nombre,permiso) values('DEBTS_REPORT','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('CLIENTS',null);
@@ -365,7 +366,7 @@ create table comisiones(
 	idcliente bigint,
 	idwallet bigint,
 	moneda varchar(10),
-	valor varchar(12),
+	valor float,
 	fecCobro datetime,
 	processed int,
 	deleted datetime
@@ -799,6 +800,12 @@ insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_DESCRIP');
 insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_ORIGIN');
 insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_VALUE');
 insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_DESTINY');
+insert into palabras(word) values('USER_STATUS_TITLE');
+insert into palabras(word) values('USER_STATUS_ALIAS');
+insert into palabras(word) values('USER_STATUS_LABEL');
+insert into palabras(word) values('COMMISION_DEBTS_TITLE');
+insert into palabras(word) values('COMMISION_DEBTS_TITLE_DESCRIP');
+insert into palabras(word) values('COMMISION_DEBTS_NOTIFY_BTN');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1156,6 +1163,12 @@ insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET
 insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_ORIGIN','Cuenta origen:');
 insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_VALUE','Valor a transferir:');
 insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_DESTINY','Dirección destino:');
+insert into idioma_palabras(code,clave,valor) values('ES','USER_STATUS_TITLE','Cambiar estado');
+insert into idioma_palabras(code,clave,valor) values('ES','USER_STATUS_ALIAS','Usuario:');
+insert into idioma_palabras(code,clave,valor) values('ES','USER_STATUS_LABEL','Seleccione el estado:');
+insert into idioma_palabras(code,clave,valor) values('ES','COMMISION_DEBTS_TITLE','Reporte de deudores');
+insert into idioma_palabras(code,clave,valor) values('ES','COMMISION_DEBTS_TITLE_DESCRIP','Aqui se ve la lista de comisiones pendientes por cobrar.');
+insert into idioma_palabras(code,clave,valor) values('ES','COMMISION_DEBTS_NOTIFY_BTN','Notificar deuda');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1498,34 +1511,32 @@ insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLE
 insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_ORIGIN','Origin account:');
 insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_VALUE','Ammount:');
 insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_DESTINY','Transfer success!');
+insert into idioma_palabras(code,clave,valor) values('ENG','USER_STATUS_TITLE','Set state');
+insert into idioma_palabras(code,clave,valor) values('ENG','USER_STATUS_ALIAS','User:');
+insert into idioma_palabras(code,clave,valor) values('ENG','USER_STATUS_LABEL','Choouse the status:');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMMISION_DEBTS_TITLE','Debst report');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMMISION_DEBTS_TITLE_DESCRIP','From here you can see the client debts list.');
+insert into idioma_palabras(code,clave,valor) values('ENG','COMMISION_DEBTS_NOTIFY_BTN','Notify debt');
 
-select * from cliente where idcliente=1;
-select * from billetera where idcliente=1 and moneda='ARS';
---0070064130004043181234
-
-select * from solic_operacion
-select * from tipo_solic_op
 select * from comisiones
 
---update usuario set hash='11d71138d9ddee37d1fcce5aedec3ce4' where idusuario=1;
+select tipo_operacion,idcliente,moneda,SUM(valor) from comisiones 
+where processed=0
+group by tipo_operacion,idcliente,moneda;
+
+select * from notificaciones
+
+insert into comisiones(tipo_operacion,referencia,idwallet,moneda,valor,fecCobro,processed,idcliente)
+values(1,1,1,'ARS',100,NULL,0,1);
+
+/*
+update usuario set  nombre='damian' , apellido='cipolat' , alias='prueba' , email='YHJ0Y+tJ3+sqf84lY4nY12s5YEliQIda5Urtv3Y4P3Oq4r07wuOBKibnWnCxG+MADwInijPH0gwnODOF6GOwQJLZ+omRRMfsix+DVwaSj5w=' , tipo_usuario=1 , estado=2 , hash='11d71138d9ddee37d1fcce5aedec3ce4'  where idusuario=1;
+update usuario set email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=', pwd='e10adc3949ba59abbe56e057f20f883e' where idusuario=5
+update usuario set hash='11d71138d9ddee37d1fcce5aedec3ce4' where idusuario=1;
 update dvv set hash='11d71138d9ddee37d1fcce5aedec3ce4582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
---update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
+update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
+*/
 
-select * from dvv
-select * from cuentas
-select * from cliente
-select * from comisiones
-
-select * from comisiones where  idcliente=1 and processed=0;
-select * from solic_operacion where  estado_solic=2;
-select * from transferencias
-
---update comisiones set processed=1
-select * from tipo_solic_op
-select idoperacion,alias,tipo_solic,cbu,valor from solic_operacion;
-select * from solic_estados
-
-insert into solic_operacion(idusuario,tipo_solic,idwallet,valor,cbu,operador,estado_solic,fecRegistro,fecProceso) values(1,0,1,100,'0070064130004043181234',0,0,'01/11/2021 17:36:49','01/01/0001 0:00:00');SELECT @@IDENTITY;
-
-insert into comisiones(tipo_operacion,referencia,idcliente,idwallet,moneda,valor,fecCobro,processed)
-values(1,1,1,1,'ARS',100,NULL,0);
+--insert into solic_operacion(idusuario,tipo_solic,idwallet,valor,cbu,operador,estado_solic,fecRegistro,fecProceso) values(1,0,1,100,'0070064130004043181234',0,0,'01/11/2021 17:36:49','01/01/0001 0:00:00');SELECT @@IDENTITY;
+--insert into comisiones(tipo_operacion,referencia,idcliente,idwallet,moneda,valor,fecCobro,processed)
+--values(1,1,1,1,'ARS',100,NULL,0);

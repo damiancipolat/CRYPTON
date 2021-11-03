@@ -73,12 +73,11 @@ namespace UI.Banco
                 //Traigo la billetera elegida.
                 BilleteraBE selected = this.wallets[this.cmb_wallets_list.SelectedIndex];
 
-                //Calculo el tax.
-                Money moneda = new Money(this.txt_value.Text);
-                Fee response = new BlockIo().estimateTransaction(selected.moneda.cod, this.txt_destiny.Text, moneda.getValue().ToString());
+                //Calculo los impuestos.
+                string fee = new TransferenciaBL().estimate(selected.moneda, this.txt_destiny.Text, this.txt_value.Text);
 
                 //Hago la consulta.
-                string label = Idioma.GetInstance().translate("CRYPTO_EXTRACT_TXT").Replace("%s", selected.moneda.cod + " " + response.data.estimated_network_fee);
+                string label = Idioma.GetInstance().translate("CRYPTO_EXTRACT_TXT").Replace("%s", selected.moneda.cod + " " + fee);
                 string title = Idioma.GetInstance().translate("CRYPTO_EXTRACT_TITLE");
 
                 DialogResult dr = MessageBox.Show(label, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -86,7 +85,7 @@ namespace UI.Banco
                 if (dr == DialogResult.Yes)
                 {
                     //Hago la transferencia.
-                    new BlockIo().makeTransference(selected.moneda.cod, selected.direccion, this.txt_destiny.Text, moneda.getValue().ToString());
+                    new TransferenciaBL().transfer(selected.moneda, this.txt_value.Text, selected.direccion, this.txt_destiny.Text);
 
                     //Mensaje de ok.
                     MessageBox.Show(Idioma.GetInstance().translate("CRYPTO_EXTRACT_SUCCESS"));

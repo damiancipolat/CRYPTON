@@ -71,6 +71,7 @@ namespace DAL
         {
             //Creo un esquema dinamico para ser guardado.
             var schema = new Dictionary<string, Object>{
+                { "idusuario", userBloq.usuario.idusuario},
                 { "motivo", userBloq.motivo},
                 { "fecBloq",userBloq.fecBloq.ToString("yyyy-MM-dd HH:mm:ss.fff")},
             };

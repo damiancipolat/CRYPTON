@@ -32,9 +32,24 @@ namespace DAL
             
             //Blanqueo el campo de password.
             userTarget.pwd = "";
+            userTarget.estado = this.getEstado((int)mapa["estado"]);
 
             return userTarget;
 
+        }
+
+        private UsuarioEstado getEstado(int valor) 
+        {
+            if (valor == 1)
+                return UsuarioEstado.ACTIVO;
+
+            if (valor == 2)
+                return UsuarioEstado.INACTIVO;
+
+            if (valor == 3)
+                return UsuarioEstado.BLOQUEADO;
+
+            return UsuarioEstado.NULO;
         }
 
         //Buscar usuarios en base a texto.
@@ -132,7 +147,7 @@ namespace DAL
                 { "alias",user.alias},
                 { "email",user.email},
                 { "tipo_usuario",(int)user.tipoUsuario},
-                { "pwd",user.pwd},
+                { "estado",(int)user.estado},
                 { "hash",user.hash}
             };
 

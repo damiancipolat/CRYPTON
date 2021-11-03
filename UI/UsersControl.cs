@@ -164,6 +164,22 @@ namespace UI
                 usr_ctrl_changes.Enabled = false;
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (this.usr_data.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = this.usr_data.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = this.usr_data.Rows[selectedrowindex];
+                string idValue = Convert.ToString(selectedRow.Cells["id"].Value);
+
+                UsuarioBE user = new UsuarioBL().findById(Int32.Parse(idValue));
+
+                if (user != null)
+                    new frm_user_status(user).Show();
+            }
+            
+        }
     }
 }
 

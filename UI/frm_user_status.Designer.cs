@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_user_status));
             this.btn_ok = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.txt_profile_type_doc = new System.Windows.Forms.Label();
+            this.user_status_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.user_status_alias = new System.Windows.Forms.Label();
+            this.user_status_label = new System.Windows.Forms.Label();
+            this.usr_status_cmb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,17 +61,18 @@
             this.btn_close.TabIndex = 43;
             this.btn_close.Text = "Cancelar";
             this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // txt_profile_type_doc
+            // user_status_title
             // 
-            this.txt_profile_type_doc.AutoSize = true;
-            this.txt_profile_type_doc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_profile_type_doc.Location = new System.Drawing.Point(118, 24);
-            this.txt_profile_type_doc.Name = "txt_profile_type_doc";
-            this.txt_profile_type_doc.Size = new System.Drawing.Size(236, 36);
-            this.txt_profile_type_doc.TabIndex = 45;
-            this.txt_profile_type_doc.Text = "Cambiar estado";
-            this.txt_profile_type_doc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.user_status_title.AutoSize = true;
+            this.user_status_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_status_title.Location = new System.Drawing.Point(118, 24);
+            this.user_status_title.Name = "user_status_title";
+            this.user_status_title.Size = new System.Drawing.Size(249, 36);
+            this.user_status_title.TabIndex = 45;
+            this.user_status_title.Text = "user_status_title";
+            this.user_status_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -83,53 +84,56 @@
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // user_status_alias
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 24);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "Usuario: Damian Cipolat";
+            this.user_status_alias.AutoSize = true;
+            this.user_status_alias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_status_alias.Location = new System.Drawing.Point(120, 79);
+            this.user_status_alias.Name = "user_status_alias";
+            this.user_status_alias.Size = new System.Drawing.Size(151, 24);
+            this.user_status_alias.TabIndex = 47;
+            this.user_status_alias.Text = "user_status_alias";
             // 
-            // label2
+            // user_status_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label2.Location = new System.Drawing.Point(25, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 25);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Seleccione el estado:";
+            this.user_status_label.AutoSize = true;
+            this.user_status_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_status_label.ForeColor = System.Drawing.Color.MediumBlue;
+            this.user_status_label.Location = new System.Drawing.Point(25, 125);
+            this.user_status_label.Name = "user_status_label";
+            this.user_status_label.Size = new System.Drawing.Size(182, 25);
+            this.user_status_label.TabIndex = 48;
+            this.user_status_label.Text = "user_status_label";
             // 
-            // comboBox1
+            // usr_status_cmb
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(25, 164);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(430, 33);
-            this.comboBox1.TabIndex = 49;
+            this.usr_status_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.usr_status_cmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usr_status_cmb.FormattingEnabled = true;
+            this.usr_status_cmb.Location = new System.Drawing.Point(25, 164);
+            this.usr_status_cmb.Name = "usr_status_cmb";
+            this.usr_status_cmb.Size = new System.Drawing.Size(430, 33);
+            this.usr_status_cmb.TabIndex = 49;
             // 
             // frm_user_status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 303);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.usr_status_cmb);
+            this.Controls.Add(this.user_status_label);
+            this.Controls.Add(this.user_status_alias);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txt_profile_type_doc);
+            this.Controls.Add(this.user_status_title);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.btn_close);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_user_status";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_user_status";
+            this.Load += new System.EventHandler(this.frm_user_status_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,10 +144,10 @@
 
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.Label txt_profile_type_doc;
+        private System.Windows.Forms.Label user_status_title;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label user_status_alias;
+        private System.Windows.Forms.Label user_status_label;
+        private System.Windows.Forms.ComboBox usr_status_cmb;
     }
 }

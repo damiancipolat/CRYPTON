@@ -13,6 +13,14 @@ namespace BE
         EMPLEADO=2
     }
 
+    public enum UsuarioEstado
+    {
+        NULO=0,
+        ACTIVO = 1,
+        INACTIVO = 2,
+        BLOQUEADO = 2
+    }
+
     public class UsuarioBE : EntityBE
     {
         public Int64 idusuario;
@@ -24,6 +32,7 @@ namespace BE
         public string pwd;
         public string hash;
         public List<Componente> _permisos;
+        public UsuarioEstado estado;
 
         public List<Componente> Permisos
         {

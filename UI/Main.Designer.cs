@@ -65,8 +65,10 @@
             this.main_menu_profile = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_cbu = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.main_menu_extract_crypto = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.main_menu_debts = new System.Windows.Forms.ToolStripMenuItem();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -295,7 +297,8 @@
             this.main_menu_it_log,
             this.main_menu_it_backup,
             this.main_menu_op_cash_in,
-            this.main_menu_lista_retiro});
+            this.main_menu_lista_retiro,
+            this.main_menu_debts});
             this.main_menu_it.Name = "main_menu_it";
             this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
@@ -396,6 +399,13 @@
             this.main_menu_extract.Text = "main_menu_extract";
             this.main_menu_extract.Click += new System.EventHandler(this.main_menu_extract_Click);
             // 
+            // main_menu_extract_crypto
+            // 
+            this.main_menu_extract_crypto.Name = "main_menu_extract_crypto";
+            this.main_menu_extract_crypto.Size = new System.Drawing.Size(267, 26);
+            this.main_menu_extract_crypto.Text = "main_menu_extract_crypto";
+            this.main_menu_extract_crypto.Click += new System.EventHandler(this.main_menu_extract_crypto_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::UI.Properties.Resources.background2;
@@ -407,18 +417,29 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // main_menu_extract_crypto
+            // button1
             // 
-            this.main_menu_extract_crypto.Name = "main_menu_extract_crypto";
-            this.main_menu_extract_crypto.Size = new System.Drawing.Size(267, 26);
-            this.main_menu_extract_crypto.Text = "main_menu_extract_crypto";
-            this.main_menu_extract_crypto.Click += new System.EventHandler(this.main_menu_extract_crypto_Click);
+            this.button1.Location = new System.Drawing.Point(86, 86);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 62);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_15);
+            // 
+            // main_menu_debts
+            // 
+            this.main_menu_debts.Name = "main_menu_debts";
+            this.main_menu_debts.Size = new System.Drawing.Size(322, 26);
+            this.main_menu_debts.Text = "main_menu_debts";
+            this.main_menu_debts.Click += new System.EventHandler(this.mainmenuToolStripMenuItem_Click);
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -486,6 +507,8 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_op_cash_in;
         private System.Windows.Forms.ToolStripMenuItem main_menu_lista_retiro;
         private System.Windows.Forms.ToolStripMenuItem main_menu_extract_crypto;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_debts;
     }
 }
 

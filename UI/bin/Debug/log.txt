@@ -331,3 +331,84 @@ LOGIN:Login of user:damian.cipolat@gmail.com success!
 BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
 BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
 BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:5 d8c0084346e261ae9c888be0f253ec6f,b02d434351c4222e8d4179fe345dc855
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com<
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!

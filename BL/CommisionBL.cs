@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using BE;
 using BE.ValueObject;
 using DAL;
+using IO;
 
 namespace BL
 {
     public class CommisionBL
     {
         //CRUD
-        public ComisionBE findById(int id) 
+        public ComisionBE findById(int id)
         {
             return new ComisionDAL().findById(id);
         }
@@ -21,7 +23,7 @@ namespace BL
         {
             return new ComisionDAL().findAll();
         }
-        public int delete(int id) 
+        public int delete(int id)
         {
             return new ComisionDAL().delete(id);
         }
@@ -50,7 +52,40 @@ namespace BL
         public List<ComisionBE> searchByClientPendings(ClienteBE client)
         {
             return new ComisionDAL().searchByClientPendings(client);
-        }     
+        }
+
+        //REPORT
+
+        public List<(int, int, string, float)> getDebtors()
+        {
+            return new ComisionDAL().getDebtors();
+        }
+
+        //Reclama el pago.
+        public void reclaimPayment(int idclient, float valor) 
+        {
+            ClienteBE client = new ClienteBL().findById(idclient);
+
+            //Get administrator account.
+            string emailHost = ConfigurationManager.AppSettings["EmailHost"];
+
+            //Get system delivery.
+            string delivery = "Crypton System <" + "crypton.system@" + emailHost + ">";
+            string payload = "Hola "+client.nombre+" necesitamos que ingreses en tu cuenta de ARS el valor de $"+valor.ToString()+" para saldar tus deudas.";
+
+            //Envio el email.
+            new Mailer().send(delivery, client.email, "CRYPTON - Ponte al dia", payload);
+
+            //Notificacion interna.
+            NotificacionBE notif = new NotificacionBE();
+            notif.cliente = client;
+            notif.payload = payload;
+            notif.fecRegistro = DateTime.Now;
+            notif.marked = 0;
+
+            //Grabo.
+            new NotificacionBL().save(notif);
+        }
 
         //-----------------------------------
 
@@ -77,9 +112,5 @@ namespace BL
                     //si no tengo saldo, envio un email al deudor.
             //si no hay datos no hago nada.
         }
-
-        //TODO
-        public void reclaimPayment(int clientId){ }
-
     }
 }

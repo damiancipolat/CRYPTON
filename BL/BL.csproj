@@ -71,12 +71,13 @@
     <Compile Include="Permisos\PermisoBL.cs" />
     <Compile Include="Permisos\UserPermisoBL.cs" />
     <Compile Include="TaxManager.cs" />
+    <Compile Include="TransferenciaBL.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="ReportingBL.cs" />
     <Compile Include="BilleteraBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BancoBL.cs" />
-    <Compile Include="UsuarioBloq.cs" />
+    <Compile Include="UsuarioBloqBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

@@ -30,6 +30,7 @@ namespace UI.Permisos
         MY_BUYS,
         MY_PROFILE,
         SEARCH_LOG,
-        BACKUP
+        BACKUP,
+        DEBTS_REPORT
     }
 }

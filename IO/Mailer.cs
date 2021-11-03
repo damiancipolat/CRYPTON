@@ -23,6 +23,8 @@ namespace IO
 
         public void send(string origin, string destiny,string subject, string payload)
         {
+            Debug.WriteLine("<EMAIL>" + origin+","+destiny+","+subject+","+payload);
+
             //Prepate the client.
             RestClient client = new RestClient();
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");

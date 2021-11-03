@@ -21,6 +21,7 @@ using IO.RequestFormat;
 using SEC;
 using SEC.Exceptions;
 using UI.Comisiones;
+using DAL;
 
 namespace UI
 {
@@ -97,7 +98,7 @@ namespace UI
             this.main_menu_extract.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT");
             this.main_menu_extract_crypto.Text= Idioma.GetInstance().translate("MAIN_MENU_EXTRACT_CRYPTO");            
 
-            //bindeo menuit
+            //bindeo menu it
             this.main_menu_it.Text = Idioma.GetInstance().translate("MAIN_MENU_IT");
             this.main_menu_it_add_user.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_ADD_USER");
             this.main_menu_it_user_manager.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_USER_MANAGER");
@@ -108,6 +109,7 @@ namespace UI
             this.main_menu_it_backup.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_BACKUP");
             this.main_menu_op_cash_in.Text = Idioma.GetInstance().translate("MAIN_MENU_CASH_IN");
             this.main_menu_lista_retiro.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT_ARS");
+            this.main_menu_debts.Text = Idioma.GetInstance().translate("COMMISION_DEBTS_TITLE");            
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -184,7 +186,8 @@ namespace UI
             this.main_menu_it_log.Visible = permBL.hasPermission(permissions, PermisoCodes.SEARCH_LOG.ToString());
             this.main_menu_it_backup.Visible = permBL.hasPermission(permissions, PermisoCodes.BACKUP.ToString());
             this.main_menu_op_cash_in.Visible = permBL.hasPermission(permissions, PermisoCodes.CASH_IN.ToString());
-            this.main_menu_lista_retiro.Visible = permBL.hasPermission(permissions, PermisoCodes.EXTRACT_LIST.ToString());            
+            this.main_menu_lista_retiro.Visible = permBL.hasPermission(permissions, PermisoCodes.EXTRACT_LIST.ToString());
+            this.main_menu_debts.Visible = permBL.hasPermission(permissions, PermisoCodes.DEBTS_REPORT.ToString());
         }
 
         //Oculto menu en base a los permisos.
@@ -602,6 +605,16 @@ namespace UI
         private void main_menu_extract_crypto_Click(object sender, EventArgs e)
         {
             new frm_crypto_extract().Show();
+        }
+
+        private void button1_Click_15(object sender, EventArgs e)
+        {
+            new frm_deudores().Show();            
+        }
+
+        private void mainmenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_deudores().Show();
         }
     }
 }
