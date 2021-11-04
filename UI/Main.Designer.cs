@@ -61,6 +61,7 @@
             this.main_menu_it_backup = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_op_cash_in = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_lista_retiro = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_debts = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_client = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_profile = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_cbu = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,7 @@
             this.main_menu_extract_crypto = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.main_menu_debts = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_earnings_report = new System.Windows.Forms.ToolStripMenuItem();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -298,7 +299,8 @@
             this.main_menu_it_backup,
             this.main_menu_op_cash_in,
             this.main_menu_lista_retiro,
-            this.main_menu_debts});
+            this.main_menu_debts,
+            this.main_menu_earnings_report});
             this.main_menu_it.Name = "main_menu_it";
             this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
@@ -367,6 +369,13 @@
             this.main_menu_lista_retiro.Text = "main_menu_lista_retiro";
             this.main_menu_lista_retiro.Click += new System.EventHandler(this.main_menu_lista_retiro_Click);
             // 
+            // main_menu_debts
+            // 
+            this.main_menu_debts.Name = "main_menu_debts";
+            this.main_menu_debts.Size = new System.Drawing.Size(322, 26);
+            this.main_menu_debts.Text = "main_menu_debts";
+            this.main_menu_debts.Click += new System.EventHandler(this.mainmenuToolStripMenuItem_Click);
+            // 
             // main_menu_client
             // 
             this.main_menu_client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -427,12 +436,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_15);
             // 
-            // main_menu_debts
+            // main_menu_earnings_report
             // 
-            this.main_menu_debts.Name = "main_menu_debts";
-            this.main_menu_debts.Size = new System.Drawing.Size(322, 26);
-            this.main_menu_debts.Text = "main_menu_debts";
-            this.main_menu_debts.Click += new System.EventHandler(this.mainmenuToolStripMenuItem_Click);
+            this.main_menu_earnings_report.Name = "main_menu_earnings_report";
+            this.main_menu_earnings_report.Size = new System.Drawing.Size(322, 26);
+            this.main_menu_earnings_report.Text = "main_menu_earnings_report";
+            this.main_menu_earnings_report.Click += new System.EventHandler(this.mainmenuearningsReportToolStripMenuItem_Click);
             // 
             // frm_main
             // 
@@ -509,6 +518,7 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_extract_crypto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem main_menu_debts;
+        private System.Windows.Forms.ToolStripMenuItem main_menu_earnings_report;
     }
 }
 

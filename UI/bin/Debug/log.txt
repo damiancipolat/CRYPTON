@@ -412,3 +412,61 @@ SESSION:An user has closed the session
 LOGIN:Request login of user:roberto@gmail.com
 SESSION:An user has started session - email:roberto@gmail.com
 LOGIN:Login of user:roberto@gmail.com success!
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+LOGIN:Request login of user:roberto@gmail.com
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+LOGIN:Request login of user:roberto@gmail.com
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=
+LOGIN:Login of user:roberto@gmail.com success!
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+LOGIN:Request login of user:roberto@gmail.com
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:damian.cipolat@gmail.com
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!

@@ -31,12 +31,12 @@ namespace DAL
             //Seteo el valor.
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
             comisionTarget.tipo_operacion = (Operaciones)mapa["tipo_operacion"];
-            comisionTarget.valor = new Money((decimal)mapa["valor"]);
+            comisionTarget.valor = new Money(Convert.ToSingle(mapa["valor"]));
             comisionTarget.cliente = new ClienteDAL().findById((long)mapa["idcliente"]);
             comisionTarget.wallet = new BilleteraDAL().findById((long)mapa["idwallet"]);
+            comisionTarget.moneda = new MonedaDAL().findByCode(mapa["moneda"].ToString());
 
             return comisionTarget;
-
         }
 
         //CRUD ------------------------------
@@ -101,6 +101,7 @@ namespace DAL
                 { "moneda",comision.moneda.cod},                
                 { "valor",comision.valor.getValue()},
                 { "fecCobro",(comision.fecCobro != null) ? comision.fecCobro.ToString("yyyy-MM-dd HH:mm:ss") :null},
+                {"fecRegister", comision.fecRegister.ToString("yyyy-MM-dd HH:mm:ss.fff")},
                 { "processed",comision.processed},
                 { "idwallet",comision.wallet.idwallet},
                 { "idcliente",comision.cliente.idcliente}
@@ -182,6 +183,40 @@ namespace DAL
             return lista;
         }
 
+        //Buscar comisiones por fecha de creacion.
+        public List<ComisionBE> findByDate(string type, string from, string to)
+        {         
+            //Convierto formato de fechas.
+            from = DateTime.ParseExact(from, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+            to = DateTime.ParseExact(to, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+
+            //Agrego el filtro de fecha.
+            string sql="";
+
+            //Traigo todos.
+            if (type=="0")
+                sql = ($"select * from comisiones where fecRegister>= '{from}' and fecRegister<='{to}'");
+
+            //Traigo solo PROCESADOS.
+            if (type == "1")
+                sql = ($"select * from comisiones where fecRegister>= '{from}' and fecRegister<='{to}' and processed=1");
+
+            //Traigo solo PENDIENTES.
+            if (type == "2")
+                sql = ($"select * from comisiones where fecRegister>= '{from}' and fecRegister<='{to}' and processed=0");
+
+            //Busco en la bd por email.
+            List<Object> result = this.getSelect().queryList(sql);
+
+            //Lista resultado.
+            List<ComisionBE> lista = new List<ComisionBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
+            return lista;
+        }
+
         //REPORTES ----------------------
 
         //Traigo la lista de deudores pendientes de cobrar comisiones.
@@ -211,13 +246,6 @@ namespace DAL
         public List<(ClienteBE,Money)> getClientPendingAmmounts()
         {
             var lista = new List<(ClienteBE, Money)>();
-            return lista;
-        }
-
-        //Buscar comisiones por fecha, TODO
-        public List<ComisionBE> findByDate(string type, string from, string to)
-        {
-            var lista = new List<ComisionBE>();
             return lista;
         }
        

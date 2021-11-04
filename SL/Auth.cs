@@ -54,19 +54,13 @@ namespace SL
         {
             //Encripto el password para que coincida con la bd.
             string criptedPwd = Cripto.GetInstance().GetHash(pwd);
-
-            //Encripto el email dado que es un dato protegido.
-            email = Cripto.GetInstance().Encrypt(email);
-
+            
             //Busco el usuario para el login.
             UsuarioBE user = new UsuarioDAL().login(email, criptedPwd);
 
             //Detecto error de login.
             if (user == null)
                 throw new ServiceException("LOGIN_SERVICE_ERROR");
-
-            //Desencripto el email.
-            user.email = Cripto.GetInstance().Decrypt(email);
 
             return user;
         }

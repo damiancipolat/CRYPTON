@@ -14,6 +14,7 @@ using UI.Admin;
 using UI.Banco;
 using BL.Permisos;
 using BL.ChangeControl;
+using BL.Security;
 using BE.ValueObject;
 using IO;
 using IO.Responses;
@@ -109,7 +110,8 @@ namespace UI
             this.main_menu_it_backup.Text = Idioma.GetInstance().translate("MAIN_MENU_IT_BACKUP");
             this.main_menu_op_cash_in.Text = Idioma.GetInstance().translate("MAIN_MENU_CASH_IN");
             this.main_menu_lista_retiro.Text = Idioma.GetInstance().translate("MAIN_MENU_EXTRACT_ARS");
-            this.main_menu_debts.Text = Idioma.GetInstance().translate("COMMISION_DEBTS_TITLE");            
+            this.main_menu_debts.Text = Idioma.GetInstance().translate("COMMISION_DEBTS_TITLE");
+            this.main_menu_earnings_report.Text= Idioma.GetInstance().translate("REPORT_DBT_TITLE");
         }
 
         //Se ejecuta al inicio del formulario, setea idioma base.
@@ -188,6 +190,7 @@ namespace UI
             this.main_menu_op_cash_in.Visible = permBL.hasPermission(permissions, PermisoCodes.CASH_IN.ToString());
             this.main_menu_lista_retiro.Visible = permBL.hasPermission(permissions, PermisoCodes.EXTRACT_LIST.ToString());
             this.main_menu_debts.Visible = permBL.hasPermission(permissions, PermisoCodes.DEBTS_REPORT.ToString());
+            this.main_menu_earnings_report.Visible = permBL.hasPermission(permissions, PermisoCodes.EARNINGS_REPORT.ToString());
         }
 
         //Oculto menu en base a los permisos.
@@ -514,7 +517,7 @@ namespace UI
             try
             {
                 //Antes de hacer el login, hago una prueba de integridad.
-                Integrity.GetInstance().validateComplete();
+                new IntegrityBL().validateComplete();
             }
             catch (IntegrityException ex)
             {
@@ -609,12 +612,20 @@ namespace UI
 
         private void button1_Click_15(object sender, EventArgs e)
         {
-            new frm_deudores().Show();            
+            //new frm_deudores().Show();                        
+            //string val= Cripto.GetInstance().Decrypt("+EZUHnQRIH9QPvTBik7de / ylBBnOWs / NH2E / URHP9gA =");
+            //Debug.WriteLine("-->" + val);
+            new frm_ganancias().Show();
         }
 
         private void mainmenuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frm_deudores().Show();
+        }
+
+        private void mainmenuearningsReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_ganancias().Show();
         }
     }
 }

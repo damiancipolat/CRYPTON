@@ -45,12 +45,9 @@ namespace BL
             //Codifico el password como hash.
             user.pwd = Cripto.GetInstance().GetHash(user.pwd);
 
-            //Encripto simetricamente el email.
-            user.email = Cripto.GetInstance().Encrypt(user.email);
-
             //Hago un DVH para este registro de la entidad.
             user.hash = new HashUsuario().hash(user);
-            
+
             //Registro el usuario.
             int insertedId = new UsuarioDAL().save(user);
             Debug.WriteLine("Grabado user"+insertedId.ToString());
@@ -63,9 +60,6 @@ namespace BL
 
         public int update(UsuarioBE user)
         {
-            //Encripto simetricamente el email.
-            user.email = Cripto.GetInstance().Encrypt(user.email);
-
             return new UsuarioDAL().update(user);
         }
     }

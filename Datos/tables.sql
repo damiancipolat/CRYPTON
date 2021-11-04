@@ -138,6 +138,7 @@ insert into permiso(nombre,permiso) values('CASH_IN','P');
 insert into permiso(nombre,permiso) values('EXTRACT_LIST','P');
 insert into permiso(nombre,permiso) values('EXTRACT_CRYPTO','P');
 insert into permiso(nombre,permiso) values('DEBTS_REPORT','P');
+insert into permiso(nombre,permiso) values('EARNINGS_REPORT','P');
 
 --Familias
 insert into permiso(nombre,permiso) values('CLIENTS',null);
@@ -368,6 +369,7 @@ create table comisiones(
 	moneda varchar(10),
 	valor float,
 	fecCobro datetime,
+	fecRegister datetime,
 	processed int,
 	deleted datetime
 );
@@ -806,6 +808,14 @@ insert into palabras(word) values('USER_STATUS_LABEL');
 insert into palabras(word) values('COMMISION_DEBTS_TITLE');
 insert into palabras(word) values('COMMISION_DEBTS_TITLE_DESCRIP');
 insert into palabras(word) values('COMMISION_DEBTS_NOTIFY_BTN');
+insert into palabras(word) values('REPORT_DBT_TITLE');
+insert into palabras(word) values('REPORT_DBT_DESCRIP');
+insert into palabras(word) values('REPORT_DBT_DESDE');
+insert into palabras(word) values('REPORT_DBT_HASTA');
+insert into palabras(word) values('REPORT_DBT_TYPE');
+insert into palabras(word) values('REPORT_DBT_SEARCH');
+insert into palabras(word) values('REPORT_DBT_PAY');
+insert into palabras(word) values('REPORT_DBT_TOTAL');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1169,6 +1179,14 @@ insert into idioma_palabras(code,clave,valor) values('ES','USER_STATUS_LABEL','S
 insert into idioma_palabras(code,clave,valor) values('ES','COMMISION_DEBTS_TITLE','Reporte de deudores');
 insert into idioma_palabras(code,clave,valor) values('ES','COMMISION_DEBTS_TITLE_DESCRIP','Aqui se ve la lista de comisiones pendientes por cobrar.');
 insert into idioma_palabras(code,clave,valor) values('ES','COMMISION_DEBTS_NOTIFY_BTN','Notificar deuda');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_TITLE','Reporte de cobros');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_DESCRIP','En esta sección podes consultar las ganancias cobradas / por cobrar.');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_DESDE','Desde');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_HASTA','Hasta');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_TYPE','Tipo');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_SEARCH','Buscar');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_PAY','Cobrar comisiones');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_TOTAL','Total:');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1517,7 +1535,21 @@ insert into idioma_palabras(code,clave,valor) values('ENG','USER_STATUS_LABEL','
 insert into idioma_palabras(code,clave,valor) values('ENG','COMMISION_DEBTS_TITLE','Debst report');
 insert into idioma_palabras(code,clave,valor) values('ENG','COMMISION_DEBTS_TITLE_DESCRIP','From here you can see the client debts list.');
 insert into idioma_palabras(code,clave,valor) values('ENG','COMMISION_DEBTS_NOTIFY_BTN','Notify debt');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_TITLE','Debt report');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_DESCRIP','In this section you can check the earnings collected / receivable.');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_DESDE','From');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_HASTA','To');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_TYPE','Type');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_SEARCH','Search');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_PAY','Charge commissions');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_TOTAL','Total:');
 
+
+select * from comisiones where fecRegister>= '2021-01-04 00:00:00' and fecRegister<='2021-11-09 00:00:00' and processed=0
+
+update usuario set email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' where idusuario=5;
+
+select * from usuario where  email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' and pwd='e10adc3949ba59abbe56e057f20f883e'
 select * from comisiones
 
 select tipo_operacion,idcliente,moneda,SUM(valor) from comisiones 
@@ -1526,8 +1558,8 @@ group by tipo_operacion,idcliente,moneda;
 
 select * from notificaciones
 
-insert into comisiones(tipo_operacion,referencia,idwallet,moneda,valor,fecCobro,processed,idcliente)
-values(1,1,1,'ARS',100,NULL,0,1);
+insert into comisiones(tipo_operacion,referencia,idwallet,moneda,valor,fecCobro,processed,idcliente,fecRegister)
+values(1,1,1,'ARS',100,NULL,0,1,GETDATE());
 
 /*
 update usuario set  nombre='damian' , apellido='cipolat' , alias='prueba' , email='YHJ0Y+tJ3+sqf84lY4nY12s5YEliQIda5Urtv3Y4P3Oq4r07wuOBKibnWnCxG+MADwInijPH0gwnODOF6GOwQJLZ+omRRMfsix+DVwaSj5w=' , tipo_usuario=1 , estado=2 , hash='11d71138d9ddee37d1fcce5aedec3ce4'  where idusuario=1;

@@ -52,11 +52,8 @@ namespace BL
 
         public ClienteBE save(ClienteBE cliente)
         {
-            //Encripto el email para hacer busquedas.
-            string cryptedEmail = Cripto.GetInstance().Encrypt(cliente.email);
-
             //Valido si existe el email
-            if (new ClienteDAL().findByEmail(cryptedEmail).Count > 0)
+            if (new ClienteDAL().findByEmail(cliente.email).Count > 0)
                 throw new BusinessException("SIGNUP_EMAIL_REPEATED");
 
             //Valido si existe el dni.

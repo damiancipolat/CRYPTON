@@ -28,36 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_close = new System.Windows.Forms.Button();
+            this.report_dbt_pay = new System.Windows.Forms.Button();
             this.bitacora_data = new System.Windows.Forms.DataGridView();
-            this.activ_title = new System.Windows.Forms.Label();
-            this.to_title = new System.Windows.Forms.Label();
-            this.from_title = new System.Windows.Forms.Label();
+            this.report_dbt_type = new System.Windows.Forms.Label();
+            this.report_dbt_hasta = new System.Windows.Forms.Label();
+            this.report_dbt_desde = new System.Windows.Forms.Label();
             this.date_to_txt = new System.Windows.Forms.DateTimePicker();
             this.date_from_txt = new System.Windows.Forms.DateTimePicker();
-            this.activ_combo = new System.Windows.Forms.ComboBox();
-            this.search_descrip = new System.Windows.Forms.Label();
-            this.search_title = new System.Windows.Forms.Label();
+            this.report_type_combo = new System.Windows.Forms.ComboBox();
+            this.report_dbt_descrip = new System.Windows.Forms.Label();
+            this.report_dbt_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.report_dbt_search = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.report_dbt_close = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.report_total_value = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bitacora_data)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_close
+            // report_dbt_pay
             // 
-            this.btn_close.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_close.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_close.Location = new System.Drawing.Point(552, 640);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(152, 49);
-            this.btn_close.TabIndex = 58;
-            this.btn_close.Text = "Cobrar comisiones";
-            this.btn_close.UseVisualStyleBackColor = false;
-            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
+            this.report_dbt_pay.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.report_dbt_pay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.report_dbt_pay.Location = new System.Drawing.Point(551, 712);
+            this.report_dbt_pay.Name = "report_dbt_pay";
+            this.report_dbt_pay.Size = new System.Drawing.Size(152, 49);
+            this.report_dbt_pay.TabIndex = 58;
+            this.report_dbt_pay.Text = "report_dbt_pay";
+            this.report_dbt_pay.UseVisualStyleBackColor = false;
+            this.report_dbt_pay.Click += new System.EventHandler(this.Btn_close_Click);
             // 
             // bitacora_data
             // 
@@ -69,32 +72,32 @@
             this.bitacora_data.Size = new System.Drawing.Size(830, 383);
             this.bitacora_data.TabIndex = 57;
             // 
-            // activ_title
+            // report_dbt_type
             // 
-            this.activ_title.AutoSize = true;
-            this.activ_title.Location = new System.Drawing.Point(441, 22);
-            this.activ_title.Name = "activ_title";
-            this.activ_title.Size = new System.Drawing.Size(36, 17);
-            this.activ_title.TabIndex = 43;
-            this.activ_title.Text = "Tipo";
+            this.report_dbt_type.AutoSize = true;
+            this.report_dbt_type.Location = new System.Drawing.Point(441, 22);
+            this.report_dbt_type.Name = "report_dbt_type";
+            this.report_dbt_type.Size = new System.Drawing.Size(109, 17);
+            this.report_dbt_type.TabIndex = 43;
+            this.report_dbt_type.Text = "report_dbt_type";
             // 
-            // to_title
+            // report_dbt_hasta
             // 
-            this.to_title.AutoSize = true;
-            this.to_title.Location = new System.Drawing.Point(229, 22);
-            this.to_title.Name = "to_title";
-            this.to_title.Size = new System.Drawing.Size(45, 17);
-            this.to_title.TabIndex = 42;
-            this.to_title.Text = "Hasta";
+            this.report_dbt_hasta.AutoSize = true;
+            this.report_dbt_hasta.Location = new System.Drawing.Point(229, 22);
+            this.report_dbt_hasta.Name = "report_dbt_hasta";
+            this.report_dbt_hasta.Size = new System.Drawing.Size(117, 17);
+            this.report_dbt_hasta.TabIndex = 42;
+            this.report_dbt_hasta.Text = "report_dbt_hasta";
             // 
-            // from_title
+            // report_dbt_desde
             // 
-            this.from_title.AutoSize = true;
-            this.from_title.Location = new System.Drawing.Point(19, 22);
-            this.from_title.Name = "from_title";
-            this.from_title.Size = new System.Drawing.Size(49, 17);
-            this.from_title.TabIndex = 41;
-            this.from_title.Text = "Desde";
+            this.report_dbt_desde.AutoSize = true;
+            this.report_dbt_desde.Location = new System.Drawing.Point(19, 22);
+            this.report_dbt_desde.Name = "report_dbt_desde";
+            this.report_dbt_desde.Size = new System.Drawing.Size(121, 17);
+            this.report_dbt_desde.TabIndex = 41;
+            this.report_dbt_desde.Text = "report_dbt_desde";
             // 
             // date_to_txt
             // 
@@ -114,63 +117,65 @@
             this.date_from_txt.Size = new System.Drawing.Size(189, 27);
             this.date_from_txt.TabIndex = 39;
             // 
-            // activ_combo
+            // report_type_combo
             // 
-            this.activ_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.activ_combo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activ_combo.FormattingEnabled = true;
-            this.activ_combo.Location = new System.Drawing.Point(444, 47);
-            this.activ_combo.Name = "activ_combo";
-            this.activ_combo.Size = new System.Drawing.Size(189, 28);
-            this.activ_combo.TabIndex = 38;
+            this.report_type_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.report_type_combo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report_type_combo.FormattingEnabled = true;
+            this.report_type_combo.Location = new System.Drawing.Point(444, 47);
+            this.report_type_combo.Name = "report_type_combo";
+            this.report_type_combo.Size = new System.Drawing.Size(189, 28);
+            this.report_type_combo.TabIndex = 38;
+            this.report_type_combo.SelectedIndexChanged += new System.EventHandler(this.activ_combo_SelectedIndexChanged);
             // 
-            // search_descrip
+            // report_dbt_descrip
             // 
-            this.search_descrip.AutoSize = true;
-            this.search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_descrip.Location = new System.Drawing.Point(109, 62);
-            this.search_descrip.Name = "search_descrip";
-            this.search_descrip.Size = new System.Drawing.Size(531, 20);
-            this.search_descrip.TabIndex = 55;
-            this.search_descrip.Text = "En esta sección podes consultar las ganancias cobradas / por cobrar.";
-            this.search_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.report_dbt_descrip.AutoSize = true;
+            this.report_dbt_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report_dbt_descrip.Location = new System.Drawing.Point(109, 62);
+            this.report_dbt_descrip.Name = "report_dbt_descrip";
+            this.report_dbt_descrip.Size = new System.Drawing.Size(149, 20);
+            this.report_dbt_descrip.TabIndex = 55;
+            this.report_dbt_descrip.Text = "report_dbt_descrip";
+            this.report_dbt_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // search_title
+            // report_dbt_title
             // 
-            this.search_title.AutoSize = true;
-            this.search_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_title.Location = new System.Drawing.Point(105, 23);
-            this.search_title.Name = "search_title";
-            this.search_title.Size = new System.Drawing.Size(247, 32);
-            this.search_title.TabIndex = 53;
-            this.search_title.Text = "Reporte de cobros";
-            this.search_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.report_dbt_title.AutoSize = true;
+            this.report_dbt_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report_dbt_title.Location = new System.Drawing.Point(105, 23);
+            this.report_dbt_title.Name = "report_dbt_title";
+            this.report_dbt_title.Size = new System.Drawing.Size(205, 32);
+            this.report_dbt_title.TabIndex = 53;
+            this.report_dbt_title.Text = "report_dbt_title";
+            this.report_dbt_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.from_title);
-            this.panel1.Controls.Add(this.activ_title);
+            this.panel1.Controls.Add(this.report_dbt_search);
+            this.panel1.Controls.Add(this.report_dbt_desde);
+            this.panel1.Controls.Add(this.report_dbt_type);
             this.panel1.Controls.Add(this.date_from_txt);
             this.panel1.Controls.Add(this.date_to_txt);
-            this.panel1.Controls.Add(this.activ_combo);
-            this.panel1.Controls.Add(this.to_title);
+            this.panel1.Controls.Add(this.report_type_combo);
+            this.panel1.Controls.Add(this.report_dbt_hasta);
             this.panel1.Location = new System.Drawing.Point(28, 112);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(830, 101);
             this.panel1.TabIndex = 59;
             // 
-            // button1
+            // report_dbt_search
             // 
-            this.button1.BackColor = System.Drawing.Color.LightGreen;
-            this.button1.Location = new System.Drawing.Point(664, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 38);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.report_dbt_search.BackColor = System.Drawing.Color.LightGreen;
+            this.report_dbt_search.Location = new System.Drawing.Point(664, 41);
+            this.report_dbt_search.Name = "report_dbt_search";
+            this.report_dbt_search.Size = new System.Drawing.Size(145, 38);
+            this.report_dbt_search.TabIndex = 40;
+            this.report_dbt_search.Text = "report_dbt_search";
+            this.report_dbt_search.UseVisualStyleBackColor = false;
+            this.report_dbt_search.Click += new System.EventHandler(this.report_dbt_search_Click);
             // 
             // pictureBox1
             // 
@@ -182,38 +187,62 @@
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             // 
-            // button3
+            // report_dbt_close
             // 
-            this.button3.Location = new System.Drawing.Point(715, 639);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 49);
-            this.button3.TabIndex = 61;
-            this.button3.Text = "Cerrar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            this.report_dbt_close.Location = new System.Drawing.Point(715, 711);
+            this.report_dbt_close.Name = "report_dbt_close";
+            this.report_dbt_close.Size = new System.Drawing.Size(143, 49);
+            this.report_dbt_close.TabIndex = 61;
+            this.report_dbt_close.Text = "report_dbt_close";
+            this.report_dbt_close.UseVisualStyleBackColor = true;
+            this.report_dbt_close.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.report_total_value);
+            this.panel2.Location = new System.Drawing.Point(28, 635);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(830, 54);
+            this.panel2.TabIndex = 62;
+            // 
+            // report_total_value
+            // 
+            this.report_total_value.AutoSize = true;
+            this.report_total_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report_total_value.Location = new System.Drawing.Point(18, 14);
+            this.report_total_value.Name = "report_total_value";
+            this.report_total_value.Size = new System.Drawing.Size(175, 24);
+            this.report_total_value.TabIndex = 63;
+            this.report_total_value.Text = "report_total_value";
+            this.report_total_value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frm_ganancias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 711);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(882, 783);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.report_dbt_close);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_close);
+            this.Controls.Add(this.report_dbt_pay);
             this.Controls.Add(this.bitacora_data);
-            this.Controls.Add(this.search_descrip);
+            this.Controls.Add(this.report_dbt_descrip);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.search_title);
+            this.Controls.Add(this.report_dbt_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_ganancias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ganancias";
+            this.Load += new System.EventHandler(this.frm_ganancias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bitacora_data)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,19 +250,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Button report_dbt_pay;
         private System.Windows.Forms.DataGridView bitacora_data;
-        private System.Windows.Forms.Label activ_title;
-        private System.Windows.Forms.Label to_title;
-        private System.Windows.Forms.Label from_title;
+        private System.Windows.Forms.Label report_dbt_type;
+        private System.Windows.Forms.Label report_dbt_hasta;
+        private System.Windows.Forms.Label report_dbt_desde;
         private System.Windows.Forms.DateTimePicker date_to_txt;
         private System.Windows.Forms.DateTimePicker date_from_txt;
-        private System.Windows.Forms.ComboBox activ_combo;
-        private System.Windows.Forms.Label search_descrip;
+        private System.Windows.Forms.ComboBox report_type_combo;
+        private System.Windows.Forms.Label report_dbt_descrip;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label search_title;
+        private System.Windows.Forms.Label report_dbt_title;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button report_dbt_search;
+        private System.Windows.Forms.Button report_dbt_close;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label report_total_value;
     }
 }

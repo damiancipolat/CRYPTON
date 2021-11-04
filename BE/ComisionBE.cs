@@ -15,8 +15,15 @@ namespace BE
         public MonedaBE moneda;
         public Money valor;
         public DateTime fecCobro;
+        public DateTime fecRegister;
         public int processed;
         public BilleteraBE wallet;
         public ClienteBE cliente;
+
+        public ComisionBE() 
+        {
+            this.fecRegister = DateTime.Now;
+        }
+
     }
 }

@@ -9,6 +9,7 @@ using System.Diagnostics;
 using BE;
 using DAL.DAO;
 using DAL;
+using SEC;
 
 namespace DAL
 {
@@ -33,6 +34,7 @@ namespace DAL
             //Blanqueo el campo de password.
             userTarget.pwd = "";
             userTarget.estado = this.getEstado((int)mapa["estado"]);
+            userTarget.email = Cripto.GetInstance().Decrypt(Convert.ToString(mapa["email"]));
 
             return userTarget;
 
@@ -55,11 +57,13 @@ namespace DAL
         //Buscar usuarios en base a texto.
         public List<UsuarioBE> searchByText(string text)
         {
+            string email = Cripto.GetInstance().Encrypt(text);
+
             //Ejecuto la consulta.
             string sql = "select us.* from usuario as us "+
                 "where us.apellido like '%"+text+"%'"+
                 "or us.nombre like '%"+text+"%'"+
-                "or us.email like '%"+text+"%';";
+                "or us.email like '%"+email+"%';";
 
             List<object> result = this.getSelect().queryList(sql);
 
@@ -88,7 +92,7 @@ namespace DAL
         {
             //Busco en la bd por email.
             List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
-                {"email",email}
+                {"email", Cripto.GetInstance().Encrypt(email)}
             }, "usuario");
 
             //Lista resultado.
@@ -120,7 +124,7 @@ namespace DAL
         {            
             //Armo el query con un where con schema.
             List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
-                {"email",email},
+                {"email",Cripto.GetInstance().Encrypt(email)},
                 { "pwd",pwd}
             }, "usuario");
 
@@ -145,7 +149,7 @@ namespace DAL
                 {"nombre",user.nombre},
                 { "apellido",user.apellido},
                 { "alias",user.alias},
-                { "email",user.email},
+                { "email",Cripto.GetInstance().Encrypt(user.email)},
                 { "tipo_usuario",(int)user.tipoUsuario},
                 { "estado",(int)user.estado},
                 { "hash",user.hash}
@@ -162,7 +166,7 @@ namespace DAL
                 {"nombre",user.nombre},
                 { "apellido",user.apellido},
                 { "alias",user.alias},
-                { "email",user.email},
+                { "email",Cripto.GetInstance().Encrypt(user.email)},
                 { "tipo_usuario",(int)user.tipoUsuario},
                 { "pwd",user.pwd},
                 { "hash",user.hash}

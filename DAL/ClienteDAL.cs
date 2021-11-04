@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using BE;
 using DAL.DAO;
+using SEC;
 
 namespace DAL
 {
@@ -75,7 +76,7 @@ namespace DAL
         {
             //Busco en la bd por email.
             List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
-                {"email",email}
+                {"email", Cripto.GetInstance().Encrypt(email)}
             }, "usuario");
 
             //Lista resultado.

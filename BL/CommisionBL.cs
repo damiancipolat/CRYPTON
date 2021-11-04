@@ -87,6 +87,11 @@ namespace BL
             new NotificacionBL().save(notif);
         }
 
+        public List<ComisionBE> findByDate(string type, string from, string to) 
+        {
+            return new ComisionDAL().findByDate(type, from, to);
+        }
+
         //-----------------------------------
 
         //TODO

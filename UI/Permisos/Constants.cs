@@ -31,6 +31,7 @@ namespace UI.Permisos
         MY_PROFILE,
         SEARCH_LOG,
         BACKUP,
-        DEBTS_REPORT
+        DEBTS_REPORT,
+        EARNINGS_REPORT
     }
 }

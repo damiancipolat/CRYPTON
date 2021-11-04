@@ -49,6 +49,7 @@
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CommisionBL.cs" />
     <Compile Include="CuentaBL.cs" />
+    <Compile Include="Integrity.cs" />
     <Compile Include="NotificacionBL.cs" />
     <Compile Include="ComisionValorBL.cs" />
     <Compile Include="EmpleadoBL.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Permisos\PatenteBL.cs" />
     <Compile Include="Permisos\PermisoBL.cs" />
     <Compile Include="Permisos\UserPermisoBL.cs" />
+    <Compile Include="Security\Integrity.cs" />
     <Compile Include="TaxManager.cs" />
     <Compile Include="TransferenciaBL.cs" />
     <Compile Include="UsuarioBL.cs" />
