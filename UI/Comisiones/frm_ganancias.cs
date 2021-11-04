@@ -99,7 +99,11 @@ namespace UI.Comisiones
         private void report_dbt_search_Click(object sender, EventArgs e)
         {
             List<ComisionBE> result = new CommisionBL().findByDate(this.report_type_combo.SelectedIndex.ToString(), this.date_from_txt.Text, this.date_to_txt.Text);
-            this.fillData(result);
+
+            if (result.Count > 0)
+                this.fillData(result);
+            else
+                MessageBox.Show("No hay resultados.");
         }
 
         private void activ_combo_SelectedIndexChanged(object sender, EventArgs e)
