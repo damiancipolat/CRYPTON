@@ -9,6 +9,7 @@ using BE;
 using BE.ValueObject;
 using DAL;
 using IO;
+using SL;
 
 namespace BL
 {
@@ -93,23 +94,70 @@ namespace BL
             new NotificacionBL().save(notif);
         }
 
-        //Procesa el pago en ARS de un dto comision.
-        private void processPayment(ComisionBE comision) 
+        //Notifico la operacion por email y notificacion interna.
+        private void notifyDebit(ComisionBE comision,bool isDebit=false) 
         {
-            //Reviso si alcanza para hacer la extraccion.
-            decimal ammount = comision.wallet.saldo.getValue();
-            decimal value = comision.valor.getValue();
+            //Get administrator account.
+            string emailHost = ConfigurationManager.AppSettings["EmailHost"];
+            string delivery = "Crypton System <" + "crypton.system@" + emailHost + ">";
+            string debitLabel = "";
 
-            if (ammount >= value)
+            //Si se pudo debitar.
+            if (isDebit)
             {
-                Debug.WriteLine(">>> Descontando valor de :" + value.ToString() + " de cuenta:" + comision.wallet.idwallet.ToString());
-                new BilleteraBL().descontarARS(comision.wallet, comision.valor.getValue())
+                //Envio email.
+                debitLabel = "Hemos debitado de cuenta de ARS el valor de $" + comision.valor.getValue().ToString();
+                new Mailer().send(delivery, comision.cliente.email, "Hemos debitado nuestras comisiones...", debitLabel);
+
             }
             else
             {
-                Debug.WriteLine(">>> No alcanza para descontando valor de :" + value.ToString() + " de cuenta:" + comision.wallet.idwallet.ToString());
+                //Envio email.
+                debitLabel = "No hemos podido debitar de cuenta de ARS el valor de $" + comision.valor.getValue().ToString();
+                new Mailer().send(delivery, comision.cliente.email, "No hemos podido debitar nuestras comisiones...", debitLabel);
             }
-            
+
+            //Envio notificacion interna.
+            NotificacionBE notif = new NotificacionBE();
+            notif.payload = debitLabel;
+            notif.cliente = comision.cliente;
+            notif.fecRegistro = DateTime.Now;
+            notif.marked = 0;
+
+            new NotificacionBL().save(notif);
+        }
+
+        //Procesa el pago en ARS de un dto comision.
+        private bool processPayment(ComisionBE comision) 
+        {
+            try
+            {
+                //Reviso si alcanza para hacer la extraccion.
+                decimal ammount = comision.wallet.saldo.getValue();
+                decimal value = comision.valor.getValue();
+
+                if (ammount >= value)
+                {
+                    Debug.WriteLine(">>> Descontando valor de :" + value.ToString() + " de cuenta:" + comision.wallet.idwallet.ToString());
+                    new BilleteraBL().descontarARS(comision.wallet, comision.valor.getValue());
+                    this.notifyDebit(comision, true);
+
+                    return true;
+                }
+                else
+                {
+                    Debug.WriteLine(">>> No alcanza para descontar el valor de :" + value.ToString() + " de cuenta:" + comision.wallet.idwallet.ToString());
+                    this.notifyDebit(comision, false);
+
+                    return false;
+                }
+            }
+            catch (Exception error) 
+            {
+                Bitacora.GetInstance().log("DEBIT","Unable to process commision N°"+comision.idcobro.ToString(),true);
+                Bitacora.GetInstance().log("DEBIT", "Error processing payment:" + error.Message,true);
+                return false;
+            }            
         }
 
         public List<ComisionBE> findByDate(string type, string from, string to) 
