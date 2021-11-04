@@ -615,7 +615,12 @@ namespace UI
             //new frm_deudores().Show();                        
             //string val= Cripto.GetInstance().Decrypt("+EZUHnQRIH9QPvTBik7de / ylBBnOWs / NH2E / URHP9gA =");
             //Debug.WriteLine("-->" + val);
-            new frm_ganancias().Show();
+            //new frm_ganancias().Show();
+
+            this.home_label_bar.Visible = true;
+            this.home_label_bar.Text="Cargando...";            
+            new frm_cobrar().Show();
+            this.home_label_bar.Visible = false;
         }
 
         private void mainmenuToolStripMenuItem_Click(object sender, EventArgs e)

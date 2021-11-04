@@ -240,15 +240,25 @@ namespace DAL
             return result;
         }
 
-        //? -----------------------------
-
-        //Traigo total de comisiones y costo de cada cliente, TODO
-        public List<(ClienteBE,Money)> getClientPendingAmmounts()
+        //Traigo la lista de comisiones pendientes a ser cobradas.
+        public List<ComisionBE> getPendingsToPay()
         {
-            var lista = new List<(ClienteBE, Money)>();
+            //Busco en la bd por wallet y estado.
+            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
+                {"processed",0}
+            }, "comisiones");
+
+            //Lista resultado.
+            List<ComisionBE> lista = new List<ComisionBE>();
+
+            foreach (List<object> row in result)
+                lista.Add(this.bindSchema(row));
+
             return lista;
         }
-       
+
+        //? -----------------------------
+
         //Traer comisiones pendientes, TODO
         public List<ComisionBE> getPaymentsPending(string type, string from, string to)
         {

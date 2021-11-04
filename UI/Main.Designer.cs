@@ -62,6 +62,7 @@
             this.main_menu_op_cash_in = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_lista_retiro = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_debts = new System.Windows.Forms.ToolStripMenuItem();
+            this.main_menu_earnings_report = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_client = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_profile = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_cbu = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,7 @@
             this.main_menu_extract_crypto = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.main_menu_earnings_report = new System.Windows.Forms.ToolStripMenuItem();
+            this.home_label_bar = new System.Windows.Forms.ToolStripStatusLabel();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -145,7 +146,8 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSplitButton2});
+            this.toolStripSplitButton2,
+            this.home_label_bar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 754);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1428, 26);
@@ -376,6 +378,13 @@
             this.main_menu_debts.Text = "main_menu_debts";
             this.main_menu_debts.Click += new System.EventHandler(this.mainmenuToolStripMenuItem_Click);
             // 
+            // main_menu_earnings_report
+            // 
+            this.main_menu_earnings_report.Name = "main_menu_earnings_report";
+            this.main_menu_earnings_report.Size = new System.Drawing.Size(322, 26);
+            this.main_menu_earnings_report.Text = "main_menu_earnings_report";
+            this.main_menu_earnings_report.Click += new System.EventHandler(this.mainmenuearningsReportToolStripMenuItem_Click);
+            // 
             // main_menu_client
             // 
             this.main_menu_client.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -436,12 +445,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_15);
             // 
-            // main_menu_earnings_report
+            // home_label_bar
             // 
-            this.main_menu_earnings_report.Name = "main_menu_earnings_report";
-            this.main_menu_earnings_report.Size = new System.Drawing.Size(322, 26);
-            this.main_menu_earnings_report.Text = "main_menu_earnings_report";
-            this.main_menu_earnings_report.Click += new System.EventHandler(this.mainmenuearningsReportToolStripMenuItem_Click);
+            this.home_label_bar.Name = "home_label_bar";
+            this.home_label_bar.Size = new System.Drawing.Size(83, 20);
+            this.home_label_bar.Text = "Cargando...";
+            this.home_label_bar.Visible = false;
             // 
             // frm_main
             // 
@@ -519,6 +528,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem main_menu_debts;
         private System.Windows.Forms.ToolStripMenuItem main_menu_earnings_report;
+        private System.Windows.Forms.ToolStripStatusLabel home_label_bar;
     }
 }
 

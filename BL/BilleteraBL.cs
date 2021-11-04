@@ -107,7 +107,7 @@ namespace BL
 
             //Valido si hay suficiente saldo.
             if (wallet.saldo.getValue() < ammount)
-                throw new Exception("Operation allow onyl to ars account");
+                throw new Exception("The funds are not enough to cover the extraction.");
 
             //Actualizo el saldo.
             decimal value = wallet.saldo.getValue() - ammount;

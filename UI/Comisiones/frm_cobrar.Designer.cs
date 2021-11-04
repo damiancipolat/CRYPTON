@@ -30,13 +30,13 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.comision_data = new System.Windows.Forms.DataGridView();
+            this.list_comision_data = new System.Windows.Forms.DataGridView();
             this.search_descrip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.search_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.activ_title = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.comision_data)).BeginInit();
+            this.cobrar_total_label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.list_comision_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,15 +63,15 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
-            // comision_data
+            // list_comision_data
             // 
-            this.comision_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.comision_data.Location = new System.Drawing.Point(25, 204);
-            this.comision_data.Name = "comision_data";
-            this.comision_data.RowHeadersWidth = 51;
-            this.comision_data.RowTemplate.Height = 24;
-            this.comision_data.Size = new System.Drawing.Size(830, 413);
-            this.comision_data.TabIndex = 63;
+            this.list_comision_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.list_comision_data.Location = new System.Drawing.Point(25, 204);
+            this.list_comision_data.Name = "list_comision_data";
+            this.list_comision_data.RowHeadersWidth = 51;
+            this.list_comision_data.RowTemplate.Height = 24;
+            this.list_comision_data.Size = new System.Drawing.Size(830, 413);
+            this.list_comision_data.TabIndex = 63;
             // 
             // search_descrip
             // 
@@ -110,21 +110,21 @@
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.activ_title);
+            this.panel1.Controls.Add(this.cobrar_total_label);
             this.panel1.Location = new System.Drawing.Point(25, 113);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(830, 69);
             this.panel1.TabIndex = 65;
             // 
-            // activ_title
+            // cobrar_total_label
             // 
-            this.activ_title.AutoSize = true;
-            this.activ_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activ_title.Location = new System.Drawing.Point(16, 20);
-            this.activ_title.Name = "activ_title";
-            this.activ_title.Size = new System.Drawing.Size(370, 25);
-            this.activ_title.TabIndex = 43;
-            this.activ_title.Text = "Total pendiente por cobrar:  AR$ 150.250";
+            this.cobrar_total_label.AutoSize = true;
+            this.cobrar_total_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cobrar_total_label.Location = new System.Drawing.Point(16, 20);
+            this.cobrar_total_label.Name = "cobrar_total_label";
+            this.cobrar_total_label.Size = new System.Drawing.Size(370, 25);
+            this.cobrar_total_label.TabIndex = 43;
+            this.cobrar_total_label.Text = "Total pendiente por cobrar:  AR$ 150.250";
             // 
             // frm_cobrar
             // 
@@ -133,7 +133,7 @@
             this.ClientSize = new System.Drawing.Size(880, 712);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.comision_data);
+            this.Controls.Add(this.list_comision_data);
             this.Controls.Add(this.search_descrip);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.search_title);
@@ -143,7 +143,8 @@
             this.Name = "frm_cobrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_cobrar";
-            ((System.ComponentModel.ISupportInitialize)(this.comision_data)).EndInit();
+            this.Load += new System.EventHandler(this.frm_cobrar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.list_comision_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -156,11 +157,11 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.DataGridView comision_data;
+        private System.Windows.Forms.DataGridView list_comision_data;
         private System.Windows.Forms.Label search_descrip;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label search_title;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label activ_title;
+        private System.Windows.Forms.Label cobrar_total_label;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Diagnostics;
 using BE;
 using BE.ValueObject;
 using DAL;
@@ -54,6 +55,11 @@ namespace BL
             return new ComisionDAL().searchByClientPendings(client);
         }
 
+        public List<ComisionBE> getPendingsToPay() 
+        {
+            return new ComisionDAL().getPendingsToPay();
+        }
+
         //REPORT
 
         public List<(int, int, string, float)> getDebtors()
@@ -87,18 +93,31 @@ namespace BL
             new NotificacionBL().save(notif);
         }
 
+        //Procesa el pago en ARS de un dto comision.
+        private void processPayment(ComisionBE comision) 
+        {
+            //Reviso si alcanza para hacer la extraccion.
+            decimal ammount = comision.wallet.saldo.getValue();
+            decimal value = comision.valor.getValue();
+
+            if (ammount >= value)
+            {
+                Debug.WriteLine(">>> Descontando valor de :" + value.ToString() + " de cuenta:" + comision.wallet.idwallet.ToString());
+                new BilleteraBL().descontarARS(comision.wallet, comision.valor.getValue())
+            }
+            else
+            {
+                Debug.WriteLine(">>> No alcanza para descontando valor de :" + value.ToString() + " de cuenta:" + comision.wallet.idwallet.ToString());
+            }
+            
+        }
+
         public List<ComisionBE> findByDate(string type, string from, string to) 
         {
             return new ComisionDAL().findByDate(type, from, to);
         }
 
         //-----------------------------------
-
-        //TODO
-        public List<(ClienteBE, Money)> getClientPendingAmmounts()
-        {
-            return new ComisionDAL().getClientPendingAmmounts();
-        }
 
         //TODO
         public List<ComisionBE> getPendings()
