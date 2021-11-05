@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.cobrar_btn_process = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.list_comision_data = new System.Windows.Forms.DataGridView();
-            this.search_descrip = new System.Windows.Forms.Label();
+            this.cobrar_frm_title_descrip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.search_title = new System.Windows.Forms.Label();
+            this.cobrar_frm_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cobrar_total_label = new System.Windows.Forms.Label();
+            this.cobrar_waiting = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.list_comision_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // cobrar_btn_process
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(666, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 49);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Cobrar comisiones";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.cobrar_btn_process.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cobrar_btn_process.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cobrar_btn_process.Location = new System.Drawing.Point(666, 9);
+            this.cobrar_btn_process.Name = "cobrar_btn_process";
+            this.cobrar_btn_process.Size = new System.Drawing.Size(151, 49);
+            this.cobrar_btn_process.TabIndex = 40;
+            this.cobrar_btn_process.Text = "Cobrar comisiones";
+            this.cobrar_btn_process.UseVisualStyleBackColor = false;
+            this.cobrar_btn_process.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btn_close
             // 
@@ -73,16 +74,16 @@
             this.list_comision_data.Size = new System.Drawing.Size(830, 413);
             this.list_comision_data.TabIndex = 63;
             // 
-            // search_descrip
+            // cobrar_frm_title_descrip
             // 
-            this.search_descrip.AutoSize = true;
-            this.search_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_descrip.Location = new System.Drawing.Point(106, 63);
-            this.search_descrip.Name = "search_descrip";
-            this.search_descrip.Size = new System.Drawing.Size(426, 20);
-            this.search_descrip.TabIndex = 62;
-            this.search_descrip.Text = "Aqui se ve la lista de comisiones pendientes por cobrar.";
-            this.search_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cobrar_frm_title_descrip.AutoSize = true;
+            this.cobrar_frm_title_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cobrar_frm_title_descrip.Location = new System.Drawing.Point(106, 63);
+            this.cobrar_frm_title_descrip.Name = "cobrar_frm_title_descrip";
+            this.cobrar_frm_title_descrip.Size = new System.Drawing.Size(191, 20);
+            this.cobrar_frm_title_descrip.TabIndex = 62;
+            this.cobrar_frm_title_descrip.Text = "cobrar_frm_title_descrip";
+            this.cobrar_frm_title_descrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -94,22 +95,22 @@
             this.pictureBox1.TabIndex = 61;
             this.pictureBox1.TabStop = false;
             // 
-            // search_title
+            // cobrar_frm_title
             // 
-            this.search_title.AutoSize = true;
-            this.search_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_title.Location = new System.Drawing.Point(102, 24);
-            this.search_title.Name = "search_title";
-            this.search_title.Size = new System.Drawing.Size(251, 32);
-            this.search_title.TabIndex = 60;
-            this.search_title.Text = "Cobrar comisiones";
-            this.search_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cobrar_frm_title.AutoSize = true;
+            this.cobrar_frm_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cobrar_frm_title.Location = new System.Drawing.Point(102, 24);
+            this.cobrar_frm_title.Name = "cobrar_frm_title";
+            this.cobrar_frm_title.Size = new System.Drawing.Size(211, 32);
+            this.cobrar_frm_title.TabIndex = 60;
+            this.cobrar_frm_title.Text = "cobrar_frm_title";
+            this.cobrar_frm_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.cobrar_btn_process);
             this.panel1.Controls.Add(this.cobrar_total_label);
             this.panel1.Location = new System.Drawing.Point(25, 113);
             this.panel1.Name = "panel1";
@@ -122,21 +123,34 @@
             this.cobrar_total_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cobrar_total_label.Location = new System.Drawing.Point(16, 20);
             this.cobrar_total_label.Name = "cobrar_total_label";
-            this.cobrar_total_label.Size = new System.Drawing.Size(370, 25);
+            this.cobrar_total_label.Size = new System.Drawing.Size(166, 25);
             this.cobrar_total_label.TabIndex = 43;
-            this.cobrar_total_label.Text = "Total pendiente por cobrar:  AR$ 150.250";
+            this.cobrar_total_label.Text = "cobrar_total_label";
+            // 
+            // cobrar_waiting
+            // 
+            this.cobrar_waiting.AutoSize = true;
+            this.cobrar_waiting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cobrar_waiting.Location = new System.Drawing.Point(31, 650);
+            this.cobrar_waiting.Name = "cobrar_waiting";
+            this.cobrar_waiting.Size = new System.Drawing.Size(118, 20);
+            this.cobrar_waiting.TabIndex = 66;
+            this.cobrar_waiting.Text = "cobrar_waiting";
+            this.cobrar_waiting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cobrar_waiting.Visible = false;
             // 
             // frm_cobrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 712);
+            this.Controls.Add(this.cobrar_waiting);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.list_comision_data);
-            this.Controls.Add(this.search_descrip);
+            this.Controls.Add(this.cobrar_frm_title_descrip);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.search_title);
+            this.Controls.Add(this.cobrar_frm_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -155,13 +169,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cobrar_btn_process;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.DataGridView list_comision_data;
-        private System.Windows.Forms.Label search_descrip;
+        private System.Windows.Forms.Label cobrar_frm_title_descrip;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label search_title;
+        private System.Windows.Forms.Label cobrar_frm_title;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label cobrar_total_label;
+        private System.Windows.Forms.Label cobrar_waiting;
     }
 }

@@ -479,3 +479,10 @@ VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c9
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1

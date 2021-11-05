@@ -107,14 +107,20 @@ namespace BL
             {
                 //Envio email.
                 debitLabel = "Hemos debitado de cuenta de ARS el valor de $" + comision.valor.getValue().ToString();
-                new Mailer().send(delivery, comision.cliente.email, "Hemos debitado nuestras comisiones...", debitLabel);
+                new Mailer().send(delivery, comision.cliente.usuario.email, "Hemos debitado nuestras comisiones...", debitLabel);
 
+                //Marco la comision como computada.
+                comision.fecCobro = DateTime.Now;
+                comision.processed = 1;
+
+                //Actualizo y marco.
+                new CommisionBL().update(comision);
             }
             else
             {
                 //Envio email.
                 debitLabel = "No hemos podido debitar de cuenta de ARS el valor de $" + comision.valor.getValue().ToString();
-                new Mailer().send(delivery, comision.cliente.email, "No hemos podido debitar nuestras comisiones...", debitLabel);
+                new Mailer().send(delivery, comision.cliente.usuario.email, "No hemos podido debitar nuestras comisiones...", debitLabel);
             }
 
             //Envio notificacion interna.
@@ -128,7 +134,7 @@ namespace BL
         }
 
         //Procesa el pago en ARS de un dto comision.
-        private bool processPayment(ComisionBE comision) 
+        public bool processPayment(ComisionBE comision) 
         {
             try
             {
@@ -160,6 +166,7 @@ namespace BL
             }            
         }
 
+        //Busqueda por fechas.
         public List<ComisionBE> findByDate(string type, string from, string to) 
         {
             return new ComisionDAL().findByDate(type, from, to);

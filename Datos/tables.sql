@@ -816,6 +816,11 @@ insert into palabras(word) values('REPORT_DBT_TYPE');
 insert into palabras(word) values('REPORT_DBT_SEARCH');
 insert into palabras(word) values('REPORT_DBT_PAY');
 insert into palabras(word) values('REPORT_DBT_TOTAL');
+insert into palabras(word) values('COBRAR_FRM_TITLE');
+insert into palabras(word) values('COBRAR_FRM_TITLE_DESCRIP');
+insert into palabras(word) values('COBRAR_BTN_PROCESS');
+insert into palabras(word) values('COBRAR_TOTAL_LABEL');
+insert into palabras(word) values('COBRAR_WAITING');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1550,7 +1555,10 @@ select * from comisiones where fecRegister>= '2021-01-04 00:00:00' and fecRegist
 update usuario set email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' where idusuario=5;
 
 select * from usuario where  email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' and pwd='e10adc3949ba59abbe56e057f20f883e'
-select * from comisiones
+select * from comisiones where processed=0
+update comisiones set processed=0
+select * from billetera where idwallet=1;
+update billetera set saldo=1000000 where idwallet=1;
 
 select tipo_operacion,idcliente,moneda,SUM(valor) from comisiones 
 where processed=0
