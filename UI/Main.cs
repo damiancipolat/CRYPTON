@@ -637,5 +637,9 @@ namespace UI
         {
             Debug.WriteLine("@"+Cripto.GetInstance().Decrypt("i5HY/mgU6DofzSzcU3Tvgjp37KY26Vl7OVlIFrotG2Q="));
         }
+
+        private void button1_Click_17(object sender, EventArgs e)
+        {
+        }
     }
 }

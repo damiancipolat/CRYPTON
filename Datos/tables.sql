@@ -1576,6 +1576,9 @@ select * from notificaciones
 insert into comisiones(tipo_operacion,referencia,idwallet,moneda,valor,fecCobro,processed,idcliente,fecRegister)
 values(1,1,1,'ARS',100,NULL,0,1,GETDATE());
 
+select * from usuario where idusuario=2
+update usuario set hash='17364a8f8199c90f74596cef6e0aac72' where idusuario=2;
+
 /*
 update usuario set  nombre='damian' , apellido='cipolat' , alias='prueba' , email='YHJ0Y+tJ3+sqf84lY4nY12s5YEliQIda5Urtv3Y4P3Oq4r07wuOBKibnWnCxG+MADwInijPH0gwnODOF6GOwQJLZ+omRRMfsix+DVwaSj5w=' , tipo_usuario=1 , estado=2 , hash='11d71138d9ddee37d1fcce5aedec3ce4'  where idusuario=1;
 update usuario set email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=', pwd='e10adc3949ba59abbe56e057f20f883e' where idusuario=5
@@ -1589,3 +1592,6 @@ update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a
 --values(1,1,1,1,'ARS',100,NULL,0);
 
 select * from cliente
+select * from usuario where idusuario=2
+
+select * from solic_operacion
