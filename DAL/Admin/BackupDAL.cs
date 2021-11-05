@@ -127,8 +127,12 @@ namespace DAL.Admin
         //Proceso el restore.
         public int restoreBackup(BackupBE backup)
         {
-            //Ejecuto el backup.
-            string sql = "use master;RESTORE DATABASE Crypton FROM DISK = '"+backup.path+"' WITH FILE = 1, NOUNLOAD, STATS = 5; ";
+            //Ejecuto el backup.            
+            string sql = "use master;" +
+                         "ALTER DATABASE Crypton SET SINGLE_USER WITH ROLLBACK IMMEDIATE;" +                         
+                         "RESTORE DATABASE Crypton FROM DISK = '"+backup.path+"' WITH FILE = 1, NOUNLOAD, STATS = 5; "+
+                         "ALTER DATABASE Crypton SET MULTI_USER;";
+
             QueryInsert cmd = new QueryInsert();
             Debug.WriteLine("QUERY:" + sql);
 

@@ -120,6 +120,9 @@ namespace DAL.Permiso
                 return c;
             }
 
+            //Cierro la conexion.
+            builder.closeConnection();
+
             return null;
         }
 

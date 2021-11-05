@@ -117,7 +117,12 @@ namespace DAL.Permiso
                     padre.AgregarHijo(c);
             }
 
+            //Cierro el cursor.
             reader.Close();
+
+            //Cierro la conexion.
+            builder.closeConnection();
+
             return lista;
         }
 

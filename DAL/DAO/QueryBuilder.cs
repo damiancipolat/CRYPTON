@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 using System.Collections;
 using System.Diagnostics;
 using System.Dynamic;
@@ -25,7 +26,9 @@ namespace DAL
             this.utilText = new SqlText();
             this.utilParser = new SqlParser();
             this.bdConnection = this.getConnection();
-            this.bdConnection.Open();
+
+            if (this.bdConnection.State != ConnectionState.Open)
+                this.bdConnection.Open();
         }
 
         //Genero la conexion con la bd.

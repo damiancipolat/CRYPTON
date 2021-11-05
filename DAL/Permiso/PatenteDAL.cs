@@ -51,7 +51,12 @@ namespace DAL.Permiso
                 lista.Add(c);
             }
 
+            //Cierro el cursor.
             reader.Close();
+
+            //Cierro la conexion.
+            builder.closeConnection();
+
             return lista;
         }
     }

@@ -237,6 +237,9 @@ namespace DAL
                  ));                
             }
 
+            //Cierro la conexion.
+            this.getSelect().closeConnection();
+
             return result;
         }
 

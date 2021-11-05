@@ -129,5 +129,10 @@ namespace DAL.DAO
             return cmd.ExecuteReader();
         }
 
+        //Cierro la conexion de la bd.
+        public void closeConnection() 
+        {
+            this.bdConnection.Close();
+        }
     }
 }
