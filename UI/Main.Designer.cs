@@ -37,6 +37,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.main_change_language = new System.Windows.Forms.ToolStripMenuItem();
+            this.home_label_bar = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.main_menu_start = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_login = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,8 +70,6 @@
             this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_extract_crypto = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.home_label_bar = new System.Windows.Forms.ToolStripStatusLabel();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -171,6 +170,13 @@
             this.main_change_language.Size = new System.Drawing.Size(247, 26);
             this.main_change_language.Text = "main_change_language";
             this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
+            // 
+            // home_label_bar
+            // 
+            this.home_label_bar.Name = "home_label_bar";
+            this.home_label_bar.Size = new System.Drawing.Size(83, 20);
+            this.home_label_bar.Text = "Cargando...";
+            this.home_label_bar.Visible = false;
             // 
             // menuStrip1
             // 
@@ -435,29 +441,11 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(86, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 62);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_15);
-            // 
-            // home_label_bar
-            // 
-            this.home_label_bar.Name = "home_label_bar";
-            this.home_label_bar.Size = new System.Drawing.Size(83, 20);
-            this.home_label_bar.Text = "Cargando...";
-            this.home_label_bar.Visible = false;
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -525,7 +513,6 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_op_cash_in;
         private System.Windows.Forms.ToolStripMenuItem main_menu_lista_retiro;
         private System.Windows.Forms.ToolStripMenuItem main_menu_extract_crypto;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem main_menu_debts;
         private System.Windows.Forms.ToolStripMenuItem main_menu_earnings_report;
         private System.Windows.Forms.ToolStripStatusLabel home_label_bar;

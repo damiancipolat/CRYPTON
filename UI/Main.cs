@@ -632,5 +632,10 @@ namespace UI
         {
             new frm_ganancias().Show();
         }
+
+        private void button1_Click_16(object sender, EventArgs e)
+        {
+            Debug.WriteLine("@"+Cripto.GetInstance().Decrypt("i5HY/mgU6DofzSzcU3Tvgjp37KY26Vl7OVlIFrotG2Q="));
+        }
     }
 }

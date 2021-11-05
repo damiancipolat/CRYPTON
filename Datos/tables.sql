@@ -211,6 +211,9 @@ create table cliente(
 	deleted datetime
 );
 
+CREATE INDEX ix_1_cliente ON cliente(idcliente);
+CREATE INDEX ix_2_cliente ON cliente(cbu);
+
 create table cliente_cambios(
 	idchange bigint identity(1,1) primary key,
 	change_date datetime,
@@ -310,6 +313,8 @@ create table billetera(
 	saldo varchar(12),
 	deleted datetime
 );
+
+CREATE INDEX ix_1_billetera ON billetera(idwallet);
 
 --Tabla de solicitudes de retiro de dinero.
 create table solic_operacion
@@ -831,6 +836,8 @@ create table idioma_palabras
 	deleted datetime,
 	CONSTRAINT pk_idioma_palabra PRIMARY KEY (code,clave)
 );
+
+CREATE INDEX ix_1_idiomas ON idioma_palabras(code,clave);
 
 --ESPAÑOL
 insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');
@@ -1580,3 +1587,5 @@ update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a
 --insert into solic_operacion(idusuario,tipo_solic,idwallet,valor,cbu,operador,estado_solic,fecRegistro,fecProceso) values(1,0,1,100,'0070064130004043181234',0,0,'01/11/2021 17:36:49','01/01/0001 0:00:00');SELECT @@IDENTITY;
 --insert into comisiones(tipo_operacion,referencia,idcliente,idwallet,moneda,valor,fecCobro,processed)
 --values(1,1,1,1,'ARS',100,NULL,0);
+
+select * from cliente

@@ -114,7 +114,7 @@ namespace BL
                 comision.processed = 1;
 
                 //Actualizo y marco.
-                new CommisionBL().update(comision);
+                this.update(comision);
             }
             else
             {

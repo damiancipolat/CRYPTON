@@ -119,10 +119,14 @@ namespace UI.Comisiones
             this.cobrar_btn_process.Text = Idioma.GetInstance().translate("COBRAR_BTN_PROCESS");
             this.cobrar_total_label.Text = Idioma.GetInstance().translate("COBRAR_TOTAL_LABEL");
             this.cobrar_waiting.Text = Idioma.GetInstance().translate("COBRAR_WAITING");
+            this.btn_close.Text = Idioma.GetInstance().translate("BTN_CLOSE");
         }
 
         private void frm_cobrar_Load(object sender, EventArgs e)
         {
+            //Traduzco.
+            this.translateText();
+
             //Traigo la lista de comisiones para ser cobradas.
             List<ComisionBE> pendings = new CommisionBL().getPendingsToPay();
 

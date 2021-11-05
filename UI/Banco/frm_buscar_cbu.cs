@@ -58,8 +58,7 @@ namespace UI.Banco
         private void fillData(ClienteBE client)
         {
             this.usr_search_data.Rows.Clear();
-            string email = Cripto.GetInstance().Decrypt(client.email);
-            this.usr_search_data.Rows.Add(new string[] {client.cbu,client.tipoDoc,client.numero,email});
+            this.usr_search_data.Rows.Add(new string[] {client.cbu,client.tipoDoc,client.numero,client.email});
             this.innerClient = client;
         }
 
