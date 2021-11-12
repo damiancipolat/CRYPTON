@@ -36,3 +36,10 @@ miba@buenosaires.gob.ar
 AIzaSyCMPL0WXpKfkBS3x7WTfgLmG8eDbAIGhg4
 
 curl -L -X GET 'https://roads.googleapis.com/v1/snapToRoads?path=-34.6209866%2C-58.4287612&key=AIzaSyCMPL0WXpKfkBS3x7WTfgLmG8eDbAIGhg4'
+
+https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash
+
+FP:
+27:00 Strategy pattern
+27:30 Decorator pattern
+32:15 Partial application
