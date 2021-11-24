@@ -131,12 +131,14 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.login_title_1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_login";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_login_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Frm_login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

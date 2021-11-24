@@ -89,6 +89,7 @@ namespace UI.Comisiones
             this.loadColumns();
 
             //Limpio combos.
+            this.report_total_value.Text = "";
             this.report_type_combo.Items.Clear();
             this.report_type_combo.Items.Add("Todos");
             this.report_type_combo.Items.Add("Cobrado");
@@ -102,8 +103,11 @@ namespace UI.Comisiones
 
             if (result.Count > 0)
                 this.fillData(result);
-            else
+            else{
+                this.bitacora_data.Rows.Clear();
+                this.report_total_value.Text = "";
                 MessageBox.Show("No hay resultados.");
+            }                
         }
 
         private void activ_combo_SelectedIndexChanged(object sender, EventArgs e)

@@ -527,3 +527,15 @@ LOGIN:Login of user:roberto@gmail.com success!
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:4 eb1456f562a2108e2e86141c9c6bb113,4ace166b6ebac5a0a7fc65215355b02f
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:5 d8c0084346e261ae9c888be0f253ec6f,b02d434351c4222e8d4179fe345dc855
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:6 e64b3bb790547331b67807286bf7e523,b1d54b9d8f892ad6148242b19c2de8bf
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:7 926ec230c42603938166e2a676d08daf,c5bda982841d0102af928a5785c49eed
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:8 973469fa873e6d863d213a84765eaf6a,227a682048f0337ba2630c1a9a39c18e
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:9 fa6a2e7293833eedc5e2306f8be0fe47,7770fda546695217e9260a2f2ff3fb99
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated

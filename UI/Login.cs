@@ -91,5 +91,10 @@ namespace UI
         {
             this.Close();
         }
+
+        private void frm_login_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("aaaaa");
+        }
     }
 }

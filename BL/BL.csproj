@@ -49,7 +49,6 @@
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CommisionBL.cs" />
     <Compile Include="CuentaBL.cs" />
-    <Compile Include="Integrity.cs" />
     <Compile Include="NotificacionBL.cs" />
     <Compile Include="ComisionValorBL.cs" />
     <Compile Include="EmpleadoBL.cs" />

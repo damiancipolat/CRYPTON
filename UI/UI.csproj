@@ -135,6 +135,7 @@
     <Compile Include="Comisiones\frm_cobrar.Designer.cs">
       <DependentUpon>frm_cobrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comisiones\frm_deuda_cliente.cs" />
     <Compile Include="Comisiones\frm_deudores.cs">
       <SubType>Form</SubType>
     </Compile>

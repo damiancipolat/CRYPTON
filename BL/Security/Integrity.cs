@@ -68,7 +68,7 @@ namespace BL.Security
                 );
             }
 
-            Debug.WriteLine("Compare entity full hash:"+fullHash+"  "+dvBE.hash);
+            Debug.WriteLine("Compare entity calculated-hash:"+fullHash+" vs entity table-hash:"+dvBE.hash);
 
             //Comparo hashes.
             if (fullHash != dvBE.hash)
@@ -77,7 +77,7 @@ namespace BL.Security
                     "INTEGRITY_USERS_ENTITY_FAIL",
                     "Vertical warning - users entity table violated"
                 );
-            }                
+            }              
 
             return true;
         }
