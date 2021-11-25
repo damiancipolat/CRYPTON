@@ -1609,3 +1609,5 @@ select * from cliente
 select * from usuario where idusuario=2
 
 select * from solic_operacion
+select * from tipo_solic_op
+select * from solic_estados
