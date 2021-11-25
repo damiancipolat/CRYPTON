@@ -186,6 +186,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbu_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_cbu";

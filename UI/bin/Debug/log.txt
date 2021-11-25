@@ -588,3 +588,7 @@ LOGIN:Login of user:roberto@gmail.com success!
 USER:User:roberto@gmail.com buscando:a
 LOGIN:Request login of user:damian.cipolat@gmail.com
 LOGIN:Request login of user:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+SESSION:An user has closed the session

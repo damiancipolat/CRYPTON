@@ -1,33 +1,6 @@
 USUARIOS DE IT:
 ---------------
 
-update usuario set email='ZGFtaWFuLmNpcG9sYXRAZ21haWwuY29t' where idusuario=1;
-update usuario set email='Y2hhcmxpZS5icm93bkBnbWFpbC5jb20=' where idusuario=2;
-update usuario set email='YWxmQGdtYWlsLmNvbQ==' where idusuario=3;
-update usuario set email='dWFpQGdtYWlsLmNvbQ==' where idusuario=4;
-update usuario set email='cm9iZXJ0b0BnbWFpbC5jb20=' where idusuario=5;
-update usuario set email='bWF0aWFzQGdtYWlsLmNvbQ==' where idusuario=6;
-update usuario set email='cHJ1ZWJhQGdtYWlsLmNvbQ==' where idusuario=7;
-update usuario set email='dGhvckBnbWFpbC5jb20=' where idusuario=8;
-update usuario set email='YmFydEBnbWFpbC5jb20=' where idusuario=9;
-
->Encrypting:damian.cipolat@gmail.com
-@>>>LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM=
->Encrypting:charlie.brown@gmail.com
-@>>>i5HY/mgU6DofzSzcU3Tvgjp37KY26Vl7OVlIFrotG2Q=
->Encrypting:alf@gmail.com
-@>>>HYixVzlYXo/uTIuS0ysz2Q==
->Encrypting:uai@gmail.com
-@>>>7ime9r7HTrxtqW8XVDLYog==
->Encrypting:roberto@gmail.com
-@>>>+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=
->Encrypting:prueba@gmail.com
-@>>>3ro57FQVvmSAflg5Y/kc8Q5OxsN4t/9IGpJKdbD3xtg=
->Encrypting:thor@gmail.com
-@>>>WQzRkVfSmv8xG/hM7o5vmQ==
->Encrypting:bart@gmail.com
-@>>>LkoeV1G1dO9ejwE1tOr2vA==
-
 roberto@gmail.com<-------
 123456
 

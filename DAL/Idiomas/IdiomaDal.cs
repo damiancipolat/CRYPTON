@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Data.SqlClient;
 using BE;
 using DAL.DAO;
 
@@ -108,25 +109,23 @@ namespace DAL.Idiomas
         //Obtengo las palabras de un idioma.
         public Dictionary<string, string> loadWords(string langCode)
         {
-            List<Object> words= new QuerySelect().selectAnd(new Dictionary<string, Object>{
-                {"code", langCode}
-            }, "idioma_palabras");
+            //Armo el query y ejecuto.
+            string sql = "select clave,valor from idioma_palabras where code='" + langCode+"';";            
+            SqlDataReader reader = new QuerySelect().query(sql);
 
-            //Validateresult.
+            //Resultado.
             Dictionary<string, string> result = new Dictionary<string, string>();
 
-            if (words.Count == 0)
-                return result;
-
-            //Load the dictionary.
-            foreach (List<object> row in words)
+            while (reader.Read())
             {
-                //Convierto a diccionario y extraigo los campos de la tabla de palabras "clave" y "valor".
-                Dictionary<string, object> word = new SqlParser().rowToDictionary(row);
-                Debug.WriteLine("Loading word>"+ word["clave"].ToString()+":"+ word["valor"].ToString());
+                //Convierto a diccionario y extraigo los campos de la tabla de palabras "clave" y "valor".                
+                string clave = Convert.ToString(reader.GetValue(0));
+                string valor = Convert.ToString(reader.GetValue(1));
+
+               Console.WriteLine("Loading word>" +clave+ ":" +valor);
 
                 //Agrego en la lista.
-                result.Add(word["clave"].ToString(), word["valor"].ToString());
+                result.Add(clave,valor);
             }
 
             return result;

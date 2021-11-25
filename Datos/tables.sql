@@ -840,6 +840,7 @@ create table idioma_palabras
 );
 
 CREATE INDEX ix_1_idiomas ON idioma_palabras(code,clave);
+CREATE INDEX ix_2_idiomas ON idioma_palabras(code);
 
 --ESPAÑOL
 insert into idioma_palabras(code,clave,valor) values('ES','WELCOME','Bienvenido');

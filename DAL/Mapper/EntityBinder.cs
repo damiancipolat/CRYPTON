@@ -37,7 +37,7 @@ namespace DAL.Mapper
                 object value = data.Value;             
 
                 //Bind resulset with target object.
-                Debug.WriteLine(
+                Console.WriteLine(
                     "BIND -->"+attributeName+
                     " type:" + (target.GetType().GetField(attributeName)!=null? target.GetType().GetField(attributeName).ToString():"null")+
                     " value:"+value.ToString()
