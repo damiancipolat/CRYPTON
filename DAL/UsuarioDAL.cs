@@ -33,7 +33,7 @@ namespace DAL
             
             //Blanqueo el campo de password.
             userTarget.pwd = "";
-            userTarget.estado = this.getEstado((int)mapa["estado"]);
+            userTarget.estado = this.getEstado((int)mapa["estado"]);            
             userTarget.email = Cripto.GetInstance().Decrypt(Convert.ToString(mapa["email"]));
 
             return userTarget;

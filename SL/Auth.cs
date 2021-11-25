@@ -75,6 +75,10 @@ namespace SL
             //Valido las credenciales y obtengo el usuario logeado.
             UsuarioBE user = this.checkCredentials(email,pwd);
 
+            //Si esta bloqueado niego el acceso.
+            if (user.estado == UsuarioEstado.BLOQUEADO)
+                throw new Exception("Usuario bloqueado, no se permite el acceso, comuniquese con soporte@crypton.com");
+
             //Inicio la sesion.
             this.startSession(user);
 

@@ -72,7 +72,7 @@ namespace UI
                         user.idusuario.ToString(),
                         user.nombre,
                         user.apellido,
-                        Cripto.GetInstance().Decrypt(user.email),
+                        user.email,
                         user.tipoUsuario==UsuarioTipo.CLIENTE?"Cliente":"Empleado"
                 });
             }
@@ -157,7 +157,8 @@ namespace UI
                 DataGridViewRow selectedRow = this.usr_data.Rows[selectedrowindex];
 
                 //Oculto/muetro el boton.
-                usr_ctrl_changes.Enabled = selectedRow.Cells[4].Value == "Cliente";
+                this.usr_ctrl_changes.Enabled = selectedRow.Cells[4].Value == "Cliente";
+                this.usr_ctrl_change_state.Enabled = selectedRow.Cells[4].Value == "Cliente";
             }
             else
             {

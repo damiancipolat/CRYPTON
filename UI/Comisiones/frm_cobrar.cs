@@ -70,6 +70,9 @@ namespace UI.Comisiones
 
                 //Lanzo un modal como reporte
                 this.statusReport(results);
+
+                ///Cierro ui.
+                this.Close();
             }
         }
 
@@ -114,6 +117,7 @@ namespace UI.Comisiones
 
         private void translateText() 
         {
+            this.Text = Idioma.GetInstance().translate("COBRAR_FRM_TITLE");
             this.cobrar_frm_title.Text = Idioma.GetInstance().translate("COBRAR_FRM_TITLE");
             this.cobrar_frm_title_descrip.Text = Idioma.GetInstance().translate("COBRAR_FRM_TITLE_DESCRIP");
             this.cobrar_btn_process.Text = Idioma.GetInstance().translate("COBRAR_BTN_PROCESS");
@@ -132,7 +136,7 @@ namespace UI.Comisiones
 
             //Total
             Money total = this.summarizeList(pendings);
-            this.cobrar_total_label.Text = "Total a cobrar:"+total.getValue().ToString();
+            this.cobrar_total_label.Text = Idioma.GetInstance().translate("COBRAR_TOTAL_LABEL") +" $"+ total.getValue().ToString();
 
             //Internal buffer.
             this.innerList.Clear();

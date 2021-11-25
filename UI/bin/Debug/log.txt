@@ -539,3 +539,52 @@ VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:7 926ec230c42603
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:8 973469fa873e6d863d213a84765eaf6a,227a682048f0337ba2630c1a9a39c18e
 VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:9 fa6a2e7293833eedc5e2306f8be0fe47,7770fda546695217e9260a2f2ff3fb99
 VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+INTEGRITY ERROR:El relleno entre caracteres no es válido y no se puede quitar.
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,8b75a894618d68f8691db25d921da1b3
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com

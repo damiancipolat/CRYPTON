@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Configuration;
 using System.IO;
+using System.Diagnostics;
 
 namespace SEC
 {
@@ -57,6 +58,7 @@ namespace SEC
         //Encripta un string.
         public string Encrypt(string plainText)
         {
+            Debug.WriteLine(">Encrypting:"+ plainText);
             string key = this.getEncriptionKey();
 
             byte[] iv = new byte[16];
@@ -89,6 +91,7 @@ namespace SEC
         //Decrypt string.
         public string Decrypt(string cipherText)
         {
+            Debug.WriteLine(">Decrypting:" + cipherText);
             string key = this.getEncriptionKey();
             byte[] iv = new byte[16];
             byte[] buffer = Convert.FromBase64String(cipherText);

@@ -99,7 +99,7 @@
             this.commision_debts_notify_btn.TabIndex = 72;
             this.commision_debts_notify_btn.Text = "commision_debts_notify_btn";
             this.commision_debts_notify_btn.UseVisualStyleBackColor = false;
-            this.commision_debts_notify_btn.Click += new System.EventHandler(this.button2_Click);
+            this.commision_debts_notify_btn.Click += new System.EventHandler(this.commision_debts_notify_btn_Click);
             // 
             // frm_deudores
             // 

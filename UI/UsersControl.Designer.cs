@@ -39,7 +39,7 @@
             this.usr_ctrl_changes = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.usr_search_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.usr_ctrl_change_state = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usr_data)).BeginInit();
             this.SuspendLayout();
@@ -160,24 +160,25 @@
             this.usr_search_btn.UseVisualStyleBackColor = false;
             this.usr_search_btn.Click += new System.EventHandler(this.Usr_search_btn_Click);
             // 
-            // button1
+            // usr_ctrl_change_state
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumPurple;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(332, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 38);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Cambiar estado";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.usr_ctrl_change_state.BackColor = System.Drawing.Color.MediumPurple;
+            this.usr_ctrl_change_state.Enabled = false;
+            this.usr_ctrl_change_state.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.usr_ctrl_change_state.Location = new System.Drawing.Point(332, 177);
+            this.usr_ctrl_change_state.Name = "usr_ctrl_change_state";
+            this.usr_ctrl_change_state.Size = new System.Drawing.Size(139, 38);
+            this.usr_ctrl_change_state.TabIndex = 47;
+            this.usr_ctrl_change_state.Text = "Cambiar estado";
+            this.usr_ctrl_change_state.UseVisualStyleBackColor = false;
+            this.usr_ctrl_change_state.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // UsersControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1140, 758);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.usr_ctrl_change_state);
             this.Controls.Add(this.usr_ctrl_changes);
             this.Controls.Add(this.usr_search_label);
             this.Controls.Add(this.usr_perm_btn);
@@ -216,6 +217,6 @@
         private System.Windows.Forms.Button usr_ctrl_changes;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button usr_search_btn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button usr_ctrl_change_state;
     }
 }

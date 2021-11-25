@@ -635,11 +635,28 @@ namespace UI
 
         private void button1_Click_16(object sender, EventArgs e)
         {
-            Debug.WriteLine("@"+Cripto.GetInstance().Decrypt("i5HY/mgU6DofzSzcU3Tvgjp37KY26Vl7OVlIFrotG2Q="));
+
         }
 
         private void button1_Click_17(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click_18(object sender, EventArgs e)
+        {
+            new frm_deudores().Show();
+        }
+
+        private void button1_Click_19(object sender, EventArgs e)
+        {
+            //Debug.WriteLine("@>>>" + Cripto.GetInstance().Decrypt("LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM="));
+            /*Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("charlie.brown@gmail.com"));
+            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("alf@gmail.com"));
+            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("uai@gmail.com"));
+            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("roberto@gmail.com"));
+            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("prueba@gmail.com"));
+            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("thor@gmail.com"));
+            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("bart@gmail.com"));*/
         }
     }
 }

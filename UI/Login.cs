@@ -80,6 +80,14 @@ namespace UI
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    Idioma.GetInstance().translate(ex.Message),
+                    Idioma.GetInstance().translate("SECURITY_ERROR"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void Frm_login_Load(object sender, EventArgs e)
@@ -94,7 +102,7 @@ namespace UI
 
         private void frm_login_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MessageBox.Show("aaaaa");
+            HelpManual.GetInstance().openHelp("aaa");
         }
     }
 }

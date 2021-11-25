@@ -18,7 +18,7 @@ namespace BE
         NULO=0,
         ACTIVO = 1,
         INACTIVO = 2,
-        BLOQUEADO = 2
+        BLOQUEADO = 3
     }
 
     public class UsuarioBE : EntityBE

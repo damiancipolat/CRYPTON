@@ -62,6 +62,8 @@ create table usuario(
 	deleted datetime
 );
 
+CREATE INDEX ix_1_usuario ON usuario(idusuario);
+
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
 	tipo_usuario int identity(1,1) primary key,
@@ -1199,6 +1201,11 @@ insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_TYPE','Tip
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_SEARCH','Buscar');
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_PAY','Cobrar comisiones');
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_TOTAL','Total:');
+insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_FRM_TITLE','Cobrar comisiones');
+insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_FRM_TITLE_DESCRIP','Aqui se ve la lista de comisiones pendientes por cobrar:');
+insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_BTN_PROCESS','Cobrar comisiones:');
+insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_TOTAL_LABEL','Total pendiente por cobrar:');
+insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_WAITING','Procesando, aguarde un momento...');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1555,29 +1562,35 @@ insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_TYPE','Ty
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_SEARCH','Search');
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_PAY','Charge commissions');
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_TOTAL','Total:');
+insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_FRM_TITLE','Charge commissions');
+insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_FRM_TITLE_DESCRIP','Here is the list of commissions pending collection:');
+insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_BTN_PROCESS','Start process');
+insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_TOTAL_LABEL','Total pending receivable:');
+insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_WAITING','Procesando, aguarde un momento...');
+
+select * from usuario
+select us.* from usuario as us where us.apellido like '%a%'or us.nombre like '%a%'or us.email like '%4PQJOBxyYZ1mgEpm/GCAmw==%'
 
 
+
+/*
 select * from comisiones where fecRegister>= '2021-01-04 00:00:00' and fecRegister<='2021-11-09 00:00:00' and processed=0
-
 update usuario set email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' where idusuario=5;
-
 select * from usuario where  email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' and pwd='e10adc3949ba59abbe56e057f20f883e'
 select * from comisiones where processed=0
 update comisiones set processed=0
 select * from billetera where idwallet=1;
 update billetera set saldo=1000000 where idwallet=1;
-
 select tipo_operacion,idcliente,moneda,SUM(valor) from comisiones 
 where processed=0
 group by tipo_operacion,idcliente,moneda;
-
 select * from notificaciones
-
 insert into comisiones(tipo_operacion,referencia,idwallet,moneda,valor,fecCobro,processed,idcliente,fecRegister)
 values(1,1,1,'ARS',100,NULL,0,1,GETDATE());
 
 select * from usuario where idusuario=2
 update usuario set hash='17364a8f8199c90f74596cef6e0aac72' where idusuario=2;
+*/
 
 /*
 update usuario set  nombre='damian' , apellido='cipolat' , alias='prueba' , email='YHJ0Y+tJ3+sqf84lY4nY12s5YEliQIda5Urtv3Y4P3Oq4r07wuOBKibnWnCxG+MADwInijPH0gwnODOF6GOwQJLZ+omRRMfsix+DVwaSj5w=' , tipo_usuario=1 , estado=2 , hash='11d71138d9ddee37d1fcce5aedec3ce4'  where idusuario=1;

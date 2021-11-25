@@ -35,6 +35,7 @@
             this.signup_title = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.phone_number_txt = new System.Windows.Forms.TextBox();
             this.birth_date_txt = new System.Windows.Forms.MaskedTextBox();
             this.document_number = new System.Windows.Forms.Label();
             this.document_number_txt = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.signup_description = new System.Windows.Forms.Label();
             this.your_documents = new System.Windows.Forms.Label();
             this.your_user_label = new System.Windows.Forms.Label();
-            this.phone_number_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -130,6 +130,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 458);
             this.panel2.TabIndex = 24;
+            // 
+            // phone_number_txt
+            // 
+            this.phone_number_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone_number_txt.Location = new System.Drawing.Point(30, 393);
+            this.phone_number_txt.Name = "phone_number_txt";
+            this.phone_number_txt.Size = new System.Drawing.Size(246, 34);
+            this.phone_number_txt.TabIndex = 29;
             // 
             // birth_date_txt
             // 
@@ -365,14 +373,6 @@
             this.your_user_label.Text = "Tú usuario";
             this.your_user_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // phone_number_txt
-            // 
-            this.phone_number_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phone_number_txt.Location = new System.Drawing.Point(30, 393);
-            this.phone_number_txt.Name = "phone_number_txt";
-            this.phone_number_txt.Size = new System.Drawing.Size(246, 34);
-            this.phone_number_txt.TabIndex = 29;
-            // 
             // frm_signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,6 +388,7 @@
             this.Controls.Add(this.signup_title);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_signup";

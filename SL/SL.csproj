@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Help.cs" />
     <Compile Include="Auth.cs" />
     <Compile Include="Bitacora\BdLayer.cs" />
     <Compile Include="Bitacora\Bitacora.cs" />
