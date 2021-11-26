@@ -232,5 +232,10 @@ namespace UI
         {
             this.calculateValues();
         }
+
+        private void frm_publish_sell_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("publicar_venta");            
+        }
     }
 }

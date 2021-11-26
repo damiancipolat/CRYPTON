@@ -177,6 +177,7 @@
             this.Name = "frm_wallets";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Billeteras";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_wallets_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Frm_wallets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.frm_wallet_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

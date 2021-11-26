@@ -192,6 +192,7 @@
             this.Name = "frm_cbu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de CBU";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_cbu_HelpButtonClicked);
             this.Load += new System.EventHandler(this.frm_cbu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

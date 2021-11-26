@@ -97,5 +97,10 @@ namespace UI.Banco
                 MessageBox.Show(error.Message);
             }            
         }
+
+        private void frm_crypto_extract_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("solic_extraccion_crypto");
+        }
     }
 }

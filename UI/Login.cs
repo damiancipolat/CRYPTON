@@ -102,7 +102,7 @@ namespace UI
 
         private void frm_login_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            HelpManual.GetInstance().openHelp("aaa");
+            HelpManual.GetInstance().openForClient("login");
         }
     }
 }

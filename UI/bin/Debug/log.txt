@@ -592,3 +592,21 @@ LOGIN:Request login of user:damian.cipolat@gmail.com
 SESSION:An user has started session - email:damian.cipolat@gmail.com
 LOGIN:Login of user:damian.cipolat@gmail.com success!
 SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:0
+WALLET:Cargando wallet:damian.cipolat@gmail.com

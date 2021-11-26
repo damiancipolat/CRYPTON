@@ -142,5 +142,10 @@ namespace UI
         {
             this.Close();
         }
+
+        private void frm_wallets_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("wallets");
+        }
     }
 }

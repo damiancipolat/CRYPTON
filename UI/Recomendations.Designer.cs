@@ -81,6 +81,14 @@
             this.sell_close.UseVisualStyleBackColor = false;
             this.sell_close.Click += new System.EventHandler(this.Sell_close_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 50;
+            this.pictureBox1.TabStop = false;
+            // 
             // btn_view
             // 
             this.btn_view.BackColor = System.Drawing.Color.LightYellow;
@@ -105,10 +113,12 @@
             this.Controls.Add(this.recom_descrip);
             this.Controls.Add(this.recom_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_recomendations";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_recomendations_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Frm_recomendations_Load);
             ((System.ComponentModel.ISupportInitialize)(this.frm_recom_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

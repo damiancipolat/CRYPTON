@@ -80,5 +80,10 @@ namespace UI
         {
             this.Close();
         }
+
+        private void NotificationsFrm_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("notificaciones");
+        }
     }
 }

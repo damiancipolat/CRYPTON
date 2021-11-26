@@ -231,11 +231,13 @@
             this.Controls.Add(this.sell_input);
             this.Controls.Add(this.sell_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_publish_sell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_publish_sell";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_publish_sell_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Frm_publish_sell_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

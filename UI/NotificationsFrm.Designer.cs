@@ -102,11 +102,13 @@
             this.Controls.Add(this.notif_title);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NotificationsFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Notifications";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.NotificationsFrm_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Notifications_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notif_data)).EndInit();

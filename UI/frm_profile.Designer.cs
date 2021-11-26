@@ -219,11 +219,13 @@
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.btn_close);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_profile";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_profile_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Frm_profile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

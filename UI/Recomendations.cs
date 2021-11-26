@@ -142,5 +142,10 @@ namespace UI
         {
  
         }
+
+        private void frm_recomendations_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("recomendaciones");
+        }
     }
 }

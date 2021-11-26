@@ -177,11 +177,13 @@
             this.Controls.Add(this.search_descrip);
             this.Controls.Add(this.search_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BuscadorOfertas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscador form";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.BuscadorOfertas_HelpButtonClicked);
             this.Load += new System.EventHandler(this.BuscadorOfertas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usr_search_data)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -117,5 +117,10 @@ namespace UI
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void frm_profile_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("profile");
+        }
     }
 }

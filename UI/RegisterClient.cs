@@ -149,5 +149,10 @@ namespace UI
         {
             this.translateTexts();
         }
+
+        private void frm_signup_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("register");
+        }
     }
 }

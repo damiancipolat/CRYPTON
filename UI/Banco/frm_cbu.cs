@@ -76,5 +76,10 @@ namespace UI.Banco
 
             Clipboard.SetText(line);
         }
+
+        private void frm_cbu_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("cbu");
+        }
     }
 }

@@ -97,5 +97,10 @@ namespace UI.Banco
                 MessageBox.Show(Idioma.GetInstance().translate("EXTRACT_ARS_NO_FOUNDS"));
             }
         }
+
+        private void frm_solic_retiro_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("solic_extraccion");
+        }
     }
 }

@@ -394,6 +394,7 @@
             this.Name = "frm_signup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_signup_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Frm_signup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

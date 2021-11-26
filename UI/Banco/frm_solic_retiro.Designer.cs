@@ -187,11 +187,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.extract_ars_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_solic_retiro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitar extracción";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_solic_retiro_HelpButtonClicked);
             this.Load += new System.EventHandler(this.frm_solic_retiro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -137,5 +137,10 @@ namespace UI
             this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_PRICE"), Idioma.GetInstance().translate("SEARCH_COL_PRICE"));
             this.usr_search_data.Columns.Add(Idioma.GetInstance().translate("SEARCH_COL_REQ"), Idioma.GetInstance().translate("SEARCH_COL_REQ"));                        
         }
+
+        private void BuscadorOfertas_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("buscador_ofertas");
+        }
     }
 }

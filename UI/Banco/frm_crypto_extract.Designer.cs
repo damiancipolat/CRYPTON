@@ -175,11 +175,13 @@ namespace UI.Banco
             this.Controls.Add(this.extract_crypto_wallet_title);
             this.Controls.Add(this.cmb_wallets_list);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_crypto_extract";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Retiro - crypto";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_crypto_extract_HelpButtonClicked);
             this.Load += new System.EventHandler(this.frm_crypto_extract_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
