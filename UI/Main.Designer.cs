@@ -70,7 +70,6 @@
             this.main_menu_extract = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu_extract_crypto = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -442,22 +441,11 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(416, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 133);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_20);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 780);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
@@ -528,7 +516,6 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_debts;
         private System.Windows.Forms.ToolStripMenuItem main_menu_earnings_report;
         private System.Windows.Forms.ToolStripStatusLabel home_label_bar;
-        private System.Windows.Forms.Button button1;
     }
 }
 

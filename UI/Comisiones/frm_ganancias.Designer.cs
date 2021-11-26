@@ -44,6 +44,8 @@
             this.report_dbt_close = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.report_total_value = new System.Windows.Forms.Label();
+            this.report_download = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.bitacora_data)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -217,11 +219,24 @@
             this.report_total_value.Text = "report_total_value";
             this.report_total_value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // report_download
+            // 
+            this.report_download.BackColor = System.Drawing.Color.SandyBrown;
+            this.report_download.ForeColor = System.Drawing.Color.White;
+            this.report_download.Location = new System.Drawing.Point(384, 713);
+            this.report_download.Name = "report_download";
+            this.report_download.Size = new System.Drawing.Size(152, 48);
+            this.report_download.TabIndex = 63;
+            this.report_download.Text = "report_download";
+            this.report_download.UseVisualStyleBackColor = false;
+            this.report_download.Click += new System.EventHandler(this.report_download_Click);
+            // 
             // frm_ganancias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 783);
+            this.Controls.Add(this.report_download);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.report_dbt_close);
             this.Controls.Add(this.panel1);
@@ -268,5 +283,7 @@
         private System.Windows.Forms.Button report_dbt_close;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label report_total_value;
+        private System.Windows.Forms.Button report_download;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

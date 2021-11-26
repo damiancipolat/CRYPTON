@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using SL;
 using SL.Exceptions;
 using VL.Exceptions;
@@ -35,9 +36,6 @@ namespace UI
         {
             this.parent = parent;
             InitializeComponent();
-
-            //Realizo actualizacion.
-           // new labelBinder().bindKeys(this.Controls, this.labelBindings);
         }
 
         //Traducir textos.
@@ -103,6 +101,10 @@ namespace UI
         private void frm_login_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             HelpManual.GetInstance().openForClient("login");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -36,6 +36,7 @@
             this.txt_pwd = new System.Windows.Forms.TextBox();
             this.login_btn_ingresar = new System.Windows.Forms.Button();
             this.login_btn_cancel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,10 +119,21 @@
             this.login_btn_cancel.UseVisualStyleBackColor = false;
             this.login_btn_cancel.Click += new System.EventHandler(this.Login_btn_cancel_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(404, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 74);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frm_login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(558, 364);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.login_btn_cancel);
             this.Controls.Add(this.login_btn_ingresar);
             this.Controls.Add(this.txt_pwd);
@@ -156,5 +168,6 @@
         private System.Windows.Forms.TextBox txt_pwd;
         private System.Windows.Forms.Button login_btn_ingresar;
         private System.Windows.Forms.Button login_btn_cancel;
+        private System.Windows.Forms.Button button1;
     }
 }

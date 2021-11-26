@@ -24,8 +24,6 @@ using SEC.Exceptions;
 using UI.Comisiones;
 using DAL;
 
-
-
 namespace UI
 {
     public partial class frm_main : Form, INotification
@@ -551,27 +549,11 @@ namespace UI
 
         private void Button1_Click_11(object sender, EventArgs e)
         {
-            UsuarioBE user = new UsuarioBL().findById(4);
-            string hash = new HashUsuario().hash(user);
-            Debug.WriteLine(">>>" + hash);
         }
 
         private void Button1_Click_12(object sender, EventArgs e)
         {
-            //new frm_ganancias().Show();
-            //new frm_user_status().Show();
-            //new frm_cbu().Show();
-            //new frm_buscar_cbu().Show();
-            //new frm_solic_retiro().Show();
             new frm_lista_retiro().Show();
-
-            /*
-            InputForm frm = new InputForm("Ingresar saldo", "Ingrese el monto a acreditar en la cuenta.");
-            frm.ShowDialog();
-
-            //Obtengo el valor. 
-            string value = frm.getValue();
-            */
         }
 
         private void Button1_Click_13(object sender, EventArgs e)
@@ -586,10 +568,6 @@ namespace UI
 
         private void button1_Click_14(object sender, EventArgs e)
         {
-            //new frm_lista_retiro().Show();
-            //TipoSolicOperacion tipo = TipoSolicOperacion.RETIRO_SALDO;
-            //Debug.WriteLine("****" + ((int)tipo).ToString());
-            //new frm_crypto_extract().Show();
         }
 
         private void main_menu_op_cash_in_Click(object sender, EventArgs e)
@@ -645,18 +623,6 @@ namespace UI
         }
 
         private void button1_Click_19(object sender, EventArgs e)
-        {
-            //Debug.WriteLine("@>>>" + Cripto.GetInstance().Decrypt("LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM="));
-            /*Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("charlie.brown@gmail.com"));
-            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("alf@gmail.com"));
-            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("uai@gmail.com"));
-            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("roberto@gmail.com"));
-            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("prueba@gmail.com"));
-            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("thor@gmail.com"));
-            Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("bart@gmail.com"));*/
-        }
-
-        private void button1_Click_20(object sender, EventArgs e)
         {
         }
     }

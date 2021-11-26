@@ -613,3 +613,31 @@ WALLET:Cargando wallet:damian.cipolat@gmail.com
 LOGIN:Request login of user:roberto@gmail.com
 SESSION:An user has started session - email:roberto@gmail.com
 LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!

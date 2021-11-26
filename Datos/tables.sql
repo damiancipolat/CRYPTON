@@ -823,11 +823,14 @@ insert into palabras(word) values('REPORT_DBT_TYPE');
 insert into palabras(word) values('REPORT_DBT_SEARCH');
 insert into palabras(word) values('REPORT_DBT_PAY');
 insert into palabras(word) values('REPORT_DBT_TOTAL');
+insert into palabras(word) values('REPORT_DBT_REPORT_GENERATED');
+insert into palabras(word) values('REPORT_DBT_REPORT_SAVE');
 insert into palabras(word) values('COBRAR_FRM_TITLE');
 insert into palabras(word) values('COBRAR_FRM_TITLE_DESCRIP');
 insert into palabras(word) values('COBRAR_BTN_PROCESS');
 insert into palabras(word) values('COBRAR_TOTAL_LABEL');
 insert into palabras(word) values('COBRAR_WAITING');
+insert into palabras(word) values('REPORT_DBT_DOWNLOAD');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1207,6 +1210,9 @@ insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_FRM_TITLE_DESC
 insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_BTN_PROCESS','Cobrar comisiones:');
 insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_TOTAL_LABEL','Total pendiente por cobrar:');
 insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_WAITING','Procesando, aguarde un momento...');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_REPORT_GENERATED','Reporte generado!');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_REPORT_SAVE','Guardar reporte');
+insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_DOWNLOAD','Descargar reporte');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1568,6 +1574,9 @@ insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_FRM_TITLE_DES
 insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_BTN_PROCESS','Start process');
 insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_TOTAL_LABEL','Total pending receivable:');
 insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_WAITING','Procesando, aguarde un momento...');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_GENERATED','Report generated success!!');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_SAVE','Save report');
+insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_DOWNLOAD','Download report');
 
 select * from usuario
 select us.* from usuario as us where us.apellido like '%a%'or us.nombre like '%a%'or us.email like '%4PQJOBxyYZ1mgEpm/GCAmw==%'
