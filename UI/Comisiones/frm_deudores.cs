@@ -99,10 +99,10 @@ namespace UI.Comisiones
         private void button1_Click(object sender, EventArgs e)
         {            
         }
+
+        private void frm_deudores_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForEmpleado("consultar_deudores");
+        }
     }
 }
-
-
-/*
- 
- */

@@ -114,5 +114,10 @@ namespace UI.Comisiones
         {
 
         }
+
+        private void frm_ganancias_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForEmpleado("calc_cobros");
+        }
     }
 }

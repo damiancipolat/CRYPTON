@@ -131,5 +131,9 @@ namespace UI.Banco
             }
         }
 
+        private void frm_buscar_cbu_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForEmpleado("acreditar_fondos");
+        }
     }
 }

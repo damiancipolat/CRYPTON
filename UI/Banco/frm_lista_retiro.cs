@@ -127,5 +127,10 @@ namespace UI.Banco
                 }
             }
         }
+
+        private void frm_lista_retiro_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForEmpleado("procesar_extraccion");
+        }
     }
 }

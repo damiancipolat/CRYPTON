@@ -1,3 +1,9 @@
 {"actividad":"LOGIN","fecLog":"\/Date(1637903249592-0300)\/","id":0,"payload":"Request login of user:damian.cipolat@gmail.com","usuario":null}
 {"actividad":"SESSION","fecLog":"\/Date(1637903250108-0300)\/","id":0,"payload":"An user has started session - email:damian.cipolat@gmail.com","usuario":null}
 {"actividad":"LOGIN","fecLog":"\/Date(1637903250401-0300)\/","id":0,"payload":"Login of user:damian.cipolat@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"prueba","apellido":"cipolat","email":"damian.cipolat@gmail.com","estado":1,"hash":"8b75a894618d68f8691db25d921da1b3","idusuario":1,"nombre":"damian","pwd":"","tipoUsuario":1}}
+{"actividad":"LOGIN","fecLog":"\/Date(1637932324744-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
+{"actividad":"SESSION","fecLog":"\/Date(1637932325287-0300)\/","id":0,"payload":"An user has started session - email:roberto@gmail.com","usuario":null}
+{"actividad":"LOGIN","fecLog":"\/Date(1637932325834-0300)\/","id":0,"payload":"Login of user:roberto@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"roberto","apellido":"teco","email":"roberto@gmail.com","estado":1,"hash":"d8c0084346e261ae9c888be0f253ec6f","idusuario":5,"nombre":"roberto","pwd":"","tipoUsuario":2}}
+{"actividad":"LOGIN","fecLog":"\/Date(1637932435723-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
+{"actividad":"SESSION","fecLog":"\/Date(1637932436350-0300)\/","id":0,"payload":"An user has started session - email:roberto@gmail.com","usuario":null}
+{"actividad":"LOGIN","fecLog":"\/Date(1637932436748-0300)\/","id":0,"payload":"Login of user:roberto@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"roberto","apellido":"teco","email":"roberto@gmail.com","estado":1,"hash":"d8c0084346e261ae9c888be0f253ec6f","idusuario":5,"nombre":"roberto","pwd":"","tipoUsuario":2}}

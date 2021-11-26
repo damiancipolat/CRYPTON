@@ -149,11 +149,13 @@
             this.Controls.Add(this.search_cbu_title_descrip);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.search_cbu_title);
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_buscar_cbu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar CBU";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_buscar_cbu_HelpButtonClicked);
             this.Load += new System.EventHandler(this.frm_buscar_cbu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usr_search_data)).EndInit();

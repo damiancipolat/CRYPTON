@@ -113,11 +113,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.commision_debts_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_deudores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_deudores";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_deudores_HelpButtonClicked);
             this.Load += new System.EventHandler(this.frm_deudores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_comision_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

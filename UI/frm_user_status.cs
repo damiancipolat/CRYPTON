@@ -109,5 +109,10 @@ namespace UI
         {
             this.Close();
         }
+
+        private void frm_user_status_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForEmpleado("bloquear_cliente");
+        }
     }
 }

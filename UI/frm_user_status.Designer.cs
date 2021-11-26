@@ -128,11 +128,13 @@
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.btn_close);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_user_status";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_user_status";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_user_status_HelpButtonClicked);
             this.Load += new System.EventHandler(this.frm_user_status_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

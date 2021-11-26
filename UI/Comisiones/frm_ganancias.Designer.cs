@@ -231,11 +231,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.report_dbt_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_ganancias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ganancias";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_ganancias_HelpButtonClicked);
             this.Load += new System.EventHandler(this.frm_ganancias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bitacora_data)).EndInit();
             this.panel1.ResumeLayout(false);

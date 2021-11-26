@@ -146,5 +146,10 @@ namespace UI.Comisiones
             this.loadColumns();
             this.loadData(pendings);
         }
+
+        private void frm_cobrar_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForEmpleado("cobrar_comisiones");
+        }
     }
 }

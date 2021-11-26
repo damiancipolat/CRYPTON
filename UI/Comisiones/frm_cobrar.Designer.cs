@@ -152,11 +152,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cobrar_frm_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_cobrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_cobrar";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_cobrar_HelpButtonClicked);
             this.Load += new System.EventHandler(this.frm_cobrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_comision_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
