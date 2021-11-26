@@ -56,7 +56,7 @@ namespace BL
             return new ComisionDAL().searchByClientPendings(client);
         }
 
-        public List<ComisionBE> getPendingsToPay() 
+        public List<ComisionBE> getPendingsToPay()
         {
             return new ComisionDAL().getPendingsToPay();
         }
@@ -69,7 +69,7 @@ namespace BL
         }
 
         //Reclama el pago.
-        public void reclaimPayment(int idclient, float valor) 
+        public void reclaimPayment(int idclient, float valor)
         {
             ClienteBE client = new ClienteBL().findById(idclient);
 
@@ -78,7 +78,7 @@ namespace BL
 
             //Get system delivery.
             string delivery = "Crypton System <" + "crypton.system@" + emailHost + ">";
-            string payload = "Hola "+client.nombre+" necesitamos que ingreses en tu cuenta de ARS el valor de $"+valor.ToString()+" para saldar tus deudas.";
+            string payload = "Hola " + client.nombre + " necesitamos que ingreses en tu cuenta de ARS el valor de $" + valor.ToString() + " para saldar tus deudas.";
 
             //Envio el email.
             new Mailer().send(delivery, client.email, "CRYPTON - Ponte al dia", payload);
@@ -95,7 +95,7 @@ namespace BL
         }
 
         //Notifico la operacion por email y notificacion interna.
-        private void notifyDebit(ComisionBE comision,bool isDebit=false) 
+        private void notifyDebit(ComisionBE comision, bool isDebit = false)
         {
             //Get administrator account.
             string emailHost = ConfigurationManager.AppSettings["EmailHost"];
@@ -134,7 +134,7 @@ namespace BL
         }
 
         //Procesa el pago en ARS de un dto comision.
-        public bool processPayment(ComisionBE comision) 
+        public bool processPayment(ComisionBE comision)
         {
             try
             {
@@ -158,18 +158,24 @@ namespace BL
                     return false;
                 }
             }
-            catch (Exception error) 
+            catch (Exception error)
             {
-                Bitacora.GetInstance().log("DEBIT","Unable to process commision N°"+comision.idcobro.ToString(),true);
-                Bitacora.GetInstance().log("DEBIT", "Error processing payment:" + error.Message,true);
+                Bitacora.GetInstance().log("DEBIT", "Unable to process commision N°" + comision.idcobro.ToString(), true);
+                Bitacora.GetInstance().log("DEBIT", "Error processing payment:" + error.Message, true);
                 return false;
-            }            
+            }
         }
 
         //Busqueda por fechas.
-        public List<ComisionBE> findByDate(string type, string from, string to) 
+        public List<ComisionBE> findByDate(string type, string from, string to)
         {
             return new ComisionDAL().findByDate(type, from, to);
+        }
+
+        //Busqueda por fechas - fast
+        public List<(string, string, string, string, string, string)> findByDateFast(string type, string from, string to)
+        {
+            return new ComisionDAL().findByDateFast(type,from,to);
         }
 
         //-----------------------------------

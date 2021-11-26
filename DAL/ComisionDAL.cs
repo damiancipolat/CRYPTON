@@ -217,6 +217,49 @@ namespace DAL
             return lista;
         }
 
+        //Buscar comisiones por fecha de creacion, version optimizada.
+        public List<(string, string, string, string, string, string)> findByDateFast(string type, string from, string to)
+        {
+            //Convierto formato de fechas.
+            from = DateTime.ParseExact(from, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+            to = DateTime.ParseExact(to, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+
+            //Agrego el filtro de fecha.
+            string sql = "";
+
+            //Traigo todos.
+            if (type == "0")
+                sql = ($"select com.idcobro,usr.alias,com.fecRegister,com.moneda,com.valor,com.processed from comisiones as com inner join cliente as cli on com.idcliente=cli.idcliente inner join usuario as usr on usr.idusuario=cli.idusuario where com.fecRegister>= '{from}' and com.fecRegister<='{to}'");
+
+            //Traigo solo PROCESADOS.
+            if (type == "1")
+                sql = ($"select com.idcobro,usr.alias,com.fecRegister,com.moneda,com.valor,com.processed from comisiones as com inner join cliente as cli on com.idcliente=cli.idcliente inner join usuario as usr on usr.idusuario=cli.idusuario where com.fecRegister>= '{from}' and com.fecRegister<='{to}' and com.processed=1");
+
+            //Traigo solo PENDIENTES.
+            if (type == "2")
+                sql = ($"select com.idcobro,usr.alias,com.fecRegister,com.moneda,com.valor,com.processed from comisiones as com inner join cliente as cli on com.idcliente=cli.idcliente inner join usuario as usr on usr.idusuario=cli.idusuario where com.fecRegister>= '{from}' and com.fecRegister<='{to}' and com.processed=0");
+
+            //Hago el query.
+            QuerySelect builder = new QuerySelect();
+            SqlDataReader reader = builder.query(sql);
+
+            List<(string, string, string, string, string, string)> lista=new List<(string, string, string, string, string, string)>();
+
+            while (reader.Read())
+            {
+                lista.Add((
+                    Convert.ToString(reader.GetValue(0)),
+                    Convert.ToString(reader.GetValue(1)),
+                    Convert.ToString(reader.GetValue(2)),
+                    Convert.ToString(reader.GetValue(3)),
+                    Convert.ToString(reader.GetValue(4)),
+                    Convert.ToString(reader.GetValue(5))
+                ));
+            }
+
+            return lista;
+        }
+
         //REPORTES ----------------------
 
         //Traigo la lista de deudores pendientes de cobrar comisiones.

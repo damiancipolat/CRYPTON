@@ -41,3 +41,16 @@
 {"actividad":"LOGIN","fecLog":"\/Date(1637940874772-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
 {"actividad":"SESSION","fecLog":"\/Date(1637940875427-0300)\/","id":0,"payload":"An user has started session - email:roberto@gmail.com","usuario":null}
 {"actividad":"LOGIN","fecLog":"\/Date(1637940875871-0300)\/","id":0,"payload":"Login of user:roberto@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"roberto","apellido":"teco","email":"roberto@gmail.com","estado":1,"hash":"d8c0084346e261ae9c888be0f253ec6f","idusuario":5,"nombre":"roberto","pwd":"","tipoUsuario":2}}
+{"actividad":"LOGIN","fecLog":"\/Date(1637941061482-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
+{"actividad":"SESSION","fecLog":"\/Date(1637941062167-0300)\/","id":0,"payload":"An user has started session - email:roberto@gmail.com","usuario":null}
+{"actividad":"LOGIN","fecLog":"\/Date(1637941062604-0300)\/","id":0,"payload":"Login of user:roberto@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"roberto","apellido":"teco","email":"roberto@gmail.com","estado":1,"hash":"d8c0084346e261ae9c888be0f253ec6f","idusuario":5,"nombre":"roberto","pwd":"","tipoUsuario":2}}
+{"actividad":"LOGIN","fecLog":"\/Date(1637943787944-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
+{"actividad":"SESSION","fecLog":"\/Date(1637943788613-0300)\/","id":0,"payload":"An user has started session - email:roberto@gmail.com","usuario":null}
+{"actividad":"LOGIN","fecLog":"\/Date(1637943788986-0300)\/","id":0,"payload":"Login of user:roberto@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"roberto","apellido":"teco","email":"roberto@gmail.com","estado":1,"hash":"d8c0084346e261ae9c888be0f253ec6f","idusuario":5,"nombre":"roberto","pwd":"","tipoUsuario":2}}
+{"actividad":"LOGIN","fecLog":"\/Date(1637943920302-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
+{"actividad":"SESSION","fecLog":"\/Date(1637943921038-0300)\/","id":0,"payload":"An user has started session - email:roberto@gmail.com","usuario":null}
+{"actividad":"LOGIN","fecLog":"\/Date(1637943921492-0300)\/","id":0,"payload":"Login of user:roberto@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"roberto","apellido":"teco","email":"roberto@gmail.com","estado":1,"hash":"d8c0084346e261ae9c888be0f253ec6f","idusuario":5,"nombre":"roberto","pwd":"","tipoUsuario":2}}
+{"actividad":"LOGIN","fecLog":"\/Date(1637944157876-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
+{"actividad":"LOGIN","fecLog":"\/Date(1637944163183-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
+{"actividad":"SESSION","fecLog":"\/Date(1637944163556-0300)\/","id":0,"payload":"An user has started session - email:roberto@gmail.com","usuario":null}
+{"actividad":"LOGIN","fecLog":"\/Date(1637944163918-0300)\/","id":0,"payload":"Login of user:roberto@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"roberto","apellido":"teco","email":"roberto@gmail.com","estado":1,"hash":"d8c0084346e261ae9c888be0f253ec6f","idusuario":5,"nombre":"roberto","pwd":"","tipoUsuario":2}}

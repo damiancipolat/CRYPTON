@@ -20,7 +20,7 @@ namespace UI.Comisiones
 {
     public partial class frm_ganancias : Form
     {
-        private List<ComisionBE> innerResult;
+        private List<(string, string, string, string, string, string)> innerResult;        
 
         public frm_ganancias()
         {
@@ -65,26 +65,27 @@ namespace UI.Comisiones
             this.bitacora_data.Columns.Add(Idioma.GetInstance().translate("estado"), Idioma.GetInstance().translate("estado"));
         }
 
-        private void fillData(List<ComisionBE> list) 
+        private void fillData(List<(string, string, string, string, string, string)> list)
         {
             decimal total = 0;
             this.bitacora_data.Rows.Clear();
 
             //Loop to fill data.
-            foreach (ComisionBE data in list)
+            foreach ((string, string, string, string, string, string) data in list)
             {
+
                 this.bitacora_data.Rows.Add(
                     new string[] {
-                        data.idcobro.ToString(),
-                        data.cliente.alias,
-                        data.fecRegister.ToString("yyyy-mm-dd HH:MM:ss.fff"),
-                        data.moneda.cod,
-                        data.valor.getValue().ToString(),
-                        (data.processed.ToString()=="1"?"Cobrado":"Pendiente")
+                        data.Item1,
+                        data.Item2,
+                        data.Item3,
+                        data.Item4,
+                        data.Item5,
+                        (data.Item6=="1"?"Cobrado":"Pendiente")
                 });
 
                 //Acumulo pesos.
-                total = total + data.valor.getValue();
+                total = total + Convert.ToDecimal(data.Item5);
             }
 
             this.report_total_value.Text = Idioma.GetInstance().translate("REPORT_DBT_TOTAL") + " $" + total.ToString();
@@ -106,16 +107,17 @@ namespace UI.Comisiones
 
         private void report_dbt_search_Click(object sender, EventArgs e)
         {
-            List<ComisionBE> result = new CommisionBL().findByDate(this.report_type_combo.SelectedIndex.ToString(), this.date_from_txt.Text, this.date_to_txt.Text);
+            List<(string, string, string, string, string, string)> result = new CommisionBL().findByDateFast(this.report_type_combo.SelectedIndex.ToString(), this.date_from_txt.Text, this.date_to_txt.Text);
             this.innerResult = result;
 
             if (result.Count > 0)
                 this.fillData(result);
-            else{
+            else
+            {
                 this.bitacora_data.Rows.Clear();
                 this.report_total_value.Text = "";
                 MessageBox.Show("No hay resultados.");
-            }                
+            }
         }
 
         private void activ_combo_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,8 +151,8 @@ namespace UI.Comisiones
             doc.Add(title);
 
             // Agregamos un parrafo vacio como separacion.
-            doc.Add(new Paragraph(""));
-            doc.Add(new Paragraph(""));
+            doc.Add(new Paragraph("\n"));
+            doc.Add(new Paragraph("\n"));
 
             // Empezamos a crear la tabla, definimos una tabla de 6 columnas
             PdfPTable table = new PdfPTable(6);
@@ -164,14 +166,14 @@ namespace UI.Comisiones
             table.AddCell(Idioma.GetInstance().translate("estado"));
 
             //Genero las filas.
-            foreach (ComisionBE data in this.innerResult)
+            foreach ((string, string, string, string, string, string) data in this.innerResult)
             {
-                table.AddCell(data.idcobro.ToString());
-                table.AddCell(data.cliente.alias);
-                table.AddCell(data.fecRegister.ToString("yyyy-mm-dd HH:MM:ss.fff"));
-                table.AddCell(data.moneda.cod);
-                table.AddCell(data.valor.getValue().ToString());
-                table.AddCell((data.processed.ToString() == "1" ? "Cobrado" : "Pendiente"));
+                table.AddCell(data.Item1);
+                table.AddCell(data.Item2);
+                table.AddCell(data.Item3);
+                table.AddCell(data.Item4);
+                table.AddCell(data.Item5);
+                table.AddCell((data.Item6.ToString() == "1" ? "Cobrado" : "Pendiente"));
             }
 
             // Agregamos la tabla al documento
