@@ -11,7 +11,7 @@
     <title>Crypton - clientes</title>
   </head>
   <body>    
-    <div class="container">
+    <div class="container"> 
       <div class="row">
         <div class="col-10" style="margin-top: 20px;border-bottom: 5px solid #3376FF;padding-bottom: 10px;">
           <h1 style="color:#3376FF;">
@@ -82,48 +82,182 @@
               <!----------------------------------------------------------------------------------->
               <!--FUNCIONALIDADES 1-->
               <div style="margin-bottom: 20px;padding-bottom:20px;border-bottom: 2px dotted black;">
-                <a name="C1">
-                  <b style="color:#3376FF;">Compra de moneda:</b>
+                <a name="publicar_venta">
+                  <b style="color:#3376FF;">Publicar venta:</b>
                 </a>
                 <br><br>
                 <b>Proposito:</b><br>
-                Podras acceder a las siguientes acciones dado tu perfil:
+                Publicar una orden de venta de monedas de un cliente dentro del mercado.
                 <br><br>
-                <img src="https://via.placeholder.com/140x100">
+                <img src="./img/publicar_venta.png" style="width:350px;">
                 <br><br>
                 <b>¿Como funciona?:</b><br>
-                sadsadsa
+                <ul>
+                  <li>1)  El cliente ingresa al módulo de venta</li>
+                  <li>2)  Se despliega la pantalla permitiéndole al cliente configurar su venta como desee.</li>
+                  <li>3)  El cliente selecciona una de sus monedas, observando el saldo actual de cada billetera.</li>
+                  <li>4)  Completa el valor de saldo a vender.</li>
+                  <li>5)  Selecciona la moneda que es de su interés.</li>
+                  <li>6)  En el campo cantidad saldo, se actualiza el valor, que corresponde con la conversión de las monedas.</li>
+                  <li>7)  El cliente hace click en publicar.</li>
+                  <li>9)  El cliente hace click en cerrar.</li>
+                </ul>
               </div>
               <!--FUNCIONALIDADES 2-->
               <div style="margin-bottom: 20px;padding-bottom:20px;border-bottom: 2px dotted black;">
-                <a name="C2">
-                  <b style="color:#3376FF;">DDDDD de moneda:</b>
+                <a name="recomendaciones">
+                  <b style="color:#3376FF;">Recomendar compras:</b>
                 </a>
                 <br><br>
                 <b>Proposito:</b><br>
-                Podras acceder a las siguientes acciones dado tu perfil:
+                Sugerir al cliente posibles opciones de compra en base a su perfil.
                 <br><br>
-                <img src="https://via.placeholder.com/140x100">
+                <img src="./img/recomendaciones.png" style="width:350px;">
                 <br><br>
                 <b>¿Como funciona?:</b><br>
-                sadsadsa
+                <ul>
+                  <li>1)  El cliente ingresa al módulo de recomendaciones, haciendo click en el menú: mercado->recomendaciones.</li></li>
+                  <li>2)  El sistema despliega la pantalla de recomendaciones, se muestra en un listado la moneda, cantidad y saldo que el usuario está dispuesto a vender a cambio otra moneda.</li>
+                  <li>3)  El cliente ha encontrado una sugerencia que es de su interés, hace click sobre una sugerencia.</li>
+                  <li>4)  El sistema despliega la pantalla.</li>
+                  <li>5)  Si el cliente quiere hacer una nueva consulta, vuelve a seleccionar otra recomendación</li>
+                  <li>6)  El cliente cierra la ventana.</li>
+                </ul>
               </div>              
               <!--FUNCIONALIDADES 3-->
               <div style="margin-bottom: 20px;padding-bottom:20px;border-bottom: 2px dotted black;">
-                <a name="C3">
-                  <b style="color:#3376FF;">WWWWWW de moneda:</b>
+                <a name="buscador_ofertas">
+                  <b style="color:#3376FF;">Buscar ofertas:</b>
                 </a>
                 <br><br>
                 <b>Proposito:</b><br>
-                Podras acceder a las siguientes acciones dado tu perfil:
+                Realizar búsquedas de ordenes de ventas.
                 <br><br>
-                <img src="https://via.placeholder.com/140x100">
+                <img src="./img/buscador.png" style="width:350px;">
                 <br><br>
                 <b>¿Como funciona?:</b><br>
-                sadsadsa
+                <ul>
+                  <li>1)  El actor selecciona las monedas que le interesa buscar ventas.</li>
+                  <li>2)  Se procesa la búsqueda y retornan resultados al cliente.</li>
+                  <li>3)  El cliente selecciona la oferta que le interesa y hace click en el botón de ver.</li>
+                  <li>1)  Se muestra la pantalla de orden de venta</li>
+                </ul>
+              </div>
+              <!--FUNCIONALIDADES 4-->
+              <div style="margin-bottom: 20px;padding-bottom:20px;border-bottom: 2px dotted black;">
+                <a name="ver_operacion">
+                  <b style="color:#3376FF;">Visualizar operación:</b>
+                </a>
+                <br><br>
+                <b>Proposito:</b><br>
+                Visualizar una operación de compra y sus costos de comisión.
+                <br><br>
+                <img src="./img/view_operation.png" style="width:350px;">
+                <br><br>
+                <b>¿Como funciona?:</b><br>
+                <ul>
+                  <li>1)  El actor inicia la pantalla desde el buscador de ofertas.</li>
+                  <li>2)  Se consultan el detalle de la operación.</li>
+                  <li>3)  Se invoca al CUN 005 para obtener los costos de la operación, se visualizan en la interfaz</li>
+                  <li>4)  El cliente decide realizar la operación hace click en el botón aceptar.</li>
+                  <li>5)  Se invoca al CUN 006 para verificar los saldos de las billeteras frente a la operación a realizar.</li>
+                  <li>6)  Se invoca al CUN 007 para hacer las transferencias</li>
+                  <li> Se muestra un mensaje de éxito informando de la transferencia realizada.</li>
+                </ul>
+              </div>
+              <!--FUNCIONALIDADES 5-->
+              <div style="margin-bottom: 20px;padding-bottom:20px;border-bottom: 2px dotted black;">
+                <a name="wallets">
+                  <b style="color:#3376FF;">Consultar saldo billeteras:</b>
+                </a>
+                <br><br>
+                <b>Proposito:</b><br>
+                Poder habilitar al cliente una opción de visualización única de todos los saldos de las billeteras que tiene de cada una de las monedas.
+                <br><br>
+                <img src="./img/wallets.png" style="width:350px;">
+                <br><br>
+                <b>¿Como funciona?:</b><br>
+                <ul>
+                  <li>1)  El actor accede al menú, “operar”, elige la opción, “Mis billeteras”.</li>
+                  <li>2)  Se carga la pantalla de visualización.</li>
+                  <li>3)  Se obtienen las billeteras asociadas a la cuenta que el cliente tiene asociada a su cliente.</li>
+                  <li>4)  Se consulta al proveedor para el caso de las cuentas de criptomonedas el valor actual disponible.</li>
+                  <li>5)  Se consulta para cada billetera si hay costos de comisiones aun no acreditados, se resta del total actual.</li>
+                  <li>6)  Se visualiza la información en la pantalla.</li>
+                  <li>7)  El cliente hace click en cerrar.</li>
+                  <li>1)  Se cierra la ventana.</li>
+                </ul>
+              </div>              
+              <!--FUNCIONALIDADES 6-->
+              <div style="margin-bottom: 20px;padding-bottom:20px;border-bottom: 2px dotted black;">
+                <a name="cbu">
+                  <b style="color:#3376FF;">Consultar CBU:</b>
+                </a>
+                <br><br>
+                <b>Proposito:</b><br>
+                Consultar el número de cuenta bancaria para acreditar fondos.
+                <br><br>
+                <img src="./img/cbu.png" style="width:350px;">
+                <br><br>
+                <b>¿Como funciona?:</b><br>
+                <ul>
+                  <li>1)  El cliente ingresa al módulo de banco / consulta de CBU.</li>
+                  <li>2)  Se obtiene la billetera del vendedor de la moneda en cuestión y se calculan el costo de la comisión para el valor de la operación de “venta”.</li>
+                  <li>3)  Hace click en copiar.</li>
+                  <li>4)  Se copia la información bancaria al portapapeles.</li>
+                  <li>5)  Se consulta para cada billetera si hay costos de comisiones aun no acreditados, se resta del total actual.</li>
+                  <li>6)  Hace click en cerrar.</li>
+                  <li>7)  Se cierra la pantalla.</li>
+                </ul>
+              </div>
+              <!--FUNCIONALIDADES 7-->
+              <div style="margin-bottom: 20px;padding-bottom:20px;border-bottom: 2px dotted black;">
+                <a name="solic_extraccion">
+                  <b style="color:#3376FF;">Solicitar extracción:</b>
+                </a>
+                <br><br>
+                <b>Proposito:</b><br>
+                Poder solicitar que se realice un retiro de fondos.
+                <br><br>
+                <img src="./img/solic_extract_ars.png" style="width:350px;">
+                <br><br>
+                <b>¿Como funciona?:</b><br>
+                <ul>
+                  <li>1)  Ingresar al módulo banco / Retirar saldos.</li>
+                  <li>2)  Se despliega la pantalla, mostrando el cbu y el saldo actual de la billetera en ARS.</li>
+                  <li>3)  Se ingresa el valor a extraer y se hace click en aceptar.</li>
+                  <li>4)  Se recibe el valor ingresado, se valida si la cuenta posee esa cantidad.</li>
+                  <li>5)  Se registra la solicitud de extracción.</li>
+                  <li>6)  Se muestra un mensaje de éxito.</li>
+                  <li>7)  Hace click en Ok.</li>
+                  <li>8)  Se cierra la pantalla del módulo.</li>
+                </ul>
+              </div>           
+              <!--FUNCIONALIDADES 8-->
+              <div style="margin-bottom: 20px;padding-bottom:20px;border-bottom: 2px dotted black;">
+                <a name="solic_extraccion_crypto">
+                  <b style="color:#3376FF;">Extraer crypto monedas:</b>
+                </a>
+                <br><br>
+                <b>Proposito:</b><br>
+                Permitir la extracción de una cripto moneda a una cuenta de otra plataforma.
+                <br><br>
+                <img src="./img/solic_extract_crypto.png" style="width:350px;">
+                <br><br>
+                <b>¿Como funciona?:</b><br>
+                <ul>
+                  <li>1)  Ingresar al módulo cliente / extraer cripto monedas.</li>
+                  <li>2)  Se despliega la pantalla, mostrando la lista de solicitudes de extracción.</li>
+                  <li>3)  El cliente selecciona la moneda la cual le interesa extraer saldo, carga el valor en la caja de texto al igual que la dirección destino. Hace click en aceptar.</li>
+                  <li>4)  Se reciben los datos de la solicitud.</li>
+                  <li>5)  Se consulta al proveedor los costos de la transferencia y se despliega por pantalla el costo y la opción de aceptar o cancelar.</li>
+                  <li>6)  Hace click en Aceptar.</li>
+                  <li>7)  Se procesa la transferencia con el proveedor si es exitosa se muestra un mensaje de éxito.</li>
+                  <li>8)  Se cierra la pantalla.</li>
+                </ul>
               </div>              
             </div>
-          </div>        
+          </div>
         </div>
       </div>
     </div>    
