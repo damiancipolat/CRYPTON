@@ -42,7 +42,7 @@ namespace SL
             logBE.actividad = actividad != null ? actividad : "LOG";
 
             //Guardo en el archivo un registro en formato json.
-            string path = AppDomain.CurrentDomain.BaseDirectory + "log.json";
+            string path = AppDomain.CurrentDomain.BaseDirectory + "jsonLog.json";
             Debug.WriteLine("Write JSON log in:"+path);
 
             //Obtengo el json

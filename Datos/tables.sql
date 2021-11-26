@@ -23,7 +23,6 @@ DROP TABLE IF EXISTS orden_venta;
 DROP TABLE IF EXISTS orden_compra;
 DROP TABLE IF EXISTS orden_estado;
 DROP TABLE IF EXISTS comisiones;
-DROP TABLE IF EXISTS comisiones_valor;
 DROP TABLE IF EXISTS control_cambios;
 DROP TABLE IF EXISTS comision_operacion_valor;
 DROP TABLE IF EXISTS conversiones;

@@ -625,5 +625,10 @@ namespace UI
         private void button1_Click_19(object sender, EventArgs e)
         {
         }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpManual.GetInstance().openHelp();
+        }
     }
 }

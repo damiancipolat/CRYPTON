@@ -1,0 +1,3 @@
+{"actividad":"LOGIN","fecLog":"\/Date(1637966531542-0300)\/","id":0,"payload":"Request login of user:roberto@gmail.com","usuario":null}
+{"actividad":"SESSION","fecLog":"\/Date(1637966532204-0300)\/","id":0,"payload":"An user has started session - email:roberto@gmail.com","usuario":null}
+{"actividad":"LOGIN","fecLog":"\/Date(1637966532628-0300)\/","id":0,"payload":"Login of user:roberto@gmail.com success!","usuario":{"Permisos":[],"_permisos":[],"alias":"roberto","apellido":"teco","email":"roberto@gmail.com","estado":1,"hash":"d8c0084346e261ae9c888be0f253ec6f","idusuario":5,"nombre":"roberto","pwd":"","tipoUsuario":2}}

@@ -40,12 +40,12 @@ namespace SL
         }
 
         //Abro un browser
-        public void openHelp(string code)
+        public void openHelp()
         {
             string url = ConfigurationManager.AppSettings["HelpWebsite"];
 
             //Run browser.
-            System.Diagnostics.Process.Start(url+"/#"+code);
+            System.Diagnostics.Process.Start(url);
         }
     }
 }
