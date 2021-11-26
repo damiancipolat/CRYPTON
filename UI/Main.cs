@@ -24,6 +24,8 @@ using SEC.Exceptions;
 using UI.Comisiones;
 using DAL;
 
+
+
 namespace UI
 {
     public partial class frm_main : Form, INotification
@@ -652,6 +654,10 @@ namespace UI
             Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("prueba@gmail.com"));
             Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("thor@gmail.com"));
             Debug.WriteLine("@>>>" + Cripto.GetInstance().Encrypt("bart@gmail.com"));*/
+        }
+
+        private void button1_Click_20(object sender, EventArgs e)
+        {
         }
     }
 }

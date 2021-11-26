@@ -28,7 +28,8 @@ namespace SL
         {
             //Armo instancias.
             BdLayer bdLogLayer = new BdLayer();
-            FileLayer fileLogLayer = new FileLayer();               
+            FileLayer fileLogLayer = new FileLayer();
+            FileJsonLayer fileJsonLayer = new FileJsonLayer();
 
             //Intento grabar el log en la bd, si falla se graba en un archivo.
             try
@@ -43,6 +44,9 @@ namespace SL
             finally
             {
                 Debug.WriteLine(payload);
+
+                //Registro en formato json.
+                fileJsonLayer.log(actividad,payload);
             }
         }
     }
