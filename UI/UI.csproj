@@ -191,6 +191,13 @@
     <Compile Include="Idioma\Language.designer.cs">
       <DependentUpon>Language.cs</DependentUpon>
     </Compile>
+    <Compile Include="Installer\frm_installer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Installer\frm_installer.Designer.cs">
+      <DependentUpon>frm_installer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Installer\CommandLine.cs" />
     <Compile Include="MyBuysFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Idioma\Language.resx">
       <DependentUpon>Language.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Installer\frm_installer.resx">
+      <DependentUpon>frm_installer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyBuysFrm.resx">
       <DependentUpon>MyBuysFrm.cs</DependentUpon>
@@ -575,5 +585,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

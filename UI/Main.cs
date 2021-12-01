@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using UI.Notifications;
 using UI.Permisos;
 using UI.Admin;
+using UI.Installer;
 using UI.Banco;
 using BL.Permisos;
 using BL.ChangeControl;
@@ -629,6 +630,11 @@ namespace UI
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HelpManual.GetInstance().openHelp();
+        }
+
+        private void button1_Click_20(object sender, EventArgs e)
+        {
+            new frm_installer().Show();
         }
     }
 }
