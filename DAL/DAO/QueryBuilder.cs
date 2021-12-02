@@ -20,6 +20,28 @@ namespace DAL
         protected SqlText utilText;
         protected SqlParser utilParser;
 
+        //Reviso la conexion.
+        public bool checkConnection() 
+        {
+            try
+            {
+                //Armo una nueva conexion.
+                SqlConnection bdConnection = this.getConnection();
+                bool status = this.bdConnection.State == ConnectionState.Open;
+
+                //Cierro la conexion para evitar dejarla inactiva.
+                if (status)
+                    bdConnection.Close();
+
+                return status;
+            }
+            catch (Exception err) 
+            {
+                Debug.WriteLine("---++++" + err.Message);
+                return false;
+            }
+        }
+
         //Armo una conexion al crear la clase.
         public QueryBuilder()
         {

@@ -11,6 +11,7 @@ using System.Globalization;
 using System.Diagnostics;
 using BE;
 using BL;
+using BL.Installer;
 using BL.Exceptions;
 using SL;
 using VL;
@@ -22,26 +23,26 @@ namespace UI.Installer
     {
         //Lista de comandos.
         private string[] commands = {
-        /*    "(if not exist \"c:\\crypton-install-tmp\" mkdir c:\\crypton-install-tmp)",
-            "sql_server_setup /ACTION=Download /MEDIAPATH=c:\\crypton-install-tmp /MEDIATYPE=Core /QUIET",
-            "copy config_bd_file.ini c:\\crypton-install-tmp",
-            "copy bd_backup.sql c:\\crypton-install-tmp",*/
-            "run_bd_setup.bat"
+            "run_bd_setup.bat 1",
+            "run_bd_setup.bat 2",
+            "run_bd_setup.bat 3",
+            "run_bd_setup.bat 4",
+            "run_bd_setup.bat 5",
+            "run_bd_setup.bat 6",
+            "run_bd_setup.bat 7",
+            "run_bd_setup.bat 8",
         };
-
-        //"setup.exe /SECURITYMODE=SQL /SAPWD=\"HJH35uQ2\" /SQLSVCPASSWORD=\"HJH35uQ2\" /AGTSVCPASSWORD=\"HJH35uQ2\" /ASSVCPASSWORD=\"HJH35uQ2\" /ISSVCPASSWORD=\"HJH35uQ2\" /RSSVCPASSWORD=\"HJH35uQ2\" /ConfigurationFile=config_bd_file.ini"+ " && echo OK"
 
         //Detalle de comandos.
         private string[] info = {
-                "Seteo directorio de inicio",
-                "Creo directorio temporal si no existe",
-                "Creo directorio temporal de sql express",
-                "Copio archivo de configuración",
-                "Copio dump backup sql",
-                "Ejecutando instalación SQL SERVER",
-                "",
-                "",
-                ""
+                "Creando directorio temporal...",
+                "Extrayendo instalador...",
+                "Copiando configuración...",
+                "Copiando backup...",
+                "Extrayendo archivos del instalador...",
+                "Instalando SQL SERVER...",
+                "Creando BD y cargando datos...",                
+                "Borrando directorio temporal..."
             };
 
         public frm_installer()
@@ -59,9 +60,11 @@ namespace UI.Installer
 
         }
 
-        //Ejecuto en forma de lote.
+        //Ejecutar bat.
         private void runBatch() 
         {
+            this.install_progress.Maximum = this.commands.Count();
+
             //Ejecuto en forma de  lote.
             CommandLine cmdLin = new CommandLine();
 
@@ -71,17 +74,17 @@ namespace UI.Installer
                 string cmd = commands[i];
 
                 //Cambio el detalle.
-                this.install_detail.Text = this.commands[i];
+                this.install_detail.Text = this.info[i];
+
+                //Actualizo progreso.
+                this.install_progress.Value = (i + 1);
 
                 //Ejecuto comando.
                 (string stdout, int code) = cmdLin.runCmd(cmd);
 
                 //Analizo el resultado.
-                if (stdout.Contains("OK"))                 
+                if (stdout.Contains("OK"))
                 {
-                    //Actualizo progreso.
-                    this.install_progress.Value = (i + 1);
-
                     //Delay
                     System.Threading.Thread.Sleep(100);
 
@@ -90,7 +93,7 @@ namespace UI.Installer
                 }
                 else
                 {
-                    //throw new Exception("No se pudo ejecutar:"+info[i]);
+                    throw new Exception("No se pudo ejecutar:"+info[i]);
                 }                    
             }
         }
@@ -99,14 +102,19 @@ namespace UI.Installer
         {
             try
             {
-                //Oculto.
                 this.install_detail.Visible = true;
                 this.install_progress.Visible = true;
-                this.install_progress.Maximum = this.commands.Count();
-                this.install_progress.Value = 0;
+                this.install_btn.Enabled = false;
 
-                //Proceso.
+                //Ejecuto proceso.
                 this.runBatch();
+
+                //Corro validaciones.
+                new InstallerBL().validate();
+
+                //Muestro exito.
+                MessageBox.Show("Instalación exitosa ya podes usar Crypton!");
+                this.Close();
             }
             catch(Exception error){
                 //Oculto.
@@ -120,6 +128,10 @@ namespace UI.Installer
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
         }
     }

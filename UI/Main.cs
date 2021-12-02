@@ -48,6 +48,9 @@ namespace UI
         //Metodos de render.
         private void adjustControls()
         {
+            if (this.installRequired())
+                return;
+
             //Posiciona el splash screen en el centro.
             this.main_splash.Left = (this.Width / 2) - (this.main_splash.Width / 2);
             this.main_splash.Top = (this.Height / 2) - (this.main_splash.Height / 2);
@@ -88,7 +91,7 @@ namespace UI
 
             //Bindeo menu cliente.
             this.main_menu_operate.Text = Idioma.GetInstance().translate("MAIN_MENU_OPERATE");
-            this.main_menu_search.Text = Idioma.GetInstance().translate("MAIN_MENU_SEARCH");
+            this.main_menu_search.Text = Idioma.GetInstance().translate("MAIN_MENU_                         SEARCH");
             this.main_menu_recomendations.Text = Idioma.GetInstance().translate("MAIN_MENU_RECOMENDATIONS");
             this.main_menu_my_sells.Text = Idioma.GetInstance().translate("MAIN_MENU_MY_SELLS");
             this.main_menu_notifications.Text= Idioma.GetInstance().translate("MAIN_MENU_NOTIFICATIONS");
@@ -118,14 +121,26 @@ namespace UI
         //Se ejecuta al inicio del formulario, setea idioma base.
         public void render()
         {
-            //Cargo el idioma por decto.
-            this.loadDefaultLanguage();
+            try
+            {
+                //Analizo si hace falta hacer la instalación antes.
+                if (this.installRequired())
+                    return;
+            
+                //Cargo el idioma por decto.
+                this.loadDefaultLanguage();
 
-            //Traduzco los textos en base al idioma.
-            this.translateTexts();
+                //Traduzco los textos en base al idioma.
+                this.translateTexts();
 
-            //Ajusto los controles.
-            this.adjustControls();
+                //Ajusto los controles.
+                this.adjustControls();
+            }
+            catch (Exception err) 
+            {
+                Bitacora.GetInstance().log("BOOTSTRAP",err.Message,true);
+            }
+            
         }
 
         public void Update()
@@ -513,12 +528,42 @@ namespace UI
             new FileLayer().log("aaa", "aaa");
         }
 
+        public void HideAll() 
+        {
+            this.main_splash.Visible = false;
+            this.statusStrip1.Visible = false;
+            this.menuStrip1.Visible = false;
+        }
+
+        public void ShowAll()
+        {
+            this.main_splash.Visible = true;
+            this.statusStrip1.Visible = true;
+            this.menuStrip1.Visible = true;
+        }
+
+        private Boolean installRequired() 
+        {
+            return ConfigurationManager.AppSettings["InstallComplete"] == "false";
+        }
+
         private void Frm_main_Load(object sender, EventArgs e)
         {
             try
             {
-                //Antes de hacer el login, hago una prueba de integridad.
-                new IntegrityBL().validateComplete();
+                //Detecto si hace falta interrumpir y hacer la instalacion 1ro.
+                if (this.installRequired())
+                {
+                    new frm_installer().Show();
+
+                    //Oculto todo.
+                    this.HideAll();
+                }
+                else
+                {
+                    //Antes de hacer el login, hago una prueba de integridad.
+                    new IntegrityBL().validateComplete();
+                }
             }
             catch (IntegrityException ex)
             {
@@ -634,7 +679,7 @@ namespace UI
 
         private void button1_Click_20(object sender, EventArgs e)
         {
-            new frm_installer().Show();
+            
         }
     }
 }

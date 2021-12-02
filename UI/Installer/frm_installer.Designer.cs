@@ -41,7 +41,7 @@ namespace UI.Installer
             this.install_btn.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.install_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.install_btn.ForeColor = System.Drawing.Color.White;
-            this.install_btn.Location = new System.Drawing.Point(27, 227);
+            this.install_btn.Location = new System.Drawing.Point(27, 239);
             this.install_btn.Name = "install_btn";
             this.install_btn.Size = new System.Drawing.Size(317, 43);
             this.install_btn.TabIndex = 3;
@@ -56,10 +56,11 @@ namespace UI.Installer
             this.install_message.Multiline = true;
             this.install_message.Name = "install_message";
             this.install_message.ReadOnly = true;
-            this.install_message.Size = new System.Drawing.Size(317, 80);
+            this.install_message.Size = new System.Drawing.Size(317, 92);
             this.install_message.TabIndex = 4;
-            this.install_message.Text = "No se puede iniciar el sistema!\r\nEsta pendiente realizar la instalación de la bas" +
-    "e de datos, puede realizarla desde esta parte.";
+            this.install_message.Text = "Para terminar la instalación es necesario:\r\n- Crear BD.\r\n- Cargar datos de sistem" +
+    "a.\r\n\r\nPara esto instalaremos un SQL SERVER 2019 expres.\r\nEsta etapa puede durar " +
+    "varios minutos!.";
             // 
             // install_title
             // 
@@ -67,13 +68,13 @@ namespace UI.Installer
             this.install_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.install_title.Location = new System.Drawing.Point(28, 14);
             this.install_title.Name = "install_title";
-            this.install_title.Size = new System.Drawing.Size(165, 18);
+            this.install_title.Size = new System.Drawing.Size(199, 24);
             this.install_title.TabIndex = 5;
-            this.install_title.Text = "BD NO encontrada...";
+            this.install_title.Text = "Terminar instalación";
             // 
             // install_progress
             // 
-            this.install_progress.Location = new System.Drawing.Point(31, 179);
+            this.install_progress.Location = new System.Drawing.Point(31, 191);
             this.install_progress.MarqueeAnimationSpeed = 7;
             this.install_progress.Maximum = 7;
             this.install_progress.Name = "install_progress";
@@ -86,16 +87,16 @@ namespace UI.Installer
             // 
             this.install_detail.AutoSize = true;
             this.install_detail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.install_detail.Location = new System.Drawing.Point(32, 149);
+            this.install_detail.Location = new System.Drawing.Point(32, 161);
             this.install_detail.Name = "install_detail";
-            this.install_detail.Size = new System.Drawing.Size(128, 13);
+            this.install_detail.Size = new System.Drawing.Size(162, 17);
             this.install_detail.TabIndex = 6;
             this.install_detail.Text = "Copiando archivos....";
             this.install_detail.Visible = false;
             // 
             // frm_installer
             // 
-            this.ClientSize = new System.Drawing.Size(363, 293);
+            this.ClientSize = new System.Drawing.Size(363, 305);
             this.Controls.Add(this.install_detail);
             this.Controls.Add(this.install_progress);
             this.Controls.Add(this.install_title);
@@ -106,8 +107,10 @@ namespace UI.Installer
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_installer";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Instalación";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

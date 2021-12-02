@@ -45,6 +45,7 @@
     <Compile Include="AbstractDAL.cs" />
     <Compile Include="BilleteraDAL.cs" />
     <Compile Include="ClienteChangeDAL.cs" />
+    <Compile Include="Installer\InstallerDAL.cs" />
     <Compile Include="NotificacionDAL.cs" />
     <Compile Include="MonedaDAL.cs" />
     <Compile Include="ClienteAgenda.cs" />

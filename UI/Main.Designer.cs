@@ -71,7 +71,6 @@
             this.main_menu_extract_crypto = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.main_splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -82,10 +81,10 @@
             // main_btn_login
             // 
             this.main_btn_login.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.main_btn_login.Location = new System.Drawing.Point(34, 171);
-            this.main_btn_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main_btn_login.Location = new System.Drawing.Point(45, 210);
+            this.main_btn_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.main_btn_login.Name = "main_btn_login";
-            this.main_btn_login.Size = new System.Drawing.Size(111, 32);
+            this.main_btn_login.Size = new System.Drawing.Size(148, 39);
             this.main_btn_login.TabIndex = 0;
             this.main_btn_login.Text = "main_btn_login";
             this.main_btn_login.UseVisualStyleBackColor = false;
@@ -94,10 +93,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Location = new System.Drawing.Point(1146, 283);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(1528, 348);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 97);
+            this.panel2.Size = new System.Drawing.Size(237, 119);
             this.panel2.TabIndex = 8;
             // 
             // main_splash
@@ -107,20 +106,20 @@
             this.main_splash.Controls.Add(this.pictureBox3);
             this.main_splash.Controls.Add(this.main_splash_title);
             this.main_splash.Controls.Add(this.main_btn_login);
-            this.main_splash.Location = new System.Drawing.Point(357, 236);
-            this.main_splash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main_splash.Location = new System.Drawing.Point(476, 290);
+            this.main_splash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.main_splash.Name = "main_splash";
-            this.main_splash.Size = new System.Drawing.Size(302, 221);
+            this.main_splash.Size = new System.Drawing.Size(403, 272);
             this.main_splash.TabIndex = 10;
             this.main_splash.Resize += new System.EventHandler(this.Main_splash_Resize);
             // 
             // main_btn_register
             // 
             this.main_btn_register.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.main_btn_register.Location = new System.Drawing.Point(157, 171);
-            this.main_btn_register.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main_btn_register.Location = new System.Drawing.Point(209, 210);
+            this.main_btn_register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.main_btn_register.Name = "main_btn_register";
-            this.main_btn_register.Size = new System.Drawing.Size(111, 32);
+            this.main_btn_register.Size = new System.Drawing.Size(148, 39);
             this.main_btn_register.TabIndex = 14;
             this.main_btn_register.Text = "Registrar";
             this.main_btn_register.UseVisualStyleBackColor = false;
@@ -129,10 +128,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::UI.Properties.Resources.logo_11;
-            this.pictureBox3.Location = new System.Drawing.Point(89, 19);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(119, 23);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(121, 94);
+            this.pictureBox3.Size = new System.Drawing.Size(161, 116);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
@@ -142,10 +141,9 @@
             this.main_splash_title.AutoSize = true;
             this.main_splash_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.main_splash_title.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.main_splash_title.Location = new System.Drawing.Point(25, 131);
-            this.main_splash_title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.main_splash_title.Location = new System.Drawing.Point(33, 161);
             this.main_splash_title.Name = "main_splash_title";
-            this.main_splash_title.Size = new System.Drawing.Size(132, 20);
+            this.main_splash_title.Size = new System.Drawing.Size(162, 25);
             this.main_splash_title.TabIndex = 12;
             this.main_splash_title.Text = "main_splash_title";
             // 
@@ -155,10 +153,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton2,
             this.home_label_bar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 608);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 754);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1071, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1428, 26);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -170,20 +168,20 @@
             this.toolStripSplitButton2.Image = global::UI.Properties.Resources.globe;
             this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton2.Name = "toolStripSplitButton2";
-            this.toolStripSplitButton2.Size = new System.Drawing.Size(36, 24);
+            this.toolStripSplitButton2.Size = new System.Drawing.Size(39, 24);
             this.toolStripSplitButton2.Text = "toolStripSplitButton2";
             // 
             // main_change_language
             // 
             this.main_change_language.Name = "main_change_language";
-            this.main_change_language.Size = new System.Drawing.Size(199, 22);
+            this.main_change_language.Size = new System.Drawing.Size(247, 26);
             this.main_change_language.Text = "main_change_language";
             this.main_change_language.Click += new System.EventHandler(this.CambiarIdiomaToolStripMenuItem_Click);
             // 
             // home_label_bar
             // 
             this.home_label_bar.Name = "home_label_bar";
-            this.home_label_bar.Size = new System.Drawing.Size(68, 21);
+            this.home_label_bar.Size = new System.Drawing.Size(83, 20);
             this.home_label_bar.Text = "Cargando...";
             this.home_label_bar.Visible = false;
             // 
@@ -198,8 +196,8 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1071, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1428, 28);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -211,34 +209,34 @@
             this.main_menu_signout,
             this.main_menu_exit});
             this.main_menu_start.Name = "main_menu_start";
-            this.main_menu_start.Size = new System.Drawing.Size(48, 20);
+            this.main_menu_start.Size = new System.Drawing.Size(59, 24);
             this.main_menu_start.Text = "Inicio";
             // 
             // main_menu_login
             // 
             this.main_menu_login.Name = "main_menu_login";
-            this.main_menu_login.Size = new System.Drawing.Size(182, 22);
+            this.main_menu_login.Size = new System.Drawing.Size(223, 26);
             this.main_menu_login.Text = "main_menu_login";
             this.main_menu_login.Click += new System.EventHandler(this.Main_menu_login_Click);
             // 
             // main_menu_signup
             // 
             this.main_menu_signup.Name = "main_menu_signup";
-            this.main_menu_signup.Size = new System.Drawing.Size(182, 22);
+            this.main_menu_signup.Size = new System.Drawing.Size(223, 26);
             this.main_menu_signup.Text = "main_menu_signup";
             this.main_menu_signup.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
             // 
             // main_menu_signout
             // 
             this.main_menu_signout.Name = "main_menu_signout";
-            this.main_menu_signout.Size = new System.Drawing.Size(182, 22);
+            this.main_menu_signout.Size = new System.Drawing.Size(223, 26);
             this.main_menu_signout.Text = "main_menu_signout";
             this.main_menu_signout.Click += new System.EventHandler(this.Main_menu_signout_Click);
             // 
             // main_menu_exit
             // 
             this.main_menu_exit.Name = "main_menu_exit";
-            this.main_menu_exit.Size = new System.Drawing.Size(182, 22);
+            this.main_menu_exit.Size = new System.Drawing.Size(223, 26);
             this.main_menu_exit.Text = "main_menu_exit";
             this.main_menu_exit.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -253,56 +251,56 @@
             this.main_menu_publish,
             this.main_menu_my_buys});
             this.main_menu_operate.Name = "main_menu_operate";
-            this.main_menu_operate.Size = new System.Drawing.Size(55, 20);
+            this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
             this.main_menu_operate.Text = "Operar";
             this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
             // 
             // main_menu_recomendations
             // 
             this.main_menu_recomendations.Name = "main_menu_recomendations";
-            this.main_menu_recomendations.Size = new System.Drawing.Size(228, 22);
+            this.main_menu_recomendations.Size = new System.Drawing.Size(281, 26);
             this.main_menu_recomendations.Text = "main_menu_recomendations";
             this.main_menu_recomendations.Click += new System.EventHandler(this.Main_menu_recomendations_Click);
             // 
             // main_menu_search
             // 
             this.main_menu_search.Name = "main_menu_search";
-            this.main_menu_search.Size = new System.Drawing.Size(228, 22);
+            this.main_menu_search.Size = new System.Drawing.Size(281, 26);
             this.main_menu_search.Text = "main_menu_search";
             this.main_menu_search.Click += new System.EventHandler(this.Main_menu_search_Click);
             // 
             // main_menu_my_sells
             // 
             this.main_menu_my_sells.Name = "main_menu_my_sells";
-            this.main_menu_my_sells.Size = new System.Drawing.Size(228, 22);
+            this.main_menu_my_sells.Size = new System.Drawing.Size(281, 26);
             this.main_menu_my_sells.Text = "main_menu_my_sells";
             this.main_menu_my_sells.Click += new System.EventHandler(this.Main_menu_my_sells_Click);
             // 
             // main_menu_balance
             // 
             this.main_menu_balance.Name = "main_menu_balance";
-            this.main_menu_balance.Size = new System.Drawing.Size(228, 22);
+            this.main_menu_balance.Size = new System.Drawing.Size(281, 26);
             this.main_menu_balance.Text = "main_menu_balance";
             this.main_menu_balance.Click += new System.EventHandler(this.Main_menu_balance_Click);
             // 
             // main_menu_notifications
             // 
             this.main_menu_notifications.Name = "main_menu_notifications";
-            this.main_menu_notifications.Size = new System.Drawing.Size(228, 22);
+            this.main_menu_notifications.Size = new System.Drawing.Size(281, 26);
             this.main_menu_notifications.Text = "main_menu_notifications";
             this.main_menu_notifications.Click += new System.EventHandler(this.Main_menu_notifications_Click);
             // 
             // main_menu_publish
             // 
             this.main_menu_publish.Name = "main_menu_publish";
-            this.main_menu_publish.Size = new System.Drawing.Size(228, 22);
+            this.main_menu_publish.Size = new System.Drawing.Size(281, 26);
             this.main_menu_publish.Text = "main_menu_publish";
             this.main_menu_publish.Click += new System.EventHandler(this.Main_menu_publish_Click);
             // 
             // main_menu_my_buys
             // 
             this.main_menu_my_buys.Name = "main_menu_my_buys";
-            this.main_menu_my_buys.Size = new System.Drawing.Size(228, 22);
+            this.main_menu_my_buys.Size = new System.Drawing.Size(281, 26);
             this.main_menu_my_buys.Text = "main_menu_my_buys";
             this.main_menu_my_buys.Click += new System.EventHandler(this.Main_menu_my_buys_Click);
             // 
@@ -321,84 +319,84 @@
             this.main_menu_debts,
             this.main_menu_earnings_report});
             this.main_menu_it.Name = "main_menu_it";
-            this.main_menu_it.Size = new System.Drawing.Size(28, 20);
+            this.main_menu_it.Size = new System.Drawing.Size(35, 24);
             this.main_menu_it.Text = "IT";
             this.main_menu_it.Click += new System.EventHandler(this.Main_menu_it_Click);
             // 
             // main_menu_it_add_user
             // 
             this.main_menu_it_add_user.Name = "main_menu_it_add_user";
-            this.main_menu_it_add_user.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_it_add_user.Size = new System.Drawing.Size(322, 26);
             this.main_menu_it_add_user.Text = "main_menu_it_add_user";
             this.main_menu_it_add_user.Click += new System.EventHandler(this.AltaDeUsuariosToolStripMenuItem_Click);
             // 
             // main_menu_it_user_manager
             // 
             this.main_menu_it_user_manager.Name = "main_menu_it_user_manager";
-            this.main_menu_it_user_manager.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_it_user_manager.Size = new System.Drawing.Size(322, 26);
             this.main_menu_it_user_manager.Text = "main_menu_it_user_manager";
             this.main_menu_it_user_manager.Click += new System.EventHandler(this.GestorPermisosToolStripMenuItem_Click);
             // 
             // main_menu_it_lang_manager
             // 
             this.main_menu_it_lang_manager.Name = "main_menu_it_lang_manager";
-            this.main_menu_it_lang_manager.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_it_lang_manager.Size = new System.Drawing.Size(322, 26);
             this.main_menu_it_lang_manager.Text = "main_menu_it_lang_manager";
             this.main_menu_it_lang_manager.Click += new System.EventHandler(this.GestorIdiomasToolStripMenuItem_Click);
             // 
             // main_menu_it_user_perm_manager
             // 
             this.main_menu_it_user_perm_manager.Name = "main_menu_it_user_perm_manager";
-            this.main_menu_it_user_perm_manager.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_it_user_perm_manager.Size = new System.Drawing.Size(322, 26);
             this.main_menu_it_user_perm_manager.Text = "main_menu_it_user_perm_manager";
             this.main_menu_it_user_perm_manager.Click += new System.EventHandler(this.GestorDePermisosUsuarioToolStripMenuItem_Click);
             // 
             // main_menu_it_perm_manager
             // 
             this.main_menu_it_perm_manager.Name = "main_menu_it_perm_manager";
-            this.main_menu_it_perm_manager.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_it_perm_manager.Size = new System.Drawing.Size(322, 26);
             this.main_menu_it_perm_manager.Text = "main_menu_it_perm_manager";
             this.main_menu_it_perm_manager.Click += new System.EventHandler(this.Main_menu_it_perm_manager_Click);
             // 
             // main_menu_it_log
             // 
             this.main_menu_it_log.Name = "main_menu_it_log";
-            this.main_menu_it_log.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_it_log.Size = new System.Drawing.Size(322, 26);
             this.main_menu_it_log.Text = "main_menu_it_log";
             this.main_menu_it_log.Click += new System.EventHandler(this.Main_menu_it_log_Click);
             // 
             // main_menu_it_backup
             // 
             this.main_menu_it_backup.Name = "main_menu_it_backup";
-            this.main_menu_it_backup.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_it_backup.Size = new System.Drawing.Size(322, 26);
             this.main_menu_it_backup.Text = "main_menu_it_backup";
             this.main_menu_it_backup.Click += new System.EventHandler(this.Main_menu_it_backup_Click);
             // 
             // main_menu_op_cash_in
             // 
             this.main_menu_op_cash_in.Name = "main_menu_op_cash_in";
-            this.main_menu_op_cash_in.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_op_cash_in.Size = new System.Drawing.Size(322, 26);
             this.main_menu_op_cash_in.Text = "main_menu_op_cash_in";
             this.main_menu_op_cash_in.Click += new System.EventHandler(this.main_menu_op_cash_in_Click);
             // 
             // main_menu_lista_retiro
             // 
             this.main_menu_lista_retiro.Name = "main_menu_lista_retiro";
-            this.main_menu_lista_retiro.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_lista_retiro.Size = new System.Drawing.Size(322, 26);
             this.main_menu_lista_retiro.Text = "main_menu_lista_retiro";
             this.main_menu_lista_retiro.Click += new System.EventHandler(this.main_menu_lista_retiro_Click);
             // 
             // main_menu_debts
             // 
             this.main_menu_debts.Name = "main_menu_debts";
-            this.main_menu_debts.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_debts.Size = new System.Drawing.Size(322, 26);
             this.main_menu_debts.Text = "main_menu_debts";
             this.main_menu_debts.Click += new System.EventHandler(this.mainmenuToolStripMenuItem_Click);
             // 
             // main_menu_earnings_report
             // 
             this.main_menu_earnings_report.Name = "main_menu_earnings_report";
-            this.main_menu_earnings_report.Size = new System.Drawing.Size(261, 22);
+            this.main_menu_earnings_report.Size = new System.Drawing.Size(322, 26);
             this.main_menu_earnings_report.Text = "main_menu_earnings_report";
             this.main_menu_earnings_report.Click += new System.EventHandler(this.mainmenuearningsReportToolStripMenuItem_Click);
             // 
@@ -410,41 +408,41 @@
             this.main_menu_extract,
             this.main_menu_extract_crypto});
             this.main_menu_client.Name = "main_menu_client";
-            this.main_menu_client.Size = new System.Drawing.Size(56, 20);
+            this.main_menu_client.Size = new System.Drawing.Size(69, 24);
             this.main_menu_client.Text = "Cliente";
             // 
             // main_menu_profile
             // 
             this.main_menu_profile.Name = "main_menu_profile";
-            this.main_menu_profile.Size = new System.Drawing.Size(217, 22);
+            this.main_menu_profile.Size = new System.Drawing.Size(267, 26);
             this.main_menu_profile.Text = "main_menu_profile";
             this.main_menu_profile.Click += new System.EventHandler(this.MainToolStripMenuItem_Click);
             // 
             // main_menu_cbu
             // 
             this.main_menu_cbu.Name = "main_menu_cbu";
-            this.main_menu_cbu.Size = new System.Drawing.Size(217, 22);
+            this.main_menu_cbu.Size = new System.Drawing.Size(267, 26);
             this.main_menu_cbu.Text = "main_menu_cbu";
             this.main_menu_cbu.Click += new System.EventHandler(this.main_menu_cbu_Click);
             // 
             // main_menu_extract
             // 
             this.main_menu_extract.Name = "main_menu_extract";
-            this.main_menu_extract.Size = new System.Drawing.Size(217, 22);
+            this.main_menu_extract.Size = new System.Drawing.Size(267, 26);
             this.main_menu_extract.Text = "main_menu_extract";
             this.main_menu_extract.Click += new System.EventHandler(this.main_menu_extract_Click);
             // 
             // main_menu_extract_crypto
             // 
             this.main_menu_extract_crypto.Name = "main_menu_extract_crypto";
-            this.main_menu_extract_crypto.Size = new System.Drawing.Size(217, 22);
+            this.main_menu_extract_crypto.Size = new System.Drawing.Size(267, 26);
             this.main_menu_extract_crypto.Text = "main_menu_extract_crypto";
             this.main_menu_extract_crypto.Click += new System.EventHandler(this.main_menu_extract_crypto_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
@@ -454,35 +452,24 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1071, 634);
+            this.pictureBox1.Size = new System.Drawing.Size(1428, 780);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(85, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 47);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_20);
-            // 
             // frm_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 634);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1428, 780);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.main_splash);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crypton - home";
@@ -548,7 +535,6 @@
         private System.Windows.Forms.ToolStripMenuItem main_menu_earnings_report;
         private System.Windows.Forms.ToolStripStatusLabel home_label_bar;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
     }
 }
 
