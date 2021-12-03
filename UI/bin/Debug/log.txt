@@ -673,3 +673,5 @@ LOGIN:Login of user:roberto@gmail.com success!
 LOGIN:Request login of user:roberto@gmail.com
 SESSION:An user has started session - email:roberto@gmail.com
 LOGIN:Login of user:roberto@gmail.com success!
+BOOTSTRAP:Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
+INTEGRITY ERROR:Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)

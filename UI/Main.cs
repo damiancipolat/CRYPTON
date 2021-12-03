@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.IO;
 using UI.Notifications;
 using UI.Permisos;
 using UI.Admin;
@@ -16,6 +17,7 @@ using UI.Banco;
 using BL.Permisos;
 using BL.ChangeControl;
 using BL.Security;
+using BL.Installer;
 using BE.ValueObject;
 using IO;
 using IO.Responses;
@@ -544,7 +546,7 @@ namespace UI
 
         private Boolean installRequired() 
         {
-            return ConfigurationManager.AppSettings["InstallComplete"] == "false";
+            return new InstallerBL().isRequired();
         }
 
         private void Frm_main_Load(object sender, EventArgs e)
@@ -680,6 +682,10 @@ namespace UI
         private void button1_Click_20(object sender, EventArgs e)
         {
             
+        }
+
+        private void button1_Click_21(object sender, EventArgs e)
+        {
         }
     }
 }

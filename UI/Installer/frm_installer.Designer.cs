@@ -34,6 +34,7 @@ namespace UI.Installer
             this.install_title = new System.Windows.Forms.Label();
             this.install_progress = new System.Windows.Forms.ProgressBar();
             this.install_detail = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // install_btn
@@ -94,9 +95,23 @@ namespace UI.Installer
             this.install_detail.Text = "Copiando archivos....";
             this.install_detail.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(26, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(317, 43);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // frm_installer
             // 
-            this.ClientSize = new System.Drawing.Size(363, 305);
+            this.ClientSize = new System.Drawing.Size(363, 363);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.install_detail);
             this.Controls.Add(this.install_progress);
             this.Controls.Add(this.install_title);
@@ -110,7 +125,8 @@ namespace UI.Installer
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Instalación";
-            this.TopMost = true;
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frm_installer_HelpButtonClicked);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_installer_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +138,6 @@ namespace UI.Installer
         private System.Windows.Forms.Label install_title;
         private System.Windows.Forms.ProgressBar install_progress;
         private System.Windows.Forms.Label install_detail;
+        private System.Windows.Forms.Button button1;
     }
 }

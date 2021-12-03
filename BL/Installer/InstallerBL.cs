@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using System.IO;
 using DAL.Installer;
 
 namespace BL.Installer
@@ -24,14 +26,27 @@ namespace BL.Installer
         //Ejecuta las validaciones.
         public bool validate() 
         {
-            bool status = this.isBdActive() && checkTables();
+            if (!this.isBdActive())
+                throw new Exception("No se ha podido establecer la conexion con la BD, contacte a soporte@crypton.com.");
 
-            if (!status)
-                throw new Exception("Fallo la instalación, cierre crypton y vuelva a intentar o comuniquese con soporte@crypton.com.");
+            if (!checkTables())
+                throw new Exception("No se encontraron las tablas del sistema,  comuniquese con soporte@crypton.com.");
 
             return true;
         }
 
-        
+        //Check if the install is required.
+        public bool isRequired() 
+        {
+            return File.Exists("install");
+        }
+
+        //Mark as install complete.
+        public void markAsRequired()
+        {
+            if (File.Exists("install"))
+                File.Delete("install");
+        }
+
     }
 }

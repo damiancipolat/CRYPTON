@@ -58,6 +58,7 @@ namespace DAL
         {
             //Traigo el connection string de la configuracion.
             string connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
+            Debug.WriteLine("Conexion usando:" + connectionString);
 
             //Armo una nueva conexion.
             return new SqlConnection(connectionString);

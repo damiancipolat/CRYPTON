@@ -110,7 +110,11 @@ namespace UI.Installer
                 this.runBatch();
 
                 //Corro validaciones.
+                this.install_detail.Text = "Verificando instalación...";
                 new InstallerBL().validate();
+
+                //Marco la instlación como terminada.
+                new InstallerBL().markAsRequired();
 
                 //Muestro exito.
                 MessageBox.Show("Instalación exitosa ya podes usar Crypton!");
@@ -133,6 +137,26 @@ namespace UI.Installer
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frm_installer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void frm_installer_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            HelpManual.GetInstance().openForClient("install");
         }
     }
 }
