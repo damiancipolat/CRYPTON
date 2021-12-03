@@ -93,7 +93,7 @@ namespace UI
 
             //Bindeo menu cliente.
             this.main_menu_operate.Text = Idioma.GetInstance().translate("MAIN_MENU_OPERATE");
-            this.main_menu_search.Text = Idioma.GetInstance().translate("MAIN_MENU_                         SEARCH");
+            this.main_menu_search.Text = Idioma.GetInstance().translate("MAIN_MENU_SEARCH");
             this.main_menu_recomendations.Text = Idioma.GetInstance().translate("MAIN_MENU_RECOMENDATIONS");
             this.main_menu_my_sells.Text = Idioma.GetInstance().translate("MAIN_MENU_MY_SELLS");
             this.main_menu_notifications.Text= Idioma.GetInstance().translate("MAIN_MENU_NOTIFICATIONS");
