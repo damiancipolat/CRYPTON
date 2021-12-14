@@ -34,9 +34,9 @@ namespace DAL.DAO
         }
 
         //Ejecuta el query directamente que recibe como parametro.
-        public int query(string sql,bool scalar=false)
+        public int query(string sql,bool scalar=false,SqlConnection connection=null)
         {
-            SqlCommand command = new SqlCommand(sql, this.bdConnection);
+            SqlCommand command = new SqlCommand(sql, (connection==null)?this.bdConnection:connection);
             Debug.WriteLine("Generated sql:" + sql);
 
             if (scalar == true)

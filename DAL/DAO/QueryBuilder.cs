@@ -16,7 +16,7 @@ namespace DAL
 {
     public class QueryBuilder
     {
-        protected SqlConnection bdConnection;
+        public SqlConnection bdConnection;
         protected SqlText utilText;
         protected SqlParser utilParser;
 
@@ -54,7 +54,7 @@ namespace DAL
         }
 
         //Genero la conexion con la bd.
-        protected SqlConnection getConnection()
+        public SqlConnection getConnection()
         {
             //Traigo el connection string de la configuracion.
             string connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;

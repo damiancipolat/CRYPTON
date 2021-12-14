@@ -769,3 +769,71 @@ LOGIN:Login of user:alf@gmail.com success!
 BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
 BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
 BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+SIGNUP:Se ha creado la cuenta en ars pesos id:10002
+SIGNUP:Se ha creado :BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en bitcoin:10003
+SIGNUP:Se ha creado :LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en litecoin id:10004
+SIGNUP:Se ha creado :DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en doge id:10005
+SIGNUP:Signup de cliente:marta@gmail.com
+LOGIN:Request login of user:marta@gmail.com
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+SIGNUP:Se ha creado la cuenta en ars pesos id:10006
+SIGNUP:Se ha creado :BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en bitcoin:10007
+SIGNUP:Se ha creado :LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en litecoin id:10008
+SIGNUP:Se ha creado :DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en doge id:10009
+SIGNUP:Signup de cliente:marta@gmail.com
+LOGIN:Request login of user:marta@gmail.com
+SESSION:An user has started session - email:marta@gmail.com
+LOGIN:Login of user:marta@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:marta@gmail.com
+SESSION:An user has started session - email:marta@gmail.com
+LOGIN:Login of user:marta@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+USER:User:roberto@gmail.com buscando:c
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!

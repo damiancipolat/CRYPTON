@@ -96,11 +96,12 @@ namespace DAL.Idiomas
             //Load the dictionary.
             foreach (List<object> row in words)
             {
-                Dictionary<string, object> word = new SqlParser().rowToDictionary(row);
-                Debug.WriteLine("Loading word -->" + word["word"].ToString() + ":" + word["word"].ToString());
-
                 //Agrego en la lista.
-                result.Add(word["word"].ToString(), word["word"].ToString());
+                KeyValuePair<string, object> tmp = (KeyValuePair<string, object>)row[0];
+                Console.WriteLine("Loading word -->" + tmp.Key + ":" + tmp.Value.ToString());
+
+                //Inserto en la lista.
+                result.Add(tmp.Value.ToString(), tmp.Value.ToString());
             }
 
             return result;
@@ -136,6 +137,24 @@ namespace DAL.Idiomas
         {
             string sql = "insert into idioma_palabras(code, clave, valor) values('" + code + "', '" + key + "', '" + word + "');";
             return this.getInsert().query(sql);
+        }
+
+        //Grabo la lista de palabras.
+        public int recordBulkWord(Dictionary<string, string> template,string code)
+        {            
+            string sql = "";
+
+            foreach (KeyValuePair<string, string> word in template)
+            {
+                Console.WriteLine("Record word:" + word.Key + "-" + code);
+
+                //Genero sql.
+                sql = sql+"insert into idioma_palabras(code, clave, valor) values('" + code + "', '" + word.Key + "', '" + word.Value + "');";                
+            }
+
+            //Ejecuto.
+            this.getInsert().query(sql, false);
+            return 1;
         }
 
         //Actualizo el valor del idioma.

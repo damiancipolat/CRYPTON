@@ -79,11 +79,15 @@ namespace BL
             //Traigo el template.
             Dictionary<string, string> template = this.getTemplate();
 
+            //Guardo en forma de bulk.
+            lang.recordBulkWord(template,code);
+
+            /*
             foreach (KeyValuePair<string, string> word in template)
             {
                 Debug.WriteLine("Record word:" + word.Key + "-" + code);
                 lang.recordWord(word.Key, "", code);
-            }
+            }*/
         }
 
         //Grabo la palabra.

@@ -169,7 +169,8 @@ namespace DAL
                 { "email",Cripto.GetInstance().Encrypt(user.email)},
                 { "tipo_usuario",(int)user.tipoUsuario},
                 { "pwd",user.pwd},
-                { "hash",user.hash}
+                { "hash",user.hash},
+                { "estado",(int)user.estado}
             };
 
             return this.getInsert().insertSchema(schema, "usuario",true);
