@@ -36,7 +36,7 @@
             this.cobrar_frm_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cobrar_total_label = new System.Windows.Forms.Label();
-            this.cobrar_waiting = new System.Windows.Forms.Label();
+            this.cobrar_progress = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.list_comision_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -127,24 +127,20 @@
             this.cobrar_total_label.TabIndex = 43;
             this.cobrar_total_label.Text = "cobrar_total_label";
             // 
-            // cobrar_waiting
+            // cobrar_progress
             // 
-            this.cobrar_waiting.AutoSize = true;
-            this.cobrar_waiting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cobrar_waiting.Location = new System.Drawing.Point(31, 650);
-            this.cobrar_waiting.Name = "cobrar_waiting";
-            this.cobrar_waiting.Size = new System.Drawing.Size(118, 20);
-            this.cobrar_waiting.TabIndex = 66;
-            this.cobrar_waiting.Text = "cobrar_waiting";
-            this.cobrar_waiting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cobrar_waiting.Visible = false;
+            this.cobrar_progress.Location = new System.Drawing.Point(25, 637);
+            this.cobrar_progress.Name = "cobrar_progress";
+            this.cobrar_progress.Size = new System.Drawing.Size(328, 49);
+            this.cobrar_progress.TabIndex = 67;
+            this.cobrar_progress.Visible = false;
             // 
             // frm_cobrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 712);
-            this.Controls.Add(this.cobrar_waiting);
+            this.ClientSize = new System.Drawing.Size(880, 706);
+            this.Controls.Add(this.cobrar_progress);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.list_comision_data);
@@ -179,6 +175,6 @@
         private System.Windows.Forms.Label cobrar_frm_title;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label cobrar_total_label;
-        private System.Windows.Forms.Label cobrar_waiting;
+        private System.Windows.Forms.ProgressBar cobrar_progress;
     }
 }

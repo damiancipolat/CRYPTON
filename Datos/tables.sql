@@ -1584,9 +1584,6 @@ insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_GE
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_SAVE','Save report');
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_DOWNLOAD','Download report');
 
-select * from usuario
-select us.* from usuario as us where us.apellido like '%a%'or us.nombre like '%a%'or us.email like '%4PQJOBxyYZ1mgEpm/GCAmw==%'
-
 
 
 /*
@@ -1623,6 +1620,9 @@ update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a
 select * from cliente
 select * from usuario where idusuario=2
 
-select * from solic_operacion
+select * from solic_operacion  where tipo_solic=2 and estado_solic=3;
 select * from tipo_solic_op
+
+update solic_operacion set tipo_solic=2
+select * from solic_operacion where  tipo_solic=2 and estado_solic=3;
 select * from solic_estados

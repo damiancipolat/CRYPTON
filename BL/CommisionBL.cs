@@ -56,7 +56,7 @@ namespace BL
             return new ComisionDAL().searchByClientPendings(client);
         }
 
-        public List<ComisionBE> getPendingsToPay()
+        public List<(Int64, Int64, string, DateTime, string, Money)> getPendingsToPay()
         {
             return new ComisionDAL().getPendingsToPay();
         }

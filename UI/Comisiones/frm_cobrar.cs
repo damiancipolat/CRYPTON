@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
 using BE;
 using BL;
 using BE.ValueObject;
@@ -17,7 +18,7 @@ namespace UI.Comisiones
 {
     public partial class frm_cobrar : Form
     {
-        private List<ComisionBE> innerList= new List<ComisionBE>();
+        private List<(Int64, Int64,string, DateTime, string, Money)> innerList= new List<(Int64, Int64,string, DateTime, string, Money)>();
 
         public frm_cobrar()
         {
@@ -52,42 +53,56 @@ namespace UI.Comisiones
 
             if (dr == DialogResult.Yes)
             {
-                this.cobrar_waiting.Visible = true;
+                //Seteo progress.
+                this.Text = "Procesando espere por favor...";
+                this.cobrar_progress.Visible = true;
+                this.cobrar_progress.Maximum = this.innerList.Count;
+                this.cobrar_progress.Step = 1;
+                this.cobrar_progress.Value = 0;                
+
+                //Lista administrativa.
                 List<(ComisionBE, bool)> results = new List<(ComisionBE, bool)>();
 
                 //Recorro debitando las comisiones.
-                foreach (ComisionBE comm in this.innerList)
+                foreach ((Int64, Int64, string, DateTime, string, Money) comm in this.innerList)
                 {
+                    //Incremento el valor.
+                    this.cobrar_progress.Value++;
+                    this.Update();
+
+                    //Traigo la commision.
+                    ComisionBE comision = new CommisionBL().findById(Convert.ToInt32(comm.Item1));
+
                     //Proceso el debito y lo registro.
-                    bool opResult = new CommisionBL().processPayment(comm);
-                    results.Add((comm, opResult));
+                    bool opResult = new CommisionBL().processPayment(comision);
+                    results.Add((comision, opResult));
 
                     //Registro.
-                    Debug.WriteLine("<@>" + comm.valor.getValue().ToString() + " - result =" + opResult.ToString());
+                    Debug.WriteLine("<@>" + comision.valor.getValue().ToString() + " - result =" + opResult.ToString());
                 }
-
-                this.cobrar_waiting.Visible = false;
 
                 //Lanzo un modal como reporte
                 this.statusReport(results);
 
-                ///Cierro ui.
+                //Cierro ui.
+                this.Text = Idioma.GetInstance().translate("COBRAR_FRM_TITLE");
+
                 this.Close();
             }
         }
 
-        private void loadData(List<ComisionBE> list) 
+        private void loadData(List<(Int64, Int64,string, DateTime, string, Money)> list) 
         {
             //Loop to fill data.
-            foreach (ComisionBE data in list)
+            foreach ((Int64, Int64,string, DateTime, string, Money) data in list)
             {
                 this.list_comision_data.Rows.Add(
                     new string[] {
-                        data.idcobro.ToString(),
-                        data.cliente.alias,
-                        data.fecRegister.ToString("yyyy-mm-dd HH:MM:ss.fff"),
-                        data.moneda.cod,
-                        data.valor.getValue().ToString()
+                        data.Item1.ToString(),                          //idcobro
+                        data.Item3.ToString(),                          //cliente
+                        data.Item4.ToString("yyyy-mm-dd HH:MM:ss.fff"), //registro
+                        data.Item5,                                     //moneda
+                        data.Item6.getValue().ToString()                //valor
                 });
             }
         }
@@ -105,12 +120,12 @@ namespace UI.Comisiones
             this.list_comision_data.Columns.Add(Idioma.GetInstance().translate("valor"), Idioma.GetInstance().translate("valor"));
         }
 
-        private Money summarizeList(List<ComisionBE> list) 
+        private Money summarizeList(List<(Int64, Int64, string, DateTime, string, Money)> list) 
         {
             decimal total = 0;
 
-            foreach (ComisionBE comision in list)
-                total = total + comision.valor.getValue();
+            foreach ((Int64, Int64, string, DateTime, string, Money) comision in list)
+                total = total + comision.Item6.getValue();
 
             return new Money(total);
         }
@@ -122,7 +137,6 @@ namespace UI.Comisiones
             this.cobrar_frm_title_descrip.Text = Idioma.GetInstance().translate("COBRAR_FRM_TITLE_DESCRIP");
             this.cobrar_btn_process.Text = Idioma.GetInstance().translate("COBRAR_BTN_PROCESS");
             this.cobrar_total_label.Text = Idioma.GetInstance().translate("COBRAR_TOTAL_LABEL");
-            this.cobrar_waiting.Text = Idioma.GetInstance().translate("COBRAR_WAITING");
             this.btn_close.Text = Idioma.GetInstance().translate("BTN_CLOSE");
         }
 
@@ -131,8 +145,12 @@ namespace UI.Comisiones
             //Traduzco.
             this.translateText();
 
+            //Oculto.
+            this.cobrar_progress.Visible = false;
+            this.cobrar_progress.Value = 0;
+
             //Traigo la lista de comisiones para ser cobradas.
-            List<ComisionBE> pendings = new CommisionBL().getPendingsToPay();
+            List<(Int64, Int64,string, DateTime, string, Money)> pendings = new CommisionBL().getPendingsToPay();
 
             //Total
             Money total = this.summarizeList(pendings);

@@ -287,18 +287,33 @@ namespace DAL
         }
 
         //Traigo la lista de comisiones pendientes a ser cobradas.
-        public List<ComisionBE> getPendingsToPay()
+        public List<(Int64, Int64,string, DateTime, string, Money)> getPendingsToPay()
         {
-            //Busco en la bd por wallet y estado.
-            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{
-                {"processed",0}
-            }, "comisiones");
+            //Armo el query.
+            string sql = @"select com.idcobro,com.idcliente, usr.alias,com.fecRegister,com.moneda,com.valor
+                           from comisiones as com
+                           inner join cliente as cli on cli.idcliente = com.idcliente
+                           inner join usuario as usr on usr.idusuario = cli.idusuario
+                           where processed = 0;";
+
+            //Ejecuto el query.
+            QuerySelect builder = new QuerySelect();
+            SqlDataReader reader = builder.query(sql);
 
             //Lista resultado.
-            List<ComisionBE> lista = new List<ComisionBE>();
+            List<(Int64,Int64,string,DateTime,string,Money)> lista = new List<(Int64, Int64, string, DateTime, string, Money)>();
 
-            foreach (List<object> row in result)
-                lista.Add(this.bindSchema(row));
+            while (reader.Read())
+            {
+                lista.Add((
+                    Convert.ToInt64(reader.GetValue(0)),
+                    Convert.ToInt64(reader.GetValue(1)),
+                    Convert.ToString(reader.GetValue(2)),
+                    Convert.ToDateTime(reader.GetValue(3)),
+                    Convert.ToString(reader.GetValue(4)),
+                    new Money(Convert.ToDouble(reader.GetValue(5)))
+                ));
+            }
 
             return lista;
         }
