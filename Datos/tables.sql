@@ -294,6 +294,9 @@ create table cuentas
 	estado int
 );
 
+CREATE INDEX ix_1_cuentas ON cuentas(cliente,estado);
+CREATE INDEX ix_2_cuentas ON cuentas(idcuenta);
+
 create table cuenta_estado
 (
 	id bigint identity(1,1) primary key,
@@ -315,6 +318,9 @@ create table billetera(
 	saldo varchar(12),
 	deleted datetime
 );
+
+CREATE INDEX ix_1_billetera ON billetera(idcuenta);
+CREATE INDEX ix_2_billetera ON billetera(idwallet);
 
 CREATE INDEX ix_1_billetera ON billetera(idwallet);
 

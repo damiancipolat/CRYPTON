@@ -105,6 +105,10 @@ namespace UI.Banco
 
             if (value != null)
             {
+                //
+                this.Text = "Procesando espere por favor...";
+                this.Update();
+
                 //Traigo la cuenta activa.
                 CuentaBE cuenta = new CuentaBL().traerActiva(this.innerClient);
 
@@ -128,6 +132,13 @@ namespace UI.Banco
                 new OperacionesBL().acreditar(solic);
 
                 MessageBox.Show(Idioma.GetInstance().translate("GRAL_OPERATION_SUCCESS"));
+
+                ///
+                this.Text = Idioma.GetInstance().translate("SEARCH_CBU_TITLE");
+                this.Update();
+
+                //salir
+                this.Close();
             }
         }
 

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
 using BE.ValueObject;
+using SEC;
+using DAL.DAO;
 
 namespace DAL
 {
@@ -27,7 +30,7 @@ namespace DAL
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
 
             //Agrego el usuario.
-            solicOperation.usuario= new UsuarioDAL().findById((long)mapa["idusuario"]);
+            solicOperation.usuario = new UsuarioDAL().findById((long)mapa["idusuario"]); ;
             solicOperation.valor = new Money((double)mapa["valor"]);
             solicOperation.billetera= new BilleteraDAL().findById((long)mapa["idwallet"]);
 
@@ -55,16 +58,47 @@ namespace DAL
         //Traigo la lista de solicitudes pendientes.
         public List<SolicOperacionBE> getPendings()
         {
-            //Busco en la bd por wallet y estado.
-            List<Object> result = this.getSelect().selectAnd(new Dictionary<string, Object>{                
-                {"tipo_solic",2}
-            }, "solic_operacion");
+            //Armo el query.
+            string sql = @"select sop.idoperacion,sop.tipo_solic,sop.idwallet,sop.valor,
+                                  sop.estado_solic,sop.fecRegistro,sop.fecProceso,sop.cbu,
+                                  usr.idusuario,usr.nombre,usr.apellido,usr.alias,usr.email,usr.tipo_usuario
+                            from solic_operacion as sop
+                            inner join usuario as usr on usr.idusuario = sop.idusuario
+                            where sop.tipo_solic = 2 and sop.estado_solic = 3;";
+
+            //Ejecuto el query.
+            QuerySelect builder = new QuerySelect();
+            SqlDataReader reader = builder.query(sql);
 
             //Lista resultado.
             List<SolicOperacionBE> lista = new List<SolicOperacionBE>();
 
-            foreach (List<object> row in result)
-                lista.Add(this.bindSchema(row));
+            while (reader.Read())
+            {
+                SolicOperacionBE ope = new SolicOperacionBE();
+                ope.idoperacion = Convert.ToInt64(reader.GetValue(0));
+
+                if (Convert.ToInt32(reader.GetValue(1)) == 1)
+                    ope.tipoOperacion = TipoSolicOperacion.INGRESO_SALDO;
+
+                if (Convert.ToInt32(reader.GetValue(1)) == 2)
+                    ope.tipoOperacion = TipoSolicOperacion.RETIRO_SALDO;
+
+                ope.valor = new Money(Convert.ToDouble(reader.GetValue(3)));
+                ope.cbu = Convert.ToString(reader.GetValue(7));
+                ope.fecRegistro = Convert.ToDateTime(reader.GetValue(5));
+                ope.fecProceso = Convert.ToDateTime(reader.GetValue(6));
+
+                UsuarioBE user = new UsuarioBE();
+                user.idusuario= Convert.ToInt64(reader.GetValue(8));
+                user.nombre = Convert.ToString(reader.GetValue(9));
+                user.apellido = Convert.ToString(reader.GetValue(10));
+                user.alias = Convert.ToString(reader.GetValue(11));
+                user.email = Cripto.GetInstance().Decrypt(Convert.ToString(reader.GetValue(12)));
+                ope.usuario = user;                
+
+                lista.Add(ope);
+            }
 
             return lista;
         }

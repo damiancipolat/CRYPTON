@@ -99,7 +99,7 @@ namespace DAL
             //Instancio el sql builder y ejecuto el query.
             string sql = $"select id,idusuario,activity,payload,fec_log from bitacora where {where}";
             QuerySelect builder = new QuerySelect();
-            SqlDataReader reader = builder.query(sql);           
+            SqlDataReader reader = builder.query(sql);
 
             var lista = new List<BitacoraBE>();
 
