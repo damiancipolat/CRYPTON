@@ -135,5 +135,20 @@ namespace BL
 
             return this.traerBilleteras(activeAccount, balanceUpdate);
         }
+
+        //Trae la billetera en ars del cliente.
+        public BilleteraBE traerBilleteraArsCliente(ClienteBE cliente) 
+        {
+            CuentaBE activeAccount = this.traerActiva(cliente);
+
+            //Recupero las billeteras de esta cuenta.
+            List<BilleteraBE> wallets = new BilleteraDAL().findByCuenta(activeAccount.idcuenta);
+
+            //Traigo la cuenta.
+            if (wallets.Count > 0)
+                return wallets[0];
+            else
+                return null;
+        }
     }
 }

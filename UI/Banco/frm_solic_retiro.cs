@@ -44,7 +44,7 @@ namespace UI.Banco
         private void frm_solic_retiro_Load(object sender, EventArgs e)
         {
             this.innerClient = Session.GetInstance().getActiveClient();
-            this.innerWallet = new CuentaBL().traerBilleterasCliente(this.innerClient, false)["ARS"];
+            this.innerWallet = new CuentaBL().traerBilleteraArsCliente(this.innerClient);
 
             this.extract_ars_cbu.Text = Idioma.GetInstance().translate("EXTRACT_ARS_CBU") +" "+this.innerClient.cbu;
             this.extract_ars_ammount.Text = Idioma.GetInstance().translate("EXTRACT_ARS_AMMOUNT") +" $ "+this.innerWallet.saldo.getValue().ToString();

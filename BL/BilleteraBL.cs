@@ -208,5 +208,16 @@ namespace BL
 
             return wallet;
         }
+
+        //Obtengo la billetera de una cuenta y moneda puntual.
+        public BilleteraBE findByCuentaAndMoneda(long cuentaId, string moneda) 
+        {
+            List<BilleteraBE> wallets = new BilleteraDAL().findByCuentaAndMoneda(cuentaId,moneda);
+
+            if (wallets.Count > 0)
+                return wallets[0];
+            else
+                return null;
+        }
     }
 }
