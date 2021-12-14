@@ -62,6 +62,7 @@ create table usuario(
 );
 
 CREATE INDEX ix_1_usuario ON usuario(idusuario);
+CREATE INDEX ix_2_usuario ON usuario(email,pwd);
 
 --Tipo de usuario cliente, empleado.
 create table tipo_usuario(
