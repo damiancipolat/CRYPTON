@@ -39,7 +39,7 @@ namespace UI.Comisiones
                     pendientes = pendientes + elem.Item1.valor.getValue();
             }
 
-            MessageBox.Show("Resultado de proceso - Exitosos: $" + cobrados.ToString() + " - " + pendientes.ToString());
+            MessageBox.Show("Resultado de proceso - Exitosos: $" + cobrados.ToString() + " - Fallidos: $" + pendientes.ToString());
         }
 
         private void Btn_close_Click(object sender, EventArgs e)

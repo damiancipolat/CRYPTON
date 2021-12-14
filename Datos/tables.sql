@@ -1219,6 +1219,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','COBRAR_WAITING','Proc
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_REPORT_GENERATED','Reporte generado!');
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_REPORT_SAVE','Guardar reporte');
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_DOWNLOAD','Descargar reporte');
+insert into idioma_palabras(code,clave,valor) values('ES','RECOM_WAIT','Por favor espere...');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1583,6 +1584,8 @@ insert into idioma_palabras(code,clave,valor) values('ENG','COBRAR_WAITING','Pro
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_GENERATED','Report generated success!!');
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_SAVE','Save report');
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_DOWNLOAD','Download report');
+insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_WAIT','Please wait...');
+
 
 
 
@@ -1590,8 +1593,10 @@ insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_DOWNLOAD'
 select * from comisiones where fecRegister>= '2021-01-04 00:00:00' and fecRegister<='2021-11-09 00:00:00' and processed=0
 update usuario set email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' where idusuario=5;
 select * from usuario where  email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' and pwd='e10adc3949ba59abbe56e057f20f883e'
+
 select * from comisiones where processed=0
 update comisiones set processed=0
+
 select * from billetera where idwallet=1;
 update billetera set saldo=1000000 where idwallet=1;
 select tipo_operacion,idcliente,moneda,SUM(valor) from comisiones 

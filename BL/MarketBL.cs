@@ -30,8 +30,6 @@ namespace BL
 
         public List<OrdenVentaBE> recomendar(ClienteBE cliente)
         {
-            //return new OrdenVentaDAL().getLastActivities();
-
             //Traigo la combinatoria de monedas buscada.
             List<(string, string)> moneyCombinations = new OrdenCompraDAL().getFavouriteMoneys(cliente);
 
