@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Diagnostics;
 using System.Windows.Forms;
 using SL;
@@ -45,18 +46,28 @@ namespace UI
         {
              try
              {
+                this.Text = Idioma.GetInstance().translate("RECOM_WAIT");
+
+                //Seteo.
+                this.wallet_progress.Maximum = 5;
+                this.wallet_progress.Step = 1;
+                this.wallet_progress.Value = 1;
+                this.wallet_progress.Visible = true;
+                this.Show();
+                this.Update();
+
                 //Cargo las billeteras.
                 CuentaBE cuenta = new CuentaBL().traer(this.accountId);
-                Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta, true);
+                Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta, true,false);
 
                 //Borro las filas.
                 this.frm_wallet_list.Rows.Clear();
 
-                BilleteraBE wallet = wallets["BTC"];
-                Debug.WriteLine(wallet.moneda.cod + " " + wallet.direccion + " " + wallet.saldo.ToString() + "  " + wallet.saldo_pending.ToString());
-
                 //Agrego ARS
                 Debug.WriteLine("Load ARS");
+                this.wallet_progress.Value++;
+                this.Update();
+
                 this.frm_wallet_list.Rows.Add(new string[] {
                     wallets["ARS"].moneda.cod,
                     wallets["ARS"].direccion,
@@ -66,6 +77,9 @@ namespace UI
 
                 //Agrego BTC
                 Debug.WriteLine("Load BTC");
+                this.wallet_progress.Value++;
+                this.Update();
+
                 this.frm_wallet_list.Rows.Add(new string[] {
                     wallets["BTC"].moneda.cod,
                     wallets["BTC"].direccion,
@@ -75,6 +89,9 @@ namespace UI
 
                 //Agrego LTC
                 Debug.WriteLine("Load LTC");
+                this.wallet_progress.Value++;
+                this.Update();
+
                 this.frm_wallet_list.Rows.Add(new string[] {
                     wallets["LTC"].moneda.cod,
                     wallets["LTC"].direccion,
@@ -84,12 +101,20 @@ namespace UI
 
                 //Agrego DOG
                 Debug.WriteLine("Load DOG");
+                this.wallet_progress.Value++;
+                this.Update();
+
                 this.frm_wallet_list.Rows.Add(new string[] {
                     wallets["DOG"].moneda.cod,
                     wallets["DOG"].direccion,
                     wallets["DOG"].saldo.ToString(),
                     wallets["DOG"].saldo_pending.ToString()
                 });
+
+                this.Text = Idioma.GetInstance().translate("WALLET_TITLE");
+                this.wallet_progress.Visible = false;
+                this.Update();
+                
             }
             catch (Exception ex)
             {
@@ -104,7 +129,7 @@ namespace UI
             this.translateTexts();
 
             //Cargo la billetera.
-            Bitacora.GetInstance().log("WALLET", "Cargando wallet:" + Session.GetInstance().getActiveClient().email);
+            Bitacora.GetInstance().log("WALLET", "Cargando wallet:" + Session.GetInstance().getActiveClient().email);                        
 
             //Load columns.
             this.frm_wallet_list.ReadOnly = true;
@@ -113,6 +138,8 @@ namespace UI
             this.frm_wallet_list.Columns.Add(Idioma.GetInstance().translate("WALLET_ADDRESS"), Idioma.GetInstance().translate("WALLET_ADDRESS"));
             this.frm_wallet_list.Columns.Add(Idioma.GetInstance().translate("WALLET_READY_VALUE"), Idioma.GetInstance().translate("WALLET_READY_VALUE"));
             this.frm_wallet_list.Columns.Add(Idioma.GetInstance().translate("WALLET_PENDING_VALUE"), Idioma.GetInstance().translate("WALLET_PENDING_VALUE"));
+
+            Thread.Sleep(1000);
 
             //Load wallet data.
             this.loadWallets();

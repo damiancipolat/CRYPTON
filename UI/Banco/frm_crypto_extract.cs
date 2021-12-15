@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
 using BE;
 using BE.ValueObject;
 using SL;
@@ -49,21 +50,31 @@ namespace UI.Banco
 
         private void frm_crypto_extract_Load(object sender, EventArgs e)
         {
+            //Cargo y actualizo.
+            this.Show();
+            Thread.Sleep(1000);
             this.translateText();
+            this.Text = Idioma.GetInstance().translate("RECOM_WAIT");
+            this.Update();
 
             //Cargo las billeteras.
-            Dictionary<string,BilleteraBE> myWallets = new CuentaBL().traerBilleterasCliente(Session.GetInstance().getActiveClient(),true);
+            Dictionary<string,BilleteraBE> myWallets = new CuentaBL().traerBilleterasCliente(Session.GetInstance().getActiveClient(),true,false);
 
+            //Agrego.
             this.wallets.Add(myWallets["BTC"]);
             this.wallets.Add(myWallets["LTC"]);
             this.wallets.Add(myWallets["DOG"]);
 
             //Cargo items.
-            foreach(BilleteraBE tmp in this.wallets) 
+            foreach (BilleteraBE tmp in this.wallets) 
                 this.cmb_wallets_list.Items.Add(tmp.moneda.cod+" "+tmp.saldo.getValue().ToString());
 
             //Seteo por defecto.
             this.cmb_wallets_list.SelectedIndex = 0;
+
+            //Retorno
+            this.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_TITLE");
+            this.Update();
         }
 
         private void button1_Click(object sender, EventArgs e)

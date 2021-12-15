@@ -188,10 +188,10 @@ namespace BL
         }
 
         //Obtengo info de la billetera, pudiendo tener el saldo actualizado o no.
-        public BilleteraBE getById(long id, bool updatedBalance = false)
+        public BilleteraBE getById(long id, bool updatedBalance = false,bool rawUpdate=true)
         {
             //Recupero de la bd los datos, si no existe retorno null.
-            BilleteraBE wallet = new BilleteraDAL().findById(id);
+            BilleteraBE wallet = new BilleteraDAL().findById(id, rawUpdate);
 
             if (wallet == null)
                 return null;

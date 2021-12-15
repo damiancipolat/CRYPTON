@@ -1631,3 +1631,7 @@ select * from tipo_solic_op
 update solic_operacion set tipo_solic=2
 select * from solic_operacion where  tipo_solic=2 and estado_solic=3;
 select * from solic_estados
+
+
+select * from billetera
+select * from cuentas

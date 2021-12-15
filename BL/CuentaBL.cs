@@ -96,7 +96,7 @@ namespace BL
         }
 
         //Consulto las billeteras asociadas a una cuenta retorno en forma de diccionario.
-        public Dictionary<string, BilleteraBE> traerBilleteras(CuentaBE cuenta, bool balanceUpdate)
+        public Dictionary<string, BilleteraBE> traerBilleteras(CuentaBE cuenta, bool balanceUpdate,bool rawUpdate=true)
         {
             //Recupero las billeteras de esta cuenta.
             List<BilleteraBE> wallets = new BilleteraDAL().findByCuenta(cuenta.idcuenta);
@@ -108,13 +108,14 @@ namespace BL
             //Armo el diccionario de retorno.
             Dictionary<string, BilleteraBE> walletAccount = new Dictionary<string, BilleteraBE>();
 
+            //Instancia al biz de wallets.
             BilleteraBL walletBiz = new BilleteraBL();
 
             //Cargo el diccionario.
-            walletAccount.Add("ARS", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "ARS").idwallet, false));
-            walletAccount.Add("BTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "BTC").idwallet, balanceUpdate));
-            walletAccount.Add("LTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "LTC").idwallet, balanceUpdate));
-            walletAccount.Add("DOG", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "DOG").idwallet, balanceUpdate));   
+            walletAccount.Add("ARS", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "ARS").idwallet, false, rawUpdate));
+            walletAccount.Add("BTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "BTC").idwallet, balanceUpdate, rawUpdate));
+            walletAccount.Add("LTC", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "LTC").idwallet, balanceUpdate, rawUpdate));
+            walletAccount.Add("DOG", walletBiz.getById(wallets.SingleOrDefault(i => i.moneda.cod == "DOG").idwallet, balanceUpdate, rawUpdate));
 
             return walletAccount;
         }
@@ -126,14 +127,14 @@ namespace BL
         }
 
         //Traigo las billeteras que tiene un cliente en base a su cuenta activa.
-        public Dictionary<string, BilleteraBE> traerBilleterasCliente(ClienteBE cliente,bool balanceUpdate=false)
+        public Dictionary<string, BilleteraBE> traerBilleterasCliente(ClienteBE cliente,bool balanceUpdate=false, bool rawUpdate=true)
         {
             CuentaBE activeAccount = this.traerActiva(cliente);
 
             if (activeAccount == null)
                 throw new Exception("No active account for this client.");
 
-            return this.traerBilleteras(activeAccount, balanceUpdate);
+            return this.traerBilleteras(activeAccount, balanceUpdate,rawUpdate);
         }
 
         //Trae la billetera en ars del cliente.
@@ -142,7 +143,7 @@ namespace BL
             CuentaBE activeAccount = this.traerActiva(cliente);
 
             //Recupero las billeteras de esta cuenta.
-            List<BilleteraBE> wallets = new BilleteraDAL().findByCuenta(activeAccount.idcuenta);
+            List<BilleteraBE> wallets = new BilleteraDAL().findByCuentaAndMoneda(activeAccount.idcuenta,"ARS");
 
             //Traigo la cuenta.
             if (wallets.Count > 0)

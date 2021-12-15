@@ -12,7 +12,7 @@ namespace DAL
     public class BilleteraDAL : AbstractDAL<BilleteraBE>
     {
         //Bindea la lista de campos de un registro de una consulta, con un objeto BE.
-        private BilleteraBE bindSchema(List<Object> fieldData)
+        private BilleteraBE bindSchema(List<Object> fieldData, Boolean clients=true,Boolean accounts=true)
         {
             if (fieldData.Count == 0)
                 return null;
@@ -22,19 +22,24 @@ namespace DAL
 
             //Bindeo campos con la lista de resultados.
             this.binder.match(fieldData, wallet);
-
+            
             //Transfomrmo a diccionario.
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
 
             //Traigo la cuenta.
-            if (mapa["idcuenta"] != System.DBNull.Value)
+            if ((mapa["idcuenta"] != System.DBNull.Value) && accounts)
+            {
                 wallet.cuenta = new CuentaDAL().findById((long)mapa["idcuenta"]);
+            }                
 
             //Traigo la moneda.
             wallet.moneda = new MonedaDAL().findByCode(mapa["moneda"].ToString());
 
             //Traigo el cliente.
-            wallet.cliente = new ClienteDAL().findById((long)mapa["idcliente"]);
+            if (clients) 
+            {
+                wallet.cliente = new ClienteDAL().findById((long)mapa["idcliente"]);
+            }                
 
             //Si la moneda no es crypto cargo el saldo.
             if (wallet.moneda.cod == "ARS")
@@ -48,13 +53,16 @@ namespace DAL
         }
 
         //Este metodo obtiene en base al ID el usuario.
-        public BilleteraBE findById(long id)
+        public BilleteraBE findById(long id,bool rawupdate=true)
         {
             //Busco en la bd por id.
             List<object> result = this.getSelect().selectById("billetera", "idwallet", id);
 
             //Bindeo con el esquema.
-            return this.bindSchema((List<object>)result[0]);
+            if (rawupdate)
+                return this.bindSchema((List<object>)result[0]);
+            else
+                return this.bindSchema((List<object>)result[0],false,false);
 
         }
 
@@ -88,7 +96,7 @@ namespace DAL
             List<BilleteraBE> lista = new List<BilleteraBE>();
 
             foreach (List<object> row in result)
-                lista.Add(this.bindSchema(row));
+                lista.Add(this.bindSchema(row,false,false));
 
             return lista;
         }

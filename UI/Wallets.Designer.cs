@@ -38,6 +38,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.wallet_btn_close = new System.Windows.Forms.Button();
+            this.wallet_progress = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.frm_wallet_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -154,12 +155,21 @@
             this.wallet_btn_close.UseVisualStyleBackColor = false;
             this.wallet_btn_close.Click += new System.EventHandler(this.Wallet_btn_close_Click);
             // 
+            // wallet_progress
+            // 
+            this.wallet_progress.Location = new System.Drawing.Point(544, 26);
+            this.wallet_progress.Name = "wallet_progress";
+            this.wallet_progress.Size = new System.Drawing.Size(190, 29);
+            this.wallet_progress.TabIndex = 55;
+            this.wallet_progress.Visible = false;
+            // 
             // frm_wallets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(766, 410);
+            this.Controls.Add(this.wallet_progress);
             this.Controls.Add(this.wallet_btn_close);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.wallet_btn_refresh);
@@ -201,5 +211,6 @@
         private System.Windows.Forms.DataGridView frm_wallet_list;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button wallet_btn_close;
+        private System.Windows.Forms.ProgressBar wallet_progress;
     }
 }

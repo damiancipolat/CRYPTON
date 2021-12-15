@@ -14,7 +14,7 @@ namespace DAL
     {
 
         //Bindea la lista de campos de un registro de una consulta, con un objeto BE.
-        private OrdenVentaBE bindSchema(List<Object> fieldData)
+        private OrdenVentaBE bindSchema(List<Object> fieldData, bool rawupdate = true)
         {
             if (fieldData.Count == 0)
                 return null;
@@ -35,7 +35,9 @@ namespace DAL
             //Bindeo campos.
             ordenVenta.ofrece = new MonedaDAL().findByCode((string)mapa["ofrece"]);
             ordenVenta.pide = new MonedaDAL().findByCode((string)mapa["pide"]);
-            ordenVenta.vendedor = new ClienteDAL().findById((long)mapa["vendedor"]);
+
+            if (rawupdate)
+                ordenVenta.vendedor = new ClienteDAL().findById((long)mapa["vendedor"]);
 
             return ordenVenta;
         }
@@ -168,7 +170,7 @@ namespace DAL
             List<OrdenVentaBE> lista = new List<OrdenVentaBE>();
 
             foreach (List<object> row in result)
-                lista.Add(this.bindSchema(row));
+                lista.Add(this.bindSchema(row,false));
 
             return lista;
         }
