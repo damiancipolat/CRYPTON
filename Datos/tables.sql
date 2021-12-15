@@ -244,6 +244,8 @@ create table moneda(
 	deleted datetime
 );
 
+CREATE INDEX ix_1_moneda ON moneda(cod);
+
 insert into moneda(cod,descrip) values('ARS','Pesos argentinos');
 insert into moneda(cod,descrip) values('BTC','Bitcoin');
 insert into moneda(cod,descrip) values('LTC','Litecoin');
@@ -412,6 +414,8 @@ create table orden_venta(
 	ordenEstado int,
 	deleted datetime
 );
+
+CREATE INDEX ix_1_orden_venta ON orden_venta(idorden);
 
 --Tabla de tipo de ordenes.
 create table orden_estado(

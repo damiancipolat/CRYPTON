@@ -1132,3 +1132,45 @@ BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.0
 LOGIN:Request login of user:damian.cipolat@gmail.com
 SESSION:An user has started session - email:damian.cipolat@gmail.com
 LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+PROFILE:Update profile:damian.cipolat@gmail.com
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com

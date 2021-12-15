@@ -42,7 +42,12 @@
             this.op_label_tax_info = new System.Windows.Forms.Label();
             this.op_final_cost = new System.Windows.Forms.Label();
             this.op_final_total = new System.Windows.Forms.Label();
+            this.orden_loader = new System.Windows.Forms.Panel();
+            this.orden_loader_txt = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.orden_loader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -175,7 +180,7 @@
             this.op_final_cost.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.op_final_cost.Location = new System.Drawing.Point(21, 461);
             this.op_final_cost.Name = "op_final_cost";
-            this.op_final_cost.Size = new System.Drawing.Size(165, 30);
+            this.op_final_cost.Size = new System.Drawing.Size(132, 24);
             this.op_final_cost.TabIndex = 33;
             this.op_final_cost.Text = "op_final_cost";
             this.op_final_cost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,15 +192,47 @@
             this.op_final_total.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.op_final_total.Location = new System.Drawing.Point(25, 507);
             this.op_final_total.Name = "op_final_total";
-            this.op_final_total.Size = new System.Drawing.Size(165, 30);
+            this.op_final_total.Size = new System.Drawing.Size(132, 24);
             this.op_final_total.TabIndex = 34;
             this.op_final_total.Text = "op_final_total";
+            // 
+            // orden_loader
+            // 
+            this.orden_loader.Controls.Add(this.pictureBox2);
+            this.orden_loader.Controls.Add(this.orden_loader_txt);
+            this.orden_loader.Location = new System.Drawing.Point(-1, 2);
+            this.orden_loader.Name = "orden_loader";
+            this.orden_loader.Size = new System.Drawing.Size(481, 640);
+            this.orden_loader.TabIndex = 35;
+            this.orden_loader.Paint += new System.Windows.Forms.PaintEventHandler(this.orden_loader_Paint);
+            // 
+            // orden_loader_txt
+            // 
+            this.orden_loader_txt.AutoSize = true;
+            this.orden_loader_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orden_loader_txt.Location = new System.Drawing.Point(139, 298);
+            this.orden_loader_txt.Name = "orden_loader_txt";
+            this.orden_loader_txt.Size = new System.Drawing.Size(194, 29);
+            this.orden_loader_txt.TabIndex = 0;
+            this.orden_loader_txt.Text = "orden_loader_txt";
+            this.orden_loader_txt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(192, 205);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(78, 72);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
             // OperacionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 642);
+            this.Controls.Add(this.orden_loader);
             this.Controls.Add(this.btn_buy);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.op_final_total);
@@ -217,6 +254,9 @@
             this.Text = "Comprar";
             this.Load += new System.EventHandler(this.OperacionView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.orden_loader.ResumeLayout(false);
+            this.orden_loader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +277,8 @@
         private System.Windows.Forms.Label op_label_tax_info;
         private System.Windows.Forms.Label op_final_cost;
         private System.Windows.Forms.Label op_final_total;
+        private System.Windows.Forms.Panel orden_loader;
+        private System.Windows.Forms.Label orden_loader_txt;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

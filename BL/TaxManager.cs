@@ -70,7 +70,7 @@ namespace BL
             string moneda = orden.ofrece.cod;
 
             //Traigo la billetera de ambas parte de la misma moneda.
-            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller, false))[moneda].idwallet, false);
+            BilleteraBE sellerWallet = new BilleteraBL().getById((new CuentaBL().traerBilleterasCliente(seller, false))[moneda].idwallet, false,false);
 
             //Traigo el costo fijo de la plataforma.
             decimal buyerPlatformFee = ((Convert.ToDecimal(new ComisionValorBL().getSellCost()) * orden.cantidad.getValue()) / 100);

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -62,6 +63,7 @@ namespace UI
         private void translateTexts()
         {
             this.Text = Idioma.GetInstance().translate("OP_TITLE") + " #" + this.orden.idorden.ToString();
+            this.orden_loader_txt.Text = Idioma.GetInstance().translate("RECOM_WAIT");
             this.op_id.Text = Idioma.GetInstance().translate("OP_TITLE") + " #" + this.orden.idorden.ToString();
             this.op_seller.Text = Idioma.GetInstance().translate("OP_SELLER") + " " + this.orden.vendedor.alias;
             this.op_detail_label.Text= Idioma.GetInstance().translate("OP_DETAIL_LABEL");
@@ -74,11 +76,17 @@ namespace UI
 
         private void OperacionView_Load(object sender, EventArgs e)
         {
-            //Valor final.
-            decimal final;
-
             //Traduzco los textos.
             this.translateTexts();
+
+            //Hago un render.
+            this.orden_loader.Visible = true;
+            this.Show();
+            this.Update();
+            Thread.Sleep(1000);
+
+            //Valor final.
+            decimal final;
 
             //Seteo campos.
             this.op_offer_label.Text = Idioma.GetInstance().translate("OP_OFFER") + " "+new Money(this.orden.cantidad.getValue()).ToString() + " "+this.orden.ofrece.cod;
@@ -109,11 +117,19 @@ namespace UI
 
             //Guardo el costo total.
             this.finalValue = new Money(final);
+            
+            //oculto
+            this.orden_loader.Visible = false;
         }
 
         private void Btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void orden_loader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
