@@ -11,7 +11,7 @@ namespace DAL
     {
 
         //Bindea la lista de campos de un registro de una consulta, con un objeto BE.
-        private NotificacionBE bindSchema(List<Object> fieldData)
+        private NotificacionBE bindSchema(List<Object> fieldData,bool rowUpdate=true)
         {
             if (fieldData.Count == 0)
                 return null;
@@ -24,7 +24,9 @@ namespace DAL
 
             //Seteo el valor.
             Dictionary<string, object> mapa = this.getParser().rowToDictionary(fieldData);
-            notifTarget.cliente = new ClienteDAL().findById((long)mapa["idcliente"]);
+
+            if (rowUpdate)
+                notifTarget.cliente = new ClienteDAL().findById((long)mapa["idcliente"]);
 
             return notifTarget;
 
@@ -69,7 +71,7 @@ namespace DAL
             List<NotificacionBE> lista = new List<NotificacionBE>();
 
             foreach (List<object> row in result)
-                lista.Add(this.bindSchema(row));
+                lista.Add(this.bindSchema(row,false));
 
             return lista;
 
