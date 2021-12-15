@@ -15,8 +15,20 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_041AEB5222FB4A979E89F11A0D9F59C9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0AA61269A155ADF84AD9A3B57FDE9E48"
         "OwnerKey" = "8:_EC8E9FB796111148D52775014FD66E05"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0AA61269A155ADF84AD9A3B57FDE9E48"
+        "OwnerKey" = "8:_F37302F15CC84AD994F4AB96D846DC80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -76,6 +88,12 @@
         "Entry"
         {
         "MsmKey" = "8:_20CBC1B593EBD54781D66F5DCA554DFA"
+        "OwnerKey" = "8:_F37302F15CC84AD994F4AB96D846DC80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_20CBC1B593EBD54781D66F5DCA554DFA"
         "OwnerKey" = "8:_B858B606095C40F094B6FD27F134C97E"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -94,6 +112,12 @@
         "Entry"
         {
         "MsmKey" = "8:_20CBC1B593EBD54781D66F5DCA554DFA"
+        "OwnerKey" = "8:_B08DC74EF2B8455583A00C1569E4A7CC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_20CBC1B593EBD54781D66F5DCA554DFA"
         "OwnerKey" = "8:_8C1BA392DE6347B4FF4C12FC71DD1243"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -101,6 +125,18 @@
         {
         "MsmKey" = "8:_2270CDE8BA156DB71579C59904EFE2B5"
         "OwnerKey" = "8:_B858B606095C40F094B6FD27F134C97E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2EC6A4802104F8013C4324BC0B3B4B94"
+        "OwnerKey" = "8:_1A2076FDC6C444C2A61CDF0986E0BC6C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2EC6A4802104F8013C4324BC0B3B4B94"
+        "OwnerKey" = "8:_F37302F15CC84AD994F4AB96D846DC80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -214,6 +250,12 @@
         "Entry"
         {
         "MsmKey" = "8:_886AC618AD14C91D292F4D7AFECC12C6"
+        "OwnerKey" = "8:_F37302F15CC84AD994F4AB96D846DC80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_886AC618AD14C91D292F4D7AFECC12C6"
         "OwnerKey" = "8:_CF2ADFDC91DD4585927A1804F2B2F568"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -221,6 +263,24 @@
         {
         "MsmKey" = "8:_886AC618AD14C91D292F4D7AFECC12C6"
         "OwnerKey" = "8:_B858B606095C40F094B6FD27F134C97E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_886AC618AD14C91D292F4D7AFECC12C6"
+        "OwnerKey" = "8:_1A2076FDC6C444C2A61CDF0986E0BC6C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8C1BA392DE6347B4FF4C12FC71DD1243"
+        "OwnerKey" = "8:_B08DC74EF2B8455583A00C1569E4A7CC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8C1BA392DE6347B4FF4C12FC71DD1243"
+        "OwnerKey" = "8:_F37302F15CC84AD994F4AB96D846DC80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -322,6 +382,18 @@
         "Entry"
         {
         "MsmKey" = "8:_C33FE8A00CC08B5FBBFE0F23FC186149"
+        "OwnerKey" = "8:_1A2076FDC6C444C2A61CDF0986E0BC6C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C33FE8A00CC08B5FBBFE0F23FC186149"
+        "OwnerKey" = "8:_F37302F15CC84AD994F4AB96D846DC80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C33FE8A00CC08B5FBBFE0F23FC186149"
         "OwnerKey" = "8:_0AA61269A155ADF84AD9A3B57FDE9E48"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -346,6 +418,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C33FE8A00CC08B5FBBFE0F23FC186149"
+        "OwnerKey" = "8:_B08DC74EF2B8455583A00C1569E4A7CC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C33FE8A00CC08B5FBBFE0F23FC186149"
         "OwnerKey" = "8:_20CBC1B593EBD54781D66F5DCA554DFA"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -364,6 +442,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C98A3573ADBA019298C5DAD434B9ED5D"
+        "OwnerKey" = "8:_F37302F15CC84AD994F4AB96D846DC80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C98A3573ADBA019298C5DAD434B9ED5D"
         "OwnerKey" = "8:_CF2ADFDC91DD4585927A1804F2B2F568"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -371,6 +455,18 @@
         {
         "MsmKey" = "8:_C98A3573ADBA019298C5DAD434B9ED5D"
         "OwnerKey" = "8:_B858B606095C40F094B6FD27F134C97E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C98A3573ADBA019298C5DAD434B9ED5D"
+        "OwnerKey" = "8:_1A2076FDC6C444C2A61CDF0986E0BC6C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CEF9AF85EDBF4379BB49E662826CB84A"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -688,6 +784,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -695,6 +799,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_3EAD153E08CE40989E7581F6F4A4FD98"
+            {
+            "Name" = "8:Resultado principal from UI (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_B858B606095C40F094B6FD27F134C97E"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_3372CD2A_CFD2_4EE2_888B_A6D7A353172B"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -718,6 +836,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_041AEB5222FB4A979E89F11A0D9F59C9"
+            {
+            "SourcePath" = "8:C:\\Windows\\System32\\cmd.exe"
+            "TargetName" = "8:cmd.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0AA61269A155ADF84AD9A3B57FDE9E48"
             {
             "AssemblyRegister" = "3:1"
@@ -1285,6 +1423,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CEF9AF85EDBF4379BB49E662826CB84A"
+            {
+            "SourcePath" = "8:..\\BdInstaller\\run_bd_setup.vbs"
+            "TargetName" = "8:run_bd_setup.vbs"
+            "Tag" = "8:"
+            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF608B5A346943609A1E6AF9D15065C0"
             {
             "SourcePath" = "8:..\\install"
@@ -1526,7 +1684,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Crypton Exchange"
         "ProductCode" = "8:{5AAEADDD-3972-44E1-A1F8-F2903EA6ED36}"
-        "PackageCode" = "8:{4ECB89EC-19C3-45C1-942A-7BE6DDF31547}"
+        "PackageCode" = "8:{00EBE795-CED0-42AC-B31D-16079A2F9B77}"
         "UpgradeCode" = "8:{5B176109-9B73-454F-BD52-A0E0D69B698D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -93,6 +93,7 @@ namespace UI.Installer
                 }
                 else
                 {
+                    MessageBox.Show(stdout);
                     throw new Exception("No se pudo ejecutar:"+info[i]);
                 }                    
             }
