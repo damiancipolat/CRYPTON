@@ -80,7 +80,7 @@ namespace SL
 
         //Traduzco la clave usando el idioma por defecto.
         public string translate(string key)
-        {
+        {/*
             if (this.words.ContainsKey(key))
             {
                 string word = this.words[key];
@@ -93,7 +93,8 @@ namespace SL
             else
             {
                 return key;
-            }
+            }*/
+            return "";
         }
 
         //Traduzco la clave en base a un idioma.

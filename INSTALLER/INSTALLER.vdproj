@@ -177,6 +177,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4456ECFFFAB04EEEAEB2799E4F6F50A8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_458B5A026E4B9DE19B258CAC9CD95C5E"
         "OwnerKey" = "8:_B858B606095C40F094B6FD27F134C97E"
         "MsmSig" = "8:_UNDEFINED"
@@ -226,12 +232,6 @@
         "Entry"
         {
         "MsmKey" = "8:_61DFAD679ED24F118CE9FE4978C6FD89"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_633C71534FCE4F0CA728A6190F7EAFDD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -461,12 +461,6 @@
         {
         "MsmKey" = "8:_C98A3573ADBA019298C5DAD434B9ED5D"
         "OwnerKey" = "8:_1A2076FDC6C444C2A61CDF0986E0BC6C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CEF9AF85EDBF4379BB49E662826CB84A"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -799,20 +793,6 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_3EAD153E08CE40989E7581F6F4A4FD98"
-            {
-            "Name" = "8:Resultado principal from UI (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_B858B606095C40F094B6FD27F134C97E"
-            "FileType" = "3:2"
-            "InstallAction" = "3:1"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_3372CD2A_CFD2_4EE2_888B_A6D7A353172B"
-            "InstallerClass" = "11:FALSE"
-            "CustomActionData" = "8:"
-            }
         }
         "DefaultFeature"
         {
@@ -1073,6 +1053,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4456ECFFFAB04EEEAEB2799E4F6F50A8"
+            {
+            "SourcePath" = "8:..\\BdInstaller\\run_bd_setup.bat"
+            "TargetName" = "8:run_bd_setup.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_458B5A026E4B9DE19B258CAC9CD95C5E"
             {
             "AssemblyRegister" = "3:1"
@@ -1164,26 +1164,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_633C71534FCE4F0CA728A6190F7EAFDD"
-            {
-            "SourcePath" = "8:..\\BdInstaller\\run_bd_setup.bat"
-            "TargetName" = "8:run_bd_setup.bat"
-            "Tag" = "8:"
-            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7F03E0F91CF146DE977537FEB7EAD4AE"
@@ -1423,26 +1403,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CEF9AF85EDBF4379BB49E662826CB84A"
-            {
-            "SourcePath" = "8:..\\BdInstaller\\run_bd_setup.vbs"
-            "TargetName" = "8:run_bd_setup.vbs"
-            "Tag" = "8:"
-            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF608B5A346943609A1E6AF9D15065C0"
             {
             "SourcePath" = "8:..\\install"
@@ -1670,6 +1630,13 @@
         }
         "LaunchCondition"
         {
+            "{836E08B8-0285-4809-BA42-01DB6754A45D}:_C0CEA74E084A4DD5832EFB143E58BDEA"
+            {
+            "Name" = "8:AdminUser"
+            "Condition" = "8:AdminUser"
+            "Message" = "8:<Error Message>"
+            "InstallUrl" = "8:"
+            }
         }
         "Locator"
         {
@@ -1684,20 +1651,20 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Crypton Exchange"
         "ProductCode" = "8:{5AAEADDD-3972-44E1-A1F8-F2903EA6ED36}"
-        "PackageCode" = "8:{00EBE795-CED0-42AC-B31D-16079A2F9B77}"
+        "PackageCode" = "8:{49C19696-8ACC-4E14-AC0E-32805A2DEEEE}"
         "UpgradeCode" = "8:{5B176109-9B73-454F-BD52-A0E0D69B698D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:FALSE"
+        "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Crypton"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:INSTALLER"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Crypton"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"

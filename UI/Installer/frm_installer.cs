@@ -16,6 +16,7 @@ using BL.Exceptions;
 using SL;
 using VL;
 using VL.Exceptions;
+using DAL.Admin;
 
 namespace UI.Installer
 {
@@ -30,7 +31,7 @@ namespace UI.Installer
             "run_bd_setup.bat 5",
             "run_bd_setup.bat 6",
             "run_bd_setup.bat 7",
-            "run_bd_setup.bat 8",
+            "run_bd_setup.bat 8"
         };
 
         //Detalle de comandos.
@@ -93,8 +94,7 @@ namespace UI.Installer
                 }
                 else
                 {
-                    MessageBox.Show(stdout);
-                    throw new Exception("No se pudo ejecutar:"+info[i]);
+                    throw new Exception("No se pudo ejecutar:"+info[i]+" cmd:"+cmd+ "salida:"+stdout);
                 }                    
             }
         }
@@ -158,6 +158,17 @@ namespace UI.Installer
         private void frm_installer_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             HelpManual.GetInstance().openForClient("install");
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string path = @"C:\Program Files\Default Company Name\Crypton Exchange";
+            string cmd = "icacls \"" + path+ "\" /q /c /t /grant Users:F";
+            
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout+"   "+code.ToString());
         }
     }
 }

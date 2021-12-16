@@ -1174,3 +1174,11 @@ LOGIN:Login of user:damian.cipolat@gmail.com success!
 RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
 VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
 VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+BOOTSTRAP:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
+Login failed for user 'sa'.
+INTEGRITY ERROR:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
+Login failed for user 'sa'.
+BOOTSTRAP:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
+Login failed for user 'sa'.
+INTEGRITY ERROR:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
+Login failed for user 'sa'.

@@ -35,6 +35,7 @@ namespace UI.Installer
             this.install_progress = new System.Windows.Forms.ProgressBar();
             this.install_detail = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // install_btn
@@ -108,9 +109,20 @@ namespace UI.Installer
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(174, 140);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 45);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // frm_installer
             // 
             this.ClientSize = new System.Drawing.Size(363, 363);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.install_detail);
             this.Controls.Add(this.install_progress);
@@ -139,5 +151,6 @@ namespace UI.Installer
         private System.Windows.Forms.ProgressBar install_progress;
         private System.Windows.Forms.Label install_detail;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -1,3 +1,4 @@
+@echo off 
 set arg=%1
 
 if "%arg%"=="1" (
@@ -38,12 +39,12 @@ if "%arg%"=="6" (
 
 if "%arg%"=="7" (
 	echo "7) Cargo el BACKUP..."
-	sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\bd_backup.sql>salida.txt
+	sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\bd_backup.sql 1>NUL 2>NUL
 	echo "OK"
 )
 
 if "%arg%"=="8" (
-	echo "8) Borrando directorio temporal"
-	rmdir c:\crypton-install-tmp /q /s
+	echo "8) Borrando directorio temporal..."
+	rd /s c:\crypton-install-tmp /q
 	echo "OK"
 )
