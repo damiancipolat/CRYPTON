@@ -153,6 +153,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_333C146CDCC64637B0AFDCD81C24D1B1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_36D2990F0B0D4D9C8374858906781B5F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -173,12 +179,6 @@
         {
         "MsmKey" = "8:_3A8134B9D72C28797FA2CC218B1D00E3"
         "OwnerKey" = "8:_458B5A026E4B9DE19B258CAC9CD95C5E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4456ECFFFAB04EEEAEB2799E4F6F50A8"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -225,6 +225,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4E3D218188A84183A3EA61BB60FE6461"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_54701B0F4D6F49C5951B24F09C9290A4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_574BE8AF78BF46478CF899F8A1A66312"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -232,12 +244,6 @@
         "Entry"
         {
         "MsmKey" = "8:_61DFAD679ED24F118CE9FE4978C6FD89"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7F03E0F91CF146DE977537FEB7EAD4AE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -525,7 +531,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FA83DBB388394485BBB3DD5BD55F3822"
+        "MsmKey" = "8:_F3D4C1478883401BB4A7BFF882C4999C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F9EC610021204E4DA9FE92005BC358F5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1022,6 +1034,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_333C146CDCC64637B0AFDCD81C24D1B1"
+            {
+            "SourcePath" = "8:..\\BdInstaller\\launcher.sql"
+            "TargetName" = "8:launcher.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3A8134B9D72C28797FA2CC218B1D00E3"
             {
             "AssemblyRegister" = "3:1"
@@ -1051,26 +1083,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4456ECFFFAB04EEEAEB2799E4F6F50A8"
-            {
-            "SourcePath" = "8:..\\BdInstaller\\run_bd_setup.bat"
-            "TargetName" = "8:run_bd_setup.bat"
-            "Tag" = "8:"
-            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_458B5A026E4B9DE19B258CAC9CD95C5E"
@@ -1166,7 +1178,27 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7F03E0F91CF146DE977537FEB7EAD4AE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4E3D218188A84183A3EA61BB60FE6461"
+            {
+            "SourcePath" = "8:..\\BdInstaller\\run_bd_setup.bat"
+            "TargetName" = "8:run_bd_setup.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_54701B0F4D6F49C5951B24F09C9290A4"
             {
             "SourcePath" = "8:..\\BdInstaller\\config_bd_file.ini"
             "TargetName" = "8:config_bd_file.ini"
@@ -1536,10 +1568,30 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FA83DBB388394485BBB3DD5BD55F3822"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F3D4C1478883401BB4A7BFF882C4999C"
             {
             "SourcePath" = "8:..\\BdInstaller\\bd_backup.sql"
             "TargetName" = "8:bd_backup.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F9EC610021204E4DA9FE92005BC358F5"
+            {
+            "SourcePath" = "8:..\\BdInstaller\\crypton_backup_12.14.2021.01.40.54.bak"
+            "TargetName" = "8:crypton_backup_12.14.2021.01.40.54.bak"
             "Tag" = "8:"
             "Folder" = "8:_F4EDE0D81B294CF784C90742EE53BB71"
             "Condition" = "8:"
@@ -1651,7 +1703,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Crypton Exchange"
         "ProductCode" = "8:{5AAEADDD-3972-44E1-A1F8-F2903EA6ED36}"
-        "PackageCode" = "8:{49C19696-8ACC-4E14-AC0E-32805A2DEEEE}"
+        "PackageCode" = "8:{76C067ED-D131-438B-BE0B-B1D1630457D0}"
         "UpgradeCode" = "8:{5B176109-9B73-454F-BD52-A0E0D69B698D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

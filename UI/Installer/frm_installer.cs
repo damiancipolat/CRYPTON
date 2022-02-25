@@ -84,18 +84,18 @@ namespace UI.Installer
                 (string stdout, int code) = cmdLin.runCmd(cmd);
 
                 //Analizo el resultado.
-                if (stdout.Contains("OK"))
-                {
+               // if (stdout.Contains("OK"))
+               // {
                     //Delay
                     System.Threading.Thread.Sleep(100);
 
                     //Dibujo.
                     this.Update();
-                }
+                /*}
                 else
                 {
                     throw new Exception("No se pudo ejecutar:"+info[i]+" cmd:"+cmd+ "salida:"+stdout);
-                }                    
+                } */               
             }
         }
 
@@ -127,7 +127,7 @@ namespace UI.Installer
                 this.install_progress.Visible = false;
                 this.install_progress.Value = 0;
 
-                MessageBox.Show(error.Message);
+               // MessageBox.Show(error.Message);
             }
 
         }
@@ -162,6 +162,7 @@ namespace UI.Installer
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            /*
             string path = @"C:\Program Files\Default Company Name\Crypton Exchange";
             string cmd = "icacls \"" + path+ "\" /q /c /t /grant Users:F";
             
@@ -169,6 +170,83 @@ namespace UI.Installer
             (string stdout, int code) = cmdLin.runCmd(cmd);
 
             Debug.WriteLine("-->" + stdout+"   "+code.ToString());
+            */
+            string cmd = this.commands[1];
+
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout + "   " + code.ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string cmd = this.commands[0];
+            Debug.WriteLine("-xxxx->" + cmd);
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout + "   " + code.ToString());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string cmd = this.commands[1];
+            Debug.WriteLine("-xxxx->" + cmd);
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout + "   " + code.ToString());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string cmd = this.commands[2];
+            Debug.WriteLine("-xxxx->" + cmd);
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout + "   " + code.ToString());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string cmd = this.commands[3];
+            Debug.WriteLine("-xxxx->" + cmd);
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout + "   " + code.ToString());
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string cmd = this.commands[4];
+            Debug.WriteLine("-xxxx->" + cmd);
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout + "   " + code.ToString());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string cmd = this.commands[5];
+            Debug.WriteLine("-xxxx->" + cmd);
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout + "   " + code.ToString());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string cmd = this.commands[6];
+            Debug.WriteLine("-xxxx->" +cmd);
+            CommandLine cmdLin = new CommandLine();
+            (string stdout, int code) = cmdLin.runCmd(cmd);
+
+            Debug.WriteLine("-->" + stdout + "   " + code.ToString());
         }
     }
 }

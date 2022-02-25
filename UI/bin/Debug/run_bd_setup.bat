@@ -39,7 +39,7 @@ if "%arg%"=="6" (
 
 if "%arg%"=="7" (
 	echo "7) Cargo el BACKUP..."
-	sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\bd_backup.sql 1>NUL 2>NUL
+	sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\bd_backup.sql 1> NUL
 	echo "OK"
 )
 

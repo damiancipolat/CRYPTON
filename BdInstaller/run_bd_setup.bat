@@ -21,7 +21,9 @@ if "%arg%"=="3" (
 
 if "%arg%"=="4" (
 	echo "4) Copio backup..."
+	copy launcher.sql c:\crypton-install-tmp
 	copy bd_backup.sql c:\crypton-install-tmp
+	copy crypton_backup_12.14.2021.01.40.54.bak c:\crypton-install-tmp
 	echo "OK"
 )
 
@@ -40,12 +42,12 @@ if "%arg%"=="6" (
 if "%arg%"=="7" (
 	echo "7) Cargo el BACKUP..."
 	cd c:\crypton-install-tmp\
-	sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\bd_backup.sql>c:\crypton-install-tmp\salida.txt
+	sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\launcher.sql
 	echo "OK"
 )
 
 if "%arg%"=="8" (
 	echo "8) Borrando directorio temporal..."
-	rd /s c:\crypton-install-tmp /q
+	echo "rd /s c:\crypton-install-tmp /q"
 	echo "OK"
 )
