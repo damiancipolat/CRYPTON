@@ -1,2 +1,0 @@
-C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\obj\Debug\PL.csproj.CoreCompileInputs.cache
-C:\Users\54116\Google Drive\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\PL\obj\Debug\PL.csprojAssemblyReference.cache
