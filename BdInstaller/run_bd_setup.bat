@@ -4,7 +4,7 @@ set arg=%1
 if "%arg%"=="1" (
 	echo "1) Creo directorio temporal..."
 	(if not exist "c:\\crypton-install-tmp\" mkdir c:\\crypton-install-tmp)
-	(if not exist "c:\\bd\\crypton-install-tmp\" mkdir c:\\bd\\crypton-install-tmp)
+	(if not exist "c:\\bd" mkdir c:\\bd)
 	echo "OK"
 )
 
