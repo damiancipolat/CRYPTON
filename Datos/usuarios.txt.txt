@@ -43,3 +43,5 @@ FP:
 27:00 Strategy pattern
 27:30 Decorator pattern
 32:15 Partial application
+
+https://damiancipolat.github.io/CRYPTON/Webs/index.html
