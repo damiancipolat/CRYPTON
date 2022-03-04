@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED28BBFE-01AB-4358-B7D4-FCC5B426BE8E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BL</RootNamespace>
+    <AssemblyName>BL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\BackupBL.cs" />
+    <Compile Include="BitacoraBL.cs" />
+    <Compile Include="ChangeControl\ClientChangeBL.cs" />
+    <Compile Include="ClienteBL.cs" />
+    <Compile Include="CommisionBL.cs" />
+    <Compile Include="CuentaBL.cs" />
+    <Compile Include="Installer\InstallerBL.cs" />
+    <Compile Include="NotificacionBL.cs" />
+    <Compile Include="ComisionValorBL.cs" />
+    <Compile Include="EmpleadoBL.cs" />
+    <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="FraudeBL.cs" />
+    <Compile Include="ConversorBL.cs" />
+    <Compile Include="IdiomaBL.cs" />
+    <Compile Include="MarketBL.cs" />
+    <Compile Include="MonedaBL.cs" />
+    <Compile Include="OperacionesBL.cs" />
+    <Compile Include="Operations\Commission.cs" />
+    <Compile Include="Operations\EstimateTaxesForBuy.cs" />
+    <Compile Include="Operations\NotificateBuySuccess.cs" />
+    <Compile Include="Operations\Swiper.cs" />
+    <Compile Include="Operations\ValidateSwipe.cs" />
+    <Compile Include="OrdenCompraBL.cs" />
+    <Compile Include="OrdenVentaBL.cs" />
+    <Compile Include="Permisos\FamiliaBL.cs" />
+    <Compile Include="Permisos\PatenteBL.cs" />
+    <Compile Include="Permisos\PermisoBL.cs" />
+    <Compile Include="Permisos\UserPermisoBL.cs" />
+    <Compile Include="Security\Integrity.cs" />
+    <Compile Include="TaxManager.cs" />
+    <Compile Include="TransferenciaBL.cs" />
+    <Compile Include="UsuarioBL.cs" />
+    <Compile Include="ReportingBL.cs" />
+    <Compile Include="BilleteraBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BancoBL.cs" />
+    <Compile Include="UsuarioBloqBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{a83e0722-6070-431d-94e1-ffbad3fb67c0}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d639a0f9-9476-4c97-9c18-3b1017683cfb}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IO\IO.csproj">
+      <Project>{a3e6991b-c498-4b7f-8e3b-15b54dea1e70}</Project>
+      <Name>IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SEC\SEC.csproj">
+      <Project>{3d89b4a3-57e0-4a39-8fd4-67945f0559ac}</Project>
+      <Name>SEC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SL\SL.csproj">
+      <Project>{7559a94e-892a-453e-b5c3-c7ab09e6c9fb}</Project>
+      <Name>SL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

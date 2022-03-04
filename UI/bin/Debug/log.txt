@@ -1,0 +1,1184 @@
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+INTEGRITY:INTEGRITY_USERS_ENTITY_FAIL
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+INTEGRITY:INTEGRITY_USERS_ENTITY_FAIL
+INTEGRITY:INTEGRITY_USERS_ENTITY_FAIL
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+INTEGRITY:INTEGRITY_USERS_ENTITY_FAIL
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+INTEGRITY:INTEGRITY_USERS_ENTITY_FAIL
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM=
+PROFILE:Update profile:LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM=
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:damian
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+PROFILE:Load profile:LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM=
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,b35965ae5f527639882c56524f0624af
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM=
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:LHLofA3Jn47gKzJqcki4hIHqqQIjrysxgaGjJZgsVwM=
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:5 d8c0084346e261ae9c888be0f253ec6f,b02d434351c4222e8d4179fe345dc855
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com<
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+LOGIN:Request login of user:roberto@gmail.com
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+LOGIN:Request login of user:roberto@gmail.com
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 93b6fcf5d94ad6e3e2eaf0c5054adf0c,11d71138d9ddee37d1fcce5aedec3ce4
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=
+LOGIN:Login of user:roberto@gmail.com success!
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+LOGIN:Request login of user:roberto@gmail.com
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+INTEGRITY ERROR:Longitud no válida para una matriz o cadena de caracteres Base-64.
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:damian.cipolat@gmail.com
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:2 17364a8f8199c90f74596cef6e0aac72,582c2f81866583e1c388e94d98a94ac1
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:4 eb1456f562a2108e2e86141c9c6bb113,4ace166b6ebac5a0a7fc65215355b02f
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:5 d8c0084346e261ae9c888be0f253ec6f,b02d434351c4222e8d4179fe345dc855
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:6 e64b3bb790547331b67807286bf7e523,b1d54b9d8f892ad6148242b19c2de8bf
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:7 926ec230c42603938166e2a676d08daf,c5bda982841d0102af928a5785c49eed
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:8 973469fa873e6d863d213a84765eaf6a,227a682048f0337ba2630c1a9a39c18e
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:9 fa6a2e7293833eedc5e2306f8be0fe47,7770fda546695217e9260a2f2ff3fb99
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+INTEGRITY ERROR:Los datos de entrada no forman un bloque completo.
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+INTEGRITY ERROR:El relleno entre caracteres no es válido y no se puede quitar.
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+VIOLATION ERROR - DETAIL:Horizontal warning - Comparing hash id:1 11d71138d9ddee37d1fcce5aedec3ce4,8b75a894618d68f8691db25d921da1b3
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:0
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.53397162
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.76694461
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 1000.51698581
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+BOOTSTRAP:Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
+INTEGRITY ERROR:Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:charlie.brown@gmail.com
+SESSION:An user has started session - email:charlie.brown@gmail.com
+LOGIN:Login of user:charlie.brown@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:matias@gmail.com
+SESSION:An user has started session - email:matias@gmail.com
+LOGIN:Login of user:matias@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+WALLET:Cargando wallet:alf@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+PROFILE:Load profile:alf@gmail.com
+WALLET:Cargando wallet:alf@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+SELL:Publis new order:alf@gmail.com value:0.00001671:BTC
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+SEARCH:Buscando ofertas:damian.cipolat@gmail.com ARSxBTC
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:alf
+SESSION:An user has closed the session
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+WALLET:Cargando wallet:alf@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+SIGNUP:Se ha creado la cuenta en ars pesos id:10002
+SIGNUP:Se ha creado :BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en bitcoin:10003
+SIGNUP:Se ha creado :LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en litecoin id:10004
+SIGNUP:Se ha creado :DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en doge id:10005
+SIGNUP:Signup de cliente:marta@gmail.com
+LOGIN:Request login of user:marta@gmail.com
+VIOLATION ERROR - DETAIL:Vertical warning - users entity table violated
+SIGNUP:Se ha creado la cuenta en ars pesos id:10006
+SIGNUP:Se ha creado :BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en bitcoin:10007
+SIGNUP:Se ha creado :LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en litecoin id:10008
+SIGNUP:Se ha creado :DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC
+SIGNUP:Se ha creado la cuenta en doge id:10009
+SIGNUP:Signup de cliente:marta@gmail.com
+LOGIN:Request login of user:marta@gmail.com
+SESSION:An user has started session - email:marta@gmail.com
+LOGIN:Login of user:marta@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:marta@gmail.com
+SESSION:An user has started session - email:marta@gmail.com
+LOGIN:Login of user:marta@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:a
+USER:User:roberto@gmail.com buscando:c
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SIGNUP:Signup de EMPLEADO:rocko@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+SEARCH:Buscando ofertas:damian.cipolat@gmail.com ARSxARS
+SEARCH:Buscando ofertas:damian.cipolat@gmail.com ARSxBTC
+SEARCH:Buscando ofertas:damian.cipolat@gmail.com DOGxBTC
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+PROFILE:Load profile:damian.cipolat@gmail.com
+PROFILE:Load profile:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+PROFILE:Load profile:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+PROFILE:Load profile:damian.cipolat@gmail.com
+PROFILE:Update profile:damian.cipolat@gmail.com
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+VIEW:Visualizando operacion:1 damian.cipolat@gmail.com
+BOOTSTRAP:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
+Login failed for user 'sa'.
+INTEGRITY ERROR:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
+Login failed for user 'sa'.
+BOOTSTRAP:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
+Login failed for user 'sa'.
+INTEGRITY ERROR:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
+Login failed for user 'sa'.
