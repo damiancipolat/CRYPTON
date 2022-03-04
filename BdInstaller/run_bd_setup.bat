@@ -4,6 +4,7 @@ set arg=%1
 if "%arg%"=="1" (
 	echo "1) Creo directorio temporal..."
 	(if not exist "c:\\crypton-install-tmp\" mkdir c:\\crypton-install-tmp)
+	(if not exist "c:\\bd\\crypton-install-tmp\" mkdir c:\\bd\\crypton-install-tmp)
 	echo "OK"
 )
 
@@ -48,6 +49,6 @@ if "%arg%"=="7" (
 
 if "%arg%"=="8" (
 	echo "8) Borrando directorio temporal..."
-	echo "rd /s c:\crypton-install-tmp /q"
+	rd /s c:\crypton-install-tmp /q
 	echo "OK"
 )

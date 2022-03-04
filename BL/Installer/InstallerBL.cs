@@ -38,8 +38,7 @@ namespace BL.Installer
         //Check if the install is required.
         public bool isRequired() 
         {
-            // return File.Exists("install");
-            return false;
+            return File.Exists("install");
         }
 
         //Mark as install complete.

@@ -21,7 +21,7 @@ GO
 USE MASTER
 GO
 RESTORE DATABASE [CRYPTON_BD] FROM DISK='c:\crypton-install-tmp\crypton_backup_12.14.2021.01.40.54.bak' 
-with move 'Crypton' to 'c:\Crypton_bd.mdf',
-     move 'Crypton_log' to 'c:\Crypton_bd_log.ldf', stats;
+with move 'Crypton' to 'c:\bd\Crypton_bd.mdf',
+     move 'Crypton_log' to 'c:\bd\Crypton_bd_log.ldf', stats;
 ALTER DATABASE [CRYPTON_BD] SET MULTI_USER;
 GO
