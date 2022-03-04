@@ -197,7 +197,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1428, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1428, 30);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -209,7 +209,7 @@
             this.main_menu_signout,
             this.main_menu_exit});
             this.main_menu_start.Name = "main_menu_start";
-            this.main_menu_start.Size = new System.Drawing.Size(59, 24);
+            this.main_menu_start.Size = new System.Drawing.Size(59, 26);
             this.main_menu_start.Text = "Inicio";
             // 
             // main_menu_login
@@ -251,7 +251,7 @@
             this.main_menu_publish,
             this.main_menu_my_buys});
             this.main_menu_operate.Name = "main_menu_operate";
-            this.main_menu_operate.Size = new System.Drawing.Size(69, 24);
+            this.main_menu_operate.Size = new System.Drawing.Size(69, 26);
             this.main_menu_operate.Text = "Operar";
             this.main_menu_operate.Click += new System.EventHandler(this.Main_menu_operate_Click);
             // 
@@ -319,7 +319,7 @@
             this.main_menu_debts,
             this.main_menu_earnings_report});
             this.main_menu_it.Name = "main_menu_it";
-            this.main_menu_it.Size = new System.Drawing.Size(35, 24);
+            this.main_menu_it.Size = new System.Drawing.Size(35, 26);
             this.main_menu_it.Text = "IT";
             this.main_menu_it.Click += new System.EventHandler(this.Main_menu_it_Click);
             // 
@@ -408,7 +408,7 @@
             this.main_menu_extract,
             this.main_menu_extract_crypto});
             this.main_menu_client.Name = "main_menu_client";
-            this.main_menu_client.Size = new System.Drawing.Size(69, 24);
+            this.main_menu_client.Size = new System.Drawing.Size(69, 26);
             this.main_menu_client.Text = "Cliente";
             // 
             // main_menu_profile
@@ -442,7 +442,7 @@
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
@@ -472,7 +472,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Crypton - home";
             this.Load += new System.EventHandler(this.Frm_main_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
             this.Resize += new System.EventHandler(this.Main_Resize);

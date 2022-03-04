@@ -220,6 +220,7 @@ namespace UI
             //If the user is defined.
             if (Session.GetInstance().getUser() != null)
             {
+                //Translate text.
                 UsuarioTipo userType = Session.GetInstance().getUser().tipoUsuario;
 
                 if (userType == UsuarioTipo.CLIENTE)
@@ -343,8 +344,7 @@ namespace UI
 
         private void Button1_Click_6(object sender, EventArgs e)
         {
-            UsuarioBE user = new UsuarioBL().findById(2);
-           // new PermisosFrm(user).Show();
+
         }
 
         private void Button1_Click_7(object sender, EventArgs e)
@@ -553,6 +553,11 @@ namespace UI
         {
             try
             {
+                //Set title of main form.
+                string version = ConfigurationManager.AppSettings["Version"];
+                Console.WriteLine("VERSION:" + version);
+                this.Text = "Crypton - V " + version;
+
                 //Detecto si hace falta interrumpir y hacer la instalacion 1ro.
                 if (this.installRequired())
                 {
