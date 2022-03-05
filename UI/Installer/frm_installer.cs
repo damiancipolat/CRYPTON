@@ -51,14 +51,17 @@ namespace UI.Installer
 
                 //Etapa 1
                 this.install_detail.Text = "Aguarde por favor, etapa 1...";
+                this.Update();
                 cmdLin.runCmd("run_bd_setup_stage_1.bat");
 
                 //Etapa 2
                 this.install_detail.Text = "Aguarde por favor, etapa 2...";
+                this.Update();
                 cmdLin.runCmd("run_bd_setup_stage_2.bat");
 
                 //Corro validaciones.
                 this.install_detail.Text = "Verificando instalación...";
+                this.Update();
                 new InstallerBL().validate();
 
                 //Marco la instlación como terminada.
@@ -66,6 +69,7 @@ namespace UI.Installer
 
                 //Muestro exito.
                 this.install_detail.Text = "Instalación exitosa ya podes usar Crypton!";
+                this.Update();
 
                 //Manejo botones.
                 this.button1.Visible = false;
