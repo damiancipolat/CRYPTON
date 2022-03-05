@@ -48,7 +48,14 @@ namespace UI.Installer
 
                 //Ejecuto proceso.
                 CommandLine cmdLin = new CommandLine();
-                (string stdout, int code) = cmdLin.runCmd("run_bd_setup.bat");
+
+                //Etapa 1
+                this.install_detail.Text = "Aguarde por favor, etapa 1...";
+                cmdLin.runCmd("run_bd_setup_stage_1.bat");
+
+                //Etapa 2
+                this.install_detail.Text = "Aguarde por favor, etapa 2...";
+                cmdLin.runCmd("run_bd_setup_stage_2.bat");
 
                 //Corro validaciones.
                 this.install_detail.Text = "Verificando instalación...";
