@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:Crypton Setup"
-"LanguageId" = "3:3082"
+"LanguageId" = "3:1033"
 "CodePage" = "3:1252"
-"UILanguageId" = "3:3082"
+"UILanguageId" = "3:1033"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -1669,7 +1669,7 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:3082"
+        "LangId" = "3:1033"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
@@ -1677,7 +1677,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Crypton Exchange"
         "ProductCode" = "8:{5AAEADDD-3972-44E1-A1F8-F2903EA6ED36}"
-        "PackageCode" = "8:{2AC11B49-3DFC-4D0B-A32D-DC393B07B62B}"
+        "PackageCode" = "8:{D91D2440-3017-492D-8535-E75CC28333E7}"
         "UpgradeCode" = "8:{5B176109-9B73-454F-BD52-A0E0D69B698D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

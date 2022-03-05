@@ -1,54 +1,55 @@
-@echo off 
-set arg=%1
+cd "C:\Program Files\Crypton\Crypton Exchange"
+@echo off
 
-if "%arg%"=="1" (
-	echo "1) Creo directorio temporal..."
-	(if not exist "c:\\crypton-install-tmp\" mkdir c:\\crypton-install-tmp)
-	(if not exist "c:\\bd" mkdir c:\\bd)
-	echo "OK"
-)
+echo  "1) Creo directorio temporal..."
+title "1) Creo directorio temporal..."
+(if not exist "c:\\crypton-install-tmp\" mkdir c:\\crypton-install-tmp)
+(if not exist "c:\\bd" mkdir c:\\bd)
+echo "OK"
+echo "-------------------------------"
 
-if "%arg%"=="2" (
-	echo "2) Extraigo instalador .exe..."
-	sql_server_setup /ACTION=Download /MEDIAPATH=c:\crypton-install-tmp /MEDIATYPE=Core /QUIET
-	echo "OK"
-)
+echo  "2) Extraigo instalador .exe..."
+title "2) Extraigo instalador .exe..."
+start /wait sql_server_setup /ACTION=Download /MEDIAPATH=c:\crypton-install-tmp /MEDIATYPE=Core /QUIET
+echo "OK"
+echo "-------------------------------"
 
-if "%arg%"=="3" (
-	echo "3) Copio configuracion..."
-	copy config_bd_file.ini c:\crypton-install-tmp
-	echo "OK"
-)
+echo  "3) Copio configuracion..."
+title "3) Copio configuracion..."
+copy config_bd_file.ini c:\crypton-install-tmp
+echo "OK"
+echo "-------------------------------"
 
-if "%arg%"=="4" (
-	echo "4) Copio backup..."
-	copy launcher.sql c:\crypton-install-tmp
-	copy bd_backup.sql c:\crypton-install-tmp
-	copy crypton_backup_12.14.2021.01.40.54.bak c:\crypton-install-tmp
-	echo "OK"
-)
+echo  "4) Copio backup..."
+title "4) Copio backup..."
+copy launcher.sql c:\crypton-install-tmp
+copy bd_backup.sql c:\crypton-install-tmp
+copy crypton_backup_12.14.2021.01.40.54.bak c:\crypton-install-tmp
+echo "OK"
+echo "-------------------------------"
 
-if "%arg%"=="5" (
-	echo "5) Extraigo archivos del instalador..."	
-	c:\crypton-install-tmp\SQLEXPR_x64_ENU.exe /q /x:c:\crypton-install-tmp\SQLEXPR_2019
-	echo "OK"
-)
+echo  "5) Extraigo archivos del instalador..."
+title "5) Extraigo archivos del instalador..."
+start /wait c:\crypton-install-tmp\SQLEXPR_x64_ENU.exe /q /x:c:\crypton-install-tmp\SQLEXPR_2019
+echo "OK"
+echo "-------------------------------"
 
-if "%arg%"=="6" (
-	echo "6) Instalo usando la configuracion"
-	c:\crypton-install-tmp\SQLEXPR_2019\setup.exe /SECURITYMODE=SQL /SAPWD="HJH35uQ2" /SQLSVCPASSWORD="HJH35uQ2" /AGTSVCPASSWORD="HJH35uQ2" /ASSVCPASSWORD="HJH35uQ2" /ISSVCPASSWORD="HJH35uQ2" /RSSVCPASSWORD="HJH35uQ2" /ConfigurationFile=c:\crypton-install-tmp\config_bd_file.ini
-	echo "OK"
-)
+echo  "6) Instalo usando la configuracion"
+title "6) Instalo usando la configuracion"
+start /wait c:\crypton-install-tmp\SQLEXPR_2019\setup.exe /SECURITYMODE=SQL /SAPWD="HJH35uQ2" /SQLSVCPASSWORD="HJH35uQ2" /AGTSVCPASSWORD="HJH35uQ2" /ASSVCPASSWORD="HJH35uQ2" /ISSVCPASSWORD="HJH35uQ2" /RSSVCPASSWORD="HJH35uQ2" /ConfigurationFile=c:\crypton-install-tmp\config_bd_file.ini
+echo "OK"
+echo "-------------------------------"
 
-if "%arg%"=="7" (
-	echo "7) Cargo el BACKUP..."
-	cd c:\crypton-install-tmp\
-	sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\launcher.sql
-	echo "OK"
-)
+echo  "7) Cargo el BACKUP..."
+title "7) Cargo el BACKUP..."
+cd "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
+sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\launcher.sql
+cd c:\crypton-install-tmp\
+echo "OK"
+echo "-------------------------------"
 
-if "%arg%"=="8" (
-	echo "8) Borrando directorio temporal..."
-	rd /s c:\crypton-install-tmp /q
-	echo "OK"
-)
+echo  "8) Borrando directorio temporal..."
+title "8) Borrando directorio temporal..."
+rd /s c:\crypton-install-tmp /q
+echo "OK"
+echo "-------------------------------"
