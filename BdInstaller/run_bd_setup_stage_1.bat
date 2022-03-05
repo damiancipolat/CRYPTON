@@ -2,8 +2,7 @@
 
 echo  "1) Creo directorio temporal..."
 title "1) Creo directorio temporal..."
-(if not exist "c:\\crypton-install-tmp\" mkdir c:\\crypton-install-tmp)
-(if not exist "c:\\bd" mkdir c:\\bd)
+(if not exist "c:\\crypton-install-tmp\" mkdir c:\crypton-install-tmp)
 echo "OK"
 echo "-------------------------------"
 

@@ -26,6 +26,8 @@ using SEC;
 using SEC.Exceptions;
 using UI.Comisiones;
 using DAL;
+using System.Security.Principal;
+
 
 namespace UI
 {
@@ -43,6 +45,29 @@ namespace UI
 
             //Bindeo el form principal para recibir notificaciones desde otras ventans.
             this.uiEvents.Attach(this);
+        }
+
+        //------------------------------------------------------------------------------
+
+        //Correr como admin.
+        public bool IsUserAdministrator()
+        {
+            bool isAdmin;
+            try
+            {
+                WindowsIdentity user = WindowsIdentity.GetCurrent();
+                WindowsPrincipal principal = new WindowsPrincipal(user);
+                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                isAdmin = false;
+            }
+            catch (Exception ex)
+            {
+                isAdmin = false;
+            }
+            return isAdmin;
         }
 
         //------------------------------------------------------------------------------
@@ -553,6 +578,10 @@ namespace UI
         {
             try
             {
+
+                //Arranco como admin.
+                this.IsUserAdministrator();
+
                 //Set title of main form.
                 string version = ConfigurationManager.AppSettings["Version"];
                 Console.WriteLine("VERSION:" + version);

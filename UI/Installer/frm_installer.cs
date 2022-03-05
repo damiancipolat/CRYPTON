@@ -65,11 +65,15 @@ namespace UI.Installer
                 new InstallerBL().markAsRequired();
 
                 //Muestro exito.
-                MessageBox.Show("Instalación exitosa ya podes usar Crypton!");
-                this.Close();
+                this.install_detail.Text = "Instalación exitosa ya podes usar Crypton!";
+
+                //Manejo botones.
+                this.button1.Visible = false;
+                this.button2.Visible = true;
             }
             catch(Exception error){
                 this.install_message.Text = error.Message;
+                this.button2.Visible = false;
                 this.install_detail.Visible = true;
                 this.install_detail.Text = "Hubo un error en la instalacion...";
             }
@@ -134,6 +138,11 @@ namespace UI.Installer
 
         private void button9_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
