@@ -54,7 +54,7 @@ namespace UI.Installer
                 this.Update();
                 cmdLin.runCmd("run_bd_setup_stage_1.bat");
 
-                //Etapa 2
+                //Etapa 2   
                 /*
                 this.install_detail.Text = "Aguarde por favor, etapa 2...";
                 this.Update();
