@@ -37,3 +37,12 @@ title "6) Instalo usando la configuracion"
 start /wait c:\crypton-install-tmp\SQLEXPR_2019\setup.exe /SECURITYMODE=SQL /SAPWD="HJH35uQ2" /SQLSVCPASSWORD="HJH35uQ2" /AGTSVCPASSWORD="HJH35uQ2" /ASSVCPASSWORD="HJH35uQ2" /ISSVCPASSWORD="HJH35uQ2" /RSSVCPASSWORD="HJH35uQ2" /ConfigurationFile=c:\crypton-install-tmp\config_bd_file.ini
 echo "OK"
 echo "-------------------------------"
+
+echo  "7) Cargo el BACKUP..."
+title "7) Cargo el BACKUP..."
+(if exist "c:\\bd" rd /s c:\bd /q)
+(if not exist "c:\\bd" mkdir c:\bd)
+cd "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
+sqlcmd -S localhost\CRYPTON_BD -U sa -P HJH35uQ2 -i c:\crypton-install-tmp\launcher.sql
+echo "OK"
+echo "-------------------------------"
