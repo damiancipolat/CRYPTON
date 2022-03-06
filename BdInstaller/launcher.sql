@@ -2,6 +2,8 @@ USE [master]
 GO
 /** Object:  Database [CRYPTON_BD]    Script Date: 29/11/2021 23:33:21 **/
 CREATE DATABASE [CRYPTON_BD]
+    ON (NAME = N'HR', FILENAME = N'c:\bd\Crypton_bd.mdf', SIZE = 1024MB, FILEGROWTH = 256MB)
+LOG ON (NAME = N'HR_log', FILENAME = N'c:\bd\Crypton_bd_log.ldf', SIZE = 512MB, FILEGROWTH = 125MB)
 GO
 ALTER DATABASE [CRYPTON_BD] SET COMPATIBILITY_LEVEL = 120
 GO
@@ -10,9 +12,9 @@ begin
 EXEC [CRYPTON_BD].[dbo].[sp_fulltext_database] @action = 'enable'
 end
 GO
-ALTER DATABASE [CRYPTON_BD] SET ANSI_NULL_DEFAULT OFF 
+ALTER DATABASE [CRYPTON_BD] SET ANSI_NULL_DEFAULT OFF
 GO
-ALTER DATABASE [CRYPTON_BD] SET ANSI_NULLS OFF 
+ALTER DATABASE [CRYPTON_BD] SET ANSI_NULLS OFF
 GO
 ALTER DATABASE [CRYPTON_BD] SET ANSI_PADDING OFF
 GO
@@ -20,8 +22,8 @@ ALTER DATABASE [CRYPTON_BD] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 GO
 USE MASTER
 GO
-RESTORE DATABASE [CRYPTON_BD] FROM DISK='c:\crypton-install-tmp\crypton_backup_12.14.2021.01.40.54.bak' 
-with move 'Crypton' to 'c:\bd\Crypton_bd.mdf',
+RESTORE DATABASE [CRYPTON_BD] FROM DISK='c:\crypton-install-tmp\crypton_backup_12.14.2021.01.40.54.bak'
+with replace,move 'Crypton' to 'c:\bd\Crypton_bd.mdf',
      move 'Crypton_log' to 'c:\bd\Crypton_bd_log.ldf', stats;
 ALTER DATABASE [CRYPTON_BD] SET MULTI_USER;
 GO
