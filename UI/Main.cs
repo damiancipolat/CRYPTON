@@ -26,6 +26,7 @@ using SEC;
 using SEC.Exceptions;
 using UI.Comisiones;
 using DAL;
+using System.Reflection;
 using System.Security.Principal;
 
 
@@ -50,7 +51,7 @@ namespace UI
         //------------------------------------------------------------------------------
 
         //Correr como admin.
-        public bool IsUserAdministrator()
+        private bool isUserAdmin()
         {
             bool isAdmin;
             try
@@ -69,6 +70,26 @@ namespace UI
             }
             return isAdmin;
         }
+
+        private void relauncAsAdmin() 
+        {
+            ProcessStartInfo proc = new ProcessStartInfo();
+            proc.UseShellExecute = true;
+            proc.WorkingDirectory = Environment.CurrentDirectory;
+            proc.FileName = Assembly.GetEntryAssembly().CodeBase;
+            proc.Verb = "runas";
+            try
+            {
+                Process.Start(proc);
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("This program must be run as an administrator! \n\n" + ex.ToString());
+                Environment.Exit(0);
+            }
+        }
+
 
         //------------------------------------------------------------------------------
 
@@ -342,7 +363,7 @@ namespace UI
         {
             this.openLogin();
         }
-         private void Button2_Click_2(object sender, EventArgs e)
+        private void Button2_Click_2(object sender, EventArgs e)
         {
             new frm_publish_sell().Show();
         }
@@ -578,28 +599,34 @@ namespace UI
         {
             try
             {
-
-                //Arranco como admin.
-                this.IsUserAdministrator();
-
-                //Set title of main form.
+                //Log VERSION
                 string version = ConfigurationManager.AppSettings["Version"];
                 Console.WriteLine("VERSION:" + version);
                 this.Text = "Crypton - V " + version;
 
-                //Detecto si hace falta interrumpir y hacer la instalacion 1ro.
+                //Analizo si hace falta la instalacion y relanzo.
                 if (this.installRequired())
                 {
-                    new frm_installer().Show();
+                    if (!this.isUserAdmin())
+                    {
+                        Console.WriteLine("Es necesario relanzar como ADMIN!");
+                        this.relauncAsAdmin();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ejecucion como admin ok!");
+                        new frm_installer().Show();
 
-                    //Oculto todo.
-                    this.HideAll();
+                        //Oculto todo.
+                        this.HideAll();
+                    }
                 }
-                else
+                else 
                 {
                     //Antes de hacer el login, hago una prueba de integridad.
                     new IntegrityBL().validateComplete();
                 }
+
             }
             catch (IntegrityException ex)
             {
