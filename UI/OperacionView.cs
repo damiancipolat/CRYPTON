@@ -72,6 +72,7 @@ namespace UI
             this.btn_close.Text = Idioma.GetInstance().translate("OP_BTN_CLOSE");
             this.btn_buy.Text = Idioma.GetInstance().translate("OP_BTN_BUY");
             this.op_final_cost.Text= Idioma.GetInstance().translate("OP_TOTAL");
+            this.orden_loader_detail.Text = Idioma.GetInstance().translate("ORDEN_LOADER_DETAIL");
         }
 
         private void OperacionView_Load(object sender, EventArgs e)

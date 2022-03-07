@@ -841,6 +841,8 @@ insert into palabras(word) values('COBRAR_BTN_PROCESS');
 insert into palabras(word) values('COBRAR_TOTAL_LABEL');
 insert into palabras(word) values('COBRAR_WAITING');
 insert into palabras(word) values('REPORT_DBT_DOWNLOAD');
+insert into palabras(word) values('ORDEN_LOADER_DETAIL');
+
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1224,6 +1226,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_REPORT_GEN
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_REPORT_SAVE','Guardar reporte');
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_DOWNLOAD','Descargar reporte');
 insert into idioma_palabras(code,clave,valor) values('ES','RECOM_WAIT','Por favor espere...');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDEN_LOADER_DETAIL','Estamos calculando la orden...');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1589,7 +1592,7 @@ insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_GE
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_SAVE','Save report');
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_DOWNLOAD','Download report');
 insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_WAIT','Please wait...');
-
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDEN_LOADER_DETAIL','We are calculating order taxes...');
 
 
 

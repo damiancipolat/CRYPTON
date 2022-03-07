@@ -318,7 +318,6 @@ namespace UI
         {
             this.openLogin();
         }
-
         private void Main_Paint(object sender, PaintEventArgs e)
         {
             this.adjustControls();
@@ -333,6 +332,7 @@ namespace UI
         {
             this.adjustControls();
         }
+        
         private void CambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Language(this.uiEvents).Show();
@@ -363,11 +363,12 @@ namespace UI
         {
             this.openLogin();
         }
+        
         private void Button2_Click_2(object sender, EventArgs e)
         {
             new frm_publish_sell().Show();
         }
-        
+                
         private void Button1_Click_2(object sender, EventArgs e)
         {
             new frm_wallets(2).Show();
@@ -437,6 +438,7 @@ namespace UI
         {
             new OperacionView(2).Show();
         }
+        
         private void Button10_Click(object sender, EventArgs e)
         {
             //new RegisterUser().Show();

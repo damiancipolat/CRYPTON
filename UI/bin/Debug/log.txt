@@ -1182,3 +1182,86 @@ BOOTSTRAP:Cannot open database "CRYPTON_BD" requested by the login. The login fa
 Login failed for user 'sa'.
 INTEGRITY ERROR:Cannot open database "CRYPTON_BD" requested by the login. The login failed.
 Login failed for user 'sa'.
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+SELL:Publis new order:alf@gmail.com value:10000:ARS
+SESSION:An user has closed the session
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+SEARCH:Buscando ofertas:uai@gmail.com BTCxARS
+SESSION:An user has closed the session
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+SELL:Publis new order:alf@gmail.com value:20000:ARS
+SESSION:An user has closed the session
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:alf@gmail.com
+LOGIN:Request login of user:alf@gmail.com
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:alf@gmail.com encontrados:1
+VIEW:Visualizando operacion:3 alf@gmail.com
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:alf@gmail.com encontrados:1
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:damian.cipolat@gmail.com encontrados:1
+SESSION:An user has closed the session
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian@gmail.com
+LOGIN:Request login of user:damian.cipolat@gmail.com
+SESSION:An user has started session - email:damian.cipolat@gmail.com
+LOGIN:Login of user:damian.cipolat@gmail.com success!
+SEARCH:Buscando ofertas:damian.cipolat@gmail.com ARSxBTC
+SEARCH:Buscando ofertas:damian.cipolat@gmail.com ARSxBTC
+SEARCH:Buscando ofertas:damian.cipolat@gmail.com BTCxARS
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+WALLET:Cargando wallet:damian.cipolat@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+SEARCH:Buscando ofertas:alf@gmail.com BTCxARS
+SEARCH:Buscando ofertas:alf@gmail.com BTCxARS
+SEARCH:Buscando ofertas:alf@gmail.com ARSxBTC
+SELL:Publis new order:alf@gmail.com value:20000:ARS
+SESSION:An user has closed the session
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+SEARCH:Buscando ofertas:uai@gmail.com DOGxARS
+VIEW:Visualizando operacion:8 uai@gmail.com
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+SEARCH:Buscando ofertas:uai@gmail.com LTCxARS
+SEARCH:Buscando ofertas:uai@gmail.com BTCxARS
+VIEW:Visualizando operacion:5 uai@gmail.com
+VIEW:Visualizando operacion:6 uai@gmail.com
+SEARCH:Buscando ofertas:uai@gmail.com BTCxARS
+VIEW:Visualizando operacion:5 uai@gmail.com

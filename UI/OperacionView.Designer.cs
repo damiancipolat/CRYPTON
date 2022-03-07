@@ -43,8 +43,9 @@
             this.op_final_cost = new System.Windows.Forms.Label();
             this.op_final_total = new System.Windows.Forms.Label();
             this.orden_loader = new System.Windows.Forms.Panel();
-            this.orden_loader_txt = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.orden_loader_txt = new System.Windows.Forms.Label();
+            this.orden_loader_detail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.orden_loader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -198,6 +199,7 @@
             // 
             // orden_loader
             // 
+            this.orden_loader.Controls.Add(this.orden_loader_detail);
             this.orden_loader.Controls.Add(this.pictureBox2);
             this.orden_loader.Controls.Add(this.orden_loader_txt);
             this.orden_loader.Location = new System.Drawing.Point(-1, 2);
@@ -205,6 +207,16 @@
             this.orden_loader.Size = new System.Drawing.Size(481, 640);
             this.orden_loader.TabIndex = 35;
             this.orden_loader.Paint += new System.Windows.Forms.PaintEventHandler(this.orden_loader_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(192, 205);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(78, 72);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
             // orden_loader_txt
             // 
@@ -217,15 +229,17 @@
             this.orden_loader_txt.Text = "orden_loader_txt";
             this.orden_loader_txt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // orden_loader_detail
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(192, 205);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(78, 72);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
+            this.orden_loader_detail.AutoSize = true;
+            this.orden_loader_detail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orden_loader_detail.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.orden_loader_detail.Location = new System.Drawing.Point(71, 348);
+            this.orden_loader_detail.Name = "orden_loader_detail";
+            this.orden_loader_detail.Size = new System.Drawing.Size(230, 29);
+            this.orden_loader_detail.TabIndex = 24;
+            this.orden_loader_detail.Text = "orden_loader_detail";
+            this.orden_loader_detail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OperacionView
             // 
@@ -280,5 +294,6 @@
         private System.Windows.Forms.Panel orden_loader;
         private System.Windows.Forms.Label orden_loader_txt;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label orden_loader_detail;
     }
 }
