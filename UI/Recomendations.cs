@@ -105,7 +105,7 @@ namespace UI
                 DataGridViewRow selectedRow = this.frm_recom_list.Rows[selectedrowindex];
                 string idValue = Convert.ToString(selectedRow.Cells[0].Value);
 
-                if (idValue!="")
+                if (idValue!=""&& int.TryParse(idValue, out int n))
                     new OperacionView(long.Parse(idValue)).Show();
             }
         }
