@@ -33,10 +33,9 @@ namespace UI
         {
             this.orden_loader_process.Value = step;
             this.orden_loader.Visible = true;
-            this.orden_loader_txt.Text = "Procesando operacion...";
+            this.orden_loader_txt.Text = Idioma.GetInstance().translate("RECOM_WAIT");
             this.orden_loader_detail.Text = msg;
             this.Update();
-            Console.WriteLine("---->" + msg);
         }
 
         private void Btn_accept_Click(object sender, EventArgs e)
@@ -59,7 +58,7 @@ namespace UI
                     this.Update();
                     Thread.Sleep(1000);
 
-                    MyDelegate del = this.test;
+                    fnCallBack del = this.test;
 
                     //Proceso la compra.
                     new OrdenCompraBL().comprar(
@@ -68,16 +67,16 @@ namespace UI
                         this.finalValue,
                         test
                     );
-                    
-                    Console.WriteLine("FINNNN");
 
-                    MessageBox.Show(Idioma.GetInstance().translate("BUY_SUCCESS"));
-                    this.Close();
+                    //Muestro ventana de exito.
+                    this.orden_loader_process.Visible = false;
+                    this.order_success.Visible = true;                    
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.Message);
                     MessageBox.Show(ex.Message);
+                    this.Close();
                 }
             }
         }
@@ -95,6 +94,8 @@ namespace UI
             this.btn_buy.Text = Idioma.GetInstance().translate("OP_BTN_BUY");
             this.op_final_cost.Text= Idioma.GetInstance().translate("OP_TOTAL");
             this.orden_loader_detail.Text = Idioma.GetInstance().translate("ORDEN_LOADER_DETAIL");
+            this.order_success_title.Text = Idioma.GetInstance().translate("ORDER_SUCCESS_TITLE");
+            this.order_success_close.Text = Idioma.GetInstance().translate("BTN_CLOSE");
         }
 
         private void OperacionView_Load(object sender, EventArgs e)
@@ -162,6 +163,11 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {            
+            this.Close();
         }
     }
 }

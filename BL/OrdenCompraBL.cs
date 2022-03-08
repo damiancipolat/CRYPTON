@@ -16,7 +16,7 @@ using DAL;
 
 namespace BL
 {
-    public delegate void MyDelegate(string msg,int step);
+    public delegate void fnCallBack(string msg,int step);
 
     public class OrdenCompraBL
     {
@@ -33,10 +33,11 @@ namespace BL
         }
 
         //Hago la operacion de comprar.
-        public long comprar(OrdenVentaBE orden, ClienteBE buyer, Money total, MyDelegate test)
+        public long comprar(OrdenVentaBE orden, ClienteBE buyer, Money total, fnCallBack callback)
         {
             //Valido los montos.
-            test("Validando montos", 1);
+            callback(Idioma.GetInstance().translate("ORDER_STEP_1"), 1);
+
             new ValidateSwipe().validate(orden, buyer);
             Debug.WriteLine("La operacion "+orden.idorden.ToString()+" se puede realizar!");
 
@@ -46,29 +47,31 @@ namespace BL
             buyOrder.cantidad = total;
             buyOrder.moneda = orden.pide;
             buyOrder.ordenVenta = orden;
-            buyOrder.fecOperacion = DateTime.Now;
+            buyOrder.fecOperacion = DateTime.Now;            
 
             //Grabo la entidad.
-            test("Grabando operacion", 2);
+            callback(Idioma.GetInstance().translate("ORDER_STEP_2"), 2);
             long orderId = new OrdenCompraDAL().save(buyOrder);
             buyOrder.idcompra = orderId;
 
             //Registro las comisiones.
-            test("Aplicando comisiones", 3);
+            callback(Idioma.GetInstance().translate("ORDER_STEP_3"), 3);
             new Commission().commisionate(buyOrder, orden, buyer);
 
             //Hago el intercambio.
-            test("Intercambiando monedas", 5);
+            callback(Idioma.GetInstance().translate("ORDER_STEP_4"), 4);
             new Swiper().swipe(orden, buyer);
 
             //Marco como vendida la orden de venta.
-            test("Cerrando orden", 6);
+            callback(Idioma.GetInstance().translate("ORDER_STEP_5"), 5);
             new OrdenVentaBL().close(orden);
 
             //cargo las notificaciones.
-            test("Notificando partes", 7);
+            callback(Idioma.GetInstance().translate("ORDER_STEP_6"), 6);
             new NotificateBuySuccess().notificate(buyOrder);
-            
+
+            //Finish.
+            callback(Idioma.GetInstance().translate("ORDER_STEP_7"), 7);
             return orderId;
         }
     }

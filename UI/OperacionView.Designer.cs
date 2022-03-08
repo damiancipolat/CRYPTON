@@ -47,9 +47,15 @@
             this.orden_loader_txt = new System.Windows.Forms.Label();
             this.orden_loader_detail = new System.Windows.Forms.Label();
             this.orden_loader_process = new System.Windows.Forms.ProgressBar();
+            this.order_success = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.order_success_title = new System.Windows.Forms.Label();
+            this.order_success_close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.orden_loader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.order_success.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -200,11 +206,12 @@
             // 
             // orden_loader
             // 
+            this.orden_loader.Controls.Add(this.order_success);
             this.orden_loader.Controls.Add(this.orden_loader_process);
             this.orden_loader.Controls.Add(this.orden_loader_detail);
             this.orden_loader.Controls.Add(this.pictureBox2);
             this.orden_loader.Controls.Add(this.orden_loader_txt);
-            this.orden_loader.Location = new System.Drawing.Point(1, 1);
+            this.orden_loader.Location = new System.Drawing.Point(0, 2);
             this.orden_loader.Name = "orden_loader";
             this.orden_loader.Size = new System.Drawing.Size(481, 640);
             this.orden_loader.TabIndex = 35;
@@ -224,7 +231,7 @@
             // 
             this.orden_loader_txt.AutoSize = true;
             this.orden_loader_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orden_loader_txt.Location = new System.Drawing.Point(139, 298);
+            this.orden_loader_txt.Location = new System.Drawing.Point(138, 290);
             this.orden_loader_txt.Name = "orden_loader_txt";
             this.orden_loader_txt.Size = new System.Drawing.Size(194, 29);
             this.orden_loader_txt.TabIndex = 0;
@@ -236,7 +243,7 @@
             this.orden_loader_detail.AutoSize = true;
             this.orden_loader_detail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orden_loader_detail.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.orden_loader_detail.Location = new System.Drawing.Point(71, 348);
+            this.orden_loader_detail.Location = new System.Drawing.Point(40, 351);
             this.orden_loader_detail.Name = "orden_loader_detail";
             this.orden_loader_detail.Size = new System.Drawing.Size(230, 29);
             this.orden_loader_detail.TabIndex = 24;
@@ -253,11 +260,58 @@
             this.orden_loader_process.TabIndex = 25;
             this.orden_loader_process.Visible = false;
             // 
+            // order_success
+            // 
+            this.order_success.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.order_success.Controls.Add(this.order_success_close);
+            this.order_success.Controls.Add(this.pictureBox3);
+            this.order_success.Controls.Add(this.order_success_title);
+            this.order_success.Location = new System.Drawing.Point(-1, 0);
+            this.order_success.Name = "order_success";
+            this.order_success.Size = new System.Drawing.Size(481, 640);
+            this.order_success.TabIndex = 36;
+            this.order_success.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(174, 95);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(140, 126);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            // 
+            // order_success_title
+            // 
+            this.order_success_title.AutoSize = true;
+            this.order_success_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order_success_title.ForeColor = System.Drawing.Color.White;
+            this.order_success_title.Location = new System.Drawing.Point(87, 264);
+            this.order_success_title.Name = "order_success_title";
+            this.order_success_title.Size = new System.Drawing.Size(639, 58);
+            this.order_success_title.TabIndex = 0;
+            this.order_success_title.Text = "ORDER_SUCCESS_TITLE";
+            this.order_success_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // order_success_close
+            // 
+            this.order_success_close.BackColor = System.Drawing.Color.DodgerBlue;
+            this.order_success_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order_success_close.ForeColor = System.Drawing.Color.White;
+            this.order_success_close.Location = new System.Drawing.Point(159, 564);
+            this.order_success_close.Name = "order_success_close";
+            this.order_success_close.Size = new System.Drawing.Size(140, 47);
+            this.order_success_close.TabIndex = 25;
+            this.order_success_close.Text = "Cerrar";
+            this.order_success_close.UseVisualStyleBackColor = false;
+            this.order_success_close.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // OperacionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 642);
+            this.ClientSize = new System.Drawing.Size(481, 642);
             this.Controls.Add(this.orden_loader);
             this.Controls.Add(this.btn_buy);
             this.Controls.Add(this.btn_close);
@@ -283,6 +337,9 @@
             this.orden_loader.ResumeLayout(false);
             this.orden_loader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.order_success.ResumeLayout(false);
+            this.order_success.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,5 +365,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label orden_loader_detail;
         private System.Windows.Forms.ProgressBar orden_loader_process;
+        private System.Windows.Forms.Panel order_success;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label order_success_title;
+        private System.Windows.Forms.Button order_success_close;
     }
 }

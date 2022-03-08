@@ -438,7 +438,14 @@ create table orden_compra(
 	moneda varchar(10),
 	deleted datetime
 );
+1,3,4
+select * from comisiones
+select * from usuario
+select * from orden_venta
+select * from orden_compra
 
+select * from cliente where idusuario=4;
+update cliente set cbu='007006451111234587940' where idcliente=4;
 --Notificaciones
 create table notificaciones
 (
@@ -842,6 +849,14 @@ insert into palabras(word) values('COBRAR_TOTAL_LABEL');
 insert into palabras(word) values('COBRAR_WAITING');
 insert into palabras(word) values('REPORT_DBT_DOWNLOAD');
 insert into palabras(word) values('ORDEN_LOADER_DETAIL');
+insert into palabras(word) values('ORDER_SUCCESS_TITLE');
+insert into palabras(word) values('ORDER_STEP_1');
+insert into palabras(word) values('ORDER_STEP_2');
+insert into palabras(word) values('ORDER_STEP_3');
+insert into palabras(word) values('ORDER_STEP_4');
+insert into palabras(word) values('ORDER_STEP_5');
+insert into palabras(word) values('ORDER_STEP_6');
+insert into palabras(word) values('ORDER_STEP_7');
 
 
 --Tabla de palabras por idioma.
@@ -1227,6 +1242,14 @@ insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_REPORT_SAV
 insert into idioma_palabras(code,clave,valor) values('ES','REPORT_DBT_DOWNLOAD','Descargar reporte');
 insert into idioma_palabras(code,clave,valor) values('ES','RECOM_WAIT','Por favor espere...');
 insert into idioma_palabras(code,clave,valor) values('ES','ORDEN_LOADER_DETAIL','Estamos calculando la orden...');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_SUCCESS_TITLE','Compra exitosa!');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_1','Validando montos');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_2','Grabando operacion');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_3','Aplicando comisiones');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_4','Intercambiando monedas');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_5','Cerrando orden');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_6','Notificando partes');
+insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_7','Terminado');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1593,52 +1616,16 @@ insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_REPORT_SA
 insert into idioma_palabras(code,clave,valor) values('ENG','REPORT_DBT_DOWNLOAD','Download report');
 insert into idioma_palabras(code,clave,valor) values('ENG','RECOM_WAIT','Please wait...');
 insert into idioma_palabras(code,clave,valor) values('ENG','ORDEN_LOADER_DETAIL','We are calculating order taxes...');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_SUCCESS_TITLE','Buy success!!');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_1','Validating amounts');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_2','Recording operation');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_3','Applying commissions');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_4','Exchanging coins');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_5','Closing order');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_6','Notifying parties');
+insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_7','Finished');
 
 
-
-/*
-select * from comisiones where fecRegister>= '2021-01-04 00:00:00' and fecRegister<='2021-11-09 00:00:00' and processed=0
-update usuario set email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' where idusuario=5;
-select * from usuario where  email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=' and pwd='e10adc3949ba59abbe56e057f20f883e'
-
-select * from comisiones where processed=0
-update comisiones set processed=0
-
-select * from billetera where idwallet=1;
-update billetera set saldo=1000000 where idwallet=1;
-select tipo_operacion,idcliente,moneda,SUM(valor) from comisiones 
-where processed=0
-group by tipo_operacion,idcliente,moneda;
-select * from notificaciones
-insert into comisiones(tipo_operacion,referencia,idwallet,moneda,valor,fecCobro,processed,idcliente,fecRegister)
-values(1,1,1,'ARS',100,NULL,0,1,GETDATE());
-
-select * from usuario where idusuario=2
-update usuario set hash='17364a8f8199c90f74596cef6e0aac72' where idusuario=2;
-*/
-
-/*
-update usuario set  nombre='damian' , apellido='cipolat' , alias='prueba' , email='YHJ0Y+tJ3+sqf84lY4nY12s5YEliQIda5Urtv3Y4P3Oq4r07wuOBKibnWnCxG+MADwInijPH0gwnODOF6GOwQJLZ+omRRMfsix+DVwaSj5w=' , tipo_usuario=1 , estado=2 , hash='11d71138d9ddee37d1fcce5aedec3ce4'  where idusuario=1;
-update usuario set email='+EZUHnQRIH9QPvTBik7de/ylBBnOWs/NH2E/URHP9gA=', pwd='e10adc3949ba59abbe56e057f20f883e' where idusuario=5
-update usuario set hash='11d71138d9ddee37d1fcce5aedec3ce4' where idusuario=1;
-update dvv set hash='11d71138d9ddee37d1fcce5aedec3ce4582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
-update dvv set hash='b35965ae5f527639882c56524f0624af582c2f81866583e1c388e94d98a94ac1249f35576f57e0b3ee2c4a24f5e904644ace166b6ebac5a0a7fc65215355b02fb02d434351c4222e8d4179fe345dc855b1d54b9d8f892ad6148242b19c2de8bfc5bda982841d0102af928a5785c49eed227a682048f0337ba2630c1a9a39c18e7770fda546695217e9260a2f2ff3fb99'
-*/
-
---insert into solic_operacion(idusuario,tipo_solic,idwallet,valor,cbu,operador,estado_solic,fecRegistro,fecProceso) values(1,0,1,100,'0070064130004043181234',0,0,'01/11/2021 17:36:49','01/01/0001 0:00:00');SELECT @@IDENTITY;
---insert into comisiones(tipo_operacion,referencia,idcliente,idwallet,moneda,valor,fecCobro,processed)
---values(1,1,1,1,'ARS',100,NULL,0);
-
+update orden_venta set ordenEstado=1;
+select * from usuario
 select * from cliente
-select * from usuario where idusuario=2
-
-select * from solic_operacion  where tipo_solic=2 and estado_solic=3;
-select * from tipo_solic_op
-
-update solic_operacion set tipo_solic=2
-select * from solic_operacion where  tipo_solic=2 and estado_solic=3;
-select * from solic_estados
-
-
-select * from billetera
-select * from cuentas
