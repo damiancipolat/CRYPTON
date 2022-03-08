@@ -43,9 +43,15 @@ namespace BE.ValueObject
             return Convert.ToDecimal(Math.Round(this._inner, 2)).ToString(CultureInfo.InvariantCulture);
         }
 
+        public string Truncate(string value, int maxLength)
+        {
+            if (string.IsNullOrEmpty(value)) return value;
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength);
+        }
+
         public string ToFormatString()
         {
-            return Convert.ToDecimal(Math.Round(this._inner, 8)).ToString(CultureInfo.InvariantCulture);
+            return this.Truncate(Convert.ToDecimal(Math.Round(this._inner, 8)).ToString(CultureInfo.InvariantCulture),12);
         }
     }
 }

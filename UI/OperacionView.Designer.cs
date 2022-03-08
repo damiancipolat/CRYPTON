@@ -46,6 +46,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.orden_loader_txt = new System.Windows.Forms.Label();
             this.orden_loader_detail = new System.Windows.Forms.Label();
+            this.orden_loader_process = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.orden_loader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -199,10 +200,11 @@
             // 
             // orden_loader
             // 
+            this.orden_loader.Controls.Add(this.orden_loader_process);
             this.orden_loader.Controls.Add(this.orden_loader_detail);
             this.orden_loader.Controls.Add(this.pictureBox2);
             this.orden_loader.Controls.Add(this.orden_loader_txt);
-            this.orden_loader.Location = new System.Drawing.Point(-1, 2);
+            this.orden_loader.Location = new System.Drawing.Point(1, 1);
             this.orden_loader.Name = "orden_loader";
             this.orden_loader.Size = new System.Drawing.Size(481, 640);
             this.orden_loader.TabIndex = 35;
@@ -240,6 +242,16 @@
             this.orden_loader_detail.TabIndex = 24;
             this.orden_loader_detail.Text = "orden_loader_detail";
             this.orden_loader_detail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // orden_loader_process
+            // 
+            this.orden_loader_process.Location = new System.Drawing.Point(39, 402);
+            this.orden_loader_process.MarqueeAnimationSpeed = 7;
+            this.orden_loader_process.Maximum = 7;
+            this.orden_loader_process.Name = "orden_loader_process";
+            this.orden_loader_process.Size = new System.Drawing.Size(399, 37);
+            this.orden_loader_process.TabIndex = 25;
+            this.orden_loader_process.Visible = false;
             // 
             // OperacionView
             // 
@@ -295,5 +307,6 @@
         private System.Windows.Forms.Label orden_loader_txt;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label orden_loader_detail;
+        private System.Windows.Forms.ProgressBar orden_loader_process;
     }
 }

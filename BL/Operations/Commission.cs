@@ -30,6 +30,7 @@ namespace BL.Operations
             comision.wallet = wallet;
             comision.fecCobro = DateTime.Now;
             comision.processed = 0;
+            comision.cliente = buyer;
 
             //Obtengo el valor de la comision.
             ComisionValorBL comVL = new ComisionValorBL();
@@ -55,6 +56,7 @@ namespace BL.Operations
             comision.wallet = wallet;
             comision.fecCobro = DateTime.Now;
             comision.processed = 0;
+            comision.cliente = seller;
 
             //Obtengo el valor de la comision.
             ComisionValorBL comVL = new ComisionValorBL();

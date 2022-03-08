@@ -29,6 +29,16 @@ namespace UI
             this.orden = new OrdenVentaBL().load(id);
         }
 
+        private void test(string msg,int step) 
+        {
+            this.orden_loader_process.Value = step;
+            this.orden_loader.Visible = true;
+            this.orden_loader_txt.Text = "Procesando operacion...";
+            this.orden_loader_detail.Text = msg;
+            this.Update();
+            Console.WriteLine("---->" + msg);
+        }
+
         private void Btn_accept_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show(
@@ -40,19 +50,31 @@ namespace UI
 
             if (dr == DialogResult.Yes && this.orden!=null)
             {
-               try
-               {
+                try
+                {
+                    //Animacion de tapar controles.
+                    this.orden_loader.Visible = false;
+                    this.orden_loader_process.Visible = true;
+                    this.Show();
+                    this.Update();
+                    Thread.Sleep(1000);
+
+                    MyDelegate del = this.test;
+
                     //Proceso la compra.
                     new OrdenCompraBL().comprar(
                         this.orden, 
                         Session.GetInstance().getActiveClient(),
-                        this.finalValue
+                        this.finalValue,
+                        test
                     );
+                    
+                    Console.WriteLine("FINNNN");
 
                     MessageBox.Show(Idioma.GetInstance().translate("BUY_SUCCESS"));
                     this.Close();
-               }
-               catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     Debug.WriteLine(ex.Message);
                     MessageBox.Show(ex.Message);
@@ -131,6 +153,15 @@ namespace UI
         private void orden_loader_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
         }
     }
 }
