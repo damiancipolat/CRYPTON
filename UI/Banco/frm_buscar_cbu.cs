@@ -107,6 +107,11 @@ namespace UI.Banco
 
                 if (value != null)
                 {
+                    //Valido si es numero.
+                    if (!int.TryParse(value, out _))
+                        throw new Exception(Idioma.GetInstance().translate("GRAL_UNABLE_TO_PROCESS"));
+
+
                     this.Text = "Procesando espere por favor...";
                     this.Update();
 
