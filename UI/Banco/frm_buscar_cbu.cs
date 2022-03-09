@@ -93,52 +93,58 @@ namespace UI.Banco
 
         private void search_cbu_btn_cashin_Click(object sender, EventArgs e)
         {
-            if (this.innerClient == null)
-                throw new Exception(Idioma.GetInstance().translate("GRAL_UNABLE_TO_PROCESS"));
-
-            //Cargo y muestro.
-            InputForm frm = new InputForm(Idioma.GetInstance().translate("CBU_CASHIN_TITLE"), Idioma.GetInstance().translate("CBU_CASHIN_LABEL"));
-            frm.ShowDialog();
-
-            //Obtengo el valor. 
-            string value = frm.getValue();
-
-            if (value != null)
+            try
             {
-                //
-                this.Text = "Procesando espere por favor...";
-                this.Update();
+                if (this.innerClient == null)
+                    throw new Exception(Idioma.GetInstance().translate("GRAL_UNABLE_TO_PROCESS"));
 
-                //Traigo la cuenta activa.
-                CuentaBE cuenta = new CuentaBL().traerActiva(this.innerClient);
+                //Cargo y muestro.
+                InputForm frm = new InputForm(Idioma.GetInstance().translate("CBU_CASHIN_TITLE"), Idioma.GetInstance().translate("CBU_CASHIN_LABEL"));
+                frm.ShowDialog();
 
-                //Traigo la billeteras.
-                Dictionary<string,BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta, false);
-                BilleteraBE wallet = wallets["ARS"];
+                //Obtengo el valor. 
+                string value = frm.getValue();
 
-                //Armo la solicitud.
-                SolicOperacionBE solic = new SolicOperacionBE();
-                solic.usuario = this.innerClient.usuario;
-                solic.tipoOperacion = TipoSolicOperacion.INGRESO_SALDO;
-                solic.billetera = wallet;
-                solic.valor = new Money(value);
-                solic.cbu = this.innerClient.cbu;
-                solic.operador = Session.GetInstance().getUser();
-                solic.estadoSolic = SolicEstados.APROBADA;
-                solic.fecRegistro = DateTime.Now;
-                solic.fecProceso = DateTime.Now;
+                if (value != null)
+                {
+                    this.Text = "Procesando espere por favor...";
+                    this.Update();
 
-                //Registro la operacion.
-                new OperacionesBL().acreditar(solic);
+                    //Traigo la cuenta activa.
+                    CuentaBE cuenta = new CuentaBL().traerActiva(this.innerClient);
 
-                MessageBox.Show(Idioma.GetInstance().translate("GRAL_OPERATION_SUCCESS"));
+                    //Traigo la billeteras.
+                    Dictionary<string, BilleteraBE> wallets = new CuentaBL().traerBilleteras(cuenta, false);
+                    BilleteraBE wallet = wallets["ARS"];
 
-                ///
-                this.Text = Idioma.GetInstance().translate("SEARCH_CBU_TITLE");
-                this.Update();
+                    //Armo la solicitud.
+                    SolicOperacionBE solic = new SolicOperacionBE();
+                    solic.usuario = this.innerClient.usuario;
+                    solic.tipoOperacion = TipoSolicOperacion.INGRESO_SALDO;
+                    solic.billetera = wallet;
+                    solic.valor = new Money(value);
+                    solic.cbu = this.innerClient.cbu;
+                    solic.operador = Session.GetInstance().getUser();
+                    solic.estadoSolic = SolicEstados.APROBADA;
+                    solic.fecRegistro = DateTime.Now;
+                    solic.fecProceso = DateTime.Now;
 
-                //salir
-                this.Close();
+                    //Registro la operacion.
+                    new OperacionesBL().acreditar(solic);
+
+                    MessageBox.Show(Idioma.GetInstance().translate("GRAL_OPERATION_SUCCESS"));
+
+                    ///Seteo titulo.
+                    this.Text = Idioma.GetInstance().translate("SEARCH_CBU_TITLE");
+                    this.Update();
+
+                    //salir
+                    this.Close();
+                }
+            }
+            catch (Exception error) 
+            {
+                MessageBox.Show(error.Message);
             }
         }
 
