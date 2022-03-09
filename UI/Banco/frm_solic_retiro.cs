@@ -59,11 +59,28 @@ namespace UI.Banco
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
+            //Muestro la barra.
+            this.waiting_bar.Visible = true;
+
+            //Valida formato numerico.
+            if (!Decimal.TryParse(this.extract_ars_input.Text, out _)) 
+            {
+                MessageBox.Show(Idioma.GetInstance().translate("GRAL_UNABLE_TO_PROCESS"));
+                return;
+            }
+
+            //Transformo.
+            this.waiting_bar.Value = 1;
+            this.Update();
             Money moneda = new Money(this.extract_ars_input.Text);
 
             //Si el saldo es mayor al valor ingresado.
             if (this.innerWallet.saldo.getValue() >= moneda.getValue()) 
             {
+                this.waiting_bar.Value = 2;
+                this.Update();
+
+                //Busco comisiones pendientes.
                 List<ComisionBE> comisiones = new CommisionBL().searchByClientPendings(Session.GetInstance().getActiveClient());
                 Debug.WriteLine("Comisiones encontradas:"+comisiones.Count.ToString());
 
@@ -79,9 +96,15 @@ namespace UI.Banco
                     solic.fecRegistro = DateTime.Now;
                     solic.fecProceso = DateTime.Now;
                     solic.estadoSolic = SolicEstados.PENDIENTES;
+                    
+                    this.waiting_bar.Value = 3;
+                    this.Update();
 
-                    //Proceso.
+                    //Proceso la extraccion.
                     new OperacionesBL().extraer(solic);
+
+                    this.waiting_bar.Value = 4;
+                    this.Update();
 
                     //Mnesaje de exito.
                     MessageBox.Show(Idioma.GetInstance().translate("EXTRACT_ARS_OK"));

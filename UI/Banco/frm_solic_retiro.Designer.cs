@@ -40,6 +40,7 @@
             this.extract_ars_input = new System.Windows.Forms.TextBox();
             this.extract_ars_value_label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.waiting_bar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -174,11 +175,22 @@
             this.panel2.Size = new System.Drawing.Size(590, 142);
             this.panel2.TabIndex = 77;
             // 
+            // waiting_bar
+            // 
+            this.waiting_bar.Location = new System.Drawing.Point(464, 18);
+            this.waiting_bar.Maximum = 4;
+            this.waiting_bar.Name = "waiting_bar";
+            this.waiting_bar.Size = new System.Drawing.Size(150, 25);
+            this.waiting_bar.Step = 4;
+            this.waiting_bar.TabIndex = 78;
+            this.waiting_bar.Visible = false;
+            // 
             // frm_solic_retiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 478);
+            this.Controls.Add(this.waiting_bar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.btn_close);
@@ -219,5 +231,6 @@
         private System.Windows.Forms.TextBox extract_ars_input;
         private System.Windows.Forms.Label extract_ars_value_label;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ProgressBar waiting_bar;
     }
 }

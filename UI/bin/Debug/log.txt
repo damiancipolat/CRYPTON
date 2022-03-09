@@ -1548,3 +1548,30 @@ SESSION:An user has closed the session
 LOGIN:Request login of user:roberto@gmail.com
 SESSION:An user has started session - email:roberto@gmail.com
 LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+LOGIN:Request login of user:alf@gmail.com
+SESSION:An user has started session - email:alf@gmail.com
+LOGIN:Login of user:alf@gmail.com success!
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
