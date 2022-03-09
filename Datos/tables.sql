@@ -857,7 +857,7 @@ insert into palabras(word) values('ORDER_STEP_4');
 insert into palabras(word) values('ORDER_STEP_5');
 insert into palabras(word) values('ORDER_STEP_6');
 insert into palabras(word) values('ORDER_STEP_7');
-
+insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_ALERT');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1250,6 +1250,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_4','Interc
 insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_5','Cerrando orden');
 insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_6','Notificando partes');
 insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_7','Terminado');
+insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_ALERT','Incluye costos de extraccion distintos de cada red.');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1624,8 +1625,14 @@ insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_4','Excha
 insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_5','Closing order');
 insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_6','Notifying parties');
 insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_7','Finished');
-
+insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_ALERT','Includes different extraction costs for each red.');
 
 update orden_venta set ordenEstado=1;
 select * from usuario
 select * from cliente
+select * from comisiones
+truncate table comisiones
+select * from solic_retiro
+select * from solic_operacion
+
+update billetera set saldo=1000000 where idwallet=13;

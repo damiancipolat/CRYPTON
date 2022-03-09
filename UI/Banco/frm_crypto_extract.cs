@@ -39,22 +39,24 @@ namespace UI.Banco
         {
             this.Text= Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_TITLE");
             this.extract_crypto_wallet_title.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_TITLE");
-            this.extract_crypto_wallet_descrip.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_DESCRIP");
+            this.extract_crypto_wallet_alert.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_DESCRIP");
             this.extract_crypto_origin.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_ORIGIN");
             this.extract_crypto_value.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_VALUE");
             this.extract_crypto_destiny.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_DESTINY");
             this.wallet_btn_close.Text= Idioma.GetInstance().translate("PROFILE_CLOSE");
             this.wallet_btn_close.Text = Idioma.GetInstance().translate("PROFILE_CLOSE");
             this.wallet_btn_ok.Text= Idioma.GetInstance().translate("BTN_RETIRO_OK");
+            this.extract_crypto_wallet_alert.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_ALERT");
         }
 
         private void frm_crypto_extract_Load(object sender, EventArgs e)
         {
-            //Cargo y actualizo.
-            this.Show();
-            Thread.Sleep(1000);
+            //Traduzco textos.
             this.translateText();
             this.Text = Idioma.GetInstance().translate("RECOM_WAIT");
+
+            //Refresco
+            this.Show();
             this.Update();
 
             //Cargo las billeteras.
@@ -74,7 +76,6 @@ namespace UI.Banco
 
             //Retorno
             this.Text = Idioma.GetInstance().translate("EXTRACT_CRYPTO_WALLET_TITLE");
-            this.Update();
         }
 
         private void button1_Click(object sender, EventArgs e)

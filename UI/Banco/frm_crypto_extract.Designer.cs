@@ -30,7 +30,7 @@ namespace UI.Banco
         private void InitializeComponent()
         {
             this.cmb_wallets_list = new System.Windows.Forms.ComboBox();
-            this.extract_crypto_wallet_descrip = new System.Windows.Forms.Label();
+            this.extract_crypto_wallet_alert = new System.Windows.Forms.Label();
             this.extract_crypto_wallet_title = new System.Windows.Forms.Label();
             this.extract_crypto_origin = new System.Windows.Forms.Label();
             this.extract_crypto_value = new System.Windows.Forms.Label();
@@ -54,23 +54,24 @@ namespace UI.Banco
             this.cmb_wallets_list.Size = new System.Drawing.Size(456, 37);
             this.cmb_wallets_list.TabIndex = 0;
             // 
-            // extract_crypto_wallet_descrip
+            // extract_crypto_wallet_alert
             // 
-            this.extract_crypto_wallet_descrip.AutoSize = true;
-            this.extract_crypto_wallet_descrip.BackColor = System.Drawing.Color.Transparent;
-            this.extract_crypto_wallet_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extract_crypto_wallet_descrip.Location = new System.Drawing.Point(96, 62);
-            this.extract_crypto_wallet_descrip.Name = "extract_crypto_wallet_descrip";
-            this.extract_crypto_wallet_descrip.Size = new System.Drawing.Size(231, 20);
-            this.extract_crypto_wallet_descrip.TabIndex = 54;
-            this.extract_crypto_wallet_descrip.Text = "extract_crypto_wallet_descrip";
+            this.extract_crypto_wallet_alert.AutoSize = true;
+            this.extract_crypto_wallet_alert.BackColor = System.Drawing.Color.Moccasin;
+            this.extract_crypto_wallet_alert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extract_crypto_wallet_alert.Location = new System.Drawing.Point(85, 62);
+            this.extract_crypto_wallet_alert.Name = "extract_crypto_wallet_alert";
+            this.extract_crypto_wallet_alert.Size = new System.Drawing.Size(209, 20);
+            this.extract_crypto_wallet_alert.TabIndex = 54;
+            this.extract_crypto_wallet_alert.Text = "extract_crypto_wallet_alert";
+            this.extract_crypto_wallet_alert.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // extract_crypto_wallet_title
             // 
             this.extract_crypto_wallet_title.AutoSize = true;
             this.extract_crypto_wallet_title.Cursor = System.Windows.Forms.Cursors.Default;
             this.extract_crypto_wallet_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extract_crypto_wallet_title.Location = new System.Drawing.Point(92, 30);
+            this.extract_crypto_wallet_title.Location = new System.Drawing.Point(86, 26);
             this.extract_crypto_wallet_title.Name = "extract_crypto_wallet_title";
             this.extract_crypto_wallet_title.Size = new System.Drawing.Size(261, 25);
             this.extract_crypto_wallet_title.TabIndex = 53;
@@ -111,7 +112,7 @@ namespace UI.Banco
             // 
             this.wallet_btn_close.BackColor = System.Drawing.Color.Crimson;
             this.wallet_btn_close.ForeColor = System.Drawing.Color.White;
-            this.wallet_btn_close.Location = new System.Drawing.Point(333, 390);
+            this.wallet_btn_close.Location = new System.Drawing.Point(334, 390);
             this.wallet_btn_close.Name = "wallet_btn_close";
             this.wallet_btn_close.Size = new System.Drawing.Size(151, 49);
             this.wallet_btn_close.TabIndex = 60;
@@ -123,7 +124,7 @@ namespace UI.Banco
             // 
             this.wallet_btn_ok.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.wallet_btn_ok.ForeColor = System.Drawing.Color.White;
-            this.wallet_btn_ok.Location = new System.Drawing.Point(171, 390);
+            this.wallet_btn_ok.Location = new System.Drawing.Point(172, 390);
             this.wallet_btn_ok.Name = "wallet_btn_ok";
             this.wallet_btn_ok.Size = new System.Drawing.Size(151, 49);
             this.wallet_btn_ok.TabIndex = 61;
@@ -154,7 +155,7 @@ namespace UI.Banco
             // pictureBox1
             // 
             this.pictureBox1.Image = global::UI.Properties.Resources.money_transaction;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(26, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +164,7 @@ namespace UI.Banco
             // 
             // frm_crypto_extract
             // 
-            this.ClientSize = new System.Drawing.Size(510, 462);
+            this.ClientSize = new System.Drawing.Size(514, 462);
             this.Controls.Add(this.txt_destiny);
             this.Controls.Add(this.extract_crypto_destiny);
             this.Controls.Add(this.wallet_btn_ok);
@@ -172,7 +173,7 @@ namespace UI.Banco
             this.Controls.Add(this.extract_crypto_value);
             this.Controls.Add(this.extract_crypto_origin);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.extract_crypto_wallet_descrip);
+            this.Controls.Add(this.extract_crypto_wallet_alert);
             this.Controls.Add(this.extract_crypto_wallet_title);
             this.Controls.Add(this.cmb_wallets_list);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -194,7 +195,7 @@ namespace UI.Banco
 
         private System.Windows.Forms.ComboBox cmb_wallets_list;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label extract_crypto_wallet_descrip;
+        private System.Windows.Forms.Label extract_crypto_wallet_alert;
         private System.Windows.Forms.Label extract_crypto_wallet_title;
         private System.Windows.Forms.Label extract_crypto_origin;
         private System.Windows.Forms.Label extract_crypto_value;
