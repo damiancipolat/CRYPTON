@@ -1611,3 +1611,58 @@ LOGIN:Login of user:uai@gmail.com success!
 BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
 BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
 BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+SESSION:An user has closed the session
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+RECOMENDATIONS:Carga de recomendaciones:uai@gmail.com encontrados:0
+RECOMENDATIONS:Carga de recomendaciones:uai@gmail.com encontrados:0
+SEARCH:Buscando ofertas:uai@gmail.com LTCxARS
+SEARCH:Buscando ofertas:uai@gmail.com BTCxARS
+WALLET:Cargando wallet:uai@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+VIEW:Visualizando operacion:4 uai@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+RECOMENDATIONS:Carga de recomendaciones:uai@gmail.com encontrados:1
+VIEW:Visualizando operacion:9 uai@gmail.com
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+WALLET:Cargando wallet:uai@gmail.com
+BALANCE:Se ha consultado el balance:BTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:LTC/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+BALANCE:Se ha consultado el balance:DOG/2N9xZAjmVpb8pCjJWUiwVcHtTayhhnwoAZC, 0.01701671
+SESSION:An user has closed the session
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+DEBIT:Unable to process commision N°2
+DEBIT:Error processing payment:Incorrect syntax near '0663999989628792'.
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+USER:User:roberto@gmail.com buscando:uai
+USER:User:roberto@gmail.com buscando:damian.cipolat@gmail.com
+SESSION:An user has closed the session
+LOGIN:Request login of user:damian.cipolat@gmail.com
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!
+LOGIN:Request login of user:roberto@gmail.com
+SESSION:An user has started session - email:roberto@gmail.com
+LOGIN:Login of user:roberto@gmail.com success!

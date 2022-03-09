@@ -85,7 +85,8 @@ namespace UI.Comisiones
                 });
 
                 //Acumulo pesos.
-                total = total + Convert.ToDecimal(data.Item5);
+                if (Decimal.TryParse(data.Item5,out _))
+                    total = total + Convert.ToDecimal(data.Item5);
             }
 
             this.report_total_value.Text = Idioma.GetInstance().translate("REPORT_DBT_TOTAL") + " $" + total.ToString();
@@ -132,12 +133,6 @@ namespace UI.Comisiones
 
         private void downloaPDF(string filePath)
         {
-            if (this.innerResult.Count == 0) 
-            {
-                MessageBox.Show("No hay registros para poder generar el reporte!");
-                return;
-            }
-
             // Inicializamos el documento PDF
             Document doc = new Document();
             PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
@@ -147,7 +142,7 @@ namespace UI.Comisiones
 
             // Creamos un titulo personalizado con tamaño de fuente 18 y color Azul
             Paragraph title = new Paragraph();
-            title.Add(Idioma.GetInstance().translate("REPORT_DBT_TITLE") +" - "+ this.date_from_txt.Text+"/"+this.date_to_txt.Text+" "+this.report_type_combo.Text);
+            title.Add(Idioma.GetInstance().translate("REPORT_DBT_TITLE") + " - " + this.date_from_txt.Text + "/" + this.date_to_txt.Text + " " + this.report_type_combo.Text);
             doc.Add(title);
 
             // Agregamos un parrafo vacio como separacion.
@@ -185,15 +180,22 @@ namespace UI.Comisiones
 
         private void report_download_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "Pdf|*.pdf";
-            saveFileDialog1.Title = Idioma.GetInstance().translate("REPORT_DBT_REPORT_SAVE");
-            saveFileDialog1.ShowDialog();
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (this.innerResult.Count == 0)
             {
-                this.downloaPDF(saveFileDialog1.FileName);
-                MessageBox.Show(Idioma.GetInstance().translate("REPORT_DBT_REPORT_GENERATED"));
+                MessageBox.Show("No hay registros para poder generar el reporte!");
+            }
+            else 
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "Pdf|*.pdf";
+                saveFileDialog1.Title = Idioma.GetInstance().translate("REPORT_DBT_REPORT_SAVE");
+                saveFileDialog1.ShowDialog();
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    this.downloaPDF(saveFileDialog1.FileName);
+                    MessageBox.Show(Idioma.GetInstance().translate("REPORT_DBT_REPORT_GENERATED"));
+                }
             }
         }
     }

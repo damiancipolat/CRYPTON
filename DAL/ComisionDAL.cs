@@ -222,7 +222,7 @@ namespace DAL
         {
             //Convierto formato de fechas.
             from = DateTime.ParseExact(from, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
-            to = DateTime.ParseExact(to, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+            to = DateTime.ParseExact(to, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd 23:59:00");
 
             //Agrego el filtro de fecha.
             string sql = "";
