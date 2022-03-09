@@ -858,6 +858,7 @@ insert into palabras(word) values('ORDER_STEP_5');
 insert into palabras(word) values('ORDER_STEP_6');
 insert into palabras(word) values('ORDER_STEP_7');
 insert into palabras(word) values('EXTRACT_CRYPTO_WALLET_ALERT');
+insert into palabras(word) values('GENERIC_SUCCESS');
 
 --Tabla de palabras por idioma.
 create table idioma_palabras
@@ -1251,6 +1252,7 @@ insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_5','Cerran
 insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_6','Notificando partes');
 insert into idioma_palabras(code,clave,valor) values('ES','ORDER_STEP_7','Terminado');
 insert into idioma_palabras(code,clave,valor) values('ES','EXTRACT_CRYPTO_WALLET_ALERT','Incluye costos de extraccion distintos de cada red.');
+insert into idioma_palabras(code,clave,valor) values('ES','GENERIC_SUCCESS','Operación exitosa!');
 
 --ENGLISH
 insert into idioma_palabras(code,clave,valor) values('ENG','WELCOME','Welcome');
@@ -1626,6 +1628,8 @@ insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_5','Closi
 insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_6','Notifying parties');
 insert into idioma_palabras(code,clave,valor) values('ENG','ORDER_STEP_7','Finished');
 insert into idioma_palabras(code,clave,valor) values('ENG','EXTRACT_CRYPTO_WALLET_ALERT','Includes different extraction costs for each red.');
+insert into idioma_palabras(code,clave,valor) values('ENG','GENERIC_SUCCESS','Operation success!');
+
 
 update orden_venta set ordenEstado=1;
 select * from usuario
@@ -1636,3 +1640,10 @@ select * from solic_retiro
 select * from solic_operacion
 
 update billetera set saldo=1000000 where idwallet=13;
+
+select com.idcobro,usr.alias,com.fecRegister,com.moneda,com.valor,com.processed 
+from comisiones as com inner join cliente as cli on com.idcliente=cli.idcliente 
+inner join usuario as usr on usr.idusuario=cli.idusuario 
+where com.fecRegister>= '2022-01-01 00:00:00' and com.fecRegister<='2022-03-09 00:00:00'
+
+update comisiones set valor=1000 where idcobro=1

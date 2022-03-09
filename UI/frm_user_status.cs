@@ -71,6 +71,9 @@ namespace UI
             //Actualizo.
             new UsuarioBL().update(this.user);
 
+            //Mensaje de exito.
+            MessageBox.Show(Idioma.GetInstance().translate("GENERIC_SUCCESS"));
+
             //Cerrar.
             this.Close();
 
