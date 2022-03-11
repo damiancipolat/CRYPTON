@@ -59,43 +59,51 @@ namespace UI
 
         private void Publish_ok_Click(object sender, EventArgs e)
         {
-            //Valido que no sea la misma moneda.
-            if (this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex] == this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex])
+            try
             {
-                MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_MISMATCH"));
-                return;
+                //Valido que no sea la misma moneda.
+                if (this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex] == this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex])
+                {
+                    MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_MISMATCH"));
+                    return;
+                }
+
+                //Traigo las monedas.
+                MonedaBE origen = new MonedaBL().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
+                MonedaBE destino = new MonedaBL().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
+
+                //Traigo valores y conversiones.
+                double input = Convert.ToDouble(this.txt_ammount_enter.Text);
+                double value = Convert.ToDouble(this.txt_ammount_receive.Text);
+
+                UsuarioBE user = Session.GetInstance().getUser();
+
+                //Creo el objeto venta.
+                OrdenVentaBE order = new OrdenVentaBE();
+                order.cantidad = new Money(this.txt_ammount_enter.Text);
+                order.precio = new Money(this.txt_ammount_receive.Text);
+                order.ofrece = origen;
+                order.pide = destino;
+                order.fecCreacion = DateTime.Now;
+                order.fecFin = DateTime.Now;
+                order.ordenEstado = OrdenEstado.DISPONIBLE;
+                order.vendedor = new ClienteBL().findByUser(user);
+
+                //Vender
+                Bitacora.GetInstance().log("SELL", "Publis new order:" + user.email + " value:" + this.txt_ammount_enter.Text + ":" + origen.cod);
+
+                //Creo la orden.
+                new OrdenVentaBL().create(order);
+                MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_SUCCESS"));
+
+                //Cierro.
+                this.Close();
             }
-
-            //Traigo las monedas.
-            MonedaBE origen = new MonedaBL().getByCode(this.moneda_a_combo.Items[this.moneda_a_combo.SelectedIndex].ToString());
-            MonedaBE destino = new MonedaBL().getByCode(this.moneda_b_combo.Items[this.moneda_b_combo.SelectedIndex].ToString());
-            
-            //Traigo valores y conversiones.
-            double input = Convert.ToDouble(this.txt_ammount_enter.Text);
-            double value = Convert.ToDouble(this.txt_ammount_receive.Text);
-
-            UsuarioBE user = Session.GetInstance().getUser();
-
-            //Creo el objeto venta.
-            OrdenVentaBE order = new OrdenVentaBE();
-            order.cantidad = new Money(this.txt_ammount_enter.Text);
-            order.precio = new Money(this.txt_ammount_receive.Text);
-            order.ofrece = origen;
-            order.pide = destino;
-            order.fecCreacion = DateTime.Now;
-            order.fecFin = DateTime.Now;
-            order.ordenEstado = OrdenEstado.DISPONIBLE;
-            order.vendedor = new ClienteBL().findByUser(user);
-
-            //Vender
-            Bitacora.GetInstance().log("SELL", "Publis new order:" + user.email+" value:"+ this.txt_ammount_enter.Text+":"+origen.cod);
-            
-            //Creo la orden.
-            new OrdenVentaBL().create(order);
-            MessageBox.Show(Idioma.GetInstance().translate("SELL_MONEY_SUCCESS"));
-
-            //Cierro.
-            this.Close();
+            catch(Exception error) 
+            {
+                MessageBox.Show(error.Message);
+                this.Close();
+            }
         }
 
         private void Label1_Click(object sender, EventArgs e)
