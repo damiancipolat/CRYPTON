@@ -8,7 +8,7 @@ using System.IO;
 
 namespace SL
 {
-    public class FileLayer
+    public class FileLayer : ILogger
     {
         public FileLayer() { }
 

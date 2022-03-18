@@ -11,7 +11,7 @@ using BE;
 
 namespace SL
 {
-    public class FileJsonLayer
+    public class FileJsonLayer : ILogger
     {
         public FileJsonLayer() { }
 

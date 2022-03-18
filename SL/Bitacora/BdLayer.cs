@@ -9,9 +9,9 @@ using BE;
 
 namespace SL
 {
-    public class BdLayer
+    public class BdLayer: ILogger
     {
-        public int log(string actividad, string payload)
+        public void log(string actividad, string payload)
         {
             //Creo la entidad bitacora.
             BitacoraBE logBE = new BitacoraBE();
@@ -21,7 +21,7 @@ namespace SL
             logBE.actividad = actividad != null ? actividad : "LOG";
 
             //Registro en la bd.
-            return new BitacoraDAL().insert(logBE);
+            new BitacoraDAL().insert(logBE);
         }
     }
 }

@@ -14,7 +14,8 @@ namespace SL
     {
         //Singleton logic.
         private static Bitacora _instance;
-        
+        private ILogger logger;
+
         public static Bitacora GetInstance()
         {
             if (_instance == null)
@@ -23,6 +24,11 @@ namespace SL
             }
 
             return _instance;
+        }
+
+        private void setLogger(ILogger logger) 
+        {
+            this.logger = logger;            
         }
 
         public void log(string actividad, string payload, bool debug = false)
@@ -38,23 +44,31 @@ namespace SL
             //Intento grabar el log en la bd, si falla se graba en un archivo.
             try
             {
-                bdLogLayer.log(actividad, payload);
+                this.setLogger(bdLogLayer);
+                this.logger.log(actividad, payload);
             }
             catch (Exception ex)
             {
-                fileLogLayer.log(actividad, payload);
+                this.setLogger(fileLogLayer);
+                this.logger.log(actividad, payload);
 
                 //Registro en formato json.
-                if (jsonLogMode == "ONERROR")
-                    fileJsonLayer.log(actividad, payload+" - "+ex.Message);
+                if (jsonLogMode == "ONERROR") 
+                {
+                    this.setLogger(fileJsonLayer);
+                    this.logger.log(actividad, payload + " - " + ex.Message);
+                }                    
             }
             finally
             {
                 Debug.WriteLine(payload);
 
                 //Registro en formato json.
-                if (jsonLogMode=="ALWAYS")
-                    fileJsonLayer.log(actividad,payload);
+                if (jsonLogMode == "ALWAYS") 
+                {
+                    this.setLogger(fileJsonLayer);
+                    this.logger.log(actividad, payload);
+                }                    
             }
         }
     }

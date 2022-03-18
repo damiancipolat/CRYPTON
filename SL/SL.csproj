@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bitacora\FileJsonLayer.cs" />
+    <Compile Include="Bitacora\ILogger.cs" />
     <Compile Include="Help.cs" />
     <Compile Include="Auth.cs" />
     <Compile Include="Bitacora\BdLayer.cs" />
