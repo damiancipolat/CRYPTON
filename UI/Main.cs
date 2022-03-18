@@ -602,11 +602,14 @@ namespace UI
             //Si soy administrador lanzo ok.
             if (this.isUserAdmin())
             {
-                Console.WriteLine("Ejecucion como admin ok!");
-                new frm_installer().Show();
+                if (this.installRequired()) 
+                {
+                    Console.WriteLine("Ejecucion como admin ok!");
+                    new frm_installer().Show();
 
-                //Oculto todo.
-                this.HideAll();
+                    //Oculto todo.
+                    this.HideAll();
+                }
             }
             else
             {
