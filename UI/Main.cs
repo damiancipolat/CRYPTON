@@ -597,33 +597,42 @@ namespace UI
             return new InstallerBL().isRequired();
         }
 
+        private void adminHandler() 
+        {
+            //Si soy administrador lanzo ok.
+            if (this.isUserAdmin())
+            {
+                Console.WriteLine("Ejecucion como admin ok!");
+                new frm_installer().Show();
+
+                //Oculto todo.
+                this.HideAll();
+            }
+            else
+            {
+                Console.WriteLine("Es necesario relanzar como ADMIN!");
+                this.relauncAsAdmin();
+            }
+        }
+
         private void Frm_main_Load(object sender, EventArgs e)
         {
             try
             {
+                //MODE
+                string mode = ConfigurationManager.AppSettings["Environment"];
+
                 //Log VERSION
                 string version = ConfigurationManager.AppSettings["Version"];
                 Console.WriteLine("VERSION:" + version);
                 this.Text = "Crypton - V " + version;
 
-                //Analizo si hace falta la instalacion y relanzo.
-                if (this.installRequired())
-                {
-                    if (!this.isUserAdmin())
-                    {
-                        Console.WriteLine("Es necesario relanzar como ADMIN!");
-                        this.relauncAsAdmin();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Ejecucion como admin ok!");
-                        new frm_installer().Show();
+                //Ejecutar siempre como ADMIN solo si funciona en modo que no sea dev.
+                if (mode != "DEVELOP")
+                    this.adminHandler();
 
-                        //Oculto todo.
-                        this.HideAll();
-                    }
-                }
-                else 
+                //Analizo si hace falta la instalacion y relanzo.
+                if (!this.installRequired())
                 {
                     //Antes de hacer el login, hago una prueba de integridad.
                     new IntegrityBL().validateComplete();
