@@ -14,6 +14,7 @@ G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRY
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\bin\Debug\Newtonsoft.Json.xml
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\bin\Debug\RestSharp.xml
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.csproj.CoreCompileInputs.cache
-G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.csproj.CopyComplete
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.dll
 G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.pdb
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.csproj.AssemblyReference.cache
+G:\Mi unidad\UAI\Trabajo de campo\V3 actual\Entregables\Carpeta de TP\Codigo\CRYPTON\IO\obj\Debug\IO.csproj.CopyComplete

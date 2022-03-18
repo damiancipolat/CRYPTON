@@ -1687,3 +1687,7 @@ SESSION:An user has started session - email:roberto@gmail.com
 LOGIN:Login of user:roberto@gmail.com success!
 DEBIT:Unable to process commision N°2
 DEBIT:Error processing payment:Incorrect syntax near '0663999989628792'.
+LOGIN:Request login of user:uai@gmail.com
+SESSION:An user has started session - email:uai@gmail.com
+LOGIN:Login of user:uai@gmail.com success!
+WALLET:Cargando wallet:uai@gmail.com

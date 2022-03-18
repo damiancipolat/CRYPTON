@@ -24,7 +24,7 @@ namespace IO
             this.env = ConfigurationManager.AppSettings["Environment"];
 
             //Seteo mock host.
-            if (this.env == "DEVELOP")
+            if (this.env == "DEVELOP"|| this.env == "PROD")
                 this.host = this.host + "/mock";
 
             Debug.WriteLine(">Host:"+this.host);
